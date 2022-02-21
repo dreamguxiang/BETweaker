@@ -1,32 +1,12 @@
-# Prerequisites
-*.d
+.vs/
+**/x64/
+**/*.user
+**/.vscode/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+**/bedrock_server_api.lib
+**/bedrock_server_var.lib
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+/.idea/*
+!/.idea/cmake.xml
+/cmake-build-*
+build/*
