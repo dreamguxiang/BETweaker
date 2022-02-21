@@ -1,5 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -G "Visual Studio 17 2022" C:\Users\Admin\source\repos\BETweaker
--- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.19042.
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Admin/source/repos/BETweaker/cmake-build-release
