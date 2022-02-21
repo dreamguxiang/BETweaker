@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9F61CB41-2B7B-3A06-9485-B72320BC0F93}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>BETweaker</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BETweaker.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BETweaker</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BETweaker.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BETweaker</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BETweaker.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">BETweaker</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BETweaker.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">BETweaker</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR="Debug";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR=\"Debug\";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Preparing Library</Message>
+      <Command>setlocal
+cmd /c C:/Users/Admin/source/repos/BETweaker/prepareLib.cmd C:/Users/Admin/source/repos/BETweaker
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Admin/source/repos/BETweaker/.;C:/Users/Admin/source/repos/BETweaker/./$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <DelayLoadDLLs>"bedrock_server.dll"</DelayLoadDLLs>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EnableUAC>false</EnableUAC>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/Debug/BETweaker.lib</ImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/Debug/BETweaker.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+      <TypeLibraryResourceID>1</TypeLibraryResourceID>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR="Release";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR=\"Release\";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Preparing Library</Message>
+      <Command>setlocal
+cmd /c C:/Users/Admin/source/repos/BETweaker/prepareLib.cmd C:/Users/Admin/source/repos/BETweaker
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Admin/source/repos/BETweaker/.;C:/Users/Admin/source/repos/BETweaker/./$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <DelayLoadDLLs>"bedrock_server.dll"</DelayLoadDLLs>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EnableUAC>false</EnableUAC>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/Release/BETweaker.lib</ImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/Release/BETweaker.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+      <TypeLibraryResourceID>1</TypeLibraryResourceID>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR="MinSizeRel";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR=\"MinSizeRel\";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Preparing Library</Message>
+      <Command>setlocal
+cmd /c C:/Users/Admin/source/repos/BETweaker/prepareLib.cmd C:/Users/Admin/source/repos/BETweaker
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Admin/source/repos/BETweaker/.;C:/Users/Admin/source/repos/BETweaker/./$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <DelayLoadDLLs>"bedrock_server.dll"</DelayLoadDLLs>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EnableUAC>false</EnableUAC>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/MinSizeRel/BETweaker.lib</ImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/MinSizeRel/BETweaker.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+      <TypeLibraryResourceID>1</TypeLibraryResourceID>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild>false</MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR="RelWithDebInfo";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;TEMPLATE_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_USRDLL;_AMD64_;NOMINMAX;_WINDLL;_UNICODE;UNICODE;CMAKE_INTDIR=\"RelWithDebInfo\";BETweaker_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Admin\source\repos\BETweaker\SDK\Header;C:\Users\Admin\source\repos\BETweaker\SDK\Header\third-party;C:\Users\Admin\source\repos\BETweaker\BETweaker;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message>Preparing Library</Message>
+      <Command>setlocal
+cmd /c C:/Users/Admin/source/repos/BETweaker/prepareLib.cmd C:/Users/Admin/source/repos/BETweaker
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Admin/source/repos/BETweaker/.;C:/Users/Admin/source/repos/BETweaker/./$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <DelayLoadDLLs>"bedrock_server.dll"</DelayLoadDLLs>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EnableUAC>false</EnableUAC>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/RelWithDebInfo/BETweaker.lib</ImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/Users/Admin/source/repos/BETweaker/cmake-build-release/RelWithDebInfo/BETweaker.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX64</TargetMachine>
+      <TypeLibraryResourceID>1</TypeLibraryResourceID>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Admin\source\repos\BETweaker\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Admin/source/repos/BETweaker/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -SC:/Users/Admin/source/repos/BETweaker -BC:/Users/Admin/source/repos/BETweaker/cmake-build-release --check-stamp-file C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Admin/source/repos/BETweaker/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -SC:/Users/Admin/source/repos/BETweaker -BC:/Users/Admin/source/repos/BETweaker/cmake-build-release --check-stamp-file C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Admin/source/repos/BETweaker/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -SC:/Users/Admin/source/repos/BETweaker -BC:/Users/Admin/source/repos/BETweaker/cmake-build-release --check-stamp-file C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Admin/source/repos/BETweaker/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -SC:/Users/Admin/source/repos/BETweaker -BC:/Users/Admin/source/repos/BETweaker/cmake-build-release --check-stamp-file C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCXXInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeLanguageInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeRCInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeCXXCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeRCCompiler.cmake;C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\3.21.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Admin\source\repos\BETweaker\cmake-build-release\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Admin\source\repos\BETweaker\BETweaker\Plugin.cpp" />
+    <ClCompile Include="C:\Users\Admin\source\repos\BETweaker\BETweaker\dllmain.cpp" />
+    <ClInclude Include="C:\Users\Admin\source\repos\BETweaker\BETweaker\framework.h" />
+    <ClCompile Include="C:\Users\Admin\source\repos\BETweaker\BETweaker\pch.cpp" />
+    <ClInclude Include="C:\Users\Admin\source\repos\BETweaker\BETweaker\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Admin\source\repos\BETweaker\cmake-build-release\ZERO_CHECK.vcxproj">
+      <Project>{3464EE47-74D8-3BCA-8E24-11421D7EC526}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

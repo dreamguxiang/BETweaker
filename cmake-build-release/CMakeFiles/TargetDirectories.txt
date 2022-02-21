@@ -1,0 +1,3 @@
+C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/BETweaker.dir
+C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/ALL_BUILD.dir
+C:/Users/Admin/source/repos/BETweaker/cmake-build-release/CMakeFiles/ZERO_CHECK.dir
