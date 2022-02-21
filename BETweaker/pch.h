@@ -10,5 +10,19 @@
 // 添加要在此处预编译的标头
 #include <iostream>
 #include <Global.h>
-
+#include "setting.h"
+#include <MC/Player.hpp>
+#include <MC/BlockInstance.hpp>
+#include <MC/Block.hpp>
+#include <MC/CropBlock.hpp>
+#include <MC/BlockLegacy.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/ItemInstance.hpp>
+#include <mc/CompoundTag.hpp>
+#include <MC/Level.hpp>
+#include <MC/Randomize.hpp>
+#include <MC/Random.hpp>
+#include <MC/EnchantUtils.hpp>
+#include <MC/BlockSource.hpp>
+#include "Helper.h"
 #endif //PCH_H
