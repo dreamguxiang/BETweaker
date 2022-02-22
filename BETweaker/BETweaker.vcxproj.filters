@@ -9,6 +9,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{c73cdbaf-9bfc-46dd-bda7-40dbe65d10f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -17,13 +20,13 @@
     <ClInclude Include="pch.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="setting.h">
+    <ClInclude Include="Main\Helper.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Moudle.h">
+    <ClInclude Include="Main\Moudle.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Helper.h">
+    <ClInclude Include="Main\setting.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -34,22 +37,22 @@
     <ClCompile Include="pch.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Command.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FastSleep.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="setting.cpp">
+    <ClCompile Include="Main\setting.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="BetterHarvestingCrop.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Hook.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="FastSleep.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Command.cpp">
+    <ClCompile Include="Main\Hook.cpp">
       <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>

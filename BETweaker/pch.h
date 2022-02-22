@@ -13,7 +13,7 @@
 // 添加要在此处预编译的标头
 #include <iostream>
 #include <Global.h>
-#include "setting.h"
+#include "Main/setting.h"
 #include <MC/Player.hpp>
 #include <MC/BlockInstance.hpp>
 #include <MC/Block.hpp>
@@ -29,5 +29,5 @@
 #include <MC/Random.hpp>
 #include <MC/EnchantUtils.hpp>
 #include <MC/BlockSource.hpp>
-#include "Helper.h"
+#include "Main/Helper.h"
 #endif //PCH_H

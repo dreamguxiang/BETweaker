@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "../pch.h"
 #include <RegCommandAPI.h>
 using namespace RegisterCommandHelper;
 enum CommandParameterOption;
