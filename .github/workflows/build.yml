@@ -34,7 +34,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd SDK/Tools
-        LibraryBuilder.exe -o ../Lib ./bedrock_server
+        LibraryBuilder.exe -o ../Lib D:/BDS
       shell: cmd
       
     - name: Add MSBuild to PATH
