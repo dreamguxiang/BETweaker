@@ -33,24 +33,9 @@ jobs:
     - name: Build Library
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cd LiteLoaderSDK/Tools
+        cd SDK/Tools
         LibraryBuilder.exe -o ../Lib ./bedrock_server
       shell: cmd
-      
-#     - name: Cache Libs
-#       uses: actions/cache@v2.1.7
-#       with:
-#         # A list of files, directories, and wildcard patterns to cache and restore
-#         path: LiteLoaderSDK/Tools/bedrock_server/
-#         # An explicit key for restoring and saving the cache
-#         key: https://minecraft.azureedge.net/bin-win/bedrock-server-1.18.2.03.zip
-#         # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
-#         #restore-keys:  optional
-#         # The chunk size used to split up large files during upload, in bytes
-#         #upload-chunk-size:  optional
-
-    
-
       
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.1
