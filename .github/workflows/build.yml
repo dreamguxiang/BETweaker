@@ -4,21 +4,23 @@ on: [push]
 
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: .
+  SOLUTION_FILE_PATH: ./BETweaker.sln
+
+  # Configuration type to build.
+  # You can convert this to a build matrix if you need coverage of multiple configuration types.
+  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Release
   Platform: X64
-  ChakraCore_version: cc_windows_all_1_11_24
 
 jobs:
-  build:
+  pre-process:
     runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1
-     
     - name: Download Server
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
@@ -27,62 +29,64 @@ jobs:
         curl -L -o D:/BDS/server.zip "$ServerLink"
         unzip D:/BDS/server.zip -d D:/BDS > /dev/null
       shell: bash
-
+      
     - name: Build Library
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd SDK/Tools
-        mkdir ../LiteLoader
-        mkdir ../LiteLoader/Lib
-        ./LibraryBuilder.exe D:/BDS
-        mv ../LiteLoader/Lib/* ../Lib/
-      shell: bash
-
+        LibraryBuilder.exe -o ../Lib D:/BDS
+      shell: cmd
+      
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v1.1
 
-    - name: Build
+#     - name: Restore NuGet packages
+#       working-directory: ${{env.GITHUB_WORKSPACE}}
+#       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Build Plugin
       working-directory: ${{env.GITHUB_WORKSPACE}}
+      # Add additional options to the MSBuild command line here (like platform or verbosity level).
+      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: |
-        MSBuild.exe ./BETweaker.sln -property:Configuration=Release
+        MSBuild.exe ${{env.SOLUTION_FILE_PATH}} -property:Configuration=${{env.BUILD_CONFIGURATION}}
       shell: bash
     
-    - name: MkDirs
+    - name: copy dll and pdb files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mkdir D:/out/sdk
-        mkdir D:/out/sdk/Lib
-        mkdir D:/out/sdk/Header
-        mkdir D:/out/plugins
-    
-    - name: Copy Out Files
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        cp x64/Release/*.dll D:/out/plugins
-        cp x64/Release/*.pdb D:/out/plugins
-        cp -r plugins/* D:/out/plugins
+        mkdir output/
+        cp -f x64/Release/*.dll output/
+        mkdir output/lib/
+        cp -f x64/Release/*.pdb output/
       shell: bash
-
-    - name: Upload plugins
-      uses: actions/upload-artifact@v1.0.0
+    
+    - name: upload files
+      uses: actions/upload-artifact@v2
       with:
-        name: plugins
-        path: D:/out/plugins
+        name: BETweaker
+        path: ${{ github.workspace }}/output/
 
+    - name: Archive
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: Compress-Archive -Path output/* output/BETweaker.zip
 
-    - name: Compress to zip
-      if: startsWith(github.ref, 'refs/tags/')
+    - name: Prepare for creating Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      id: rel
+      if: startsWith(github.ref, 'refs/tags/v')
       run: |
-        7z a D:/out/BETweaker.zip D:/out/plugins/*
+        echo ::set-output name=tag::${GITHUB_REF#refs/tags/*}
+        mv output/BETweaker.zip output/BETweaker-${GITHUB_REF#refs/tags/*}.zip
       shell: bash
 
-    - name: Release
+    - name: Create New Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      if: startsWith(github.ref, 'refs/tags/v')
       with:
-        body_path: ${{ github.workspace }}\CHANGELOG.txt
-        files: |
-          D:/out/plugins.zip
-          D:/out/SDK.zip
+        token: ${{ secrets.ACTIONS_TOKEN }}
+        body_path: ${{ github.workspace }}/CHANGELOG.txt
+        files: ${{ github.workspace }}\output\BETweaker-${{ steps.rel.outputs.tag }}.zip
       env:
-          GITHUB_REPOSITORY: dreamguxiang/BETweaker
+          GITHUB_REPOSITORY: dreamguxiang/BETweaker 
