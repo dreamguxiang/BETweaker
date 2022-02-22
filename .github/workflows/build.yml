@@ -89,4 +89,4 @@ jobs:
         body_path: ${{ github.workspace }}/CHANGELOG.txt
         files: ${{ github.workspace }}\output\BETweaker-${{ steps.rel.outputs.tag }}.zip
       env:
-          GITHUB_REPOSITORY: xiaoqch/LL_Plugins 
+          GITHUB_REPOSITORY: dreamguxiang/BETweaker 
