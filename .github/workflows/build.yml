@@ -19,11 +19,6 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
      
-    - name: Pull submodule
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: FetchSDK.cmd
-      shell: cmd
-     
     - name: Download Server
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
