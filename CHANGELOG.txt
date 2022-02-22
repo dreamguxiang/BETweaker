@@ -1,0 +1,7 @@
+# [BETweaker Release Note] 
+## [New features]
+ - 新添BetterHarvestingCrop(右键收割农作物)
+ - 新添FastSleeping(一人睡觉集体过夜)
+ - 新添NoFarmDestroy(耕地防破坏)
+
+
