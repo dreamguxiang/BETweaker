@@ -58,13 +58,13 @@ jobs:
         mkdir output/
         cp -f x64/Release/*.dll output/
         mkdir output/lib/
-        cp -f x64/Release/*.pdb output/lib/
+        cp -f x64/Release/*.pdb output/
       shell: bash
     
     - name: upload files
       uses: actions/upload-artifact@v2
       with:
-        name: LL_Plugins
+        name: BETweaker
         path: ${{ github.workspace }}/output/
 
     - name: Archive
