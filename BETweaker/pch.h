@@ -8,7 +8,7 @@
 #define PCH_H
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,0}
+#define VERSION LL::Version{1,0,1}
 #define BDSP 486
 // 添加要在此处预编译的标头
 #include <iostream>
