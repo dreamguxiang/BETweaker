@@ -43,5 +43,14 @@
     <ClCompile Include="BetterHarvestingCrop.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="FastSleep.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

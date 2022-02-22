@@ -6,6 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 struct ItemStackNetIdTag;
+struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
 enum ItemStackNetIdType : unsigned char
 {
@@ -36,7 +37,7 @@ public:
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
     MCAPI struct ItemStackNetIdVariant& operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
     MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
-    MCAPI bool operator==(struct ItemStackNetIdVariant const&);
+    MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
     MCAPI void serialize(class BinaryStream&) const;
     MCAPI std::string toString() const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;

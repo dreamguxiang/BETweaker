@@ -13,7 +13,7 @@ class NetworkIdentifier {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    char filler[160];
 public:
 	LIAPI std::string getIP();
 
@@ -33,7 +33,7 @@ public:
     MCAPI std::string getAddress() const;
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool isUnassigned() const;
-    MCAPI bool operator==(class NetworkIdentifier const&);
+    MCAPI bool operator==(class NetworkIdentifier const&) const;
     MCAPI std::string toString() const;
 
 protected:

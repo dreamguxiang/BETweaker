@@ -31,25 +31,23 @@ public:
 #endif
 
 public:
-    MCAPI bool Deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI HashedString(class HashedString&&);
     MCAPI HashedString(std::nullptr_t);
     MCAPI HashedString(class HashedString const&);
     MCAPI HashedString(std::string const&);
     MCAPI HashedString(char const*);
     MCAPI HashedString(unsigned __int64, char const*);
-    MCAPI bool Serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI char const* c_str() const;
     MCAPI void clear();
     MCAPI bool empty() const;
     MCAPI unsigned __int64 getHash() const;
     MCAPI std::string const& getString() const;
     MCAPI bool isEmpty() const;
-    MCAPI bool operator!=(class HashedString const&);
-    MCAPI bool operator<(class HashedString const&);
+    MCAPI bool operator!=(class HashedString const&) const;
+    MCAPI bool operator<(class HashedString const&) const;
     MCAPI class HashedString& operator=(class HashedString&&);
     MCAPI class HashedString& operator=(class HashedString const&);
-    MCAPI bool operator==(class HashedString const&);
+    MCAPI bool operator==(class HashedString const&) const;
     MCAPI ~HashedString();
     MCAPI static void bindType();
     MCAPI static unsigned __int64 computeHash(std::string const&);

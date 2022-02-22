@@ -12,8 +12,12 @@ class MinecraftCommands;
 struct RakNetServerLocator;
 class ServerLevel;
 class ServerNetworkHandler;
-class LevelStorage;
+class DBStorage;
 class Scoreboard;
+class AllowListFile;
+class PropertiesSettings;
+
+class LevelStorage;
 
 template <typename T>
 LIAPI inline T* Global = nullptr;

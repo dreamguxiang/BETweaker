@@ -11,22 +11,23 @@ bool loadBetterHarvestingCrop(BlockInstance blockin,Player* sp) {
             auto bs = blockin.getBlockSource();
             auto pos = blockin.getPosition();
             auto rand = Randomize(sp->getRandom());
-            auto Crop = CropBlockOff::getBaseCrop(&block);
-            if (!Crop->isNull())
-            {
-                auto CropNum = CropBlockSym::getCropNum(block, rand, growthlevel);
+            auto Crop = block.getBaseCrop();
+            if (!Crop.isNull())
+            {     
+                auto CropNum = block.getCropNum(rand, growthlevel, 0);
                 if (CropNum) 
-                    block.popResource(*bs, pos, *Crop);
+                    block.popResource(*bs, pos, Crop);
             }
-            auto Seed = CropBlockOff::getBaseSeed(&block);
-            if (!Seed->isNull())
+            auto Seed = block.getBaseSeed();
+            if (!Seed.isNull())
             {
                 auto level = EnchantUtils::getEnchantLevel(Enchant::Type::fortune, *sp->getHandSlot());
-                auto seedNum = CropBlockSym::getSeedNum(block, rand, growthlevel,level);
+                auto seedNum = block.getSeedNum(rand, growthlevel, level);
+                --seedNum;
                 if (seedNum > 0)
                 {
                     do {
-                        block.popResource(*bs, pos, *Seed);
+                        block.popResource(*bs, pos, Seed);
                         --seedNum;
                     } while (seedNum);
                 }

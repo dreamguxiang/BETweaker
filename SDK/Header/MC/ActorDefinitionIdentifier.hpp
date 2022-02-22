@@ -29,8 +29,6 @@ public:
     MCAPI ActorDefinitionIdentifier(std::string, std::string, std::string);
     MCAPI ActorDefinitionIdentifier(enum ActorType);
     MCAPI ActorDefinitionIdentifier();
-    MCAPI bool Deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
-    MCAPI bool Serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI enum ActorType _getLegacyActorType() const;
     MCAPI void clear();
     MCAPI class HashedString const& getCanonicalHash() const;
@@ -44,7 +42,7 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI bool isVanilla() const;
     MCAPI struct ActorDefinitionIdentifier& operator=(struct ActorDefinitionIdentifier const&);
-    MCAPI bool operator==(struct ActorDefinitionIdentifier const&);
+    MCAPI bool operator==(struct ActorDefinitionIdentifier const&) const;
     MCAPI void setIdentifier(std::string const&);
     MCAPI void setInitEvent(std::string const&);
     MCAPI ~ActorDefinitionIdentifier();

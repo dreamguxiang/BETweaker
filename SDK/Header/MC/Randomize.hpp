@@ -18,9 +18,9 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZE
 public:
-    class Randomize& operator=(class Randomize const&) = default;
-    Randomize(class Randomize const&) = default;
-    Randomize() = default;
+    class Randomize& operator=(class Randomize const&) = delete;
+    Randomize(class Randomize const&) = delete;
+    Randomize() = delete;
 #endif
 
 public:

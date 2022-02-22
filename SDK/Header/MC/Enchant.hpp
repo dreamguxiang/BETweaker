@@ -13,14 +13,16 @@ class Enchant {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum class Frequency {
+    enum class Frequency
+    {
         VeryRare = 1,
         Rare = 3,
         Uncommon = 10,
         Common = 30
     };
 
-    enum class Slot {
+    enum class Slot
+    {
         ALL = -1,
         NONE = 0,
         ARMOR_HEAD = 1,
@@ -49,47 +51,48 @@ public:
         MUSHROOM_STICK = 1048576
     };
 
-enum class Type : uint8_t {
-    protection = 0,
-    fire_protection = 1,
-    feather_falling = 2,
-    blast_protection = 3,
-    projectile_protection = 4,
-    thorns = 5,
-    respiration = 6,
-    depth_strider = 7,
-    aqua_affinity = 8,
-    sharpness = 9,
-    smite = 10,
-    bane_of_arthropods = 11,
-    knockback = 12,
-    fire_aspect = 13,
-    looting = 14,
-    efficiency = 15,
-    silk_touch = 16,
-    unbreaking = 17,
-    fortune = 18,
-    power = 19,
-    punch = 20,
-    flame = 21,
-    infinity = 22,
-    luck_of_the_sea = 23,
-    lure = 24,
-    frost_walker = 25,
-    mending = 26,
-    binding = 27,
-    vanishing = 28,
-    impaling = 29,
-    riptide = 30,
-    loyalty = 31,
-    channeling = 32,
-    multishot = 33,
-    piercing = 34,
-    quick_charge = 35,
-    soul_speed = 36,
-    num_enchantments = 37,
-    invalid_enchantment = 38
-};
+    enum class Type : uint8_t
+    {
+        protection = 0,
+        fire_protection = 1,
+        feather_falling = 2,
+        blast_protection = 3,
+        projectile_protection = 4,
+        thorns = 5,
+        respiration = 6,
+        depth_strider = 7,
+        aqua_affinity = 8,
+        sharpness = 9,
+        smite = 10,
+        bane_of_arthropods = 11,
+        knockback = 12,
+        fire_aspect = 13,
+        looting = 14,
+        efficiency = 15,
+        silk_touch = 16,
+        unbreaking = 17,
+        fortune = 18,
+        power = 19,
+        punch = 20,
+        flame = 21,
+        infinity = 22,
+        luck_of_the_sea = 23,
+        lure = 24,
+        frost_walker = 25,
+        mending = 26,
+        binding = 27,
+        vanishing = 28,
+        impaling = 29,
+        riptide = 30,
+        loyalty = 31,
+        channeling = 32,
+        multishot = 33,
+        piercing = 34,
+        quick_charge = 35,
+        soul_speed = 36,
+        num_enchantments = 37,
+        invalid_enchantment = 38
+    };
 
 #undef AFTER_EXTRA
 
@@ -105,16 +108,16 @@ public:
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
     /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const&) const;
     /*7*/ virtual float getDamageBonus(int, class Actor const&) const;
     /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
     /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
-    /*10*/ virtual void __unk_vfn_1();
-    /*11*/ virtual void __unk_vfn_2();
-    /*12*/ virtual void __unk_vfn_3();
-    /*13*/ virtual void __unk_vfn_4();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
     inline bool isProtectionEnchant() const{

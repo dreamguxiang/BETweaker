@@ -12,6 +12,35 @@ class InventorySource {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class InventorySourceFlags
+    {
+        NoFlag = 0,
+        WorldInteraction_Random = 1
+    };
+
+    InventorySourceType type = InventorySourceType::Invalid;
+    ContainerID container = ContainerID::Invalid;
+    InventorySourceFlags flags;
+    inline InventorySource(ContainerID id)
+        : container(id)
+    {
+    }
+    inline InventorySource(InventorySourceType type)
+        : type(type)
+    {
+    }
+    inline InventorySource(InventorySourceType type, InventorySourceFlags flags)
+        : type(type)
+        , flags(flags)
+    {
+    }
+    inline InventorySource(InventorySourceType type, ContainerID id)
+        : type(type)
+        , container(id)
+    {
+    }
+
 
 #undef AFTER_EXTRA
 
@@ -23,7 +52,7 @@ public:
 #endif
 
 public:
-    MCAPI bool operator==(class InventorySource const&);
+    MCAPI bool operator==(class InventorySource const&) const;
     MCAPI std::string toString() const;
 
 protected:

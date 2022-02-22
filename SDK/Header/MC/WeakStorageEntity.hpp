@@ -17,13 +17,13 @@ class WeakStorageEntity {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEENTITY
 public:
-    class WeakStorageEntity& operator=(class WeakStorageEntity const&) = default;
-    WeakStorageEntity(class WeakStorageEntity const&) = default;
-    WeakStorageEntity() = default;
+    class WeakStorageEntity& operator=(class WeakStorageEntity const&) = delete;
+    WeakStorageEntity(class WeakStorageEntity const&) = delete;
+    WeakStorageEntity() = delete;
 #endif
 
 public:
-    MCAPI bool operator==(class WeakStorageEntity const&);
+    MCAPI bool operator==(class WeakStorageEntity const&) const;
 
 protected:
     MCAPI WeakStorageEntity(class StackResultStorageEntity const&);

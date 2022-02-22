@@ -1,6 +1,27 @@
+////////////////////////////////////////////////////////////////////////
+//  Logger System - Log text to console, file and player easily
+//  - Created by RimuruChan on 2021/12/11.
 //
-// Created by RimuruChan on 2021/12/11.
-//
+// 
+//  [Create Logger]
+// 
+//  Logger logger("MyPlugin");                  // Create a logger (default: only log to console)
+//  logger.setFile("logs/MyPlugin.log");        // Optional, also record log to File
+// 
+//  auto pl = mc.getPlayer("Jim");
+//  if(pl)
+//      logger.setPlayer(pl);                   // Optional, also record log to a Player
+//  ......
+//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like this)
+//  
+// 
+//  [Use Logger]
+// 
+//  logger.info("Infomation");                                  // Common
+//  logger.error("Error! Code:{}",GetLastError());              // FMT Format
+//  logger.warn << "Warning! Fail to do sth." << logger.endl;   // STL Format
+// 
+////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -18,6 +39,7 @@
 #include "Utils/WinHelper.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
+#include "Utils/StringHelper.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -31,7 +53,7 @@ using std::string;
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 template<bool B, class T = void>
-using enable_if_t = typename std::enable_if<B, T>::type;
+using enable_if_type = typename std::enable_if<B, T>::type;
 
 HMODULE GetCurrentModule();
 
@@ -75,24 +97,63 @@ public:
         }
 
         template <>
+        OutputStream& operator<<(std::wstring wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
+            return *this;
+        }
+        template <>
+        OutputStream& operator<<(const wchar_t* wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
+            return *this;
+        }
+
+        template <>
         OutputStream& operator<<(void (*t)(OutputStream&))
         {
             t(*this);
             return *this;
         }
 
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        template <typename S, typename... Args, enable_if_type<(fmt::v8::detail::is_string<S>::value), int> = 0>
         void operator()(const S& formatStr, const Args&... args)
         {
-            std::string str = fmt::format(formatStr, args...);
-            *this << str << endl;
+            if constexpr (0 == sizeof...(args))
+            {
+                // Avoid fmt if only one argument
+                *this << formatStr << endl;
+            }
+            else
+            {
+                std::string str = fmt::format(formatStr, args...);
+                *this << str << endl;
+            }
         }
 
         template <typename... Args>
         void operator()(const char* formatStr, const Args&... args)
         {
-            std::string str = fmt::format(std::string(formatStr), args...);
-            *this << str << endl;
+            if constexpr (0 == sizeof...(args))
+            {
+                // Avoid fmt if only one argument
+                *this << formatStr << endl;
+            }
+            else 
+            {
+                std::string str = fmt::format(std::string(formatStr), args...);
+                *this << str << endl;
+            }
         }
     };
 

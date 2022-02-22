@@ -6,14 +6,14 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include <MC/DataItem.hpp>
-#include <MC/ItemStack.hpp>
+
 #undef BEFORE_EXTRA
 
 class AddItemActorPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDITEMACTORPACKET
@@ -27,8 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     MCAPI AddItemActorPacket(class ItemActor&);
     MCAPI AddItemActorPacket();
 

@@ -1,8 +1,9 @@
 #include "pch.h"
-#include <EventAPI.h>
-#include <LoggerAPI.h>
 #include "Moudle.h"
-Logger logger("BETweaker");
+#include <MC/Dimension.hpp>
+#include <MC/Actor.hpp>
+Logger logger(fmt::format(fg(fmt::color::light_pink),"BETweaker"));
+
 map<string, long > useitemonbug;
 
 
@@ -35,23 +36,14 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     return true;
 }
 
-THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z", void* __this, void* a2,
-    void* a3, void* a4, float a5) {
-    if (Settings::NoFarmDestroy) {
-        return;
-    }
-    return original(__this, a2, a3, a4, a5);
-}
-
-
 void loadCfg() {
     //config
     if (!std::filesystem::exists("plugins/BETweaker"))
         std::filesystem::create_directories("plugins/BETweaker");
     //tr	
-    if (std::filesystem::exists("plugins/BETweaker/config.json")) {
+    if (std::filesystem::exists(JsonFile)) {
         try {
-            Settings::LoadConfigFromJson("plugins/BETweaker/config.json");
+            Settings::LoadConfigFromJson(JsonFile);
         }
         catch (std::exception& e) {
             logger.error("Config File isInvalid, Err {}", e.what());
@@ -66,17 +58,27 @@ void loadCfg() {
     }
     else {
         logger.info("Config with default values created");
-        Settings::WriteDefaultConfig("plugins/BETweaker/config.json");
+        Settings::WriteDefaultConfig(JsonFile);
     }
 }//º”‘ÿ”Ô—‘&≈‰÷√Œƒº˛
+extern void RegisterCommands();
 
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
+    RegisterCommands();
 }
+
+#include <ServerAPI.h>
 void PluginInit()
 {
     loadCfg();
-	logger.info("Loaded success");
+    logger.info("BETweaker Loaded by QingYu");
+    logger.info("Build Date[{}]", __TIMESTAMP__);
+    logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));
+    if (LL::getServerProtocolVersion() != BDSP) {
+        logger.error("This version({}) does not support BDSProtocolVersion:{}", VERSION.toString(), LL::getServerProtocolVersion());
+        logger.error("Please get the latest version");
+    }
     initEvent();
 }

@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "ItemDescriptor.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,13 @@ class RecipeIngredient {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    ItemDescriptor descriptor;
+    unsigned short count;
+private:
+    char pad74[6]{ 0 };
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_RECIPEINGREDIENT
 
 #undef AFTER_EXTRA
 

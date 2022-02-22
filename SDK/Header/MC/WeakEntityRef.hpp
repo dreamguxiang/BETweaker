@@ -23,11 +23,10 @@ public:
 #endif
 
 public:
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits> const&);
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>&);
+    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
-    MCAPI bool operator==(class WeakEntityRef);
-    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>);
+    MCAPI bool operator==(class WeakEntityRef) const;
+    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();
 
 protected:

@@ -7,6 +7,9 @@
 #ifndef PCH_H
 #define PCH_H
 
+#define JsonFile "plugins/BETweaker/config.json"
+#define VERSION LL::Version{1,0,0}
+#define BDSP 486
 // 添加要在此处预编译的标头
 #include <iostream>
 #include <Global.h>
@@ -17,6 +20,8 @@
 #include <MC/CropBlock.hpp>
 #include <MC/BlockLegacy.hpp>
 #include <MC/ItemStack.hpp>
+#include <EventAPI.h>
+#include <LoggerAPI.h>
 #include <MC/ItemInstance.hpp>
 #include <mc/CompoundTag.hpp>
 #include <MC/Level.hpp>

@@ -25,13 +25,14 @@ public:
 public:
     MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
     MCAPI bool isValid() const;
-    MCAPI bool operator==(class EntityContextBase const&);
+    MCAPI bool operator==(class EntityContextBase const&) const;
 
 protected:
     MCAPI void _assertValid() const;
     MCAPI class entt::basic_registry<class EntityId>& _enttRegistry();
     MCAPI class entt::basic_registry<class EntityId> const& _enttRegistry() const;
-    MCAPI unsigned int _getRawId() const;
+    MCAPI class EntityId _getEntityId() const;
+    MCAPI unsigned int _getRegistryId() const;
 
 private:
 

@@ -13,7 +13,7 @@ class SetTimePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    int32_t mTime; // 0x28
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTIMEPACKET
@@ -27,8 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~SetTimePacket(){
          (SetTimePacket::*rv)();

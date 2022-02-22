@@ -25,9 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~NpcAction();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual bool fromJson(class Json::Value const&);
     /*
+    inline bool fromJson(class Json::Value const& a0){
+        bool (NpcAction::*rv)(class Json::Value const&);
+        *((void**)&rv) = dlsym("?fromJson@NpcAction@@UEAA_NAEBVValue@Json@@@Z");
+        return (this->*rv)(std::forward<class Json::Value const&>(a0));
+    }
     inline  ~NpcAction(){
          (NpcAction::*rv)();
         *((void**)&rv) = dlsym("??1NpcAction@@UEAA@XZ");
@@ -37,8 +40,8 @@ public:
     MCAPI enum NpcActionMode getMode() const;
     MCAPI std::string const& getText() const;
     MCAPI enum NpcActionType getType() const;
-    MCAPI bool operator!=(class NpcAction const&);
-    MCAPI bool operator==(class NpcAction const&);
+    MCAPI bool operator!=(class NpcAction const&) const;
+    MCAPI bool operator==(class NpcAction const&) const;
     MCAPI void setButtonName(std::string const&);
     MCAPI void setMode(enum NpcActionMode);
     MCAPI void setText(std::string const&);

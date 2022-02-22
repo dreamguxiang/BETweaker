@@ -6,8 +6,10 @@
 namespace Settings {
     extern bool BetterHarvestingCrop;
     extern bool NoFarmDestroy;
+    extern bool FastSleeping;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
     void LoadConfigFromJson(const std::string& fileName);
+    void reloadJson(const std::string& fileName);
 } // namespace Settings

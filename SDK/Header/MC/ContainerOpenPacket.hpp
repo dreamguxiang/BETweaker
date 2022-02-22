@@ -13,11 +13,6 @@ class ContainerOpenPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
-    ContainerID id = ContainerID::Invalid;
-    ContainerType type = ContainerType::CONTAINER;
-    BlockPos pos;
-    ActorUniqueID actor_id = -1;
 
 #undef AFTER_EXTRA
 
@@ -32,8 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~ContainerOpenPacket(){
          (ContainerOpenPacket::*rv)();

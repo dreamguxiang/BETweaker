@@ -10,7 +10,7 @@
 struct GameRuleId {
 
 #define AFTER_EXTRA
-
+    int num;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULEID
