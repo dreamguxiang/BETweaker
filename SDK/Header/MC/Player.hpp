@@ -60,7 +60,7 @@ public:
             return sendText(text);
         }
         else
-            return sendText(fmt::format(text, args...));
+            return sendText(fmt::format(text, args...),TextType::TIP);
     }
 
     LIAPI bool kick(const string& msg);

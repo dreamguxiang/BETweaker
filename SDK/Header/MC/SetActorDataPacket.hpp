@@ -6,13 +6,17 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "DataItem.hpp"
 #undef BEFORE_EXTRA
 
 class SetActorDataPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    ActorRuntimeID mrid;
+    Tick mtick = {0};
+    std::vector<std::unique_ptr<DataItem>> mitems;
 
 #undef AFTER_EXTRA
 

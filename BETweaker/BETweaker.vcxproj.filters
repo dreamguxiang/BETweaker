@@ -55,5 +55,8 @@
     <ClCompile Include="Main\Hook.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="HUBInfo.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

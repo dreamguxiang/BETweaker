@@ -12,7 +12,6 @@ class Randomize {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
     char size[16];
 #undef AFTER_EXTRA
 

@@ -1,7 +1,10 @@
-#include "../pch.h"
+ï»¿#include "../pch.h"
 #include "Moudle.h"
 #include <MC/Dimension.hpp>
 #include <MC/Actor.hpp>
+#include <ScheduleAPI.h>
+#include <MC/ResourcePackRepository.hpp>
+#include <MC/ResourcePackStack.hpp>
 Logger logger(fmt::format(fg(fmt::color::light_pink),"BETweaker"));
 
 map<string, long > useitemonbug;
@@ -32,7 +35,6 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     if (Settings::BetterHarvestingCrop) {
         loadBetterHarvestingCrop(blockin, sp);
     }
-
     return true;
 }
 
@@ -60,13 +62,44 @@ void loadCfg() {
         logger.info("Config with default values created");
         Settings::WriteDefaultConfig(JsonFile);
     }
-}//¼ÓÔØÓïÑÔ&ÅäÖÃÎÄ¼þ
-extern void RegisterCommands();
+}//åŠ è½½è¯­è¨€&é…ç½®æ–‡ä»¶
 
+static_assert(sizeof(SemVersion) == 0x70);
+ResourcePackRepository* gl;
+THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
+    , ResourcePackRepository* a1) {
+    gl = a1;
+    auto a = original(a1);;
+    return a;
+}
+
+extern void RegisterCommands();
+extern void HUBInfo();
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
     RegisterCommands();
+    Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
+        HUBInfo();
+        auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
+        if (pack) {
+            if (pack->getVersion().asString() != VERSION.toString()) {
+                logger.error("ResourcePack(BETweaker) Version is old.");
+                logger.error("ResourcePack(BETweaker) Version is old.");
+                logger.error("ResourcePack(BETweaker) Version is old.");
+                Sleep(5000);
+                exit(NULL);
+            }
+        }
+        else {
+            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
+            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
+            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
+            Sleep(5000);
+            exit(NULL);
+        }
+        return true;
+        });
 }
 
 #include <ServerAPI.h>
@@ -82,3 +115,5 @@ void PluginInit()
     }
     initEvent();
 }
+
+

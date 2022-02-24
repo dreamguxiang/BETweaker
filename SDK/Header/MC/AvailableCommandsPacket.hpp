@@ -13,6 +13,95 @@ class AvailableCommandsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    struct EnumData
+    {
+        std::string name;
+        std::vector<unsigned int> valueIndices;
+    };//56
+    struct ConstrainedValueData
+    {
+        int enumIndex;
+        int enumNameIndex;
+        std::vector<unsigned char> unk8;
+    };
+    struct OverloadData
+    {
+    };
+    struct ParamData
+    {
+    };
+    struct CommandData
+    {
+        std::string commandName;
+        std::vector<void*> enumIndices;
+        std::vector<void*> suffixIndices;
+        std::vector<void*> dynamicEnumIndices;
+    };//104
+    struct SoftEnumData
+    {
+        std::string name;
+        std::vector<std::string> values;
+    };//56
+
+std::vector<std::string> mAllEnums;//48
+std::vector<std::string> mAllSuffix;//72
+std::vector<EnumData> mEnumDatas;//96
+std::vector<CommandData> mCommandDatas;//120
+std::vector<SoftEnumData> mSoftEnums;//144
+std::vector<ConstrainedValueData> mConstrainedValueDatas; //168
+inline void test()
+{
+    static_assert(sizeof(AvailableCommandsPacket) == 192);
+    static_assert(sizeof(EnumData) == 56);
+    static_assert(sizeof(CommandData) == 104);
+    static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 48);
+    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 72);
+    static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 168);
+}
+
+public:
+inline std::vector<std::string> getEnumNames()
+{
+    std::vector<std::string> names;
+    for (auto& data : mEnumDatas) {
+        names.push_back(data.name);
+    }
+    return names;
+}
+inline std::vector<std::string> getSoftEnumNames()
+{
+    std::vector<std::string> names;
+    for (auto& data : mSoftEnums)
+    {
+        names.push_back(data.name);
+    }
+    return names;
+}
+inline std::vector<std::string> getEnumValues(std::string const& name)
+{
+    std::vector<std::string> values;
+    for (auto& data : mEnumDatas)
+    {
+        if (data.name == name)
+        {
+            for (auto& index : data.valueIndices) {
+                values.push_back(mAllEnums.at(index));
+            }
+            break;
+        }
+    }
+    return values;
+}
+inline std::vector<std::string> getSoftEnumValues(std::string const& name)
+{
+    for (auto& data : mSoftEnums)
+    {
+        if (data.name == name)
+            return data.values;
+    }
+    return {};
+}
+
 
 #undef AFTER_EXTRA
 

@@ -239,6 +239,11 @@ public:
         *((void**)&rv) = dlsym("?forEachDimension@Level@@UEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z");
         return (this->*rv)(std::forward<class std::function<bool(class Dimension&)>>(a0));
     }
+    inline class ResourcePackManager* getServerResourcePackManager() const {
+        class ResourcePackManager* (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getServerResourcePackManager@Level@@UEBAPEAVResourcePackManager@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

@@ -10,6 +10,8 @@
 #define JsonFile "plugins/BETweaker/config.json"
 #define VERSION LL::Version{1,0,2}
 #define BDSP 486
+#define toStr(x) std::to_string(x)
+#define getI18n(x) I18n::get(x)
 // 添加要在此处预编译的标头
 #include <iostream>
 #include <Global.h>
@@ -27,7 +29,17 @@
 #include <MC/Level.hpp>
 #include <MC/Randomize.hpp>
 #include <MC/Random.hpp>
+#include <MC/Container.hpp>
+#include <MC/Item.hpp>
 #include <MC/EnchantUtils.hpp>
 #include <MC/BlockSource.hpp>
+#include <MC/ResourcePack.hpp>
+#include <MC/PackSourceFactory.hpp>
+#include <MC/Core.hpp>
+#include <MC/ResourcePackManager.hpp>
+#include <MC/PackIdVersion.hpp>
+#include <MC/VanillaBlocks.hpp>
+#include <MC/LeafBlock.hpp>
+#include <MC/SemVersion.hpp>
 #include "Main/Helper.h"
 #endif //PCH_H

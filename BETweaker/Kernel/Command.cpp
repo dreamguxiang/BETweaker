@@ -1,7 +1,6 @@
 #include "../pch.h"
 #include <RegCommandAPI.h>
 using namespace RegisterCommandHelper;
-enum CommandParameterOption;
 class BETCommand : public Command
 {
 
