@@ -2,6 +2,16 @@
 #include "Moudle.h"
 #include "setting.h"
 
+std::unordered_set<string> CanDispenserItem{
+    "minecraft:bamboo",//bamboo
+    "minecraft:sapling",//saplings
+    "minecraft:azalea",
+    "minecraft:flowering_azalea",
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom"
+};
 
 THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
     original(self);
@@ -29,6 +39,18 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
             Level::setBlock(pos, a2->getDimensionId(), out);
             a5->remove(1);
             return ;
+        }
+    }
+    else if(CanDispenserItem.count(a5->getTypeName()) !=0)
+    {
+        //Level::broadcastText(std::to_string(a5->getBlock()->mayPlaceOn(*a2, pos.add(0, -1, 0))), TextType::RAW);
+        if (a5->getBlock()->mayPlaceOn(*a2, pos.add(0, -1, 0)) &&
+            a2->getBlock(pos).getTypeName() == "minecraft:air")
+        {
+            Block* sapbl = const_cast<Block*>(a5->getBlock());
+            Level::setBlock(pos, a2->getDimensionId(), sapbl);
+            a5->remove(1);
+            return;
         }
     }
     return original(a1, a2, a3, a4, a5, a6, a7);
