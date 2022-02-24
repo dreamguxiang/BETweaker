@@ -18,7 +18,7 @@
 <img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
 </p>
 
-What's more, this mod **completely follows features of vanilla game.((If there are modifications to the game features, they will be marked)**This means it will NOT change any features without notifying users and will not affect the game level, so it is suitable for use this mod in vanilla survival server.
+What's more, this mod **completely follows features of vanilla game.(If there are modifications to the game features, they will be marked)** This means it will NOT change any features without notifying users and will not affect the game level, so it is suitable for use this mod in vanilla survival server.
 
 ### 💻 Download
 
