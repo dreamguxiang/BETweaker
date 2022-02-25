@@ -38,7 +38,9 @@ namespace HUBHelper {
     string getCategoryName(ItemStackBase& item, string language)
     {
         I18n::chooseLanguage(language);
-        return item.getCategoryName();
+        auto out = item.getCategoryName();
+        I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
+        return out;
     };
 
     string actorCategory(Actor* ac, Player* sp) {
