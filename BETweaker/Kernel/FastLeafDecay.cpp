@@ -15,7 +15,7 @@ namespace Module {
 
     bool FastLeafDecayFunc1(LeafBlock*, BlockSource* a2, const BlockPos* a3) 
 {
-        for (size_t i = 0; i < 7; i++)
+        for (size_t i = 0; i < 6; i++)
         {
             BlockPos pos = a3->neighbor(i);
             if (LeafBlocks.count(Level::getBlock(pos, a2)->getTypeName()))
