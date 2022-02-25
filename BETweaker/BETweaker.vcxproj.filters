@@ -61,5 +61,8 @@
     <ClCompile Include="Kernel\FastLeafDecay.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\DispenserCrops.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

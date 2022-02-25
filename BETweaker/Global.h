@@ -34,6 +34,7 @@
 #include <MC/VanillaBlocks.hpp>
 #include <MC/LeafBlock.hpp>
 #include <MC/SemVersion.hpp>
+#include <MC/DispenserBlock.hpp>
 #include "Main/Helper.h"
 #include <FormUI.h>
 #include <ScheduleAPI.h>
