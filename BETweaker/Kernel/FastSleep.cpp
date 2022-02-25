@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "../Global.h"
 #include <MC/ServerLevel.hpp>
 #include <MC/GameRules.hpp>
 #include <MC/LevelSettings.hpp>

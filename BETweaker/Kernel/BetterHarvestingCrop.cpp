@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "../Global.h"
 
 static_assert(sizeof(Randomize) == 0x10);
 

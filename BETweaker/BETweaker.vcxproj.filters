@@ -17,9 +17,6 @@
     <ClInclude Include="framework.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Main\Helper.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -29,12 +26,12 @@
     <ClInclude Include="Main\setting.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">

@@ -1,4 +1,4 @@
-﻿#include "../pch.h"
+﻿#include "../Global.h"
 #include "Moudle.h"
 #include <MC/Dimension.hpp>
 #include <MC/Actor.hpp>

@@ -1,5 +1,5 @@
 #pragma once
-#include "../pch.h"
+#include "../Global.h"
 #include <MC/I18n.hpp>
 #include <MC/HashedString.hpp>
 

@@ -1,6 +1,6 @@
 #include <Utils/FileHelper.h>
 #include <Nlohmann/json.hpp>
-#include "../pch.h"
+#include "../Global.h"
 #define TRJ(key,val)                                         \
 if (json.find(key) != json.end()) {                          \
     const nlohmann::json& out = json.at(key);                \

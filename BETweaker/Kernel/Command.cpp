@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "../Global.h"
 #include <RegCommandAPI.h>
 using namespace RegisterCommandHelper;
 class BETCommand : public Command

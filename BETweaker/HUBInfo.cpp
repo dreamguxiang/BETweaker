@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+﻿#include "../Global.h"
 #include <MC/CommandUtils.hpp>
 #include <MC/SetActorDataPacket.hpp>
 #include <MC/DataItem.hpp>
