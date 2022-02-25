@@ -43,8 +43,10 @@ namespace HUBHelper {
 
     string actorCategory(Actor* ac, Player* sp) {
         string out = u8"§c" + getI18n("betweaker.hubinfo.hostile");
-        if (ac->findAttackTarget() != sp && !ac->isAngry())
-            out = u8"§2" + getI18n("betweaker.hubinfo.frinedly");
+        if (!ac->hasFamily("monster")){
+            if (ac->findAttackTarget() != sp && !ac->isAngry())
+                out = u8"§2" + getI18n("betweaker.hubinfo.frinedly");
+        }
         return out;
     }
 
