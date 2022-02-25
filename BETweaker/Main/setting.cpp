@@ -11,11 +11,14 @@ namespace Settings {
     bool BetterHarvestingCrop = true;
     bool NoFarmDestroy = true;
     bool FastSleeping = true;
+    bool DispenserCrops = true;
+
     nlohmann::json globaljson() {
         nlohmann::json json;
         json["BetterHarvestingCrop"] = BetterHarvestingCrop;
         json["NoFarmDestroy"] = NoFarmDestroy;
         json["FastSleeping"] = FastSleeping;
+        json["DispenserCrops"] = DispenserCrops;
         return json;
     }
 
@@ -23,6 +26,7 @@ namespace Settings {
         TRJ("BetterHarvestingCrop", BetterHarvestingCrop);
         TRJ("NoFarmDestroy", NoFarmDestroy);
         TRJ("FastSleeping", FastSleeping);
+        TRJ("DispenserCrops", DispenserCrops);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {
