@@ -20,7 +20,7 @@
     <ClInclude Include="Main\Helper.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Main\Module.h">
+    <ClInclude Include="Main\Moudle.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Main\setting.h">
@@ -52,10 +52,7 @@
     <ClCompile Include="Main\Hook.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\HUBInfo.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\EditSign.cpp">
+    <ClCompile Include="HUBInfo.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>

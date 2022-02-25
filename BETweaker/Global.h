@@ -35,7 +35,3 @@
 #include <MC/LeafBlock.hpp>
 #include <MC/SemVersion.hpp>
 #include "Main/Helper.h"
-#include <FormUI.h>
-#include <ScheduleAPI.h>
-extern Logger logger;
-extern ScheduleTask hubinfo;

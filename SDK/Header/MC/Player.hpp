@@ -30,12 +30,6 @@ public:
         HEAD_ROTATION,
     };
 
-    inline void openSign(class BlockPos const& a0) {
-        void (Player:: * rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();

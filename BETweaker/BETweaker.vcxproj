@@ -168,11 +168,14 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Main\Helper.h" />
-    <ClInclude Include="Main\Module.h" />
+    <ClInclude Include="Main\Moudle.h" />
     <ClInclude Include="Main\setting.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HUBInfo.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">
@@ -181,11 +184,9 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="Kernel\Command.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Kernel\EditSign.cpp" />
     <ClCompile Include="Kernel\FastSleep.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Kernel\HUBInfo.cpp" />
     <ClCompile Include="Main\Hook.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

@@ -1,11 +1,12 @@
 ﻿#include "../Global.h"
-#include "Module.h"
+#include "Moudle.h"
 #include <MC/Dimension.hpp>
 #include <MC/Actor.hpp>
 #include <ScheduleAPI.h>
 #include <MC/ResourcePackRepository.hpp>
 #include <MC/ResourcePackStack.hpp>
-Logger logger(fmt::format(fg(fmt::color::light_pink), "BETweaker"));
+Logger logger(fmt::format(fg(fmt::color::light_pink),"BETweaker"));
+
 map<string, long > useitemonbug;
 
 
@@ -32,16 +33,10 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     useitemonbug.insert(std::map < string, long > ::value_type(playername, a));
 
     if (Settings::BetterHarvestingCrop) {
-        Module::loadBetterHarvestingCrop(blockin, sp);
-    }
-    if (Settings::EditSign) {
-        if (blockin.getBlock()->getTypeName() == VanillaBlocks::mSign->getTypeName()) {
-            Module::editSign(sp, blockin);
-        }
+        loadBetterHarvestingCrop(blockin, sp);
     }
     return true;
 }
-
 
 void loadCfg() {
     //config
@@ -79,13 +74,13 @@ THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
 }
 
 extern void RegisterCommands();
-
+extern void HUBInfo();
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
     RegisterCommands();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
-        if(Settings::HUBinfo) Module::HUBInfo();
+        HUBInfo();
         auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
         if (pack) {
             if (pack->getVersion().asString() != VERSION.toString()) {
