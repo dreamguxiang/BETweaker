@@ -13,6 +13,14 @@ std::unordered_set<string> CanDispenserItem{
     "minecraft:red_mushroom"
 };
 
+std::unordered_set<string> LeafBlocks{
+    "minecraft:leaves",
+    "minecraft:leaves2",
+    "minecraft:azalea_leaves",
+    "minecraft:azalea_leaves_flowered"
+};
+
+
 THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
     original(self);
     if(Settings::FastSleeping) 
@@ -43,7 +51,7 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
             return ;
         }
     }
-    else if(CanDispenserItem.count(a5->getTypeName()) !=0)
+    else if(CanDispenserItem.count(a5->getTypeName()))
     {
         //Level::broadcastText(std::to_string(a5->getBlock()->mayPlaceOn(*a2, pos.add(0, -1, 0))), TextType::RAW);
         if (a5->getBlock()->mayPlaceOn(*a2, pos.add(0, -1, 0)) &&
@@ -56,4 +64,48 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
         }
     }
     return original(a1, a2, a3, a4, a5, a6, a7);
+}
+std::stack<BlockPos> leafBlockPos;
+std::stack<int> leafBlockDim;
+
+TInstanceHook(void, "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+    LeafBlock , BlockSource* a2, const BlockPos* a3) {
+    for (size_t i = 0; i < 7; i++)
+    {
+        BlockPos pos = a3->neighbor(i);
+        if (LeafBlocks.count(Level::getBlock(pos, a2)->getTypeName()))
+        {
+            //std::cout << pos.toString() << std::endl;
+            leafBlockPos.push(pos);
+            leafBlockDim.push(a2->getDimensionId());
+        }
+    }
+    return original(this, a2, a3);
+}
+
+bool FastLeafDecayFunc() {
+    if (leafBlockDim.size() == leafBlockPos.size() && !leafBlockDim.empty()) {
+        BlockPos pos = leafBlockPos.top();
+        leafBlockPos.pop();
+        int dim = leafBlockDim.top();
+        leafBlockDim.pop();
+        Block* bl = Level::getBlockEx(pos, dim);
+        if (!bl)
+            return true;
+        else if (LeafBlocks.count(bl->getTypeName()))
+        {
+            auto leaf = (LeafBlock*)(bl->getLegacyBlock()).createWeakPtr().get();
+            auto bs = Level::getBlockSource(dim);
+            leaf->randomTick(*bs, pos, Random::getThreadLocal());
+            return true;
+        }
+    }
+}
+
+THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
+    if (Settings::FastLeafDecay)
+    {
+        FastLeafDecayFunc();
+    }
+    return original(_this);
 }

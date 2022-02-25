@@ -8,6 +8,7 @@ namespace Settings {
     extern bool NoFarmDestroy;
     extern bool FastSleeping;
     extern bool DispenserCrops;
+    extern bool FastLeafDecay;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
