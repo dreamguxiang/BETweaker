@@ -58,36 +58,39 @@ namespace HUBHelper {
     }
 }
 
-void HUBInfo() {
-    auto info = Schedule::repeat([]() {
-        Level::forEachPlayer([](Player& sp)->bool {
-            Actor* ac = sp.getActorFromViewVector(5.25);
-            auto posdim = HUBHelper::getDim(sp);
-            if (ac) {
-                auto pos = ac->getBlockPos().toVec3();
-                sp.sendFormattedText(u8"§f{}\n§c❤ §a{}/{}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n§7{} {}",
-                    Helper::getActorDisplayName(ac, sp.getLanguageCode()),
-                    toStr(ac->getHealth()), toStr(ac->getMaxHealth()),
-                    posdim, pos.x, posdim, pos.y, posdim, pos.z,
-                    getI18n("betweaker.hubinfo.status"), HUBHelper::actorCategory(ac, &sp)
-                );
-            }
-            else
-            {
-                auto bi = sp.getBlockFromViewVector();
-                if (!bi.isNull()) {
-                    auto block = bi.getBlock();
-                    ItemInstance item = block->getSilkTouchItemInstance();
-                    auto blpos = bi.getPosition();
-                    sp.sendFormattedText(u8"§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
-                        Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
-                        getI18n("betweaker.hubinfo.destroytime"), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                        HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable"),
-                        posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
-                        HUBHelper::getCategoryName(item, sp.getLanguageCode())
+ScheduleTask hubinfo;
+namespace Module {
+    void HUBInfo() {
+         hubinfo = Schedule::repeat([]() {
+            Level::forEachPlayer([](Player& sp)->bool {
+                Actor* ac = sp.getActorFromViewVector(5.25);
+                auto posdim = HUBHelper::getDim(sp);
+                if (ac) {
+                    auto pos = ac->getBlockPos().toVec3();
+                    sp.sendFormattedText(u8"§f{}\n§c❤ §a{}/{}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n§7{} {}",
+                        Helper::getActorDisplayName(ac, sp.getLanguageCode()),
+                        toStr(ac->getHealth()), toStr(ac->getMaxHealth()),
+                        posdim, pos.x, posdim, pos.y, posdim, pos.z,
+                        getI18n("betweaker.hubinfo.status"), HUBHelper::actorCategory(ac, &sp)
                     );
                 }
-            }
-            });
-        }, 5);
+                else
+                {
+                    auto bi = sp.getBlockFromViewVector();
+                    if (!bi.isNull()) {
+                        auto block = bi.getBlock();
+                        ItemInstance item = block->getSilkTouchItemInstance();
+                        auto blpos = bi.getPosition();
+                        sp.sendFormattedText(u8"§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
+                            Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
+                            getI18n("betweaker.hubinfo.destroytime"), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                            HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable"),
+                            posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
+                            HUBHelper::getCategoryName(item, sp.getLanguageCode())
+                        );
+                    }
+                }
+                });
+          }, 5);
+    }
 }

@@ -1,5 +1,6 @@
 #include "../Global.h"
 #include <RegCommandAPI.h>
+#include "../Main/Module.h"
 using namespace RegisterCommandHelper;
 class BETCommand : public Command
 {
@@ -8,7 +9,10 @@ class BETCommand : public Command
     {
         BetterHarvestingCrop,
         NoFarmDestroy,
-        FastSleeping
+        FastSleeping,
+        HUBinfo,
+        EditSign,
+        DispenserCrops
     } operation;
     bool isenable;
 
@@ -27,6 +31,20 @@ public:
         case Operation::FastSleeping:
             Settings::FastSleeping = isenable;
             break;
+        case Operation::HUBinfo:
+            if (Settings::HUBinfo == isenable) break;
+            Settings::HUBinfo = isenable;
+            if (isenable)
+                Module::HUBInfo();
+            else
+                hubinfo.cancel();
+            break;
+        case Operation::DispenserCrops:
+            Settings::DispenserCrops = isenable;
+            break;
+        case Operation::EditSign:
+            Settings::EditSign = isenable;
+            break;
         default:
             break;
         }
@@ -39,15 +57,19 @@ public:
         registry->registerCommand("bet", "BETweaker System",CommandPermissionLevel::Any, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
         // ll version & help
-        registry->addEnum<Operation>("Operation_Num", {
+        registry->addEnum<Operation>("Function", {
             {"betterharvest", Operation::BetterHarvestingCrop},
             {"nofarmdestroy", Operation::NoFarmDestroy},
-             {"fastsleep", Operation::FastSleeping}}
+             {"fastsleep", Operation::FastSleeping},
+             {"dispensercrops", Operation::DispenserCrops},
+             {"hubinfo", Operation::HUBinfo},
+             {"editsign", Operation::EditSign}
+            }
         );
 
         registry->registerOverload<BETCommand>(
             "bet",
-            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "Operation_Num"),
+            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "Function"),
             makeMandatory(&BETCommand::isenable,"Enable"));
     }
 };
@@ -56,7 +78,6 @@ void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         BETCommand::setup(ev.mCommandRegistry);
-
         return true;
         });
 }
