@@ -13,6 +13,7 @@
 - Farm land anti-stomp
 - Mob, Block information display
 - Edit Sign
+- Fast leaf decay
 - <details><summary>Dispenser to grow crops
     </summary>
     We don't want to make large-scale modifications to the minecraft original redstone system.
