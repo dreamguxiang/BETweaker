@@ -12,7 +12,13 @@
 - 一人睡觉集体过夜
 - 耕地防踩
 - 生物、方块信息显示
-- 发射器种植农作物
+- <details><summary>发射器种植农作物
+    </summary>
+    我们不想过多的干涉你的生电系统，所以我们精选了些合适发射器放置的方块
+
+        覆盖范围的有：树苗, 作物， 蘑菇， 竹子
+        如果你不喜欢或不需要此功能，你随时可以在配置文件中关掉此功能！
+    </details>
 <p align="center">
 <img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
 </p>

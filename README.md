@@ -12,7 +12,14 @@
 - One person sleeps, all stay overnight
 - Farm land anti-stomp
 - Mob, Block information display
-- Dispenser to grow crops
+- <details><summary>Dispenser to grow crops
+    </summary>
+    We don't want to make large-scale modifications to the minecraft original redstone system.
+    So we've to selected some useful blocks for your bds.
+
+        List: crops, saplings, bamboo, mushrooms
+        If you don't like it, you can turn off this feature in the plugin config file.
+    </details>
 
 <p align="center">
 <img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
