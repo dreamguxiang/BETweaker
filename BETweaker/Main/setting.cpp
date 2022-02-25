@@ -13,6 +13,8 @@ namespace Settings {
     bool FastSleeping = true;
     bool DispenserCrops = true;
     bool FastLeafDecay = true;
+    bool HUBinfo = true;
+    bool EditSign = true;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -21,6 +23,8 @@ namespace Settings {
         json["FastSleeping"] = FastSleeping;
         json["DispenserCrops"] = DispenserCrops;
         json["FastLeafDecay"] = FastLeafDecay;
+        json["HUBinfo"] = HUBinfo;
+        json["EditSign"] = EditSign;
         return json;
     }
 
@@ -30,6 +34,8 @@ namespace Settings {
         TRJ("FastSleeping", FastSleeping);
         TRJ("DispenserCrops", DispenserCrops);
         TRJ("FastLeafDecay", FastLeafDecay);
+        TRJ("HUBinfo", HUBinfo);
+        TRJ("EditSign", EditSign);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

@@ -6,4 +6,6 @@ namespace Module {
 	void FastSleep();
 	bool editSign(Player* pl, BlockInstance bi);
 	void HUBInfo();
+	bool FastLeafDecayFunc1(LeafBlock*, BlockSource* a2, const BlockPos* a3);
+	bool FastLeafDecayFunc();
 }

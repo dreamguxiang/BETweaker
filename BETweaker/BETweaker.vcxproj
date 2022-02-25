@@ -182,6 +182,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\EditSign.cpp" />
+    <ClCompile Include="Kernel\FastLeafDecay.cpp" />
     <ClCompile Include="Kernel\FastSleep.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

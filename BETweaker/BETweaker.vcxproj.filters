@@ -58,5 +58,8 @@
     <ClCompile Include="Kernel\EditSign.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\FastLeafDecay.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
