@@ -22,12 +22,13 @@ namespace Module {
             ItemStack* item = (ItemStack*)&pl->getCarriedItem();
             item->getItem()->use(*item, *pl);
             fishingHook.erase(a1);
+            pl->refreshInventory();
             Schedule::delay([pl]() {
                 ItemStack* item = (ItemStack*)&pl->getCarriedItem();
                 if (item->getTypeName() == "minecraft:fishing_rod") {
                     item->getItem()->use(*item, *pl);
                 }
-                }, 5);
+                }, 10);
         }
 	}
 }
