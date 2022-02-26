@@ -49,7 +49,7 @@ THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
     return original(_this);
 }
 
-TInstanceHook(void, "?normalTick@FishingHook@@UEAAXXZ", FishingHook) {
+TInstanceHook(void, "?_updateServer@FishingHook@@IEAAXXZ", FishingHook) {
     if (Settings::AutoFish)
     {
         Module::AutoFish(this);
