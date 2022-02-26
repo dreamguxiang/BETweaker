@@ -20,7 +20,6 @@ namespace Module {
             BlockPos pos = a3->neighbor(i);
             if (LeafBlocks.count(Level::getBlock(pos, a2)->getTypeName()))
             {
-                //std::cout << pos.toString() << std::endl;
                 leafBlockPos.push(pos);
                 leafBlockDim.push(a2->getDimensionId());
             }
