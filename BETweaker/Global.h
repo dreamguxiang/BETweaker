@@ -4,7 +4,7 @@
 #define VERSION LL::Version{1,0,2}
 #define BDSP 486
 #define toStr(x) std::to_string(x)
-#define getI18n(x) I18n::get(x)
+#define getI18n(x,n) I18n::get(x,n)
 
 #include <iostream>
 #include <Global.h>

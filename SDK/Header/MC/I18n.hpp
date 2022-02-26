@@ -17,9 +17,9 @@ class I18n {
 // Add Member There
 public:
     LIAPI static Localization const* getLanguage(std::string const& languageCode);
-    inline static std::string get(std::string const& key)
+    inline static std::string get(std::string const& key,string lang)
     {
-        return get(key, mCurrentLanguage);
+        return get(key, getLanguage(lang));
     }
     inline static std::string get(std::string const& key, std::vector<std::string> args)
     {

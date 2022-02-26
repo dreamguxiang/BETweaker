@@ -19,6 +19,7 @@ THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEA
 
 #include <MC/DispenserBlock.hpp>
 #include <MC/SeedItemComponentLegacy.hpp>
+#include <MC/LogBlock.hpp>
 THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z", DispenserBlock* a1,
      BlockSource* a2, Vec3* a3, FaceID a4,ItemStack* a5, Container* a6,unsigned int a7) {
     if(Module::DispenserItemFunc(a1, a2, a3, a4, a5, a6, a7))
@@ -27,13 +28,21 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
 }
 
 THook(void, "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
-    LeafBlock* _this, BlockSource* a2, const BlockPos* a3) {//Ò¶×Ó¸¯ÀÃ
+    LeafBlock* _this, BlockSource* a2, const BlockPos* a3) {
     if (Settings::FastLeafDecay)
         Module::FastLeafDecayFunc1(_this, a2, a3);
     return original(_this, a2, a3);
 }
 
-THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {//ÏµÍ³tick
+THook(void, "?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+    LogBlock* _this, BlockSource* a2, const BlockPos* a3) {
+    if (Settings::FastLeafDecay)
+        Module::FastLeafDecayFunc1((LeafBlock*)_this, a2, a3);
+    return original(_this, a2, a3);
+}
+
+
+THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
     if (Settings::FastLeafDecay)
     {
         Module::FastLeafDecayFunc();

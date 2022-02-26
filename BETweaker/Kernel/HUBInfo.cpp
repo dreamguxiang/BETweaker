@@ -37,17 +37,17 @@ namespace HUBHelper {
 
     string getCategoryName(ItemStackBase& item, string language)
     {
-        I18n::chooseLanguage(language);
+       
         auto out = item.getCategoryName();
         I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
         return out;
     };
 
     string actorCategory(Actor* ac, Player* sp) {
-        string out = u8"§c" + getI18n("betweaker.hubinfo.hostile");
+        string out = u8"§c" + getI18n("betweaker.hubinfo.hostile",sp->getLanguageCode());
         if (!ac->hasFamily("monster")){
             if (ac->findAttackTarget() != sp && !ac->isAngry())
-                out = u8"§2" + getI18n("betweaker.hubinfo.frinedly");
+                out = u8"§2" + getI18n("betweaker.hubinfo.frinedly", sp->getLanguageCode());
         }
         return out;
     }
@@ -69,13 +69,14 @@ namespace Module {
             Level::forEachPlayer([](Player& sp)->bool {
                 Actor* ac = sp.getActorFromViewVector(5.25);
                 auto posdim = HUBHelper::getDim(sp);
+                string lang = sp.getLanguageCode();
                 if (ac) {
                     auto pos = ac->getBlockPos().toVec3();
                     sp.sendFormattedText(u8"§f{}\n§c❤ §a{}/{}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n§7{} {}",
                         Helper::getActorDisplayName(ac, sp.getLanguageCode()),
                         toStr(ac->getHealth()), toStr(ac->getMaxHealth()),
                         posdim, pos.x, posdim, pos.y, posdim, pos.z,
-                        getI18n("betweaker.hubinfo.status"), HUBHelper::actorCategory(ac, &sp)
+                        getI18n("betweaker.hubinfo.status", lang), HUBHelper::actorCategory(ac, &sp)
                     );
                 }
                 else
@@ -87,8 +88,8 @@ namespace Module {
                         auto blpos = bi.getPosition();
                         sp.sendFormattedText(u8"§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
                             Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
-                            getI18n("betweaker.hubinfo.destroytime"), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                            HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable"),
+                            getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                            HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
                             posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
                             HUBHelper::getCategoryName(item, sp.getLanguageCode())
                         );

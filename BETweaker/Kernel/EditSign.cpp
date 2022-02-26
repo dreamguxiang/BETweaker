@@ -9,8 +9,9 @@ namespace Module {
         auto BlockEntity = (SignBlockActor*)bi.getBlockEntity();
         if (BlockEntity)
         {
+            string lang = pl->getLanguageCode();
             string text = BlockEntity->getNbt()->getString("Text");
-            Form::CustomForm form2(getI18n("betweaker.editsign.title"));
+            Form::CustomForm form2(getI18n("betweaker.editsign.title", lang));
             auto out = Helper::split(text, "\n");
             auto num = out.size();
             for (auto i = 1; i <= 4; i++) {
