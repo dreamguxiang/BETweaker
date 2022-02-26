@@ -50,6 +50,9 @@ THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
 }
 
 TInstanceHook(void, "?normalTick@FishingHook@@UEAAXXZ", FishingHook) {
-    Module::AutoFish(this);
+    if (Settings::AutoFish)
+    {
+        Module::AutoFish(this);
+    }
     return original(this);
 }

@@ -15,6 +15,7 @@ namespace Settings {
     bool FastLeafDecay = true;
     bool HUBinfo = true;
     bool EditSign = true;
+    bool AutoFish = true;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -25,6 +26,7 @@ namespace Settings {
         json["FastLeafDecay"] = FastLeafDecay;
         json["HUBinfo"] = HUBinfo;
         json["EditSign"] = EditSign;
+        json["AutoFish"] = AutoFish;
         return json;
     }
 
@@ -36,6 +38,7 @@ namespace Settings {
         TRJ("FastLeafDecay", FastLeafDecay);
         TRJ("HUBinfo", HUBinfo);
         TRJ("EditSign", EditSign);
+        TRJ("AutoFish", AutoFish);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

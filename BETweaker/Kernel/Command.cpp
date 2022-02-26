@@ -13,7 +13,8 @@ class BETCommand : public Command
         HUBinfo,
         EditSign,
         DispenserCrops,
-        FastLeafDecay
+        FastLeafDecay,
+        AutoFish
     } operation;
     bool isenable;
 
@@ -49,6 +50,9 @@ public:
         case Operation::FastLeafDecay:
             Settings::FastLeafDecay = isenable;
             break;
+        case Operation::AutoFish:
+            Settings::AutoFish = isenable;
+            break;
         default:
             break;
         }
@@ -68,7 +72,8 @@ public:
              {"dispensercrops", Operation::DispenserCrops},
              {"hubinfo", Operation::HUBinfo},
              {"editsign", Operation::EditSign},
-             {"fastleafdecay", Operation::FastLeafDecay}
+             {"fastleafdecay", Operation::FastLeafDecay},
+             {"autofish", Operation::AutoFish},
             }
         );
 
