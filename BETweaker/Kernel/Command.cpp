@@ -12,7 +12,8 @@ class BETCommand : public Command
         FastSleeping,
         HUBinfo,
         EditSign,
-        DispenserCrops
+        DispenserCrops,
+        FastLeafDecay
     } operation;
     bool isenable;
 
@@ -45,6 +46,9 @@ public:
         case Operation::EditSign:
             Settings::EditSign = isenable;
             break;
+        case Operation::FastLeafDecay:
+            Settings::FastLeafDecay = isenable;
+            break;
         default:
             break;
         }
@@ -63,7 +67,8 @@ public:
              {"fastsleep", Operation::FastSleeping},
              {"dispensercrops", Operation::DispenserCrops},
              {"hubinfo", Operation::HUBinfo},
-             {"editsign", Operation::EditSign}
+             {"editsign", Operation::EditSign},
+             {"fastleafdecay", Operation::FastLeafDecay}
             }
         );
 
