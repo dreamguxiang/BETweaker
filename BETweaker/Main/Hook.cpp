@@ -2,7 +2,6 @@
 #include "Module.h"
 #include "setting.h"
 
-
 THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
     original(self);
     if(Settings::FastSleeping) 
