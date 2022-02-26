@@ -1,5 +1,4 @@
 #include "../Global.h"
-#include <MC/SeedItemComponentLegacy.hpp>
 
 std::map<FishingHook*, int>fishingHook;
 namespace Module {
