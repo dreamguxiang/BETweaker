@@ -35,6 +35,7 @@
 #include <MC/LeafBlock.hpp>
 #include <MC/SemVersion.hpp>
 #include <MC/DispenserBlock.hpp>
+#include <MC/FishingHook.hpp>
 #include "Main/Helper.h"
 #include <FormUI.h>
 #include <ScheduleAPI.h>

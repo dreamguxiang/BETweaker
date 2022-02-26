@@ -6,14 +6,19 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
 #undef BEFORE_EXTRA
 
 class FishingHook : public Actor {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    bool serverHooked() {
+        return _serverHooked();
+    }
+    bool serverLured() {
+        return _serverLured();
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FISHINGHOOK

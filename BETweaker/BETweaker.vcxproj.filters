@@ -64,5 +64,8 @@
     <ClCompile Include="Kernel\DispenserCrops.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\AutoFish.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
