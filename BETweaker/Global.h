@@ -36,6 +36,13 @@
 #include <MC/SemVersion.hpp>
 #include <MC/DispenserBlock.hpp>
 #include <MC/FishingHook.hpp>
+#include <MC/DoorBlock.hpp>
+#include <MC/Facing.hpp>
+#include <MC/BlockStateVariant.hpp>
+#include <MC/BlockStateGroup.hpp>
+#include <MC/BlockStateMeta.hpp>
+#include <MC/VanillaStates.hpp>
+#include <MC/ItemState.hpp>
 #include "Main/Helper.h"
 #include <FormUI.h>
 #include <ScheduleAPI.h>

@@ -57,18 +57,8 @@ TInstanceHook(void, "?_updateServer@FishingHook@@IEAAXXZ", FishingHook) {
     return original(this);
 }
 
-#include <MC/DoorBlock.hpp>
-TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorBlock, Player* pl, BlockPos* a3,UCHAR a4) {
-    for (size_t i = 2; i < 6; i++)
-    {
-        BlockPos pos = a3->neighbor(i);
-        auto bs = pl->getBlockSource();
-        auto bl = Level::getBlock(pos, bs);
-        if (bl->isDoorBlock())
-        {
-            auto tog = this->isToggled(*bs, *a3);
-            this->setToggled(*bs, pos, !tog);
-
-    }
-    return  original(this, pl, a3,a4);
+TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorBlock, Player* pl, BlockPos* a3, UCHAR a4) {
+    if (Settings::DoubleDoors)
+        Module::DoubleDoors(this, pl, a3, a4);
+    return  original(this, pl, a3, a4);
 }

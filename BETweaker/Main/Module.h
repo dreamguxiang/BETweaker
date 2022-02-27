@@ -10,4 +10,5 @@ namespace Module {
 	bool FastLeafDecayFunc();
 	bool DispenserItemFunc(DispenserBlock* a1, BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5, Container* a6, unsigned int a7);
 	bool AutoFish(FishingHook* a1);
+	bool DoubleDoors(DoorBlock* a1, Player* pl, BlockPos* a3, UCHAR a4);
 }

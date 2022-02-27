@@ -15,6 +15,7 @@
 - Edit Sign
 - Fast leaf decay
 - Auto Fish
+- Double Doors
 - <details><summary>Dispenser to grow crops
     </summary>
     We don't want to make large-scale modifications to the minecraft original redstone system.

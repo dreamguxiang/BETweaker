@@ -16,6 +16,7 @@ namespace Settings {
     bool HUBinfo = true;
     bool EditSign = true;
     bool AutoFish = true;
+    bool DoubleDoors = true;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -27,6 +28,7 @@ namespace Settings {
         json["HUBinfo"] = HUBinfo;
         json["EditSign"] = EditSign;
         json["AutoFish"] = AutoFish;
+        json["DoubleDoors"] = DoubleDoors;
         return json;
     }
 
@@ -39,6 +41,7 @@ namespace Settings {
         TRJ("HUBinfo", HUBinfo);
         TRJ("EditSign", EditSign);
         TRJ("AutoFish", AutoFish);
+        TRJ("DoubleDoors", DoubleDoors);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

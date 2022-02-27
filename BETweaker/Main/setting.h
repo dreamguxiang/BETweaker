@@ -12,6 +12,7 @@ namespace Settings {
     extern bool HUBinfo;
     extern bool EditSign;
     extern bool AutoFish;
+    extern bool DoubleDoors;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
