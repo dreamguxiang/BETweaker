@@ -23,6 +23,7 @@
         List: crops, saplings, bamboo, mushrooms
         If you don't like it, you can turn off this feature in the plugin config file.
     </details>
+For each feature in this plugin, you can use the command **"/bet"** or revise the config file in **"/plugins/BETweaker/"** to turn it on and off at any time.
 
 <p align="center">
 <img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
