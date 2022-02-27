@@ -26,7 +26,7 @@ namespace Module {
             //logger.info << pos.toString() << " " << bl1->getTypeName() << logger.endl;
             if (bl1->isDoorBlock())
             {
-                if (bl1->getNbt()->getCompound("states")->getBoolean("door_hinge_bit") != hasHinge)
+                if (bl1->getNbt()->getCompound("states")->getBoolean("door_hinge_bit") != hasHinge && bl1->getTypeName() != "minecraft:iron_door")
                 {
                     auto tog = a1->isToggled(*bs, *a3);
                     a1->setToggled(*bs, pos, !tog);

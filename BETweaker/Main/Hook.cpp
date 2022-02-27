@@ -58,7 +58,7 @@ TInstanceHook(void, "?_updateServer@FishingHook@@IEAAXXZ", FishingHook) {
 }
 
 TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorBlock, Player* pl, BlockPos* a3, UCHAR a4) {
-    if (Settings::DoubleDoors)
+    if (Settings::DoubleDoors && this->getTypeName() != "minecraft:iron_door")
         Module::DoubleDoors(this, pl, a3, a4);
     return  original(this, pl, a3, a4);
 }
