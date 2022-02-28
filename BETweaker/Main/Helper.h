@@ -19,10 +19,10 @@ public:
 };
 
 namespace Helper {
-	inline string buildActorDisplayName(ActorType a2, string& a3, Actor* a4) {
+	inline string buildActorDisplayName(ActorType a2, string a3, Actor* a4) {
 		string Src;
 		 SymCall("?buildActorDisplayName@@YA?AUKeyOrNameResult@@W4ActorType@@AEBV?$basic_string@DU?$c"
-			"har_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z", void, string*, ActorType, string&, Actor*)(&Src,a2,a3,a4);
+			"har_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z", void, string*, ActorType, string, Actor*)(&Src,a2,a3,a4);
 		 return Src;
 	}
 	inline string getDisplayName(string displayname, string lang) {
@@ -31,7 +31,7 @@ namespace Helper {
 	inline string getActorDisplayName(Actor* ac,string lang) {
 		string a1 = ac->getNameTag();
 		auto a2 = ac->getEntityTypeId();
-		auto disname = buildActorDisplayName(a2, a1, ac);
+		auto disname = buildActorDisplayName(a2, "", ac);
 		return getDisplayName(disname, lang);
 	}
 	inline vector<string> split(const string& str, const string& pattern)
