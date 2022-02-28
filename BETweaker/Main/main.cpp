@@ -84,10 +84,6 @@ void initEvent()
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
     RegisterCommands();
-    Event::PlayerJoinEvent::subscribe([](Event::PlayerJoinEvent e)->bool {
-        e.mPlayer->giveItem(ItemStack::create("minecraft:debug_stick", 1));
-        return true;
-        });
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
         if(Settings::HUBinfo) Module::HUBInfo();
         auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
