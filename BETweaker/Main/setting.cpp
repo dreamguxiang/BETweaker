@@ -17,6 +17,7 @@ namespace Settings {
     bool EditSign = true;
     bool AutoFish = true;
     bool DoubleDoors = true;
+    bool FastSetMinecart = true;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -29,6 +30,7 @@ namespace Settings {
         json["EditSign"] = EditSign;
         json["AutoFish"] = AutoFish;
         json["DoubleDoors"] = DoubleDoors;
+        json["FastSetMinecart"] = FastSetMinecart;
         return json;
     }
 
@@ -42,6 +44,7 @@ namespace Settings {
         TRJ("EditSign", EditSign);
         TRJ("AutoFish", AutoFish);
         TRJ("DoubleDoors", DoubleDoors);
+        TRJ("FastSetMinecart", FastSetMinecart);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

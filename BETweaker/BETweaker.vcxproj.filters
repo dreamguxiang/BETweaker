@@ -70,5 +70,8 @@
     <ClCompile Include="Kernel\DoubleDoors.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\FastSetMinecart.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

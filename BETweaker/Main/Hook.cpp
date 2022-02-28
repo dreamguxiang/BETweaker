@@ -62,3 +62,12 @@ TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorB
         Module::DoubleDoors(this, pl, a3, a4);
     return  original(this, pl, a3, a4);
 }
+
+TInstanceHook(__int64, "?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z",
+    Player, Actor* a2, Vec3* a3) {
+    if (Settings::FastSetMinecart) {
+        if (this->isSneaking() && a2->getTypeName() == "minecraft:minecart")  
+            Module::FastSetMinecart(this, a2);
+    }
+    return original(this, a2, a3);
+}

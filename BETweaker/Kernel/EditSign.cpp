@@ -3,7 +3,7 @@
 #include <MC/SignItem.hpp>
 #include <MC/BlockActorDataPacket.hpp>
 namespace Module {
-    bool editSign(Player* pl, BlockInstance bi) {
+    bool EditSign(Player* pl, BlockInstance bi) {
         if (!pl->isSneaking()) return false;
         auto pos = bi.getPosition();
         auto BlockEntity = (SignBlockActor*)bi.getBlockEntity();

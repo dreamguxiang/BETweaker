@@ -349,6 +349,34 @@ class SharedPtr;
 template <typename T>
 class StackRefResultT;
 
+template <>
+class OwnerPtrT<struct EntityRefTraits>
+{
+    char filler[24];
+
+public:
+    inline ~OwnerPtrT()
+    {
+        void (OwnerPtrT:: * rv)() const;
+        *((void**)&rv) = dlsym("??1?$OwnerPtrT@UEntityRefTraits@@@@QEAA@XZ");
+        (this->*rv)();
+    }
+
+    inline OwnerPtrT(OwnerPtrT&& right) noexcept
+    {
+        void (OwnerPtrT:: * rv)(OwnerPtrT && right);
+        *((void**)&rv) = dlsym("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
+        (this->*rv)(std::move(right));
+    }
+
+    inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept
+    {
+        void (OwnerPtrT:: * rv)(OwnerPtrT && right);
+        *((void**)&rv) = dlsym("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
+        (this->*rv)(std::move(right));
+    }
+};
+
 template<typename T>
 class WeakPtr {
     T** value;
@@ -1061,6 +1089,126 @@ enum ItemStackNetResult :unsigned char {
 //public:
 //    int Min = 1, Max = 0x7FFFFFFF;
 //};
+enum class ActorType : int
+{
+    Item = 0x40,                     // minecraft:item,                   ·­Òë: ÎïÆ·
+    Tnt = 0x41,                      // minecraft:tnt,                    ·­Òë: TNT ·½¿é
+    FallingBlock = 0x42,             // minecraft:falling_block,          ·­Òë: ÏÂÂäµÄ·½¿é
+    MovingBlock = 0x43,              // minecraft:moving_block,           ·­Òë: ÒÆ¶¯ÖĞµÄ·½¿é
+    XpOrb = 0x45,                    // minecraft:xp_orb,                 ·­Òë: ¾­ÑéÇò
+    EyeOfEnderSignal = 0x46,         // minecraft:eye_of_ender_signal,    ·­Òë: Ä©Ó°Ö®ÑÛ
+    EnderCrystal = 0x47,             // minecraft:ender_crystal,          ·­Òë: Ä©Ó°Ë®¾§
+    FireworksRocket = 0x48,          // minecraft:fireworks_rocket,       ·­Òë: Ñæ»ğ»ğ¼ı
+    FishingHook = 0x4D,              // minecraft:fishing_hook,           ·­Òë: Óã¹³
+    Chalkboard = 0x4E,               // minecraft:chalkboard,             ·­Òë: entity.chalkboard.name
+    Painting = 0x53,                 // minecraft:painting,               ·­Òë: »­
+    LeashKnot = 0x58,                // minecraft:leash_knot,             ·­Òë: Ë©Éş½á
+    Boat = 0x5A,                     // minecraft:boat,                   ·­Òë: ´¬
+    LightningBolt = 0x5D,            // minecraft:lightning_bolt,         ·­Òë: ÉÁµç
+    AreaEffectCloud = 0x5F,          // minecraft:area_effect_cloud,      ·­Òë: ÇøÓòĞ§¹ûÔÆÎí
+    Balloon = 0x6B,                  // minecraft:balloon,                ·­Òë: entity.balloon.name
+    Shield = 0x75,                   // minecraft:shield,                 ·­Òë: entity.shield.name
+    Npc = 0x0133,                    // minecraft:npc,                    ·­Òë: entity.npc.name
+    Agent = 0x0138,                  // minecraft:agent,                  ·­Òë: entity.agent.name
+    ArmorStand = 0x013D,             // minecraft:armor_stand,            ·­Òë: ¿ø¼×¼Ü
+    TripodCamera = 0x013E,           // minecraft:tripod_camera,          ·­Òë: Èı½Å¼ÜÉãÏñ»ú
+    Player = 0x013F,                 // minecraft:player,                 ·­Òë: entity.player.name
+    Bee = 0x017A,                    // minecraft:bee,                    ·­Òë: ÃÛ·ä
+    Piglin = 0x017B,                 // minecraft:piglin,                 ·­Òë: ÖíÁé
+    PiglinBrute = 0x017F,            // minecraft:piglin_brute,           ·­Òë: ²Ğ±©ÖíÁé
+    IronGolem = 0x0314,              // minecraft:iron_golem,             ·­Òë: Ìú¿şÀÜ
+    SnowGolem = 0x0315,              // minecraft:snow_golem,             ·­Òë: Ñ©¿şÀÜ
+    WanderingTrader = 0x0376,        // minecraft:wandering_trader,       ·­Òë: Á÷ÀËÉÌÈË
+    Creeper = 0x0B21,                // minecraft:creeper,                ·­Òë: ÅÀĞĞÕß
+    Slime = 0x0B25,                  // minecraft:slime,                  ·­Òë: Ê·À³Ä·
+    Enderman = 0x0B26,               // minecraft:enderman,               ·­Òë: Ä©Ó°ÈË
+    Ghast = 0x0B29,                  // minecraft:ghast,                  ·­Òë: ¶ñ»ê
+    MagmaCube = 0x0B2A,              // minecraft:magma_cube,             ·­Òë: ÑÒ½¬¹Ö
+    Blaze = 0x0B2B,                  // minecraft:blaze,                  ·­Òë: ÁÒÑæÈË
+    Witch = 0x0B2D,                  // minecraft:witch,                  ·­Òë: Å®Î×
+    Guardian = 0x0B31,               // minecraft:guardian,               ·­Òë: ÊØÎÀÕß
+    ElderGuardian = 0x0B32,          // minecraft:elder_guardian,         ·­Òë: Ô¶¹ÅÊØÎÀÕß
+    EnderDragon = 0x0B35,            // minecraft:ender_dragon,           ·­Òë: Ä©Ó°Áú
+    Shulker = 0x0B36,                // minecraft:shulker,                ·­Òë: Ç±Ó°±´
+    Vindicator = 0x0B39,             // minecraft:vindicator,             ·­Òë: ÎÀµÀÊ¿
+    Ravager = 0x0B3B,                // minecraft:ravager,                ·­Òë: ½ÙÂÓÊŞ
+    EvocationIllager = 0x0B68,       // minecraft:evocation_illager,      ·­Òë: »½Ä§Õß
+    Vex = 0x0B69,                    // minecraft:vex,                    ·­Òë: ÄÕ¹í
+    Pillager = 0x0B72,               // minecraft:pillager,               ·­Òë: ÂÓ¶áÕß
+    ElderGuardianGhost = 0x0B78,     // minecraft:elder_guardian_ghost,   ·­Òë: entity.elder_guardian_ghost.name
+    Chicken = 0x130A,                // minecraft:chicken,                ·­Òë: ¼¦
+    Cow = 0x130B,                    // minecraft:cow,                    ·­Òë: Å£
+    Pig = 0x130C,                    // minecraft:pig,                    ·­Òë: Öí
+    Sheep = 0x130D,                  // minecraft:sheep,                  ·­Òë: Ñò
+    Mooshroom = 0x1310,              // minecraft:mooshroom,              ·­Òë: ßè¹½
+    Rabbit = 0x1312,                 // minecraft:rabbit,                 ·­Òë: ÍÃ×Ó
+    PolarBear = 0x131C,              // minecraft:polar_bear,             ·­Òë: ±±¼«ĞÜ
+    Llama = 0x131D,                  // minecraft:llama,                  ·­Òë: ÑòÍÕ
+    Turtle = 0x134A,                 // minecraft:turtle,                 ·­Òë: º£¹ê
+    Panda = 0x1371,                  // minecraft:panda,                  ·­Òë: ĞÜÃ¨
+    Fox = 0x1379,                    // minecraft:fox,                    ·­Òë: ºüÀê
+    Hoglin = 0x137C,                 // minecraft:hoglin,                 ·­Òë: ğàÖíÊŞ
+    Strider = 0x137D,                // minecraft:strider,                ·­Òë: ³ã×ãÊŞ
+    Goat = 0x1380,                   // minecraft:goat,                   ·­Òë: É½Ñò
+    Axolotl = 0x1382,                // minecraft:axolotl,                ·­Òë: ÃÀÎ÷ó¢
+    Squid = 0x2311,                  // minecraft:squid,                  ·­Òë: öÏÓã
+    Dolphin = 0x231F,                // minecraft:dolphin,                ·­Òë: º£ëà
+    Pufferfish = 0x236C,             // minecraft:pufferfish,             ·­Òë: ºÓëà
+    Salmon = 0x236D,                 // minecraft:salmon,                 ·­Òë: öÙÓã
+    Tropicalfish = 0x236F,           // minecraft:tropicalfish,           ·­Òë: ÈÈ´øÓã
+    Cod = 0x2370,                    // minecraft:cod,                    ·­Òë: ÷¨Óã
+    GlowSquid = 0x2381,              // minecraft:glow_squid,             ·­Òë: ·¢¹âöÏÓã
+    Wolf = 0x530E,                   // minecraft:wolf,                   ·­Òë: ÀÇ
+    Ocelot = 0x5316,                 // minecraft:ocelot,                 ·­Òë: ±ªÃ¨
+    Parrot = 0x531E,                 // minecraft:parrot,                 ·­Òë: ğĞğÄ
+    Cat = 0x534B,                    // minecraft:cat,                    ·­Òë: Ã¨
+    Bat = 0x8113,                    // minecraft:bat,                    ·­Òë: òùòğ
+    ZombiePigman = 0x010B24,         // minecraft:zombie_pigman,          ·­Òë: ½©Ê¬ÖíÁé
+    Wither = 0x010B34,               // minecraft:wither,                 ·­Òë: µòÁé
+    Phantom = 0x010B3A,              // minecraft:phantom,                ·­Òë: »ÃÒí
+    Zoglin = 0x010B7E,               // minecraft:zoglin,                 ·­Òë: ½©Ê¬ğàÖíÊŞ
+    Zombie = 0x030B20,               // minecraft:zombie,                 ·­Òë: ½©Ê¬
+    ZombieVillager = 0x030B2C,       // minecraft:zombie_villager,        ·­Òë: ½©Ê¬´åÃñ
+    Husk = 0x030B2F,                 // minecraft:husk,                   ·­Òë: Ê¬¿Ç
+    Drowned = 0x030B6E,              // minecraft:drowned,                ·­Òë: ÄçÊ¬
+    ZombieVillagerV2 = 0x030B74,     // minecraft:zombie_villager_v2,     ·­Òë: ¹ÖÈË´åÃñ
+    Spider = 0x040B23,               // minecraft:spider,                 ·­Òë: Ö©Öë
+    Silverfish = 0x040B27,           // minecraft:silverfish,             ·­Òë: ó¼³æ
+    CaveSpider = 0x040B28,           // minecraft:cave_spider,            ·­Òë: ¶´Ñ¨Ö©Öë
+    Endermite = 0x040B37,            // minecraft:endermite,              ·­Òë: Ä©Ó°òı
+    Minecart = 0x080054,             // minecraft:minecart,               ·­Òë: ¿ó³µ
+    HopperMinecart = 0x080060,       // minecraft:hopper_minecart,        ·­Òë: Â©¶·¿ó³µ
+    TntMinecart = 0x080061,          // minecraft:tnt_minecart,           ·­Òë: TNT ¿ó³µ
+    ChestMinecart = 0x080062,        // minecraft:chest_minecart,         ·­Òë: ÔËÊä¿ó³µ
+    CommandBlockMinecart = 0x080064, // minecraft:command_block_minecart, ·­Òë: ÃüÁî·½¿é¿ó³µ
+    Skeleton = 0x110B22,             // minecraft:skeleton,               ·­Òë: ÷¼÷Ã
+    Stray = 0x110B2E,                // minecraft:stray,                  ·­Òë: Á÷ÀËÕß
+    WitherSkeleton = 0x110B30,       // minecraft:wither_skeleton,        ·­Òë: µòÁé÷¼÷Ã
+    Horse = 0x205317,                // minecraft:horse,                  ·­Òë: Âí
+    Donkey = 0x205318,               // minecraft:donkey,                 ·­Òë: Â¿
+    Mule = 0x205319,                 // minecraft:mule,                   ·­Òë: Ââ×Ó
+    SkeletonHorse = 0x215B1A,        // minecraft:skeleton_horse,         ·­Òë: ÷¼÷ÃÂí
+    ZombieHorse = 0x215B1B,          // minecraft:zombie_horse,           ·­Òë: ½©Ê¬Âí
+    XpBottle = 0x400044,             // minecraft:xp_bottle,              ·­Òë: ¸½Ä§Ö®Æ¿
+    ShulkerBullet = 0x40004C,        // minecraft:shulker_bullet,         ·­Òë: Ç±Ó°±´×Óµ¯
+    DragonFireball = 0x40004F,       // minecraft:dragon_fireball,        ·­Òë: Ä©Ó°Áú»ğÇò
+    Snowball = 0x400051,             // minecraft:snowball,               ·­Òë: Ñ©Çò
+    Egg = 0x400052,                  // minecraft:egg,                    ·­Òë: ¼¦µ°
+    Fireball = 0x400055,             // minecraft:fireball,               ·­Òë: »ğÇò
+    SplashPotion = 0x400056,         // minecraft:splash_potion,          ·­Òë: Ò©Ë®
+    EnderPearl = 0x400057,           // minecraft:ender_pearl,            ·­Òë: Ä©Ó°ÕäÖé
+    WitherSkull = 0x400059,          // minecraft:wither_skull,           ·­Òë: µòÁéÍ·Â­
+    WitherSkullDangerous = 0x40005B, // minecraft:wither_skull_dangerous, ·­Òë: µòÁéÍ·Â­
+    SmallFireball = 0x40005E,        // minecraft:small_fireball,         ·­Òë: Ğ¡»ğÇò
+    LingeringPotion = 0x400065,      // minecraft:lingering_potion,       ·­Òë: ÖÍÁôÒ©Ë®
+    LlamaSpit = 0x400066,            // minecraft:llama_spit,             ·­Òë: ÑòÍÕ¿ÚË®
+    EvocationFang = 0x400067,        // minecraft:evocation_fang,         ·­Òë: »½Ä§Õß¼âÑÀ
+    IceBomb = 0x40006A,              // minecraft:ice_bomb,               ·­Òë: entity.ice_bomb.name
+    ThrownTrident = 0xC00049,        // minecraft:thrown_trident,         ·­Òë: Èı²æêª
+    Arrow = 0xC00050,                // minecraft:arrow,                  ·­Òë: ¼ı
+    Villager = 0x0100030F,           // minecraft:villager,               ·­Òë: ´åÃñ
+    VillagerV2 = 0x01000373,         // minecraft:villager_v2,            ·­Òë: ´åÃñ
+};
 
 enum class InventoryTransactionError
 {

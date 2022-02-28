@@ -13,6 +13,7 @@ namespace Settings {
     extern bool EditSign;
     extern bool AutoFish;
     extern bool DoubleDoors;
+    extern bool FastSetMinecart;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);

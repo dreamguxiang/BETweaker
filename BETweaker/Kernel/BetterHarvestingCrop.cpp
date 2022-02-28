@@ -3,7 +3,7 @@
 static_assert(sizeof(Randomize) == 0x10);
 
 namespace Module {
-    bool loadBetterHarvestingCrop(BlockInstance blockin, Player* sp) {
+    bool LoadBetterHarvestingCrop(BlockInstance blockin, Player* sp) {
         auto bl = blockin.getBlock();
         if (bl->isCropBlock()) {
             auto growthlevel = bl->getTileData();

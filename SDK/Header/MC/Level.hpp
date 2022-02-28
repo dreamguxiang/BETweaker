@@ -244,6 +244,22 @@ public:
         *((void**)&rv) = dlsym("?getServerResourcePackManager@Level@@UEBAPEAVResourcePackManager@@XZ");
         return (this->*rv)();
     }
+    inline class ActorFactory const& getActorFactory() const {
+        class ActorFactory const& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getActorFactory@Level@@UEBAAEBVActorFactory@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class ActorFactory& getActorFactory() {
+        class ActorFactory& (Level:: * rv)();
+        *((void**)&rv) = dlsym("?getActorFactory@Level@@UEAAAEAVActorFactory@@XZ");
+        return (this->*rv)();
+    }
+    inline class Actor* addEntity(class BlockSource& a0, class OwnerPtrT<struct EntityRefTraits> a1) {
+        class Actor* (Level:: * rv)(class BlockSource&, class OwnerPtrT<struct EntityRefTraits>);
+        *((void**)&rv) = dlsym("?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class OwnerPtrT<struct EntityRefTraits>>(a1));
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

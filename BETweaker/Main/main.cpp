@@ -32,11 +32,11 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     useitemonbug.insert(std::map < string, long > ::value_type(playername, a));
 
     if (Settings::BetterHarvestingCrop) {
-        Module::loadBetterHarvestingCrop(blockin, sp);
+        Module::LoadBetterHarvestingCrop(blockin, sp);
     }
     if (Settings::EditSign) {
         if (blockin.getBlock()->getTypeName() == VanillaBlocks::mSign->getTypeName()) {
-            Module::editSign(sp, blockin);
+            Module::EditSign(sp, blockin);
         }
     }
     return true;

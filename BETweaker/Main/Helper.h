@@ -52,6 +52,7 @@ namespace Helper {
 
 		return res;
 	}
+
 }
 
 enum ActorCategory : int

@@ -5,6 +5,7 @@
 #define BDSP 486
 #define toStr(x) std::to_string(x)
 #define getI18n(x,n) I18n::get(x,n)
+#define H(x) do_hash2(x)
 
 #include <iostream>
 #include <Global.h>

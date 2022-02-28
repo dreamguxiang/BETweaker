@@ -14,7 +14,9 @@ class BETCommand : public Command
         EditSign,
         DispenserCrops,
         FastLeafDecay,
-        AutoFish
+        AutoFish,
+        DoubleDoors,
+        FastSetMinecart
     } operation;
     bool isenable;
 
@@ -53,6 +55,11 @@ public:
         case Operation::AutoFish:
             Settings::AutoFish = isenable;
             break;
+        case Operation::DoubleDoors:
+            Settings::DoubleDoors = isenable;
+            break;
+        case Operation::FastSetMinecart:
+            Settings::FastSetMinecart = isenable;
         default:
             break;
         }
@@ -68,12 +75,14 @@ public:
         registry->addEnum<Operation>("Function", {
             {"betterharvest", Operation::BetterHarvestingCrop},
             {"nofarmdestroy", Operation::NoFarmDestroy},
-             {"fastsleep", Operation::FastSleeping},
-             {"dispensercrops", Operation::DispenserCrops},
-             {"hubinfo", Operation::HUBinfo},
-             {"editsign", Operation::EditSign},
-             {"fastleafdecay", Operation::FastLeafDecay},
-             {"autofish", Operation::AutoFish},
+            {"fastsleep", Operation::FastSleeping},
+            {"dispensercrops", Operation::DispenserCrops},
+            {"hubinfo", Operation::HUBinfo},
+            {"editsign", Operation::EditSign},
+            {"fastleafdecay", Operation::FastLeafDecay},
+            {"autofish", Operation::AutoFish},
+            {"doubledoors", Operation::DoubleDoors},
+            {"fastsetminecart", Operation::FastSetMinecart}
             }
         );
 
