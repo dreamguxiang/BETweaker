@@ -63,13 +63,14 @@ public:
         default:
             break;
         }
+        output.success(std::to_string(isenable));
         Settings::reloadJson(JsonFile);
     }
 
     static void setup(CommandRegistry* registry)
     {
         // Register Cmd
-        registry->registerCommand("bet", "BETweaker System",CommandPermissionLevel::Any, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
+        registry->registerCommand("bet", "BETweaker System",CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
         // ll version & help
         registry->addEnum<Operation>("Function", {
