@@ -94,10 +94,31 @@ public:
     }
 };
 
+class SeedCommand : public Command
+{
+
+public:
+
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override
+    {
+        vector<CommandOutputParameter>opt;
+        opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getSeed()), 0));
+        output.success("commands.seed.success",opt);
+    }
+
+    static void setup(CommandRegistry* registry)
+    {
+        // Register Cmd
+        registry->registerCommand("seed", "get level's seed", CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
+        registry->registerOverload<SeedCommand>("seed");
+    }
+};
+
 void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         BETCommand::setup(ev.mCommandRegistry);
+        SeedCommand::setup(ev.mCommandRegistry);
         return true;
         });
 }

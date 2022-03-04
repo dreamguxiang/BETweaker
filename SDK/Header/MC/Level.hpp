@@ -260,6 +260,12 @@ public:
         *((void**)&rv) = dlsym("?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class OwnerPtrT<struct EntityRefTraits>>(a1));
     }
+    inline unsigned int
+        getSeed() {
+        unsigned int (Level:: * rv)();
+        *((void**)&rv) = dlsym("?getSeed@Level@@UEAAIXZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
