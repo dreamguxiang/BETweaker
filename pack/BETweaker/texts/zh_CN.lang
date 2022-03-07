@@ -28,6 +28,7 @@ tile.wall_sign.name=墙上的告示牌
 tile.bamboo_sapling.oak.name=Bamboo Sapling
 tile.end_gateway.name=End Gateway
 tile.end_portal.name=End Portal
+tile.kelp.name=海带
 
 tile.double_stone_slab4.stone.name=Stone Double Slab
 tile.double_stone_slab2.mossy_cobblestone.name=Mossy Cobblestone Double Slab

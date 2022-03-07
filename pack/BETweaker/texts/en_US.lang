@@ -25,6 +25,7 @@ tile.lit_redstone_lamp.name=Lit Redstone Lamp
 tile.lit_smoker.name=Lit Smoker
 tile.lit_blast_furnace.name=Lit Blast Furnace
 tile.wall_sign.name=Wall Sign
+tile.kelp.name=Kelp
 tile.bamboo_sapling.oak.name=Bamboo Sapling
 tile.end_gateway.name=End Gateway
 tile.end_portal.name=End Portal

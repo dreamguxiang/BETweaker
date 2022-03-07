@@ -44,14 +44,18 @@ namespace HUBHelper {
     };
 
     string actorCategory(Actor* ac, Player* sp) {
-        string out = u8"§c" + getI18n("betweaker.hubinfo.hostile",sp->getLanguageCode());
-        if (!ac->hasFamily("monster")){
+        string out = u8"§c" + getI18n("betweaker.hubinfo.hostile", sp->getLanguageCode());
+        if (!ac->hasFamily("monster")) {
             if (ac->findAttackTarget() != sp && !ac->isAngry())
                 out = u8"§2" + getI18n("betweaker.hubinfo.frinedly", sp->getLanguageCode());
         }
         return out;
     }
-
+    string test(Block* block) {
+        auto rand = Randomize(Random::getThreadLocal());
+        if (block->getLegacyBlock().getResourceCount(rand, *block, 0) == 0)
+            return u8" §l§6⚠️";
+    }
     string getDim(Player& sp) {
         switch (sp.getDimensionId())
         {
@@ -89,11 +93,10 @@ namespace Module {
                         sp.sendFormattedText(u8"§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
                             Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
                             getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                            HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
+                            HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),//HUBHelper::test(block),
                             posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
                             HUBHelper::getCategoryName(item, sp.getLanguageCode())
                         );
-                        std::cout << block->buildDescriptionId() << std::endl;
                     }
                 }
                 });
