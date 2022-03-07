@@ -37,7 +37,7 @@ namespace HUBHelper {
 
     string getCategoryName(ItemStackBase& item, string language)
     {
-       
+        I18n::chooseLanguage(language);
         auto out = item.getCategoryName();
         I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
         return out;
@@ -93,6 +93,7 @@ namespace Module {
                             posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
                             HUBHelper::getCategoryName(item, sp.getLanguageCode())
                         );
+                        std::cout << block->buildDescriptionId() << std::endl;
                     }
                 }
                 });

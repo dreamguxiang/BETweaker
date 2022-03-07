@@ -68,41 +68,54 @@ void loadCfg() {
         Settings::WriteDefaultConfig(JsonFile);
     }
 }//加载语言&配置文件
-
+#include <MC/ResourcePackManager.hpp>
+#include <MC/ResourceLocation.hpp>
+#include <MC/Types.hpp>
 static_assert(sizeof(SemVersion) == 0x70);
+enum PackType;
 ResourcePackRepository* gl;
-THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
-    , ResourcePackRepository* a1) {
-    gl = a1;
-    auto a = original(a1);;
-    return a;
-}
 
 extern void RegisterCommands();
 
+bool PackInstall() {
+    string File = Level::getCurrentLevelPath() + "/world_resource_packs.json";
+    if (!std::filesystem::exists(File))
+    {
+        std::ofstream fout(File);
+        fout << "[]" << std::flush;
+    }
+
+    try
+    {
+        auto Data = nlohmann::json::object();
+        Data["pack_id"] = "3e15339d-aa47-114f-71ab-79b3cfb7f4c4";
+        Data["version"] =  std::list{1,0,0};
+
+        auto PackList = nlohmann::json::parse(*ReadAllFile(File));
+        for (int i = 0; i < PackList.size(); i++) {
+            if (PackList[i]["pack_id"] == "3e15339d-aa47-114f-71ab-79b3cfb7f4c4") {
+                return false;
+            }
+        }
+        PackList.push_back(Data);
+        bool res = WriteAllFile(File, PackList.dump(4));
+        if (!res)
+            throw "Fail to write data back to addon list file!";
+
+        return true;
+    }
+    catch (const std::exception& e)
+    {
+        return false;
+    }
+}
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
     RegisterCommands();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
         if(Settings::HUBinfo) Module::HUBInfo();
-        auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
-        if (pack) {
-            if (pack->getVersion().asString() != VERSION.toString()) {
-                logger.error("ResourcePack(BETweaker) Version is old.");
-                logger.error("ResourcePack(BETweaker) Version is old.");
-                logger.error("ResourcePack(BETweaker) Version is old.");
-                Sleep(5000);
-                exit(NULL);
-            }
-        }
-        else {
-            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
-            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
-            logger.error("Without loading the ResourcePack(BETweaker), the plugin will not work properly.");
-            Sleep(5000);
-            exit(NULL);
-        }
+
         return true;
         });
 }
@@ -111,6 +124,7 @@ void initEvent()
 void PluginInit()
 {
     loadCfg();
+    PackInstall();
     logger.info("BETweaker Loaded by QingYu");
     logger.info("Build Date[{}]", __TIMESTAMP__);
     logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));

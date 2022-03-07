@@ -50,9 +50,14 @@ public:
 };
 
 template <typename T> class PathBuffer {
-    T value;
-    operator T& () noexcept { return value; }
-    operator T const& () const noexcept { return value; }
+public:
+    T v;
+    operator T& () noexcept {
+        return v; 
+    }
+    operator T const& () const noexcept {
+        return v; 
+    }
 };
 
 struct LevelStorageResult {
