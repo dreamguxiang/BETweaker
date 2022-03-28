@@ -55,10 +55,12 @@ jobs:
     - name: copy dll and pdb files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mkdir output/
+        mkdir output/plugins
         cp -f x64/Release/*.dll output/
-        mkdir output/lib/
-        cp -f x64/Release/*.pdb output/
+        mkdir output/plugins/lib/
+        cp -f x64/Release/*.pdb output/lib     
+        mkdir output/resource_packs
+        cp -r ${{ github.workspace }}\pack output/resource_packs
       shell: bash
     
     - name: upload files
