@@ -61,7 +61,7 @@ jobs:
         mkdir output/plugins/lib/
         cp -f x64/Release/*.pdb output/plugins/lib     
         mkdir output/resource_packs
-        cp -r pack output/resource_packs
+        cp -r pack/BETweaker output/resource_packs
       shell: bash
     
     - name: upload files
