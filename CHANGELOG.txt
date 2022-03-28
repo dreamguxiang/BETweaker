@@ -1,7 +1,13 @@
 # [BETweaker Release Note] 
 ## [New features]
- - 新添BetterHarvestingCrop(右键收割农作物)
- - 新添FastSleeping(一人睡觉集体过夜)
- - 新添NoFarmDestroy(耕地防破坏)
+ -Add Right click for quick crop harvesting
+ -Add One person sleeps, all stay overnight
+ -Add Farm land anti-stomp
+ -Add Mob, Block information display
+ -Add Edit Sign
+ -Add Fast leaf decay
+ -Add Auto Fish
+ -Add Double Doors
+ -Add Dispenser to grow crops
 
-
+For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
