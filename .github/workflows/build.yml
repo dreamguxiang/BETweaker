@@ -69,13 +69,13 @@ jobs:
 
     - name: Archive
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      if: startsWith(github.ref, 'refs/tags/v')
+      if: startsWith(github.ref, 'refs/tags/')
       run: Compress-Archive -Path output/* output/BETweaker.zip
 
     - name: Prepare for creating Release
       working-directory: ${{env.GITHUB_WORKSPACE}}
       id: rel
-      if: startsWith(github.ref, 'refs/tags/v')
+      if: startsWith(github.ref, 'refs/tags/')
       run: |
         echo ::set-output name=tag::${GITHUB_REF#refs/tags/*}
         mv output/BETweaker.zip output/BETweaker-${GITHUB_REF#refs/tags/*}.zip
@@ -83,7 +83,7 @@ jobs:
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/v')
+      if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: ${{ github.workspace }}/CHANGELOG.txt
         files: ${{ github.workspace }}\output\BETweaker-${{ steps.rel.outputs.tag }}.zip
