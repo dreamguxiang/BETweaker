@@ -33,6 +33,7 @@ namespace Module {
                         } while (seedNum);
                     }
                 }
+
                 Level::setBlock(blockin.getPosition(), blockin.getDimensionId(), bl->getTypeName(), NULL);
             }
         }

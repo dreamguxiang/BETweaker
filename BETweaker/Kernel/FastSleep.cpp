@@ -14,10 +14,12 @@
 
 static_assert(sizeof(GameRuleId) == 4);
 static_assert(sizeof(SetTimePacket) == 56);
+bool isPlayerSleeping = false;
 namespace Module {
     void FastSleep() {
-        for (auto sp : Level::getAllPlayers()) {
-            if (sp->isSleeping()) {
+        Level::forEachPlayer([](Player& sp)->bool {
+            if (sp.isSleeping()) {
+                isPlayerSleeping = true;
                 Schedule::delay([]() {
                     auto level = Global<Level>;
                     auto& gameRule = level->getGameRules();
@@ -44,8 +46,10 @@ namespace Module {
                             return true;
                             });
                     }
+                    isPlayerSleeping = false;
                     }, 80);
             }
-        }
+            return true;
+         });
     }
 }
