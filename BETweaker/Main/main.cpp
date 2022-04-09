@@ -68,6 +68,7 @@ void loadCfg() {
         Settings::WriteDefaultConfig(JsonFile);
     }
 }//加载语言&配置文件
+
 #include <MC/ResourcePackManager.hpp>
 #include <MC/ResourceLocation.hpp>
 #include <MC/Types.hpp>
