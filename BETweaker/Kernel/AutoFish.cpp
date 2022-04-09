@@ -18,14 +18,18 @@ namespace Module {
         }
         else if ( !a1->serverHooked() && fishingHook[a1] == 1)
         {
-            ItemStack* item = (ItemStack*)&pl->getCarriedItem();
+            ItemStack* item = pl->getHandSlot();
             item->getItem()->use(*item, *pl);
             fishingHook.erase(a1);
             pl->refreshInventory();
             Schedule::delay([pl]() {
-                ItemStack* item = (ItemStack*)&pl->getCarriedItem();
-                if (item->getTypeName() == "minecraft:fishing_rod") {
-                    item->getItem()->use(*item, *pl);
+                if (pl) {
+                    ItemStack* item = pl->getHandSlot();
+                    if (!item->isNull()) {
+                        if (item->getTypeName() == "minecraft:fishing_rod") {
+                            item->getItem()->use(*item, *pl);
+                        }
+                    }
                 }
                 }, 10);
         }
