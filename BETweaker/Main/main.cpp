@@ -110,23 +110,28 @@ bool PackInstall() {
         return false;
     }
 }
+
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
     RegisterCommands();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
         if(Settings::HUBinfo) Module::HUBInfo();
-
+        std::thread th([]() {
+            CheckAutoUpdate(true, false);
+            });
+        th.detach();
         return true;
         });
 }
+
 
 #include <ServerAPI.h>
 void PluginInit()
 {
     loadCfg();
     PackInstall();
-    logger.info("BETweaker Loaded by QingYu");
+    logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());
     logger.info("Build Date[{}]", __TIMESTAMP__);
     logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));
     if (LL::getServerProtocolVersion() != BDSP) {

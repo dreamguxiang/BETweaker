@@ -172,6 +172,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClInclude Include="Main\setting.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AutoUprade.cpp" />
     <ClCompile Include="dllmain.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

@@ -1,7 +1,7 @@
 #pragma once
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,5}
+#define VERSION LL::Version{1,0,6}
 #define BDSP 486
 #define toStr(x) std::to_string(x)
 #define getI18n(x,n) I18n::get(x,n)
@@ -49,3 +49,24 @@
 #include <ScheduleAPI.h>
 extern Logger logger;
 extern ScheduleTask hubinfo;
+
+bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate = false);
+
+/////////////////////// LL AutoUpgrade ///////////////////////
+
+#define LL_RELAY_INDEX "https://upgrade.litebds.com/id.json"
+#define LL_UPDATE_URL_PREFIX "https://cdn.jsdelivr.net/gh/LiteLDev/Upgrade"
+#define LL_UPDATE_URL_PATH "/BETweaker/BETweaker.json"
+
+#define LL_UPDATE_CHECK_INTERVAL (10 * 60)
+#define LL_UPDATE_CONNECTION_TIMEOUT 60
+
+#define LL_UPDATE_PROGRAM "plugins/LiteLoader/LLAutoUpdate.dll"
+
+#define LL_UPDATE_CACHE_PATH "plugins/LiteLoader/Update/"
+#define LL_UPDATE_INFO_RECORD "plugins/LiteLoader/Update/Update.ini"
+
+#define LL_UPDATE_OTHER_FILES_RECORD "plugins/BETweaker/Versions.ini"
+
+extern void loadCfg();
+extern bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate);
