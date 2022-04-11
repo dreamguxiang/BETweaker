@@ -56,4 +56,4 @@ Please do not reproduce without permission, integration! This may keep it from e
 
 #### Extra Restrictions & Exceptions
 
-You can't distribute, distribute, integrate, etc. without my authorized permission
+You can't distribute, integrate, etc. without my authorized permission
