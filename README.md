@@ -52,4 +52,4 @@ This plugin is developed based on [LiteLoaderBDS](https://github.com/LiteLDev/Li
 
 ### ⚠️ Warning
 
-Reproduction without permission is prohibited! Unauthorized integration of reproduction may disable this plugin!
+Please do not reproduce without permission, integration! This may keep it from ever being updated
