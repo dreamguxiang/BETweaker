@@ -50,3 +50,6 @@ This plugin is developed based on [LiteLoaderBDS](https://github.com/LiteLDev/Li
 
 暂无
 
+### ⚠️ Warning
+
+Reproduction without permission is prohibited! Unauthorized integration of reproduction may disable this plugin!
