@@ -53,3 +53,7 @@ This plugin is developed based on [LiteLoaderBDS](https://github.com/LiteLDev/Li
 ### ⚠️ Warning
 
 Please do not reproduce without permission, integration! This may keep it from ever being updated
+
+#### Extra Restrictions & Exceptions
+
+You can't distribute, distribute, integrate, etc. without my authorized permission
