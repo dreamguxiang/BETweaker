@@ -76,6 +76,12 @@ static_assert(sizeof(SemVersion) == 0x70);
 enum PackType;
 ResourcePackRepository* gl;
 
+THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
+    , ResourcePackRepository* a1) {
+    gl = a1;
+    return original(a1);
+}
+
 extern void RegisterCommands();
 
 bool PackInstall() {
@@ -111,6 +117,8 @@ bool PackInstall() {
     }
 }
 
+
+
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);
@@ -121,6 +129,13 @@ void initEvent()
             CheckAutoUpdate(true, false);
             });
         th.detach();
+
+        auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
+        if (pack) {
+            if (pack->getVersion().asString() != VERSION_RES.toString()) {
+                logger.error("ResourcePack(BETweaker) is out of date.(old version:{} |new version:{})", pack->getVersion().asString(),VERSION_RES.toString());
+            }
+        }		
         return true;
         });
 }

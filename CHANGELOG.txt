@@ -1,9 +1,13 @@
 # [BETweaker Release Note] 
+## [New]
+ - AutoUprade System
+ - Command
+   - Reload
+   - Uprade 
+ - Add Extra Restrictions
+
+
 ## [Fix Bugs]
  - Fix AutoFish crash #5
- - AutoUprade System
-- Command
-  - Reload
-  - Uprade 
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
