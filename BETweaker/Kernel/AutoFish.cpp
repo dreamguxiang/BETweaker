@@ -16,14 +16,17 @@ namespace Module {
             fishingHook[a1] = 1;
             return true;
         }
-        else if ( !a1->serverHooked() && fishingHook[a1] == 1)
+        else if (!a1->serverHooked() && fishingHook[a1] == 1)
         {
             ItemStack* item = pl->getHandSlot();
             item->getItem()->use(*item, *pl);
             fishingHook.erase(a1);
             pl->refreshInventory();
-            Schedule::delay([pl]() {
-                if (pl) {
+            auto& uid = pl->getUniqueID();
+            Schedule::delay([uid]() {
+                auto pl = Level::getPlayer(uid);
+                if (pl->isPlayer())
+                {
                     ItemStack* item = pl->getHandSlot();
                     if (!item->isNull()) {
                         if (item->getTypeName() == "minecraft:fishing_rod") {
