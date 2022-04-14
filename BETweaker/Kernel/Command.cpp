@@ -117,20 +117,20 @@ public:
             {"fastsetminecart", Operation::FastSetMinecart},
             }
         );
-        registry->addEnum<Operation>("Operation_OptionalName", {
+        registry->addEnum<Operation>("BetOperation_OptionalNames", {
             {"reload", Operation::Reload},
             });
-        registry->addEnum<Operation>("Operation_WithOption", {
+        registry->addEnum<Operation>("BetOperation_WithOptions", {
             {"upgrade", Operation::Upgrade},
             });
-        registry->addEnum<UpgradeOption>("UpgradeOption", { 
+        registry->addEnum<UpgradeOption>("BetUpgradeOptions", { 
             {"force", UpgradeOption::Force} 
             });
 		
         registry->registerOverload<BETCommand>(
             "bet",
-            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "Operation_WithOption").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::ENUM>(&BETCommand::upgradeOption, "Option", "UpgradeOption", &BETCommand::hasUpgradeOption).addOptions((CommandParameterOption)1));
+            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "BetOperation_WithOptions").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::ENUM>(&BETCommand::upgradeOption, "Option", "BetUpgradeOptions", &BETCommand::hasUpgradeOption).addOptions((CommandParameterOption)1));
 		
         registry->registerOverload<BETCommand>(
             "bet",
@@ -139,7 +139,7 @@ public:
 
         registry->registerOverload<BETCommand>(
             "bet",
-            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "Operation_OptionalName").addOptions((CommandParameterOption)1));
+            makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "BetOperation_OptionalNames").addOptions((CommandParameterOption)1));
 		
     }
 };

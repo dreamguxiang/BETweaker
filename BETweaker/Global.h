@@ -1,7 +1,7 @@
 #pragma once
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,6}
+#define VERSION LL::Version{1,0,7}
 #define VERSION_RES LL::Version{1,0,6}
 #define BDSP 486
 #define toStr(x) std::to_string(x)
