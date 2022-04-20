@@ -14,10 +14,10 @@ class Localization;
 class I18n {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
     LIAPI static Localization const* getLanguage(std::string const& languageCode);
-    inline static std::string get(std::string const& key,string lang)
+    inline static std::string get(std::string const& key, string lang)
     {
         return get(key, getLanguage(lang));
     }

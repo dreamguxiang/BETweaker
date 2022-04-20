@@ -10,6 +10,7 @@
 struct GameRuleId {
 
 #define AFTER_EXTRA
+public:
     int num;
 #undef AFTER_EXTRA
 

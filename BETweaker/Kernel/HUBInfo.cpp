@@ -69,7 +69,7 @@ namespace HUBHelper {
 ScheduleTask hubinfo;
 namespace Module {
     void HUBInfo() {
-         hubinfo = Schedule::repeat([]() {
+        Schedule::repeat([]() {
             Level::forEachPlayer([](Player& sp)->bool {
                 Actor* ac = sp.getActorFromViewVector(5.25);
                 auto posdim = HUBHelper::getDim(sp);
@@ -100,6 +100,6 @@ namespace Module {
                     }
                 }
                 });
-          }, 5);
+            }, 3);
     }
 }

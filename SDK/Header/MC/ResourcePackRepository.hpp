@@ -20,11 +20,7 @@ struct KnownPackContainer {
     KnownPackContainer(KnownPackContainer const&) = delete;
     KnownPackContainer(KnownPackContainer const&&) = delete;
 };
-inline class PackSourceFactory& getPackSourceFactory() {
-    class PackSourceFactory& (ResourcePackRepository:: * rv)();
-    *((void**)&rv) = dlsym("?getPackSourceFactory@ResourcePackRepository@@UEAAAEAVPackSourceFactory@@XZ");
-    return (this->*rv)();
-}
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKREPOSITORY

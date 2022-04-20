@@ -14,8 +14,7 @@ class ResourceLocation {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
-    Core::Path path;
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOCATION

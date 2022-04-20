@@ -58,13 +58,15 @@ public:
             output.success(std::to_string(isenable));
             break;
         case Operation::HUBinfo:
-            if (Settings::HUBinfo == isenable) break;
-            Settings::HUBinfo = isenable;
-            if (isenable)
-                Module::HUBInfo();
-            else
-                hubinfo.cancel();
+            output.error("Due to an unknown bug, this feature is temporarily closed!");
             break;
+            //if (Settings::HUBinfo == isenable) break;
+            //Settings::HUBinfo = isenable;
+            //if (isenable)
+            //    Module::HUBInfo();
+            //else
+            //    hubinfo.cancel();
+            //break;
         case Operation::DispenserCrops:
             Settings::DispenserCrops = isenable;
             output.success(std::to_string(isenable));
@@ -143,7 +145,7 @@ public:
 		
     }
 };
-
+#include <MC/CommandOutputParameter.hpp>
 class SeedCommand : public Command
 {
 
@@ -152,7 +154,7 @@ public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
         vector<CommandOutputParameter>opt;
-        opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getSeed()), 0));
+        opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getSeed())));
         output.success("commands.seed.success",opt);
     }
 

@@ -6,6 +6,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CommandFlag.hpp"
+enum CommandPermissionLevel : char;
 
 #undef BEFORE_EXTRA
 
@@ -13,6 +15,7 @@ class AvailableCommandsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     struct EnumData
     {
         std::string name;
@@ -22,20 +25,25 @@ class AvailableCommandsPacket : public Packet {
     {
         int enumIndex;
         int enumNameIndex;
-        std::vector<unsigned char> unk8;
-    };
-    struct OverloadData
-    {
+        std::vector<unsigned char> indices;
     };
     struct ParamData
     {
+        std::string desc;
+        unsigned int sym;
+    };
+    struct OverloadData
+    {
+        std::vector<ParamData> datas;
     };
     struct CommandData
     {
-        std::string commandName;
-        std::vector<void*> enumIndices;
-        std::vector<void*> suffixIndices;
-        std::vector<void*> dynamicEnumIndices;
+        std::string name;                    //0
+        std::string description;             //32
+        CommandFlag flag;                    //64
+        CommandPermissionLevel perm;         //66
+        std::vector<OverloadData> overloads; //72
+        signed int aliasIndex;               //96
     };//104
     struct SoftEnumData
     {
@@ -54,6 +62,7 @@ inline void test()
     static_assert(sizeof(AvailableCommandsPacket) == 192);
     static_assert(sizeof(EnumData) == 56);
     static_assert(sizeof(CommandData) == 104);
+    static_assert(offsetof(CommandData, perm) == 66);
     static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 48);
     static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 72);
     static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 168);

@@ -30,12 +30,6 @@ public:
         HEAD_ROTATION,
     };
 
-    inline void openSign(class BlockPos const& a0) {
-        void (Player:: * rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();
@@ -53,6 +47,7 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
+    LIAPI bool isOperator();
     LIAPI bool isOP();
 
 
@@ -63,10 +58,10 @@ public:
         if constexpr (0 == sizeof...(args))
         {
             // Avoid fmt if only one argument
-            return sendText(text);
+            return sendText(text, TextType::TIP);
         }
         else
-            return sendText(fmt::format(text, args...),TextType::TIP);
+            return sendText(fmt::format(text, args...), TextType::TIP);
     }
 
     LIAPI bool kick(const string& msg);
@@ -110,6 +105,7 @@ public:
     LIAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
     LIAPI bool sendCommandRequestPacket(const string& cmd);
     LIAPI bool sendTextTalkPacket(const string& msg);
+    LIAPI bool sendTextTalkPacket(const string& msg, Player* target/* = nullptr*/);
 
     LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
 

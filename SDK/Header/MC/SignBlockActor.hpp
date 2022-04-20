@@ -14,7 +14,7 @@ class SignBlockActor : public BlockActor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum SignType : unsigned int;
+enum SignType;
 
 #undef AFTER_EXTRA
 

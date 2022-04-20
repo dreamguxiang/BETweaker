@@ -48,18 +48,13 @@ public:
     FileOpenMode(FileOpenMode const&) = delete;
     FileOpenMode(FileOpenMode const&&) = delete;
 };
-
-template <typename T> class PathBuffer {
+template <typename T0>
+class PathBuffer {
 public:
-    T v;
-    operator T& () noexcept {
-        return v; 
-    }
-    operator T const& () const noexcept {
-        return v; 
-    }
+    PathBuffer() = delete;
+    PathBuffer(PathBuffer const&) = delete;
+    PathBuffer(PathBuffer const&&) = delete;
 };
-
 struct LevelStorageResult {
     LevelStorageResult() = delete;
     LevelStorageResult(LevelStorageResult const&) = delete;
@@ -83,16 +78,12 @@ public:
     SingleThreadedLock(SingleThreadedLock const&) = delete;
     SingleThreadedLock(SingleThreadedLock const&&) = delete;
 };
-class PathPart {
+class Path {
 public:
-    std::string data;
+    Path() = delete;
+    Path(Path const&) = delete;
+    Path(Path const&&) = delete;
 };
-
-class Path : public PathPart {
-public:
-};
-
-
 class FilePathManager {
 public:
     FilePathManager() = delete;

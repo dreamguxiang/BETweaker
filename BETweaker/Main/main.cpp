@@ -17,6 +17,26 @@ time_t getTimeStamp()
     return timestamp;
 }
 
+std::unordered_set<string> SignBlocks{
+"minecraft:standing_sign",
+"minecraft:spruce_standing_sign",
+"minecraft:birch_standing_sign",
+"minecraft:jungle_standing_sign",
+"minecraft:acacia_standing_sign",
+"minecraft:darkoak_standing_sign",
+"minecraft:crimson_standing_sign",
+"minecraft:warped_standing_sign",
+"minecraft:wall_sign",
+"minecraft:spruce_wall_sign",
+"minecraft:birch_wall_sign",
+"minecraft:jungle_wall_sign",
+"minecraft:acacia_wall_sign",
+"minecraft:darkoak_wall_sign",
+"minecraft:crimson_wall_sign",
+"minecraft:warped_wall_sign"
+};
+
+
 bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     long a = getTimeStamp();
     Player* sp = ev.mPlayer;
@@ -34,8 +54,9 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     if (Settings::BetterHarvestingCrop) {
         Module::LoadBetterHarvestingCrop(blockin, sp);
     }
+    std::cout << blockin.getBlock()->getTypeName() << std::endl;
     if (Settings::EditSign) {
-        if (blockin.getBlock()->getTypeName() == VanillaBlocks::mSign->getTypeName()) {
+        if (SignBlocks.count(blockin.getBlock()->getTypeName())){
             Module::EditSign(sp, blockin);
         }
     }

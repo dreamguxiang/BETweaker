@@ -69,7 +69,8 @@ public:
     LIAPI static Container* getContainer(Vec3 pos, int dim);
 
     //Item
-    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
+    // The return value should be freed by the developer if it is no longer used
+    LIAPI static ItemStack* getItemStackFromId(short itemId, int aux = 0);
 
     //Helper
     LIAPI static BlockSource* getBlockSource(int dimid);
@@ -94,6 +95,7 @@ public:
         unsigned char Perm;
         static void* fake_vtbl[26];
 
+        [[deprecated]]
         ServerCommandOrigin()
         {
             if (fake_vtbl[1] == nullptr) {
@@ -102,7 +104,7 @@ public:
             }
             myVTBL = fake_vtbl + 1;
             Name = "Server";
-            Perm = 5;
+            Perm = 4;
             lvl = Global<ServerLevel>;
         }
     };
@@ -131,20 +133,20 @@ public:
     /////////////////////// Wrapper Part /////////////////////// 
 
     inline void explode(class BlockSource& a0, class Actor* a1, class Vec3 const& a2, float a3, bool a4, bool a5, float a6, bool a7) {
-        void (Level::*rv)(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
+        void (Level:: * rv)(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
         *((void**)&rv) = dlsym("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Actor*>(a1), std::forward<class Vec3 const&>(a2), std::forward<float>(a3), std::forward<bool>(a4), std::forward<bool>(a5), std::forward<float>(a6), std::forward<bool>(a7));
     }
 
     inline class Spawner& getSpawner() const {
-        class Spawner& (Level::*rv)() const;
+        class Spawner& (Level:: * rv)() const;
         *((void**)&rv) = dlsym("?getSpawner@Level@@UEBAAEAVSpawner@@XZ");
         return (this->*rv)();
     }
 
     inline class Dimension* createDimension(class AutomaticID<class Dimension, int> a0)
     {
-        class Dimension* (Level::*rv)(class AutomaticID<class Dimension, int>);
+        class Dimension* (Level:: * rv)(class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?createDimension@Level@@UEAAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
         return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
     }
@@ -191,7 +193,7 @@ public:
     }
     inline std::vector<class Actor*> getRuntimeActorList() const
     {
-        std::vector<class Actor*> (Level::*rv)() const;
+        std::vector<class Actor*>(Level:: * rv)() const;
         *((void**)&rv) = dlsym("?getRuntimeActorList@Level@@UEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ");
         return (this->*rv)();
     }
@@ -267,6 +269,11 @@ public:
         getSeed() {
         unsigned int (Level:: * rv)();
         *((void**)&rv) = dlsym("?getSeed@Level@@UEAAIXZ");
+        return (this->*rv)();
+    }
+    inline int getUserCount() const {
+        int (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getUserCount@Level@@UEBAHXZ");
         return (this->*rv)();
     }
     /*

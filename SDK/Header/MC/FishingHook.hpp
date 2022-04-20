@@ -6,6 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+
 #undef BEFORE_EXTRA
 
 class FishingHook : public Actor {
@@ -13,10 +14,10 @@ class FishingHook : public Actor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    bool serverHooked() {
+    inline bool serverHooked() {
         return _serverHooked();
     }
-    bool serverLured() {
+    inline bool serverLured() {
         return _serverLured();
     }
 #undef AFTER_EXTRA

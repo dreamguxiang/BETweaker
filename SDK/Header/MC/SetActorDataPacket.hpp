@@ -12,10 +12,10 @@
 class SetActorDataPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
     ActorRuntimeID mrid;
-    Tick mtick = {0};
+    Tick mtick = { 0 };
     std::vector<std::unique_ptr<DataItem>> mitems;
 
 #undef AFTER_EXTRA

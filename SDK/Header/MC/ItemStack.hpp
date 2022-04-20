@@ -7,6 +7,8 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "ItemStackNetIdVariant.hpp"
+#include "MC/I18n.hpp"
+#include "MC/PropertiesSettings.hpp"
 class Tag;
 class ItemActor;
 class CompoundTag;
@@ -21,11 +23,15 @@ class ItemStack : public ItemStackBase {
     ItemStackNetIdVariant mNetId;
 
 public:
-	LIAPI static ItemStack* create();
-    LIAPI static ItemStack* create(std::string type, int count);
+    // The return value should be freed by the developer if it is no longer used
+    LIAPI static ItemStack* create();
+    // The return value should be freed by the developer if it is no longer used
+    LIAPI static ItemStack* create(std::string type, int count = 1);
+    // The return value should be freed by the developer if it is no longer used
     LIAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
-    LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
+    // The return value should be freed by the developer if it is no longer used
     LIAPI ItemStack* clone_s() const;
+    LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
 
 	LIAPI std::string getTypeName() const;
 	LIAPI int getAux() const;
@@ -35,6 +41,8 @@ public:
 	LIAPI bool setLore(const std::vector<std::string>& lores);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+    LIAPI string getStandardName(const Localization& language);
+
 #undef AFTER_EXTRA
 
 public:

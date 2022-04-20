@@ -71,3 +71,4 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate = false);
 
 extern void loadCfg();
 extern bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate);
+

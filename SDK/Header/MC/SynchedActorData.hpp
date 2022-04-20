@@ -134,11 +134,22 @@ ACTOR_DATA_KEY_VALUE(CAN_RIDE_TARGET);
 class SynchedActorData {
 
 #define AFTER_EXTRA
-// Add Member There
+// Add Member Therepublic:
+    //using DataList = std::vector<std::unique_ptr<DataItem>>;
+    std::vector<std::unique_ptr<DataItem>> mItemsArray; // 0
+private:
+    unsigned short mMinDirtyId; // 24
+    unsigned short mMaxDirtyId; // 26
 public:
-    inline DataItem* find(unsigned short a1) {
-        return _find(a1);
+    template <typename T>
+    MCAPI void define(unsigned short, T const&);
+    template <typename T>
+    MCAPI void set(unsigned short, T const&);
+    inline std::vector<std::unique_ptr<DataItem>>& getItemArray()
+    {
+        return mItemsArray;
     }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATA

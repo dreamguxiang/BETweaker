@@ -87,3 +87,39 @@ TInstanceHook(bool, "?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockP
 	return original(this, a2, a3, a4, a5);
 }
 */
+
+
+#include <MC/PlayerInventory.hpp>
+#include <MC/GameMode.hpp>
+#include <MC/Inventory.hpp>
+TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z", Player, ItemStackBase& item, int a2, bool a3)
+{
+	bool isfirst = false;
+	auto itemname = item.getItem()->getSerializedName();
+	original(this, item, a2, a3);
+	if (item.getCount() == 0) {
+		auto& inv = this->getInventory();
+		for (int i = 1; i <= inv.getSize(); i++) {
+			auto& item = inv.getItem(i);
+			if (!item.isNull())
+				if (item.getItem()->getSerializedName() == itemname) {
+					if (!isfirst) {
+						isfirst = true;
+						continue;
+					}
+					auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toSNBT();
+					inv.setItem(i, ItemStack::EMPTY_ITEM);
+					auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
+					this->giveItem(newitem);
+					delete newitem;
+					this->sendInventory(1);
+					break;
+				}
+		}
+	}
+	auto& plinv = this->getSupplies();
+	std::cout << plinv.getFirstEmptySlot() << std::endl;
+	auto inv = dAccess<Inventory*, 176>(&plinv);
+	//std::cout << dAccess<uintptr_t, 0>(inf) - (uintptr_t)GetModuleHandle(NULL) << std::endl;
+	
+}
