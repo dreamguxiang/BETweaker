@@ -51,6 +51,8 @@ public:
 } // namespace PubSub
 namespace Threading {
 enum AsyncStatus;
+template <typename T0>
+class LockGuard;
 class CountReference {
 public:
     CountReference() = delete;
@@ -81,6 +83,9 @@ public:
 };
 
 #undef AFTER_EXTRA
+    MCAPI std::string getExceptionMessage(class std::exception_ptr);
+    MCAPI int strtoint32(char const *, char **, int);
+    MCAPI unsigned int strtouint32(char const *, char **, int);
     MCAPI void throw_system_error(enum std::errc);
 
 };

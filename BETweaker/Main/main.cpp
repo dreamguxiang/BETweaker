@@ -54,7 +54,6 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     if (Settings::BetterHarvestingCrop) {
         Module::LoadBetterHarvestingCrop(blockin, sp);
     }
-    std::cout << blockin.getBlock()->getTypeName() << std::endl;
     if (Settings::EditSign) {
         if (SignBlocks.count(blockin.getBlock()->getTypeName())){
             Module::EditSign(sp, blockin);

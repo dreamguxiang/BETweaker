@@ -20,7 +20,7 @@ namespace Module {
         else if (a5->getItem()->isSeed()) {
             if (a2->getBlock(pos.add(0, -1, 0)).getTypeName() == VanillaBlocks::mFarmland->getTypeName() &&
                 a2->getBlock(pos).getTypeName() == "minecraft:air") {
-                auto out = dAccess<Block*, 8>(dAccess<SeedItemComponentLegacy*, 488>(a5->getItem()));
+                auto out = dAccess<Block*, 8>(dAccess<SeedItemComponentLegacy*, 488>(a5->getItem()));//IDA Item::_useOn
                 Level::setBlock(pos, a2->getDimensionId(), out);
                 a5->remove(1);
                 return true;

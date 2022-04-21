@@ -1,9 +1,9 @@
 #pragma once
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,7}
-#define VERSION_RES LL::Version{1,0,6}
-#define BDSP 486
+#define VERSION LL::Version{1,0,8}
+#define VERSION_RES LL::Version{1,0,8}
+#define BDSP 503
 #define toStr(x) std::to_string(x)
 #define getI18n(x,n) I18n::get(x,n)
 #define H(x) do_hash2(x)
