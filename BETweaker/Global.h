@@ -1,7 +1,7 @@
 #pragma once
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,8}
+#define VERSION LL::Version{1,0,9}
 #define VERSION_RES LL::Version{1,0,8}
 #define BDSP 503
 #define toStr(x) std::to_string(x)
@@ -42,7 +42,6 @@
 #include <MC/Facing.hpp>
 #include <MC/BlockStateVariant.hpp>
 #include <MC/BlockStateGroup.hpp>
-#include <MC/BlockStateMeta.hpp>
 #include <MC/VanillaStates.hpp>
 #include <MC/ItemState.hpp>
 #include "Main/Helper.h"

@@ -89,38 +89,30 @@ TInstanceHook(bool, "?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockP
 */
 
 
-//#include <MC/PlayerInventory.hpp>
-//#include <MC/GameMode.hpp>
-//#include <MC/Inventory.hpp>
-//TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z", Player, ItemStackBase& item, int a2, bool a3)
-//{
-//	return original(this, item, a2, a3);
-//	bool isfirst = false;
-//	auto itemname = item.getItem()->getSerializedName();
-//	original(this, item, a2, a3);
-//	if (item.getCount() == 0) {
-//		auto& inv = this->getInventory();
-//		for (int i = 1; i <= inv.getSize(); i++) {
-//			auto& item = inv.getItem(i);
-//			if (!item.isNull())
-//				if (item.getItem()->getSerializedName() == itemname) {
-//					if (!isfirst) {
-//						isfirst = true;
-//						continue;
-//					}
-//					auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toSNBT();
-//					inv.setItem(i, ItemStack::EMPTY_ITEM);
-//					auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
-//					this->giveItem(newitem);
-//					delete newitem;
-//					this->sendInventory(1);
-//					break;
-//				}
-//		}
-//	}
-//	auto& plinv = this->getSupplies();
-//	std::cout << plinv.getFirstEmptySlot() << std::endl;
-//	auto inv = dAccess<Inventory*, 176>(&plinv);
-//	//std::cout << dAccess<uintptr_t, 0>(inf) - (uintptr_t)GetModuleHandle(NULL) << std::endl;
-//	
-//}
+#include <MC/PlayerInventory.hpp>
+#include <MC/GameMode.hpp>
+#include <MC/Inventory.hpp>
+#include <MC/ServerPlayer.hpp>
+
+
+TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z", Player, ItemStackBase& item, int a2, bool a3)
+{
+	auto itemname = item.getItem()->getSerializedName();
+	original(this, item, a2, a3);
+	if (Settings::AutoSupplyItem) Module::UseItemSupply(this, item, itemname);
+}
+
+TInstanceHook(bool, "?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z", ItemStack, int a1, Actor* a2)
+{ 
+	auto itemname = getItem()->getSerializedName();
+	auto out = original(this, a1,a2);
+	if (Settings::AutoSupplyItem) {
+		if (a2->isPlayer()) {
+			auto sp = (ServerPlayer*)a2;
+			if ((int)getNbt()->getByte("Count") == 0) {
+				Module::UseItemSupply(sp, itemname);
+			}
+		}
+	}
+	return out;
+}

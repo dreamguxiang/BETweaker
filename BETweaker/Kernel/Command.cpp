@@ -30,7 +30,8 @@ class BETCommand : public Command
         FastLeafDecay,
         AutoFish,
         DoubleDoors,
-        FastSetMinecart
+        FastSetMinecart,
+        AutoSupplyItem
     } operation;
     bool isenable;
     enum class UpgradeOption
@@ -90,6 +91,11 @@ public:
         case Operation::FastSetMinecart:
             Settings::FastSetMinecart = isenable;
             output.success(std::to_string(isenable));
+            break;
+        case Operation::AutoSupplyItem:
+            Settings::AutoSupplyItem = isenable;
+            output.success(std::to_string(isenable));
+            break;
         case Operation::Reload:
             Settings::reloadJson(JsonFile);
             output.success("reload success");
@@ -117,6 +123,7 @@ public:
             {"autofish", Operation::AutoFish},
             {"doubledoors", Operation::DoubleDoors},
             {"fastsetminecart", Operation::FastSetMinecart},
+            {"autosupplyitem", Operation::AutoSupplyItem},
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {

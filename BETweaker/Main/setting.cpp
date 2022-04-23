@@ -19,6 +19,8 @@ namespace Settings {
     bool AutoFish = true;
     bool DoubleDoors = true;
     bool FastSetMinecart = true;
+    bool AutoSupplyItem = true;
+    string HUBInfoShow = "TIP";
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -32,6 +34,8 @@ namespace Settings {
         json["AutoFish"] = AutoFish;
         json["DoubleDoors"] = DoubleDoors;
         json["FastSetMinecart"] = FastSetMinecart;
+        json["AutoSupplyItem"] = AutoSupplyItem;
+        json["HUBInfoShow"] = HUBInfoShow;
         return json;
     }
 
@@ -46,6 +50,8 @@ namespace Settings {
         TRJ("AutoFish", AutoFish);
         TRJ("DoubleDoors", DoubleDoors);
         TRJ("FastSetMinecart", FastSetMinecart);
+        TRJ("AutoSupplyItem", AutoSupplyItem);
+        TRJ("HUBInfoShow", HUBInfoShow);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

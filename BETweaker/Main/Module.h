@@ -12,4 +12,6 @@ namespace Module {
 	bool AutoFish(FishingHook* a1);
 	bool DoubleDoors(DoorBlock* a1, Player* pl, BlockPos* a3, UCHAR a4);
 	bool FastSetMinecart(Player* pl, Actor* ac);
+	bool UseItemSupply(Player* sp, ItemStackBase& item, string itemname);
+	bool UseItemSupply(Player* sp, string itemname);
 }

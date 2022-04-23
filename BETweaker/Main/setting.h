@@ -14,6 +14,8 @@ namespace Settings {
     extern bool AutoFish;
     extern bool DoubleDoors;
     extern bool FastSetMinecart;
+    extern bool AutoSupplyItem;
+    extern string HUBInfoShow;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
