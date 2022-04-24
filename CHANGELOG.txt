@@ -1,5 +1,7 @@
 # [BETweaker Release Note] 
 
- - Update 1.18.30
+ - Add AutoSupplyItem
+- Change config Json
+- Add HubInfo Scoreboard Options 
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
