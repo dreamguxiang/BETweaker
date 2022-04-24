@@ -2,10 +2,11 @@
 #include <Nlohmann/json.hpp>
 #include "../Global.h"
 
-#define TRJ(key,val)                                         \
-if (json.find(key) != json.end()) {                          \
-    const nlohmann::json& out = json.at(key);                \
-    out.get_to(val);}                                         \
+#define TRJ(key1,key2,val)                                \
+if (json.find(key1) != json.end()) {                      \
+    if (json.at(key1).find(key2) != json.at(key1).end()) {\
+    const nlohmann::json& out2 = json.at(key1).at(key2);  \
+         out2.get_to(val);}}                              \
 
 namespace Settings {
 
@@ -21,37 +22,50 @@ namespace Settings {
     bool FastSetMinecart = true;
     bool AutoSupplyItem = true;
     string HUBInfoShow = "TIP";
+    std::unordered_set<string> CanDispenserItemList{
+    "minecraft:bamboo",//bamboo
+    "minecraft:sapling",//saplings
+    "minecraft:azalea",
+    "minecraft:flowering_azalea",
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom"
+    };
 
     nlohmann::json globaljson() {
         nlohmann::json json;
-        json["BetterHarvestingCrop"] = BetterHarvestingCrop;
-        json["NoFarmDestroy"] = NoFarmDestroy;
-        json["FastSleeping"] = FastSleeping;
-        json["DispenserCrops"] = DispenserCrops;
-        json["FastLeafDecay"] = FastLeafDecay;
-        json["HUBinfo"] = HUBinfo;
-        json["EditSign"] = EditSign;
-        json["AutoFish"] = AutoFish;
-        json["DoubleDoors"] = DoubleDoors;
-        json["FastSetMinecart"] = FastSetMinecart;
-        json["AutoSupplyItem"] = AutoSupplyItem;
-        json["HUBInfoShow"] = HUBInfoShow;
+        json["BetterHarvestingCrop"]["Enabled"] = BetterHarvestingCrop;
+        json["NoFarmDestroy"]["Enabled"] = NoFarmDestroy;
+        json["FastSleeping"]["Enabled"] = FastSleeping;
+        json["DispenserCrops"]["Enabled"] = DispenserCrops;
+        json["FastLeafDecay"]["Enabled"] = FastLeafDecay;
+        json["HUBInfo"]["Enabled"] = HUBinfo;
+        json["EditSign"]["Enabled"] = EditSign;
+        json["AutoFish"]["Enabled"] = AutoFish;
+        json["DoubleDoors"]["Enabled"] = DoubleDoors;
+        json["FastSetMinecart"]["Enabled"] = FastSetMinecart;
+        json["AutoSupplyItem"]["Enabled"] = AutoSupplyItem;
+        json["HUBInfo"]["Show"] = HUBInfoShow;
+        json["DispenserCrops"]["ItemList"] = CanDispenserItemList;
         return json;
     }
 
     void initjson(nlohmann::json json) {
-        TRJ("BetterHarvestingCrop", BetterHarvestingCrop);
-        TRJ("NoFarmDestroy", NoFarmDestroy);
-        TRJ("FastSleeping", FastSleeping);
-        TRJ("DispenserCrops", DispenserCrops);
-        TRJ("FastLeafDecay", FastLeafDecay);
-        TRJ("HUBinfo", HUBinfo);
-        TRJ("EditSign", EditSign);
-        TRJ("AutoFish", AutoFish);
-        TRJ("DoubleDoors", DoubleDoors);
-        TRJ("FastSetMinecart", FastSetMinecart);
-        TRJ("AutoSupplyItem", AutoSupplyItem);
-        TRJ("HUBInfoShow", HUBInfoShow);
+
+        TRJ("BetterHarvestingCrop","Enabled", BetterHarvestingCrop);
+        TRJ("NoFarmDestroy", "Enabled", NoFarmDestroy);
+        TRJ("FastSleeping", "Enabled", FastSleeping);
+        TRJ("DispenserCrops", "Enabled", DispenserCrops);
+        TRJ("FastLeafDecay", "Enabled", FastLeafDecay);
+        TRJ("HUBInfo", "Enabled", HUBinfo);
+        TRJ("EditSign", "Enabled", EditSign);
+        TRJ("AutoFish", "Enabled", AutoFish);
+        TRJ("DoubleDoors", "Enabled", DoubleDoors);
+        TRJ("FastSetMinecart", "Enabled", FastSetMinecart);
+        TRJ("AutoSupplyItem", "Enabled", AutoSupplyItem);
+        TRJ("HUBInfo", "Show", HUBInfoShow);
+        TRJ("DispenserCrops","ItemList", CanDispenserItemList);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

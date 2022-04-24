@@ -76,7 +76,7 @@
     <ClCompile Include="AutoUprade.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="AutoSupplyItem.cpp">
+    <ClCompile Include="Kernel\AutoSupplyItem.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>

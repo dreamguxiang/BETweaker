@@ -172,12 +172,12 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClInclude Include="Main\setting.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AutoSupplyItem.cpp" />
     <ClCompile Include="AutoUprade.cpp" />
     <ClCompile Include="dllmain.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\AutoFish.cpp" />
+    <ClCompile Include="Kernel\AutoSupplyItem.cpp" />
     <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

@@ -97,7 +97,7 @@ public:
             output.success(std::to_string(isenable));
             break;
         case Operation::Reload:
-            Settings::reloadJson(JsonFile);
+            Settings::LoadConfigFromJson(JsonFile);
             output.success("reload success");
             return;
         case Operation::Upgrade:

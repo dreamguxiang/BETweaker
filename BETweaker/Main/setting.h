@@ -16,6 +16,7 @@ namespace Settings {
     extern bool FastSetMinecart;
     extern bool AutoSupplyItem;
     extern string HUBInfoShow;
+    extern std::unordered_set<string> CanDispenserItemList;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
