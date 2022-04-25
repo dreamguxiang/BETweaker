@@ -14,4 +14,5 @@ namespace Module {
 	bool FastSetMinecart(Player* pl, Actor* ac);
 	bool UseItemSupply(Player* sp, ItemStackBase& item, string itemname);
 	bool UseItemSupply(Player* sp, string itemname);
+	void cutTree(BlockSource* bs, BlockPos a3, Player* sp);
 }

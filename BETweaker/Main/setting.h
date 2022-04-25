@@ -15,6 +15,7 @@ namespace Settings {
     extern bool DoubleDoors;
     extern bool FastSetMinecart;
     extern bool AutoSupplyItem;
+    extern bool CuttingTree;
     extern string HUBInfoShow;
     extern std::unordered_set<string> CanDispenserItemList;
     nlohmann::json globaljson();

@@ -7,6 +7,7 @@
 #pragma comment(lib, "../SDK/Lib/LiteLoader.lib")
 #pragma comment(lib, "../SDK/Lib/libssl.lib")
 #pragma comment(lib, "../SDK/Lib/libcrypto.lib")
+#pragma comment(lib, "../SDK/Lib/concurrencpp.lib")
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
     LPVOID lpReserved

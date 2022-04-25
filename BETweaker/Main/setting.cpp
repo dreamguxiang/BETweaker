@@ -21,6 +21,7 @@ namespace Settings {
     bool DoubleDoors = true;
     bool FastSetMinecart = true;
     bool AutoSupplyItem = true;
+    bool CuttingTree = true;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
@@ -48,6 +49,7 @@ namespace Settings {
         json["AutoSupplyItem"]["Enabled"] = AutoSupplyItem;
         json["HUBInfo"]["Show"] = HUBInfoShow;
         json["DispenserCrops"]["ItemList"] = CanDispenserItemList;
+        json["CuttingTree"]["Enabled"] = CuttingTree;
         return json;
     }
 
@@ -66,6 +68,7 @@ namespace Settings {
         TRJ("AutoSupplyItem", "Enabled", AutoSupplyItem);
         TRJ("HUBInfo", "Show", HUBInfoShow);
         TRJ("DispenserCrops","ItemList", CanDispenserItemList);
+        TRJ("CuttingTree", "Enabled", CuttingTree);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

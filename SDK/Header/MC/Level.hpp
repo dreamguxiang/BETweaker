@@ -277,6 +277,17 @@ public:
         *((void**)&rv) = dlsym("?getUserCount@Level@@UEBAHXZ");
         return (this->*rv)();
     }
+    inline class FeatureRegistry& getFeatureRegistry() {
+        class FeatureRegistry& (Level:: * rv)();
+        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@UEAAAEAVFeatureRegistry@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class FeatureRegistry const& getFeatureRegistry() const {
+        class FeatureRegistry const& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getFeatureRegistry@Level@@UEBAAEBVFeatureRegistry@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

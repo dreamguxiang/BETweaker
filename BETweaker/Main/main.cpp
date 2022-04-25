@@ -137,8 +137,6 @@ bool PackInstall() {
     }
 }
 
-
-
 void initEvent() 
 {
     Event::PlayerUseItemOnEvent::subscribe(PlayerUseOn);

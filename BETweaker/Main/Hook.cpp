@@ -39,6 +39,7 @@ THook(void, "?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
 }
 
 
+
 THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
 	if (Settings::FastLeafDecay)
 	{
@@ -115,4 +116,26 @@ TInstanceHook(bool, "?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z", ItemSta
 		}
 	}
 	return out;
+}
+
+#include <MC/SurvivalMode.hpp>
+
+TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+	SurvivalMode, BlockPos a3, unsigned __int8 a4)
+{
+	if (!Settings::CuttingTree) return original(this, a3, a4);
+	auto bs = getPlayer()->getBlockSource();
+	Module::cutTree(bs, a3, getPlayer());
+	return original(this, a3, a4);
+}
+
+
+
+TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
+	GameMode, BlockPos a3, unsigned __int8 a4)
+{
+	if (!Settings::CuttingTree) return original(this, a3, a4);
+	auto bs = getPlayer()->getBlockSource();
+	Module::cutTree(bs, a3, getPlayer());
+	return original(this, a3, a4);
 }

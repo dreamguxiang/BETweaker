@@ -79,5 +79,8 @@
     <ClCompile Include="Kernel\AutoSupplyItem.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="CuttingTree.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
