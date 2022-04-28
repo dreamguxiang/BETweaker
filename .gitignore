@@ -10,3 +10,4 @@
 !/.idea/cmake.xml
 /cmake-build-*
 build/*
+codeTransmit.exe

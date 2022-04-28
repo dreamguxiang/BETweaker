@@ -13,7 +13,7 @@ namespace Module {
 				auto& item = inv.getItem(i);
 				if (!item.isNull()) {
 					if (item.getItem()->getSerializedName() == itemname) {
-						if (i == slotnum) 	continue;
+						if (i == slotnum) continue;
 						auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toSNBT();
 						auto& uid = sp->getUniqueID();
 						Schedule::delay([snbt, uid, slotnum, i] {
@@ -24,7 +24,7 @@ namespace Module {
 									auto& inv = sp->getInventory();
 									inv.setItem(i, ItemStack::EMPTY_ITEM);
 									auto& plinv = sp->getSupplies();
-									plinv.add(*newitem, 1);
+									inv.setItem(slotnum, *newitem);
 									sp->refreshInventory();
 								}
 							}

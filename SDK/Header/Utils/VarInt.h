@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Bstream.h"
 template <typename T>
 struct VarInts {

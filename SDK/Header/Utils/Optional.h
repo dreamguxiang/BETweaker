@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 struct Ioptional {};
 template <typename T>
 struct optional : Ioptional {

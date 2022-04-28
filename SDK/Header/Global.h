@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #pragma warning(disable : 4250)
 
 #ifdef LITELOADER_EXPORTS

@@ -66,3 +66,6 @@ tile.waxed_exposed_double_cut_copper_slab.name=Waxed Exposed Double Cut Copper S
 tile.waxed_double_cut_copper_slab.name=Waxed Double Cut Copper Slab
 
 entity.npc.name=NPC
+
+betweaker.cuttingtree.lore=快捷模式
+betweaker.cuttingtree.loreoff=正常模式

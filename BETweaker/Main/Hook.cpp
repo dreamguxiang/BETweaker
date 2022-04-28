@@ -139,3 +139,11 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 	Module::cutTree(bs, a3, getPlayer());
 	return original(this, a3, a4);
 }
+
+TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
+	GameMode, ItemStack* item)
+{
+	if (!Settings::CuttingTree) return original(this, item);
+	Module::cutTreeLore(getPlayer(), item);
+	return original(this, item);
+}

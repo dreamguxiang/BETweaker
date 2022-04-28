@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <string_view>
 using std::string_view;
 template <typename T, typename std::enable_if_t<!std::is_pointer_v<T>, int> = 0>

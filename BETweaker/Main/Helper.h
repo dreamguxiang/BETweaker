@@ -89,42 +89,42 @@ namespace
 	struct countryLang
 	{
 		LANGID langId;//
-		char country[16];//¹ú¼Ê´úÂëËõĞ´
+		char country[16];//å›½é™…ä»£ç ç¼©å†™
 		char lang[32];//
 		char userLang[32];//
 	};
 
 	const countryLang COUNTRY_LANG[] =
 	{
-		{0x0804, "CN", "zh", "zh_CN"},//ÖĞ¹ú
-		{0x0409, "US", "en", "en_US"},//ÃÀ¹ú
-		{0x0412, "KR", "ko", "ko_KR"},//º«¹ú
-		{0x0411, "JP", "ja", "ja_JP"},//ÈÕ±¾
-		{0x0421, "ID", "en", "en_ID"},//Ó¡¶ÈÄáÎ÷ÑÇ
-		{0x0407, "DE", "de", "de_DE"},//µÂ¹ú
-		{0x040c, "FR", "fr", "fr_Fr"},//·¨¹ú
-		{0x0410, "IT", "it", "it_IT"},//Òâ´óÀû
-		{0x0416, "BR", "pt", "pt_BR"},//ÆÏÌÑÑÀ
-		{0x0c0a, "ES", "es", "es_Es"},//Î÷°àÑÀ
-		{0x0419, "RU", "ru", "ru_RU"},//¶í¹ú
-		{0x041f, "TR", "tr", "tr_TR"},//ÍÁ¶úÆä
-		{0x042a, "VI", "vi", "vi_VI"},//Ô½ÄÏ
-		{0x041e, "TH", "en", "en_TH"},//Ì©¹ú
-		{0x0809, "GB", "en", "en_US"}//Ó¢¹ú
+		{0x0804, "CN", "zh", "zh_CN"},//ä¸­å›½
+		{0x0409, "US", "en", "en_US"},//ç¾å›½
+		{0x0412, "KR", "ko", "ko_KR"},//éŸ©å›½
+		{0x0411, "JP", "ja", "ja_JP"},//æ—¥æœ¬
+		{0x0421, "ID", "en", "en_ID"},//å°åº¦å°¼è¥¿äºš
+		{0x0407, "DE", "de", "de_DE"},//å¾·å›½
+		{0x040c, "FR", "fr", "fr_Fr"},//æ³•å›½
+		{0x0410, "IT", "it", "it_IT"},//æ„å¤§åˆ©
+		{0x0416, "BR", "pt", "pt_BR"},//è‘¡è„ç‰™
+		{0x0c0a, "ES", "es", "es_Es"},//è¥¿ç­ç‰™
+		{0x0419, "RU", "ru", "ru_RU"},//ä¿„å›½
+		{0x041f, "TR", "tr", "tr_TR"},//åœŸè€³å…¶
+		{0x042a, "VI", "vi", "vi_VI"},//è¶Šå—
+		{0x041e, "TH", "en", "en_TH"},//æ³°å›½
+		{0x0809, "GB", "en", "en_US"}//è‹±å›½
 	};
 }
 //
 inline string GetDefaultLang()
 {
 	//LANGID lang_id = GetSystemDefaultLangID();
-	LANGID lang_id = GetUserDefaultUILanguage();//"win10>ÉèÖÃ>ÓïÑÔ>WindowsÏÔÊ¾ÓïÑÔ"
+	LANGID lang_id = GetUserDefaultUILanguage();//"win10>è®¾ç½®>è¯­è¨€>Windowsæ˜¾ç¤ºè¯­è¨€"
 	int size = sizeof(COUNTRY_LANG) / sizeof(COUNTRY_LANG[0]);
 
-	//char _country[16] = { 0 };//¹ú¼Ê´úÂëËõĞ´
+	//char _country[16] = { 0 };//å›½é™…ä»£ç ç¼©å†™
 	//strcpy_s(_country, "US");
-	//char _lang[32] = { 0 };//ÓïÑÔ
+	//char _lang[32] = { 0 };//è¯­è¨€
 	//strcpy_s(_lang, "en");
-	char _userlang[32] = { 0 };//ÓÃ»§ÓïÑÔ
+	char _userlang[32] = { 0 };//ç”¨æˆ·è¯­è¨€
 	strcpy_s(_userlang, "en_US");
 
 	for (int i = 0; i < size; i++)

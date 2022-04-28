@@ -73,8 +73,12 @@ namespace Module {
         }
     }
 	
-    bool isAxe(ItemStack& item) {
-		return AxeList.count(item.getTypeName());
+    bool isAxe(ItemStack& item,Player* sp) {
+        if (!AxeList.count(item.getTypeName())) return false;
+        auto lorelist = item.getCustomLore();
+		if(lorelist.size() == 0 || lorelist[0] != getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()))
+            return false;
+		return true;
     }
 	
     void get(BlockInstance block) {
@@ -139,7 +143,7 @@ namespace Module {
     public:
      tree(BlockInstance block,BlockSource* bs,Player* sp) {
          auto item = sp->getHandSlot();
-		if (!isAxe(*item)) {
+		if (!isAxe(*item,sp)) {
 			 return;
 		 }	
         get(block);
@@ -149,7 +153,7 @@ namespace Module {
     }
     };
 
-    void cutTree(BlockSource* bs,BlockPos a3,Player* sp) {
+    void cutTree(BlockSource* bs, BlockPos a3, Player* sp) {
         if (bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mDirt->getTypeName()
             || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mGrass->getTypeName()
             || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mMycelium->getTypeName()
@@ -170,6 +174,39 @@ namespace Module {
                     Module::tree(BlockInstance::createBlockInstance(Level::getBlock(pos, bs), pos, bs->getDimensionId()), bs, sp);
                     // }
                 //     });
+                }
+            }
+        }
+    }
+
+    void cutTreeLore(Player* sp, ItemStack* item) {
+        if (AxeList.count(item->getTypeName())) {
+            if (!sp->isSneaking()) return;
+            auto lorelist = item->getCustomLore();
+            vector<string> lore;
+            if (lorelist.size() == 0)
+            {
+                lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
+                item->setCustomLore(lore);
+                item->save();
+                sp->refreshInventory();
+                sp->sendText("§b[BETweaker]已切换至快捷模式", TextType::JUKEBOX_POPUP);
+            }
+            else
+            {
+                if (lorelist[0] == getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode())) {
+                    lore.push_back(getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()));
+                    item->setCustomLore(lore);
+                    item->save();
+                    sp->refreshInventory();
+                    sp->sendText("§a[BETweaker]已切换至正常模式", TextType::JUKEBOX_POPUP);
+                }
+                else {
+                    lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
+                    item->setCustomLore(lore);
+					
+                    sp->refreshInventory();
+                    sp->sendText("§b[BETweaker]已切换至快捷模式", TextType::JUKEBOX_POPUP);
                 }
             }
         }

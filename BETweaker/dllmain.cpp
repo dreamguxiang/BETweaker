@@ -1,4 +1,4 @@
-﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
+// dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "Global.h"
 #include <LLAPI.h>
 #pragma comment(lib, "../SDK/Lib/bedrock_server_api.lib")
@@ -8,6 +8,7 @@
 #pragma comment(lib, "../SDK/Lib/libssl.lib")
 #pragma comment(lib, "../SDK/Lib/libcrypto.lib")
 #pragma comment(lib, "../SDK/Lib/concurrencpp.lib")
+#pragma execution_character_set("utf-8")
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
     LPVOID lpReserved

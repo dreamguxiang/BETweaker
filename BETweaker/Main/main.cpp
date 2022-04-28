@@ -1,4 +1,4 @@
-﻿#include "../Global.h"
+#include "../Global.h"
 #include "Module.h"
 #include <MC/Dimension.hpp>
 #include <MC/Actor.hpp>

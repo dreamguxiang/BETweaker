@@ -15,4 +15,5 @@ namespace Module {
 	bool UseItemSupply(Player* sp, ItemStackBase& item, string itemname);
 	bool UseItemSupply(Player* sp, string itemname);
 	void cutTree(BlockSource* bs, BlockPos a3, Player* sp);
+	void cutTreeLore(Player* sp, ItemStack* item);
 }

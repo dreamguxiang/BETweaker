@@ -1,4 +1,4 @@
-﻿#include "../Global.h"
+#include "../Global.h"
 #include <MC/CommandUtils.hpp>
 #include <MC/DataItem.hpp>
 #include <MC/LoopbackPacketSender.hpp>
