@@ -3,7 +3,8 @@
 #include <concurrencpp/concurrencpp.h>
 #include <MC/ServerPlayer.hpp>
 #include <MC/FeatureRegistry.hpp>
-
+#include <MC/ListTag.hpp>
+#include <mc/PlayerInventory.hpp>
 namespace Module {
     std::unordered_set<string> LogBlocks{
         "minecraft:log",
@@ -68,6 +69,8 @@ namespace Module {
             return pos.add(0, 1, 1);
         case 16:
             return pos.add(0, 1, 0);
+        case 17:
+            return pos.add(0, -1, 0);
         default:
             break;
         }
@@ -88,7 +91,7 @@ namespace Module {
             return;
         }
 
-        if (block.getBlock()->getTypeName() == "minecraft:air") {
+        if (block.getBlock()->getMaterial().isType(MaterialType(0))) {
             return;
         }
         for (auto& blocks : visited) {
@@ -97,7 +100,7 @@ namespace Module {
        
         if (LogBlocks.count(block.getBlock()->getTypeName())) {
             visited.push_back(block.getPosition());
-            for (size_t i = 0; i < 9; i++)
+            for (size_t i = 0; i <= 7; i++)
             {
                 auto a3 = block.getPosition();
                 BlockPos pos = test(block.getPosition(), i);
@@ -109,10 +112,10 @@ namespace Module {
                     break;
                 }
             }
-            for (size_t i = 0; i < 17; i++)
+            for (size_t i = 0; i <= 17; i++)
             {
                 auto a3 = block.getPosition();
-               // BlockPos pos = a3.neighbor(i);
+                //BlockPos pos = a3.neighbor(i);
                 BlockPos pos = test(block.getPosition(), i);
                 auto bs = block.getBlockSource();
                 get(BlockInstance::createBlockInstance(Level::getBlock(pos, bs), pos, bs->getDimensionId()));               
@@ -136,11 +139,11 @@ namespace Module {
             if (item->isNull()) {
                 return;
             }
-            Level::breakBlockNaturally(bs, block);
+            Global<Level>->destroyBlock(*bs, block, 1);			
             item->hurtAndBreak(1, sp);
 		}
     }
-    public:
+      public:
      tree(BlockInstance block,BlockSource* bs,Player* sp) {
          auto item = sp->getHandSlot();
 		if (!isAxe(*item,sp)) {
@@ -154,10 +157,10 @@ namespace Module {
     };
 
     void cutTree(BlockSource* bs, BlockPos a3, Player* sp) {
-        if (bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mDirt->getTypeName()
-            || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mGrass->getTypeName()
-            || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mMycelium->getTypeName()
-            || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == VanillaBlocks::mPodzol->getTypeName()
+        if (bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mDirt
+            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
+            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
+            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
             ) {
             for (size_t i = 0; i < 6; i++)
             {
@@ -165,20 +168,26 @@ namespace Module {
                 if (Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName()))
                 {
                     auto id = bs->getDimensionId();
-                    // auto& uid = getPlayer()->getUniqueID();
-                    // concurrencpp::runtime runtime;
-                    // auto result = runtime.thread_executor()->submit([pos, id, a3, uid] {
                     auto bs = Level::getBlockSource(id);
-                    // auto sp = Level::getPlayer(uid);
-                     //if (sp) {
                     Module::tree(BlockInstance::createBlockInstance(Level::getBlock(pos, bs), pos, bs->getDimensionId()), bs, sp);
-                    // }
-                //     });
                 }
             }
         }
     }
-
+	
+    void addLore(ItemStack* item,string lores) {
+        auto nbt = item->getNbt();
+        if (nbt->getCompound("tag") == nullptr)
+            nbt->putCompound("tag", CompoundTag::create());
+        if (nbt->getCompound("tag")->getCompound("display") == nullptr)
+            nbt->getCompound("tag")->putCompound("display", CompoundTag::create());
+        if (nbt->getCompound("tag")->getCompound("display")->getCompound("Lore") == nullptr)
+            nbt->getCompound("tag")->getCompound("display")->put("Lore", ListTag::create());	
+		auto lore = nbt->getCompound("tag")->getCompound("display")->getList("Lore");
+		lore->addString(lores);
+        item->setNbt(nbt.get());
+    }
+	
     void cutTreeLore(Player* sp, ItemStack* item) {
         if (AxeList.count(item->getTypeName())) {
             if (!sp->isSneaking()) return;
@@ -188,25 +197,22 @@ namespace Module {
             {
                 lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
                 item->setCustomLore(lore);
-                item->save();
                 sp->refreshInventory();
-                sp->sendText("§b[BETweaker]已切换至快捷模式", TextType::JUKEBOX_POPUP);
+                sp->sendText("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
             }
             else
             {
                 if (lorelist[0] == getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode())) {
                     lore.push_back(getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()));
                     item->setCustomLore(lore);
-                    item->save();
                     sp->refreshInventory();
-                    sp->sendText("§a[BETweaker]已切换至正常模式", TextType::JUKEBOX_POPUP);
+                    sp->sendText("§a[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
                 }
                 else {
                     lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
-                    item->setCustomLore(lore);
-					
+                    item->setCustomLore(lore);					
                     sp->refreshInventory();
-                    sp->sendText("§b[BETweaker]已切换至快捷模式", TextType::JUKEBOX_POPUP);
+                    sp->sendText("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
                 }
             }
         }

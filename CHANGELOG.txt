@@ -1,7 +1,6 @@
 # [BETweaker Release Note] 
 
- - Add AutoSupplyItem
-- Change config Json
-- Add HubInfo Scoreboard Options 
+- Fix AutoSupplyItem Bug, #8
+- Add CuttingTree (Default off)
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.

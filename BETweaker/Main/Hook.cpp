@@ -5,8 +5,14 @@
 
 THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
 	original(self);
-	if (Settings::FastSleeping)
-		Module::FastSleep();
+	if (Settings::FastSleeping) {
+		try {
+			Module::FastSleep();
+		}
+		catch (...) {
+			return;
+		}
+	}
 }
 
 THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z", void* __this, void* a2,
@@ -26,15 +32,27 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
 
 THook(void, "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
 	LeafBlock* _this, BlockSource* a2, const BlockPos* a3) {
-	if (Settings::FastLeafDecay)
-		Module::FastLeafDecayFunc1(_this, a2, a3);
+	if (Settings::FastLeafDecay) {
+		try {
+			Module::FastLeafDecayFunc1(_this, a2, a3);
+		}		
+		catch (...) {
+			return original(_this, a2, a3);
+		}
+	}		
 	return original(_this, a2, a3);
 }
 
 THook(void, "?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
 	LogBlock* _this, BlockSource* a2, const BlockPos* a3) {
-	if (Settings::FastLeafDecay)
-		Module::FastLeafDecayFunc1((LeafBlock*)_this, a2, a3);
+	if (Settings::FastLeafDecay) {
+		try {
+			Module::FastLeafDecayFunc1((LeafBlock*)_this, a2, a3);
+		}
+		catch (...) {
+			return original(_this, a2, a3);
+		}
+	}
 	return original(_this, a2, a3);
 }
 
@@ -43,7 +61,12 @@ THook(void, "?onRemove@LogBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
 THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
 	if (Settings::FastLeafDecay)
 	{
-		Module::FastLeafDecayFunc();
+		try {
+			Module::FastLeafDecayFunc();
+		}
+		catch (...) {
+			return original(_this);
+		}
 	}
 	return original(_this);
 }
@@ -51,14 +74,25 @@ THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
 TInstanceHook(void, "?_updateServer@FishingHook@@IEAAXXZ", FishingHook) {
 	if (Settings::AutoFish)
 	{
-		Module::AutoFish(this);
+		try {
+			Module::AutoFish(this);
+		}
+		catch (...) {
+			return original(this);
+		}
 	}
 	return original(this);
 }
 
 TInstanceHook(bool, "?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z", DoorBlock, Player* pl, BlockPos* a3, UCHAR a4) {
-	if (Settings::DoubleDoors && this->getTypeName() != "minecraft:iron_door")
-		Module::DoubleDoors(this, pl, a3, a4);
+	if (Settings::DoubleDoors && this->getTypeName() != "minecraft:iron_door") {
+		try {
+			Module::DoubleDoors(this, pl, a3, a4);
+		}
+		catch (...) {
+			return  original(this, pl, a3, a4);
+		}
+	}		
 	return  original(this, pl, a3, a4);
 }
 
@@ -66,7 +100,12 @@ TInstanceHook(__int64, "?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z",
 	Player, Actor* a2, Vec3* a3) {
 	if (Settings::FastSetMinecart) {
 		if (this->isSneaking() && a2->getTypeName() == "minecraft:minecart")
+			try {
 			Module::FastSetMinecart(this, a2);
+		}
+		catch (...) {
+			return original(this, a2, a3);
+		}
 	}
 	return original(this, a2, a3);
 }
@@ -100,20 +139,30 @@ TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_
 {
 	auto itemname = item.getItem()->getSerializedName();
 	original(this, item, a2, a3);
-	if (Settings::AutoSupplyItem) Module::UseItemSupply(this, item, itemname);
+	try {
+		if (Settings::AutoSupplyItem) Module::UseItemSupply(this, item, itemname);
+	}
+	catch(...) {
+		return;
+	}
 }
 
 TInstanceHook(bool, "?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z", ItemStack, int a1, Actor* a2)
 { 
 	auto itemname = getItem()->getSerializedName();
 	auto out = original(this, a1,a2);
-	if (Settings::AutoSupplyItem) {
-		if (a2->isPlayer()) {
-			auto sp = (ServerPlayer*)a2;
-			if ((int)getNbt()->getByte("Count") == 0) {
-				Module::UseItemSupply(sp, itemname);
+	try {
+		if (Settings::AutoSupplyItem) {
+			if (a2->isPlayer()) {
+				auto sp = (ServerPlayer*)a2;
+				if ((int)getNbt()->getByte("Count") == 0) {
+					Module::UseItemSupply(sp, itemname);
+				}
 			}
 		}
+	}
+	catch (...) {
+		return out;
 	}
 	return out;
 }
@@ -125,7 +174,12 @@ TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
 {
 	if (!Settings::CuttingTree) return original(this, a3, a4);
 	auto bs = getPlayer()->getBlockSource();
-	Module::cutTree(bs, a3, getPlayer());
+	try {
+		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
+	}
+	catch (...) {
+		return  original(this, a3, a4);
+	}
 	return original(this, a3, a4);
 }
 
@@ -136,7 +190,12 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 {
 	if (!Settings::CuttingTree) return original(this, a3, a4);
 	auto bs = getPlayer()->getBlockSource();
-	Module::cutTree(bs, a3, getPlayer());
+	try {
+		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
+	}
+	catch (...) {
+		return  original(this, a3, a4);
+	}
 	return original(this, a3, a4);
 }
 
@@ -144,6 +203,12 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
 {
 	if (!Settings::CuttingTree) return original(this, item);
-	Module::cutTreeLore(getPlayer(), item);
+	try {
+		Module::cutTreeLore(getPlayer(), getPlayer()->getHandSlot());
+	}
+	catch (...) {
+		return original(this, item);
+	}
 	return original(this, item);
 }
+

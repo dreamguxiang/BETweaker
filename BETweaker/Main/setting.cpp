@@ -21,7 +21,7 @@ namespace Settings {
     bool DoubleDoors = true;
     bool FastSetMinecart = true;
     bool AutoSupplyItem = true;
-    bool CuttingTree = true;
+    bool CuttingTree = false;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
