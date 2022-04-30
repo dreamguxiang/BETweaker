@@ -8,7 +8,8 @@
 `BETweaker` is a plugin that adds  features to the game, giving survival players a very rich and useful feature set.
 
  including but not limited to below:
-- Right click for quick crop harvesting <img src=".github/cropharvesting.gif" alt="show" />
+- Right click for quick crop harvesting 
+<img src=".github/cropharvesting.gif" alt="show" />
 - One person sleeps, all stay overnight
 - Farm land anti-stomp
 - Mob, Block information display
@@ -16,7 +17,8 @@
 - Fast leaf decay
 - Auto Fish
 - AutoSupplyItem
-- Cutting Tree <img src=".github/cuttree.gif" alt="show" />
+- Cutting Tree 
+<img src=".github/cuttree.gif" alt="show" />
 - Double Doors
 - <details><summary>Dispenser to grow crops
     </summary>

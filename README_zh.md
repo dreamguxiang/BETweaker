@@ -8,7 +8,8 @@
 `BETweaker`是一个添加游戏实用功能的插件，给生存玩家提供非常丰富而且实用的功能。</br>
 
 功能包括但不限于：
-- 右键快捷收割农作物<img src=".github/cropharvesting.gif" alt="show" />
+- 右键快捷收割农作物
+<img src=".github/cropharvesting.gif" alt="show" />
 - 一人睡觉集体过夜
 - 耕地防踩
 - 生物、方块信息显示
@@ -16,7 +17,8 @@
 - 叶子快速腐烂
 - 自动钓鱼
 - 自动补齐物品
-- 一键砍树<img src=".github/cuttree.gif" alt="show" />
+- 一键砍树
+<img src=".github/cuttree.gif" alt="show" />
 - 双门
 - <details><summary>发射器种植农作物
     </summary>
