@@ -11,6 +11,7 @@ env:
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Release
   Platform: X64
+  VERSION_FILE_PATH: ./BETweaker/Version.h
 
 jobs:
   pre-process:
@@ -43,6 +44,22 @@ jobs:
 #     - name: Restore NuGet packages
 #       working-directory: ${{env.GITHUB_WORKSPACE}}
 #       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
+    
+    - name: Change PLUGIN_VERSION_STATUS_BETA
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      if: false == startsWith(github.ref, 'refs/tags/')
+      run: |
+        sed -r -i 's/#define\s+PLUGIN_VERSION_STATUS\s+PLUGIN_VERSION_\w+/#define PLUGIN_VERSION_STATUS   PLUGIN_VERSION_BETA/' ${{env.VERSION_FILE_PATH}}
+        sed -r -i 's/#define\s+PLUGIN_VERSION_BUILD\s+.*/#define PLUGIN_VERSION_BUILD  ${{ github.run_number }}\r/' ${{env.VERSION_FILE_PATH}}
+      shell: bash
+
+    - name: Change PLUGIN_VERSION_STATUS_RELEASE
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        sed -r -i 's/#define\s+PLUGIN_VERSION_STATUS\s+PLUGIN_VERSION_\w+/#define PLUGIN_VERSION_STATUS   PLUGIN_VERSION_RELEASE/' ${{env.VERSION_FILE_PATH}}
+        sed -r -i 's/#define\s+PLUGIN_VERSION_BUILD\s+.*/#define PLUGIN_VERSION_BUILD  ${{ github.run_number }}\r/' ${{env.VERSION_FILE_PATH}}
+      shell: bash
 
     - name: Build Plugin
       working-directory: ${{env.GITHUB_WORKSPACE}}

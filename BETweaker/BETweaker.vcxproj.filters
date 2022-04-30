@@ -12,6 +12,9 @@
     <Filter Include="Kernel">
       <UniqueIdentifier>{c73cdbaf-9bfc-46dd-bda7-40dbe65d10f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{ac00c31e-0bc7-42e5-921a-9131b52ac350}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -27,6 +30,12 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Global.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -82,5 +91,10 @@
     <ClCompile Include="CuttingTree.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BETweaker.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
