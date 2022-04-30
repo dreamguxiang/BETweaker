@@ -9,7 +9,7 @@
 
  including but not limited to below:
 - Right click for quick crop harvesting
- <img src="https://pic.dogimg.com/2022/04/30/626d467231bb8.gif" alt="drawing" style="width:600px;"/>
+- ![image](https://pic.dogimg.com/2022/04/30/626d467231bb8.gif)
 - One person sleeps, all stay overnight
 - Farm land anti-stomp
 - Mob, Block information display
@@ -17,8 +17,8 @@
 - Fast leaf decay
 - Auto Fish
 - AutoSupplyItem
-- Cutting Tree
- <img src="https://pic.dogimg.com/2022/04/30/626d467018b23.gif" alt="drawing" style="width:600px;"/>
+- Cutting Tree 
+- ![image](https://pic.dogimg.com/2022/04/30/626d467018b23.gif)
 - Double Doors
 - <details><summary>Dispenser to grow crops
     </summary>
