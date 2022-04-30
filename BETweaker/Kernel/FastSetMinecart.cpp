@@ -13,14 +13,15 @@ namespace Module {
     };
 
     ActorType getMinecartActorType(string a1) {
+        using enum ActorType;
         switch (H(a1))
         {
         case(H("minecraft:chest")):
-            return ActorType::ChestMinecart;
+            return ChestMinecart;
         case(H("minecraft:hopper")):
-            return ActorType::HopperMinecart;
+            return HopperMinecart;
         case(H("minecraft:tnt")):
-            return ActorType::TntMinecart;
+            return TntMinecart;
         default:
             break;
         }
