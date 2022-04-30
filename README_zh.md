@@ -10,6 +10,7 @@
 功能包括但不限于：
 - 右键快捷收割农作物
 <img src=".github/cropharvesting.gif" alt="show" />
+
 - 一人睡觉集体过夜
 - 耕地防踩
 - 生物、方块信息显示
@@ -19,6 +20,7 @@
 - 自动补齐物品
 - 一键砍树
 <img src=".github/cuttree.gif" alt="show" />
+
 - 双门
 - <details><summary>发射器种植农作物
     </summary>
