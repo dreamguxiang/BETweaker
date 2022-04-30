@@ -15,6 +15,8 @@
 - Edit Sign
 - Fast leaf decay
 - Auto Fish
+- AutoSupplyItem
+- Cutting Tree
 - Double Doors
 - <details><summary>Dispenser to grow crops
     </summary>
