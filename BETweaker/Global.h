@@ -1,8 +1,9 @@
 #pragma once
+#include "Version.h"
 
 #define JsonFile "plugins/BETweaker/config.json"
-#define VERSION LL::Version{1,0,10}
-#define VERSION_RES LL::Version{1,0,10}
+#define VERSION LL::Version{PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_REVISION, PLUGIN_LLVERSION_STATUS}
+#define VERSION_RES LL::Version{PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_REVISION}
 #define BDSP 503
 #define toStr(x) std::to_string(x)
 #define getI18n(x,n) I18n::get(x,n)
