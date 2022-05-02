@@ -2,6 +2,7 @@
 
 #include "../Global.h"
 #include "BlockPos.hpp"
+#include "../Utils/Bstream.h"
 
 class Vec3 {
 public:
@@ -105,4 +106,10 @@ public:
     constexpr bool operator==(const Vec3 &b) const {
         return this->x == b.x && this->y == b.y && this->z == b.z;
     }
+    template <typename _TP>
+    void pack(WBStreamImpl<_TP>& ws) const {
+        ws.apply(x, y, z);
+    }
+    void unpack(RBStream& rs) { rs.apply(x, y, z); }
+	
 };

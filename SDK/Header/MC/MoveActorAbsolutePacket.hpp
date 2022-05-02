@@ -6,14 +6,26 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum class Flags : uint8_t {
+    GROUND = 0x1,
+    TELEPORT = 0x2,
+    FORCE_MOVE = 0x4
+};
 #undef BEFORE_EXTRA
+
 
 class MoveActorAbsolutePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    unsigned long long mRuntimeId;
+    uint8_t mFlags = 0x1;
+    Vec3 mPos;
+    uint8_t mRotX = 0;
+    uint8_t mRotY = 0;
+    uint8_t mRotYHead = 0;
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEPACKET

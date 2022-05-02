@@ -21,14 +21,14 @@ class MovePlayerPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ActorRuntimeID runtimeId;
+    unsigned long long runtimeId;
     Vec3 position;
     float pitch;
     float yaw;
     float headYaw;
     Player::PositionMode mode;
     bool onGround;
-    ActorRuntimeID ridingRuntimeId;
+    unsigned long long ridingRuntimeId;
     TeleportationCause teleportationCause;
     int entityType;
     long tick;

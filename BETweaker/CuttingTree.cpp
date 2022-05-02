@@ -157,19 +157,21 @@ namespace Module {
     };
 
     void cutTree(BlockSource* bs, BlockPos a3, Player* sp) {
-        if (bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mDirt
-            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
-            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
-            || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
-            ) {
-            for (size_t i = 0; i < 6; i++)
-            {
-                BlockPos pos = a3.neighbor(i);
-                if (Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName()))
+		if(LogBlocks.count(bs->getBlock(a3).getTypeName())){
+            if (bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mDirt
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
+                ) {
+                for (size_t i = 0; i < 6; i++)
                 {
-                    auto id = bs->getDimensionId();
-                    auto bs = Level::getBlockSource(id);
-                    Module::tree(BlockInstance::createBlockInstance(Level::getBlock(pos, bs), pos, bs->getDimensionId()), bs, sp);
+                    BlockPos pos = a3.neighbor(i);
+                    if (Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName()))
+                    {
+                        auto id = bs->getDimensionId();
+                        auto bs = Level::getBlockSource(id);
+                        Module::tree(BlockInstance::createBlockInstance(Level::getBlock(pos, bs), pos, bs->getDimensionId()), bs, sp);
+                    }
                 }
             }
         }
