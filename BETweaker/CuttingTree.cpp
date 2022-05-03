@@ -164,8 +164,9 @@ namespace Module {
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
                 ) {
                 for (size_t i = 0; i < 6; i++)
-                {
+                {  
                     BlockPos pos = a3.neighbor(i);
+                    if (i == 1 && !Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName())) return;
                     if (Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName()))
                     {
                         auto id = bs->getDimensionId();
