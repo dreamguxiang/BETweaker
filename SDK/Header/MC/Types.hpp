@@ -8,7 +8,7 @@
 #include "AABB.hpp"
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
-
+#include "combaseapi.h"
 typedef std::string xuid_t;
 typedef unsigned long long QWORD;
 
