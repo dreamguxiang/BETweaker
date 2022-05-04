@@ -15,15 +15,8 @@ class NetworkItemStackDescriptor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ItemDescriptor mDescriptor;
-    unsigned short mCount; //72
-private:
-    int unk76;
-public:
-    bool mHasNetID;                   //80
-    ItemStackNetIdVariant mNetworkID; //84
-    unsigned int mBlockRuntimeID;     //92
-    std::string mIdentifier;
+    ItemDescriptor mDescriptor;//0
+    char filler[80];
 
 #undef AFTER_EXTRA
 

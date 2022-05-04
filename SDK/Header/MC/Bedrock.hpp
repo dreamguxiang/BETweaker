@@ -12,6 +12,7 @@ namespace Bedrock {
 
 #define AFTER_EXTRA
 // Add Member There
+    class Memory;
 struct PlatformRuntimeInfo {
     PlatformRuntimeInfo() = delete;
     PlatformRuntimeInfo(PlatformRuntimeInfo const&) = delete;

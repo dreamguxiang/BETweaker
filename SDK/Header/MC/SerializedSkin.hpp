@@ -5,6 +5,15 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "AnimatedImageData.hpp"
+#include "SerializedPersonaPieceHandle.hpp"
+#include "SemVersion.hpp"
+static_assert(sizeof(SemVersion) == 0x70);
+class TintMapColor {
+	std::array<mce::Color, 4> mColors;
+};
+
+static_assert(sizeof(TintMapColor) == 0x40);
 
 #undef BEFORE_EXTRA
 
@@ -12,7 +21,27 @@ class SerializedSkin {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[620];
+public:
+	enum class TrustedSkinFlag : int8_t {
+		UNSET = 0,
+		NO = 1,
+		YES = 2
+	};
+
+	std::string mId, mplayFabId, mFullId, mResourcePatch, mDefaultGeometryName;
+	mce::Image mSkinImage, mCapeImage;
+	std::vector<AnimatedImageData> mSkinAnimatedImages;
+	Json::Value mGeometryData;
+	SemVersion mGeometryDataEngineVersion;
+	Json::Value	mGeometryDataMutable;
+	std::string mAnimationData, mCapeId;
+	std::vector<SerializedPersonaPieceHandle> mPersonaPieces;
+	std::string mArmSize;
+	std::unordered_map<persona::PieceType, TintMapColor> mPieceTintColors;
+	mce::Color mSkinColor;
+	TrustedSkinFlag mTrustedFlag;
+	bool mIsPremium, mIsPersona, mIsPersonaCapeOnClassicSkin, misPrimaryUser;
+	
 #undef AFTER_EXTRA
 
 public:

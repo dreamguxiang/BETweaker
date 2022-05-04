@@ -6,14 +6,18 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "SerializedSkin.hpp"
 #undef BEFORE_EXTRA
 
 class PlayerSkinPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    mce::UUID mUUID;
+    SerializedSkin mSkin;
+    std::string mLocalizedNewSkinName, mLocalizedOldSkinName;
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSKINPACKET
