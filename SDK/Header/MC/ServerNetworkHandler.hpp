@@ -377,9 +377,6 @@ public:
 #endif
 
 public:
-    inline int getActiveAndInProgressPlayerCount(class mce::UUID a1) {
-        return _getActiveAndInProgressPlayerCount(a1);
-    }
     /*
     inline void handle(class NetworkIdentifier const & a0, class CreatePhotoPacket const & a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class CreatePhotoPacket const &);

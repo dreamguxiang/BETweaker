@@ -277,6 +277,12 @@ public:
 //
 //}; // namespace Core
 
+class NetherNet
+{
+public:
+    struct NetworkID;
+};
+
 namespace gametest
 {
 class BaseGameTestBatchRunner;

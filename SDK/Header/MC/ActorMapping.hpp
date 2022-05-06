@@ -12,13 +12,17 @@ struct ActorMapping {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    std::string mNameSpace;
+    std::string mName;
+    std::string mAlias;
+    HashedString mMappingName;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
     struct ActorMapping& operator=(struct ActorMapping const &) = delete;
-    ActorMapping(struct ActorMapping const &) = delete;
+    ActorMapping(struct ActorMapping const &) = default;
     ActorMapping() = delete;
 #endif
 

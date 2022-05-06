@@ -57,7 +57,7 @@ typeid_t<T> type_id()
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOperator>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
@@ -75,18 +75,27 @@ template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Relative
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
-template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+//template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 //template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template<>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>()
 {
     static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    //static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-    //    CommandParameterData data = SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
-    //            CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
-    //    return data.tid;
-    //    })();
+    return id;
+};
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    return id;
+};
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>()
+{
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     return id;
 };
 
@@ -652,6 +661,7 @@ public:
     MCAPI int addEnumValues(std::string const &, std::vector<std::string> const &);
     MCAPI int addSoftEnum(std::string const &, std::vector<std::string>);
     MCAPI void addSoftEnumValues(std::string const &, std::vector<std::string>);
+    MCAPI void addSpectatorModeEnumValue();
     MCAPI bool buildSelector(struct ActorSelectorArgs const &, class CommandSelectorBase *, std::string &) const;
     MCAPI std::vector<std::string> getAliases(std::string const &) const;
     MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const &) const;
@@ -668,6 +678,7 @@ public:
     MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag &, std::string const &)>);
     MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const &)>);
     MCAPI void setScoreCallback(class std::function<int (bool &, std::string const &, class Actor const &)>);
+    MCAPI void setSoftEnumValues(std::string const &, std::vector<std::string>);
     MCAPI ~CommandRegistry();
     MCAPI static char const * COMMAND_NAME_ENUM_NAME;
     MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;

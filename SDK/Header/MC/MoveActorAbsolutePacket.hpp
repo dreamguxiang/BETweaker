@@ -13,7 +13,6 @@ enum class Flags : uint8_t {
 };
 #undef BEFORE_EXTRA
 
-
 class MoveActorAbsolutePacket : public Packet {
 
 #define AFTER_EXTRA
