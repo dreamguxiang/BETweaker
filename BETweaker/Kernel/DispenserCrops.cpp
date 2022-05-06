@@ -5,10 +5,7 @@
 #include <MC/BlockActor.hpp>
 namespace Module {
 
-	bool DispenserItemFunc(DispenserBlock* a1,BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5, Container* a6, unsigned int a7) {
-        if (a1->getTypeName() == "minecraft:dropper") {
-            return false;
-        }
+	bool DispenserItemFunc(BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5) {
         auto pos = a3->toBlockPos();
         if (!Settings::DispenserCrops)
             return false;

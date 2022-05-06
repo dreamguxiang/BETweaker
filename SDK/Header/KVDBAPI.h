@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "third-party/leveldb/c.h"
 #include "third-party/leveldb/cache.h"
 #include "third-party/leveldb/db.h"

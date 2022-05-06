@@ -534,7 +534,7 @@ class MobHurtEvent : public EventTemplate<MobHurtEvent>
 public:
     Mob* mMob;
     ActorDamageSource* mDamageSource;
-    int mDamage;
+    float mDamage;
 };
 
 class MobDieEvent : public EventTemplate<MobDieEvent>
@@ -661,6 +661,15 @@ public:
     std::string pluginExtention;
 
     bool success = false;
+};
+
+class MobSpawnEvent : public EventTemplate<MobSpawnEvent>
+{
+public:
+    string mTypeName;
+    Vec3 mPos;
+    int mDimensionId;
+	
 };
 
 }; // namespace Event

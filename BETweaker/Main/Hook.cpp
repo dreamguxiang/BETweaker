@@ -23,11 +23,29 @@ THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEA
 	return original(__this, a2, a3, a4, a5);
 }
 
+bool nodis = false;
 THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z", DispenserBlock* a1,
-	BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5, Container* a6, unsigned int a7) {
-	if (Module::DispenserItemFunc(a1, a2, a3, a4, a5, a6, a7))
-		return;
+	struct BlockSource* a2,
+	const struct Vec3* a3,
+	unsigned __int8 a4,
+	const struct ItemStack* a5,
+	struct Container* a6,
+	unsigned int a7) {
+	if (Settings::DispenserCrops){
+		nodis = true;
+	}
 	return original(a1, a2, a3, a4, a5, a6, a7);
+}
+
+THook(void, "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z", 
+	BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5) {
+	if (nodis) {
+		nodis = false;
+		return original(a2, a3, a4, a5);
+	}
+	if (Module::DispenserItemFunc( a2, a3, a4, a5))
+		return;
+	return original(a2, a3, a4, a5);
 }
 
 THook(void, "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
