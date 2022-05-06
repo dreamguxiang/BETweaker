@@ -8,7 +8,6 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "winres.h"
-#include "Version.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
@@ -26,21 +25,21 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE
+1 TEXTINCLUDE 
 BEGIN
-"resource.h\0"
+    "resource.h\0"
 END
 
-2 TEXTINCLUDE
+2 TEXTINCLUDE 
 BEGIN
-"#include ""winres.h""\r\n"
-"\0"
+    "#include ""winres.h""\r\n"
+    "\0"
 END
 
-3 TEXTINCLUDE
+3 TEXTINCLUDE 
 BEGIN
-"\r\n"
-"\0"
+    "\r\n"
+    "\0"
 END
 
 #endif    // APSTUDIO_INVOKED
@@ -52,32 +51,36 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION FILE_VERSION_FILE_VERSION
-PRODUCTVERSION FILE_VERSION_PRODUCT_VERSION
-FILEFLAGSMASK 0x3fL
-FILEFLAGS PLUGIN_FILE_VERSION_FLAG
-FILEOS 0x40004L
-FILETYPE 0x0L
-FILESUBTYPE 0x0L
+ FILEVERSION 1,0,13,0
+ PRODUCTVERSION 1,0,13,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
 BEGIN
-BLOCK "StringFileInfo"
-BEGIN
-BLOCK "040004b0"
-BEGIN
-VALUE "CompanyName", FILE_VERSION_COMPANY_NAME
-VALUE "FileDescription", FILE_VERSION_FILE_DESCRIPTION
-VALUE "FileVersion", FILE_VERSION_FILE_VERSION_STRING
-VALUE "InternalName", FILE_VERSION_INTERNAL_NAME
-VALUE "LegalCopyright", FILE_VERSION_LEGAL_COPYRIGHT
-VALUE "OriginalFilename", FILE_VERSION_ORIGINAL_FILENAME
-VALUE "ProductName", FILE_VERSION_PRODUCT_NAME
-VALUE "ProductVersion", FILE_VERSION_PRODUCT_VERSION_STRING
-END
-END
-BLOCK "VarFileInfo"
-BEGIN
-VALUE "Translation", 0x400, 1200
-END
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040004b0"
+        BEGIN
+            VALUE "CompanyName", "QingYu"
+            VALUE "FileDescription", "adds features to the game, giving survival players a very rich and useful feature set."
+            VALUE "FileVersion", "1.0.12.PLUGIN_VERSION_ACTIONS DEV"
+            VALUE "InternalName", "BETweaker"
+            VALUE "LegalCopyright", "Copyright (C) 2022"
+            VALUE "OriginalFilename", "BETweaker.dll"
+            VALUE "ProductName", "BETweaker"
+            VALUE "ProductVersion", "1.0.12.PLUGIN_VERSION_ACTIONS DEV"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x400, 1200
+    END
 END
 
 #endif    // 中文(简体，中国) resources

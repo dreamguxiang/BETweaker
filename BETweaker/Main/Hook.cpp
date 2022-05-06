@@ -187,19 +187,19 @@ TInstanceHook(bool, "?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z", ItemSta
 
 #include <MC/SurvivalMode.hpp>
 
-TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
-	SurvivalMode, BlockPos a3, unsigned __int8 a4)
-{
-	if (!Settings::CuttingTree) return original(this, a3, a4);
-	auto bs = getPlayer()->getBlockSource();
-	try {
-		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
-	}
-	catch (...) {
-		return  original(this, a3, a4);
-	}
-	return original(this, a3, a4);
-}
+//TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
+//	SurvivalMode, BlockPos a3, unsigned __int8 a4)
+//{
+//	if (!Settings::CuttingTree) return original(this, a3, a4);
+//	auto bs = getPlayer()->getBlockSource();
+//	try {
+//		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
+//	}
+//	catch (...) {
+//		return  original(this, a3, a4);
+//	}
+//	return original(this, a3, a4);
+//}
 
 
 

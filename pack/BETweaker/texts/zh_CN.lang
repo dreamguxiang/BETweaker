@@ -88,5 +88,5 @@ tile.mud_brick_double_slab.name=双层泥砖台阶
 entity.npc.name=NPC
 
 
-betweaker.cuttingtree.lore=快捷模式
+betweaker.cuttingtree.loreon=快捷模式
 betweaker.cuttingtree.loreoff=正常模式
