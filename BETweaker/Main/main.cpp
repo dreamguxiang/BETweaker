@@ -92,6 +92,7 @@ void loadCfg() {
 #include <MC/ResourcePackManager.hpp>
 #include <MC/ResourceLocation.hpp>
 #include <MC/Types.hpp>
+
 static_assert(sizeof(SemVersion) == 0x70);
 enum PackType;
 ResourcePackRepository* gl;

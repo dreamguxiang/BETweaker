@@ -15,7 +15,11 @@ class CameraItemComponentLegacy {
 // Add Member There
 public:
 enum UseAction;
-
+inline float slideAwayDuration() const {
+    float (CameraItemComponentLegacy:: * rv)() const;
+    *((void**)&rv) = dlsym("?slideAwayDuration@CameraItemComponentLegacy@@UEBAMXZ");
+    return (this->*rv)();
+}
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAITEMCOMPONENTLEGACY

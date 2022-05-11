@@ -13,7 +13,10 @@ class DispenserBlock : public ActorBlock {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    inline unsigned char getFacing_s(class Block const& a1) const {
+        return getFacing(a1);
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCK

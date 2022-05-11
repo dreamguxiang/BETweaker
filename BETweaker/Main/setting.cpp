@@ -22,6 +22,8 @@ namespace Settings {
     bool FastSetMinecart = true;
     bool AutoSupplyItem = true;
     bool CuttingTree = false;
+    bool DispenserDestroyBlock = true;
+    bool DispenserDestroyBreakItem = true;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
@@ -32,6 +34,9 @@ namespace Settings {
     "minecraft:warped_fungus",
     "minecraft:brown_mushroom",
     "minecraft:red_mushroom"
+    };
+    std::vector<string> DispenserDestroyItemList{
+        "pickaxe",
     };
 
     nlohmann::json globaljson() {
@@ -50,6 +55,9 @@ namespace Settings {
         json["HUBInfo"]["Show"] = HUBInfoShow;
         json["DispenserCrops"]["ItemList"] = CanDispenserItemList;
         json["CuttingTree"]["Enabled"] = CuttingTree;
+        json["DispenserDestroyBlock"]["Enabled"] = DispenserDestroyBlock;
+        json["DispenserDestroyBlock"]["BreakItem"] = DispenserDestroyBreakItem;
+        json["DispenserDestroyBlock"]["ItemList"] = DispenserDestroyItemList;
         return json;
     }
 
@@ -69,6 +77,9 @@ namespace Settings {
         TRJ("HUBInfo", "Show", HUBInfoShow);
         TRJ("DispenserCrops","ItemList", CanDispenserItemList);
         TRJ("CuttingTree", "Enabled", CuttingTree);
+        TRJ("DispenserDestroyBlock", "Enabled", DispenserDestroyBlock);
+        TRJ("DispenserDestroyBlock", "BreakItem", DispenserDestroyBreakItem);
+        TRJ("DispenserDestroyBlock", "ItemList", DispenserDestroyItemList);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

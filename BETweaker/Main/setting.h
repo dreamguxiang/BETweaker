@@ -18,6 +18,9 @@ namespace Settings {
     extern bool CuttingTree;
     extern string HUBInfoShow;
     extern std::unordered_set<string> CanDispenserItemList;
+    extern bool DispenserDestroyBlock;
+    extern bool DispenserDestroyBreakItem;
+    extern  std::vector<string> DispenserDestroyItemList;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);

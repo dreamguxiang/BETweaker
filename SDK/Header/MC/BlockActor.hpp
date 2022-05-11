@@ -24,7 +24,16 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
     static unsigned int getBlockEntityType(Block* block);
-
+    inline class Container* getContainer() {
+        class Container* (BlockActor:: * rv)();
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEAAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline class Container const* getContainer() const {
+        class Container const* (BlockActor:: * rv)() const;
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEBAPEBVContainer@@XZ");
+        return (this->*rv)();
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR

@@ -2,6 +2,8 @@
 #include "Module.h"
 #include "setting.h"
 #include <MC/LogBlock.hpp>
+std::mutex DispenserejectItemLock;
+bool nodis = false;
 
 THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
 	original(self);
@@ -23,7 +25,6 @@ THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEA
 	return original(__this, a2, a3, a4, a5);
 }
 
-bool nodis = false;
 THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z", DispenserBlock* a1,
 	struct BlockSource* a2,
 	const struct Vec3* a3,
@@ -32,13 +33,42 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
 	struct Container* a6,
 	unsigned int a7) {
 	if (Settings::DispenserCrops){
+		DispenserejectItemLock.lock();
 		nodis = true;
+		original(a1, a2, a3, a4, a5, a6, a7);
+		DispenserejectItemLock.unlock();
+		return;
 	}
 	return original(a1, a2, a3, a4, a5, a6, a7);
 }
 
+#include <MC/BlockActor.hpp>
+#include <MC/DispenserBlockActor.hpp>
+#include <MC/Container.hpp>
+#include <MC/RandomizableBlockActorContainerBase.hpp>
+TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
+	if(!Settings::DispenserDestroyBlock) return original(this, a2, a3);
+	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
+	if (BlockEntity)
+	{
+		auto Container = BlockEntity->getContainer();
+		((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
+		int v9 = BlockEntity->getRandomSlot();
+		auto& items = Container->getItem(v9);
+		if (!items.isNull() && items.getCount() > 0)
+		{
+			//std::cout << Facing::DIRECTIONS[1] << std::endl;
+			int face = getFacing(a2->getBlock(*a3));
+			auto newpos = a3->neighbor(face);		
+			if( Module::DispenserDestroy(a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) return;
+		}
+	}
+	return original(this,a2,a3);
+}
+
 THook(void, "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z", 
 	BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5) {
+	if (!Settings::DispenserCrops) return original(a2, a3, a4, a5);
 	if (nodis) {
 		nodis = false;
 		return original(a2, a3, a4, a5);
