@@ -17,23 +17,34 @@ public:
 	virtual void sendBroadcast(NetworkIdentifier const&, uint8_t mSubId, Packet const&) = 0;
 	virtual void flush(NetworkIdentifier const&, std::function<void()>) = 0;
 };
+#include <MC/Types.hpp>
+#include <MC/KeyOrNameResult.hpp>
 
 namespace Helper {
-	inline string buildActorDisplayName(ActorType a2, string a3, Actor* a4) {
-		string Src;
-		 SymCall("?buildActorDisplayName@@YA?AUKeyOrNameResult@@W4ActorType@@AEBV?$basic_string@DU?$c"
-			"har_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z", void, string*, ActorType, string, Actor*)(&Src,a2,a3,a4);
-		 return Src;
+
+	inline static struct KeyOrNameResult buildActorDisplayName(enum ActorType a0, std::string const& a1, class Actor const* a2) {
+		struct KeyOrNameResult(*rv)(enum ActorType, std::string const&, class Actor const*);
+		*((void**)&rv) = dlsym("?buildActorDisplayName@@YA?AUKeyOrNameResult@@W4ActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVActor@@@Z");
+		return (*rv)(std::forward<enum ActorType>(a0), std::forward<std::string const&>(a1), std::forward<class Actor const*>(a2));
 	}
+	
+	inline string buildActorDisplayNames(ActorType a2, string a3, Actor* a4) {
+		auto key = buildActorDisplayName(a2, a3, a4);
+		if (!key.misKey) {
+			return key.mName;
+		}
+		return "";
+	}
+
 	inline string getDisplayName(string displayname, string lang) {
-		return I18n::get(displayname, I18n::getLanguage(lang));
+		auto a1 = I18n::get(displayname, I18n::getLanguage(lang));
+		return a1;
 	}
+	
 	inline string getActorDisplayName(Actor* ac,string lang) {
-		string a1 = ac->getNameTag();
-		auto a2 = ac->getEntityTypeId();
-		auto disname = buildActorDisplayName(a2, "", ac);
-		return getDisplayName(disname, lang);
+		return getDisplayName(buildActorDisplayNames(ac->getEntityTypeId(), "", ac), lang);
 	}
+	
 	inline vector<string> split(const string& str, const string& pattern)
 	{
 		vector<string> res;

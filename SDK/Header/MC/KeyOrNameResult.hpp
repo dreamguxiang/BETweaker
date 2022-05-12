@@ -10,7 +10,10 @@
 struct KeyOrNameResult {
 
 #define AFTER_EXTRA
-
+public:
+    string mName;
+    bool misKey;
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYORNAMERESULT
