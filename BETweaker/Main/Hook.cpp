@@ -60,7 +60,7 @@ TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlo
 			//std::cout << Facing::DIRECTIONS[1] << std::endl;
 			int face = getFacing(a2->getBlock(*a3));
 			auto newpos = a3->neighbor(face);		
-			if( Module::DispenserDestroy(a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) return;
+			if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) return;
 		}
 	}
 	return original(this,a2,a3);
@@ -260,3 +260,24 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	return original(this, item);
 }
 
+
+//TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
+//{
+//	Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
+//	if (pl->isPlayer())
+//	{
+//		auto sp = (Player*)pl;
+//		BlockPos bp = dAccess<BlockPos>(a2, 28);
+//		auto blockin = Level::getBlockInstance(bp, pl->getDimensionId());
+//		if (sp->isSneaking()) {
+//			auto blactor = blockin.getBlockEntity();
+//			if (blactor) {
+//				if (blactor->getType() == BlockActorType::Dispenser) {
+//					Module::ChangeDispenserMode(blactor, pl->getBlockSource(), sp);
+//					return 0;
+//				}
+//			}
+//		}
+//	}
+//	return original(this, a2);
+//}

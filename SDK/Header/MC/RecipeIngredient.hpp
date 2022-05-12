@@ -14,8 +14,9 @@ class RecipeIngredient {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ItemDescriptor descriptor;
-    unsigned short count;
+    ItemDescriptor mDescriptor;
+    unsigned short mCount;
+	
 private:
     char pad74[6]{ 0 };
 

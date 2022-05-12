@@ -9,6 +9,12 @@
 #include "RecipeIngredient.hpp"
 #include "Item.hpp"
 #include "Block.hpp"
+#include "ShapedRecipe.hpp"
+#include "ShapelessRecipe.hpp"
+#include "ItemDescriptorCount.hpp"
+
+typedef function<std::unique_ptr<ShapedRecipe>(string, int, int, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShapedRecipeCallback_t;
+typedef function<std::unique_ptr<ShapelessRecipe>(string, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShaplessRecipeCallback_t;
 
 #undef BEFORE_EXTRA
 
@@ -18,16 +24,21 @@ class Recipes {
 // Add Member There
 public:
 class Type {
+public:
     Item const* item;
     Block const* block;
     RecipeIngredient ingredient;
     char label;
 public:
+    class Type& operator=(class Type const&) = default;
+
     inline Type(string const& name, char label, int aux, unsigned short count) :ingredient(name, aux, count), label(label) {
-        item = ingredient.descriptor.getItem();
-        block = ingredient.descriptor.getBlock();
+        item = ingredient.mDescriptor.getItem();
+        block = ingredient.mDescriptor.getBlock();
     }
+	
 };
+
 struct NormalizedRectangularRecipeResults {
     NormalizedRectangularRecipeResults() = delete;
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&) = delete;

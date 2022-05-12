@@ -64,6 +64,30 @@ namespace Helper {
 		return res;
 	}
 
+	inline bool isBETstick(Player* sp) {
+		auto item = sp->getHandSlot();
+		if (item->isNull()) {
+			return false;
+		}
+		auto lore = item->getCustomLore();
+		if (lore.empty()) return false;
+		std::cout << lore[1] << std::endl;
+		if (lore[1] == "§6§lBETweakerStick") {
+			//if (EnchantUtils::hasEnchant(Enchant::Type::unbreaking, *item)) {
+				return true;
+			//}
+		}
+		return false;
+	}
+	inline ItemInstance cteateBetStick() {
+		auto item = ItemStack::create("minecraft:stick");
+		std::vector<string> lore{"§l§kBETweakerStick§r","§6§lBETweakerStick" ,"§kBETweakerStick"};
+		item->setCustomLore(lore);
+		EnchantUtils::applyEnchant(*item, EnchantmentInstance(Enchant::Type::unbreaking, 0), 1);
+		item->setCustomName("§g§lBETStick");
+		return ItemInstance(*item);
+	}
+
 }
 
 enum ActorCategory : int

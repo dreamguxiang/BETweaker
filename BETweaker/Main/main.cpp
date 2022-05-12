@@ -5,6 +5,7 @@
 #include <ScheduleAPI.h>
 #include <MC/ResourcePackRepository.hpp>
 #include <MC/ResourcePackStack.hpp>
+#include <MC/BlockActor.hpp>
 Logger logger(fmt::format(fg(fmt::color::light_pink), "BETweaker"));
 map<string, long > useitemonbug;
 
@@ -36,29 +37,46 @@ std::unordered_set<string> SignBlocks{
 "minecraft:warped_wall_sign"
 };
 
-
 bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     long a = getTimeStamp();
     Player* sp = ev.mPlayer;
     auto playername = sp->getRealName();
     for (auto iter = useitemonbug.rbegin(); iter != useitemonbug.rend(); iter++)
         if (iter->first == playername) {
-            if (a - useitemonbug[playername] <= (long)50) {
-                return false;
+            if (a - useitemonbug[playername] <= (long)100) {
+                return true;
             }
         }
     auto blockin = ev.mBlockInstance;
+    auto blactor = blockin.getBlockEntity();
     useitemonbug[playername] = a;
     useitemonbug.insert(std::map < string, long > ::value_type(playername, a));
 
     if (Settings::BetterHarvestingCrop) {
         Module::LoadBetterHarvestingCrop(blockin, sp);
     }
+	
     if (Settings::EditSign) {
-        if (SignBlocks.count(blockin.getBlock()->getTypeName())){
-            Module::EditSign(sp, blockin);
+        if (Helper::isBETstick(sp)) {
+            if (SignBlocks.count(blockin.getBlock()->getTypeName())) {
+                Module::EditSign(sp, blockin);
+            }
         }
     }
+	
+    if (Settings::DispenserDestroyBlock) {
+        if (Helper::isBETstick(sp)) {
+            if (sp->isSneaking()) {
+                auto blactor = blockin.getBlockEntity();
+                if (blactor) {
+                    if (blactor->getType() == BlockActorType::Dispenser) {
+                        Module::ChangeDispenserMode(blactor, sp->getBlockSource(), sp);
+                    }
+                }
+            }
+        }
+    }
+	
     return true;
 }
 
@@ -174,5 +192,3 @@ void PluginInit()
     }
     initEvent();
 }
-
-

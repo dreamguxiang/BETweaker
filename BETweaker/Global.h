@@ -27,7 +27,6 @@
 #include <MC/Random.hpp>
 #include <MC/Container.hpp>
 #include <MC/Item.hpp>
-#include <MC/EnchantUtils.hpp>
 #include <MC/BlockSource.hpp>
 #include <MC/ResourcePack.hpp>
 #include <MC/PackSourceFactory.hpp>
@@ -43,6 +42,8 @@
 #include <MC/Facing.hpp>
 #include <MC/BlockStateVariant.hpp>
 #include <MC/BlockStateGroup.hpp>
+#include <MC/EnchantUtils.hpp>
+#include <MC/EnchantmentInstance.hpp>
 #include <MC/VanillaStates.hpp>
 #include <MC/ItemState.hpp>
 #include "Main/Helper.h"

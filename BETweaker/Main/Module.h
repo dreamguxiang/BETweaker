@@ -16,5 +16,6 @@ namespace Module {
 	bool UseItemSupply(Player* sp, string itemname);
 	void cutTree(BlockSource* bs, BlockPos a3, Player* sp);
 	void cutTreeLore(Player* sp, ItemStack* item);
-	bool DispenserDestroy(BlockSource* a2, BlockPos* a3, ItemStack& a5, int, BlockPos* old);
+	bool DispenserDestroy(BlockActor* ba, BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old); 
+	void ChangeDispenserMode(BlockActor* ba, BlockSource* bs, Player* sp);
 }

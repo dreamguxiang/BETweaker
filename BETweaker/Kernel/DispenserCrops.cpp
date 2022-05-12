@@ -1,10 +1,12 @@
-#include "../Global.h"
+﻿#include "../Global.h"
 #include <MC/SeedItemComponentLegacy.hpp>
 #include "../Main/setting.h"
 #include <MC/Item.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/CameraItemComponentLegacy.hpp>
 #include <MC/Material.hpp>
+#include <mc/BlockActorDataPacket.hpp>
+#include <MC/DispenserBlockActor.hpp>
 namespace Module {
 
 	bool DispenserItemFunc(BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5) {
@@ -69,10 +71,10 @@ namespace Module {
         }
         return result;
     }
-    bool DispenserDestroy(BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old) {
-
-        auto block = Level::getBlock(pos, a2);
-        //auto out = getDestroyProgress(a5, block, *pos, a2);
+    bool DispenserDestroy(BlockActor* ba,BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old) {
+        if (ba->getCustomName() == "DestroyBlock-Open") {
+            auto block = Level::getBlock(pos, a2);
+            //auto out = getDestroyProgress(a5, block, *pos, a2);
             if (isToolItem(&a5)) {
                 if (block->getTypeName() == "minecraft:air") {
                     return true;
@@ -85,15 +87,32 @@ namespace Module {
                     auto& material = block->getMaterial();
                     bool shouldDrop = material.isAlwaysDestroyable() || a5.canDestroySpecial(*block);
                     shouldDrop = shouldDrop && !false;
-					
+
                     if (shouldDrop) {
                         bool out = Global<Level>->destroyBlock(*a2, *pos, shouldDrop);
-                        if(Settings::DispenserDestroyBreakItem) a5.hurtAndBreak(1, nullptr);
+                        if (Settings::DispenserDestroyBreakItem) a5.hurtAndBreak(1, nullptr);
                     }
                     return true;
                 }
             }
+        }
+        else {
+            return true;
+        }
         return false;
+    }
+
+    void ChangeDispenserMode(BlockActor* ba,BlockSource* bs,Player* sp) {
+        if (ba->getCustomName() == "DestroyBlock-Close" || ba->getCustomName().empty()) {
+            ba->setCustomName("DestroyBlock-Open");
+            sp->sendText("§b[BETweaker-Dispenser] OPEN", TextType::JUKEBOX_POPUP);
+        }
+        else if (ba->getCustomName() == "DestroyBlock-Open") {
+            ba->setCustomName("DestroyBlock-Close");
+            sp->sendText("§b[BETweaker-Dispenser] CLOSE", TextType::JUKEBOX_POPUP);
+        }
+        auto pkt = ba->getServerUpdatePacket(*bs);
+        Level::sendPacketForAllPlayer(*pkt);
     }
 
 }

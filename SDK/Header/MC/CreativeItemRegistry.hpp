@@ -12,7 +12,11 @@ class CreativeItemRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+   static class CreativeItemRegistry* getCreativeItemRegistry() {
+        auto regptr = (std::unique_ptr<CreativeItemRegistry>*)dlsym("?mCurrentRegistry@CreativeItemRegistry@@0V?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@A");
+        return regptr->get();
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMREGISTRY

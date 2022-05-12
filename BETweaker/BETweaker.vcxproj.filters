@@ -91,6 +91,9 @@
     <ClCompile Include="CuttingTree.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="StickRecipe.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc">

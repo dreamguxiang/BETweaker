@@ -206,6 +206,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="Main\setting.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StickRecipe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc" />

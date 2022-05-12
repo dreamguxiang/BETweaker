@@ -13,7 +13,13 @@ class ShapelessRecipe : public Recipe {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    //void* filler[0x108/8 - sizeof(Recipe) / 8];
+    char unk160[208 - 160];// 160
+    byte unk208 = byte(1); // 208
+    char unk209[7];
+    vector<ItemInstance> items; // 216
+    void* unk240[3] = { 0,0,0 }; //240
+    //pair<enum BlockActorType, const string> 
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPELESSRECIPE
