@@ -1,4 +1,4 @@
-﻿#include "./Global.h"
+﻿#include "../Global.h"
 #include <MC/Recipes.hpp>
 #include <MC/ItemRegistry.hpp>
 #include <MC/CreativeItemRegistry.hpp>

@@ -8,12 +8,13 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "winres.h"
+#include "Version.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ÖÐÎÄ(¼òÌå£¬ÖÐ¹ú) resources
+// ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½å£¬ï¿½Ð¹ï¿½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -51,8 +52,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,13,0
- PRODUCTVERSION 1,0,13,0
+ FILEVERSION FILE_VERSION_FILE_VERSION
+ PRODUCTVERSION FILE_VERSION_PRODUCT_VERSION
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -67,14 +68,14 @@ BEGIN
     BEGIN
         BLOCK "040004b0"
         BEGIN
-            VALUE "CompanyName", "QingYu"
-            VALUE "FileDescription", "adds features to the game, giving survival players a very rich and useful feature set."
-            VALUE "FileVersion", "1.0.12.PLUGIN_VERSION_ACTIONS DEV"
-            VALUE "InternalName", "BETweaker"
-            VALUE "LegalCopyright", "Copyright (C) 2022"
-            VALUE "OriginalFilename", "BETweaker.dll"
-            VALUE "ProductName", "BETweaker"
-            VALUE "ProductVersion", "1.0.12.PLUGIN_VERSION_ACTIONS DEV"
+            VALUE "CompanyName", FILE_VERSION_COMPANY_NAME
+            VALUE "FileDescription", FILE_VERSION_FILE_DESCRIPTION
+            VALUE "FileVersion", FILE_VERSION_FILE_VERSION_STRING
+            VALUE "InternalName", FILE_VERSION_INTERNAL_NAME
+            VALUE "LegalCopyright", FILE_VERSION_LEGAL_COPYRIGHT
+            VALUE "OriginalFilename", FILE_VERSION_ORIGINAL_FILENAME
+            VALUE "ProductName", FILE_VERSION_PRODUCT_NAME
+            VALUE "ProductVersion", PLUGIN_FILE_VERSION_STRING
         END
     END
     BLOCK "VarFileInfo"
@@ -83,7 +84,7 @@ BEGIN
     END
 END
 
-#endif    // ÖÐÎÄ(¼òÌå£¬ÖÐ¹ú) resources
+#endif    // ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½å£¬ï¿½Ð¹ï¿½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

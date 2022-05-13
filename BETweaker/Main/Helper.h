@@ -71,11 +71,12 @@ namespace Helper {
 		}
 		auto lore = item->getCustomLore();
 		if (lore.empty()) return false;
-		std::cout << lore[1] << std::endl;
-		if (lore[1] == "§6§lBETweakerStick") {
-			//if (EnchantUtils::hasEnchant(Enchant::Type::unbreaking, *item)) {
+		if(lore.size()>1){
+			if (lore[1] == "§6§lBETweakerStick") {
+				//if (EnchantUtils::hasEnchant(Enchant::Type::unbreaking, *item)) {
 				return true;
-			//}
+				//}
+			}
 		}
 		return false;
 	}

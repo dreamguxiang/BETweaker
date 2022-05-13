@@ -1,4 +1,4 @@
-#include "./Global.h"
+#include "../Global.h"
 #include <MC/Material.hpp>
 #include <concurrencpp/concurrencpp.h>
 #include <MC/ServerPlayer.hpp>

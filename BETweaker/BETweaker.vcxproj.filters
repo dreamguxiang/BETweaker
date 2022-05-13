@@ -88,11 +88,11 @@
     <ClCompile Include="Kernel\AutoSupplyItem.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="CuttingTree.cpp">
+    <ClCompile Include="Kernel\StickRecipe.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="StickRecipe.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Kernel\CuttingTree.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -176,7 +176,6 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AutoUprade.cpp" />
-    <ClCompile Include="CuttingTree.cpp" />
     <ClCompile Include="dllmain.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -188,6 +187,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="Kernel\Command.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Kernel\CuttingTree.cpp" />
     <ClCompile Include="Kernel\DispenserCrops.cpp" />
     <ClCompile Include="Kernel\DoubleDoors.cpp" />
     <ClCompile Include="Kernel\EditSign.cpp" />
@@ -197,6 +197,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\HUBInfo.cpp" />
+    <ClCompile Include="Kernel\StickRecipe.cpp" />
     <ClCompile Include="Main\Hook.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -206,7 +207,6 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="Main\setting.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="StickRecipe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc" />
