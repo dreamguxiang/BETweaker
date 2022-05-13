@@ -1,7 +1,7 @@
 #include "../Global.h"
 #include "Module.h"
 #include "setting.h"
-#include <MC/LogBlock.hpp>
+
 std::mutex DispenserejectItemLock;
 bool nodis = false;
 
@@ -260,6 +260,12 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	return original(this, item);
 }
 
+TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock) {
+	
+	return isAlive();
+	
+	return original(this);
+}
 
 //TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
 //{
