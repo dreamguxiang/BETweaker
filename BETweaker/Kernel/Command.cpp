@@ -8,8 +8,7 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
     std::thread([isForce]() {
         // Set global SEH-Exception handler
         _set_se_translator(seh_exception::TranslateSEHtoCE);
-
-        CheckAutoUpdate(true, isForce);
+        checkUpdate();
         }).detach();
 }
 

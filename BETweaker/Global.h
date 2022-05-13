@@ -73,5 +73,5 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate = false);
 #define LL_UPDATE_OTHER_FILES_RECORD "plugins/BETweaker/Versions.ini"
 
 extern void loadCfg();
-extern bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate);
+extern void checkUpdate();
 

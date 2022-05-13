@@ -163,7 +163,7 @@ void initEvent()
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
         if(Settings::HUBinfo) Module::HUBInfo();
         std::thread th([]() {
-            CheckAutoUpdate(true, false);
+            checkUpdate();
             });
         th.detach();
 
