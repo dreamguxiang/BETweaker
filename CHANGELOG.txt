@@ -1,5 +1,9 @@
 # [BETweaker Release Note] 
 
-- update 1.18.32
+- Add DispenserDestroyBlock
+- Add EndPortalDuplicateGravityBlock
+- Add BETweakerStick
+- Fix HUBinfo Error
+
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.

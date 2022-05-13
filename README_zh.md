@@ -14,11 +14,13 @@
 - 一人睡觉集体过夜
 - 耕地防踩
 - 生物、方块信息显示
-- 编辑告示牌
+- 编辑告示牌(需要BETweaker多功能木棍)
 - 叶子快速腐烂
 - 自动钓鱼
 - 自动补齐物品
 - 一键砍树
+- 末地传送门刷重力方块
+- 发射器破坏方块(需要BETweaker多功能木棍)
 <img src=".github/cuttree.gif" alt="show" />
 
 - 双门
@@ -29,6 +31,15 @@
         覆盖范围的有：树苗, 作物， 蘑菇， 竹子
         如果你不喜欢或不需要此功能，你随时可以在配置文件中关掉此功能！
     </details>
+
+- BETweaker多功能木棍
+  - 合成方法 <p align="center"><img src="https://s1.ax1x.com/2022/05/13/OsPqcF.png" alt="drawing" style="width:500px;"/></p>
+  - 功能
+    - 下蹲,右键发射器改变是否破环方块
+    - 下蹲，右键告示牌，触发编辑告示牌
+    - ......
+
+
 本插件所有功能性设置均可以在游戏内使用 **/bet** 来进行开关，或在游戏外 **"/plugins/BETweaker/config.json"** 目录下进行配置
 <p align="center">
 <img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
@@ -53,7 +64,7 @@
 
 ### 📞 联系
 
-暂无
+QQ群：883408219
 
 ### ⚠️ 警告
 

@@ -4,7 +4,7 @@
 #define JsonFile "plugins/BETweaker/config.json"
 #define VERSION LL::Version{PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_REVISION, PLUGIN_LLVERSION_STATUS}
 #define VERSION_RES LL::Version{PLUGIN_VERSION_MAJOR, PLUGIN_VERSION_MINOR, PLUGIN_VERSION_REVISION}
-#define BDSP 503
+#define BDSP TARGET_BDS_PROTOCOL_VERSION
 #define toStr(x) std::to_string(x)
 #define getI18n(x,n) I18n::get(x,n)
 #define H(x) do_hash2(x)

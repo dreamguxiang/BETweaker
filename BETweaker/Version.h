@@ -14,7 +14,7 @@
 #define PLUGIN_VERSION_BUILD        0
 #define PLUGIN_VERSION_STATUS       PLUGIN_VERSION_DEV
 
-//#define TARGET_BDS_PROTOCOL_VERSION 503
+#define TARGET_BDS_PROTOCOL_VERSION 503
 // used by github actions(TODO)
 //#define TARGET_BDS_VERSION          1.18.30.04
 

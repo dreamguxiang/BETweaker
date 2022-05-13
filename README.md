@@ -14,11 +14,13 @@
 - One person sleeps, all stay overnight
 - Farm land anti-stomp
 - Mob, Block information display
-- Edit Sign
+- Edit Sign(need BETweakerStick)
 - Fast leaf decay
 - Auto Fish
 - AutoSupplyItem
 - Cutting Tree 
+- Dispenser Destroy Block(need BETweakerStick)
+- End Portal Duplicate Gravity Block
 <img src=".github/cuttree.gif" alt="show" />
 
 - Double Doors
@@ -30,6 +32,15 @@
         List: crops, saplings, bamboo, mushrooms
         If you don't like it, you can turn off this feature in the plugin config file.
     </details>
+
+- BETweakerStick
+  - Crafting <p align="center"><img src="https://s1.ax1x.com/2022/05/13/OsPqcF.png" alt="drawing" style="width:500px;"/></p>
+  - Function
+    - Sneaking,Right click Dispenser and Change Status
+    - Sneaking,Edit Sign
+    - ......
+
+
 For each feature in this plugin, you can use the command **"/bet"** or revise the config file in **"/plugins/BETweaker/"** to turn it on and off at any time.
 
 <p align="center">
@@ -54,7 +65,7 @@ This plugin is developed based on [LiteLoaderBDS](https://github.com/LiteLDev/Li
 
 ### 📞 Contact
 
-暂无
+NULL
 
 ### ⚠️ Warning
 
