@@ -72,7 +72,7 @@ jobs:
     - name: Change Pack Version
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-         ./ActionHelper.exe
+         ActionHelper.exe
       shell: cmd
 
     - name: copy dll and pdb files
