@@ -14,6 +14,12 @@ THook(void, "?_loadHardcodedRecipes@Recipes@@AEAAXXZ", Recipes& recipes) {
     recipes.addShapedRecipe("betweaker::betskick", Helper::cteateBetStick(), shapeMatrix, types, craftingTags, 2, nullptr);
 }
 
+void regtest() {
+	auto& recipes = Global<Level>->getRecipes();
+    vector<HashedString> fTags{ "furnace" };
+    recipes.addFurnaceRecipeAuxData(ItemInstance(*ItemRegistry::lookupByName("minecraft:stick")), Helper::cteateBetStick(), fTags);
+}
+
 THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a1) {
     original(a1);
     Item::addCreativeItem(Helper::cteateBetStick());

@@ -177,12 +177,16 @@ void initEvent()
         });
 }
 
-
+void regtest();
 #include <ServerAPI.h>
 void PluginInit()
 {
     loadCfg();
     PackInstall();
+    Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
+       // regtest();
+        return true;
+        });
     logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());
     logger.info("Build Date[{}]", __TIMESTAMP__);
     logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));

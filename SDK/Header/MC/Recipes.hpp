@@ -12,6 +12,7 @@
 #include "ShapedRecipe.hpp"
 #include "ShapelessRecipe.hpp"
 #include "ItemDescriptorCount.hpp"
+#include "RecipeIngredient.hpp"
 
 typedef function<std::unique_ptr<ShapedRecipe>(string, int, int, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShapedRecipeCallback_t;
 typedef function<std::unique_ptr<ShapelessRecipe>(string, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShaplessRecipeCallback_t;
@@ -38,6 +39,29 @@ public:
     }
 	
 };
+
+
+struct FurnaceRecipeKey {
+public:	
+    int mIdAux;
+    HashedString mTag;
+public:
+
+    inline FurnaceRecipeKey(int aux, HashedString tag) :mIdAux(aux), mTag(tag) {
+    }
+};
+
+inline void addFurnaceRecipeAuxData(ItemInstance const& inputItem, ItemInstance const& outputItem, vector<HashedString> const& FurnaceTags) {
+    auto IdAux = inputItem.getIdAux();
+    _Smtx_t* v124[2];
+	for(auto& v7 : FurnaceTags){
+        SymCall("??$_Emplace@UFurnaceRecipeKey@Recipes@@AEBVItemInstance@@@?$_Tree@V?$_Tmap_traits@UFurnaceRecipeKey@Recip"
+            "es@@VItemInstance@@U?$less@UFurnaceRecipeKey@Recipes@@@std@@V?$allocator@U?$pair@$$CBUFurnaceRecipeKey@Recipes"
+            "@@VItemInstance@@@std@@@5@$0A@@std@@@std@@IEAA?AU?$pair@PEAU?$_Tree_node@U?$pair@$$CBUFurnaceRecipeKey@Recipe"
+            "s@@VItemInstance@@@std@@PEAX@std@@_N@1@$$QEAUFurnaceRecipeKey@Recipes@@AEBVItemInstance@@@Z",
+            void* , char* , _Smtx_t** , Recipes::FurnaceRecipeKey ,const ItemInstance&)((char*)this + 32 ,v124, FurnaceRecipeKey(IdAux, v7), outputItem);
+    }
+}
 
 struct NormalizedRectangularRecipeResults {
     NormalizedRectangularRecipeResults() = delete;

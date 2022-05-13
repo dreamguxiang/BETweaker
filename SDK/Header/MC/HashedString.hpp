@@ -27,7 +27,7 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASHEDSTRING
 public:
-    HashedString() = delete;
+    HashedString() = default;
 #endif
 
 public:
