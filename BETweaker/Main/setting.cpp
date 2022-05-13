@@ -24,6 +24,7 @@ namespace Settings {
     bool CuttingTree = false;
     bool DispenserDestroyBlock = true;
     bool DispenserDestroyBreakItem = true;
+    bool EndPortalDuplicateGravityBlock = false;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
@@ -58,6 +59,7 @@ namespace Settings {
         json["DispenserDestroyBlock"]["Enabled"] = DispenserDestroyBlock;
         json["DispenserDestroyBlock"]["BreakItem"] = DispenserDestroyBreakItem;
         json["DispenserDestroyBlock"]["ItemList"] = DispenserDestroyItemList;
+        json["EndPortalDuplicateGravityBlock"]["Enabled"] = EndPortalDuplicateGravityBlock;
         return json;
     }
 
@@ -80,6 +82,7 @@ namespace Settings {
         TRJ("DispenserDestroyBlock", "Enabled", DispenserDestroyBlock);
         TRJ("DispenserDestroyBlock", "BreakItem", DispenserDestroyBreakItem);
         TRJ("DispenserDestroyBlock", "ItemList", DispenserDestroyItemList);
+        TRJ("EndPortalDuplicateGravityBlock", "Enabled", EndPortalDuplicateGravityBlock);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

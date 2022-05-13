@@ -37,6 +37,8 @@
 #include <MC/LeafBlock.hpp>
 #include <MC/SemVersion.hpp>
 #include <MC/DispenserBlock.hpp>
+#include <MC/LogBlock.hpp>
+#include <MC/FallingBlock.hpp>
 #include <MC/FishingHook.hpp>
 #include <MC/DoorBlock.hpp>
 #include <MC/Facing.hpp>

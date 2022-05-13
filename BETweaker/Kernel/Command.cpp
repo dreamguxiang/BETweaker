@@ -34,6 +34,7 @@ class BETCommand : public Command
         AutoSupplyItem,
         CuttingTree,
         DispenserDestroyBlock,
+        EndPortalDuplicateGravityBlock,
     } operation;
 	
     bool isenable;
@@ -106,7 +107,11 @@ public:
         case Operation::DispenserDestroyBlock:
             Settings::DispenserDestroyBlock = isenable;
             output.success(std::to_string(isenable));
-            break;			
+            break;	
+        case Operation::EndPortalDuplicateGravityBlock:
+            Settings::EndPortalDuplicateGravityBlock = isenable;
+            output.success(std::to_string(isenable));
+            break;
         case Operation::Reload:
             Settings::LoadConfigFromJson(JsonFile);
             output.success("reload success");
@@ -137,6 +142,7 @@ public:
             {"autosupplyitem", Operation::AutoSupplyItem},
             {"cuttingtree", Operation::CuttingTree},
             {"dispenserdestroyblock", Operation::DispenserDestroyBlock},
+            {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock},
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {
