@@ -72,10 +72,10 @@ namespace Module {
         return result;
     }
     bool DispenserDestroy(BlockActor* ba,BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old) {
-        if (ba->getCustomName() == "DestroyBlock-Open") {
-            auto block = Level::getBlock(pos, a2);
-            //auto out = getDestroyProgress(a5, block, *pos, a2);
-            if (isToolItem(&a5)) {
+        if (isToolItem(&a5)) {
+            if (ba->getCustomName() == "DestroyBlock-Open") {
+                auto block = Level::getBlock(pos, a2);
+                //auto out = getDestroyProgress(a5, block, *pos, a2);
                 if (block->getTypeName() == "minecraft:air") {
                     return true;
                 }
@@ -95,9 +95,6 @@ namespace Module {
                     return true;
                 }
             }
-        }
-        else {
-            return true;
         }
         return false;
     }
