@@ -287,3 +287,11 @@ TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock)
 //	}
 //	return original(this, a2);
 //}
+
+//#include <MC/LootTableContext.hpp>
+//#include <MC/OwnerStorageEntity.hpp>
+//THook(Actor*, "?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z", 
+//	unsigned long long* a1, LootTableContext* a2, OwnerStorageEntity* a3) {
+//	logger.info << original(a1, a2, a3)->getTypeName() << logger.endl;
+//	return original(a1, a2, a3);
+//}

@@ -89,13 +89,29 @@ namespace Module {
                             auto block = bi.getBlock();
                             ItemInstance item = block->getSilkTouchItemInstance();
                             auto blpos = bi.getPosition();
-                            sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
-                                Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
-                                getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                                HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
-                                posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
-                                HUBHelper::getCategoryName(item, sp.getLanguageCode())
-                            );
+                            
+                            if (block->getTypeName() == "minecraft:redstone_wire")
+                            {
+                                sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}\n§c{}§7:§e{}",
+                                    Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
+                                    getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                                    HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
+                                    posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
+                                    HUBHelper::getCategoryName(item, sp.getLanguageCode()),
+                                    getI18n("betweaker.hubinfo.redstonelevel", lang),
+                                    block->getNbt()->getCompoundTag("states")->getInt("redstone_signal")
+                                );
+                            }
+                            else
+                            {
+                                sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
+                                    Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
+                                    getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                                    HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
+                                    posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
+                                    HUBHelper::getCategoryName(item, sp.getLanguageCode())
+                                );
+                            }
                         }
                     }
                 }

@@ -3,6 +3,7 @@ betweaker.hubinfo.destroytime=破坏时长
 betweaker.hubinfo.status=状态
 betweaker.hubinfo.frinedly=友好
 betweaker.hubinfo.hostile=敌对
+betweaker.hubinfo.redstonelevel=红石等级
 betweaker.editsign.title=修改告示牌
 tile.birch_door.name=白桦木门
 tile.jungle_door.name=丛林木门

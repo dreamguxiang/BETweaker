@@ -3,6 +3,7 @@ betweaker.hubinfo.destroytime=Duration of Destroy
 betweaker.hubinfo.status=Status
 betweaker.hubinfo.frinedly=Friendly
 betweaker.hubinfo.hostile=Hostile
+betweaker.hubinfo.redstonelevel=RedStone Power
 betweaker.editsign.title=Edit Sign
 tile.birch_door.name=Birch Door
 tile.jungle_door.name=Jungle Door
