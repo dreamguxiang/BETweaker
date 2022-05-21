@@ -21,6 +21,7 @@
 - Cutting Tree 
 - Dispenser Destroy Block(need BETweakerStick)
 - End Portal Duplicate Gravity Block
+- Add /seed command to get the world's seed
 <img src=".github/cuttree.gif" alt="show" />
 
 - Double Doors

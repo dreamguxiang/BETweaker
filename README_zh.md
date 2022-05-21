@@ -21,6 +21,7 @@
 - 一键砍树
 - 末地传送门刷重力方块
 - 发射器破坏方块(需要BETweaker多功能木棍)
+- 增加/seed命令来获取世界种子
 <img src=".github/cuttree.gif" alt="show" />
 
 - 双门
