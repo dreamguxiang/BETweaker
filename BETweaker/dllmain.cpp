@@ -3,7 +3,7 @@
 #include <LLAPI.h>
 #pragma comment(lib, "../SDK/Lib/bedrock_server_api.lib")
 #pragma comment(lib, "../SDK/Lib/bedrock_server_var.lib")
-#pragma comment(lib, "../SDK/Lib/SymDBHelper_Clang_ms.lib")
+#pragma comment(lib, "../SDK/Lib/SymDBHelper.lib")
 #pragma comment(lib, "../SDK/Lib/LiteLoader.lib")
 #pragma comment(lib, "../SDK/Lib/libssl.lib")
 #pragma comment(lib, "../SDK/Lib/libcrypto.lib")
