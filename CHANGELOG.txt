@@ -1,6 +1,6 @@
 # [BETweaker Release Note] 
 
-- Fixed dspenser can not place some block bug
+- Synchronized upstream with significant performance improvements
 
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
