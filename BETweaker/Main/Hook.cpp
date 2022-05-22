@@ -288,10 +288,17 @@ TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock)
 //	return original(this, a2);
 //}
 
-//#include <MC/LootTableContext.hpp>
-//#include <MC/OwnerStorageEntity.hpp>
-//THook(Actor*, "?addEntity@Level@@UEAAPEAVActor@@AEAVBlockSource@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z", 
-//	unsigned long long* a1, LootTableContext* a2, OwnerStorageEntity* a3) {
-//	logger.info << original(a1, a2, a3)->getTypeName() << logger.endl;
-//	return original(a1, a2, a3);
-//}
+#include <MC/BucketItem.hpp>
+#include <MC/LootTableContext.hpp>
+THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z",
+	BucketItem* _this,
+	BlockSource* a2,
+	Container* a3,
+	unsigned int a4,
+	const Vec3* a5,
+	unsigned __int8 a6) {
+	bool rtn = original(_this, a2, a3, a4, a5, a6);
+	auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//被尝试触发的桶的itemstack
+	logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
+	return rtn;
+}
