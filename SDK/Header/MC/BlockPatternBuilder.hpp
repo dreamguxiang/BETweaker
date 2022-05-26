@@ -38,5 +38,6 @@ protected:
 
 private:
     MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
+    MCAPI char _getPattern(int, int);
 
 };

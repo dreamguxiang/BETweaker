@@ -29,6 +29,7 @@ public:
 protected:
 
 private:
-    MCAPI static class ScriptingCommandOrigin _createScriptingOrigin(class Dimension *, class ServerLevel &);
+    MCAPI static class ScriptCommandOrigin _createScriptingOrigin(class Dimension *, class ServerLevel &);
+    MCAPI static struct Scripting::Error _incompatableWorldQueryOptionError(std::string const &);
 
 };

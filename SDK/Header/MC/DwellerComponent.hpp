@@ -27,7 +27,7 @@ public:
     MCAPI void DecrementDwellingUpdateInterval();
     MCAPI DwellerComponent(class DwellerComponent &&);
     MCAPI DwellerComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     MCAPI void checkandUpdateDwellingStatus(class Actor const &, class Village *);
     MCAPI void clearPreferredProfession();
     MCAPI void fixupProfession(class Actor const &, class Village *);

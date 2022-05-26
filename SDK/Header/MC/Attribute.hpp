@@ -28,6 +28,7 @@ public:
     MCAPI class HashedString const & getName() const;
     MCAPI enum RedefinitionMode getRedefinitionMode() const;
     MCAPI bool isClientSyncable() const;
+    MCAPI bool operator==(class Attribute const &) const;
     MCAPI static class Attribute & getByName(class HashedString const &);
 
 protected:

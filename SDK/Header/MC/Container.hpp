@@ -69,6 +69,11 @@ public:
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual bool isEmpty() const;
     /*
+    inline void initializeContainerContents(class BlockSource & a0){
+        void (Container::*rv)(class BlockSource &);
+        *((void**)&rv) = dlsym("?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
     inline bool canPushInItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
         bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
         *((void**)&rv) = dlsym("?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
@@ -78,11 +83,6 @@ public:
         bool (Container::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
         *((void**)&rv) = dlsym("?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
-    }
-    inline void initializeContainerContents(class BlockSource & a0){
-        void (Container::*rv)(class BlockSource &);
-        *((void**)&rv) = dlsym("?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     inline  ~Container(){
          (Container::*rv)();

@@ -25,6 +25,7 @@ public:
 public:
     /*0*/ virtual ~BlockEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
+    /*2*/ virtual void initSchema();
     /*
     inline  ~BlockEventResponseFactory(){
          (BlockEventResponseFactory::*rv)();
@@ -32,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void initSchema();
 
 protected:
 

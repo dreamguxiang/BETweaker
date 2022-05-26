@@ -23,6 +23,7 @@ public:
 
 public:
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
+    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~_ProfilerLiteTimer();
 
 protected:

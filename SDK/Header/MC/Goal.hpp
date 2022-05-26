@@ -24,16 +24,6 @@ public:
 public:
     /*0*/ virtual ~Goal();
     /*
-    inline bool isTargetGoal() const{
-        bool (Goal::*rv)() const;
-        *((void**)&rv) = dlsym("?isTargetGoal@Goal@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeInterrupted(){
-        bool (Goal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@Goal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline void tick(){
         void (Goal::*rv)();
         *((void**)&rv) = dlsym("?tick@Goal@@UEAAXXZ");
@@ -53,6 +43,16 @@ public:
         void (Goal::*rv)(class Player *, class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z");
         return (this->*rv)(std::forward<class Player *>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
+    }
+    inline bool canBeInterrupted(){
+        bool (Goal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@Goal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetGoal() const{
+        bool (Goal::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetGoal@Goal@@UEBA_NXZ");
+        return (this->*rv)();
     }
     inline bool canContinueToUse(){
         bool (Goal::*rv)();

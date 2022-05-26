@@ -25,6 +25,7 @@ public:
 public:
     MCAPI MobEffectDefinition();
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
+    MCAPI void setCooldownTimeInTicks(int const &);
     MCAPI void setEffectTimeInTicks(int const &);
     MCAPI void setMobEffectByName(std::string const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition>> &);

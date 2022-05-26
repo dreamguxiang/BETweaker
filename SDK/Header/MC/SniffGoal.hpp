@@ -41,7 +41,7 @@ public:
 protected:
 
 private:
+    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum ActorType) const;
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
-    MCAPI void _suspectClosestMob() const;
 
 };

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -21,11 +22,14 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ScriptMinecraftNetModuleFactory();
+    MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI static std::string getModuleUUIDAsString();
 
 protected:
 
 private:
+    MCAPI void _addV1();
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
 

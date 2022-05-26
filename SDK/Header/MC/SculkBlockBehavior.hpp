@@ -25,17 +25,17 @@ public:
     /*1*/ virtual int updateFacingData(int, class Block const &) const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &) const;
+    /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /*
-    inline bool canChangeBlockOnSpread() const{
-        bool (SculkBlockBehavior::*rv)() const;
-        *((void**)&rv) = dlsym("?canChangeBlockOnSpread@SculkBlockBehavior@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void onDischarged(class IBlockWorldGenAPI & a0, class BlockSource * a1, class BlockPos const & a2) const{
         void (SculkBlockBehavior::*rv)(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
         *((void**)&rv) = dlsym("?onDischarged@SculkBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class IBlockWorldGenAPI &>(a0), std::forward<class BlockSource *>(a1), std::forward<class BlockPos const &>(a2));
+    }
+    inline bool canChangeBlockOnSpread() const{
+        bool (SculkBlockBehavior::*rv)() const;
+        *((void**)&rv) = dlsym("?canChangeBlockOnSpread@SculkBlockBehavior@@UEBA_NXZ");
+        return (this->*rv)();
     }
     inline int updateDecayDelay(int a0) const{
         int (SculkBlockBehavior::*rv)(int) const;
@@ -52,7 +52,6 @@ public:
 protected:
 
 private:
-    MCAPI static bool _canPlaceGrowth(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, class SculkSpreader &);
-    MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &);
+    MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
 
 };

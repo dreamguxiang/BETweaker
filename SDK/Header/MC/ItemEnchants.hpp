@@ -37,12 +37,14 @@ public:
     MCAPI int getTotalValue(bool) const;
     MCAPI int hasEnchant(enum Enchant::Type) const;
     MCAPI bool isEmpty() const;
+    MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI void removeEnchantment(enum Enchant::Type);
     MCAPI ~ItemEnchants();
 
 protected:
 
 private:
+    MCAPI void _fromList(class ListTag const &);
     MCAPI std::unique_ptr<class ListTag> _toList() const;
 
 };

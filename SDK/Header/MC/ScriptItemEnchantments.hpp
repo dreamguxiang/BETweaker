@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ScriptItemEnchantments {
+class ScriptItemEnchantments : public ScriptObject {
 
 #define AFTER_EXTRA
 
@@ -20,16 +21,25 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~ScriptItemEnchantments();
+    /*
+    inline  ~ScriptItemEnchantments(){
+         (ScriptItemEnchantments::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptItemEnchantments@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments &&);
     MCAPI ScriptItemEnchantments(class ScriptItemEnchantments const &);
-    MCAPI ScriptItemEnchantments(class ItemEnchants const &);
+    MCAPI ScriptItemEnchantments(class ItemEnchants const &, class Scripting::WeakLifetimeScope);
     MCAPI bool addEnchantment(struct ScriptItemEnchantmentInstance const &);
     MCAPI bool canAddEnchantment(struct ScriptItemEnchantmentInstance const &);
     MCAPI int getEnchantSlot() const;
-    MCAPI class std::optional<struct ScriptItemEnchantmentInstance> getEnchantment(struct ScriptItemEnchantmentType const &);
+    MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptItemEnchantmentInstance> getEnchantment(struct ScriptItemEnchantmentType const &);
     MCAPI class ItemEnchants const & getEnchants() const;
+    MCAPI int hasEnchantment(struct ScriptItemEnchantmentType const &);
     MCAPI class ScriptItemEnchantments & operator=(class ScriptItemEnchantments &&);
-    MCAPI ~ScriptItemEnchantments();
+    MCAPI void removeEnchantment(struct ScriptItemEnchantmentType const &);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemEnchantments> bind(struct Scripting::Version);
 
 protected:

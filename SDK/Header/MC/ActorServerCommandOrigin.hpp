@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "ActorCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -34,8 +35,6 @@ public:
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     MCAPI ActorServerCommandOrigin(class Actor &);
     MCAPI struct ActorUniqueID getTargetOther() const;

@@ -24,14 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
-    MCAPI ScriptMinecraftModuleFactory(class ServerLevel *, class MinecraftCommands *, std::unique_ptr<class ScriptMinecraftCommonModuleFactory>);
+    MCAPI ScriptMinecraftModuleFactory(class ServerLevel *);
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>> & getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();
-    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version &&);
+    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 protected:
 
 private:
+    MCAPI void _addV1();
+    MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, std::vector<std::string> const &);
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
 

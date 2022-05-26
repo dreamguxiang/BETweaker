@@ -35,6 +35,9 @@ public:
     MCAPI std::string getAddress() const;
     MCAPI unsigned __int64 getHash() const;
     MCAPI std::string getNetherNetIDAsString() const;
+    MCAPI struct RakNet::RakNetGUID const & getRakNetGUID() const;
+    MCAPI struct sockaddr_in const & getSocketAddress() const;
+    MCAPI struct sockaddr_in6 const & getSocketAddress6() const;
     MCAPI bool isUnassigned() const;
     MCAPI std::string toString() const;
 

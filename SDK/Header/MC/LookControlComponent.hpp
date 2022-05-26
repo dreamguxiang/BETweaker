@@ -39,6 +39,7 @@ public:
     MCAPI void setLookAtRotation(class Vec3 const &, float, float);
     MCAPI void setYMax(float);
     MCAPI void update(class Mob &);
+    MCAPI ~LookControlComponent();
 
 protected:
 

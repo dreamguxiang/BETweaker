@@ -57,13 +57,12 @@ public:
     MCAPI class FillingContainer & operator=(class FillingContainer const &);
     MCAPI int removeResource(class ItemStack const &, bool, bool, int);
     MCAPI bool removeResource(int);
-    MCAPI std::unique_ptr<class ListTag> save();
+    MCAPI std::unique_ptr<class ListTag> save() const;
     MCAPI void swapSlots(int, int);
 
 protected:
     MCAPI int _addResource(class ItemStack const &);
     MCAPI void _doDrop(class ItemStack &, bool);
-    MCAPI void _fixBackwardCompabilityItem(class ItemStack &);
     MCAPI int _getEmptySlotsCount(int, int) const;
     MCAPI int _getFreeSlot() const;
     MCAPI int _getSlot(int) const;
@@ -72,5 +71,6 @@ protected:
     MCAPI void _release(int);
 
 private:
+    MCAPI void _trySetInSlot(class ItemStack &, int const &, int const &, int &);
 
 };

@@ -179,6 +179,7 @@ public:
     MCAPI bool hasData(unsigned short) const;
     MCAPI void markDirty(unsigned short);
     MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
+    MCAPI bool operator==(class SynchedActorData const &) const;
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
     MCAPI void setStatusFlag(enum ActorFlags, bool);

@@ -32,12 +32,13 @@ public:
     /*16*/ virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*21*/ virtual bool isStrippable(class Block const &) const;
-    /*28*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*20*/ virtual bool isStrippable(class Block const &) const;
+    /*27*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -102,53 +103,48 @@ public:
     /*113*/ virtual int getExperienceDrop(class Random &) const;
     /*116*/ virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /*118*/ virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
-    /*124*/ virtual void __unk_vfn_124();
+    /*123*/ virtual void __unk_vfn_123();
+    /*125*/ virtual void __unk_vfn_125();
     /*126*/ virtual void __unk_vfn_126();
-    /*127*/ virtual void __unk_vfn_127();
-    /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
-    /*130*/ virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
-    /*131*/ virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
-    /*132*/ virtual void __unk_vfn_132();
-    /*133*/ virtual int getIconYOffset() const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
-    /*136*/ virtual int getColor(class Block const &) const;
-    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*138*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
-    /*140*/ virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
-    /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /*147*/ virtual int getVariant(class Block const &) const;
-    /*148*/ virtual void __unk_vfn_148();
-    /*151*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
-    /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*165*/ virtual void __unk_vfn_165();
-    /*169*/ virtual class Block const * tryLegacyUpgrade(unsigned short) const;
-    /*170*/ virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
-    /*171*/ virtual class Block const * tryGetInfested(class Block const &) const;
-    /*172*/ virtual class Block const * tryGetUninfested(class Block const &) const;
-    /*173*/ virtual void _addHardCodedBlockComponents();
-    /*175*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
-    /*176*/ virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
-    /*177*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
-    /*178*/ virtual void onStepOn(class Actor &, class BlockPos const &) const;
+    /*127*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
+    /*129*/ virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
+    /*130*/ virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
+    /*131*/ virtual void __unk_vfn_131();
+    /*132*/ virtual int getIconYOffset() const;
+    /*134*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual int getColor(class Block const &) const;
+    /*136*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*137*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
+    /*139*/ virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*143*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
+    /*146*/ virtual int getVariant(class Block const &) const;
+    /*147*/ virtual void __unk_vfn_147();
+    /*150*/ virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    /*151*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*164*/ virtual void __unk_vfn_164();
+    /*168*/ virtual class Block const * tryLegacyUpgrade(unsigned short) const;
+    /*169*/ virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
+    /*170*/ virtual class Block const * tryGetInfested(class Block const &) const;
+    /*171*/ virtual class Block const * tryGetUninfested(class Block const &) const;
+    /*172*/ virtual void _addHardCodedBlockComponents();
+    /*174*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
+    /*175*/ virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
+    /*176*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*178*/ virtual void __unk_vfn_178();
     /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
-    /*193*/ virtual int getExtraRenderLayers() const;
-    /*197*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
+    /*180*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*184*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*186*/ virtual void __unk_vfn_186();
+    /*188*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*189*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*190*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*191*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*192*/ virtual int getExtraRenderLayers() const;
+    /*196*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
+    /*197*/ virtual void __unk_vfn_197();
     /*198*/ virtual void __unk_vfn_198();
-    /*199*/ virtual void __unk_vfn_199();
     /*
-    inline bool canBeSilkTouched() const{
-        bool (SweetBerryBushBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@SweetBerryBushBlock@@MEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canBeFertilized(class BlockSource & a0, class BlockPos const & a1, class Block const & a2) const{
         bool (SweetBerryBushBlock::*rv)(class BlockSource &, class BlockPos const &, class Block const &) const;
         *((void**)&rv) = dlsym("?canBeFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z");
@@ -157,6 +153,11 @@ public:
     inline bool isInteractiveBlock() const{
         bool (SweetBerryBushBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@SweetBerryBushBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canBeSilkTouched() const{
+        bool (SweetBerryBushBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?canBeSilkTouched@SweetBerryBushBlock@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline enum BlockRenderLayer getRenderLayer() const{

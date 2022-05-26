@@ -23,9 +23,10 @@ public:
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI ~SpawnActorComponent();
 
 protected:
 

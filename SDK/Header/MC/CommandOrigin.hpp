@@ -55,7 +55,7 @@ public:
     /*23*/ virtual enum CommandOriginType getOriginType() const = 0;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
+    /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;

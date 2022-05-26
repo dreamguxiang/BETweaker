@@ -50,6 +50,7 @@ public:
     MCAPI std::vector<struct TickingAreaDescription> removeAreas(std::vector<class std::shared_ptr<class ITickingArea>> const &, class LevelStorage &);
     MCAPI void tick(struct Tick const &);
     MCAPI void tickSeasons(class Random &);
+    MCAPI void updateBlockSourceCurrentTick(struct Tick const &);
 
 protected:
     MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;

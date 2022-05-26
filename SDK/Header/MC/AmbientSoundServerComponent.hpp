@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI class AmbientSoundServerComponent & operator=(class AmbientSoundServerComponent &&);
     MCAPI ~AmbientSoundServerComponent();
 
 protected:

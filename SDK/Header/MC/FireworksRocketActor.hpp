@@ -34,14 +34,15 @@ public:
     /*40*/ virtual void __unk_vfn_40();
     /*46*/ virtual void lerpMotion(class Vec3 const &);
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*94*/ virtual bool isPickable();
     /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
@@ -98,15 +99,18 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;
+    MCAPI void postNormalTick();
     MCAPI void setDispensed(bool);
 
 protected:

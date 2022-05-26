@@ -37,7 +37,7 @@ public:
     /*14*/ virtual bool getDamagingEntityIsCreative() const;
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual enum ActorType getDamagingEntityType() const;
     /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);

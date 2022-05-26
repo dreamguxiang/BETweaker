@@ -38,6 +38,5 @@ public:
 protected:
 
 private:
-    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
 
 };

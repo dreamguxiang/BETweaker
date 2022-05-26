@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI ScriptActorType(class ActorDefinition &);
+    MCAPI class Scripting::Result<void> addDynamicPropertiesDefinition(class ScriptDynamicPropertiesDefinition const &);
     MCAPI std::string getId() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorType> bind(struct Scripting::Version);
 

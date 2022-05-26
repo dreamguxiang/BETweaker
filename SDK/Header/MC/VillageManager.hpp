@@ -57,7 +57,6 @@ private:
     MCAPI class std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const &, class BlockPos const &);
     MCAPI class std::unordered_map<class Village const *, enum VillageManager::BedAvailabilityState, struct std::hash<class Village const *>, struct std::equal_to<class Village const *>, class std::allocator<struct std::pair<class Village const *const, enum VillageManager::BedAvailabilityState>>> _getVillageWithBedsAvailableMap() const;
     MCAPI void _loadPOIBlueprints();
-    MCAPI void _processNextUnclusteredPOIQuery();
     MCAPI void _removeEligibleVillages();
     MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance> &&);
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);

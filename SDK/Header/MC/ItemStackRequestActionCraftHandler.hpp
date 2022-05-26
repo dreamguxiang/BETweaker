@@ -31,7 +31,6 @@ public:
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &);
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
     MCAPI void endRequestBatch();
-    MCAPI class ItemStackRequestActionHandler const & getActionHandler() const;
     MCAPI enum ItemStackNetResult handleConsume(class ItemStackRequestActionConsume const &);
     MCAPI enum ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult handleCraftResults(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &);
@@ -44,6 +43,7 @@ public:
 protected:
 
 private:
+    MCAPI enum ItemStackNetResult _beginCraftRequest();
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 

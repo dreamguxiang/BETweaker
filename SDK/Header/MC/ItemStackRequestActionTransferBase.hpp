@@ -41,6 +41,7 @@ public:
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
 protected:
+    MCAPI ItemStackRequestActionTransferBase(enum ItemStackRequestActionType, bool, bool);
 
 private:
 

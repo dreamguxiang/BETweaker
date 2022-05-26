@@ -25,6 +25,7 @@ public:
 public:
     MCAPI static enum LevelSoundEvent getId(std::string const &);
     MCAPI static std::string const & getName(enum LevelSoundEvent);
+    MCAPI static class std::initializer_list<struct std::pair<std::string, enum LevelSoundEvent>> const initializerData;
 
 protected:
 

@@ -31,11 +31,13 @@ public:
     MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, short, class BlockVolume &) const;
     MCAPI void fetchBlocksInBox(class BlockPos const &, class BoundingBox const &, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
     MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
+    MCAPI unsigned __int64 getHash() const;
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
     MCAPI enum SubChunk::SubChunkState getSubChunkState() const;
     MCAPI void initialize(class Block const *, bool, bool, class SpinLock &, signed char);
     MCAPI bool isPaletteUniform(class Block const &) const;
     MCAPI bool isUniform(class Block const &) const;
+    MCAPI bool needsHashToBeRecalculated() const;
     MCAPI bool needsInitLighting() const;
     MCAPI struct SubChunk & operator=(struct SubChunk &&);
     MCAPI void prune(enum SubChunkStorageUnit::PruneType);
@@ -46,7 +48,7 @@ public:
     MCAPI void serialize(class IDataOutput &, bool) const;
     MCAPI void setAllIsMaxSkyLight();
     MCAPI void setAllIsNoSkyLight();
-    MCAPI void setBlockLight(unsigned short, unsigned char);
+    MCAPI void setBlocksToUniform(class Block const &, bool, bool);
     MCAPI void setFromBlockVolume(class BlockVolume const &, short);
     MCAPI void setNeedsInitLighting(bool);
     MCAPI void setSkyLight(unsigned short, unsigned char);

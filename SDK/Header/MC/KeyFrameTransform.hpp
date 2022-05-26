@@ -18,12 +18,12 @@ class KeyFrameTransform {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYFRAMETRANSFORM
 public:
     class KeyFrameTransform& operator=(class KeyFrameTransform const &) = delete;
+    KeyFrameTransform(class KeyFrameTransform const &) = delete;
     KeyFrameTransform() = delete;
 #endif
 
 public:
     MCAPI KeyFrameTransform(float);
-    MCAPI KeyFrameTransform(class KeyFrameTransform const &);
     MCAPI class KeyFrameLerpMode & getLerpMode();
     MCAPI class KeyFrameTransform & operator=(class KeyFrameTransform &&);
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);

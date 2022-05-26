@@ -34,6 +34,5 @@ public:
 protected:
 
 private:
-    MCAPI class std::optional<class WeakEntityRef> _findRoarTarget() const;
 
 };

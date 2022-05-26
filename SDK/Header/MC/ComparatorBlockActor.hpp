@@ -46,10 +46,11 @@ public:
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
-    /*37*/ virtual int getOutputSignal();
-    /*38*/ virtual void setOutputSignal(int);
+    /*34*/ virtual void __unk_vfn_34();
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*37*/ virtual bool _playerCanUpdate(class Player const &) const;
+    /*38*/ virtual int getOutputSignal();
+    /*39*/ virtual void setOutputSignal(int);
     MCAPI ComparatorBlockActor(class BlockPos const &);
 
 protected:

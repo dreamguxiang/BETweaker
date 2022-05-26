@@ -24,11 +24,6 @@ public:
 
 public:
     /*
-    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
-        int (ContainerValidationBase::*rv)(class ContainerScreenContext const &) const;
-        *((void**)&rv) = dlsym("?getContainerOffset@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
-    }
     inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
         bool (ContainerValidationBase::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isItemAllowedToAdd@ContainerValidationBase@@UEBA_NAEBVItemStack@@@Z");
@@ -43,6 +38,11 @@ public:
         bool (ContainerValidationBase::*rv)(class ContainerScreenContext const &, class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<class ItemStackBase const &>(a1));
+    }
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (ContainerValidationBase::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     inline int getContainerSize(class ContainerScreenContext const & a0, class Container const & a1) const{
         int (ContainerValidationBase::*rv)(class ContainerScreenContext const &, class Container const &) const;

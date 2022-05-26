@@ -31,6 +31,5 @@ public:
 protected:
 
 private:
-    MCAPI static void convertClonedTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
 
 };

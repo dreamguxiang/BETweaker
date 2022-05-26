@@ -23,9 +23,9 @@ public:
 
 public:
     MCAPI RailMovementComponent();
-    MCAPI bool canSnapOnRail(class Actor const &, class BlockPos &);
     MCAPI void comeOffTrack(class Actor &);
-    MCAPI void moveAlongTrack(class Actor &, class Block const &, class BlockPos const &);
+    MCAPI void moveAlongTrack(class Actor &, class BlockPos const &);
+    MCAPI bool operator==(class RailMovementComponent const &) const;
 
 protected:
 

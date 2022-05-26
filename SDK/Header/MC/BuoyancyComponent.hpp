@@ -34,6 +34,7 @@ public:
     MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     MCAPI bool shouldApplyGravity() const;
     MCAPI bool shouldSimulateWaves() const;
+    MCAPI ~BuoyancyComponent();
 
 protected:
 

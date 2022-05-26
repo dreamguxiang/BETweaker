@@ -25,11 +25,6 @@ public:
 
 public:
     /*
-    inline void setServerTickOffset(__int64 a0){
-        void (ServerLevel::*rv)(__int64);
-        *((void**)&rv) = dlsym("?setServerTickOffset@ServerLevel@@UEAAX_J@Z");
-        return (this->*rv)(std::forward<__int64>(a0));
-    }
     inline void consolidateLevelChunkMetaData(class LevelChunk & a0){
         void (ServerLevel::*rv)(class LevelChunk &);
         *((void**)&rv) = dlsym("?consolidateLevelChunkMetaData@ServerLevel@@UEAAXAEAVLevelChunk@@@Z");
@@ -125,6 +120,11 @@ public:
         *((void**)&rv) = dlsym("?setCommandsEnabled@ServerLevel@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
+    inline void setServerTickOffset(__int64 a0){
+        void (ServerLevel::*rv)(__int64);
+        *((void**)&rv) = dlsym("?setServerTickOffset@ServerLevel@@UEAAX_J@Z");
+        return (this->*rv)(std::forward<__int64>(a0));
+    }
     inline void setWorldTemplateOptionsUnlocked(){
         void (ServerLevel::*rv)();
         *((void**)&rv) = dlsym("?setWorldTemplateOptionsUnlocked@ServerLevel@@UEAAXXZ");
@@ -143,9 +143,11 @@ public:
     */
     MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class std::weak_ptr<class ItemRegistry>, class std::weak_ptr<class BlockTypeRegistry>);
     MCAPI class MinecraftCommands & getCommands();
+    MCAPI class DynamicPropertiesDefinition & getDynamicPropertiesDefinition();
     MCAPI class FunctionManager & getFunctionManager();
     MCAPI class MobEvents const & getMobEvents() const;
     MCAPI class MobEvents & getMobEvents();
+    MCAPI class DynamicProperties & getOrAddDynamicProperties();
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;

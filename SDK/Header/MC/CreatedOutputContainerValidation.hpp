@@ -31,6 +31,11 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /*
+    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
+        bool (CreatedOutputContainerValidation::*rv)(class ItemStackBase const &) const;
+        *((void**)&rv) = dlsym("?canItemMoveToContainer@CreatedOutputContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
     inline bool isItemAllowedToAdd(class ItemStack const & a0) const{
         bool (CreatedOutputContainerValidation::*rv)(class ItemStack const &) const;
         *((void**)&rv) = dlsym("?isItemAllowedToAdd@CreatedOutputContainerValidation@@UEBA_NAEBVItemStack@@@Z");
@@ -40,11 +45,6 @@ public:
         bool (CreatedOutputContainerValidation::*rv)(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
         *((void**)&rv) = dlsym("?isItemAllowedInSlot@CreatedOutputContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
         return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const &>(a2), std::forward<int>(a3));
-    }
-    inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
-        bool (CreatedOutputContainerValidation::*rv)(class ItemStackBase const &) const;
-        *((void**)&rv) = dlsym("?canItemMoveToContainer@CreatedOutputContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
     }
     */
 

@@ -31,5 +31,6 @@ public:
 protected:
 
 private:
+    MCAPI unsigned __int64 _getThreadId();
 
 };

@@ -20,11 +20,11 @@ class PlayerEventCoordinator {
 public:
     class PlayerEventCoordinator& operator=(class PlayerEventCoordinator const &) = delete;
     PlayerEventCoordinator(class PlayerEventCoordinator const &) = delete;
+    PlayerEventCoordinator() = delete;
 #endif
 
 public:
     /*0*/ virtual ~PlayerEventCoordinator();
-    MCAPI PlayerEventCoordinator();
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum CoordinatorResult>> const &);
     MCAPI void sendEvent(class EventRef<struct PlayerGameplayEvent<void>> const &);

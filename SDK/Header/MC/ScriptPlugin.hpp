@@ -38,6 +38,7 @@ public:
     MCAPI std::vector<struct Scripting::ModuleDescriptor> const & getModuleDependencies() const;
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     MCAPI std::string const & getRuntimeName() const;
+    MCAPI class Scripting::ScriptContext const & getScriptContext() const;
     MCAPI std::string const & getScriptMainName() const;
     MCAPI bool hasErrors() const;
     MCAPI class std::optional<std::string> loadScriptMain();

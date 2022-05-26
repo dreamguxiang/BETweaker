@@ -24,7 +24,7 @@ public:
 #endif
 
 public:
-    MCAPI void addEnvironmentTrigger(class DefinitionTrigger const &);
+    MCAPI void addEnvironmentTrigger(class ActorDefinitionTrigger const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>> &);
 
 protected:

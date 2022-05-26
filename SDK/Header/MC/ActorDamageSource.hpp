@@ -62,6 +62,7 @@ public:
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
     MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
+    MCAPI static bool isDamageCausedByMob(enum ActorDamageCause);
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 

@@ -25,6 +25,7 @@ public:
 public:
     MCAPI BlockSourceComponent(class Level &, class Dimension &, class ChunkSource &, bool);
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
+    MCAPI ~BlockSourceComponent();
 
 protected:
 

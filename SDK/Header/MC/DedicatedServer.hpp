@@ -26,11 +26,6 @@ public:
 
 public:
     /*
-    inline bool isDedicatedServer() const{
-        bool (DedicatedServer::*rv)() const;
-        *((void**)&rv) = dlsym("?isDedicatedServer@DedicatedServer@@EEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void onNetworkMaxPlayersChanged(unsigned int a0){
         void (DedicatedServer::*rv)(unsigned int);
         *((void**)&rv) = dlsym("?onNetworkMaxPlayersChanged@DedicatedServer@@EEAAXI@Z");
@@ -39,6 +34,11 @@ public:
     inline  ~DedicatedServer(){
          (DedicatedServer::*rv)();
         *((void**)&rv) = dlsym("??1DedicatedServer@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline bool isDedicatedServer() const{
+        bool (DedicatedServer::*rv)() const;
+        *((void**)&rv) = dlsym("?isDedicatedServer@DedicatedServer@@EEBA_NXZ");
         return (this->*rv)();
     }
     inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const{
@@ -74,7 +74,6 @@ public:
 protected:
 
 private:
-    MCAPI void initalizeAppConfigs();
     MCAPI void initializeHttp();
     MCAPI void initializeLogging();
 

@@ -26,7 +26,8 @@ public:
 public:
     /*0*/ virtual ~BrewingStandResultContainerValidation();
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /*5*/ virtual void __unk_vfn_5();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;

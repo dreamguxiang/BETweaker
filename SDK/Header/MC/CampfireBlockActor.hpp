@@ -46,9 +46,10 @@ public:
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    /*34*/ virtual void __unk_vfn_34();
+    /*35*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*37*/ virtual bool _playerCanUpdate(class Player const &) const;
     /*
     inline float getShadowRadius(class BlockSource & a0) const{
         float (CampfireBlockActor::*rv)(class BlockSource &) const;
@@ -58,6 +59,7 @@ public:
     */
     MCAPI CampfireBlockActor(class BlockPos const &);
     MCAPI void dropAllItems(class BlockSource &);
+    MCAPI class HashedString const & getCampfireTag(class BlockSource const &) const;
     MCAPI class ItemInstance const & getCookingItem(int);
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
     MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;

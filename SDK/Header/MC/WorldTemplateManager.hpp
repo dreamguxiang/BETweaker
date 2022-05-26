@@ -34,7 +34,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI WorldTemplateManager(class PackManifestFactory &, class IContentKeyProvider const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
+    MCAPI WorldTemplateManager(class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
     MCAPI struct WorldTemplateInfo const * findInstalledWorldTemplate(struct PackIdVersion const &) const;
     MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;
 

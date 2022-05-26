@@ -64,9 +64,9 @@ public:
     /*30*/ virtual void refreshPacks();
     /*31*/ virtual void requestReloadUserPacks();
     /*32*/ virtual void requestReloadDynamicPackagePacks();
-    /*33*/ virtual class IContentKeyProvider const & getKeyProvider() const;
+    /*33*/ virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> getKeyProvider() const;
     /*34*/ virtual class PackManifestFactory & getPackManifestFactory();
-    /*35*/ virtual void __unk_vfn_35();
+    /*35*/ virtual class PackSettingsFactory & getPackSettingsFactory() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual std::vector<class ResourcePack *> getPacksByResourceLocation(enum PackOrigin) const;
     /*38*/ virtual std::vector<class ResourcePack *> getPacksByType(enum PackType) const;
@@ -107,11 +107,6 @@ public:
         *((void**)&rv) = dlsym("??1ResourcePackRepository@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline class PackSettingsFactory & getPackSettingsFactory() const{
-        class PackSettingsFactory & (ResourcePackRepository::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackSettingsFactory@ResourcePackRepository@@UEBAAEAVPackSettingsFactory@@XZ");
-        return (this->*rv)();
-    }
     inline class PackSourceFactory & getPackSourceFactory(){
         class PackSourceFactory & (ResourcePackRepository::*rv)();
         *((void**)&rv) = dlsym("?getPackSourceFactory@ResourcePackRepository@@UEAAAEAVPackSourceFactory@@XZ");
@@ -138,5 +133,6 @@ private:
     MCAPI bool _removePack(class ResourceLocation const &, bool);
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
+    MCAPI void _updatePackLogVersion(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
 
 };

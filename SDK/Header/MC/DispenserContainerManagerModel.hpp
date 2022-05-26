@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~DispenserContainerManagerModel();
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*17*/ virtual class ContainerScreenContext _postInit();
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 protected:

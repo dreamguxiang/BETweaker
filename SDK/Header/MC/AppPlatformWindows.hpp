@@ -48,29 +48,34 @@ public:
         *((void**)&rv) = dlsym("??1AppPlatformWindows@@UEAA@XZ");
         return (this->*rv)();
     }
+    inline class Core::PathBuffer<std::string> _getCurrentStoragePath() const{
+        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
+        *((void**)&rv) = dlsym("?_getCurrentStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> _getExternalStoragePath() const{
+        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
+        *((void**)&rv) = dlsym("?_getExternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> _getInternalStoragePath() const{
+        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
+        *((void**)&rv) = dlsym("?_getInternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string> _getUserdataPath() const{
+        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
+        *((void**)&rv) = dlsym("?_getUserdataPath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
+        return (this->*rv)();
+    }
     inline unsigned __int64 calculateAvailableDiskFreeSpace(class Core::Path const & a0){
         unsigned __int64 (AppPlatformWindows::*rv)(class Core::Path const &);
         *((void**)&rv) = dlsym("?calculateAvailableDiskFreeSpace@AppPlatformWindows@@UEAA_KAEBVPath@Core@@@Z");
         return (this->*rv)(std::forward<class Core::Path const &>(a0));
     }
-    inline class Core::PathBuffer<std::string> getCurrentStoragePath() const{
-        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
-        *((void**)&rv) = dlsym("?getCurrentStoragePath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
-        return (this->*rv)();
-    }
-    inline class Core::PathBuffer<std::string> getExternalStoragePath() const{
-        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
-        *((void**)&rv) = dlsym("?getExternalStoragePath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
-        return (this->*rv)();
-    }
     inline unsigned __int64 getHighPerformanceThreadsCount() const{
         unsigned __int64 (AppPlatformWindows::*rv)() const;
         *((void**)&rv) = dlsym("?getHighPerformanceThreadsCount@AppPlatformWindows@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline class Core::PathBuffer<std::string> getInternalStoragePath() const{
-        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
-        *((void**)&rv) = dlsym("?getInternalStoragePath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
     inline class MPMCQueue<class std::function<void (void)>> & getMainThreadQueue(){
@@ -96,11 +101,6 @@ public:
     inline unsigned __int64 getTotalHardwareThreadsCount() const{
         unsigned __int64 (AppPlatformWindows::*rv)() const;
         *((void**)&rv) = dlsym("?getTotalHardwareThreadsCount@AppPlatformWindows@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline class Core::PathBuffer<std::string> getUserdataPath() const{
-        class Core::PathBuffer<std::string> (AppPlatformWindows::*rv)() const;
-        *((void**)&rv) = dlsym("?getUserdataPath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
     inline void queueForMainThread_DEPRECATED(class std::function<void (void)> a0){

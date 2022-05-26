@@ -18,7 +18,6 @@ class BaseScriptBlockComponent : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASESCRIPTBLOCKCOMPONENT
 public:
-    class BaseScriptBlockComponent& operator=(class BaseScriptBlockComponent const &) = delete;
     BaseScriptBlockComponent(class BaseScriptBlockComponent const &) = delete;
     BaseScriptBlockComponent() = delete;
 #endif
@@ -32,6 +31,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI class BaseScriptBlockComponent & operator=(class BaseScriptBlockComponent const &);
 
 protected:
 

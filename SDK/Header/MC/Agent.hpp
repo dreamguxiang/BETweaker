@@ -30,18 +30,19 @@ public:
     /*16*/ virtual void resetUserPos(bool);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
-    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
+    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /*48*/ virtual void normalTick();
-    /*59*/ virtual bool isInvisible() const;
-    /*60*/ virtual bool canShowNameTag() const;
-    /*61*/ virtual void __unk_vfn_61();
-    /*65*/ virtual std::string getFormattedNameTag() const;
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*58*/ virtual bool isInvisible() const;
+    /*59*/ virtual bool canShowNameTag() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*64*/ virtual std::string getFormattedNameTag() const;
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*94*/ virtual bool isPickable();
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
@@ -58,7 +59,7 @@ public:
     /*139*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*141*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*151*/ virtual void awardKillScore(class Actor &, int);
-    /*161*/ virtual void setCarriedItem(class ItemStack const &);
+    /*160*/ virtual void setCarriedItem(class ItemStack const &);
     /*171*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*178*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual bool canChangeDimensions() const;
@@ -82,34 +83,36 @@ public:
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
     /*250*/ virtual void kill();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
-    /*280*/ virtual void spawnAnim();
-    /*291*/ virtual void travel(float, float, float);
-    /*294*/ virtual void aiStep();
-    /*302*/ virtual int getItemUseDuration() const;
-    /*303*/ virtual float getItemUseStartupProgress() const;
-    /*304*/ virtual float getItemUseIntervalProgress() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
-    /*337*/ virtual bool createAIGoals();
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*344*/ virtual bool canExistWhenDisallowMob() const;
-    /*345*/ virtual void __unk_vfn_345();
-    /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*355*/ virtual void __unk_vfn_355();
-    /*359*/ virtual void __unk_vfn_359();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*285*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /*286*/ virtual void spawnAnim();
+    /*296*/ virtual void travel(float, float, float);
+    /*299*/ virtual void aiStep();
+    /*307*/ virtual int getItemUseDuration() const;
+    /*308*/ virtual float getItemUseStartupProgress() const;
+    /*309*/ virtual float getItemUseIntervalProgress() const;
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*326*/ virtual void sendArmorDamage(class std::bitset<4>);
+    /*342*/ virtual bool createAIGoals();
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*348*/ virtual float _getWalkTargetValue(class BlockPos const &);
+    /*349*/ virtual bool canExistWhenDisallowMob() const;
+    /*350*/ virtual void __unk_vfn_350();
+    /*355*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /*360*/ virtual void __unk_vfn_360();
+    /*364*/ virtual void __unk_vfn_364();
     /*
-    inline bool isTargetable() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
+    inline bool interactPreventDefault(){
+        bool (Agent::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool getAlwaysShowNameTag() const{
@@ -117,14 +120,14 @@ public:
         *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool interactPreventDefault(){
-        bool (Agent::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@Agent@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool breaksFallingBlocks() const{
         bool (Agent::*rv)() const;
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Agent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Agent::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

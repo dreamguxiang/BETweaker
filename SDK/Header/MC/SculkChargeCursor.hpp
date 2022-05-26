@@ -26,7 +26,7 @@ public:
     MCAPI void addFrom(class SculkChargeCursor const &);
     MCAPI void load(class CompoundTag const &);
     MCAPI void save(class CompoundTag &) const;
-    MCAPI void update(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
+    MCAPI void update(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &, bool);
 
 protected:
 

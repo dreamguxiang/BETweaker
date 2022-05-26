@@ -44,11 +44,6 @@ public:
     /*11*/ virtual void releaseUsing(class ItemStack &, class Player &, int);
     /*12*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
     /*
-    inline float pictureDuration() const{
-        float (CameraItemComponentLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?pictureDuration@CameraItemComponentLegacy@@UEBAMXZ");
-        return (this->*rv)();
-    }
     inline float blackBarsDuration() const{
         float (CameraItemComponentLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?blackBarsDuration@CameraItemComponentLegacy@@UEBAMXZ");
@@ -62,6 +57,11 @@ public:
     inline float shutterDuration() const{
         float (CameraItemComponentLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?shutterDuration@CameraItemComponentLegacy@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    inline float pictureDuration() const{
+        float (CameraItemComponentLegacy::*rv)() const;
+        *((void**)&rv) = dlsym("?pictureDuration@CameraItemComponentLegacy@@UEBAMXZ");
         return (this->*rv)();
     }
     inline float slideAwayDuration() const{

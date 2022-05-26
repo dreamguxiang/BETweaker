@@ -45,12 +45,12 @@ public:
     MCAPI void operator=(class ItemDescriptor &&);
     MCAPI void operator=(class ItemDescriptor const &);
     MCAPI bool operator==(class ItemDescriptor const &) const;
+    MCAPI bool sameItem(class ItemDescriptor const &) const;
     MCAPI bool sameItemAndAux(class ItemDescriptor const &) const;
     MCAPI bool sameItemAndAux(class ItemStack const &) const;
     MCAPI class std::optional<class CompoundTag> save() const;
     MCAPI ~ItemDescriptor();
     MCAPI static void bindType();
-    MCAPI static class std::optional<class ItemDescriptor> fromTag(class CompoundTag const *);
     MCAPI static class ItemDescriptor fromTagExpression(std::string const &, enum MolangVersion);
 
 protected:

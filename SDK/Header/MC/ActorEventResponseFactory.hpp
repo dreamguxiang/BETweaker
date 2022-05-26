@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
-    /*1*/ virtual void initializeFactory(class Experiments const &);
     /*
     inline  ~ActorEventResponseFactory(){
          (ActorEventResponseFactory::*rv)();
@@ -33,6 +32,7 @@ public:
     }
     */
     MCAPI void initSchema();
+    MCAPI void initializeFactory(class Experiments const &);
 
 protected:
 

@@ -82,5 +82,6 @@ private:
     MCAPI void _stopServerDiscovery();
     MCAPI void _updateNetwork();
     MCAPI bool _updateQueuedPings();
+    MCAPI void _updateState();
 
 };

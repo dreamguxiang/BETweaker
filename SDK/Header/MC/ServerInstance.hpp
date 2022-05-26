@@ -96,6 +96,11 @@ public:
         *((void**)&rv) = dlsym("?onOutOfDiskSpace@ServerInstance@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
+    inline void onRequestResourceReload(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onRequestResourceReload@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
+    }
     */
     MCAPI ServerInstance(class IMinecraftApp &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator>> const &);
     MCAPI void disconnectAllClientsWithMessage(std::string);

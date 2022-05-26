@@ -40,6 +40,5 @@ public:
 protected:
 
 private:
-    MCAPI bool isBlocked(struct DenyList::Entry const &, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry>>> &) const;
 
 };

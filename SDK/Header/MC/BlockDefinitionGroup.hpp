@@ -36,6 +36,7 @@ public:
     MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const &, class Experiments const &);
     MCAPI std::vector<struct std::pair<std::string, class CompoundTag>> generateServerBlockProperties() const;
     MCAPI std::vector<struct BlockDefinition const *> getBlockDefinitions() const;
+    MCAPI void initBlockComponent(class Block &, struct BlockComponentDescription const &);
     MCAPI void initializeBlockFromDefinition(struct BlockDefinition const &, class EntityRegistry &, class Level &);
     MCAPI void initializeBlocks(class EntityRegistry &, class Level &);
     MCAPI void loadResources(class ResourcePackManager &, class BlockComponentFactory const &, class Experiments const &);

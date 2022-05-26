@@ -28,7 +28,7 @@ public:
     /*1*/ virtual bool canUse();
     /*4*/ virtual void start();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const &);
+    MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class ActorDefinitionTrigger const &);
 
 protected:
 

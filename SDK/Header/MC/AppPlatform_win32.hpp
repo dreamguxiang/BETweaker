@@ -24,15 +24,20 @@ public:
 
 public:
     /*
-    inline enum PlatformType getPlatformType() const{
-        enum PlatformType (AppPlatform_win32::*rv)() const;
-        *((void**)&rv) = dlsym("?getPlatformType@AppPlatform_win32@@UEBA?AW4PlatformType@@XZ");
-        return (this->*rv)();
+    inline void updateTextBoxText(std::string const & a0){
+        void (AppPlatform_win32::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?updateTextBoxText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline enum UIScalingRules getPlatformUIScalingRules() const{
-        enum UIScalingRules (AppPlatform_win32::*rv)() const;
-        *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform_win32@@EEBA?AW4UIScalingRules@@XZ");
-        return (this->*rv)();
+    inline void setSecureStorageKey(std::string const & a0, class SecureStorageKey const & a1){
+        void (AppPlatform_win32::*rv)(std::string const &, class SecureStorageKey const &);
+        *((void**)&rv) = dlsym("?setSecureStorageKey@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class SecureStorageKey const &>(a1));
+    }
+    inline void setScreenSize(int a0, int a1){
+        void (AppPlatform_win32::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setScreenSize@AppPlatform_win32@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
     inline bool supportsVibration() const{
         bool (AppPlatform_win32::*rv)() const;
@@ -59,20 +64,15 @@ public:
         *((void**)&rv) = dlsym("?canLaunchUri@AppPlatform_win32@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0));
     }
-    inline void updateTextBoxText(std::string const & a0){
-        void (AppPlatform_win32::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?updateTextBoxText@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
+    inline enum PlatformType getPlatformType() const{
+        enum PlatformType (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformType@AppPlatform_win32@@UEBA?AW4PlatformType@@XZ");
+        return (this->*rv)();
     }
-    inline void setSecureStorageKey(std::string const & a0, class SecureStorageKey const & a1){
-        void (AppPlatform_win32::*rv)(std::string const &, class SecureStorageKey const &);
-        *((void**)&rv) = dlsym("?setSecureStorageKey@AppPlatform_win32@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class SecureStorageKey const &>(a1));
-    }
-    inline void setScreenSize(int a0, int a1){
-        void (AppPlatform_win32::*rv)(int, int);
-        *((void**)&rv) = dlsym("?setScreenSize@AppPlatform_win32@@UEAAXHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    inline enum UIScalingRules getPlatformUIScalingRules() const{
+        enum UIScalingRules (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform_win32@@EEBA?AW4UIScalingRules@@XZ");
+        return (this->*rv)();
     }
     inline enum BuildPlatform getBuildPlatform() const{
         enum BuildPlatform (AppPlatform_win32::*rv)() const;

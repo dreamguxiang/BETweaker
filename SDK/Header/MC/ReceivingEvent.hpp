@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    MCAPI ~ReceivingEvent();
+    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
 
 protected:
 

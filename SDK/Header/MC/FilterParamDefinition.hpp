@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI FilterParamDefinition(enum FilterParamType, enum FilterParamRequirement, std::string, class FilterInput, struct FilterStringMap);
+    MCAPI FilterParamDefinition(enum FilterParamType, enum FilterParamRequirement, std::string, enum FilterParamOption, class FilterInput, struct FilterStringMap);
 
 protected:
 

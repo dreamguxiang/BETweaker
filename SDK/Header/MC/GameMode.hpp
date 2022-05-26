@@ -61,6 +61,7 @@ public:
     MCAPI float getDestroyRate(class Block const &);
     MCAPI float getMaxPickRange();
     MCAPI float getMaxPickRangeSqr();
+    MCAPI bool isLastBuildBlockInteractive() const;
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
     MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
     MCAPI static float const PICKRANGE_GAMEPAD;

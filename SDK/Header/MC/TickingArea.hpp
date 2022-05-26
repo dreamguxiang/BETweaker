@@ -49,6 +49,7 @@ public:
     /*23*/ virtual bool isRemoved();
     /*24*/ virtual void remove(class LevelStorage &);
     /*25*/ virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
+    /*26*/ virtual void updateBlockSourceCurrentTick(struct Tick const &);
     /*
     inline class mce::UUID const & getId() const{
         class mce::UUID const & (TickingArea::*rv)() const;
@@ -65,16 +66,6 @@ public:
         *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline enum TickingAreaLoadMode getLoadMode() const{
-        enum TickingAreaLoadMode (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ");
-        return (this->*rv)();
-    }
-    inline  ~TickingArea(){
-         (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("??1TickingArea@@UEAA@XZ");
-        return (this->*rv)();
-    }
     inline class BlockSource & getBlockSource(){
         class BlockSource & (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");
@@ -83,6 +74,16 @@ public:
     inline class BlockSource const & getBlockSource() const{
         class BlockSource const & (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEBAAEBVBlockSource@@XZ");
+        return (this->*rv)();
+    }
+    inline enum TickingAreaLoadMode getLoadMode() const{
+        enum TickingAreaLoadMode (TickingArea::*rv)() const;
+        *((void**)&rv) = dlsym("?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ");
+        return (this->*rv)();
+    }
+    inline  ~TickingArea(){
+         (TickingArea::*rv)();
+        *((void**)&rv) = dlsym("??1TickingArea@@UEAA@XZ");
         return (this->*rv)();
     }
     inline class ITickingAreaView const & getView() const{

@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnStepOnTrigger {
+class OnStepOnTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct OnStepOnTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPONTRIGGER
 public:
-    struct OnStepOnTrigger& operator=(struct OnStepOnTrigger const &) = delete;
-    OnStepOnTrigger(struct OnStepOnTrigger const &) = delete;
+    class OnStepOnTrigger& operator=(class OnStepOnTrigger const &) = delete;
+    OnStepOnTrigger(class OnStepOnTrigger const &) = delete;
     OnStepOnTrigger() = delete;
 #endif
 

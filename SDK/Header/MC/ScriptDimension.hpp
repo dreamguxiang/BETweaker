@@ -43,6 +43,7 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator>> getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
     MCAPI class ScriptDimension & operator=(class ScriptDimension &&);
     MCAPI class Scripting::Result<struct Scripting::JSON> runCommand(struct Scripting::ContextConfig const &, std::string const &);
+    MCAPI class Scripting::Result<class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptCommandResult>>> runCommandAsync(struct Scripting::ContextConfig const &, class Scripting::ScriptObjectFactory &, class Scripting::DependencyLocator &, std::string const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor>> spawnEntity(std::string const &, class std::variant<class BlockPos, class Vec3> const &) const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor>> spawnItem(class ScriptItemStack const &, class std::variant<class BlockPos, class Vec3> const &) const;
     MCAPI void spawnParticle(std::string const &, class Vec3 const &, class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap>);

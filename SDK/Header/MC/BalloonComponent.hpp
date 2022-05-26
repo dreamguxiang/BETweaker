@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI BalloonComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void computeMaxHeight(class Actor &);
     MCAPI void detach(class Actor &);
     MCAPI class Actor * getAttachedActor(class Actor &);

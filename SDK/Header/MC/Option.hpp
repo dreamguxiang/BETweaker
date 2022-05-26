@@ -40,6 +40,7 @@ public:
     MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
     MCAPI bool canModify() const;
     MCAPI bool getBool() const;
+    MCAPI enum OptionType getType() const;
     MCAPI bool hasOverrideSource() const;
     MCAPI void notifyOptionValueChanged(bool);
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool &)>);

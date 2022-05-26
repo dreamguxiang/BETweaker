@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Direction.hpp"
+#include "InternalComponentRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -39,9 +40,10 @@ public:
     /*12*/ virtual enum Mirror loadMirror(enum Mirror);
     /*13*/ virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /*14*/ virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    /*15*/ virtual void __unk_vfn_15();
+    /*15*/ virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual struct ActorUniqueID _generateNewID();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual struct ActorUniqueID _generateNewID();
     /*
     inline bool shouldResetTime(){
         bool (StructureDataLoadHelper::*rv)();

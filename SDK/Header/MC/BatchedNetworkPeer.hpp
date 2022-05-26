@@ -44,5 +44,6 @@ protected:
 
 private:
     MCAPI void _startSendTask();
+    MCAPI enum Compressibility getCompressibleState(unsigned __int64) const;
 
 };

@@ -24,14 +24,14 @@ public:
 
 public:
     /*
-    inline bool logOnlyOnce() const{
-        bool (WorldSessionEndPoint::*rv)() const;
-        *((void**)&rv) = dlsym("?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void flush(){
         void (WorldSessionEndPoint::*rv)();
         *((void**)&rv) = dlsym("?flush@WorldSessionEndPoint@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool logOnlyOnce() const{
+        bool (WorldSessionEndPoint::*rv)() const;
+        *((void**)&rv) = dlsym("?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isEnabled() const{

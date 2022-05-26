@@ -29,6 +29,7 @@ public:
     MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const &, class LevelStorage &);
     MCAPI void addTickingAreaListForDimension(class AutomaticID<class Dimension, int>, class std::shared_ptr<class TickingAreaList> const &);
     MCAPI unsigned int countActiveStandaloneTickingAreas() const;
+    MCAPI unsigned int countPendingStandaloneTickingAreas() const;
     MCAPI unsigned int countStandaloneTickingAreas() const;
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptions(class AutomaticID<class Dimension, int>) const;
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptionsByName(class AutomaticID<class Dimension, int>, std::string const &) const;
@@ -53,7 +54,7 @@ private:
     MCAPI std::vector<struct TickingAreaDescription> _getPendingAreaDescriptionsFiltered(class AutomaticID<class Dimension, int>, class std::function<bool (struct PendingArea const &)>) const;
     MCAPI bool _hasPendingTickingAreaNamed(std::string const &, std::vector<struct PendingArea> const &) const;
     MCAPI void _processAdds(class Level &);
-    MCAPI void _processRemoves(class Level &, class LevelStorage &);
+    MCAPI void _processRemoves(class AutomaticID<class Dimension, int>, class TickingAreaList &, class Level &, class LevelStorage &);
     MCAPI void _savePendingArea(class LevelStorage &, class AutomaticID<class Dimension, int>, struct PendingArea const &);
 
 };

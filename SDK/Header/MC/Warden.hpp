@@ -3,13 +3,13 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Actor.hpp"
-#include "Mob.hpp"
+#include "Monster.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class Warden : public Mob {
+class Warden : public Monster {
 
 #define AFTER_EXTRA
 
@@ -28,13 +28,15 @@ public:
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
     /*42*/ virtual bool canDisableShield();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*48*/ virtual void normalTick();
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
@@ -42,7 +44,7 @@ public:
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
-    /*113*/ virtual class Actor * findAttackTarget();
+    /*112*/ virtual void setTarget(class Actor *);
     /*114*/ virtual bool isValidTarget(class Actor *) const;
     /*120*/ virtual void onTame();
     /*121*/ virtual void onFailedTame();
@@ -55,6 +57,7 @@ public:
     /*180*/ virtual bool canChangeDimensions() const;
     /*181*/ virtual void __unk_vfn_181();
     /*183*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*190*/ virtual void onSynchedDataUpdate(int);
     /*192*/ virtual bool canPickupItem(class ItemStack const &) const;
     /*193*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual void __unk_vfn_195();
@@ -71,23 +74,27 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
-    /*302*/ virtual int getItemUseDuration() const;
-    /*303*/ virtual float getItemUseStartupProgress() const;
-    /*304*/ virtual float getItemUseIntervalProgress() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*345*/ virtual void __unk_vfn_345();
-    /*355*/ virtual void _serverAiMobStep();
-    /*359*/ virtual void __unk_vfn_359();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*286*/ virtual void spawnAnim();
+    /*307*/ virtual int getItemUseDuration() const;
+    /*308*/ virtual float getItemUseStartupProgress() const;
+    /*309*/ virtual float getItemUseIntervalProgress() const;
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*315*/ virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    /*316*/ virtual void __unk_vfn_316();
+    /*326*/ virtual void sendArmorDamage(class std::bitset<4>);
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*348*/ virtual float _getWalkTargetValue(class BlockPos const &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*360*/ virtual void _serverAiMobStep();
+    /*364*/ virtual void __unk_vfn_364();
+    /*366*/ virtual bool isDarkEnoughToSpawn() const;
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 protected:

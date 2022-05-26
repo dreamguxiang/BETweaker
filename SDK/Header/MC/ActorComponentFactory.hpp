@@ -28,6 +28,6 @@ public:
 protected:
 
 private:
-    MCAPI void _initialize(class BaseGameVersion const &, class Experiments const &);
+    MCAPI void _initialize(class Experiments const &);
 
 };

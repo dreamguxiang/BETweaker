@@ -29,15 +29,15 @@ public:
 public:
     /*0*/ virtual ~ItemStackRequestAction();
     /*
-    inline class ItemStackRequestActionCraftBase const * getCraftAction() const{
-        class ItemStackRequestActionCraftBase const * (ItemStackRequestAction::*rv)() const;
-        *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ");
-        return (this->*rv)();
-    }
     inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette & a0, bool a1){
         void (ItemStackRequestAction::*rv)(class BlockPalette &, bool);
         *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z");
         return (this->*rv)(std::forward<class BlockPalette &>(a0), std::forward<bool>(a1));
+    }
+    inline class ItemStackRequestActionCraftBase const * getCraftAction() const{
+        class ItemStackRequestActionCraftBase const * (ItemStackRequestAction::*rv)() const;
+        *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ");
+        return (this->*rv)();
     }
     inline int getFilteredStringIndex() const{
         int (ItemStackRequestAction::*rv)() const;

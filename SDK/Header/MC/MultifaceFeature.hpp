@@ -31,6 +31,5 @@ protected:
 private:
     MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource &, class BlockPos const &, class Random &, std::vector<unsigned char> const &) const;
     MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
-    MCAPI static std::vector<unsigned char> _getShuffledDirectionsExcept(unsigned char, std::vector<unsigned char> const &);
 
 };

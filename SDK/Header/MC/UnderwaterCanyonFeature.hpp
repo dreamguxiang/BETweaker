@@ -35,6 +35,7 @@ public:
     }
     */
     MCAPI UnderwaterCanyonFeature(short);
+    MCAPI static bool isDiggable(class Block const &);
 
 protected:
 

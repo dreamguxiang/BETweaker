@@ -29,5 +29,6 @@ public:
 protected:
 
 private:
+    MCAPI class BlockPos _getSearchOffset(int, int, int) const;
 
 };

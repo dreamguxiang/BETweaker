@@ -60,7 +60,6 @@ public:
     MCAPI void setPackSourceReport(class PackSourceReport &&);
     MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum ResourcePackStackType, bool);
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener &);
-    MCAPI bool upgradeJson(std::string &, class Core::Path const &);
 
 protected:
 

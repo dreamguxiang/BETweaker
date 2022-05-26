@@ -39,6 +39,7 @@ protected:
 private:
     MCAPI void findRelationships(class BlockPos const &, class BaseCircuitComponent *, class BlockSource *);
     MCAPI void processPendingAdds();
+    MCAPI void processPendingUpdates(class BlockSource *);
     MCAPI void removeComponent(class BlockPos const &);
     MCAPI void removeStaleRelationships();
     MCAPI void scheduleRelationshipUpdate(class BlockPos const &, class BaseCircuitComponent *);

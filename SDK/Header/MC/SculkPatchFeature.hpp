@@ -29,5 +29,6 @@ public:
 protected:
 
 private:
+    MCAPI class std::optional<class BlockPos> _getNearestSolidNeighborPos(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
 };

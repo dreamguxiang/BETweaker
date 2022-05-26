@@ -30,8 +30,8 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual void broadcastChanges();
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit();
     MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
 

@@ -34,7 +34,7 @@ public:
     MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
     MCAPI class FillingContainer * _getRawContainerPtr();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool addItem(class BlockSource &, class ItemStack &, int, int);
     MCAPI bool addItem(class ItemActor &);
     MCAPI bool addItem(class ItemStack &);
@@ -48,7 +48,6 @@ public:
     MCAPI bool hasRoomForItem(class ItemActor const &);
     MCAPI bool hasRoomForItem(class ItemStack const &);
     MCAPI void initFromDefinition(class Actor &);
-    MCAPI void initFromDefinition(class Actor &, struct ContainerDescription const &);
     MCAPI bool isEmpty() const;
     MCAPI bool isPrivate() const;
     MCAPI bool openContainer(class Actor &, class Player &);

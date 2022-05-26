@@ -22,10 +22,9 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
-    /*2*/ virtual bool shouldListen(class BlockSource &, class BlockPos, class GameEvent const &, class Actor const *);
-    /*3*/ virtual ~SculkSensorVibrationConfig();
-    MCAPI static class Block const & getUnpoweredBlock();
+    /*0*/ virtual ~SculkSensorVibrationConfig();
+    /*1*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
+    /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 
 protected:
 

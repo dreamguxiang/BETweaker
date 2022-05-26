@@ -21,7 +21,9 @@ public:
 
 public:
     MCAPI SubChunkBrightnessStorage();
+    MCAPI unsigned char getLightValueAtIndex(unsigned short) const;
     MCAPI void reset(bool);
+    MCAPI void setLightValueAtIndex(unsigned short, unsigned char);
 
 protected:
 

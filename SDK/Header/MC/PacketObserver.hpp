@@ -26,6 +26,9 @@ public:
     /*0*/ virtual ~PacketObserver();
     /*1*/ virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /*2*/ virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void reset();
     /*
     inline void dataReceivedFrom(class NetworkIdentifier const & a0, std::string const & a1){
         void (PacketObserver::*rv)(class NetworkIdentifier const &, std::string const &);

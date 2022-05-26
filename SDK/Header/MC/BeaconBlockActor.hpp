@@ -24,11 +24,6 @@ public:
 
 public:
     /*
-    inline bool hasAlphaLayer() const{
-        bool (BeaconBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?hasAlphaLayer@BeaconBlockActor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void setItem(int a0, class ItemStack const & a1){
         void (BeaconBlockActor::*rv)(int, class ItemStack const &);
         *((void**)&rv) = dlsym("?setItem@BeaconBlockActor@@UEAAXHAEBVItemStack@@@Z");
@@ -49,6 +44,11 @@ public:
         *((void**)&rv) = dlsym("?removeItem@BeaconBlockActor@@UEAAXHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
+    inline bool hasAlphaLayer() const{
+        bool (BeaconBlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?hasAlphaLayer@BeaconBlockActor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline int getContainerSize() const{
         int (BeaconBlockActor::*rv)() const;
         *((void**)&rv) = dlsym("?getContainerSize@BeaconBlockActor@@UEBAHXZ");
@@ -58,11 +58,6 @@ public:
         class ItemStack const & (BeaconBlockActor::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@BeaconBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
-        void (BeaconBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
-        *((void**)&rv) = dlsym("?serverInitItemStackIds@BeaconBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
     }
     inline int getMaxStackSize() const{
         int (BeaconBlockActor::*rv)() const;
@@ -103,6 +98,11 @@ public:
         bool (BeaconBlockActor::*rv)(class CompoundTag &) const;
         *((void**)&rv) = dlsym("?save@BeaconBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag &>(a0));
+    }
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const &)> a2){
+        void (BeaconBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const &)>);
+        *((void**)&rv) = dlsym("?serverInitItemStackIds@BeaconBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const &)>>(a2));
     }
     inline void tick(class BlockSource & a0){
         void (BeaconBlockActor::*rv)(class BlockSource &);

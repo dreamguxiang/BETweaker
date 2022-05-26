@@ -51,6 +51,7 @@ protected:
 private:
     MCAPI bool _isNetherNetOverLANAllowed() const;
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
+    MCAPI void _pruneStaleServers(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);

@@ -41,12 +41,13 @@ public:
     /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual float getDeletionDelayTimeSeconds() const;
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    /*34*/ virtual void __unk_vfn_34();
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*37*/ virtual bool _playerCanUpdate(class Player const &) const;
     MCAPI NetherReactorBlockActor(class BlockPos const &);
 
 protected:

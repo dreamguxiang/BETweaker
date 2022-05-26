@@ -33,15 +33,16 @@ public:
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*79*/ virtual float getShadowHeightOffs();
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*87*/ virtual float getBrightness(float) const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*78*/ virtual float getShadowHeightOffs();
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*86*/ virtual float getBrightness(float) const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*94*/ virtual bool isPickable();
     /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
@@ -97,31 +98,33 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual float getInertia();
-    /*280*/ virtual void __unk_vfn_280();
-    /*281*/ virtual enum ParticleType getTrailParticle();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*285*/ virtual float getInertia();
+    /*286*/ virtual void __unk_vfn_286();
+    /*287*/ virtual enum ParticleType getTrailParticle();
     /*
-    inline bool canMakeStepSound() const{
-        bool (Fireball::*rv)() const;
-        *((void**)&rv) = dlsym("?canMakeStepSound@Fireball@@MEBA_NXZ");
-        return (this->*rv)();
+    inline void onHit(class HitResult const & a0){
+        void (Fireball::*rv)(class HitResult const &);
+        *((void**)&rv) = dlsym("?onHit@Fireball@@MEAAXAEBVHitResult@@@Z");
+        return (this->*rv)(std::forward<class HitResult const &>(a0));
     }
     inline bool shouldBurn(){
         bool (Fireball::*rv)();
         *((void**)&rv) = dlsym("?shouldBurn@Fireball@@MEAA_NXZ");
         return (this->*rv)();
     }
-    inline void onHit(class HitResult const & a0){
-        void (Fireball::*rv)(class HitResult const &);
-        *((void**)&rv) = dlsym("?onHit@Fireball@@MEAAXAEBVHitResult@@@Z");
-        return (this->*rv)(std::forward<class HitResult const &>(a0));
+    inline bool canMakeStepSound() const{
+        bool (Fireball::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Fireball@@MEBA_NXZ");
+        return (this->*rv)();
     }
     inline  ~Fireball(){
          (Fireball::*rv)();
@@ -134,6 +137,5 @@ public:
 protected:
 
 private:
-    MCAPI void _setPower(class Vec3 const &);
 
 };

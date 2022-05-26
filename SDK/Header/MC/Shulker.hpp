@@ -32,15 +32,16 @@ public:
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
-    /*58*/ virtual bool isInWall() const;
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*57*/ virtual bool isInWall() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
@@ -80,39 +81,36 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
-    /*291*/ virtual void travel(float, float, float);
-    /*294*/ virtual void aiStep();
-    /*299*/ virtual bool checkSpawnRules(bool);
-    /*302*/ virtual int getItemUseDuration() const;
-    /*303*/ virtual float getItemUseStartupProgress() const;
-    /*304*/ virtual float getItemUseIntervalProgress() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*308*/ virtual float getMaxHeadXRot();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*316*/ virtual int getArmorValue() const;
-    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*345*/ virtual void __unk_vfn_345();
-    /*350*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*355*/ virtual void _serverAiMobStep();
-    /*359*/ virtual void __unk_vfn_359();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*286*/ virtual void spawnAnim();
+    /*296*/ virtual void travel(float, float, float);
+    /*299*/ virtual void aiStep();
+    /*304*/ virtual bool checkSpawnRules(bool);
+    /*307*/ virtual int getItemUseDuration() const;
+    /*308*/ virtual float getItemUseStartupProgress() const;
+    /*309*/ virtual float getItemUseIntervalProgress() const;
+    /*312*/ virtual void __unk_vfn_312();
+    /*313*/ virtual float getMaxHeadXRot();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*321*/ virtual int getArmorValue() const;
+    /*326*/ virtual void sendArmorDamage(class std::bitset<4>);
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*348*/ virtual float _getWalkTargetValue(class BlockPos const &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*355*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /*360*/ virtual void _serverAiMobStep();
+    /*364*/ virtual void __unk_vfn_364();
     /*
-    inline bool isLeashableType(){
-        bool (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?isLeashableType@Shulker@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Shulker::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Shulker@@UEBA_NXZ");
@@ -123,6 +121,11 @@ public:
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Shulker@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool isLeashableType(){
+        bool (Shulker::*rv)();
+        *((void**)&rv) = dlsym("?isLeashableType@Shulker@@UEAA_NXZ");
+        return (this->*rv)();
+    }
     */
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
@@ -130,12 +133,14 @@ public:
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
 protected:
+    MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
     MCAPI static void _setPeekAmount(class SynchedActorData &, int);
 
 private:
     MCAPI void _calculateBB();
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
+    MCAPI void _peekAmountTick();
     MCAPI void _setAttachFace(unsigned char);
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
     MCAPI void _trySpawnShulker();

@@ -30,6 +30,7 @@ public:
 public:
     MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     MCAPI ChunkLocalNoiseCache();
+    MCAPI unsigned __int64 _toIndex(class DividedPos2d<4> const &) const;
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;
     MCAPI void setCacheEntry(class DividedPos2d<4> const &, struct ChunkLocalNoiseCache::CacheEntry const &);
     MCAPI ~ChunkLocalNoiseCache();

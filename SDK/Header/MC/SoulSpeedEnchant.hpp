@@ -37,14 +37,14 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
-    inline bool isDiscoverable() const{
-        bool (SoulSpeedEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isTreasureOnly() const{
         bool (SoulSpeedEnchant::*rv)() const;
         *((void**)&rv) = dlsym("?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDiscoverable() const{
+        bool (SoulSpeedEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

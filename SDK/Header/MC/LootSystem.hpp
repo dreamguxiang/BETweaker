@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~LootSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher &);
+    /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /*
     inline void tick(class EntityRegistry & a0){
         void (LootSystem::*rv)(class EntityRegistry &);

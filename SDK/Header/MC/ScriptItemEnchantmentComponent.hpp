@@ -30,7 +30,7 @@ public:
     */
     MCAPI ScriptItemEnchantmentComponent(class ScriptItemEnchantmentComponent const &);
     MCAPI ScriptItemEnchantmentComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const &);
-    MCAPI class Scripting::Result<class ScriptItemEnchantments> getEnchantments() const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemEnchantments>> getEnchantments() const;
     MCAPI class ScriptItemEnchantmentComponent & operator=(class ScriptItemEnchantmentComponent const &);
     MCAPI class Scripting::Result<void> removeAllEnchantments();
     MCAPI class Scripting::Result<void> setEnchantments(class ScriptItemEnchantments const &);

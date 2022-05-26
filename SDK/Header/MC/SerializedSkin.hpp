@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "persona.hpp"
 
 #define BEFORE_EXTRA
@@ -49,6 +50,7 @@ public:
     MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
     MCAPI SerializedSkin(class SerializedSkin const &);
+    MCAPI SerializedSkin(std::string const &, std::string const &, std::string const &, struct mce::Image const &, unsigned short const &, unsigned short const &, struct mce::Image const &, unsigned short const &, unsigned short const &, class Json::Value &&, class SemVersion const &, std::string const &, std::string const &, bool, bool, bool, bool, bool);
     MCAPI SerializedSkin(class ConnectionRequest const &);
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
     MCAPI float getAnimationFrames(enum persona::AnimatedTextureType) const;

@@ -41,8 +41,9 @@ private:
     MCAPI std::unique_ptr<class Path> _findPath(class Actor &, float, float, float, float);
     MCAPI std::unique_ptr<class Path> _findPath(class Actor &, class PathfinderNode *, class PathfinderNode *, class PathfinderNode const &, float);
     MCAPI class AABB & _getAABBForPathfinding(class BlockPos const &, class Block const &, class AABB &) const;
+    MCAPI float _getHeightAboveBlock(class BlockPos const &, float) const;
+    MCAPI float _getHeightBelowBlock(class BlockPos const &, float) const;
     MCAPI class std::optional<class BlockPos> _getHighestReachablePosByJumping(class BlockPos const &, float, class BlockPos const &) const;
-    MCAPI struct std::pair<float, float> _getMinAndMaxHeightAroundBlock(class BlockPos const &, float) const;
     MCAPI int _getNeighbors(class Actor &, class PathfinderNode &, class PathfinderNode const &, class PathfinderNode const &, unsigned int);
     MCAPI class PathfinderNode * _getNode(class Actor &, class BlockPos const &, class BlockPos const &, class PathfinderNode const &, float, enum CanClimbIntoNode);
     MCAPI class PathfinderNode * _getNode(class BlockPos const &, enum NodeType);

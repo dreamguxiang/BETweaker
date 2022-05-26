@@ -74,22 +74,18 @@ public:
     /*27*/ virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual float getDeletionDelayTimeSeconds() const;
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /*36*/ virtual bool _playerCanUpdate(class Player const &) const;
+    /*34*/ virtual void __unk_vfn_34();
+    /*35*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*37*/ virtual bool _playerCanUpdate(class Player const &) const;
     /*
-    inline class Container * getContainer(){
-        class Container * (BlockActor::*rv)();
-        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEAAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Container const * getContainer() const{
-        class Container const * (BlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEBAPEBVContainer@@XZ");
+    inline void eraseLootTable(){
+        void (BlockActor::*rv)();
+        *((void**)&rv) = dlsym("?eraseLootTable@BlockActor@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onChunkLoaded(class LevelChunk & a0){
@@ -116,6 +112,16 @@ public:
         void (BlockActor::*rv)(class BlockSource &, class BlockPos const &);
         *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
+    inline class Container * getContainer(){
+        class Container * (BlockActor::*rv)();
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEAAPEAVContainer@@XZ");
+        return (this->*rv)();
+    }
+    inline class Container const * getContainer() const{
+        class Container const * (BlockActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainer@BlockActor@@UEBAPEBVContainer@@XZ");
+        return (this->*rv)();
     }
     inline  ~BlockActor(){
          (BlockActor::*rv)();

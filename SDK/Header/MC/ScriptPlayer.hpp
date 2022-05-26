@@ -39,6 +39,7 @@ public:
     MCAPI ScriptPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
     MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const &);
     MCAPI class Scripting::Result<std::string> getName() const;
+    MCAPI struct ScriptScreenDisplay & getScreenDisplay();
     MCAPI class Scripting::Result<int> getSelectedSlot() const;
     MCAPI class Scripting::Result<void> playSound(std::string const &, class std::optional<struct ScriptSoundOptions>);
     MCAPI class Scripting::Result<void> postClientMessage(std::string const &, std::string const &);

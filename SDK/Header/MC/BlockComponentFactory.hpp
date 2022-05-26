@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "reflection.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -31,14 +32,14 @@ public:
 public:
     MCAPI BlockComponentFactory(class Experiments const &);
     MCAPI std::unique_ptr<struct BlockComponentDescription> createDescription(std::string const &) const;
-    MCAPI void initializeFactory(class Experiments const &);
-    MCAPI static class entt::meta_any constructComponent(std::string const &);
-    MCAPI static class entt::meta_any getComponent(std::string const &, void *);
+    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     MCAPI static class std::unordered_map<std::string, struct BlockComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>> mRegisteredCerealComponents;
     MCAPI static void registerAllCerealDescriptions();
+    MCAPI static void registerComponentUpgrade(class CerealDocumentUpgrader &, class std::shared_ptr<class CerealSchemaUpgrade>);
 
 protected:
 
 private:
+    MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
 };

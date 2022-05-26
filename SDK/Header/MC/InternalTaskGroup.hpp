@@ -24,21 +24,22 @@ public:
 
 public:
     /*0*/ virtual ~InternalTaskGroup();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void processCoroutines();
     /*
-    inline enum TaskGroupState getState() const{
-        enum TaskGroupState (InternalTaskGroup::*rv)() const;
-        *((void**)&rv) = dlsym("?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ");
-        return (this->*rv)();
-    }
-    inline void processCoroutines(){
-        void (InternalTaskGroup::*rv)();
-        *((void**)&rv) = dlsym("?processCoroutines@InternalTaskGroup@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void taskComplete(class gsl::not_null<class BackgroundTaskBase *> a0){
         void (InternalTaskGroup::*rv)(class gsl::not_null<class BackgroundTaskBase *>);
         *((void**)&rv) = dlsym("?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z");
         return (this->*rv)(std::forward<class gsl::not_null<class BackgroundTaskBase *>>(a0));
+    }
+    inline enum TaskGroupState getState() const{
+        enum TaskGroupState (InternalTaskGroup::*rv)() const;
+        *((void**)&rv) = dlsym("?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ");
+        return (this->*rv)();
     }
     inline void taskRegister(class std::shared_ptr<class BackgroundTaskBase> a0){
         void (InternalTaskGroup::*rv)(class std::shared_ptr<class BackgroundTaskBase>);
@@ -49,6 +50,16 @@ public:
         void (InternalTaskGroup::*rv)(class std::shared_ptr<class BackgroundTaskBase>, bool);
         *((void**)&rv) = dlsym("?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z");
         return (this->*rv)(std::forward<class std::shared_ptr<class BackgroundTaskBase>>(a0), std::forward<bool>(a1));
+    }
+    inline class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const & a0, class std::function<class TaskResult (void)> && a1){
+        class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> (InternalTaskGroup::*rv)(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
+        *((void**)&rv) = dlsym("?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z");
+        return (this->*rv)(std::forward<struct TaskStartInfoEx<void> const &>(a0), std::forward<class std::function<class TaskResult (void)> &&>(a1));
+    }
+    inline class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const & a0, class std::function<class TaskResult (void)> && a1, class std::function<void (void)> && a2){
+        class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> (InternalTaskGroup::*rv)(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
+        *((void**)&rv) = dlsym("?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z");
+        return (this->*rv)(std::forward<struct TaskStartInfoEx<void> const &>(a0), std::forward<class std::function<class TaskResult (void)> &&>(a1), std::forward<class std::function<void (void)> &&>(a2));
     }
     */
 

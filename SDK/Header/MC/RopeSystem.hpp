@@ -37,6 +37,7 @@ public:
 protected:
 
 private:
+    MCAPI bool _cacheColliders(class BlockSource &);
     MCAPI void _finalizeBucket(struct AABBBucket &);
     MCAPI void _initializePins();
     MCAPI void _integrate();

@@ -38,6 +38,7 @@ public:
     MCAPI void inheritFrom(class BaseAttributeMap const &);
     MCAPI void onAttributeModified(class AttributeInstance const &);
     MCAPI class BaseAttributeMap & operator=(class BaseAttributeMap &&);
+    MCAPI bool operator==(class BaseAttributeMap const &) const;
     MCAPI class AttributeInstance & registerAttribute(class Attribute const &);
     MCAPI unsigned __int64 size() const;
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float);

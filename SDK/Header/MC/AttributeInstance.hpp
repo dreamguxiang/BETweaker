@@ -52,8 +52,10 @@ public:
     MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
     MCAPI bool isValid() const;
     MCAPI void notify(__int64);
+    MCAPI bool operator==(class AttributeInstance const &) const;
     MCAPI void recalculateModifiers();
     MCAPI void registerListener(class AttributeInstance const &);
+    MCAPI void removeBuff(class AttributeBuff const &);
     MCAPI void removeBuff(class std::shared_ptr<class AttributeBuff>);
     MCAPI void removeBuffs();
     MCAPI void removeModifier(class AttributeModifier const &);
@@ -70,13 +72,14 @@ public:
     MCAPI void setDelegate(class std::shared_ptr<class AttributeInstanceDelegate>);
     MCAPI void setMaxValue(float);
     MCAPI void setRange(float, float, float);
+    MCAPI void updateModifier(class AttributeModifier const &);
 
 protected:
 
 private:
     MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
     MCAPI float _calculateValue(class AttributeBuff const &);
-    MCAPI float _calculateValue();
+    MCAPI float _calculateValue(bool);
     MCAPI float _sanitizeValue(float);
 
 };

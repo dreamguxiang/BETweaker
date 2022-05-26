@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~MobGameEventSystem();
-    /*1*/ virtual void registerEvents(class entt::dispatcher &);
+    /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 
 protected:
 

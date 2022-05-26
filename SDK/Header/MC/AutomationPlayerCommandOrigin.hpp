@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "PlayerCommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -35,8 +36,6 @@ public:
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*26*/ virtual void __unk_vfn_26();
-    /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);

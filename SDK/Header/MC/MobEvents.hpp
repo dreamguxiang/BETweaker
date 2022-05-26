@@ -39,6 +39,7 @@ public:
     MCAPI static std::string const EVENTS_ENABLED_STRING;
 
 protected:
+    MCAPI class MobEvent & _getEventReference(enum MobEventsIndex);
 
 private:
 

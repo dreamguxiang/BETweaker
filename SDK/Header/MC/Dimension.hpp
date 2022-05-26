@@ -24,6 +24,36 @@ public:
 
 public:
     /*
+    inline bool mayRespawnViaBed() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasGround() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNaturalDimension() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isNaturalDimension@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool showSky() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?showSky@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int getDefaultBiome() const{
+        int (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultBiome@Dimension@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getSpawnYPosition() const{
+        int (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
+        return (this->*rv)();
+    }
     inline bool forceCheckAllNeighChunkSavedStat() const{
         bool (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ");
@@ -43,36 +73,6 @@ public:
         bool (Dimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isValidSpawn@Dimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline int getDefaultBiome() const{
-        int (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultBiome@Dimension@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getSpawnYPosition() const{
-        int (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool hasGround() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool mayRespawnViaBed() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isNaturalDimension() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?isNaturalDimension@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool showSky() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?showSky@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
     }
     inline class BaseLightTextureImageBuilder * getLightTextureImageBuilder() const{
         class BaseLightTextureImageBuilder * (Dimension::*rv)() const;
@@ -268,9 +268,10 @@ public:
     MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void unregisterEntity(struct ActorUniqueID const &);
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
+    MCAPI void updateDimensionBlockSourceTick();
     MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
-    MCAPI static float const *const MOON_BRIGHTNESS_PER_PHASE;
+    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
 
 protected:

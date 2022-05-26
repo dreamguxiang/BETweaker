@@ -72,18 +72,13 @@ public:
     /*0*/ virtual ~Scoreboard();
     /*1*/ virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
     /*2*/ virtual class Objective * clearDisplayObjective(std::string const &);
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
+    /*3*/ virtual struct ScoreboardId const & createScoreboardId(class Player const &);
+    /*4*/ virtual struct ScoreboardId const & createScoreboardId(class Actor const &);
+    /*5*/ virtual struct ScoreboardId const & createScoreboardId(std::string const &);
+    /*6*/ virtual void onObjectiveAdded(class Objective const &);
     /*7*/ virtual void onObjectiveRemoved(class Objective &);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const &, class Objective const &);
     /*
-    inline bool isClientSide() const{
-        bool (Scoreboard::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@Scoreboard@@MEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void setPacketSender(class PacketSender * a0){
         void (Scoreboard::*rv)(class PacketSender *);
         *((void**)&rv) = dlsym("?setPacketSender@Scoreboard@@UEAAXPEAVPacketSender@@@Z");
@@ -104,25 +99,15 @@ public:
         *((void**)&rv) = dlsym("?tick@Scoreboard@@UEAAXXZ");
         return (this->*rv)();
     }
+    inline bool isClientSide() const{
+        bool (Scoreboard::*rv)() const;
+        *((void**)&rv) = dlsym("?isClientSide@Scoreboard@@MEBA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~Scoreboard(){
          (Scoreboard::*rv)();
         *((void**)&rv) = dlsym("??1Scoreboard@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline struct ScoreboardId const & createScoreboardId(std::string const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
-    inline struct ScoreboardId const & createScoreboardId(class Player const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(class Player const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const &>(a0));
-    }
-    inline struct ScoreboardId const & createScoreboardId(class Actor const & a0){
-        struct ScoreboardId const & (Scoreboard::*rv)(class Actor const &);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor const &>(a0));
     }
     inline void onPlayerIdentityUpdated(struct PlayerScoreboardId const & a0){
         void (Scoreboard::*rv)(struct PlayerScoreboardId const &);
@@ -134,17 +119,14 @@ public:
         *((void**)&rv) = dlsym("?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
         return (this->*rv)(std::forward<struct ScoreboardId const &>(a0), std::forward<class Objective const &>(a1));
     }
-    inline void onObjectiveAdded(class Objective const & a0){
-        void (Scoreboard::*rv)(class Objective const &);
-        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective const &>(a0));
-    }
     */
     MCAPI Scoreboard(class CommandSoftEnumRegistry);
     MCAPI class Objective * addObjective(std::string const &, std::string const &, class ObjectiveCriteria const &);
     MCAPI void addScoreListener(class Player &, std::string const &);
     MCAPI int applyPlayerOperation(bool &, std::vector<struct ScoreboardId> &, struct ScoreboardId const &, class Objective &, std::vector<struct ScoreboardId> &, class Objective &, enum CommandOperator);
     MCAPI bool clearScoreboardIdentity(struct ScoreboardId const &);
+    MCAPI void forEachIdentityRef(class std::function<void (class ScoreboardIdentityRef &)>);
+    MCAPI void forEachObjective(class std::function<void (class Objective &)>);
     MCAPI class ObjectiveCriteria * getCriteria(std::string const &) const;
     MCAPI std::vector<std::string> getCriteriaNames() const;
     MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const &) const;
@@ -154,6 +136,7 @@ public:
     MCAPI class Objective * getObjective(std::string const &) const;
     MCAPI std::vector<std::string> getObjectiveNames() const;
     MCAPI std::vector<class Objective const *> getObjectives() const;
+    MCAPI class ScoreboardEventCoordinator & getScoreboardEventCoordinator();
     MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
     MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
     MCAPI struct ScoreboardId const & getScoreboardId(class Actor const &) const;

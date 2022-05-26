@@ -22,6 +22,8 @@ public:
 
 public:
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
+    MCAPI static void _applySlowdown(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct BlockMovementSlowdownApplied>>);
+    MCAPI static struct TickingSystemWithInfo createSlowdownSystem();
 
 protected:
 

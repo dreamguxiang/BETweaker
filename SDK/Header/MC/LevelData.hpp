@@ -40,7 +40,8 @@ public:
     MCAPI bool getBonusChestSpawned() const;
     MCAPI struct Tick const & getCurrentTick() const;
     MCAPI class Abilities & getDefaultAbilities();
-    MCAPI class Abilities const & getDefaultAbilities() const;
+    MCAPI class PermissionsHandler & getDefaultPermissions();
+    MCAPI class PermissionsHandler const & getDefaultPermissions() const;
     MCAPI class CompoundTag const & getEduSharedUriResource() const;
     MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
     MCAPI std::string const & getEducationProductId() const;

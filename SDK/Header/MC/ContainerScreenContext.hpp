@@ -27,8 +27,11 @@ public:
     MCAPI ContainerScreenContext();
     MCAPI class Player & getPlayer() const;
     MCAPI enum ContainerType getScreenContainerType() const;
+    MCAPI operator bool() const;
     MCAPI class Actor * tryGetActor() const;
+    MCAPI struct ActorUniqueID const * tryGetActorUniqueID() const;
     MCAPI class BlockActor * tryGetBlockActor() const;
+    MCAPI class BlockPos const * tryGetBlockActorPos() const;
 
 protected:
 

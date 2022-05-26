@@ -22,6 +22,8 @@ namespace CommandUtils {
     MCAPI void broadcastPlayerSpawnedMobEvent(class Actor const &, class Actor &);
     MCAPI bool canBeSummoned(struct ActorDefinitionIdentifier const &, class CommandOrigin const &);
     MCAPI void clearBlockEntityContents(class BlockSource &, class BlockPos const &);
+    MCAPI void clearBlockEntityLootTable(class BlockSource &, class BlockPos const &);
+    MCAPI void convertBlockEntityTag(class CompoundTag &, class BlockActor const &, class BlockPos const &);
     MCAPI class ItemStack createItemStack(std::string const &, int, int);
     MCAPI std::vector<class ItemStack> createItemStacks(class ItemInstance const &, int, int &);
     MCAPI bool createMapData(class Actor &, class ItemInstance &, class CommandOutput &);
@@ -30,7 +32,6 @@ namespace CommandUtils {
     MCAPI class BlockPos getFeetBlockPos(class Actor const *);
     MCAPI class Vec3 getFeetPos(class Actor const *);
     MCAPI std::vector<enum ActorType> getInvalidCommandEntities();
-    MCAPI std::vector<enum ActorType> getInvalidCommandEntities(bool, bool);
     MCAPI class Player const * getOriginPlayer(class CommandOrigin const &);
     MCAPI std::string getTelemetryErrorList(class CommandOutput const &);
     MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);

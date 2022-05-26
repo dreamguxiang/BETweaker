@@ -80,8 +80,6 @@ public:
     MCAPI float nextFloat(float, float);
     MCAPI float nextGaussianFloat();
     MCAPI int nextGaussianInt(int);
-    MCAPI int nextInt(int, int);
-    MCAPI int nextIntInclusive(int, int);
     MCAPI static class Random & getThreadLocal();
 
 protected:

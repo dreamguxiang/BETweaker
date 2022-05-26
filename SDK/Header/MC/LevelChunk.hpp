@@ -57,6 +57,7 @@ public:
     MCAPI void deserializeBiomes(class IDataInput &);
     MCAPI void deserializeBlockEntities(class IDataInput &);
     MCAPI void deserializeFinalization(class IDataInput &);
+    MCAPI void deserializeHardcodedSpawners(class IDataInput &);
     MCAPI bool deserializeKey(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
     MCAPI void deserializeLoadedVersion(class IDataInput &);
     MCAPI void deserializeMetaDataHash(class IDataInput &);
@@ -73,6 +74,7 @@ public:
     MCAPI bool generateOriginalLighting(class ChunkViewSource &, bool);
     MCAPI class ChunkLocalHeight getAboveTopSolidBlock(class ChunkBlockPos const &, bool, bool, bool);
     MCAPI void getActors(struct ActorDefinitionIdentifier const &, class AABB const &, std::vector<class Actor *> &) const;
+    MCAPI class buffer_span_mut<struct SubChunk> getAllSubChunks();
     MCAPI class Biome & getBiome(class ChunkBlockPos const &) const;
     MCAPI class Block const & getBlock(class ChunkBlockPos const &) const;
     MCAPI class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor>>>> const & getBlockEntities() const;
@@ -147,7 +149,8 @@ public:
     MCAPI void recalculateSubchunkHashes(bool);
     MCAPI void recomputeHeightMap(bool);
     MCAPI class std::shared_ptr<class BlockActor> removeBlockEntity(class BlockPos const &);
-    MCAPI bool removeEntity(class WeakEntityRef, bool);
+    MCAPI bool removeEntityFromChunk(class WeakEntityRef);
+    MCAPI bool removeEntityFromWorld(class WeakEntityRef);
     MCAPI void removeHardcodedSpawningArea(enum HardcodedSpawnAreaType);
     MCAPI void runtimeRelightSubchunk(class BlockSource &, unsigned __int64, std::vector<struct SubChunkLightUpdate> const &, std::vector<class BlockPos> &);
     MCAPI void serialize2DMaps(class IDataOutput &) const;
@@ -158,7 +161,7 @@ public:
     MCAPI void serializeBlockEntitiesForSubChunk(class IDataOutput &, class SubChunkPos const &) const;
     MCAPI bool serializeBorderBlocks(class IDataOutput &) const;
     MCAPI void serializeEntities(std::string &, bool, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>) const;
-    MCAPI void serializeEntityRemovals(std::string &, class std::function<void (std::string const &)>);
+    MCAPI void serializeEntityRemovals(class std::function<void (std::string const &)>);
     MCAPI void serializeFinalization(class IDataOutput &) const;
     MCAPI bool serializeHardcodedSpawners(class IDataOutput &) const;
     MCAPI void serializeMetaDataHash(class IDataOutput &) const;
@@ -198,9 +201,13 @@ public:
     MCAPI ~LevelChunk();
     MCAPI static bool borderBlocksAreEnabled();
     MCAPI static class std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter> createNew(class Dimension &, class ChunkPos, bool, enum SubChunkInitMode);
-    MCAPI static class std::array<struct BiomeChunkData, 256> deserialize2dBiomesFrom2DMaps(class IDataInput &);
+    MCAPI static class std::tuple<class std::array<class ChunkLocalHeight, 256>, class std::array<struct BiomeChunkData, 256>> deserialize2DData(class IDataInput &);
     MCAPI static struct std::pair<unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DBiomes(class IDataInput &, class BiomeRegistry const &, unsigned short);
+    MCAPI static class std::tuple<class std::array<class ChunkLocalHeight, 256>, unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DData(class IDataInput &, class BiomeRegistry const &, unsigned short);
+    MCAPI static void deserializeSubChunk(class IDataInput &, class std::optional<signed char>, struct SubChunk &, class BlockPalette &);
+    MCAPI static void flushGarbageCollector();
     MCAPI static struct std::pair<enum LevelChunkTag, short> getTagAndSubIndexFromKey(class gsl::basic_string_span<char const, -1>);
+    MCAPI static void serializeEntities(std::vector<class WeakEntityRef> const &, std::string const &, std::string &, bool, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>);
 
 protected:
     MCAPI void _deserializeBlockEntities(class IDataInput &, class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor>>>> &);
@@ -221,10 +228,11 @@ private:
     MCAPI bool _deserializeSubChunk(short, class StringByteInput &);
     MCAPI void _disableBlockEntityAccessForThisThread() const;
     MCAPI void _enableBlockEntityAccessForThisThread() const;
+    MCAPI void _fixupCommandBlocksOnTickingQueue(class BlockSource &);
     MCAPI short _getHighestNonAirSubChunkIndex() const;
     MCAPI void _makeUniformBiomes(class Biome const &);
-    MCAPI void _replaceBiomeStorage(unsigned short, std::unique_ptr<class SubChunkStorage<class Biome>>, class Bedrock::Threading::LockGuard<class std::mutex> &);
+    MCAPI void _replaceBiomeStorage(unsigned short, std::unique_ptr<class SubChunkStorage<class Biome>>, class Bedrock::Threading::UniqueLock<class std::shared_mutex> const &);
     MCAPI void _setBiome(class Biome const &, class ChunkBlockPos const &, bool);
-    MCAPI void _setBiome(class Biome const &, unsigned short, unsigned short, class Bedrock::Threading::LockGuard<class std::mutex> &);
+    MCAPI void _setBiome(class Biome const &, unsigned short, unsigned short, class Bedrock::Threading::UniqueLock<class std::shared_mutex> const &);
 
 };

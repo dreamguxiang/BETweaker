@@ -30,6 +30,7 @@ public:
 
 protected:
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
+    MCAPI bool _isValidDimensionPrefix(std::string const &) const;
 
 private:
 

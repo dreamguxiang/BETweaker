@@ -20,20 +20,29 @@ class CommandResponse {
 public:
     class CommandResponse& operator=(class CommandResponse const &) = delete;
     CommandResponse(class CommandResponse const &) = delete;
+    CommandResponse() = delete;
 #endif
 
 public:
     /*0*/ virtual ~CommandResponse();
-    /*1*/ virtual std::string const & getName() const;
-    /*2*/ virtual void executeAction(class RenderParams &) const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-    MCAPI CommandResponse();
-    MCAPI static std::string const NameID;
+    /*
+    inline void executeAction(class RenderParams & a0) const{
+        void (CommandResponse::*rv)(class RenderParams &) const;
+        *((void**)&rv) = dlsym("?executeAction@CommandResponse@@UEBAXAEAVRenderParams@@@Z");
+        return (this->*rv)(std::forward<class RenderParams &>(a0));
+    }
+    inline std::string const & getName() const{
+        std::string const & (CommandResponse::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@CommandResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 
 private:
-    MCAPI void _addCommand(std::string const &);
-    MCAPI void _compileCommands(class Level &) const;
 
 };

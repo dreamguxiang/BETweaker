@@ -40,6 +40,11 @@ public:
     /*15*/ virtual float getPingTimeForGUID(std::string const &);
     /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
     /*
+    inline void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const & a0){
+        void (StubServerLocator::*rv)(class std::function<struct RakNet::RakNetGUID (void)> const &);
+        *((void**)&rv) = dlsym("?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z");
+        return (this->*rv)(std::forward<class std::function<struct RakNet::RakNetGUID (void)> const &>(a0));
+    }
     inline bool isIPv6Supported() const{
         bool (StubServerLocator::*rv)() const;
         *((void**)&rv) = dlsym("?isIPv6Supported@StubServerLocator@@UEBA_NXZ");
@@ -49,11 +54,6 @@ public:
         bool (StubServerLocator::*rv)() const;
         *((void**)&rv) = dlsym("?isIPv4Supported@StubServerLocator@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const & a0){
-        void (StubServerLocator::*rv)(class std::function<struct RakNet::RakNetGUID (void)> const &);
-        *((void**)&rv) = dlsym("?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<struct RakNet::RakNetGUID (void)> const &>(a0));
     }
     inline  ~StubServerLocator(){
          (StubServerLocator::*rv)();

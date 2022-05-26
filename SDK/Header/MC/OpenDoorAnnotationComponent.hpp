@@ -27,10 +27,11 @@ public:
     MCAPI void checkPath(class Mob &);
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void onComponentRemoved(class EntityContext &);
+    MCAPI ~OpenDoorAnnotationComponent();
 
 protected:
 
 private:
-    MCAPI void _cleanUp(class Mob const &);
+    MCAPI void _cleanUp(class Mob &);
 
 };

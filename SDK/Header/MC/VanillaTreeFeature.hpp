@@ -31,6 +31,7 @@ protected:
 
 private:
     MCAPI static void _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeCanopyWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
+    MCAPI static void _buildVanillaRootVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeRootWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
     MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>> &, class std::function<class ITreeTrunkWrapper & (struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature> *)>);
 
 };

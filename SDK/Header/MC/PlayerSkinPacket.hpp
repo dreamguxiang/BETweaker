@@ -40,6 +40,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI PlayerSkinPacket(class mce::UUID, class SerializedSkin const &, std::string const &, std::string const &);
     MCAPI PlayerSkinPacket();
 
 protected:

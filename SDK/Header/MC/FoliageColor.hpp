@@ -47,7 +47,8 @@ private:
     MCAPI static class mce::Color const GRASS_BOTTOM_RIGHT;
     MCAPI static class mce::Color const GRASS_TOP_LEFT;
     MCAPI static class mce::Color const GRASS_TOP_RIGHT;
-    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 4> mFoliagePalettes;
-    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 4> mGrassPalettes;
+    MCAPI static int _index(float, float);
+    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mFoliagePalettes;
+    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mGrassPalettes;
 
 };

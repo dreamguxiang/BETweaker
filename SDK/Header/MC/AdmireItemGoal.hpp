@@ -38,7 +38,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const &, class DefinitionTrigger const &);
+    MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
 
 protected:
 

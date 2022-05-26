@@ -34,11 +34,11 @@ public:
     /*14*/ virtual ~SimulatedPlayer();
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*82*/ virtual void __unk_vfn_82();
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*81*/ virtual void __unk_vfn_81();
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*105*/ virtual void __unk_vfn_105();
@@ -62,42 +62,43 @@ public:
     /*238*/ virtual void setAuxValue(int);
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*261*/ virtual void __unk_vfn_261();
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
-    /*294*/ virtual void aiStep();
-    /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*343*/ virtual float _getWalkTargetValue(class BlockPos const &);
-    /*344*/ virtual bool canExistWhenDisallowMob() const;
-    /*345*/ virtual void __unk_vfn_345();
-    /*353*/ virtual void updateAi();
-    /*355*/ virtual void _serverAiMobStep();
-    /*359*/ virtual void __unk_vfn_359();
-    /*369*/ virtual void __unk_vfn_369();
+    /*259*/ virtual void onPush(class Actor &);
+    /*263*/ virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum HandSlot, class ItemStack const &) const;
+    /*267*/ virtual void __unk_vfn_267();
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*286*/ virtual void spawnAnim();
+    /*299*/ virtual void aiStep();
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*348*/ virtual float _getWalkTargetValue(class BlockPos const &);
+    /*349*/ virtual bool canExistWhenDisallowMob() const;
+    /*350*/ virtual void __unk_vfn_350();
+    /*358*/ virtual void updateAi();
+    /*360*/ virtual void _serverAiMobStep();
+    /*364*/ virtual void __unk_vfn_364();
     /*374*/ virtual void __unk_vfn_374();
-    /*375*/ virtual void __unk_vfn_375();
-    /*377*/ virtual void __unk_vfn_377();
-    /*378*/ virtual void __unk_vfn_378();
+    /*380*/ virtual void __unk_vfn_380();
+    /*381*/ virtual void __unk_vfn_381();
+    /*383*/ virtual void __unk_vfn_383();
     /*384*/ virtual void __unk_vfn_384();
-    /*385*/ virtual void __unk_vfn_385();
-    /*388*/ virtual void __unk_vfn_388();
     /*389*/ virtual void __unk_vfn_389();
-    /*391*/ virtual void __unk_vfn_391();
-    /*392*/ virtual void __unk_vfn_392();
-    /*401*/ virtual void __unk_vfn_401();
-    /*402*/ virtual void __unk_vfn_402();
+    /*390*/ virtual void __unk_vfn_390();
+    /*393*/ virtual void __unk_vfn_393();
+    /*394*/ virtual void __unk_vfn_394();
+    /*396*/ virtual void __unk_vfn_396();
+    /*397*/ virtual void __unk_vfn_397();
     /*406*/ virtual void __unk_vfn_406();
-    /*413*/ virtual void __unk_vfn_413();
-    /*441*/ virtual void __unk_vfn_441();
-    /*442*/ virtual std::string getXuid() const;
-    /*443*/ virtual struct PlayerMovementSettings const & getMovementSettings() const;
-    /*445*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
-    /*446*/ virtual int _getSpawnChunkLimit() const;
-    /*447*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
+    /*407*/ virtual void __unk_vfn_407();
+    /*411*/ virtual void __unk_vfn_411();
+    /*446*/ virtual void __unk_vfn_446();
+    /*447*/ virtual std::string getXuid() const;
+    /*448*/ virtual struct PlayerMovementSettings const & getMovementSettings() const;
+    /*450*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
+    /*451*/ virtual int _getSpawnChunkLimit() const;
+    /*452*/ virtual void _updateChunkPublisherView(class Vec3 const &, float);
     /*
     inline bool useNewAi() const{
         bool (SimulatedPlayer::*rv)() const;
@@ -112,7 +113,9 @@ public:
     */
     MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, unsigned char, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
+    MCAPI void preAiStep();
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);
+    MCAPI void setXuid(std::string const &);
     MCAPI bool simulateAttack(class Actor *);
     MCAPI bool simulateAttack();
     MCAPI bool simulateDestroyBlock(class BlockPos const &, enum ScriptFacing);
@@ -141,7 +144,7 @@ public:
     MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum ScriptFacing, class Vec3 const &);
     MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum ScriptFacing, class Vec3 const &);
     MCAPI void simulateWorldMove(class Vec3 const &, float);
-    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
+    MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const &);
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
 protected:
@@ -153,6 +156,5 @@ private:
     MCAPI void _startCooldown();
     MCAPI bool _trySwing();
     MCAPI void _updateMovement();
-    MCAPI void _updateRidingComponents();
 
 };

@@ -22,15 +22,21 @@ enum Type;
 public:
     class Ability& operator=(class Ability const &) = delete;
     Ability(class Ability const &) = delete;
-    Ability() = delete;
 #endif
 
 public:
+    MCAPI Ability();
+    MCAPI Ability(bool, enum Ability::Options);
     MCAPI bool getBool() const;
     MCAPI float getFloat() const;
     MCAPI enum Ability::Type getType() const;
     MCAPI bool hasOption(enum Ability::Options) const;
+    MCAPI bool isSet() const;
+    MCAPI bool operator!=(class Ability const &) const;
+    MCAPI void reset(enum Ability::Type);
     MCAPI void setBool(bool);
+    MCAPI void setFloat(float);
+    MCAPI void unSet();
 
 protected:
 

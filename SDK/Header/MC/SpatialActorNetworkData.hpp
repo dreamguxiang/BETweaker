@@ -38,12 +38,14 @@ public:
     MCAPI void enableAutoSend(bool);
     MCAPI class Vec3 getLastSentPositionForAddingEntity();
     MCAPI class Vec2 getLastSentRotationForAddingEntity();
+    MCAPI float getLastSentYBodyRotationForAddingEntity();
     MCAPI float getLastSentYHeadRotationForAddingEntity();
     MCAPI void handleClientData(class MoveActorAbsoluteData const &);
     MCAPI bool isAutoSendEnabled() const;
     MCAPI void sendUpdate(bool, bool, bool);
     MCAPI bool shouldSendMotionPredictionHintsPacket() const;
     MCAPI bool shouldSendUpdate(bool, bool) const;
+    MCAPI void teleportEntity(class Vec3 const &, class Vec2 const &, float);
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers & getDebugSpatialPacketModifiers();
 
 protected:

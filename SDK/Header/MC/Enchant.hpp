@@ -120,6 +120,11 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
+    inline bool isDiscoverable() const{
+        bool (Enchant::*rv)() const;
+        *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isProtectionEnchant() const{
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isProtectionEnchant@Enchant@@UEBA_NXZ");
@@ -133,11 +138,6 @@ public:
     inline bool isMeleeDamageEnchant() const{
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDiscoverable() const{
-        bool (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline int getMinLevel() const{

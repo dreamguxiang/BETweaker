@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getInsomniaTimerTicks() const;
     MCAPI int getTicksUntilInsomnia() const;
     MCAPI int incrementTimeSinceRest();

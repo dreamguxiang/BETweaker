@@ -35,14 +35,13 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class Abilities const &, struct ActorUniqueID, bool);
+    MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class LayeredAbilities const &, struct ActorUniqueID);
     MCAPI AdventureSettingsPacket();
-    MCAPI void fillIn(struct AdventureSettings &, class Abilities &) const;
-    MCAPI bool isSet(enum AdventureSettingsPacket::Flags) const;
-    MCAPI bool isSetPermissions(unsigned int const &, enum AdventureSettingsPacket::PermissionsFlags) const;
 
 protected:
 
 private:
+    MCAPI void _initAbilitiesData(class Abilities const &);
+    MCAPI void _initCustomCacheData(class Abilities const &);
 
 };

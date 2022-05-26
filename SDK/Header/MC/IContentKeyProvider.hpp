@@ -23,17 +23,16 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~IContentKeyProvider();
     /*
-    inline bool requireEncryptedReads() const{
-        bool (IContentKeyProvider::*rv)() const;
-        *((void**)&rv) = dlsym("?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline std::string getAlternateContentKey(class ContentIdentity const & a0) const{
         std::string (IContentKeyProvider::*rv)(class ContentIdentity const &) const;
         *((void**)&rv) = dlsym("?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z");
         return (this->*rv)(std::forward<class ContentIdentity const &>(a0));
+    }
+    inline bool requireEncryptedReads() const{
+        bool (IContentKeyProvider::*rv)() const;
+        *((void**)&rv) = dlsym("?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ");
+        return (this->*rv)();
     }
     */
 

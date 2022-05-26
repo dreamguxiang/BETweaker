@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 protected:
 

@@ -45,7 +45,6 @@ public:
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void reloadComponent();
     MCAPI void resupplyTrades();
-    MCAPI void setCurrentTradeExp(int);
     MCAPI void setNearbyCuredDiscount(int);
     MCAPI void setOffers(class MerchantRecipeList &);
     MCAPI void setRiches(int);

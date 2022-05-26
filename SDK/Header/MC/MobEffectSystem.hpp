@@ -30,6 +30,5 @@ public:
 protected:
 
 private:
-    MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class MobEffectComponent> &);
 
 };

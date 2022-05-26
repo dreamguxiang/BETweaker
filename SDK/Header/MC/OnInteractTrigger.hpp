@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnInteractTrigger {
+class OnInteractTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct OnInteractTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONINTERACTTRIGGER
 public:
-    struct OnInteractTrigger& operator=(struct OnInteractTrigger const &) = delete;
-    OnInteractTrigger(struct OnInteractTrigger const &) = delete;
+    class OnInteractTrigger& operator=(class OnInteractTrigger const &) = delete;
+    OnInteractTrigger(class OnInteractTrigger const &) = delete;
     OnInteractTrigger() = delete;
 #endif
 

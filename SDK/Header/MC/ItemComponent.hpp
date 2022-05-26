@@ -25,6 +25,21 @@ public:
 public:
     /*0*/ virtual ~ItemComponent();
     /*
+    inline void writeSettings(){
+        void (ItemComponent::*rv)();
+        *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool initializeFromNetwork(class CompoundTag const & a0){
+        bool (ItemComponent::*rv)(class CompoundTag const &);
+        *((void**)&rv) = dlsym("?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const &>(a0));
+    }
+    inline bool checkComponentDataForContentErrors() const{
+        bool (ItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isNetworkComponent() const{
         bool (ItemComponent::*rv)() const;
         *((void**)&rv) = dlsym("?isNetworkComponent@ItemComponent@@UEBA_NXZ");
@@ -34,21 +49,6 @@ public:
         bool (ItemComponent::*rv)(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
         *((void**)&rv) = dlsym("?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class ItemStack &>(a0), std::forward<class Actor &>(a1), std::forward<class BlockPos const &>(a2), std::forward<unsigned char>(a3), std::forward<class Vec3 const &>(a4));
-    }
-    inline bool checkComponentDataForContentErrors() const{
-        bool (ItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const & a0){
-        void (ItemComponent::*rv)(class CompoundTag const &);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@ItemComponent@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const &>(a0));
-    }
-    inline void writeSettings(){
-        void (ItemComponent::*rv)();
-        *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
-        return (this->*rv)();
     }
     inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
         std::unique_ptr<class CompoundTag> (ItemComponent::*rv)() const;
@@ -63,6 +63,7 @@ public:
     */
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 protected:
 

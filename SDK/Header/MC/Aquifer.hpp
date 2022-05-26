@@ -29,7 +29,7 @@ public:
 #endif
 
 public:
-    MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, class SurfaceLevelCache const &, int, int, int);
+    MCAPI Aquifer(class ChunkPos const &, class AquiferNoises const &, struct OverworldNoises3d const &, class SurfaceLevelCache const &, int, int, int);
     MCAPI void computeAt(class BlockPos const &);
     MCAPI float getLastBarrier() const;
     MCAPI class Block const * getLastFluidBlockType(bool) const;

@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    MCAPI static float getPlayerFlySpeed(class Abilities const &, class SynchedActorData const &);
+    MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorData const &);
 
 protected:
 

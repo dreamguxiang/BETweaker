@@ -31,15 +31,15 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_8();
     /*
-    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
-        int (CursorContainerValidation::*rv)(class ContainerScreenContext const &) const;
-        *((void**)&rv) = dlsym("?getContainerOffset@CursorContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
-    }
     inline bool canItemMoveToContainer(class ItemStackBase const & a0) const{
         bool (CursorContainerValidation::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@CursorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
+    }
+    inline int getContainerOffset(class ContainerScreenContext const & a0) const{
+        int (CursorContainerValidation::*rv)(class ContainerScreenContext const &) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@CursorContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const &>(a0));
     }
     */
 

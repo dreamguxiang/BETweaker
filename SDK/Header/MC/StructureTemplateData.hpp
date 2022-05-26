@@ -59,5 +59,6 @@ protected:
     MCAPI void _saveStructureTag(class CompoundTag &) const;
 
 private:
+    MCAPI void _contentErrorMissingField(std::string const &) const;
 
 };

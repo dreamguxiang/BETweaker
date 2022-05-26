@@ -34,10 +34,10 @@ public:
         *((void**)&rv) = dlsym("?getRange@SculkCatalystBlockActor@@UEBAIXZ");
         return (this->*rv)();
     }
-    inline void handleGameEvent(class GameEvent const & a0, class BlockPos const & a1, class Actor * a2, class BlockSource & a3){
-        void (SculkCatalystBlockActor::*rv)(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
-        *((void**)&rv) = dlsym("?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBVBlockPos@@PEAVActor@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor *>(a2), std::forward<class BlockSource &>(a3));
+    inline void handleGameEvent(class GameEvent const & a0, struct GameEventContext const & a1, class BlockSource & a2){
+        void (SculkCatalystBlockActor::*rv)(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
+        *((void**)&rv) = dlsym("?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<struct GameEventContext const &>(a1), std::forward<class BlockSource &>(a2));
     }
     inline void load(class Level & a0, class CompoundTag const & a1, class DataLoadHelper & a2){
         void (SculkCatalystBlockActor::*rv)(class Level &, class CompoundTag const &, class DataLoadHelper &);

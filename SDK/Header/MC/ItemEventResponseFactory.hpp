@@ -25,6 +25,7 @@ public:
 public:
     /*0*/ virtual ~ItemEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
+    /*2*/ virtual void initSchema();
     /*
     inline  ~ItemEventResponseFactory(){
          (ItemEventResponseFactory::*rv)();
@@ -32,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI void initSchema();
 
 protected:
 

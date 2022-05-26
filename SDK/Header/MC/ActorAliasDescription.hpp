@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-class ActorAliasDescription {
+struct ActorAliasDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,22 +18,13 @@ class ActorAliasDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORALIASDESCRIPTION
 public:
-    class ActorAliasDescription& operator=(class ActorAliasDescription const &) = delete;
-    ActorAliasDescription(class ActorAliasDescription const &) = delete;
+    ActorAliasDescription(struct ActorAliasDescription const &) = delete;
     ActorAliasDescription() = delete;
 #endif
 
 public:
-    /*0*/ virtual ~ActorAliasDescription();
-    /*1*/ virtual char const * getJsonName() const;
-    /*
-    inline  ~ActorAliasDescription(){
-         (ActorAliasDescription::*rv)();
-        *((void**)&rv) = dlsym("??1ActorAliasDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
+    MCAPI struct ActorAliasDescription & operator=(struct ActorAliasDescription const &);
     MCAPI void parse(class Json::Value &, bool);
 
 protected:

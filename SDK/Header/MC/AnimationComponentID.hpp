@@ -22,6 +22,8 @@ public:
 
 public:
     MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
+    MCAPI unsigned __int64 getHash() const;
+    MCAPI bool operator==(class AnimationComponentID const &) const;
 
 protected:
 

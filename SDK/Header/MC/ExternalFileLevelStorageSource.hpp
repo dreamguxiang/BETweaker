@@ -31,8 +31,8 @@ public:
     /*3*/ virtual class Core::Result getLevelData(std::string const &, class LevelData &) const;
     /*4*/ virtual void saveLevelData(std::string const &, class LevelData const &);
     /*5*/ virtual void getLevelList(std::vector<class Core::PathBuffer<std::string>> &);
-    /*6*/ virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, class IContentKeyProvider const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
-    /*7*/ virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, class IContentKeyProvider const &);
+    /*6*/ virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler &, std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::unique_ptr<class LevelStorageEventing>);
+    /*7*/ virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void deleteLevel(std::string const &);
     /*10*/ virtual bool renameLevel(std::string const &, std::string const &);
@@ -48,6 +48,11 @@ public:
     /*20*/ virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const &) const;
     /*21*/ virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const &, bool) const;
     /*
+    inline bool isNewLevelIdAcceptable(std::string const & a0){
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?isNewLevelIdAcceptable@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
     inline bool requiresConversion(std::string const & a0){
         bool (ExternalFileLevelStorageSource::*rv)(std::string const &);
         *((void**)&rv) = dlsym("?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
@@ -67,11 +72,6 @@ public:
         bool (ExternalFileLevelStorageSource::*rv)(std::string const &, class ProgressListener *);
         *((void**)&rv) = dlsym("?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z");
         return (this->*rv)(std::forward<std::string const &>(a0), std::forward<class ProgressListener *>(a1));
-    }
-    inline bool isNewLevelIdAcceptable(std::string const & a0){
-        bool (ExternalFileLevelStorageSource::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?isNewLevelIdAcceptable@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     inline  ~ExternalFileLevelStorageSource(){
          (ExternalFileLevelStorageSource::*rv)();

@@ -393,6 +393,11 @@ public:
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVChangeMobPropertyPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ChangeMobPropertyPacket const &>(a1));
     }
+    inline void handle(class NetworkIdentifier const & a0, class AdventureSettingsPacket const & a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAdventureSettingsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AdventureSettingsPacket const &>(a1));
+    }
     inline void handle(class NetworkIdentifier const & a0, class PurchaseReceiptPacket const & a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPurchaseReceiptPacket@@@Z");
@@ -432,11 +437,6 @@ public:
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class ActorPickRequestPacket const &>(a1));
-    }
-    inline void handle(class NetworkIdentifier const & a0, class AdventureSettingsPacket const & a1){
-        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
-        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAdventureSettingsPacket@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class AdventureSettingsPacket const &>(a1));
     }
     inline void handle(class NetworkIdentifier const & a0, class AnimatePacket const & a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class AnimatePacket const &);
@@ -658,10 +658,20 @@ public:
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class PositionTrackingDBClientRequestPacket const &>(a1));
     }
+    inline void handle(class NetworkIdentifier const & a0, class RequestAbilityPacket const & a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class RequestAbilityPacket const &);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RequestAbilityPacket const &>(a1));
+    }
     inline void handle(class NetworkIdentifier const & a0, class RequestChunkRadiusPacket const & a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestChunkRadiusPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RequestChunkRadiusPacket const &>(a1));
+    }
+    inline void handle(class NetworkIdentifier const & a0, class RequestPermissionsPacket const & a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestPermissionsPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const &>(a0), std::forward<class RequestPermissionsPacket const &>(a1));
     }
     inline void handle(class NetworkIdentifier const & a0, class ResourcePackChunkRequestPacket const & a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
@@ -809,7 +819,7 @@ public:
     MCAPI void addToDenyList(class mce::UUID const &, std::string const &);
     MCAPI void allowIncomingConnections(std::string const &, bool);
     MCAPI class OwnerPtrT<struct EntityRefTraits> createNewPlayer(class NetworkIdentifier const &, class ConnectionRequest const &);
-    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>, std::string const &);
     MCAPI void disallowIncomingConnections();
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &, bool);
     MCAPI void disconnectClient(class NetworkIdentifier const &, unsigned char, std::string const &, bool);
@@ -845,5 +855,6 @@ private:
     MCAPI void _onSubClientAuthenticated(class NetworkIdentifier const &, class Certificate const &, class SubClientLoginPacket const &);
     MCAPI void _sendAdditionalLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     MCAPI void _sendLevelData(class ServerPlayer &, class NetworkIdentifier const &);
+    MCAPI bool _updatePermissions(class ServerPlayer const &, class RequestPermissionsPacket const &, class Abilities &, class PermissionsHandler &, class Player *);
 
 };

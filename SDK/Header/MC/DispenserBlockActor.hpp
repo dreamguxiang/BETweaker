@@ -84,6 +84,11 @@ public:
         *((void**)&rv) = dlsym("?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class BlockSource &>(a1));
     }
+    inline  ~DispenserBlockActor(){
+         (DispenserBlockActor::*rv)();
+        *((void**)&rv) = dlsym("??1DispenserBlockActor@@UEAA@XZ");
+        return (this->*rv)();
+    }
     inline class ItemStack const & getItem(int a0) const{
         class ItemStack const & (DispenserBlockActor::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z");
@@ -123,11 +128,6 @@ public:
         void (DispenserBlockActor::*rv)(class Player &);
         *((void**)&rv) = dlsym("?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player &>(a0));
-    }
-    inline  ~DispenserBlockActor(){
-         (DispenserBlockActor::*rv)();
-        *((void**)&rv) = dlsym("??1DispenserBlockActor@@UEAA@XZ");
-        return (this->*rv)();
     }
     */
     MCAPI DispenserBlockActor(class BlockPos);

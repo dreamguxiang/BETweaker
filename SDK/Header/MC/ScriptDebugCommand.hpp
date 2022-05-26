@@ -25,10 +25,18 @@ public:
 public:
     /*0*/ virtual ~ScriptDebugCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+    /*
+    inline  ~ScriptDebugCommand(){
+         (ScriptDebugCommand::*rv)();
+        *((void**)&rv) = dlsym("??1ScriptDebugCommand@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScriptDebugCommand();
 
 protected:
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
+    MCAPI void _handleProfilerAction(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::ProfilerAction, class CommandOutput &) const;
 
 private:
 

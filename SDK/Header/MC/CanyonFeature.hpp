@@ -38,9 +38,11 @@ public:
     */
     MCAPI CanyonFeature(short);
     MCAPI void apply(class BlockVolume &, class ChunkPos const &, class BiomeSource const &, struct CanyonFeatureUtils::CanyonConfiguration const &, class Random &, unsigned int, struct WorldGenContext const &);
+    MCAPI static bool isDiggable(class Block const &, class Block const &);
 
 protected:
     MCAPI void addTunnel(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, float, float, float, int, int, float, struct WorldGenContext const &) const;
+    MCAPI bool detectWater(class BlockVolume &, int, int, int, int, int, int) const;
 
 private:
 

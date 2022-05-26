@@ -38,6 +38,7 @@ public:
     MCAPI void setSpeedModifier(float);
     MCAPI void setWantedPosition(class Mob &, class Vec3 const &, float);
     MCAPI void update(class Mob &);
+    MCAPI ~MoveControlComponent();
 
 protected:
 

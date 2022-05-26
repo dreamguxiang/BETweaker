@@ -2,13 +2,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "VibrationListenerConfig.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class AllayVibrationConfig : public VibrationListenerConfig {
+class AllayVibrationConfig {
 
 #define AFTER_EXTRA
 
@@ -22,9 +21,10 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
-    /*2*/ virtual bool shouldListen(class BlockSource &, class BlockPos, class GameEvent const &, class Actor const *);
-    /*3*/ virtual ~AllayVibrationConfig();
+    /*0*/ virtual ~AllayVibrationConfig();
+    /*1*/ virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
+    /*2*/ virtual bool isValidVibration(class GameEvent const &);
+    /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
 
 protected:

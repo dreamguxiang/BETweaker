@@ -47,7 +47,6 @@ public:
     MCAPI static void buildExpressionOpTable();
     MCAPI static float fast_atof_positiveOnly(char const *&);
     MCAPI static class Experiments & getExperiments();
-    MCAPI static char const * getOpFriendlyName(enum ExpressionOp);
     MCAPI static class std::recursive_mutex & getQueryFunctionMutex();
     MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
     MCAPI static std::vector<std::string> mExpressionOpTokens;

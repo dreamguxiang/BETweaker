@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct OnPlayerDestroyedTrigger {
+class OnPlayerDestroyedTrigger {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct OnPlayerDestroyedTrigger {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGER
 public:
-    struct OnPlayerDestroyedTrigger& operator=(struct OnPlayerDestroyedTrigger const &) = delete;
-    OnPlayerDestroyedTrigger(struct OnPlayerDestroyedTrigger const &) = delete;
+    class OnPlayerDestroyedTrigger& operator=(class OnPlayerDestroyedTrigger const &) = delete;
+    OnPlayerDestroyedTrigger(class OnPlayerDestroyedTrigger const &) = delete;
     OnPlayerDestroyedTrigger() = delete;
 #endif
 

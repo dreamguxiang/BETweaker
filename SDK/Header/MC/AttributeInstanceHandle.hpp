@@ -26,6 +26,7 @@ public:
     MCAPI class AttributeInstance const & getInstance() const;
     MCAPI class AttributeInstance * getMutableInstance() const;
     MCAPI void inheritFrom(class AttributeInstanceHandle const &, class BaseAttributeMap *);
+    MCAPI bool operator==(class AttributeInstanceHandle const &) const;
 
 protected:
 

@@ -54,6 +54,8 @@ namespace Threading {
 enum AsyncStatus;
 template <typename T0>
 class LockGuard;
+template <typename T0>
+class UniqueLock;
 class CountReference {
 public:
     CountReference() = delete;

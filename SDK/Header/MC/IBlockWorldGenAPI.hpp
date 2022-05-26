@@ -24,15 +24,15 @@ public:
 
 public:
     /*
-    inline bool canGetChunk() const{
-        bool (IBlockWorldGenAPI::*rv)() const;
-        *((void**)&rv) = dlsym("?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline class LevelChunk * getChunk(class ChunkPos const & a0){
         class LevelChunk * (IBlockWorldGenAPI::*rv)(class ChunkPos const &);
         *((void**)&rv) = dlsym("?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z");
         return (this->*rv)(std::forward<class ChunkPos const &>(a0));
+    }
+    inline bool canGetChunk() const{
+        bool (IBlockWorldGenAPI::*rv)() const;
+        *((void**)&rv) = dlsym("?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ");
+        return (this->*rv)();
     }
     */
 

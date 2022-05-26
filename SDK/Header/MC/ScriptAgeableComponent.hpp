@@ -36,7 +36,7 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
     MCAPI class Scripting::Result<float> getDuration() const;
     MCAPI class Scripting::Result<std::vector<struct ActorDefinitionFeedItem>> getFeedItems() const;
-    MCAPI class Scripting::Result<class DefinitionTrigger> getGrowUp() const;
+    MCAPI class Scripting::Result<class ActorDefinitionTrigger> getGrowUp() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAgeableComponent> bind(struct Scripting::Version);
 
 protected:

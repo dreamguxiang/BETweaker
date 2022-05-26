@@ -29,6 +29,7 @@ public:
     MCAPI bool enableItemStackNetManager() const;
     MCAPI bool forceGamemode() const;
     MCAPI unsigned short getCompressionThresholdBytesize() const;
+    MCAPI std::string const & getCustomProperty(std::string const &) const;
     MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
     MCAPI enum Difficulty getDifficulty() const;
     MCAPI std::vector<std::string> const & getExtraTrustedKeys() const;
@@ -46,6 +47,7 @@ public:
     MCAPI struct PlayerMovementSettings const & getPlayerMovementSettings() const;
     MCAPI struct NetworkAddress getRemoteServerCommunicationEndpoint() const;
     MCAPI struct ScriptSettings const & getScriptSettings() const;
+    MCAPI std::string const & getServerId() const;
     MCAPI unsigned short getServerPort() const;
     MCAPI unsigned short getServerPortv6() const;
     MCAPI int getServerTickRange() const;

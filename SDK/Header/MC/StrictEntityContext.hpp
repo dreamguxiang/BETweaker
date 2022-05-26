@@ -26,6 +26,7 @@ public:
     MCAPI StrictEntityContext(class EntityContextBase const &);
     MCAPI bool isNull() const;
     MCAPI class StrictEntityContext & operator=(class StrictEntityContext &&);
+    MCAPI bool operator==(class StrictEntityContext const &) const;
 
 protected:
     MCAPI class EntityId _getEntityId() const;

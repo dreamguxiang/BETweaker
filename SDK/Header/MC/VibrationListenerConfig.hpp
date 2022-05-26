@@ -22,10 +22,10 @@ public:
 
 public:
     /*
-    inline bool isValidVibration(class GameEvent const & a0, class Actor const * a1){
-        bool (VibrationListenerConfig::*rv)(class GameEvent const &, class Actor const *);
-        *((void**)&rv) = dlsym("?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@PEBVActor@@@Z");
-        return (this->*rv)(std::forward<class GameEvent const &>(a0), std::forward<class Actor const *>(a1));
+    inline bool isValidVibration(class GameEvent const & a0){
+        bool (VibrationListenerConfig::*rv)(class GameEvent const &);
+        *((void**)&rv) = dlsym("?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z");
+        return (this->*rv)(std::forward<class GameEvent const &>(a0));
     }
     */
 

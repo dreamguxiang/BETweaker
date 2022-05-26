@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
+    /*2*/ virtual void __unk_vfn_2() = 0;
+    /*3*/ virtual unsigned short getRuntimeTypeId() const = 0;
     /*
     inline  ~IDefinitionInstance(){
          (IDefinitionInstance::*rv)();

@@ -34,6 +34,7 @@ public:
     MCAPI int nextIntInclusive(int, int) const;
     MCAPI ~Randomize();
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
+    MCAPI static char const InvalidCallFromDerivedClassMessage[];
 
 protected:
 

@@ -47,7 +47,7 @@ public:
 protected:
 
 private:
-    MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
     MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
+    MCAPI bool _tryMoveInItem(class BlockSource &, class Container &, class ItemStack &, int, int);
 
 };

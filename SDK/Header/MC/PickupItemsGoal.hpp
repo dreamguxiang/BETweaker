@@ -28,22 +28,15 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
-    /*
-    inline void stop(){
-        void (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@PickupItemsGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
 protected:
 
 private:
-    MCAPI std::vector<class gsl::not_null<class ItemActor *>> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
+    MCAPI std::vector<class WeakEntityRef> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
     MCAPI void _pickItemUp(class ItemActor *);
 

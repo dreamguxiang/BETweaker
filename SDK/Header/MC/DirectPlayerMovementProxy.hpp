@@ -24,26 +24,6 @@ public:
 
 public:
     /*
-    inline bool wasAutoJumping() const{
-        bool (DirectPlayerMovementProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?wasAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline enum LoadingState getLoadingState() const{
-        enum LoadingState (DirectPlayerMovementProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ");
-        return (this->*rv)();
-    }
-    inline struct IClientInstanceProxy * getClientInstance(){
-        struct IClientInstanceProxy * (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEAAPEAUIClientInstanceProxy@@XZ");
-        return (this->*rv)();
-    }
-    inline struct IClientInstanceProxy const * getClientInstance() const{
-        struct IClientInstanceProxy const * (DirectPlayerMovementProxy::*rv)() const;
-        *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ");
-        return (this->*rv)();
-    }
     inline void setLookBob(class Vec2 const & a0){
         void (DirectPlayerMovementProxy::*rv)(class Vec2 const &);
         *((void**)&rv) = dlsym("?setLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
@@ -69,19 +49,24 @@ public:
         *((void**)&rv) = dlsym("?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
         return (this->*rv)(std::forward<class Vec2 const &>(a0));
     }
-    inline void setLastDelta(class Vec3 const & a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
-        *((void**)&rv) = dlsym("?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const &>(a0));
-    }
     inline void sendInput(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendInput@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
+    inline void setLastDelta(class Vec3 const & a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const &);
+        *((void**)&rv) = dlsym("?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
+        return (this->*rv)(std::forward<class Vec3 const &>(a0));
+    }
     inline void updateClientPlayerInputState(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?updateClientPlayerInputState@DirectPlayerMovementProxy@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void sendPosition(){
+        void (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void setLastPos(class Vec3 const & a0){
@@ -89,19 +74,14 @@ public:
         *((void**)&rv) = dlsym("?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
-    inline void sendPosition(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void setWasAutoJumping(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);
         *((void**)&rv) = dlsym("?setWasAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void setEmotePlayedEndedEarly(bool a0){
+    inline void fireEventPersonaEmotePlayed(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);
-        *((void**)&rv) = dlsym("?setEmotePlayedEndedEarly@DirectPlayerMovementProxy@@UEAAX_N@Z");
+        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
     inline void sendClientAuthInput(){
@@ -109,9 +89,19 @@ public:
         *((void**)&rv) = dlsym("?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void fireEventPersonaEmotePlayed(){
-        void (DirectPlayerMovementProxy::*rv)();
-        *((void**)&rv) = dlsym("?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAXXZ");
+    inline enum LoadingState getLoadingState() const{
+        enum LoadingState (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ");
+        return (this->*rv)();
+    }
+    inline struct IClientInstanceProxy * getClientInstance(){
+        struct IClientInstanceProxy * (DirectPlayerMovementProxy::*rv)();
+        *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEAAPEAUIClientInstanceProxy@@XZ");
+        return (this->*rv)();
+    }
+    inline struct IClientInstanceProxy const * getClientInstance() const{
+        struct IClientInstanceProxy const * (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ");
         return (this->*rv)();
     }
     inline struct IPlayerMovementProxy const * tryAsPlayer() const{
@@ -122,6 +112,11 @@ public:
     inline struct IPlayerMovementProxy * tryAsPlayer(){
         struct IPlayerMovementProxy * (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?tryAsPlayer@DirectPlayerMovementProxy@@UEAAPEAUIPlayerMovementProxy@@XZ");
+        return (this->*rv)();
+    }
+    inline bool wasAutoJumping() const{
+        bool (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?wasAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline float getJumpRidingScale(){
@@ -174,6 +169,11 @@ public:
         *((void**)&rv) = dlsym("?checkMovementStats@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const &>(a0));
     }
+    inline class LayeredAbilities const & getAbilities() const{
+        class LayeredAbilities const & (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getAbilities@DirectPlayerMovementProxy@@UEBAAEBVLayeredAbilities@@XZ");
+        return (this->*rv)();
+    }
     inline bool getAbilityBool(enum AbilitiesIndex a0) const{
         bool (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex) const;
         *((void**)&rv) = dlsym("?getAbilityBool@DirectPlayerMovementProxy@@UEBA_NW4AbilitiesIndex@@@Z");
@@ -202,6 +202,11 @@ public:
     inline enum InputMode getInputMode() const{
         enum InputMode (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getInputMode@DirectPlayerMovementProxy@@UEBA?AW4InputMode@@XZ");
+        return (this->*rv)();
+    }
+    inline float getItemUseMovementModifier() const{
+        float (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?getItemUseMovementModifier@DirectPlayerMovementProxy@@UEBAMXZ");
         return (this->*rv)();
     }
     inline float getLastBob() const{
@@ -289,6 +294,11 @@ public:
         *((void**)&rv) = dlsym("?isSlowedByItemUse@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool isSpectator() const{
+        bool (DirectPlayerMovementProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?isSpectator@DirectPlayerMovementProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isUsingItem() const{
         bool (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?isUsingItem@DirectPlayerMovementProxy@@UEBA_NXZ");
@@ -318,6 +328,11 @@ public:
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendPlayerMove@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void sendRequestAbilityPacket(enum AbilitiesIndex a0, bool a1){
+        void (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex, bool);
+        *((void**)&rv) = dlsym("?sendRequestAbilityPacket@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z");
+        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0), std::forward<bool>(a1));
     }
     inline void setAbilityBool(enum AbilitiesIndex a0, bool a1){
         void (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex, bool);

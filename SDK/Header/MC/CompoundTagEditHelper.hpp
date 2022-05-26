@@ -30,6 +30,7 @@ public:
 protected:
 
 private:
+    MCAPI void popChild();
     MCAPI void pushChild(std::string const &);
 
 };

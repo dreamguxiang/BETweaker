@@ -39,7 +39,7 @@ public:
     /*13*/ virtual bool mayPlace(class BlockPos const &, class Block const &) const;
     /*14*/ virtual bool canSurvive(class BlockPos const &, class Block const &) const;
     /*15*/ virtual short getMaxHeight() const;
-    /*16*/ virtual void __unk_vfn_16();
+    /*16*/ virtual short getMinHeight() const;
     /*17*/ virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
     /*18*/ virtual short getHeightmap(int, int);
     /*19*/ virtual bool isLegacyLevel();
@@ -84,11 +84,6 @@ public:
         class Block const & (WorldBlockTarget::*rv)(class BlockPos const &) const;
         *((void**)&rv) = dlsym("?getExtraBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
-    inline short getMinHeight() const{
-        short (WorldBlockTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinHeight@WorldBlockTarget@@UEBAFXZ");
-        return (this->*rv)();
     }
     */
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);

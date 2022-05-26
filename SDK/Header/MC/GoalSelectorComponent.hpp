@@ -30,8 +30,10 @@ public:
     MCAPI void clearTargetGoals();
     MCAPI std::vector<struct std::pair<unsigned short, class PrioritizedGoal>> & getGoalMap();
     MCAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
+    MCAPI bool removeGoal(unsigned short);
     MCAPI void stopAllGoals();
     MCAPI void stopNonTargetedGoals();
+    MCAPI ~GoalSelectorComponent();
 
 protected:
 

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "MingleComponent.hpp"
 #include "MoveToPOIGoal.hpp"
 
 #define BEFORE_EXTRA
@@ -41,11 +40,12 @@ protected:
 
 private:
     MCAPI void _findNewPartner(struct ActorUniqueID);
+    MCAPI class MingleComponent & _getMingleComponent() const;
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     MCAPI void _lookAt(class Actor *);
-    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent &, bool);
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
+    MCAPI static class MingleComponent * _tryGetMingleComponent(class Actor &);
 
 };

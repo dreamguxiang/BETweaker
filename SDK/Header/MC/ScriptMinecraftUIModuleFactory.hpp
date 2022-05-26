@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -18,17 +17,17 @@ class ScriptMinecraftUIModuleFactory {
 public:
     class ScriptMinecraftUIModuleFactory& operator=(class ScriptMinecraftUIModuleFactory const &) = delete;
     ScriptMinecraftUIModuleFactory(class ScriptMinecraftUIModuleFactory const &) = delete;
-    ScriptMinecraftUIModuleFactory() = delete;
 #endif
 
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
-    MCAPI ScriptMinecraftUIModuleFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class ScriptFormPromiseTracker>>);
+    MCAPI ScriptMinecraftUIModuleFactory();
     MCAPI static std::string getModuleUUIDAsString();
 
 protected:
 
 private:
+    MCAPI void _addV1();
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
 

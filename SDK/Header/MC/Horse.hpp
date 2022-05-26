@@ -33,15 +33,16 @@ public:
     /*40*/ virtual void __unk_vfn_40();
     /*48*/ virtual void normalTick();
     /*51*/ virtual void positionPassenger(class Actor &, float);
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
-    /*92*/ virtual bool isImmobile() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*91*/ virtual bool isImmobile() const;
+    /*93*/ virtual bool isSilentObserver() const;
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
@@ -86,37 +87,39 @@ public:
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
     /*251*/ virtual void die(class ActorDamageSource const &);
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*267*/ virtual void _playStepSound(class BlockPos const &, class Block const &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
-    /*291*/ virtual void travel(float, float, float);
-    /*294*/ virtual void aiStep();
-    /*302*/ virtual int getItemUseDuration() const;
-    /*303*/ virtual float getItemUseStartupProgress() const;
-    /*304*/ virtual float getItemUseIntervalProgress() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*316*/ virtual int getArmorValue() const;
-    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*345*/ virtual void __unk_vfn_345();
-    /*355*/ virtual void _serverAiMobStep();
-    /*359*/ virtual void __unk_vfn_359();
-    /*361*/ virtual void setType(int);
-    /*362*/ virtual int getType() const;
-    /*363*/ virtual void setHorseEating(bool);
-    /*364*/ virtual float getStandAnim(float) const;
-    /*365*/ virtual bool isAdult() const;
-    /*366*/ virtual bool isHorseEating() const;
-    /*367*/ virtual bool isMouthOpen() const;
-    /*368*/ virtual bool isTailMoving() const;
-    /*369*/ virtual void makeMad();
-    /*370*/ virtual bool tameToPlayer(class Player &, bool);
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*273*/ virtual void _playStepSound(class BlockPos const &, class Block const &);
+    /*275*/ virtual void __unk_vfn_275();
+    /*284*/ virtual void __unk_vfn_284();
+    /*286*/ virtual void spawnAnim();
+    /*296*/ virtual void travel(float, float, float);
+    /*299*/ virtual void aiStep();
+    /*307*/ virtual int getItemUseDuration() const;
+    /*308*/ virtual float getItemUseStartupProgress() const;
+    /*309*/ virtual float getItemUseIntervalProgress() const;
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*321*/ virtual int getArmorValue() const;
+    /*326*/ virtual void sendArmorDamage(class std::bitset<4>);
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*360*/ virtual void _serverAiMobStep();
+    /*364*/ virtual void __unk_vfn_364();
+    /*366*/ virtual void setType(int);
+    /*367*/ virtual int getType() const;
+    /*368*/ virtual void setHorseEating(bool);
+    /*369*/ virtual float getStandAnim(float) const;
+    /*370*/ virtual bool isAdult() const;
+    /*371*/ virtual bool isHorseEating() const;
+    /*372*/ virtual bool isMouthOpen() const;
+    /*373*/ virtual bool isTailMoving() const;
+    /*374*/ virtual void makeMad();
+    /*375*/ virtual bool tameToPlayer(class Player &, bool);
     /*
     inline bool useNewAi() const{
         bool (Horse::*rv)() const;
@@ -125,6 +128,7 @@ public:
     }
     */
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI void postNormalTick();
     MCAPI static int const DONKEY_CHEST_COUNT;
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
 
@@ -132,7 +136,6 @@ protected:
 
 private:
     MCAPI void openMouth();
-    MCAPI void setHorseFlag(enum HorseFlags, bool);
     MCAPI bool setHorseType(enum ActorType &);
     MCAPI static int const DATA_AGE;
 

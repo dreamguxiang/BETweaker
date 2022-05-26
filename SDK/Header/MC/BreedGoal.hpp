@@ -36,6 +36,7 @@ public:
 protected:
 
 private:
+    MCAPI void _breed();
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     MCAPI class Mob * _moveToFreePartner() const;
 

@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI TradeResupplyComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void reloadComponent(class Actor &);

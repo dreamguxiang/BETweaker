@@ -78,6 +78,7 @@ public:
     MCAPI static void shutdown();
     MCAPI static void startRegistration();
     MCAPI static void unregisterItem(class HashedString const &);
+    MCAPI static std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
 
 protected:
 

@@ -52,7 +52,14 @@ public:
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionEvent const &);
+    /*31*/ virtual enum EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
+    /*
+    inline  ~DebugInfoComponent(){
+         (DebugInfoComponent::*rv)();
+        *((void**)&rv) = dlsym("??1DebugInfoComponent@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     MCAPI DebugInfoComponent(class DebugInfoComponent const &);
     MCAPI void addListener(class HashedString const &, class NetworkIdentifier, unsigned char);

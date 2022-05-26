@@ -96,6 +96,8 @@ private:
     MCAPI bool _findSpawnPointForRaid(class Vec3 &, float, float, bool, bool) const;
     MCAPI class BlockSource * _findSpawnableRegion(class Vec3, int, bool &) const;
     MCAPI void _findWeightedPOI(std::vector<class std::weak_ptr<class POIInstance>> &, class Random &, struct ActorUniqueID);
+    MCAPI class std::unordered_map<struct ActorUniqueID, struct Village::DwellerData, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>> & _getDwellerMap(enum DwellerRole);
+    MCAPI class std::unordered_map<struct ActorUniqueID, struct Village::DwellerData, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>> const & _getDwellerMap(enum DwellerRole) const;
     MCAPI void _helpLocateRaiders(class Raid const &);
     MCAPI void _loadVillageData(class CompoundTag const &);
     MCAPI void _loadVillageDwellers(class CompoundTag const &);

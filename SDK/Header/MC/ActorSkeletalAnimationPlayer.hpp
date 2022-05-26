@@ -34,15 +34,15 @@ public:
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual class HashedString const & getRawName() const;
     /*
-    inline enum ActorAnimationType getAnimationType() const{
-        enum ActorAnimationType (ActorSkeletalAnimationPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getAnimationType@ActorSkeletalAnimationPlayer@@UEBA?AW4ActorAnimationType@@XZ");
-        return (this->*rv)();
-    }
     inline void buildBoneToPartMapping(class AnimationComponent & a0){
         void (ActorSkeletalAnimationPlayer::*rv)(class AnimationComponent &);
         *((void**)&rv) = dlsym("?buildBoneToPartMapping@ActorSkeletalAnimationPlayer@@UEAAXAEAVAnimationComponent@@@Z");
         return (this->*rv)(std::forward<class AnimationComponent &>(a0));
+    }
+    inline enum ActorAnimationType getAnimationType() const{
+        enum ActorAnimationType (ActorSkeletalAnimationPlayer::*rv)() const;
+        *((void**)&rv) = dlsym("?getAnimationType@ActorSkeletalAnimationPlayer@@UEBA?AW4ActorAnimationType@@XZ");
+        return (this->*rv)();
     }
     inline class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const & a0){
         class std::shared_ptr<class ActorAnimationPlayer> (ActorSkeletalAnimationPlayer::*rv)(class HashedString const &);

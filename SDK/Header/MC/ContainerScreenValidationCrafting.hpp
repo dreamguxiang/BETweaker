@@ -2,12 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ContainerScreenValidation.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ContainerScreenValidationCrafting {
+class ContainerScreenValidationCrafting : public ContainerScreenValidation {
 
 #define AFTER_EXTRA
 

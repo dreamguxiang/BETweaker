@@ -40,7 +40,7 @@ public:
     */
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     MCAPI void load(class ListTag const &, class SemVersion const &);
-    MCAPI std::unique_ptr<class ListTag> save();
+    MCAPI std::unique_ptr<class ListTag> save() const;
 
 protected:
 

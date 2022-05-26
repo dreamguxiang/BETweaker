@@ -20,7 +20,7 @@ enum EAxis;
 public:
     MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI enum ProjectileAnchor getAnchor();
     MCAPI bool getCatchFire() const;
     MCAPI bool getEnchantChanneling() const;
@@ -48,7 +48,6 @@ public:
     MCAPI class ProjectileComponent & operator=(class ProjectileComponent const &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setActiveTarget(class Actor &, class Actor *);
-    MCAPI void setCachedHitResult(class HitResult);
     MCAPI void setChanneling();
     MCAPI void setEnchantImpaler(int const &);
     MCAPI void setHitResult(class HitResult);

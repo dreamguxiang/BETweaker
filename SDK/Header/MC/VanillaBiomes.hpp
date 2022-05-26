@@ -62,6 +62,7 @@ public:
     MCAPI static class Biome * mJungleEdge;
     MCAPI static class Biome * mJungleHills;
     MCAPI static class Biome * mLushCaves;
+    MCAPI static class Biome * mMangroveSwamp;
     MCAPI static class Biome * mMeadow;
     MCAPI static class Biome * mMesa;
     MCAPI static class Biome * mMesaBryce;

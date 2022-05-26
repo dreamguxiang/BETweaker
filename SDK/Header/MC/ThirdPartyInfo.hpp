@@ -19,8 +19,8 @@ public:
 #endif
 
 public:
-    MCAPI ThirdPartyInfo();
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
+    MCAPI ThirdPartyInfo();
     MCAPI ~ThirdPartyInfo();
 
 protected:

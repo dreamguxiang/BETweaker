@@ -40,7 +40,7 @@ public:
     }
     */
     MCAPI DouseFireSubcomponent();
-    MCAPI void douseFire(class BlockSource &, class BlockPos const &);
+    MCAPI void douseFire(class Actor &, class BlockSource &, class BlockPos const &);
 
 protected:
 

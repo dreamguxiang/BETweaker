@@ -27,7 +27,7 @@ public:
     /*1*/ virtual std::string const & getRootKey();
     /*2*/ virtual std::string const & getFileType();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
+    /*4*/ virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
     /*
     inline bool processPopulationControl(std::string const & a0, class Json::Value & a1){
         bool (SpawnGroupRegistry::*rv)(std::string const &, class Json::Value &);
@@ -41,5 +41,6 @@ public:
 protected:
 
 private:
+    MCAPI void _addSpawnRules(std::string const &, class MobSpawnRules &);
 
 };

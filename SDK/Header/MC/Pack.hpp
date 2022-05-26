@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 #include "Core.hpp"
 
 #define BEFORE_EXTRA
@@ -38,13 +39,12 @@ public:
     MCAPI void registerPackUpdatedCallback(void *, class std::function<void (class Pack &)>);
     MCAPI void unregisterPackDeletedCallback(void *);
     MCAPI void unregisterPackUpdatedCallback(void *);
-    MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum PackType, enum PackOrigin, class IPackManifestFactory &, class IContentKeyProvider const &, class PackSourceReport *);
+    MCAPI static std::unique_ptr<class Pack> createPack(class ResourceLocation const &, enum PackType, enum PackOrigin, class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceReport *);
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 
 protected:
 
 private:
-    MCAPI void _loadLocalizationFiles();
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
 
 };

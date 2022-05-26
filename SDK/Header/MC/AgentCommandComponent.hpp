@@ -27,6 +27,7 @@ public:
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
+    MCAPI ~AgentCommandComponent();
 
 protected:
 

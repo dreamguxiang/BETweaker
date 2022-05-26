@@ -35,6 +35,7 @@ public:
     MCAPI class FlockingComponent & operator=(class FlockingComponent &&);
     MCAPI void updateNeighborhoodData(class Actor const &);
     MCAPI bool validateVariantEntityTypes(class Actor const &, class Actor const &) const;
+    MCAPI ~FlockingComponent();
 
 protected:
 

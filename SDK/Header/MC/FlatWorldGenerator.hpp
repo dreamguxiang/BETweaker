@@ -25,21 +25,6 @@ public:
 
 public:
     /*
-    inline bool isStructureFeatureTypeAt(class BlockPos const & a0, enum StructureFeatureType a1) const{
-        bool (FlatWorldGenerator::*rv)(class BlockPos const &, enum StructureFeatureType) const;
-        *((void**)&rv) = dlsym("?isStructureFeatureTypeAt@FlatWorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<enum StructureFeatureType>(a1));
-    }
-    inline bool findNearestStructureFeature(enum StructureFeatureType a0, class BlockPos const & a1, class BlockPos & a2, bool a3){
-        bool (FlatWorldGenerator::*rv)(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
-        *((void**)&rv) = dlsym("?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
-        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const &>(a1), std::forward<class BlockPos &>(a2), std::forward<bool>(a3));
-    }
-    inline enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const & a0){
-        enum StructureFeatureType (FlatWorldGenerator::*rv)(class BlockPos const &);
-        *((void**)&rv) = dlsym("?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
     inline void garbageCollectBlueprints(class buffer_span<class ChunkPos> a0){
         void (FlatWorldGenerator::*rv)(class buffer_span<class ChunkPos>);
         *((void**)&rv) = dlsym("?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
@@ -64,6 +49,21 @@ public:
         void (FlatWorldGenerator::*rv)(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
         *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
         return (this->*rv)(std::forward<class Biome &>(a0), std::forward<class LevelChunk &>(a1), std::forward<class BlockSource &>(a2), std::forward<class Random &>(a3));
+    }
+    inline bool isStructureFeatureTypeAt(class BlockPos const & a0, enum StructureFeatureType a1) const{
+        bool (FlatWorldGenerator::*rv)(class BlockPos const &, enum StructureFeatureType) const;
+        *((void**)&rv) = dlsym("?isStructureFeatureTypeAt@FlatWorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<enum StructureFeatureType>(a1));
+    }
+    inline bool findNearestStructureFeature(enum StructureFeatureType a0, class BlockPos const & a1, class BlockPos & a2, bool a3){
+        bool (FlatWorldGenerator::*rv)(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
+        *((void**)&rv) = dlsym("?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const &>(a1), std::forward<class BlockPos &>(a2), std::forward<bool>(a3));
+    }
+    inline enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const & a0){
+        enum StructureFeatureType (FlatWorldGenerator::*rv)(class BlockPos const &);
+        *((void**)&rv) = dlsym("?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline class BlockPos findSpawnPosition() const{
         class BlockPos (FlatWorldGenerator::*rv)() const;

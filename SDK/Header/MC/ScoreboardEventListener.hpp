@@ -30,6 +30,21 @@ public:
         *((void**)&rv) = dlsym("?onScoreChanged@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
         return (this->*rv)(std::forward<struct ScoreboardId const &>(a0), std::forward<std::string const &>(a1), std::forward<int>(a2));
     }
+    inline enum EventResult onScoreboardIdentityRemoved(struct ScoreboardId const & a0){
+        enum EventResult (ScoreboardEventListener::*rv)(struct ScoreboardId const &);
+        *((void**)&rv) = dlsym("?onScoreboardIdentityRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z");
+        return (this->*rv)(std::forward<struct ScoreboardId const &>(a0));
+    }
+    inline enum EventResult onObjectiveAdded(std::string const & a0){
+        enum EventResult (ScoreboardEventListener::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onObjectiveAdded@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
+    inline enum EventResult onObjectiveRemoved(std::string const & a0){
+        enum EventResult (ScoreboardEventListener::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onObjectiveRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
+    }
     inline  ~ScoreboardEventListener(){
          (ScoreboardEventListener::*rv)();
         *((void**)&rv) = dlsym("??1ScoreboardEventListener@@UEAA@XZ");

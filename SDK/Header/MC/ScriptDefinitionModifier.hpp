@@ -21,7 +21,7 @@ public:
 #endif
 
 public:
-    MCAPI static class Scripting::ClassBindingBuilder<struct DefinitionModifier> bind(struct Scripting::Version);
+    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionModifier> bind(struct Scripting::Version);
 
 protected:
 

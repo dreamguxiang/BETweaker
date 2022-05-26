@@ -32,6 +32,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI static std::string const sClassName;
 
 protected:
 

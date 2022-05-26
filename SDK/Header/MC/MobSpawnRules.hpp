@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -45,6 +46,7 @@ public:
     MCAPI class std::unordered_set<class BlockLegacy const *, struct std::hash<class BlockLegacy const *>, struct std::equal_to<class BlockLegacy const *>, class std::allocator<class BlockLegacy const *>> & getSpawnOnBlockPreventedListMutable();
     MCAPI bool isLavaSpawner() const;
     MCAPI bool isUnderwaterSpawner() const;
+    MCAPI bool parseFilterGroup(class Json::Value &);
     MCAPI struct MobSpawnHerdInfo const & selectRandomHerd(class Random &) const;
     MCAPI class MobSpawnRules & setAboveBlockDistance(int);
     MCAPI class MobSpawnRules & setBrightnessRange(int, int, bool);

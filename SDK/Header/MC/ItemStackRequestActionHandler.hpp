@@ -60,7 +60,8 @@ public:
 protected:
 
 private:
-    MCAPI enum ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
+    MCAPI struct ItemStackRequestActionHandler::ScreenData * _getCurrentScreenData() const;
+    MCAPI enum ItemStackNetResult _getItemStackNetResult(struct ContainerValidationResult const &);
     MCAPI enum ItemStackNetResult _handlePlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &);
     MCAPI enum ItemStackNetResult _handleTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &);
     MCAPI enum ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);

@@ -23,13 +23,14 @@ public:
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool getIsExperienceDropEnabled() const;
     MCAPI int getOnBredExperience(class Actor &) const;
     MCAPI int getOnDeathExperience(class Actor &) const;
     MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setIsExperienceDropEnabled(bool);
+    MCAPI ~ExperienceRewardComponent();
 
 protected:
 

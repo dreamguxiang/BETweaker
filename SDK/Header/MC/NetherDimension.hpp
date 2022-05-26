@@ -24,14 +24,24 @@ public:
 
 public:
     /*
-    inline bool isNaturalDimension() const{
+    inline bool isFoggyAt(int a0, int a1) const{
+        bool (NetherDimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isFoggyAt@NetherDimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool forceCheckAllNeighChunkSavedStat() const{
         bool (NetherDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?isNaturalDimension@NetherDimension@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool showSky() const{
         bool (NetherDimension::*rv)() const;
         *((void**)&rv) = dlsym("?showSky@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isNaturalDimension() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?isNaturalDimension@NetherDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool mayRespawnViaBed() const{
@@ -43,16 +53,6 @@ public:
         bool (NetherDimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isValidSpawn@NetherDimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline bool isFoggyAt(int a0, int a1) const{
-        bool (NetherDimension::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?isFoggyAt@NetherDimension@@UEBA_NHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline bool forceCheckAllNeighChunkSavedStat() const{
-        bool (NetherDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ");
-        return (this->*rv)();
     }
     inline void _upgradeOldLimboEntity(class CompoundTag & a0, enum LimboEntitiesVersion a1){
         void (NetherDimension::*rv)(class CompoundTag &, enum LimboEntitiesVersion);

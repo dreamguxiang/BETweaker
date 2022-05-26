@@ -26,7 +26,9 @@ public:
     /*0*/ virtual bool listen(unsigned short);
     /*1*/ virtual bool connect(std::string const &, unsigned short);
     /*2*/ virtual void close();
-    /*3*/ virtual ~ScriptDebugger();
+    /*3*/ virtual void startProfiler();
+    /*4*/ virtual void stopProfiler(std::string const &);
+    /*5*/ virtual ~ScriptDebugger();
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
     MCAPI void checkConnections();
 

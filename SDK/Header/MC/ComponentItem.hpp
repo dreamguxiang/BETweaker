@@ -4,6 +4,8 @@
 #include "../Global.h"
 #include "Json.hpp"
 #include "JsonUtil.hpp"
+#include "reflection.hpp"
+#include "Core.hpp"
 #include "Item.hpp"
 
 #define BEFORE_EXTRA
@@ -29,103 +31,118 @@ public:
     /*0*/ virtual ~ComponentItem();
     /*1*/ virtual bool initServer(class Json::Value &, class SemVersion const &);
     /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemStack const *) const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
+    /*3*/ virtual class ComponentItem & setDescriptionId(std::string const &);
+    /*4*/ virtual std::string const & getDescriptionId() const;
+    /*5*/ virtual int getMaxUseDuration(class ItemStack const *) const;
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual bool isArmor() const;
-    /*9*/ virtual bool isBlockPlanterItem() const;
+    /*8*/ virtual bool hasTag(class HashedString const &) const;
+    /*9*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*10*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual bool isDamageable() const;
-    /*14*/ virtual bool isDyeable() const;
-    /*15*/ virtual bool isDye() const;
-    /*17*/ virtual bool isFertilizer() const;
-    /*18*/ virtual bool isFood() const;
-    /*19*/ virtual bool isThrowable() const;
-    /*20*/ virtual bool isUseable() const;
-    /*21*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
-    /*23*/ virtual class IFoodItemComponent * getFood() const;
-    /*24*/ virtual class FuelItemComponent * getFuel() const;
-    /*27*/ virtual class Item & setMaxDamage(int);
-    /*36*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*37*/ virtual void initializeFromNetwork(class CompoundTag const &);
-    /*38*/ virtual enum BlockShape getBlockShape() const;
-    /*39*/ virtual bool canBeDepleted() const;
-    /*40*/ virtual bool canDestroySpecial(class Block const &) const;
-    /*41*/ virtual int getLevelDataForAuxValue(int) const;
-    /*43*/ virtual short getMaxDamage() const;
-    /*44*/ virtual int getAttackDamage() const;
-    /*46*/ virtual bool isGlint(class ItemStackBase const &) const;
-    /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual int getPatternIndex() const;
-    /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
-    /*51*/ virtual bool canDestroyInCreative() const;
-    /*52*/ virtual bool isDestructive(int) const;
-    /*53*/ virtual bool isLiquidClipItem(int) const;
-    /*54*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
-    /*55*/ virtual bool requiresInteract() const;
-    /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
-    /*58*/ virtual int getEnchantSlot() const;
-    /*59*/ virtual int getEnchantValue() const;
-    /*60*/ virtual int getArmorValue() const;
-    /*61*/ virtual int getToughnessValue() const;
-    /*62*/ virtual void __unk_vfn_62();
-    /*63*/ virtual bool isValidAuxValue(int) const;
-    /*64*/ virtual int getDamageChance(int) const;
-    /*65*/ virtual void __unk_vfn_65();
+    /*11*/ virtual bool isArmor() const;
+    /*12*/ virtual bool isBlockPlanterItem() const;
+    /*13*/ virtual void __unk_vfn_13();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual bool isDamageable() const;
+    /*17*/ virtual bool isDyeable() const;
+    /*18*/ virtual bool isDye() const;
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual bool isFood() const;
+    /*22*/ virtual bool isThrowable() const;
+    /*23*/ virtual bool isUseable() const;
+    /*24*/ virtual class ItemComponent * getComponent(class HashedString const &) const;
+    /*26*/ virtual class IFoodItemComponent * getFood() const;
+    /*27*/ virtual class FuelItemComponent * getFuel() const;
+    /*30*/ virtual class Item & setMaxDamage(int);
+    /*39*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*40*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*41*/ virtual std::vector<std::string> validateFromNetwork(class CompoundTag const &);
+    /*42*/ virtual enum BlockShape getBlockShape() const;
+    /*43*/ virtual bool canBeDepleted() const;
+    /*44*/ virtual bool canDestroySpecial(class Block const &) const;
+    /*45*/ virtual int getLevelDataForAuxValue(int) const;
+    /*47*/ virtual short getMaxDamage() const;
+    /*48*/ virtual int getAttackDamage() const;
+    /*50*/ virtual bool isGlint(class ItemStackBase const &) const;
+    /*51*/ virtual void __unk_vfn_51();
+    /*52*/ virtual int getPatternIndex() const;
+    /*53*/ virtual void __unk_vfn_53();
+    /*54*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
+    /*55*/ virtual bool canDestroyInCreative() const;
+    /*56*/ virtual bool isDestructive(int) const;
+    /*57*/ virtual bool isLiquidClipItem(int) const;
+    /*58*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
+    /*59*/ virtual bool requiresInteract() const;
+    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*61*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /*62*/ virtual int getEnchantSlot() const;
+    /*63*/ virtual int getEnchantValue() const;
+    /*64*/ virtual int getArmorValue() const;
+    /*65*/ virtual int getToughnessValue() const;
     /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual void __unk_vfn_68();
-    /*69*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
-    /*70*/ virtual bool hasCustomColor(class CompoundTag const *) const;
+    /*67*/ virtual bool isValidAuxValue(int) const;
+    /*68*/ virtual int getDamageChance(int) const;
+    /*69*/ virtual void __unk_vfn_69();
+    /*70*/ virtual void __unk_vfn_70();
     /*71*/ virtual void __unk_vfn_71();
-    /*72*/ virtual void clearColor(class ItemStackBase &) const;
-    /*73*/ virtual void clearColor(class CompoundTag *) const;
-    /*74*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*72*/ virtual void __unk_vfn_72();
+    /*73*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /*74*/ virtual bool hasCustomColor(class CompoundTag const *) const;
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
-    /*79*/ virtual bool canUseOnSimTick() const;
-    /*80*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*81*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*82*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
-    /*83*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /*84*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
-    /*85*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*86*/ virtual void hitActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*87*/ virtual void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
-    /*88*/ virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
-    /*89*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*90*/ virtual std::string buildDescriptionName(class ItemStackBase const &) const;
-    /*91*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*92*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
-    /*96*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
-    /*97*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
-    /*98*/ virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
-    /*99*/ virtual class HashedString const & getCooldownType() const;
-    /*100*/ virtual int getCooldownTime() const;
-    /*102*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
-    /*105*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
-    /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-    /*107*/ virtual bool validFishInteraction(int) const;
-    /*109*/ virtual void initClient(class Json::Value &, class SemVersion const &);
-    /*110*/ virtual std::string getInteractText(class Player const &) const;
-    /*111*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*112*/ virtual bool isEmissive(int) const;
-    /*114*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*115*/ virtual int getIconYOffset() const;
-    /*116*/ virtual class Item & setIcon(std::string const &, int);
-    /*119*/ virtual bool canBeCharged() const;
-    /*120*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
-    /*121*/ virtual void __unk_vfn_121();
-    /*124*/ virtual std::string getAuxValuesDescription() const;
-    /*125*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
-    /*126*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
-    /*127*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*76*/ virtual void clearColor(class ItemStackBase &) const;
+    /*77*/ virtual void clearColor(class CompoundTag *) const;
+    /*78*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*79*/ virtual void __unk_vfn_79();
+    /*80*/ virtual void __unk_vfn_80();
+    /*83*/ virtual bool canUseOnSimTick() const;
+    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*86*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*87*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    /*88*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
+    /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*90*/ virtual void hitActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*91*/ virtual void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
+    /*92*/ virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
+    /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*94*/ virtual std::string buildDescriptionName(class ItemStackBase const &) const;
+    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*96*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
+    /*100*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
+    /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /*102*/ virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
+    /*103*/ virtual class HashedString const & getCooldownType() const;
+    /*104*/ virtual int getCooldownTime() const;
+    /*106*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
+    /*110*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    /*111*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    /*112*/ virtual bool validFishInteraction(int) const;
+    /*113*/ virtual enum ActorLocation getEquipLocation() const;
+    /*116*/ virtual void initClient(class Json::Value &, class SemVersion const &);
+    /*117*/ virtual std::string getInteractText(class Player const &) const;
+    /*118*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*119*/ virtual bool isEmissive(int) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*122*/ virtual int getIconYOffset() const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*126*/ virtual bool canBeCharged() const;
+    /*127*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*128*/ virtual void __unk_vfn_128();
+    /*131*/ virtual std::string getAuxValuesDescription() const;
+    /*132*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
+    /*133*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*
+    inline bool isComponentBased() const{
+        bool (ComponentItem::*rv)() const;
+        *((void**)&rv) = dlsym("?isComponentBased@ComponentItem@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline int getVariant(int a0, int a1, bool a2) const{
+        int (ComponentItem::*rv)(int, int, bool) const;
+        *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
+    }
     inline bool useVariant(int a0, int a1, bool a2) const{
         bool (ComponentItem::*rv)(int, int, bool) const;
         *((void**)&rv) = dlsym("?useVariant@ComponentItem@@UEBA_NHH_N@Z");
@@ -135,16 +152,6 @@ public:
         bool (ComponentItem::*rv)(class ItemStackBase const &) const;
         *((void**)&rv) = dlsym("?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const &>(a0));
-    }
-    inline int getVariant(int a0, int a1, bool a2) const{
-        int (ComponentItem::*rv)(int, int, bool) const;
-        *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline bool isComponentBased() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isComponentBased@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
     }
     */
     MCAPI ComponentItem(std::string const &, short);
@@ -158,7 +165,6 @@ public:
     MCAPI class ArmorItemComponent * getArmor() const;
     MCAPI class DurabilityItemComponent * getDamageable() const;
     MCAPI class DyeableComponent * getDyeable() const;
-    MCAPI bool getIsAttachable() const;
     MCAPI class KnockbackResistanceItemComponent * getKnockbackResistance() const;
     MCAPI class ProjectileItemComponent * getProjectile() const;
     MCAPI class RecordItemComponent * getRecordComponent() const;
@@ -167,8 +173,9 @@ public:
     MCAPI class WearableItemComponent * getWearable() const;
     MCAPI bool isStorage() const;
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
-    MCAPI void setDescriptionId(std::string const &);
+    MCAPI static struct reflection::Schema createItemAbstractCerealSchema(std::string const &);
     MCAPI static void registerItemComponentTypes();
+    MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 
 protected:
 
@@ -179,5 +186,6 @@ private:
     MCAPI void _loadComponentsFromNetworkTag(std::string const &, class CompoundTag const &);
     MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &);
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
+    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
 
 };

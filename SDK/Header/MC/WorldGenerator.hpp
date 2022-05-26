@@ -30,11 +30,6 @@ public:
 
 public:
     /*
-    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
-        class std::optional<short> (WorldGenerator::*rv)(class DividedPos2d<4>) const;
-        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
-        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
-    }
     inline  ~WorldGenerator(){
          (WorldGenerator::*rv)();
         *((void**)&rv) = dlsym("??1WorldGenerator@@UEAA@XZ");
@@ -65,6 +60,11 @@ public:
         *((void**)&rv) = dlsym("?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z");
         return (this->*rv)(std::forward<class buffer_span<class ChunkPos>>(a0));
     }
+    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
+        class std::optional<short> (WorldGenerator::*rv)(class DividedPos2d<4>) const;
+        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
+        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
+    }
     inline bool isStructureFeatureTypeAt(class BlockPos const & a0, enum StructureFeatureType a1) const{
         bool (WorldGenerator::*rv)(class BlockPos const &, enum StructureFeatureType) const;
         *((void**)&rv) = dlsym("?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z");
@@ -78,6 +78,7 @@ public:
     */
     MCAPI WorldGenerator(class Dimension &);
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;
 
 protected:

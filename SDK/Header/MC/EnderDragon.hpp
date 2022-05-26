@@ -31,16 +31,17 @@ public:
     /*18*/ virtual void remove();
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual void __unk_vfn_40();
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*80*/ virtual float getShadowRadius() const;
-    /*81*/ virtual class Vec3 getHeadLookVector(float) const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
-    /*92*/ virtual bool isImmobile() const;
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*79*/ virtual float getShadowRadius() const;
+    /*80*/ virtual class Vec3 getHeadLookVector(float) const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*91*/ virtual bool isImmobile() const;
+    /*93*/ virtual bool isSilentObserver() const;
     /*95*/ virtual void __unk_vfn_95();
     /*98*/ virtual void __unk_vfn_98();
     /*101*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
@@ -79,35 +80,37 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*262*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*280*/ virtual void spawnAnim();
-    /*294*/ virtual void aiStep();
-    /*302*/ virtual int getItemUseDuration() const;
-    /*303*/ virtual float getItemUseStartupProgress() const;
-    /*304*/ virtual float getItemUseIntervalProgress() const;
-    /*307*/ virtual void __unk_vfn_307();
-    /*309*/ virtual bool isAlliedTo(class Mob *);
-    /*311*/ virtual void __unk_vfn_311();
-    /*321*/ virtual void sendArmorDamage(class std::bitset<4> const &);
-    /*338*/ virtual void onBorn(class Actor &, class Actor &);
-    /*345*/ virtual void __unk_vfn_345();
-    /*355*/ virtual void _serverAiMobStep();
-    /*357*/ virtual void tickDeath();
-    /*359*/ virtual void __unk_vfn_359();
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*268*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*286*/ virtual void spawnAnim();
+    /*299*/ virtual void aiStep();
+    /*307*/ virtual int getItemUseDuration() const;
+    /*308*/ virtual float getItemUseStartupProgress() const;
+    /*309*/ virtual float getItemUseIntervalProgress() const;
+    /*312*/ virtual void __unk_vfn_312();
+    /*314*/ virtual bool isAlliedTo(class Mob *);
+    /*316*/ virtual void __unk_vfn_316();
+    /*326*/ virtual void sendArmorDamage(class std::bitset<4>);
+    /*343*/ virtual void onBorn(class Actor &, class Actor &);
+    /*350*/ virtual void __unk_vfn_350();
+    /*360*/ virtual void _serverAiMobStep();
+    /*362*/ virtual void tickDeath();
+    /*364*/ virtual void __unk_vfn_364();
     /*
-    inline bool isFishable() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?isFishable@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canExistInPeaceful() const{
         bool (EnderDragon::*rv)() const;
         *((void**)&rv) = dlsym("?canExistInPeaceful@EnderDragon@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isFishable() const{
+        bool (EnderDragon::*rv)() const;
+        *((void**)&rv) = dlsym("?isFishable@EnderDragon@@UEBA_NXZ");
         return (this->*rv)();
     }
     */
@@ -124,6 +127,7 @@ public:
     MCAPI class Vec3 getTargetPos() const;
     MCAPI void incrementFlameCount();
     MCAPI void onCrystalDestroyed(class EnderCrystal const &, class BlockPos, class ActorDamageSource const &);
+    MCAPI void postAiStep();
     MCAPI void resetFlameCount();
     MCAPI void setDragonKilledCallback(class std::function<void (class EnderDragon &)>);
     MCAPI void setHasDragonPreviouslyBeenKilled(bool);

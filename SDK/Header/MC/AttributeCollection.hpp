@@ -28,7 +28,6 @@ public:
 protected:
 
 private:
-    MCAPI class Attribute & getAttribute(class HashedString const &);
     MCAPI static class AttributeCollection & instance();
 
 };

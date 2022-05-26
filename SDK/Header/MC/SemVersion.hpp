@@ -36,6 +36,7 @@ public:
     MCAPI unsigned short getMajor() const;
     MCAPI unsigned short getMinor() const;
     MCAPI unsigned short getPatch() const;
+    MCAPI std::string const & getPreRelease() const;
     MCAPI bool isAnyVersion() const;
     MCAPI bool isValid() const;
     MCAPI bool operator<(class SemVersion const &) const;

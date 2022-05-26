@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, class BlockPalette const &, std::string const &, class BlockDefinitionGroup const &, bool, struct PlayerMovementSettings const &, std::string const &, unsigned __int64, int, unsigned __int64);
+    MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, std::string const &, class BlockDefinitionGroup const &, bool, class CompoundTag, struct PlayerMovementSettings const &, std::string const &, class mce::UUID const &, unsigned __int64, int, unsigned __int64);
     MCAPI StartGamePacket();
 
 protected:

@@ -47,9 +47,11 @@ protected:
 private:
     MCAPI int _handlePopulationCap(class MobSpawnerData const *, class SpawnConditions const &, int);
     MCAPI void _permuteId(struct ActorDefinitionIdentifier &, class MobSpawnRules const &, class Random &) const;
+    MCAPI bool _popCapAllows(class Dimension const &, class MobSpawnerData const &, bool, bool) const;
     MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const &, std::vector<class Mob *> &) const;
     MCAPI void _spawnMobCluster(class BlockSource &, class BlockPos const &, class SpawnConditions &);
     MCAPI void _spawnMobInCluster(class BlockSource &, struct ActorDefinitionIdentifier, class BlockPos const &, class SpawnConditions const &, std::vector<class Mob *> &);
+    MCAPI void _spawnStructureMob(class BlockSource &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &, class std::function<void (class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &)> const &);
     MCAPI void _spawnStructureMob(class BlockSource &, class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &);
     MCAPI void _updateBaseTypeCount(class BlockSource &, class ChunkPos const &);
     MCAPI void _updateMobCounts(class BlockSource &, struct ActorDefinitionIdentifier const &, class SpawnConditions const &);

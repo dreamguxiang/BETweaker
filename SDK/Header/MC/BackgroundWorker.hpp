@@ -57,6 +57,7 @@ public:
 protected:
 
 private:
+    MCAPI void _assignWorkerToThisThread();
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;

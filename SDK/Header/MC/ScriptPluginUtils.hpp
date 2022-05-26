@@ -14,10 +14,10 @@ namespace ScriptPluginUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI std::unique_ptr<class Scripting::IRuntime> CreateRuntimeByType(enum ScriptRuntimeType, class Scripting::LifetimeRegistry &);
-    MCAPI std::string GetFileExtensionFromRuntimeType(enum ScriptRuntimeType);
+    MCAPI std::unique_ptr<class Scripting::IRuntime> CreateRuntimeByType(enum ScriptRuntimeType, class Scripting::LifetimeRegistry &, class Scripting::DependencyLocator *);
     MCAPI enum ScriptRuntimeType GetRuntimeType(std::string const &);
     MCAPI enum ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const &);
+    MCAPI extern std::string const INTERNAL_RELEASE;
     MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
     MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
     MCAPI std::string SanitizeRuntimeName(std::string const &);

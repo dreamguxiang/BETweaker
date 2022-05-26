@@ -23,8 +23,9 @@ public:
 
 public:
     MCAPI PropertyGroupManager();
-    MCAPI class PropertyGroup const * getPropertyGroup(class HashedString const &) const;
-    MCAPI void registerGroup(class HashedString const &, class PropertyGroup const &);
+    MCAPI class CompoundTag getActorPropertyDataTag(class HashedString const &) const;
+    MCAPI void registerGroup(class HashedString const &, class std::shared_ptr<class PropertyGroup const>);
+    MCAPI void tryInitPropertiesOnActor(class Actor &) const;
     MCAPI ~PropertyGroupManager();
 
 protected:

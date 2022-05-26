@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI HideComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI bool isInRaid();
     MCAPI bool isReactingToBell();

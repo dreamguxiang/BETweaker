@@ -92,8 +92,10 @@ public:
     MCAPI bool hasCompoundTextUserData() const;
     MCAPI bool hasContainerData() const;
     MCAPI bool hasCustomHoverName() const;
+    MCAPI bool hasDamageValue() const;
     MCAPI bool hasSameAuxValue(class ItemStackBase const &) const;
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
+    MCAPI bool hasSameUserDataExcept(class ItemStackBase const &, std::string const &) const;
     MCAPI bool hasTag(class HashedString const &) const;
     MCAPI bool hasTag(unsigned __int64 const &) const;
     MCAPI bool hasUserData() const;
@@ -101,6 +103,7 @@ public:
     MCAPI void initParams(class RenderParams &, class Actor *);
     MCAPI bool isArmorItem() const;
     MCAPI bool isBlock() const;
+    MCAPI bool isBlockInstance(class HashedString const &) const;
     MCAPI bool isDamageableItem() const;
     MCAPI bool isDamaged() const;
     MCAPI bool isEnchanted() const;
@@ -110,7 +113,6 @@ public:
     MCAPI bool isFullStack() const;
     MCAPI bool isGlint() const;
     MCAPI bool isHorseArmorItem() const;
-    MCAPI bool isInstance(class BlockLegacy const &) const;
     MCAPI bool isInstance(class HashedString const &, bool) const;
     MCAPI bool isLiquidClipItem() const;
     MCAPI bool isMusicDiscItem() const;
@@ -192,6 +194,7 @@ protected:
 private:
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
     MCAPI void _checkForItemWorldCompatibility();
+    MCAPI void _cloneComponents(class ItemStackBase const &);
     MCAPI void _loadComponents(class CompoundTag const &);
     MCAPI void _loadItem(class CompoundTag const &);
     MCAPI void _setChargedItem(class ItemInstance const &);

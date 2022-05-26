@@ -22,6 +22,8 @@ public:
 
 public:
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
+    MCAPI StrictEntityContextOwner(class EntityRegistryBase &, class EntityId);
+    MCAPI class StrictEntityContext getStrictContext() const;
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     MCAPI ~StrictEntityContextOwner();
 

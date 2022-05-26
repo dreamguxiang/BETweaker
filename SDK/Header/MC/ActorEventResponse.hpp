@@ -8,12 +8,37 @@
 
 #undef BEFORE_EXTRA
 
-namespace ActorEventResponse {
+class ActorEventResponse {
 
 #define AFTER_EXTRA
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSE
+public:
+    class ActorEventResponse& operator=(class ActorEventResponse const &) = delete;
+    ActorEventResponse(class ActorEventResponse const &) = delete;
+    ActorEventResponse() = delete;
+#endif
+
+public:
+    /*0*/ virtual ~ActorEventResponse();
+    /*
+    inline void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> & a0, class Factory<class ActorEventResponse> const & a1) const{
+        void (ActorEventResponse::*rv)(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &, class Factory<class ActorEventResponse> const &) const;
+        *((void**)&rv) = dlsym("?buildSchema@ActorEventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z");
+        return (this->*rv)(std::forward<class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &>(a0), std::forward<class Factory<class ActorEventResponse> const &>(a1));
+    }
+    inline std::string const & getName() const{
+        std::string const & (ActorEventResponse::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@ActorEventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
+
+protected:
+
+private:
 
 };

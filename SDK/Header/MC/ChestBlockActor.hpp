@@ -24,6 +24,11 @@ public:
 
 public:
     /*
+    inline void onNeighborChanged(class BlockSource & a0, class BlockPos const & a1){
+        void (ChestBlockActor::*rv)(class BlockSource &, class BlockPos const &);
+        *((void**)&rv) = dlsym("?onNeighborChanged@ChestBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
+    }
     inline bool canPushInItem(class BlockSource & a0, int a1, int a2, class ItemInstance const & a3) const{
         bool (ChestBlockActor::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
         *((void**)&rv) = dlsym("?canPushInItem@ChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
@@ -33,11 +38,6 @@ public:
         bool (ChestBlockActor::*rv)(class BlockSource &, int, int, class ItemInstance const &) const;
         *((void**)&rv) = dlsym("?canPullOutItem@ChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class ItemInstance const &>(a3));
-    }
-    inline void onNeighborChanged(class BlockSource & a0, class BlockPos const & a1){
-        void (ChestBlockActor::*rv)(class BlockSource &, class BlockPos const &);
-        *((void**)&rv) = dlsym("?onNeighborChanged@ChestBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
     }
     inline void setItemWithForceBalance(int a0, class ItemStack const & a1, bool a2){
         void (ChestBlockActor::*rv)(int, class ItemStack const &, bool);
@@ -88,6 +88,11 @@ public:
         int (ChestBlockActor::*rv)(int);
         *((void**)&rv) = dlsym("?clearInventory@ChestBlockActor@@UEAAHH@Z");
         return (this->*rv)(std::forward<int>(a0));
+    }
+    inline void eraseLootTable(){
+        void (ChestBlockActor::*rv)();
+        *((void**)&rv) = dlsym("?eraseLootTable@ChestBlockActor@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline class Container const * getContainer() const{
         class Container const * (ChestBlockActor::*rv)() const;
@@ -250,8 +255,10 @@ protected:
 
 private:
     MCAPI void _closeChest(class BlockSource &, class Player *);
+    MCAPI bool _detectBlockObstruction(class BlockSource &) const;
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);
     MCAPI void _unpair();
+    MCAPI void _validatePairedChest(class BlockSource &);
 
 };

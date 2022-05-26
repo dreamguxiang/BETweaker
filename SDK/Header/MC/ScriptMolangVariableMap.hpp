@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI class MolangVariableMap & getVariableMap();
+    MCAPI class ScriptMolangVariableMap & operator=(class ScriptMolangVariableMap &&);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap> setColorRBG(std::string const &, class ScriptColor const &);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap> setColorRBGA(std::string const &, class ScriptColor const &);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap> setSpeedAndDirection(std::string const &, float, class ScriptVector const &);

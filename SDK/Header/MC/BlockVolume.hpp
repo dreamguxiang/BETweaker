@@ -31,6 +31,7 @@ public:
 public:
     MCAPI BlockVolume(class buffer_span_mut<class Block const *>, int, int, int, class Block const &, int);
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
+    MCAPI class Block const *& block(class Pos const &);
     MCAPI std::unique_ptr<std::vector<short>> computeHeightMap() const;
     MCAPI struct BlockVolume::BlockVolumeIter end() const;
     MCAPI short findHighestNonAirBlock() const;
@@ -43,6 +44,7 @@ public:
     MCAPI unsigned int indexNoBoundsCheck(class Pos const &) const;
     MCAPI bool isInBounds(class Pos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
+    MCAPI bool isInBounds(unsigned int) const;
 
 protected:
 

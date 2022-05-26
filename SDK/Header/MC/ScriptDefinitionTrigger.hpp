@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI static class Scripting::ClassBindingBuilder<class DefinitionTrigger> bind(struct Scripting::Version);
+    MCAPI static class Scripting::ClassBindingBuilder<class ActorDefinitionTrigger> bind(struct Scripting::Version);
 
 protected:
 

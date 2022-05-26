@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~VibrationListener();
-    /*1*/ virtual void handleGameEvent(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    /*1*/ virtual void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     /*
     inline unsigned int getRange() const{
         unsigned int (VibrationListener::*rv)() const;
@@ -39,12 +39,15 @@ public:
     */
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const & getGameEvent() const;
+    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI void save(class CompoundTag &) const;
     MCAPI void tick(class BlockSource &);
     MCAPI static int getGameEventFrequency(class GameEvent const &);
 
 protected:
 
 private:
-    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, class Actor const *, class BlockPos const &, class GameEvents::PositionSource const &);
+    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, struct GameEventContext const &, class GameEvents::PositionSource const &);
+    MCAPI static bool _shouldIgnoreVibration(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 
 };

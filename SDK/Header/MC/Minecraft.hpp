@@ -66,8 +66,10 @@ public:
     MCAPI void init();
     MCAPI void initAsDedicatedServer();
     MCAPI bool isLeaveGameDone() const;
+    MCAPI void requestResourceReload();
     MCAPI void startLeaveGame(bool);
     MCAPI bool update();
+    MCAPI static void _tryCatchupMovementTicks(class EntitySystems &, class EntityRegistry &);
 
 protected:
 

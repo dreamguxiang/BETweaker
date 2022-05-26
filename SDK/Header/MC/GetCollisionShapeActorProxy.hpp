@@ -23,7 +23,7 @@ public:
 public:
     /*0*/ virtual ~GetCollisionShapeActorProxy();
     /*1*/ virtual float getFeetAttachPosY() const;
-    /*2*/ virtual bool canDecendThroughBlock() const;
+    /*2*/ virtual bool canDescendThroughBlock() const;
     /*3*/ virtual float getFallDistance() const;
     /*4*/ virtual enum ActorType getEntityTypeId() const;
     /*5*/ virtual void __unk_vfn_5();
@@ -43,6 +43,11 @@ public:
     inline bool isWearingLeatherBoots() const{
         bool (GetCollisionShapeActorProxy::*rv)() const;
         *((void**)&rv) = dlsym("?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isWorldBuilder() const{
+        bool (GetCollisionShapeActorProxy::*rv)() const;
+        *((void**)&rv) = dlsym("?isWorldBuilder@GetCollisionShapeActorProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

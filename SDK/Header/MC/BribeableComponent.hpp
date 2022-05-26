@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI BribeableComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool clientBribeCheck(class Actor &);
     MCAPI int & getBribeCooldown();
     MCAPI int & getBribeTimer();

@@ -31,6 +31,7 @@ public:
     }
     */
     MCAPI static class HashedString const & getHashedName();
+    MCAPI static std::string const sClassName;
 
 protected:
 

@@ -30,6 +30,7 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#include <shared_mutex>
 
 #include <minwindef.h>
 

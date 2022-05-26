@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI void post(class GameEvent const &, class BlockPos const &, class Actor *, class BlockSource &);
+    MCAPI void post(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
     MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
 
 protected:

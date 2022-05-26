@@ -33,6 +33,7 @@ public:
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
 protected:
+    MCAPI class BackgroundWorker & _getCoroutineWorker();
 
 private:
 

@@ -32,7 +32,7 @@ public:
     MCAPI bool forceGameType() const;
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     MCAPI std::string const & getBiomeOverride() const;
-    MCAPI class Abilities getDefaultAbilities() const;
+    MCAPI enum PlayerPermissionLevel getDefaultPermissions() const;
     MCAPI class BlockPos const & getDefaultSpawn() const;
     MCAPI struct EduSharedUriResource const & getEduSharedUriResource() const;
     MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
@@ -73,7 +73,7 @@ public:
     MCAPI void overrideSavedSettings(class LevelData &) const;
     MCAPI class LevelSettings & setBaseGameVersion(class BaseGameVersion const &);
     MCAPI class LevelSettings & setCommandsEnabled(bool);
-    MCAPI class LevelSettings & setDefaultAbilities(class Abilities);
+    MCAPI class LevelSettings & setDefaultPermissions(enum PlayerPermissionLevel);
     MCAPI class LevelSettings & setDifficulty(enum Difficulty);
     MCAPI class LevelSettings & setEduSharedUriResource(struct EduSharedUriResource const &);
     MCAPI class LevelSettings & setEducationFeaturesEnabled(bool);

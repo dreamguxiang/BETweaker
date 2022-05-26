@@ -27,8 +27,8 @@ public:
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*4*/ virtual class Block const & getBlock(class BlockPos const &) const;
+    /*5*/ virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
     /*6*/ virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /*7*/ virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
@@ -47,22 +47,9 @@ public:
     /*21*/ virtual bool isInBounds(class Pos const &) const;
     /*22*/ virtual short getLocalWaterLevel(class BlockPos const &) const;
     /*23*/ virtual class LevelData const & getLevelData() const;
+    /*24*/ virtual void __unk_vfn_24();
+    /*25*/ virtual void disableBlockSimple();
     /*
-    inline bool placeStructure(class BlockPos const & a0, class StructureTemplate & a1, class StructureSettings & a2){
-        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
-        *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class StructureTemplate &>(a1), std::forward<class StructureSettings &>(a2));
-    }
-    inline bool shimPlaceForOldFeatures(class Feature const & a0, class BlockPos const & a1, class Random & a2) const{
-        bool (BlockVolumeTarget::*rv)(class Feature const &, class BlockPos const &, class Random &) const;
-        *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Feature const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
-    }
-    inline short getMinHeight() const{
-        short (BlockVolumeTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinHeight@BlockVolumeTarget@@UEBAFXZ");
-        return (this->*rv)();
-    }
     inline bool apply() const{
         bool (BlockVolumeTarget::*rv)() const;
         *((void**)&rv) = dlsym("?apply@BlockVolumeTarget@@UEBA_NXZ");
@@ -78,10 +65,20 @@ public:
         *((void**)&rv) = dlsym("?canSurvive@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class Block const &>(a1));
     }
-    inline void disableBlockSimple(){
-        void (BlockVolumeTarget::*rv)();
-        *((void**)&rv) = dlsym("?disableBlockSimple@BlockVolumeTarget@@UEAAXXZ");
+    inline short getMinHeight() const{
+        short (BlockVolumeTarget::*rv)() const;
+        *((void**)&rv) = dlsym("?getMinHeight@BlockVolumeTarget@@UEBAFXZ");
         return (this->*rv)();
+    }
+    inline bool placeStructure(class BlockPos const & a0, class StructureTemplate & a1, class StructureSettings & a2){
+        bool (BlockVolumeTarget::*rv)(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
+        *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0), std::forward<class StructureTemplate &>(a1), std::forward<class StructureSettings &>(a2));
+    }
+    inline bool shimPlaceForOldFeatures(class Feature const & a0, class BlockPos const & a1, class Random & a2) const{
+        bool (BlockVolumeTarget::*rv)(class Feature const &, class BlockPos const &, class Random &) const;
+        *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class Feature const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
     }
     inline  ~BlockVolumeTarget(){
          (BlockVolumeTarget::*rv)();
@@ -92,16 +89,6 @@ public:
         struct WorldGenContext const & (BlockVolumeTarget::*rv)();
         *((void**)&rv) = dlsym("?getContext@BlockVolumeTarget@@UEAAAEBUWorldGenContext@@XZ");
         return (this->*rv)();
-    }
-    inline class Block const & getBlockNoBoundsCheck(class BlockPos const & a0) const{
-        class Block const & (BlockVolumeTarget::*rv)(class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
-    }
-    inline class Block const & getBlock(class BlockPos const & a0) const{
-        class Block const & (BlockVolumeTarget::*rv)(class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline bool setBlockSimple(class BlockPos const & a0, class Block const & a1){
         bool (BlockVolumeTarget::*rv)(class BlockPos const &, class Block const &);

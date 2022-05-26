@@ -9,7 +9,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ContainerDescription {
+class ContainerDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -18,12 +18,23 @@ struct ContainerDescription {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERDESCRIPTION
 public:
-    struct ContainerDescription& operator=(struct ContainerDescription const &) = delete;
-    ContainerDescription(struct ContainerDescription const &) = delete;
+    class ContainerDescription& operator=(class ContainerDescription const &) = delete;
+    ContainerDescription(class ContainerDescription const &) = delete;
     ContainerDescription() = delete;
 #endif
 
 public:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~ContainerDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*
+    inline  ~ContainerDescription(){
+         (ContainerDescription::*rv)();
+        *((void**)&rv) = dlsym("??1ContainerDescription@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

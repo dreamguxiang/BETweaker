@@ -27,6 +27,7 @@ public:
     MCAPI bool isTrackedBlock(class Block const &) const;
     MCAPI void resetBlocksInsideState();
     MCAPI void setInsideBlock(class Block const &, bool);
+    MCAPI ~InsideBlockNotifierComponent();
 
 protected:
 

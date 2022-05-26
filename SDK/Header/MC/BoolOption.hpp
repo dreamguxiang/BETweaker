@@ -35,5 +35,6 @@ public:
 protected:
 
 private:
+    MCAPI void _set(bool, bool);
 
 };

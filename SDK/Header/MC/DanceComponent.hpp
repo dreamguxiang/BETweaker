@@ -25,6 +25,7 @@ public:
     MCAPI DanceComponent();
     MCAPI bool inListenDistance(class Vec3 const &) const;
     MCAPI void initFromDefinition(class Actor &);
+    MCAPI ~DanceComponent();
 
 protected:
 

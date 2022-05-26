@@ -24,14 +24,14 @@ public:
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
     /*
-    inline bool isLowBatteryModeEnabled() const{
-        bool (FakeThermalMonitorInterface::*rv)() const;
-        *((void**)&rv) = dlsym("?isLowBatteryModeEnabled@FakeThermalMonitorInterface@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline enum ThermalState getThermalState() const{
         enum ThermalState (FakeThermalMonitorInterface::*rv)() const;
         *((void**)&rv) = dlsym("?getThermalState@FakeThermalMonitorInterface@@UEBA?AW4ThermalState@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isLowBatteryModeEnabled() const{
+        bool (FakeThermalMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?isLowBatteryModeEnabled@FakeThermalMonitorInterface@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline float getThermalValueCelsius() const{

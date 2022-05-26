@@ -27,7 +27,8 @@ public:
     MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
     MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
     MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
-    MCAPI static class Block const * transformStandingRotation(class Block const &, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformMultiFaceDirectionBits(class Block const &, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformVineDirectionBits(class Block const &, enum Rotation, enum Mirror);
 
 protected:
 

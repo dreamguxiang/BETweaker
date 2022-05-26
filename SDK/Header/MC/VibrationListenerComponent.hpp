@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI ~VibrationListenerComponent();
 
 protected:

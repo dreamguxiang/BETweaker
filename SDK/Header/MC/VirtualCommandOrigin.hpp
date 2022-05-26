@@ -48,7 +48,6 @@ public:
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;

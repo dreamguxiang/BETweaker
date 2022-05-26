@@ -35,7 +35,6 @@ public:
     MCAPI bool hasSourceUUID() const;
     MCAPI bool hasSubpacks() const;
     MCAPI bool initializeFromJson(class Json::Value const &);
-    MCAPI ~WorldPackHistory();
 
 protected:
 

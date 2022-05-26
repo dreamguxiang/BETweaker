@@ -23,8 +23,8 @@ public:
 #endif
 
 public:
-    MCAPI GameEventMovementTracker(class Mob &);
-    MCAPI void trackMovement(bool);
+    MCAPI GameEventMovementTracker(class Vec3 const &);
+    MCAPI void trackMovement(class Actor &, bool);
 
 protected:
 

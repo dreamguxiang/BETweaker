@@ -25,11 +25,6 @@ public:
 public:
     /*0*/ virtual ~ScreenHandlerBase();
     /*
-    inline enum ItemStackNetResult endRequest(){
-        enum ItemStackNetResult (ScreenHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ");
-        return (this->*rv)();
-    }
     inline void postRequest(bool a0){
         void (ScreenHandlerBase::*rv)(bool);
         *((void**)&rv) = dlsym("?postRequest@ScreenHandlerBase@@UEAAX_N@Z");
@@ -38,6 +33,11 @@ public:
     inline void endRequestBatch(){
         void (ScreenHandlerBase::*rv)();
         *((void**)&rv) = dlsym("?endRequestBatch@ScreenHandlerBase@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline enum ItemStackNetResult endRequest(){
+        enum ItemStackNetResult (ScreenHandlerBase::*rv)();
+        *((void**)&rv) = dlsym("?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ");
         return (this->*rv)();
     }
     inline enum ItemStackNetResult handleAction(class ItemStackRequestAction const & a0){

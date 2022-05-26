@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -41,7 +42,7 @@ public:
     }
     */
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
-    MCAPI void resolveUpgradeDependencies(class Pack &, class IContentKeyProvider const &);
+    MCAPI void resolveUpgradeDependencies(class Pack &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
 protected:
 

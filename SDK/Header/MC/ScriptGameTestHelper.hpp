@@ -41,6 +41,7 @@ public:
     MCAPI class Scripting::Result<void> assertItemEntityCountIs(class ScriptItemType const &, class BlockPos const &, float, int);
     MCAPI class Scripting::Result<void> assertItemEntityPresent(class ScriptItemType const &, class BlockPos const &, float, bool);
     MCAPI class Scripting::Result<void> assertRedstonePower(class BlockPos const &, int);
+    MCAPI class Scripting::Result<void> destroyBlock(class BlockPos const &, bool);
     MCAPI class Scripting::Result<void> fail(std::string const &);
     MCAPI class Scripting::Result<void> failIf(class Scripting::Closure<void (void)>);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlock(class BlockPos const &);
@@ -58,6 +59,7 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class Vec3>> relativePosition(class Vec3 const &) const;
     MCAPI void removeSimulatedPlayer(class ScriptSimulatedPlayer const &);
     MCAPI class Scripting::Result<enum ScriptFacing> rotateDirection(enum ScriptFacing) const;
+    MCAPI class Scripting::Result<class ScriptVector> rotateVector(class ScriptVector const &) const;
     MCAPI class Scripting::Result<void> runAfterDelay(int, class Scripting::Closure<void (void)>);
     MCAPI class Scripting::Result<void> runAtTickTime(int, class Scripting::Closure<void (void)>);
     MCAPI class Scripting::Result<void> setBlockPermutation(class ScriptBlockPermutation const &, class BlockPos const &);

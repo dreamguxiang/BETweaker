@@ -23,12 +23,13 @@ public:
 #endif
 
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void decreaseFreezingEffect();
     MCAPI float getFreezingEffectStrength() const;
     MCAPI void increaseFreezingEffect();
     MCAPI bool isFullyFrozen() const;
     MCAPI bool isFullyUnfrozen() const;
+    MCAPI bool operator==(class FreezingComponent const &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetFreezingEffect();
 

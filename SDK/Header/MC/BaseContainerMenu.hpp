@@ -24,16 +24,6 @@ public:
 
 public:
     /*
-    inline bool isResultSlot(int a0){
-        bool (BaseContainerMenu::*rv)(int);
-        *((void**)&rv) = dlsym("?isResultSlot@BaseContainerMenu@@UEAA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isSlotDirty(int a0){
-        bool (BaseContainerMenu::*rv)(int);
-        *((void**)&rv) = dlsym("?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline void containerContentChanged(int a0){
         void (BaseContainerMenu::*rv)(int);
         *((void**)&rv) = dlsym("?containerContentChanged@BaseContainerMenu@@UEAAXH@Z");
@@ -43,6 +33,16 @@ public:
         void (BaseContainerMenu::*rv)(int, int);
         *((void**)&rv) = dlsym("?setData@BaseContainerMenu@@UEAAXHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool isResultSlot(int a0){
+        bool (BaseContainerMenu::*rv)(int);
+        *((void**)&rv) = dlsym("?isResultSlot@BaseContainerMenu@@UEAA_NH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline bool isSlotDirty(int a0){
+        bool (BaseContainerMenu::*rv)(int);
+        *((void**)&rv) = dlsym("?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z");
+        return (this->*rv)(std::forward<int>(a0));
     }
     inline enum ContainerType getContainerType() const{
         enum ContainerType (BaseContainerMenu::*rv)() const;

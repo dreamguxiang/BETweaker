@@ -36,11 +36,11 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI ScriptSimulatedPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI class Scripting::Result<bool> addExperience(int) const;
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const &) const;
     MCAPI class Scripting::Result<bool> breakBlock(class BlockPos const &, int) const;
-    MCAPI class Scripting::Result<struct ScriptPitchYawRotation> getHeadRotation();
+    MCAPI class Scripting::Result<struct ScriptXYRotation> getHeadRotation();
     MCAPI class Scripting::Result<bool> giveItem(class ScriptItemStack const &, bool) const;
     MCAPI class Scripting::Result<bool> interact() const;
     MCAPI class Scripting::Result<bool> interactWithBlock(class BlockPos const &, int) const;

@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI class std::optional<class std::variant<class BaseGameVersion, std::string, class LevelSeed64, enum GeneratorType, bool, short, class DimensionHeightRange>> operator()(class DimensionHeightRange const &) const;
     MCAPI ~MetaDataTypeVisitor_Get();
 
 protected:

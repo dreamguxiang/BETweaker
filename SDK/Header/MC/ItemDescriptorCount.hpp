@@ -21,7 +21,7 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTORCOUNT
 public:
-    class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = default;
+    class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = delete;
     ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
 

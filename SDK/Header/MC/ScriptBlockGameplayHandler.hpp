@@ -31,7 +31,8 @@ public:
     /*5*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ExplosionStartedEvent &);
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const &);
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct PistonActionEvent const &);
 
 protected:
 

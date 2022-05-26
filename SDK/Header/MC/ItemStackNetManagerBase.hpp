@@ -60,6 +60,7 @@ public:
     MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 protected:
+    MCAPI std::string _debugContext(std::string) const;
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
 private:

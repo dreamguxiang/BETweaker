@@ -30,8 +30,10 @@ public:
     MCAPI ItemStackNetIdVariant();
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
+    MCAPI ItemStackNetIdVariant(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI void deserialize(class ReadOnlyBinaryStream &);
     MCAPI bool hasServerNetId() const;
+    MCAPI bool isServerNetId() const;
     MCAPI bool isValid() const;
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant &&);
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant const &);

@@ -161,6 +161,7 @@ protected:
     MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const &, class HashedString const &, enum LevelSoundEvent, enum ContainerType, int, class Block const &, class Block const &);
 
 private:
+    MCAPI class BlockPos _getPositionOfNeighbor(int);
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource &);
     MCAPI void burn(class Recipes const &);
     MCAPI bool canBurn(class Recipes const &);

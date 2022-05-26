@@ -22,7 +22,6 @@ public:
 
 public:
     /*0*/ virtual ~StorageItemComponent();
-    MCAPI StorageItemComponent(class ComponentItem *);
     MCAPI unsigned int calculateAddableCount(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI bool tryAddItemStack(class ItemStack &, class ItemStack &) const;
     MCAPI void tryGenerateUserData(class ItemStack &) const;

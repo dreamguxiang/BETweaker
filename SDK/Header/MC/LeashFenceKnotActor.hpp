@@ -33,15 +33,16 @@ public:
     /*32*/ virtual float getInterpolatedHeadRot(float) const;
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
     /*40*/ virtual void __unk_vfn_40();
-    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int);
-    /*61*/ virtual void __unk_vfn_61();
-    /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
-    /*80*/ virtual float getShadowRadius() const;
-    /*82*/ virtual void __unk_vfn_82();
-    /*85*/ virtual bool canInteractWithOtherEntitiesInGame() const;
-    /*88*/ virtual void __unk_vfn_88();
-    /*89*/ virtual void playerTouch(class Player &);
+    /*43*/ virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    /*60*/ virtual void __unk_vfn_60();
+    /*67*/ virtual void __unk_vfn_67();
+    /*77*/ virtual float getCameraOffset() const;
+    /*79*/ virtual float getShadowRadius() const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*84*/ virtual bool canInteractWithOtherEntitiesInGame() const;
+    /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player &);
+    /*93*/ virtual bool isSilentObserver() const;
     /*94*/ virtual bool isPickable();
     /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual bool isSleeping() const;
@@ -98,29 +99,31 @@ public:
     /*244*/ virtual void stopSpinAttack();
     /*246*/ virtual void __unk_vfn_246();
     /*249*/ virtual void __unk_vfn_249();
-    /*259*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /*261*/ virtual void __unk_vfn_261();
-    /*265*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*266*/ virtual void addAdditionalSaveData(class CompoundTag &);
-    /*269*/ virtual void __unk_vfn_269();
-    /*277*/ virtual void _onSizeUpdated();
-    /*278*/ virtual void __unk_vfn_278();
-    /*279*/ virtual void setDir(int);
-    /*280*/ virtual int getWidth() const;
-    /*281*/ virtual int getHeight() const;
-    /*282*/ virtual void dropItem();
-    /*283*/ virtual bool placeHangingEntity(class BlockSource &, int);
-    /*284*/ virtual bool wouldSurvive(class BlockSource &);
+    /*259*/ virtual void onPush(class Actor &);
+    /*262*/ virtual bool hasDiedBefore() const;
+    /*265*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /*267*/ virtual void __unk_vfn_267();
+    /*271*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /*272*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*275*/ virtual void __unk_vfn_275();
+    /*283*/ virtual void _onSizeUpdated();
+    /*284*/ virtual void __unk_vfn_284();
+    /*285*/ virtual void setDir(int);
+    /*286*/ virtual int getWidth() const;
+    /*287*/ virtual int getHeight() const;
+    /*288*/ virtual void dropItem();
+    /*289*/ virtual bool placeHangingEntity(class BlockSource &, int);
+    /*290*/ virtual bool wouldSurvive(class BlockSource &);
     /*
-    inline void addAdditionalSaveData(class CompoundTag & a0){
-        void (LeashFenceKnotActor::*rv)(class CompoundTag &);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag &>(a0));
-    }
     inline void readAdditionalSaveData(class CompoundTag const & a0, class DataLoadHelper & a1){
         void (LeashFenceKnotActor::*rv)(class CompoundTag const &, class DataLoadHelper &);
         *((void**)&rv) = dlsym("?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const &>(a0), std::forward<class DataLoadHelper &>(a1));
+    }
+    inline void addAdditionalSaveData(class CompoundTag & a0) const{
+        void (LeashFenceKnotActor::*rv)(class CompoundTag &) const;
+        *((void**)&rv) = dlsym("?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag &>(a0));
     }
     */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

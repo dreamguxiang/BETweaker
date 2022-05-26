@@ -24,7 +24,10 @@ public:
 
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
-    /*1*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /*
     inline  ~PlayerScoreboardEventListener(){
          (PlayerScoreboardEventListener::*rv)();

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "InternalComponentRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,15 +25,30 @@ public:
 
 public:
     /*0*/ virtual ~DefaultDataLoadHelper();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /*
-    inline bool shouldResetTime(){
-        bool (DefaultDataLoadHelper::*rv)();
-        *((void**)&rv) = dlsym("?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline enum DataLoadHelperType getType() const{
         enum DataLoadHelperType (DefaultDataLoadHelper::*rv)() const;
         *((void**)&rv) = dlsym("?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool shouldResetTime(){
+        bool (DefaultDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID a0){
@@ -90,14 +106,14 @@ public:
         *((void**)&rv) = dlsym("?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline float loadRotationRadiansY(float a0){
-        float (DefaultDataLoadHelper::*rv)(float);
-        *((void**)&rv) = dlsym("?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
     inline float loadRotationDegreesX(float a0){
         float (DefaultDataLoadHelper::*rv)(float);
         *((void**)&rv) = dlsym("?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
+    inline float loadRotationRadiansY(float a0){
+        float (DefaultDataLoadHelper::*rv)(float);
+        *((void**)&rv) = dlsym("?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
     inline float loadRotationDegreesY(float a0){

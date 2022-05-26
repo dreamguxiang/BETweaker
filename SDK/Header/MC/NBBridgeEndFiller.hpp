@@ -25,12 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~NBBridgeEndFiller();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_10();
+    /*2*/ virtual enum StructurePieceType getType() const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*5*/ virtual void __unk_vfn_5();
+    /*9*/ virtual void __unk_vfn_9();
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 
 protected:

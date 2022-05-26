@@ -43,11 +43,11 @@ public:
     MCAPI bool contains(class Vec3 const &) const;
     MCAPI float distanceTo(class AABB const &) const;
     MCAPI float distanceTo(class Vec3 const &) const;
+    MCAPI float distanceToSqr(class AABB const &) const;
     MCAPI class Vec3 getBounds() const;
     MCAPI class Vec3 getCenter() const;
     MCAPI float getSize() const;
     MCAPI float getVolume() const;
-    MCAPI bool hasZeroVolume() const;
     MCAPI bool intersectSegment(class Vec3 const &, class Vec3 const &, class Vec3 &, class Vec3 &) const;
     MCAPI bool intersects(class AABB const &) const;
     MCAPI bool intersects(class Vec3 const &, class Vec3 const &) const;
@@ -55,10 +55,11 @@ public:
     MCAPI bool isValid() const;
     MCAPI bool operator!=(class AABB const &) const;
     MCAPI bool operator==(class AABB const &) const;
-    MCAPI class AABB & set(float, float, float, float, float, float);
     MCAPI class AABB & set(class AABB const &);
     MCAPI class AABB & set(class Vec3 const &, class Vec3 const &);
+    MCAPI class AABB & set(float, float, float, float, float, float);
     MCAPI class AABB & shrink(class Vec3 const &);
+    MCAPI std::string toString() const;
     MCAPI class AABB & translateCenterTo(class Vec3 const &);
     MCAPI static class AABB const BLOCK_SHAPE;
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;

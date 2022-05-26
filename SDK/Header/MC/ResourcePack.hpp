@@ -25,6 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ResourcePack();
+    /*
+    inline  ~ResourcePack(){
+         (ResourcePack::*rv)();
+        *((void**)&rv) = dlsym("??1ResourcePack@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ResourcePack(class Pack &);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;

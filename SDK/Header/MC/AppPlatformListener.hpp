@@ -44,14 +44,14 @@ public:
         *((void**)&rv) = dlsym("?onResizeBegin@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppPaused(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppPaused@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onAppFocusGained(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppFocusGained@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onAppPaused(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppPaused@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onAppUnpaused(){
@@ -69,15 +69,15 @@ public:
         *((void**)&rv) = dlsym("?onAppFocusLost@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onPerformanceModeChanged(bool a0){
-        void (AppPlatformListener::*rv)(bool);
-        *((void**)&rv) = dlsym("?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
     inline void onAppSuspended(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppSuspended@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void onPerformanceModeChanged(bool a0){
+        void (AppPlatformListener::*rv)(bool);
+        *((void**)&rv) = dlsym("?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
     }
     inline void onPushNotificationReceived(class PushNotificationMessage const & a0){
         void (AppPlatformListener::*rv)(class PushNotificationMessage const &);
@@ -99,15 +99,15 @@ public:
         *((void**)&rv) = dlsym("?onAppResumed@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onClipboardPaste(std::string const & a0){
-        void (AppPlatformListener::*rv)(std::string const &);
-        *((void**)&rv) = dlsym("?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const &>(a0));
-    }
     inline void onAppTerminated(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppTerminated@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void onClipboardPaste(std::string const & a0){
+        void (AppPlatformListener::*rv)(std::string const &);
+        *((void**)&rv) = dlsym("?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const &>(a0));
     }
     inline  ~AppPlatformListener(){
          (AppPlatformListener::*rv)();

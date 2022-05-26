@@ -65,9 +65,10 @@ public:
     /*0*/ virtual ~MobEffect();
     /*1*/ virtual void applyEffects(class Actor *, int, int) const;
     /*2*/ virtual void removeEffects(class Actor *);
-    /*3*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
-    /*4*/ virtual bool isInstantaneous() const;
-    /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
+    /*3*/ virtual void updateEffects(class Actor *, int, int);
+    /*4*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
+    /*5*/ virtual bool isInstantaneous() const;
+    /*6*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
     /*
     inline  ~MobEffect(){
          (MobEffect::*rv)();
@@ -126,7 +127,7 @@ public:
     MCAPI static class MobEffect * getByName(std::string const &);
     MCAPI static std::string getNameById(int);
     MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
-    MCAPI static std::unique_ptr<class MobEffect> * mMobEffects;
+    MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     MCAPI static void shutdownEffects();
 
 protected:

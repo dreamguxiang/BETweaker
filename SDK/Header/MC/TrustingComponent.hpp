@@ -24,6 +24,7 @@ public:
 public:
     MCAPI TrustingComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
+    MCAPI ~TrustingComponent();
 
 protected:
 

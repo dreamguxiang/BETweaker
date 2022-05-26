@@ -33,6 +33,7 @@ public:
     MCAPI int getBirchFoliageColor(class BlockPos const &) const;
     MCAPI float getDefaultBiomeTemperature() const;
     MCAPI float getDownfall() const;
+    MCAPI class EntityContext & getEntity() const;
     MCAPI int getEvergreenFoliageColor(class BlockPos const &) const;
     MCAPI int getFoliageColor(class BlockPos const &) const;
     MCAPI int getMapBirchFoliageColor(class BlockPos const &) const;

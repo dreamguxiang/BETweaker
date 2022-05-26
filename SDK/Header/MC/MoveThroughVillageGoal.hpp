@@ -32,6 +32,11 @@ public:
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
     /*
+    inline void stop(){
+        void (MoveThroughVillageGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@MoveThroughVillageGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
     inline bool canContinueToUse(){
         bool (MoveThroughVillageGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ");
@@ -40,11 +45,6 @@ public:
     inline bool canUse(){
         bool (MoveThroughVillageGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@MoveThroughVillageGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MoveThroughVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MoveThroughVillageGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

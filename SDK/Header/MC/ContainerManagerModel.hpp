@@ -34,12 +34,13 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const = 0;
     /*9*/ virtual void setData(int, int) = 0;
     /*10*/ virtual void broadcastChanges() = 0;
-    /*11*/ virtual void debitPlayerLevels(int);
-    /*12*/ virtual bool isCreativeMode() const;
-    /*13*/ virtual bool isClientSide() const;
-    /*14*/ virtual bool isServerAuthoritative() const;
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit() = 0;
+    /*11*/ virtual bool tick();
+    /*12*/ virtual void debitPlayerLevels(int);
+    /*13*/ virtual bool isCreativeMode() const;
+    /*14*/ virtual bool isClientSide() const;
+    /*15*/ virtual bool isServerAuthoritative() const;
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit() = 0;
     /*
     inline  ~ContainerManagerModel(){
          (ContainerManagerModel::*rv)();

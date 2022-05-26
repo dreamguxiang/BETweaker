@@ -24,14 +24,14 @@ public:
 
 public:
     /*
-    inline bool _detectEntityObstruction(class BlockSource & a0) const{
-        bool (ShulkerBoxBlockActor::*rv)(class BlockSource &) const;
-        *((void**)&rv) = dlsym("?_detectEntityObstruction@ShulkerBoxBlockActor@@MEBA_NAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0));
-    }
     inline void onPlace(class BlockSource & a0){
         void (ShulkerBoxBlockActor::*rv)(class BlockSource &);
         *((void**)&rv) = dlsym("?onPlace@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource &>(a0));
+    }
+    inline bool _detectEntityObstruction(class BlockSource & a0) const{
+        bool (ShulkerBoxBlockActor::*rv)(class BlockSource &) const;
+        *((void**)&rv) = dlsym("?_detectEntityObstruction@ShulkerBoxBlockActor@@MEBA_NAEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class BlockSource &>(a0));
     }
     inline int getMaxStackSize() const{

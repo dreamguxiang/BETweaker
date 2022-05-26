@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI void tick(class Actor &);
+    MCAPI ~CombatRegenerationComponent();
 
 protected:
 

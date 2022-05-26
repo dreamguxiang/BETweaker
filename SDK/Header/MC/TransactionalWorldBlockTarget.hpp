@@ -48,16 +48,12 @@ public:
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual class LevelData const & getLevelData() const;
     /*24*/ virtual struct WorldGenContext const & getContext();
+    /*25*/ virtual void disableBlockSimple();
     /*
     inline bool shimPlaceForOldFeatures(class Feature const & a0, class BlockPos const & a1, class Random & a2) const{
         bool (TransactionalWorldBlockTarget::*rv)(class Feature const &, class BlockPos const &, class Random &) const;
         *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@TransactionalWorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
         return (this->*rv)(std::forward<class Feature const &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
-    }
-    inline void disableBlockSimple(){
-        void (TransactionalWorldBlockTarget::*rv)();
-        *((void**)&rv) = dlsym("?disableBlockSimple@TransactionalWorldBlockTarget@@UEAAXXZ");
-        return (this->*rv)();
     }
     inline bool hasBiomeTag(unsigned __int64 a0, class BlockPos const & a1) const{
         bool (TransactionalWorldBlockTarget::*rv)(unsigned __int64, class BlockPos const &) const;
@@ -74,6 +70,11 @@ public:
         *((void**)&rv) = dlsym("?getBiome@TransactionalWorldBlockTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
+    inline short getLocalWaterLevel(class BlockPos const & a0) const{
+        short (TransactionalWorldBlockTarget::*rv)(class BlockPos const &) const;
+        *((void**)&rv) = dlsym("?getLocalWaterLevel@TransactionalWorldBlockTarget@@UEBAFAEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const &>(a0));
+    }
     inline class Block const & getBlockNoBoundsCheck(class BlockPos const & a0) const{
         class Block const & (TransactionalWorldBlockTarget::*rv)(class BlockPos const &) const;
         *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@TransactionalWorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
@@ -83,11 +84,6 @@ public:
          (TransactionalWorldBlockTarget::*rv)();
         *((void**)&rv) = dlsym("??1TransactionalWorldBlockTarget@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline short getLocalWaterLevel(class BlockPos const & a0) const{
-        short (TransactionalWorldBlockTarget::*rv)(class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getLocalWaterLevel@TransactionalWorldBlockTarget@@UEBAFAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const &>(a0));
     }
     inline bool setBlockSimple(class BlockPos const & a0, class Block const & a1){
         bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const &, class Block const &);

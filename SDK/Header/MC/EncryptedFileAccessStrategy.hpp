@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 #include "DirectoryPackAccessStrategy.hpp"
 
 #define BEFORE_EXTRA
@@ -27,7 +28,6 @@ public:
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
     /*4*/ virtual bool isWritable() const;
-    /*5*/ virtual void setIsTrusted(bool);
     /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
     /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
@@ -35,9 +35,8 @@ public:
     /*11*/ virtual bool writeAsset(class Core::Path const &, std::string const &);
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-    MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class IContentKeyProvider const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
+    MCAPI EncryptedFileAccessStrategy(class ResourceLocation const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string>, std::string, struct std::hash<class Core::PathBuffer<std::string>>, struct std::equal_to<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, std::string>>>>);
     MCAPI static bool isValidEncryptedPack(class Core::Path const &, class ContentIdentity &);
 
 protected:

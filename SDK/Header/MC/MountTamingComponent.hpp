@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI MountTamingComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void becomeTame(class Actor &, bool);
     MCAPI int & getCounter();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);

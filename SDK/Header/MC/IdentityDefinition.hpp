@@ -25,7 +25,6 @@ enum class Type : char
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTITYDEFINITION
 public:
-    class IdentityDefinition& operator=(class IdentityDefinition const &) = delete;
     IdentityDefinition() = delete;
 #endif
 
@@ -47,6 +46,8 @@ public:
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;
     MCAPI operator bool() const;
+    MCAPI class IdentityDefinition & operator=(class IdentityDefinition &&);
+    MCAPI class IdentityDefinition & operator=(class IdentityDefinition const &);
     MCAPI ~IdentityDefinition();
     MCAPI static class IdentityDefinition const Invalid;
     MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);

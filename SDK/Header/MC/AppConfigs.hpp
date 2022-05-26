@@ -60,90 +60,20 @@ public:
     /*34*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
     /*35*/ virtual std::string getFeedbackURL() const;
     /*
-    inline bool useFullScreenByDefault() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?useFullScreenByDefault@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void setCanAccessWorldCallback(class IMinecraftGame & a0){
+        void (AppConfigs::*rv)(class IMinecraftGame &);
+        *((void**)&rv) = dlsym("?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z");
+        return (this->*rv)(std::forward<class IMinecraftGame &>(a0));
     }
-    inline bool areQuizzesSupported() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void loadFromData(class IAppConfigData const & a0){
+        void (AppConfigs::*rv)(class IAppConfigData const &);
+        *((void**)&rv) = dlsym("?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z");
+        return (this->*rv)(std::forward<class IAppConfigData const &>(a0));
     }
-    inline bool muteByDefault() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?muteByDefault@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool requireEduLevelSettings() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?requireEduLevelSettings@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool useNormalizedFontSize() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?useNormalizedFontSize@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool worldBuilderDisabled() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool useEduDemoUpsellDialog() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool webSocketsDisabled() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?webSocketsDisabled@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool sendPermissionsTelemetry() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool supportsChangingMultiplayerDuringPlay() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldPromptBeforeExit() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool gameArgumentsNeedAuthentication() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool requireTrustedContent() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isLessonProgressionSupported() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline enum AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const{
-        enum AppConfigs::MaelstromEduUsabilityStatus (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAzureNotebooks() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool worldsAreSingleUse() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?worldsAreSingleUse@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void applyLevelDataOverride(class LevelData & a0) const{
+        void (AppConfigs::*rv)(class LevelData &) const;
+        *((void**)&rv) = dlsym("?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z");
+        return (this->*rv)(std::forward<class LevelData &>(a0));
     }
     inline bool allowGameArguments() const{
         bool (AppConfigs::*rv)() const;
@@ -165,14 +95,14 @@ public:
         *((void**)&rv) = dlsym("?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isGameTabShownInSettings() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isChatScreenAllowed() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?isChatScreenAllowed@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isGameTabShownInSettings() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isPlayScreenAllowed() const{
@@ -190,20 +120,90 @@ public:
         *((void**)&rv) = dlsym("?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void setCanAccessWorldCallback(class IMinecraftGame & a0){
-        void (AppConfigs::*rv)(class IMinecraftGame &);
-        *((void**)&rv) = dlsym("?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z");
-        return (this->*rv)(std::forward<class IMinecraftGame &>(a0));
+    inline bool useFullScreenByDefault() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?useFullScreenByDefault@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
     }
-    inline void loadFromData(class IAppConfigData const & a0){
-        void (AppConfigs::*rv)(class IAppConfigData const &);
-        *((void**)&rv) = dlsym("?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z");
-        return (this->*rv)(std::forward<class IAppConfigData const &>(a0));
+    inline bool areQuizzesSupported() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
     }
-    inline void applyLevelDataOverride(class LevelData & a0) const{
-        void (AppConfigs::*rv)(class LevelData &) const;
-        *((void**)&rv) = dlsym("?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z");
-        return (this->*rv)(std::forward<class LevelData &>(a0));
+    inline bool requireEduLevelSettings() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?requireEduLevelSettings@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool muteByDefault() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?muteByDefault@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool worldBuilderDisabled() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNormalizedFontSize() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?useNormalizedFontSize@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool webSocketsDisabled() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?webSocketsDisabled@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useEduDemoUpsellDialog() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool sendPermissionsTelemetry() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool supportsChangingMultiplayerDuringPlay() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool shouldPromptBeforeExit() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool requireTrustedContent() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool gameArgumentsNeedAuthentication() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLessonProgressionSupported() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const{
+        enum AppConfigs::MaelstromEduUsabilityStatus (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ");
+        return (this->*rv)();
+    }
+    inline bool worldsAreSingleUse() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?worldsAreSingleUse@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canUseAzureNotebooks() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
     }
     inline  ~AppConfigs(){
          (AppConfigs::*rv)();

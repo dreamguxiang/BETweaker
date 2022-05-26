@@ -54,11 +54,6 @@ public:
         *((void**)&rv) = dlsym("?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance &>(a0));
     }
-    inline enum EventResult onEvent(struct ServerInstanceNotificationEvent const & a0){
-        enum EventResult (ServerInstanceEventListener::*rv)(struct ServerInstanceNotificationEvent const &);
-        *((void**)&rv) = dlsym("?onEvent@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z");
-        return (this->*rv)(std::forward<struct ServerInstanceNotificationEvent const &>(a0));
-    }
     inline enum EventResult onServerUpdateEnd(class ServerInstance & a0){
         enum EventResult (ServerInstanceEventListener::*rv)(class ServerInstance &);
         *((void**)&rv) = dlsym("?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
