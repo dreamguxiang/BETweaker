@@ -21,20 +21,16 @@ public:
     ContainerComponent(class ContainerComponent const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual void containerContentChanged(int);
-    /*1*/ virtual ~ContainerComponent();
-    /*
-    inline  ~ContainerComponent(){
-         (ContainerComponent::*rv)();
-        *((void**)&rv) = dlsym("??1ContainerComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
+public:
+#endif
     MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
     MCAPI class FillingContainer * _getRawContainerPtr();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool addItem(class BlockSource &, class ItemStack &, int, int);
     MCAPI bool addItem(class ItemActor &);
     MCAPI bool addItem(class ItemStack &);
@@ -63,9 +59,10 @@ public:
     MCAPI void setLootTable(std::string const &, int);
     MCAPI void unpackLootTable(class Level &, class AutomaticID<class Dimension, int>);
 
-protected:
+//private:
+    MCAPI bool _tryMoveInItem(class BlockSource &, class ItemStack &, int, int, int);
 
 private:
-    MCAPI bool _tryMoveInItem(class BlockSource &, class ItemStack &, int, int, int);
+
 
 };

@@ -23,6 +23,7 @@ public:
     SmithingTableContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~SmithingTableContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -30,15 +31,15 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
-    /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual bool isValid(float);
+    /*17*/ virtual class ContainerScreenContext _postInit();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERMANAGERMODEL
+public:
+#endif
     MCAPI SmithingTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
 
-protected:
-
-private:
 
 };

@@ -18,7 +18,7 @@ namespace Module {
 						auto& uid = sp->getUniqueID();
 						Schedule::delay([snbt, uid, slotnum, i] {
 							auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
-							auto sp = Level::getPlayer(uid);
+							auto sp = Global<Level>->getPlayer(uid);
 							if (sp) {
 								if (sp->getHandSlot()->isNull()) {
 									auto& inv = sp->getInventory();
@@ -48,7 +48,7 @@ namespace Module {
 					auto& uid = sp->getUniqueID();
 					Schedule::delay([snbt, uid, slotnum, i] {
 						auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
-						auto sp = Level::getPlayer(uid);
+						auto sp = Global<Level>->getPlayer(uid);
 						if (sp) {
 							if (sp->getHandSlot()->isNull()) {
 								auto& inv = sp->getInventory();

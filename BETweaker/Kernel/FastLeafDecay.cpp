@@ -7,7 +7,8 @@ namespace Module {
     "minecraft:leaves",
     "minecraft:leaves2",
     "minecraft:azalea_leaves",
-    "minecraft:azalea_leaves_flowered"
+    "minecraft:azalea_leaves_flowered",
+    "minecraft:mangrove_leaves",
     };
 
     std::stack<BlockPos> leafBlockPos;

@@ -276,7 +276,9 @@ public:
 //};
 //
 //}; // namespace Core
-
+namespace cg {
+    class ImageBuffer;
+}
 class NetherNet
 {
 public:
@@ -367,6 +369,8 @@ struct OperationNodeDetails
 struct PositionTrackingDB
 {
     class TrackingRecord;
+    class PositionTrackingDBServer;
+    class PositionTrackingDBClient;
 };
 
 

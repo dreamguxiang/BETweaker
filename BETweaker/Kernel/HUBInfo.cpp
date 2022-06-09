@@ -68,7 +68,7 @@ ScheduleTask hubinfo;
 namespace Module {
     void HUBInfo() {
         Schedule::repeat([]() {
-            Level::forEachPlayer([](Player& sp)->bool {
+            Global<Level>->forEachPlayer([](Player& sp)->bool {
                 Actor* ac = sp.getActorFromViewVector(5.25);
                 auto posdim = HUBHelper::getDim(sp);
                 string lang = sp.getLanguageCode();

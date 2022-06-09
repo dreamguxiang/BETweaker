@@ -8,13 +8,15 @@
 namespace Module {
     std::unordered_set<string> LogBlocks{
         "minecraft:log",
-        "minecraft:log2"
+        "minecraft:log2",
+        "minecraft:mangrove_log",
     };
     std::unordered_set<string> LeafBlockss{
     "minecraft:leaves",
     "minecraft:leaves2",
     "minecraft:azalea_leaves",
-    "minecraft:azalea_leaves_flowered"
+    "minecraft:azalea_leaves_flowered",
+    "minecraft:mangrove_leaves",
     };
 
     std::unordered_set<string> AxeList{
@@ -122,7 +124,6 @@ namespace Module {
             }
             return;
         }
-
         if (LeafBlockss.count(block.getBlock()->getTypeName())) {
             visited.push_back(block.getPosition());
             leaves++;
@@ -150,7 +151,7 @@ namespace Module {
 			 return;
 		 }	
         get(block);
-        if (isTree()) {		
+        if (isTree()) {	
             destroy(bs,sp);
         }
     }
@@ -162,6 +163,8 @@ namespace Module {
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMangroveRoots
+                || LogBlocks.count(bs->getBlock(a3.add(0, -1, 0)).getTypeName())
                 ) {
                 for (size_t i = 0; i < 6; i++)
                 {  

@@ -22,32 +22,24 @@ public:
     EntitySystems() = delete;
 #endif
 
+
 public:
-    /*
-    inline  ~EntitySystems(){
-         (EntitySystems::*rv)();
-        *((void**)&rv) = dlsym("??1EntitySystems@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline void tickMovementCatchup(class EntityRegistry & a0){
-        void (EntitySystems::*rv)(class EntityRegistry &);
-        *((void**)&rv) = dlsym("?tickMovementCatchup@EntitySystems@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry &>(a0));
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
+public:
+    MCVAPI void tickMovementCatchup(class EntityRegistry &);
+    MCVAPI ~EntitySystems();
+#endif
     MCAPI EntitySystems(std::string);
     MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
     MCAPI class PlayerInteractionSystem & getPlayerInteractionSystem();
+    MCAPI void registerEditorOnlyTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void registerEvents(class EntityRegistry &);
+    MCAPI void registerGameOnlyTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const &);
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
-    MCAPI void registerUnconditionalTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void tick(class EntityRegistry &);
     MCAPI void tickEditor(class EntityRegistry &);
 
-protected:
-
-private:
 
 };

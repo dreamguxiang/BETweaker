@@ -22,20 +22,14 @@ public:
     ItemEventResponseFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ItemEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
-    /*
-    inline  ~ItemEventResponseFactory(){
-         (ItemEventResponseFactory::*rv)();
-        *((void**)&rv) = dlsym("??1ItemEventResponseFactory@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI void initSchema();
+    /*2*/ virtual void initSchema();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTRESPONSEFACTORY
+public:
+#endif
 
-protected:
-
-private:
 
 };

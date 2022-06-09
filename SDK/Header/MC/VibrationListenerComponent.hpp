@@ -20,11 +20,14 @@ public:
     VibrationListenerComponent() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCOMPONENT
+public:
+#endif
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI ~VibrationListenerComponent();
 
-protected:
-
-private:
 
 };

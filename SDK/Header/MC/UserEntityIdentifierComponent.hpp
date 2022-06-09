@@ -22,14 +22,17 @@ public:
     UserEntityIdentifierComponent() = delete;
 #endif
 
+
 public:
-    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, unsigned char, class mce::UUID, std::unique_ptr<class Certificate>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_USERENTITYIDENTIFIERCOMPONENT
+public:
+#endif
+    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent &&);
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, unsigned char, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
     MCAPI bool isPrimaryClient() const;
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
+    MCAPI ~UserEntityIdentifierComponent();
     MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
 
-protected:
-
-private:
 
 };

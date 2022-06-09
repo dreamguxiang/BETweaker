@@ -30,6 +30,7 @@ public:
     BlockLegacy() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BlockLegacy();
     /*1*/ virtual class Block const & getStateFromLegacyData(unsigned short) const;
@@ -40,10 +41,10 @@ public:
     /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &) const;
     /*7*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
-    /*9*/ virtual void addAABBs(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*12*/ virtual bool updateTallestCollisionShape(class Block const &, class BlockSource &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*12*/ virtual bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     /*13*/ virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
@@ -51,21 +52,21 @@ public:
     /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /*18*/ virtual bool isSolid() const;
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual bool isSculkReplaceable(class Block const &) const;
-    /*21*/ virtual bool isStrippable(class Block const &) const;
-    /*22*/ virtual class Block const & getStrippedBlock(class Block const &) const;
-    /*23*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /*24*/ virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
-    /*25*/ virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
-    /*26*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /*27*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
-    /*28*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
-    /*29*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
-    /*30*/ virtual void __unk_vfn_30();
+    /*20*/ virtual bool isStrippable(class Block const &) const;
+    /*21*/ virtual class Block const & getStrippedBlock(class Block const &) const;
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*23*/ virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
+    /*24*/ virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*26*/ virtual void getConnectedDirections(class Block const &, class BlockPos const &, class IConstBlockSource const &, bool &, bool &, bool &, bool &) const;
+    /*27*/ virtual class CopperBehavior const * tryGetCopperBehavior() const;
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
-    /*33*/ virtual bool isWaterBlocking() const;
-    /*34*/ virtual void __unk_vfn_34();
+    /*33*/ virtual void __unk_vfn_33();
+    /*34*/ virtual bool isWaterBlocking() const;
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
@@ -81,7 +82,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual bool canHurtAndBreakItem() const;
-    /*50*/ virtual void __unk_vfn_50();
+    /*50*/ virtual bool isSignalSource() const;
     /*51*/ virtual bool canBeOriginalSurface() const;
     /*52*/ virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /*53*/ virtual bool isValidAuxValue(int) const;
@@ -109,7 +110,7 @@ public:
     /*75*/ virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*76*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*77*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
-    /*78*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct IActorMovementProxy &) const;
+    /*78*/ virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*81*/ virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
@@ -228,244 +229,50 @@ public:
     /*194*/ virtual float getExplosionResistance(class Actor *) const;
     /*195*/ virtual struct Brightness getLightEmission(class Block const &) const;
     /*196*/ virtual struct Brightness getEmissiveBrightness(class Block const &) const;
-    /*197*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
-    /*198*/ virtual void __unk_vfn_198();
+    /*197*/ virtual class mce::Color getMapColor() const;
+    /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*199*/ virtual void __unk_vfn_199();
     /*200*/ virtual void _executeEvent(std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /*201*/ virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /*202*/ virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
-    /*
-    inline bool isMultifaceBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isMultifaceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasVariableLighting() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?hasVariableLighting@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isLeverBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isLeverBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isFenceGateBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isFenceGateBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool pushesUpFallingBlocks() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?pushesUpFallingBlocks@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool spawnBurnResources(class BlockSource & a0, float a1, float a2, float a3) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, float, float, float) const;
-        *((void**)&rv) = dlsym("?spawnBurnResources@BlockLegacy@@UEBA_NAEAVBlockSource@@MMM@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<float>(a3));
-    }
-    inline bool isHurtableBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isHurtableBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool use(class Player & a0, class BlockPos const & a1, unsigned char a2) const{
-        bool (BlockLegacy::*rv)(class Player &, class BlockPos const &, unsigned char) const;
-        *((void**)&rv) = dlsym("?use@BlockLegacy@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class Player &>(a0), std::forward<class BlockPos const &>(a1), std::forward<unsigned char>(a2));
-    }
-    inline bool isContainerBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isContainerBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSlabBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isSlabBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWallBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWallBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canHaveExtraData() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canHaveExtraData@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCraftingBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isCraftingBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInteractiveBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isInteractiveBlock@BlockLegacy@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isThinFenceBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isThinFenceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDoorBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isDoorBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasComparatorSignal() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?hasComparatorSignal@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool causesFreezeEffect() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?causesFreezeEffect@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool detachesOnPistonMove(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?detachesOnPistonMove@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline bool isSignalSource() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isSignalSource@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCandleCakeBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isCandleCakeBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeDestroyedByWaterSpread() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeDestroyedByWaterSpread@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBounceBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isBounceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool waterSpreadCausesSpawn() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?waterSpreadCausesSpawn@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isFenceBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isFenceBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isStemBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isStemBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isVibrationBlocking() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isVibrationBlocking@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isStairBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isStairBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isButtonBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isButtonBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRailBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isRailBlock@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCropBlock() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?isCropBlock@BlockLegacy@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getExtraRenderLayers() const{
-        int (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?getExtraRenderLayers@BlockLegacy@@MEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool canSurvive(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?canSurvive@BlockLegacy@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline bool mayPlaceOn(class BlockSource & a0, class BlockPos const & a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?mayPlaceOn@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline bool canSpawnOn() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canSpawnOn@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeSilkTouched() const{
-        bool (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeSilkTouched@BlockLegacy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void onExploded(class BlockSource & a0, class BlockPos const & a1, class Actor * a2) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor *) const;
-        *((void**)&rv) = dlsym("?onExploded@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor *>(a2));
-    }
-    inline void onPlace(class BlockSource & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onPlace@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline void onPlayerPlacing(class BlockSource & a0, class BlockPos const & a1, class Actor & a2, unsigned char a3) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
-        *((void**)&rv) = dlsym("?onPlayerPlacing@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Actor &>(a2), std::forward<unsigned char>(a3));
-    }
-    inline void onStepOn(class Actor & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStepOn@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline void tick(class BlockSource & a0, class BlockPos const & a1, class Random & a2) const{
-        void (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &, class Random &) const;
-        *((void**)&rv) = dlsym("?tick@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1), std::forward<class Random &>(a2));
-    }
-    inline void onStepOff(class Actor & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class Actor &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStepOff@BlockLegacy@@MEBAXAEAVActor@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Actor &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline void onStandOn(class EntityContext & a0, class BlockPos const & a1) const{
-        void (BlockLegacy::*rv)(class EntityContext &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?onStandOn@BlockLegacy@@MEBAXAEAVEntityContext@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class EntityContext &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline  ~BlockLegacy(){
-         (BlockLegacy::*rv)();
-        *((void**)&rv) = dlsym("??1BlockLegacy@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline class mce::Color getMapColor(class BlockSource & a0, class BlockPos const & a1) const{
-        class mce::Color (BlockLegacy::*rv)(class BlockSource &, class BlockPos const &) const;
-        *((void**)&rv) = dlsym("?getMapColor@BlockLegacy@@MEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource &>(a0), std::forward<class BlockPos const &>(a1));
-    }
-    inline class mce::Color getMapColor() const{
-        class mce::Color (BlockLegacy::*rv)() const;
-        *((void**)&rv) = dlsym("?getMapColor@BlockLegacy@@MEBA?AVColor@mce@@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACY
+public:
+    MCVAPI bool canBeDestroyedByWaterSpread() const;
+    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool canDamperVibrations() const;
+    MCVAPI bool canHaveExtraData() const;
+    MCVAPI bool canOccludeVibrations() const;
+    MCVAPI bool canSpawnOn() const;
+    MCVAPI bool causesFreezeEffect() const;
+    MCVAPI bool detachesOnPistonMove(class BlockSource &, class BlockPos const &) const;
+    MCVAPI bool hasComparatorSignal() const;
+    MCVAPI bool hasVariableLighting() const;
+    MCVAPI bool isBounceBlock() const;
+    MCVAPI bool isButtonBlock() const;
+    MCVAPI bool isCandleCakeBlock() const;
+    MCVAPI bool isContainerBlock() const;
+    MCVAPI bool isCraftingBlock() const;
+    MCVAPI bool isCropBlock() const;
+    MCVAPI bool isDoorBlock() const;
+    MCVAPI bool isFenceBlock() const;
+    MCVAPI bool isFenceGateBlock() const;
+    MCVAPI bool isHurtableBlock() const;
+    MCVAPI bool isInteractiveBlock() const;
+    MCVAPI bool isLeverBlock() const;
+    MCVAPI bool isMultifaceBlock() const;
+    MCVAPI bool isRailBlock() const;
+    MCVAPI bool isSignalSource() const;
+    MCVAPI bool isSlabBlock() const;
+    MCVAPI bool isStairBlock() const;
+    MCVAPI bool isStemBlock() const;
+    MCVAPI bool isThinFenceBlock() const;
+    MCVAPI bool isWallBlock() const;
+    MCVAPI void onPlayerPlacing(class BlockSource &, class BlockPos const &, class Actor &, unsigned char) const;
+    MCVAPI void onStepOff(class Actor &, class BlockPos const &) const;
+    MCVAPI bool pushesUpFallingBlocks() const;
+    MCVAPI bool spawnBurnResources(class BlockSource &, float, float, float) const;
+    MCVAPI bool waterSpreadCausesSpawn() const;
+#endif
     MCAPI BlockLegacy(std::string const &, int, class Material const &);
     MCAPI bool _isDataDrivingVanillaBlocksAndItems() const;
     MCAPI bool addAABB(class AABB const &, class AABB const *, std::vector<class AABB> &) const;
@@ -487,6 +294,9 @@ public:
     MCAPI void getDebugText(std::vector<std::string> &, class BlockPos const &) const;
     MCAPI class Block const & getDefaultState() const;
     MCAPI std::string const & getDescriptionId() const;
+    MCAPI class EntityContext const & getEntity() const;
+    MCAPI class EntityContext & getEntityForModification() const;
+    MCAPI class EntityContext const & getEntityNoCheck() const;
     MCAPI class Material const & getMaterial() const;
     MCAPI std::string const & getNamespace() const;
     MCAPI class HashedString const & getRawNameHash() const;
@@ -534,7 +344,7 @@ public:
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor &, class BlockPos const &, float);
     MCAPI static void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, std::vector<class Item const *> *, float, int);
 
-protected:
+//protected:
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     MCAPI bool forEachBlockPermutationMutable(class std::function<bool (class Block &)>);
     MCAPI int getBurnOdds() const;
@@ -544,7 +354,12 @@ protected:
     MCAPI struct Brightness getLight() const;
     MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
 
-private:
+//private:
     MCAPI void initParams(class RenderParams &, class BlockSource &, class BlockPos const &, class Actor *) const;
+
+protected:
+
+private:
+
 
 };

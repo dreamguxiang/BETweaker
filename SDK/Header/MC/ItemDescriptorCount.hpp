@@ -21,11 +21,15 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTORCOUNT
 public:
-    class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = default;
+    class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = delete;
     ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
+public:
+#endif
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
@@ -36,8 +40,5 @@ public:
     MCAPI void setStackSize(short);
     MCAPI ~ItemDescriptorCount();
 
-protected:
-
-private:
 
 };

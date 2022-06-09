@@ -23,24 +23,22 @@ public:
     ScriptSimulatedPlayer() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptSimulatedPlayer();
     /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
     /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const &) const;
     /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-    /*
-    inline  ~ScriptSimulatedPlayer(){
-         (ScriptSimulatedPlayer::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptSimulatedPlayer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSIMULATEDPLAYER
+public:
+#endif
     MCAPI ScriptSimulatedPlayer(class Player const &, class Scripting::WeakLifetimeScope const &);
+    MCAPI class Scripting::Result<bool> addExperience(int) const;
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const &) const;
     MCAPI class Scripting::Result<bool> breakBlock(class BlockPos const &, int) const;
-    MCAPI class Scripting::Result<struct ScriptPitchYawRotation> getHeadRotation();
+    MCAPI class Scripting::Result<struct ScriptXYRotation> getHeadRotation();
     MCAPI class Scripting::Result<bool> giveItem(class ScriptItemStack const &, bool) const;
     MCAPI class Scripting::Result<bool> interact() const;
     MCAPI class Scripting::Result<bool> interactWithBlock(class BlockPos const &, int) const;
@@ -73,11 +71,12 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptSimulatedPlayer> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptSimulatedPlayer> getHandle(class Player const &, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
+//private:
     MCAPI static class gametest::BaseGameTestHelper const * _getHelper(class SimulatedPlayer const &);
     MCAPI static class std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer &, class BlockPos *, unsigned char *, class Vec3 *);
     MCAPI static struct ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer &, struct ScriptNavigationResult);
+
+private:
+
 
 };

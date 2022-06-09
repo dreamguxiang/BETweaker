@@ -22,7 +22,11 @@ public:
     VanillaBiomes() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABIOMES
+public:
+#endif
     MCAPI static class mce::Color const SWAMP_WATER_COLOR;
     MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);
@@ -62,6 +66,7 @@ public:
     MCAPI static class Biome * mJungleEdge;
     MCAPI static class Biome * mJungleHills;
     MCAPI static class Biome * mLushCaves;
+    MCAPI static class Biome * mMangroveSwamp;
     MCAPI static class Biome * mMeadow;
     MCAPI static class Biome * mMesa;
     MCAPI static class Biome * mMesaBryce;
@@ -109,9 +114,10 @@ public:
     MCAPI static class Biome * mWarpedForest;
     MCAPI static void shutdownBiomes();
 
-protected:
+//private:
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
 
 private:
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
+
 
 };

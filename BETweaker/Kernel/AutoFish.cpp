@@ -24,7 +24,7 @@ namespace Module {
             pl->refreshInventory();
             auto& uid = pl->getUniqueID();
             Schedule::delay([uid]() {
-                auto pl = Level::getPlayer(uid);
+                auto pl = Global<Level>->getPlayer(uid);
                 if (pl->isPlayer())
                 {
                     ItemStack* item = pl->getHandSlot();

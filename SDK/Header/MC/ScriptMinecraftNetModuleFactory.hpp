@@ -2,12 +2,15 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
+#include "Bedrock.hpp"
+#include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-class ScriptMinecraftNetModuleFactory {
+class ScriptMinecraftNetModuleFactory : public TextObjectText {
 
 #define AFTER_EXTRA
 
@@ -20,13 +23,20 @@ public:
     ScriptMinecraftNetModuleFactory() = delete;
 #endif
 
+
 public:
+    /*0*/ virtual ~ScriptMinecraftNetModuleFactory();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTNETMODULEFACTORY
+public:
+#endif
+    MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI static std::string getModuleUUIDAsString();
 
-protected:
+//private:
 
 private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
+
 
 };

@@ -23,6 +23,7 @@ public:
     HudContainerManagerModel() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~HudContainerManagerModel();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
@@ -30,11 +31,11 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*9*/ virtual void setData(int, int);
     /*10*/ virtual void broadcastChanges();
-    /*16*/ virtual class ContainerScreenContext _postInit();
+    /*17*/ virtual class ContainerScreenContext _postInit();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMANAGERMODEL
+public:
+#endif
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
 
-protected:
-
-private:
 
 };

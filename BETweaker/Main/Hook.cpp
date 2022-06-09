@@ -299,6 +299,6 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	unsigned __int8 a6) {
 	bool rtn = original(_this, a2, a3, a4, a5, a6);
 	auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//被尝试触发的桶的itemstack
-	logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
+	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }

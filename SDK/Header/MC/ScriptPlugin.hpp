@@ -22,31 +22,30 @@ public:
     ScriptPlugin() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptPlugin();
     /*1*/ virtual class std::optional<std::string> onLoadScript(std::string const &);
-    /*
-    inline  ~ScriptPlugin(){
-         (ScriptPlugin::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptPlugin@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGIN
+public:
+#endif
     MCAPI ScriptPlugin(class ScriptPlugin &&);
     MCAPI ScriptPlugin(struct Scripting::ModuleDescriptor &&, std::vector<struct Scripting::ModuleDescriptor> &&, std::string const &, std::string const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &&);
     MCAPI std::string const & getEngineVersion() const;
     MCAPI std::vector<struct Scripting::ModuleDescriptor> const & getModuleDependencies() const;
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     MCAPI std::string const & getRuntimeName() const;
+    MCAPI class Scripting::ScriptContext const & getScriptContext() const;
     MCAPI std::string const & getScriptMainName() const;
     MCAPI bool hasErrors() const;
     MCAPI class std::optional<std::string> loadScriptMain();
     MCAPI std::vector<std::string> reportErrors() const;
     MCAPI void setScriptContext(class Scripting::ScriptContext &&);
 
-protected:
+//private:
+    MCAPI class std::optional<std::string> _loadScript(std::string const &);
 
 private:
-    MCAPI class std::optional<std::string> _loadScript(std::string const &);
+
 
 };

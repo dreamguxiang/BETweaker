@@ -23,17 +23,23 @@ public:
     NBMonsterThrone() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~NBMonsterThrone();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum StructurePieceType getType() const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_10();
+    /*1*/ virtual void moveBoundingBox(int, int, int);
+    /*2*/ virtual enum StructurePieceType getType() const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual int getWorldX(int, int);
+    /*7*/ virtual int getWorldZ(int, int);
+    /*8*/ virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
+    /*11*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBMONSTERTHRONE
+public:
+#endif
 
-protected:
-
-private:
 
 };

@@ -18,36 +18,34 @@ class ShooterItemComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
 public:
     class ShooterItemComponent& operator=(class ShooterItemComponent const &) = delete;
+    ShooterItemComponent(class ShooterItemComponent const &) = delete;
     ShooterItemComponent() = delete;
 #endif
+
 
 public:
     /*0*/ virtual ~ShooterItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (ShooterItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@ShooterItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI ShooterItemComponent(class ShooterItemComponent const &);
+    /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
+public:
+#endif
     MCAPI ShooterItemComponent(class ComponentItem *);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
 
-protected:
-
-private:
+//private:
     MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
+
+private:
+
 
 };

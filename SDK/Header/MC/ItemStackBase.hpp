@@ -23,6 +23,7 @@ LIAPI int getCount() const;
 
 #undef AFTER_EXTRA
 
+
 public:
     /*0*/ virtual ~ItemStackBase();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -31,13 +32,9 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
-    /*
-    inline  ~ItemStackBase(){
-         (ItemStackBase::*rv)();
-        *((void**)&rv) = dlsym("??1ItemStackBase@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKBASE
+public:
+#endif
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const &, std::string &);
     MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
@@ -92,6 +89,7 @@ public:
     MCAPI bool hasCompoundTextUserData() const;
     MCAPI bool hasContainerData() const;
     MCAPI bool hasCustomHoverName() const;
+    MCAPI bool hasDamageValue() const;
     MCAPI bool hasSameAuxValue(class ItemStackBase const &) const;
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     MCAPI bool hasTag(class HashedString const &) const;
@@ -167,7 +165,7 @@ public:
     MCAPI static std::string const TAG_LORE;
     MCAPI static std::string const TAG_REPAIR_COST;
 
-protected:
+//protected:
     MCAPI ItemStackBase(class ItemStackBase const &);
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     MCAPI ItemStackBase(class BlockLegacy const &, int);
@@ -185,17 +183,23 @@ protected:
     MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
     MCAPI void init(int, int, int, bool);
     MCAPI class ItemStackBase & operator=(class ItemStackBase const &);
+
+//private:
+    MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
+    MCAPI void _checkForItemWorldCompatibility();
+    MCAPI void _cloneComponents(class ItemStackBase const &);
+    MCAPI void _loadComponents(class CompoundTag const &);
+    MCAPI void _loadItem(class CompoundTag const &);
+    MCAPI void _setChargedItem(class ItemInstance const &);
+    MCAPI void _updateCompareHashes();
+
+protected:
     MCAPI static std::string const TAG_CHARGED_ITEM;
     MCAPI static std::string const TAG_STORE_CAN_DESTROY;
     MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
 
 private:
-    MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
-    MCAPI void _checkForItemWorldCompatibility();
-    MCAPI void _loadComponents(class CompoundTag const &);
-    MCAPI void _loadItem(class CompoundTag const &);
-    MCAPI void _setChargedItem(class ItemInstance const &);
-    MCAPI void _updateCompareHashes();
     MCAPI static int const MAX_STACK_SIZE;
+
 
 };

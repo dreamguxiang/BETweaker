@@ -21,7 +21,11 @@ public:
     BaseAttributeMap(class BaseAttributeMap const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEATTRIBUTEMAP
+public:
+#endif
     MCAPI BaseAttributeMap();
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin();
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin() const;
@@ -38,14 +42,16 @@ public:
     MCAPI void inheritFrom(class BaseAttributeMap const &);
     MCAPI void onAttributeModified(class AttributeInstance const &);
     MCAPI class BaseAttributeMap & operator=(class BaseAttributeMap &&);
+    MCAPI bool operator==(class BaseAttributeMap const &) const;
     MCAPI class AttributeInstance & registerAttribute(class Attribute const &);
     MCAPI unsigned __int64 size() const;
     MCAPI void updateAttribute(class HashedString const &, float, float, float, float);
     MCAPI ~BaseAttributeMap();
 
-protected:
+//private:
 
 private:
     MCAPI static class AttributeInstance mInvalidInstance;
+
 
 };

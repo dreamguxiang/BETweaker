@@ -18,23 +18,17 @@ class BaseScriptBlockComponent : public ScriptObject {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASESCRIPTBLOCKCOMPONENT
 public:
-    class BaseScriptBlockComponent& operator=(class BaseScriptBlockComponent const &) = delete;
     BaseScriptBlockComponent(class BaseScriptBlockComponent const &) = delete;
     BaseScriptBlockComponent() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~BaseScriptBlockComponent();
-    /*
-    inline  ~BaseScriptBlockComponent(){
-         (BaseScriptBlockComponent::*rv)();
-        *((void**)&rv) = dlsym("??1BaseScriptBlockComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASESCRIPTBLOCKCOMPONENT
+public:
+#endif
+    MCAPI class BaseScriptBlockComponent & operator=(class BaseScriptBlockComponent const &);
 
-protected:
-
-private:
 
 };

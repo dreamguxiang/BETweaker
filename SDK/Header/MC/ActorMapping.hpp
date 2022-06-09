@@ -21,7 +21,7 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
-    struct ActorMapping& operator=(struct ActorMapping const &) = delete;
+    struct ActorMapping& operator=(struct ActorMapping const &) = default;
     ActorMapping(struct ActorMapping const &) = default;
     ActorMapping() = delete;
 #endif

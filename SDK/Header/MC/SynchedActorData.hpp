@@ -158,7 +158,11 @@ public:
     SynchedActorData(class SynchedActorData const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
+public:
+#endif
     MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI SynchedActorData();
     MCAPI bool _assignValues(class SynchedActorData const &, class Actor *);
@@ -179,16 +183,18 @@ public:
     MCAPI bool hasData(unsigned short) const;
     MCAPI void markDirty(unsigned short);
     MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
+    MCAPI bool operator==(class SynchedActorData const &) const;
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
     MCAPI void setStatusFlag(enum ActorFlags, bool);
     MCAPI ~SynchedActorData();
 
-protected:
-
-private:
+//private:
     MCAPI class DataItem * _find(unsigned short) const;
     MCAPI class DataItem & _get(unsigned short);
     MCAPI void _resizeToContain(unsigned short);
+
+private:
+
 
 };

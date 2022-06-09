@@ -45,7 +45,11 @@ public:
 	
 #undef AFTER_EXTRA
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
+public:
+#endif
     MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
     MCAPI SerializedSkin(class SerializedSkin const &);
@@ -62,8 +66,5 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~SerializedSkin();
 
-protected:
-
-private:
 
 };

@@ -5,6 +5,7 @@
 
 // GetLastError() -> string
 LIAPI std::string GetLastErrorMessage();
+LIAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
 LIAPI bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
@@ -22,6 +23,6 @@ HMODULE inline GetCurrentModule()
     return nullptr;
 }
 
-//Get the module path from a module handler
+// Get the module path from a module handler
 LIAPI std::string GetModulePath(HMODULE handler);
 LIAPI std::string GetModuleName(HMODULE handler);

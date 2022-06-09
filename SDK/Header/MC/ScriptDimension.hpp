@@ -23,15 +23,12 @@ public:
     ScriptDimension() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ScriptDimension();
-    /*
-    inline  ~ScriptDimension(){
-         (ScriptDimension::*rv)();
-        *((void**)&rv) = dlsym("??1ScriptDimension@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDIMENSION
+public:
+#endif
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const &, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock>> getBlockFromRay(class Scripting::WeakLifetimeScope, class Vec3 const &, class ScriptVector const &, class std::optional<struct ScriptBlockRaycastOptions> const &) const;
@@ -43,6 +40,7 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptPlayerIterator>> getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
     MCAPI class ScriptDimension & operator=(class ScriptDimension &&);
     MCAPI class Scripting::Result<struct Scripting::JSON> runCommand(struct Scripting::ContextConfig const &, std::string const &);
+    MCAPI class Scripting::Result<class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptCommandResult>>> runCommandAsync(struct Scripting::ContextConfig const &, class Scripting::ScriptObjectFactory &, class Scripting::DependencyLocator &, std::string const &);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor>> spawnEntity(std::string const &, class std::variant<class BlockPos, class Vec3> const &) const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor>> spawnItem(class ScriptItemStack const &, class std::variant<class BlockPos, class Vec3> const &) const;
     MCAPI void spawnParticle(std::string const &, class Vec3 const &, class Scripting::StrongTypedObjectHandle<class ScriptMolangVariableMap>);
@@ -50,8 +48,5 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class Dimension &, class Scripting::WeakLifetimeScope const &);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level &, class Scripting::WeakLifetimeScope const &);
 
-protected:
-
-private:
 
 };

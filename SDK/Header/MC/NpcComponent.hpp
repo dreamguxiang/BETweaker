@@ -21,20 +21,18 @@ public:
     NpcComponent(class NpcComponent const &) = delete;
 #endif
 
+
 public:
-    /*0*/ virtual ~NpcComponent();
-    /*
-    inline  ~NpcComponent(){
-         (NpcComponent::*rv)();
-        *((void**)&rv) = dlsym("??1NpcComponent@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
+public:
+#endif
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
-    MCAPI void addAdditionalSaveData(class Actor &, class CompoundTag &) const;
+    MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void clearSceneStateForAllPlayers();
+    MCAPI void executeClosingCommands(class Actor &, class Player &, std::string const &);
     MCAPI void executeCommandAction(class Actor &, class Player &, int, std::string const &);
+    MCAPI void executeOpeningCommands(class Actor &, class Player &, std::string const &);
     MCAPI struct NpcActionsContainer & getActionsContainer();
     MCAPI std::vector<int> getButtonCounts() const;
     MCAPI enum CommandPermissionLevel getCommandPermissionLevel() const;
@@ -59,17 +57,17 @@ public:
     MCAPI void setInteractiveText(class Actor &, std::string const &, bool);
     MCAPI void setName(class Actor &, std::string const &, bool);
     MCAPI void setSceneStateForPlayer(class Actor &, struct ActorUniqueID const &, std::string const &);
-    MCAPI void setSkin(class Actor &);
     MCAPI void setSkinIndex(class Actor &, int, bool);
     MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
-protected:
-
-private:
+//private:
     MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
     MCAPI void _deserializeData();
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
+    MCAPI void _loadData(class Actor &);
     MCAPI std::string _serializeActions() const;
+
+private:
     MCAPI static std::string const ACTIONS_TAG;
     MCAPI static std::string const INTERACTIVE_TAG;
     MCAPI static std::string const NAME_RAW_TEXT_TAG;
@@ -77,5 +75,6 @@ private:
     MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
     MCAPI static std::string const SCENE_NAME_TAG;
     MCAPI static std::string const URL_TAG;
+
 
 };

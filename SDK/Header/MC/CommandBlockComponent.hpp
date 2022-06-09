@@ -21,10 +21,14 @@ public:
     CommandBlockComponent(class CommandBlockComponent const &) = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
+public:
+#endif
     MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     MCAPI CommandBlockComponent();
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int decrementTickCount();
     MCAPI class BaseCommandBlock & getBaseCommandBlock();
     MCAPI int getCurrentTickCount() const;
@@ -37,8 +41,5 @@ public:
     MCAPI void setLastOutput(class Actor &, std::string const &);
     MCAPI void setTicking(bool);
 
-protected:
-
-private:
 
 };

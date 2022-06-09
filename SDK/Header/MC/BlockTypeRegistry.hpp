@@ -22,27 +22,33 @@ public:
     BlockTypeRegistry() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
+public:
+#endif
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCAPI static void initBlockEntities(class Experiments const &);
     MCAPI static void initEntityRegistry();
     MCAPI static bool isBlockDataDriven(std::string const &);
-    MCAPI static class BlockTypeRegistry::InhibitModificationsLock lockAgainstRegistryModifications();
+    MCAPI static class BlockTypeRegistryReadLock lockAgainstRegistryModifications();
+    MCAPI static class BlockTypeRegistryModificationsLock lockForRegistryModifications();
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     MCAPI static void prepareBlocks(unsigned int);
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
     MCAPI static void unregisterBlock(class HashedString const &);
     MCAPI static void unregisterBlocks();
 
-protected:
+//private:
 
 private:
     MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
     MCAPI static class std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
     MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
-    MCAPI static class std::shared_mutex mSharedMutex;
+    MCAPI static class std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
+
 
 };

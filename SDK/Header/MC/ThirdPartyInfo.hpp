@@ -18,13 +18,14 @@ public:
     class ThirdPartyInfo& operator=(class ThirdPartyInfo const &) = delete;
 #endif
 
+
 public:
-    MCAPI ThirdPartyInfo();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THIRDPARTYINFO
+public:
+#endif
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
+    MCAPI ThirdPartyInfo();
     MCAPI ~ThirdPartyInfo();
 
-protected:
-
-private:
 
 };

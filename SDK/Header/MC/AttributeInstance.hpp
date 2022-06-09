@@ -20,16 +20,13 @@ public:
     class AttributeInstance& operator=(class AttributeInstance const &) = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
-    /*
-    inline  ~AttributeInstance(){
-         (AttributeInstance::*rv)();
-        *((void**)&rv) = dlsym("??1AttributeInstance@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCE
+public:
+#endif
     MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI AttributeInstance();
     MCAPI void addBuff(class AttributeBuff const &);
@@ -52,6 +49,7 @@ public:
     MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
     MCAPI bool isValid() const;
     MCAPI void notify(__int64);
+    MCAPI bool operator==(class AttributeInstance const &) const;
     MCAPI void recalculateModifiers();
     MCAPI void registerListener(class AttributeInstance const &);
     MCAPI void removeBuff(class std::shared_ptr<class AttributeBuff>);
@@ -71,12 +69,13 @@ public:
     MCAPI void setMaxValue(float);
     MCAPI void setRange(float, float, float);
 
-protected:
-
-private:
+//private:
     MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
     MCAPI float _calculateValue(class AttributeBuff const &);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
+
+private:
+
 
 };

@@ -22,16 +22,17 @@ public:
     InsomniaComponent() = delete;
 #endif
 
+
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIACOMPONENT
+public:
+#endif
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getInsomniaTimerTicks() const;
     MCAPI int getTicksUntilInsomnia() const;
     MCAPI int incrementTimeSinceRest();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer();
 
-protected:
-
-private:
 
 };

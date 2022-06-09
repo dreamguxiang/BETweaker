@@ -22,20 +22,14 @@ public:
     ActorEventResponseFactory() = delete;
 #endif
 
+
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
-    /*
-    inline  ~ActorEventResponseFactory(){
-         (ActorEventResponseFactory::*rv)();
-        *((void**)&rv) = dlsym("??1ActorEventResponseFactory@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    */
-    MCAPI void initSchema();
+    /*2*/ virtual void initSchema();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
+public:
+#endif
 
-protected:
-
-private:
 
 };

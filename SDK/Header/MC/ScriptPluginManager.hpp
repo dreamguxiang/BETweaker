@@ -23,17 +23,24 @@ public:
     ScriptPluginManager() = delete;
 #endif
 
+
 public:
-    MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, class Scripting::IPrinter *);
-    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
+public:
+#endif
+    MCAPI ScriptPluginManager(class Scripting::ScriptEngine &);
+    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
+    MCAPI std::vector<class ScriptPlugin> const & getPlugins() const;
+    MCAPI void releaseAll();
     MCAPI void releasePlugins();
     MCAPI class ScriptPluginManagerResult runAll();
     MCAPI ~ScriptPluginManager();
 
-protected:
-
-private:
+//private:
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
+
+private:
+
 
 };

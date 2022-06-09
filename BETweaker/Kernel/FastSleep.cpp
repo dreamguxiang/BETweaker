@@ -17,7 +17,7 @@ static_assert(sizeof(SetTimePacket) == 56);
 bool isPlayerSleeping = false;
 namespace Module {
     void FastSleep() {
-        Level::forEachPlayer([](Player& sp)->bool {
+        Global<Level>->forEachPlayer([](Player& sp)->bool {
             if (sp.isSleeping()) {
                 isPlayerSleeping = true;
                 Schedule::delay([]() {
@@ -27,7 +27,7 @@ namespace Module {
                         level->setTime((unsigned int)(24000 * ((level->getTime() + 24000) / 24000)));
                         auto pkt = SetTimePacket(level->getTime());
                         level->getPacketSender()->send(pkt);
-                        Level::forEachPlayer([](Player& pl)->bool {
+                        Global<Level>->forEachPlayer([](Player& pl)->bool {
                             if (pl.isSleeping()) {
                                 pl.stopSleepInBed(0, 0);
                                 if (!(unsigned int)Global<Level>->getLevelData().getGameDifficulty())

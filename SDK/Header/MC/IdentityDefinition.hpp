@@ -25,11 +25,14 @@ enum class Type : char
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTITYDEFINITION
 public:
-    class IdentityDefinition& operator=(class IdentityDefinition const &) = delete;
     IdentityDefinition() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDEFINITION
+public:
+#endif
     MCAPI IdentityDefinition(class IdentityDefinition &&);
     MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
     MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
@@ -47,13 +50,12 @@ public:
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;
     MCAPI operator bool() const;
+    MCAPI class IdentityDefinition & operator=(class IdentityDefinition &&);
+    MCAPI class IdentityDefinition & operator=(class IdentityDefinition const &);
     MCAPI ~IdentityDefinition();
     MCAPI static class IdentityDefinition const Invalid;
     MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);
     MCAPI static bool isHiddenFakePlayerNameString(std::string const &);
 
-protected:
-
-private:
 
 };

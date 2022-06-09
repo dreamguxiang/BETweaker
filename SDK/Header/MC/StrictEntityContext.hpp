@@ -20,17 +20,23 @@ public:
     StrictEntityContext() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXT
+public:
+#endif
     MCAPI StrictEntityContext(class StrictEntityContext &&);
     MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
     MCAPI StrictEntityContext(class EntityContextBase const &);
     MCAPI bool isNull() const;
     MCAPI class StrictEntityContext & operator=(class StrictEntityContext &&);
+    MCAPI bool operator==(class StrictEntityContext const &) const;
 
-protected:
+//protected:
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
 
-private:
+protected:
+
 
 };

@@ -18,16 +18,17 @@ class BoneAnimation {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEANIMATION
 public:
     class BoneAnimation& operator=(class BoneAnimation const &) = delete;
+    BoneAnimation(class BoneAnimation const &) = delete;
     BoneAnimation() = delete;
 #endif
 
+
 public:
-    MCAPI BoneAnimation(class BoneAnimation const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATION
+public:
+#endif
     MCAPI class BoneAnimationChannel & addAnimationChannel(enum BoneTransformType);
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 
-protected:
-
-private:
 
 };

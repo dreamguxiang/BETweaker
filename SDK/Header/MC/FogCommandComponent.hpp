@@ -22,16 +22,18 @@ public:
     FogCommandComponent() = delete;
 #endif
 
+
 public:
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMANDCOMPONENT
+public:
+#endif
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI std::vector<std::string> getFogSettingsStack() const;
+    MCAPI class FogCommandComponent & operator=(class FogCommandComponent &&);
     MCAPI bool popFogSetting(std::string const &);
     MCAPI bool pushFogSetting(std::string const &, std::string const &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI bool removeFogSettings(std::string const &);
 
-protected:
-
-private:
 
 };

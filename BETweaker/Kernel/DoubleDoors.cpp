@@ -29,7 +29,7 @@ namespace Module {
                 if (bl1->getNbt()->getCompound("states")->getBoolean("door_hinge_bit") != hasHinge && bl1->getTypeName() != "minecraft:iron_door")
                 {
                     auto tog = a1->isToggled(*(IConstBlockSource*)bs, *a3);
-                    a1->setToggled(*bs, pos, !tog);
+                    a1->setToggled(*bs, pos, pl,!tog);
                     return  true;
                 }
             }

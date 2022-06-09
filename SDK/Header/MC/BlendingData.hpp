@@ -20,14 +20,17 @@ public:
     BlendingData() = delete;
 #endif
 
+
 public:
-    MCAPI class std::optional<unsigned char> getBiome(int, int, int) const;
-    MCAPI class std::optional<float> getDensity(int, int, int) const;
-    MCAPI class std::optional<short> getHeight(int, int) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDINGDATA
+public:
+#endif
+    MCAPI struct PersistentBlendData createDataForStorage(enum BlendVersion) const;
+    MCAPI class ScalarOptional<unsigned char> getBiome(int, int, int) const;
+    MCAPI enum BlendingBlockType getBlockType(int, int, int) const;
+    MCAPI class ScalarOptional<float> getDensity(int, int, int) const;
+    MCAPI class ScalarOptional<short> getHeight(int, int) const;
     MCAPI bool hasBlendDataAt(int, int) const;
 
-protected:
-
-private:
 
 };

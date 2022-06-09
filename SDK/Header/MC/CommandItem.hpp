@@ -20,11 +20,15 @@ class CommandItem {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDITEM
 public:
-    class CommandItem& operator=(class CommandItem const &) = delete;
+    class CommandItem& operator=(class CommandItem const &) = default;
     CommandItem(class CommandItem const &) = default;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDITEM
+public:
+#endif
     MCAPI CommandItem(unsigned __int64);
     MCAPI CommandItem(int, short, bool);
     MCAPI CommandItem();
@@ -33,8 +37,5 @@ public:
     MCAPI operator bool() const;
     MCAPI operator unsigned __int64() const;
 
-protected:
-
-private:
 
 };

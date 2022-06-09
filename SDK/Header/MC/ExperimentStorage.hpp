@@ -17,18 +17,19 @@ class ExperimentStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTSTORAGE
 public:
-    class ExperimentStorage& operator=(class ExperimentStorage const &) = delete;
     ExperimentStorage(class ExperimentStorage const &) = delete;
     ExperimentStorage() = delete;
 #endif
 
+
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
+public:
+#endif
     MCAPI bool isAnyToggleEnabled() const;
+    MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();
 
-protected:
-
-private:
 
 };

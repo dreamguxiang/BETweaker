@@ -22,12 +22,13 @@ public:
     GameEventMovementTracker() = delete;
 #endif
 
+
 public:
-    MCAPI GameEventMovementTracker(class Mob &);
-    MCAPI void trackMovement(bool);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMOVEMENTTRACKER
+public:
+#endif
+    MCAPI GameEventMovementTracker(class Vec3 const &);
+    MCAPI void trackMovement(class Actor &, bool);
 
-protected:
-
-private:
 
 };
