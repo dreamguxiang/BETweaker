@@ -78,7 +78,8 @@ public:
     MCAPI int toABGR(void) const;
     MCAPI int toARGB(void) const;
     MCAPI std::string toHexString(void) const;
-
+    MCAPI static Color WHITE, PURPLE, YELLOW, RED, BLACK, MINECON_GOLD, SHADE_WEST_EAST,
+        SHADE_NORTH_SOUTH, SHADE_UP, SHADE_DOWN, PINK, CYAN, ORANGE, BLUE, GREEN, GREY;
 };
 
 class Blob {
