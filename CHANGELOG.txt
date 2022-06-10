@@ -1,6 +1,6 @@
 # [BETweaker Release Note] 
 
-- Synchronized upstream with significant performance improvements
+- Update 1.19.1.01
 
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
