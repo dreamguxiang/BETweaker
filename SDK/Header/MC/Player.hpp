@@ -58,10 +58,10 @@ public:
         if constexpr (0 == sizeof...(args))
         {
             // Avoid fmt if only one argument
-            return sendText(text);
+            return sendText(text, TextType::TIP);
         }
         else
-            return sendText(fmt::format(text, args...));
+            return sendText(fmt::format(text, args...), TextType::TIP);
     }
 
     LIAPI bool kick(const string& msg);
