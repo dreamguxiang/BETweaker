@@ -29,7 +29,7 @@ public:
 	enum InitializationMethod;
 
     LIAPI std::string getTypeName() const;
-    //LIAPI Vec3 getPosition() const;
+    LIAPI Vec3 getFeetPosition() const;
     LIAPI BlockSource* getBlockSource() const;
     LIAPI Vec2* getDirection() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
@@ -44,13 +44,13 @@ public:
     LIAPI BlockInstance getBlockStandingOn() const;
 
 	LIAPI bool isSimulatedPlayer() const;
-	LIAPI bool isPlayer() const;
+    LIAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
     LIAPI bool setOnFire(int time, bool isEffect);
     LIAPI bool stopFire();
     LIAPI bool hasTag(const string& tag);
-	LIAPI bool hurtEntity(int damage);
+	LIAPI bool hurtEntity(float damage);
     LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
 	LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
@@ -60,7 +60,15 @@ public:
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
-
+    inline Vec3 getPos()
+    {
+        return getPosition();
+    }
+    inline Vec3 getPosOld()
+    {
+        return getPosPrev();
+    }
+	
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
@@ -354,7 +362,6 @@ public:
     /*279*/ virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
     /*280*/ virtual void _onSizeUpdated();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOR
-public:
     MCVAPI void _doAutoAttackOnTouch(class Actor &);
     MCVAPI bool _makeFlySound() const;
     MCVAPI bool breaksFallingBlocks() const;
@@ -806,6 +813,7 @@ public:
     MCAPI void _updateComposition(bool);
     MCAPI void _updateOwnerChunk();
     MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class AABB const &);
+
 
 protected:
 

@@ -61,6 +61,19 @@ public:
         , b(b)
         , a(a){};
 
+    Color(unsigned char rc, unsigned char gc, unsigned char bc, float a = 1)
+    {
+        r = rc / static_cast<float>(255);
+		
+		g = gc / static_cast<float>(255);
+		
+		b = bc / static_cast<float>(255);
+
+		a = a;
+		
+    };
+	
+    Color() {};
     inline operator bool() const
     {
         return !(*this == NIL);

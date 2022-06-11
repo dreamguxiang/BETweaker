@@ -10,10 +10,10 @@
     class ServerPlayer;
     class Player;
     class NetworkIdentifier;
-    class UserEntityIdentifierComponent;
     class Certificate;
     class Container;
     class CompoundTag;
+    #include "UserEntityIdentifierComponent.hpp"
     #include "ScorePacketInfo.hpp"
     #include "DataItem.hpp"
 #undef BEFORE_EXTRA
@@ -58,10 +58,10 @@ public:
         if constexpr (0 == sizeof...(args))
         {
             // Avoid fmt if only one argument
-            return sendText(text, TextType::TIP);
+            return sendText(text);
         }
         else
-            return sendText(fmt::format(text, args...), TextType::TIP);
+            return sendText(fmt::format(text, args...));
     }
 
     LIAPI bool kick(const string& msg);
@@ -77,6 +77,9 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshAttribute(class Attribute const& attribute);
     LIAPI bool refreshAttributes(std::vector<Attribute const*> const& attributes);
+    LIAPI void addBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
+    LIAPI void removeBossEvent(int64_t uid);
+    LIAPI void updateBossEvent(int64_t uid, string name, float percent, BossEventColour colour, int overlay = 0);
 
     LIAPI int getScore(const string& key);
     LIAPI bool setScore(const string& key, int value);
@@ -329,7 +332,6 @@ public:
     /*447*/ virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /*448*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYER
-public:
     MCVAPI void displayChatMessage(std::string const &, std::string const &);
     MCVAPI void displayClientMessage(std::string const &);
     MCVAPI bool getAlwaysShowNameTag() const;
@@ -543,6 +545,7 @@ public:
     MCAPI bool _isChunkSourceLoaded(class Vec3 const &, class BlockSource const &) const;
     MCAPI void _registerElytraLoopSound();
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum ContainerID, int);
+
 
 protected:
 
