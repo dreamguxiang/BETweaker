@@ -112,7 +112,7 @@ void loadCfg() {
 #include <MC/Types.hpp>
 
 static_assert(sizeof(SemVersion) == 0x70);
-enum PackType;
+
 ResourcePackRepository* gl;
 
 THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"

@@ -39,6 +39,7 @@ namespace Settings {
     std::vector<string> DispenserDestroyItemList{
         "pickaxe",
     };
+    std::unordered_set<string> FlyPlayerList;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -60,6 +61,7 @@ namespace Settings {
         json["DispenserDestroyBlock"]["BreakItem"] = DispenserDestroyBreakItem;
         json["DispenserDestroyBlock"]["ItemList"] = DispenserDestroyItemList;
         json["EndPortalDuplicateGravityBlock"]["Enabled"] = EndPortalDuplicateGravityBlock;
+        json["Fly"]["PlayerList"] = FlyPlayerList;
         return json;
     }
 
@@ -83,6 +85,7 @@ namespace Settings {
         TRJ("DispenserDestroyBlock", "BreakItem", DispenserDestroyBreakItem);
         TRJ("DispenserDestroyBlock", "ItemList", DispenserDestroyItemList);
         TRJ("EndPortalDuplicateGravityBlock", "Enabled", EndPortalDuplicateGravityBlock);
+        TRJ("Fly", "PlayerList", FlyPlayerList);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

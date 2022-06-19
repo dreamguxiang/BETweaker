@@ -7,13 +7,21 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+
 #undef BEFORE_EXTRA
 
 class AdventureSettingsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    unsigned int mFlag;                             // 48
+    CommandPermissionLevel mCommandPermissionLevel; // 52
+    unsigned int mActionPermissions;                // 56
+    unsigned char mPermissionLevel;                 // 60
+    ActorUniqueID mUniqueId;                        // 64
+    int unk72;                                      // 72
+    unsigned int mCustomStoredPermissions;          // 76
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGSPACKET

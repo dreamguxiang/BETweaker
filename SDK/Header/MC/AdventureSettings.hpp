@@ -8,7 +8,11 @@
 #undef BEFORE_EXTRA
 
 struct AdventureSettings {
-
+	bool NoPVM;          // 0
+	bool NoMVP;          // 1
+	bool ImmutableWorld; // 2
+	bool ShowNameTags;   // 3
+	bool AutoJump;       // 4
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA

@@ -1,7 +1,12 @@
 #include "../Global.h"
 #include "Module.h"
 #include "setting.h"
-
+#include <MC/AdventureSettingsPacket.hpp>
+#include <MC/AdventureSettings.hpp>
+#include <MC/RequestAbilityPacket.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/Abilities.hpp>
+#include "../Main/Helper.h"
 std::mutex DispenserejectItemLock;
 bool nodis = false;
 
@@ -267,6 +272,44 @@ TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock)
 	return original(this);
 }
 
+TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@AEBVAbilities@@UActorUniqueID@@_N@Z",
+	AdventureSettingsPacket, struct AdventureSettings const& settings, class Abilities const& abilities, struct ActorUniqueID uniqueId, bool unk_0)
+{
+	auto& pkt = original(this, settings, abilities, uniqueId, unk_0);
+	if (abilities.getAbility(AbilitiesIndex::MayFly).getBool() && abilities.getAbility(AbilitiesIndex::Flying).getBool()) {
+		pkt.mFlag |= (int)AdventureFlag::Flying;
+	}
+	return pkt;
+}
+
+
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
+	ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt)
+{
+	original(this, nid, pkt);
+	auto index = pkt.getAbility();
+	if (index == AbilitiesIndex::Flying)
+	{
+		auto sp = _getServerPlayer(nid, pkt.clientSubId);
+		if (!sp)
+			return;
+		if (!sp->getUserEntityIdentifierComponent())
+			return;
+		bool flying;
+		if (!pkt.tryGetBool(flying))
+			return;
+		auto abilities = &dAccess<Abilities>(sp, 2512);
+		auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
+		flying = flying && mayFly;
+		AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, sp->getUniqueID(), false);
+		pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
+		if (flying)
+			pkt.mFlag |= static_cast<unsigned int>(AdventureFlag::Flying);
+		abilities->setAbility(AbilitiesIndex::Flying, flying);
+		sp->sendNetworkPacket(pkt);
+	}
+}
+
 //TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
 //{
 //	Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
@@ -302,3 +345,4 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }
+

@@ -120,6 +120,7 @@ enum ActorCategory : int
 	mZombieMonster = 0x8004
 };
 
+
 namespace
 {
 	struct countryLang

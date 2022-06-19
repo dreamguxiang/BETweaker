@@ -5,31 +5,48 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "SemVersion.hpp"
+enum PackType : uint8_t
+{
+    Invalid = 0,
+    Addon = 1,
+    Cached = 2,
+    Protected = 3,
+    Behaviour = 4,
+    PersonaPiece = 5,
+    Resources = 6,
+    Skins = 7,
+    WorldTemplate = 8,
+    PackTypeCount = 9
+};
 #undef BEFORE_EXTRA
 
 struct PackIdVersion {
-
+public:
+    mce::UUID mUUID;
+    SemVersion mVersion;
+    PackType mType;
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
 
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION
 public:
-    struct PackIdVersion& operator=(struct PackIdVersion const &) = delete;
+    struct PackIdVersion& operator=(struct PackIdVersion const&) = delete;
 #endif
 
 public:
-    MCAPI PackIdVersion(struct PackIdVersion const &);
-    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
+    MCAPI PackIdVersion(struct PackIdVersion const&);
+    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum PackType);
     MCAPI PackIdVersion();
     MCAPI std::string asString() const;
-    MCAPI bool operator!=(struct PackIdVersion const &) const;
-    MCAPI bool operator<(struct PackIdVersion const &) const;
-    MCAPI struct PackIdVersion & operator=(struct PackIdVersion &&);
-    MCAPI bool operator==(struct PackIdVersion const &) const;
-    MCAPI bool satisfies(struct PackIdVersion const &) const;
+    MCAPI bool operator!=(struct PackIdVersion const&) const;
+    MCAPI bool operator<(struct PackIdVersion const&) const;
+    MCAPI struct PackIdVersion& operator=(struct PackIdVersion&&);
+    MCAPI bool operator==(struct PackIdVersion const&) const;
+    MCAPI bool satisfies(struct PackIdVersion const&) const;
     MCAPI ~PackIdVersion();
 
 protected:

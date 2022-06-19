@@ -22,6 +22,7 @@ namespace Settings {
     extern bool DispenserDestroyBlock;
     extern bool DispenserDestroyBreakItem;
     extern std::vector<string> DispenserDestroyItemList;
+    extern std::unordered_set<string> FlyPlayerList;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);
