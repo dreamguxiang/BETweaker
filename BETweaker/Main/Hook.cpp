@@ -191,9 +191,10 @@ TInstanceHook(bool, "?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockP
 TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z", Player, ItemStackBase& item, int a2, bool a3)
 {
 	auto itemname = item.getItem()->getSerializedName();
+	auto aux = item.getAuxValue();
 	original(this, item, a2, a3);
 	try {
-		if (Settings::AutoSupplyItem) Module::UseItemSupply(this, item, itemname);
+		if (Settings::AutoSupplyItem) Module::UseItemSupply(this, item, itemname, aux);
 	}
 	catch(...) {
 		return;

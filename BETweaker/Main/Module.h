@@ -12,7 +12,7 @@ namespace Module {
 	bool AutoFish(FishingHook* a1);
 	bool DoubleDoors(DoorBlock* a1, Player* pl, BlockPos* a3, UCHAR a4);
 	bool FastSetMinecart(Player* pl, Actor* ac);
-	bool UseItemSupply(Player* sp, ItemStackBase& item, string itemname);
+	bool UseItemSupply(Player* sp, ItemStackBase& item, string itemname, short aux);
 	bool UseItemSupply(Player* sp, string itemname);
 	void cutTree(BlockSource* bs, BlockPos a3, Player* sp);
 	void cutTreeLore(Player* sp, ItemStack* item);

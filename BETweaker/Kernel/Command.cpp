@@ -248,7 +248,7 @@ public:
     static void setup(CommandRegistry* registry)
     {
         // Register Cmd
-        registry->registerCommand("bet", "BETweaker System", CommandPermissionLevel::Any, { (CommandFlagValue)1 }, { (CommandFlagValue)0x80 });
+        registry->registerCommand("bet", "BETweaker System", CommandPermissionLevel::GameMasters, { (CommandFlagValue)1 }, { (CommandFlagValue)0x80 });
 
         registry->addEnum<Operation>("Function", {
             {"betterharvest", Operation::BetterHarvestingCrop},
