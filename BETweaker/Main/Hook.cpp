@@ -243,7 +243,6 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 	GameMode, BlockPos a3, unsigned __int8 a4)
 {
 	if (!Settings::CuttingTree) return original(this, a3, a4);
-	auto bs = getPlayer()->getBlockSource();
 	try {
 		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
 	}
@@ -342,7 +341,7 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	const Vec3* a5,
 	unsigned __int8 a6) {
 	bool rtn = original(_this, a2, a3, a4, a5, a6);
-	auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//±»³¢ÊÔ´¥·¢µÄÍ°µÄitemstack
+	auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ï¿½itemstack
 	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }
