@@ -169,7 +169,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="Global.h" />
-    <ClInclude Include="Main\Helper.h" />
+    <ClInclude Include="Main\Helper.hpp" />
     <ClInclude Include="Main\Module.h" />
     <ClInclude Include="Main\setting.h" />
     <ClInclude Include="resource.h" />
@@ -180,11 +180,13 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="dllmain.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Kernel\AnvilRestoration.cpp" />
     <ClCompile Include="Kernel\AutoFish.cpp" />
     <ClCompile Include="Kernel\AutoSupplyItem.cpp" />
     <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Kernel\BetterThanMending.cpp" />
     <ClCompile Include="Kernel\Command.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

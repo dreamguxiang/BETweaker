@@ -7,7 +7,7 @@
 #include <MC/AdventureSettings.hpp>
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
-#include "../Main/Helper.h"
+#include "../Main/Helper.hpp"
 
 using namespace RegisterCommandHelper;
 
@@ -26,7 +26,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();
 	
-    auto abilities = &dAccess<Abilities>(&player, 2512);
+    auto abilities = &dAccess<Abilities>(&player, 2512);//AbilitiesCommand
 
     auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && player.isOnGround())
@@ -98,7 +98,11 @@ void RegCommand()
                     if (it != Settings::FlyPlayerList.end()) {
                         Settings::FlyPlayerList.erase(it);
                         output.success("Removed " + PlayerName + " from FlyList");
+                        auto sp = Global<Level>->getPlayer(PlayerName);
                         Settings::reloadJson(JsonFile);
+                        if (sp->isPlayer()) {
+                            setPlayerAbility(*sp, AbilitiesIndex::MayFly, 0);
+                        }
                     }
                     else {
                         output.error("Player " + PlayerName + " is not in FlyList");
@@ -150,6 +154,8 @@ class BETCommand : public Command
         DispenserDestroyBlock,
         EndPortalDuplicateGravityBlock,
 		Fly,
+        AnvilRestoration,
+        BetterThanMending,
     } operation;
 	
     bool isenable;
@@ -227,6 +233,14 @@ public:
             Settings::EndPortalDuplicateGravityBlock = isenable;
             output.success(std::to_string(isenable));
             break;
+        case Operation::BetterThanMending:
+            Settings::BetterThanMending = isenable;
+            output.success(std::to_string(isenable));
+            break;
+        case Operation::AnvilRestoration:
+            Settings::AnvilRestoration = isenable;
+            output.success(std::to_string(isenable));
+            break;
         case Operation::Reload:
             Settings::LoadConfigFromJson(JsonFile);
             output.success("reload success");
@@ -264,7 +278,9 @@ public:
             {"autosupplyitem", Operation::AutoSupplyItem},
             {"cuttingtree", Operation::CuttingTree},
             {"dispenserdestroyblock", Operation::DispenserDestroyBlock},
-            {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock}
+            {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock},
+            {"anvilrestoration", Operation::AnvilRestoration},
+            {"betterthanbending", Operation::BetterThanMending}
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {

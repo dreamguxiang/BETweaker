@@ -6,7 +6,7 @@
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Abilities.hpp>
-#include "../Main/Helper.h"
+#include "../Main/Helper.hpp"
 std::mutex DispenserejectItemLock;
 bool nodis = false;
 
@@ -256,8 +256,16 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
 {
 	if (!Settings::CuttingTree) return original(this, item);
+	auto sp = getPlayer();
 	try {
-		Module::cutTreeLore(getPlayer(), getPlayer()->getHandSlot());
+		if (Settings::CuttingTree) {
+			Module::cutTreeLore(sp, sp->getHandSlot());
+		}
+		if (Settings::BetterThanMending) {
+			if (sp->isSneaking()) {
+				Module::BetterThanMending(sp);
+			}
+		}
 	}
 	catch (...) {
 		return original(this, item);
@@ -341,7 +349,7 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	const Vec3* a5,
 	unsigned __int8 a6) {
 	bool rtn = original(_this, a2, a3, a4, a5, a6);
-	auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//�����Դ�����Ͱ��itemstack
+	//auto t = (ItemStack*)(*(__int64(__fastcall**)(Container*, unsigned long long))(*(unsigned long long*)a3 + 40i64))(a3, a4);//�����Դ�����Ͱ��itemstack
 	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }

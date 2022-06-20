@@ -48,7 +48,7 @@
 #include <MC/EnchantmentInstance.hpp>
 #include <MC/VanillaStates.hpp>
 #include <MC/ItemState.hpp>
-#include "Main/Helper.h"
+#include "Main/Helper.hpp"
 #include <FormUI.h>
 #include <ScheduleAPI.h>
 extern Logger logger;

@@ -17,6 +17,8 @@ namespace Settings {
     extern bool AutoSupplyItem;
     extern bool CuttingTree;
     extern bool EndPortalDuplicateGravityBlock;
+    extern bool AnvilRestoration;
+    extern bool BetterThanMending;
     extern string HUBInfoShow;
     extern std::unordered_set<string> CanDispenserItemList;
     extern bool DispenserDestroyBlock;

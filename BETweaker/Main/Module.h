@@ -18,4 +18,6 @@ namespace Module {
 	void cutTreeLore(Player* sp, ItemStack* item);
 	bool DispenserDestroy(BlockActor* ba, BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old); 
 	void ChangeDispenserMode(BlockActor* ba, BlockSource* bs, Player* sp);
+	bool AnvilRestoration(ItemStack* item, Block* block, BlockPos pos, Player* sp);
+	void BetterThanMending(Player* sp);
 }

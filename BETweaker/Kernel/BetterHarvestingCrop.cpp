@@ -3,6 +3,7 @@
 static_assert(sizeof(Randomize) == 0x10);
 
 namespace Module {
+
     bool LoadBetterHarvestingCrop(BlockInstance blockin, Player* sp) {
         auto bl = blockin.getBlock();
         if (bl->isCropBlock()) {

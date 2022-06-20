@@ -20,7 +20,7 @@
     <ClInclude Include="framework.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Main\Helper.h">
+    <ClInclude Include="Main\Helper.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Main\Module.h">
@@ -92,6 +92,12 @@
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\CuttingTree.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\AnvilRestoration.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BetterThanMending.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>

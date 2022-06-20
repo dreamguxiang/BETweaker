@@ -2,6 +2,8 @@
 #include "../Global.h"
 #include <MC/I18n.hpp>
 #include <MC/HashedString.hpp>
+#include <MC/ToastRequestPacket.hpp>
+#include <MC/ServerPlayer.hpp>
 
 class NetworkIdentifierWithSubId;
 class PacketSender {
@@ -89,6 +91,10 @@ namespace Helper {
 		return ItemInstance(*item);
 	}
 
+	inline void sendToast(Player* sp, string title, string msg) {
+		ToastRequestPacket pkt(title, msg);
+		sp->sendNetworkPacket(pkt);
+	}
 }
 
 enum ActorCategory : int

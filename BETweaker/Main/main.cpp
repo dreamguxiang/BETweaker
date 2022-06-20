@@ -40,6 +40,7 @@ std::unordered_set<string> SignBlocks{
 bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
     long a = getTimeStamp();
     Player* sp = ev.mPlayer;
+    auto item = ev.mItemStack;
     auto playername = sp->getRealName();
     for (auto iter = useitemonbug.rbegin(); iter != useitemonbug.rend(); iter++)
         if (iter->first == playername) {
@@ -76,7 +77,12 @@ bool PlayerUseOn(const Event::PlayerUseItemOnEvent& ev) {
             }
         }
     }
-	
+    if (Settings::AnvilRestoration) {
+        if (sp->isSneaking()) {
+            auto out = Module::AnvilRestoration(item, blockin.getBlock(), blockin.getPosition(), sp);
+            return out;
+        }
+    }
     return true;
 }
 
