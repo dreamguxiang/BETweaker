@@ -15,6 +15,7 @@
 - Farm land anti-stomp
 - Mob, Block information display
 - Edit Sign(need BETweakerStick)
+- Survival Flying
 - Fast leaf decay
 - Auto Fish
 - AutoSupplyItem
@@ -22,6 +23,8 @@
 - Dispenser Destroy Block(need BETweakerStick)
 - End Portal Duplicate Gravity Block
 - Add /seed command to get the world's seed
+- Crouching right click experience repair tool
+- Anvil repair (iron ingot right click repair, obsidian right click broken ring)
 <img src=".github/cuttree.gif" alt="show" />
 
 - Double Doors
