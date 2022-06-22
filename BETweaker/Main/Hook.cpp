@@ -255,7 +255,6 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
 {
-	if (!Settings::CuttingTree) return original(this, item);
 	auto sp = getPlayer();
 	try {
 		if (Settings::CuttingTree) {
