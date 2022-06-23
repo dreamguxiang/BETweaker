@@ -140,6 +140,9 @@ namespace Module {
             if (item->isNull()) {
                 return;
             }
+            if (LeafBlockss.count(Level::getBlock(block,sp->getBlockSource())->getTypeName())) {
+                continue;
+            }
             Global<Level>->destroyBlock(*bs, block, 1);			
             item->hurtAndBreak(1, sp);
 		}
