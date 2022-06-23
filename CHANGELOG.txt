@@ -1,7 +1,5 @@
 # [BETweaker Release Note] 
 
-- Add AnvilRestoration
-- Add BetterThanMending
-- Fix Flying Bugs
+- Fix CuttingTree bug
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.

@@ -257,13 +257,13 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 {
 	auto sp = getPlayer();
 	try {
-		if (Settings::CuttingTree) {
-			Module::cutTreeLore(sp, sp->getHandSlot());
-		}
 		if (Settings::BetterThanMending) {
 			if (sp->isSneaking()) {
 				Module::BetterThanMending(sp);
 			}
+		}
+		if (Settings::CuttingTree) {
+			Module::cutTreeLore(sp, sp->getHandSlot());
 		}
 	}
 	catch (...) {
