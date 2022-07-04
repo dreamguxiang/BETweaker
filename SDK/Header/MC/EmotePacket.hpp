@@ -13,7 +13,10 @@ class EmotePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    unsigned long long mRunid;
+    string mEmoteID;
+    int8_t mFlag;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMOTEPACKET

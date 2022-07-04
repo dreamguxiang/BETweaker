@@ -141,7 +141,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;TEMP_EXPORTS;_WINDOWS;_USRDLL;_AMD64_;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;TEMP_EXPORTS;CPPHTTPLIB_OPENSSL_SUPPORT;_WINDOWS;_USRDLL;_AMD64_;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -194,6 +194,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
     <ClCompile Include="Kernel\DispenserCrops.cpp" />
     <ClCompile Include="Kernel\DoubleDoors.cpp" />
     <ClCompile Include="Kernel\EditSign.cpp" />
+    <ClCompile Include="Kernel\EmoteList.cpp" />
     <ClCompile Include="Kernel\FastLeafDecay.cpp" />
     <ClCompile Include="Kernel\FastSetMinecart.cpp" />
     <ClCompile Include="Kernel\FastSleep.cpp">

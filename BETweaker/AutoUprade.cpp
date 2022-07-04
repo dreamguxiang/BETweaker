@@ -56,6 +56,45 @@ void checkUpdate() {
     t.detach();
 }
 
+
+enum class DownloadResult
+{
+    Success,
+    FailInit,
+    FailDownload,
+    FailDownloadMd5,
+    FailCheckMd5
+};
+
+void downloadEmoteList() {
+    string url = "https://litetitlelitetitle.coding.net/p/updateupdate/d/update/git/raw/master/EmoteData.json";
+    string domain, path;
+    SplitHttpUrl(url, domain, path);
+
+    //Init
+    httplib::Client cli(domain.c_str());
+    cli.set_connection_timeout(LL_UPDATE_CONNECTION_TIMEOUT, 0);
+
+    //Download
+    auto response = cli.Get(path.c_str());
+    if (response && response->status == 200)
+    {
+        if (std::filesystem::exists(".\\plugins\\BETweaker\\EmoteData.json"))
+            std::filesystem::remove(".\\plugins\\BETweaker\\EmoteData.json");
+
+        std::ios_base::openmode mode = std::ios::out;
+
+        std::ofstream fout(".\\plugins\\BETweaker\\EmoteData.json", mode);
+        fout << response->body;
+        fout.close();
+    }
+    else
+    {
+
+    }
+}
+
+
 //#define CPPHTTPLIB_OPENSSL_SUPPORT
 //
 //#include <LLAPI.h>

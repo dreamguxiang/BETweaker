@@ -57,7 +57,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 
 
 
-void RegCommand()
+void RegFlyCommand()
 {
     using ParamType = DynamicCommand::ParameterType;
 	
@@ -129,6 +129,49 @@ void RegCommand()
         }  
         });
        DynamicCommand::setup(std::move(command));
+}
+
+void RegEmoteCommand()
+{
+    using ParamType = DynamicCommand::ParameterType;
+
+    auto command = DynamicCommand::createCommand("emote", "Play Emote", CommandPermissionLevel::Any);
+
+
+    auto& EmoteList1 = command->setEnum("EmoteList1", { "gui", });
+    auto& EmoteList2 = command->setEnum("EmoteList2", { "play" });
+
+    command->mandatory("NameEnum", ParamType::SoftEnum, command->setSoftEnum("NameList", {}));
+	
+    command->mandatory("EmoteEnum", ParamType::Enum, EmoteList1);
+    command->mandatory("EmoteEnum", ParamType::Enum, EmoteList2);
+
+    command->addOverload({ EmoteList1 });
+    command->addOverload({ EmoteList2 ,"NameEnum"});
+
+    command->setCallback([](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
+        auto sp = origin.getPlayer();
+        auto action = results["EmoteEnum"].get<std::string>();
+        switch (do_hash(action.c_str())) {
+        case do_hash("gui"): {
+			
+            break;
+        }
+        case do_hash("play"): {
+            auto name = results["NameEnum"].get<std::string>();
+            Module::PlayEmote(sp, name);
+            break;
+        }
+        }
+        });
+    auto cmd = DynamicCommand::setup(std::move(command));
+    Schedule::repeat([cmd] {
+        vector<string> out;
+        for (auto& i : Module::elist) {
+            out.push_back(i.first);
+        }
+        cmd->addSoftEnumValues("NameList", out);
+        }, 200);
 }
 
 
@@ -334,7 +377,8 @@ public:
 void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
-        RegCommand();
+        RegFlyCommand();
+        RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
         SeedCommand::setup(ev.mCommandRegistry);
         return true;
