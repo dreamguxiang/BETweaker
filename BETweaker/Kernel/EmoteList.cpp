@@ -1,3 +1,4 @@
+#if 0
 #include "../Global.h"
 #include <MC/BinaryStream.hpp>
 #include <MC/MinecraftPackets.hpp>
@@ -38,3 +39,4 @@ namespace Module {
         }
     }
 }
+#endif

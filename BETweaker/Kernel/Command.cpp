@@ -131,6 +131,7 @@ void RegFlyCommand()
        DynamicCommand::setup(std::move(command));
 }
 
+#if 0
 void RegEmoteCommand()
 {
     using ParamType = DynamicCommand::ParameterType;
@@ -173,6 +174,7 @@ void RegEmoteCommand()
         cmd->addSoftEnumValues("NameList", out);
         }, 200);
 }
+#endif
 
 
 class BETCommand : public Command
@@ -378,7 +380,7 @@ void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         RegFlyCommand();
-        RegEmoteCommand();
+       // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
         SeedCommand::setup(ev.mCommandRegistry);
         return true;

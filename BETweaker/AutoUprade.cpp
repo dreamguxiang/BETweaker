@@ -65,7 +65,7 @@ enum class DownloadResult
     FailDownloadMd5,
     FailCheckMd5
 };
-
+#if 0
 void downloadEmoteList() {
     string url = "https://litetitlelitetitle.coding.net/p/updateupdate/d/update/git/raw/master/EmoteData.json";
     string domain, path;
@@ -94,7 +94,7 @@ void downloadEmoteList() {
     }
 }
 
-
+#endif
 //#define CPPHTTPLIB_OPENSSL_SUPPORT
 //
 //#include <LLAPI.h>

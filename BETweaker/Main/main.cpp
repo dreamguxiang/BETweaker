@@ -190,8 +190,8 @@ void PluginInit()
 {
     loadCfg();
     PackInstall();
-    downloadEmoteList();
-    Module::readElistJsonData();
+    //downloadEmoteList();
+    //Module::readElistJsonData();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
        // regtest();
         return true;
