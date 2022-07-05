@@ -24,4 +24,3 @@ THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a
     original(a1);
     Item::addCreativeItem(Helper::cteateBetStick());
 }
-

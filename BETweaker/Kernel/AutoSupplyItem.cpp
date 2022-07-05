@@ -16,7 +16,7 @@ namespace Module {
 						if (item.getAuxValue() == aux) {
 							if (i == slotnum) continue;
 
-							auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toSNBT();
+							auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toBinaryNBT();
 							auto& uid = sp->getUniqueID();
 							Schedule::delay([snbt, uid, slotnum, i] {
 								auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
@@ -47,7 +47,7 @@ namespace Module {
 			if (!item.isNull()) {
 				if (item.getItem()->getSerializedName() == itemname) {
 					if (i == slotnum) 	continue;
-					auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toSNBT();
+					auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toBinaryNBT();
 					auto& uid = sp->getUniqueID();
 					Schedule::delay([snbt, uid, slotnum, i] {
 						auto newitem = ItemStack::create(CompoundTag::fromSNBT(snbt));
