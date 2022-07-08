@@ -12,7 +12,10 @@ namespace persona {
 
 #define AFTER_EXTRA
 // Add Member There
-	enum AnimationExpression;
+	enum class AnimationExpression {
+		Linear = 0,
+		Blinking = 1
+	};
 	enum class AnimatedTextureType {
 		none = 0,
 		face = 1,

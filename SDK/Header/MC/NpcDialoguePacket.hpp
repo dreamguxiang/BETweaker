@@ -6,7 +6,10 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum NPCDialogAction {
+	OPEN = 0,
+	CLOSE = 1,
+};
 #undef BEFORE_EXTRA
 
 class NpcDialoguePacket : public Packet {

@@ -22,7 +22,7 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA
 public:
     class AnimatedImageData& operator=(class AnimatedImageData const &) = delete;
-    AnimatedImageData() = delete;
+    AnimatedImageData() = default;
 #endif
 
 
