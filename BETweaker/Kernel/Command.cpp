@@ -325,7 +325,7 @@ public:
             {"dispenserdestroyblock", Operation::DispenserDestroyBlock},
             {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock},
             {"anvilrestoration", Operation::AnvilRestoration},
-            {"betterthanbending", Operation::BetterThanMending}
+            {"betterthanmending", Operation::BetterThanMending}
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {
@@ -379,7 +379,7 @@ public:
 void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
-        RegFlyCommand();
+        if(Settings::FlyEnabled) RegFlyCommand();
        // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
         SeedCommand::setup(ev.mCommandRegistry);
