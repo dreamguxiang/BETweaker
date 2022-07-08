@@ -44,6 +44,7 @@ namespace Helper {
 	}
 	
 	inline string getActorDisplayName(Actor* ac,string lang) {
+		if (ac->isPlayer()) return ((Player*)ac)->getRealName();
 		return getDisplayName(buildActorDisplayNames(ac->getEntityTypeId(), "", ac), lang);
 	}
 	
