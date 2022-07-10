@@ -15,7 +15,9 @@ namespace Module {
 					if (item.getItem()->getSerializedName() == itemname) {
 						if (item.getAuxValue() == aux) {
 							if (i == slotnum) continue;
-
+							if (item.getTypeName().find("map") != item.getTypeName().npos) {
+								return false;
+							}
 							auto snbt = const_cast<ItemStack*>(&item)->getNbt()->toBinaryNBT();
 							auto& uid = sp->getUniqueID();
 							Schedule::delay([snbt, uid, slotnum, i] {
