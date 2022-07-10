@@ -10,6 +10,8 @@ namespace Module {
         "minecraft:log",
         "minecraft:log2",
         "minecraft:mangrove_log",
+        "minecraft:crimson_stem",
+        "minecraft:warped_stem"
     };
     std::unordered_set<string> LeafBlockss{
     "minecraft:leaves",
@@ -17,6 +19,9 @@ namespace Module {
     "minecraft:azalea_leaves",
     "minecraft:azalea_leaves_flowered",
     "minecraft:mangrove_leaves",
+	"minecraft:nether_wart_block",
+    "minecraft:warped_wart_block"
+    "minecraft:shroomlight"
     };
 
     std::unordered_set<string> AxeList{
@@ -167,6 +172,9 @@ namespace Module {
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMangroveRoots
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mNetherrack
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mCrimsonNylium
+                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mWarpedNylium
                 || LogBlocks.count(bs->getBlock(a3.add(0, -1, 0)).getTypeName())
                 ) {
                 for (size_t i = 0; i < 6; i++)
