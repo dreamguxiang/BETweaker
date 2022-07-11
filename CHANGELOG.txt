@@ -1,7 +1,5 @@
 # [BETweaker Release Note] 
 
-- Fix a crash bug
-- Add stripped_crimson_stem,stripped_warped_stem in cuttingtree
-- Add fly Enable config
+- Fix some error
 
 For each feature in this plugin, you can use the command "/bet" or revise the config file in "/plugins/BETweaker/" to turn it on and off at any time.
