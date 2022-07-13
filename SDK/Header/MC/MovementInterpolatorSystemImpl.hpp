@@ -23,10 +23,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEMIMPL
-public:
 #endif
     MCAPI static class std::tuple<class Vec3, float> _tickPosition(struct MovementInterpolatorComponent &, class Vec3 const &, float);
     MCAPI static class std::tuple<class Vec2, class Vec2> _tickRotation(struct MovementInterpolatorComponent &, class Vec2 const &, class Vec2 const &);
+
 
 
 };

@@ -30,10 +30,10 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDEVENTLISTENER
-public:
 #endif
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
+
 
 
 };

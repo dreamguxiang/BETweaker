@@ -38,8 +38,8 @@ public:
     /*10*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
     /*11*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLESMALLCORRIDORPIECE
-public:
 #endif
+
 
 
 };

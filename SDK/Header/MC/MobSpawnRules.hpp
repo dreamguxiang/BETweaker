@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNRULES
-public:
 #endif
     MCAPI MobSpawnRules(class MobSpawnRules const &);
     MCAPI MobSpawnRules(class MobSpawnRules &&);
@@ -57,6 +56,7 @@ public:
     MCAPI class MobSpawnRules & setDelaySpawnChance(int);
     MCAPI class MobSpawnRules & setDifficultyRange(enum Difficulty, enum Difficulty);
     MCAPI class MobSpawnRules & setExperimentalGameplay();
+    MCAPI class MobSpawnRules & setHardcodedSpawnRuleCallback(class std::function<bool (class SpawnConditions const &, class BlockSource &)>);
     MCAPI class MobSpawnRules & setHeightRange(int, int);
     MCAPI class MobSpawnRules & setLavaSpawner();
     MCAPI class MobSpawnRules & setMobEventType(std::string const &);
@@ -76,6 +76,7 @@ public:
     MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
     MCAPI static unsigned __int64 const MAX_WORLD_AGE;
     MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+
 
 
 };

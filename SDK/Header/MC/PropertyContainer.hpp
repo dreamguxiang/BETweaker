@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCONTAINER
-public:
 #endif
     MCAPI PropertyContainer(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>);
     MCAPI void addAdditionalSaveDataToCompoundTag(class CompoundTag &) const;
@@ -39,6 +38,7 @@ public:
 //private:
     MCAPI void _addDataToCompoundTag(class CompoundTag &, class PropertyMetadata const &) const;
     MCAPI bool _readValueFromTag(class PropertyMetadata const &, class Tag const &);
+
 
 private:
 

@@ -40,14 +40,14 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
-    /*116*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*118*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSITEM
-public:
 #endif
     MCAPI LodestoneCompassItem(std::string const &, int);
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
+
 
 
 };

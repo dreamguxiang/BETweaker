@@ -34,9 +34,9 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+
 
 
 };

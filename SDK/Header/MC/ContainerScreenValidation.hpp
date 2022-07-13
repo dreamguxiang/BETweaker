@@ -29,7 +29,6 @@ public:
     /*2*/ virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
     /*3*/ virtual struct ContainerValidationResult tryActivate();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATION
-public:
 #endif
     MCAPI ContainerScreenValidation(class ContainerScreenContext const &, enum ContainerValidationCaller, class std::unordered_map<enum ContainerEnumName, class std::shared_ptr<class Container>, struct std::hash<enum ContainerEnumName>, struct std::equal_to<enum ContainerEnumName>, class std::allocator<struct std::pair<enum ContainerEnumName const, class std::shared_ptr<class Container>>>>);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
@@ -55,6 +54,7 @@ public:
     MCAPI struct ContainerValidationSlotInfo _createContainerValidatorSlotInfo(struct ContainerValidationSlotData const &);
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum ContainerEnumName);
     MCAPI bool _propagateContainers();
+
 
 protected:
 

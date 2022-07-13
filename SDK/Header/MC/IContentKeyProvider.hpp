@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
-public:
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const &) const;
     MCVAPI bool requireEncryptedReads() const;
 #endif
+
 
 
 };

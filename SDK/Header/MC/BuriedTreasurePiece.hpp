@@ -29,11 +29,11 @@ public:
     /*2*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASUREPIECE
-public:
 #endif
 
 //private:
     MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
+
 
 private:
 

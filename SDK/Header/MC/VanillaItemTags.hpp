@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
-public:
 #endif
     MCAPI static char const Armor[];
     MCAPI static char const Arrows[];
@@ -59,6 +58,7 @@ public:
     MCAPI static char const Tool[];
     MCAPI static char const VibrationDamper[];
     MCAPI static char const WoodenTier[];
+
 
 
 };

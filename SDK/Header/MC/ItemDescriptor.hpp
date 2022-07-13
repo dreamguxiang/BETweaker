@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
-public:
 #endif
     MCAPI ItemDescriptor(class ItemDescriptor &&);
     MCAPI ItemDescriptor(class ItemDescriptor const &);
@@ -62,6 +61,7 @@ public:
     MCAPI void _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item>) const;
     MCAPI void _initFromItem(class WeakPtr<class Item>, short) const;
     MCAPI void _resolveImpl() const;
+
 
 private:
 

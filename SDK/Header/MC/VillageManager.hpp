@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEMANAGER
-public:
 #endif
     MCAPI VillageManager(class Dimension &);
     MCAPI void applyHeroOfTheVillageEffect(class Actor &);
@@ -62,6 +61,7 @@ public:
     MCAPI void _removeEligibleVillages();
     MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance> &&);
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);
+
 
 private:
     MCAPI static unsigned __int64 const MAX_POI_QUERIES;

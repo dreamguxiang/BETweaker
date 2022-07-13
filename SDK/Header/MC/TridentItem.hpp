@@ -52,7 +52,6 @@ public:
     /*87*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTITEM
-public:
 #endif
     MCAPI TridentItem(std::string const &, int);
     MCAPI static int const CHARGE_THRESHOLD_TIME;
@@ -60,6 +59,7 @@ public:
 
 //private:
     MCAPI class Actor * _setupProjectile(class Actor *, class ItemStack, bool) const;
+
 
 private:
 

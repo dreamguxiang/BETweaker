@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIESDEFINITION
-public:
 #endif
     MCAPI void clear();
     MCAPI bool defineProperty(std::string const &, struct DynamicPropertyDefinition, unsigned __int64);
@@ -34,6 +33,7 @@ public:
 
 //private:
     MCAPI bool _canMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, unsigned __int64, std::string &) const;
+
 
 private:
 

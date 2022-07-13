@@ -27,9 +27,9 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorTickedFlag>>, struct Read<class FlagComponent<struct PlayerComponentFlag>>, struct Write<struct SneakingComponent, class ActorOwnerComponent>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNEAKINGSYSTEM
-public:
 #endif
     MCAPI static void _tickSneakingSystem(class StrictEntityContext &, class FlagComponent<struct PlayerComponentFlag> const &, struct SneakingComponent &, class ActorOwnerComponent &);
+
 
 
 };

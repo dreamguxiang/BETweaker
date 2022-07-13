@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
-public:
 #endif
     MCAPI Objective(std::string const &, class ObjectiveCriteria const &);
     MCAPI class ObjectiveCriteria const & getCriteria() const;
@@ -47,6 +46,7 @@ public:
 //private:
     MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
     MCAPI void _resetPlayer(struct ScoreboardId const &);
+
 
 private:
 

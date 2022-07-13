@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATORFACTORY
-public:
 #endif
     MCAPI SeamlessChunkBlendingAttenuatorFactory(class Dimension &);
     MCAPI class std::shared_ptr<class SeamlessChunkBlendingAttenuator> getOrCreateAttenuator(class ChunkPos const &);
@@ -33,6 +32,7 @@ public:
     MCAPI std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> const &) const;
     MCAPI void _processDensityColumn(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> &, class BlendingData const &, float, struct std::pair<int, int>, struct std::pair<int, int>, bool) const;
     MCAPI void _updateIntermediateAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> &, class ChunkPos const &, class ChunkPos const &, class BlendingData const &, bool) const;
+
 
 private:
 

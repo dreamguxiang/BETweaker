@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
-public:
 #endif
     MCAPI SeamlessChunkBlendingAttenuator(class ChunkPos, std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> &&, short);
     MCAPI float attenuateDensity(class DividedPos2d<4> const &, int, float) const;
@@ -32,6 +31,7 @@ public:
     MCAPI class Biome const * tryGetAttenuatedBiome(class DividedPos<4> const &, class BiomeRegistry const &, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const &) const;
     MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const tryMoveWaterEdges(class BlockPos const &, struct OverworldGeneratorMultinoise::BlockGenerationResult) const;
     MCAPI ~SeamlessChunkBlendingAttenuator();
+
 
 
 };

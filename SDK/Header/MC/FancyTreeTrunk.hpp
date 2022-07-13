@@ -36,13 +36,13 @@ public:
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /*2*/ virtual int getTreeHeight(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FANCYTREETRUNK
-public:
 #endif
 
 //private:
     MCAPI int _checkLine(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, struct TreeHelper::TreeParams const &) const;
     MCAPI void _placeBranches(class IBlockWorldGenAPI &, class BlockPos const &, int, std::vector<class FancyTreeTrunk::FoliageCoords> const &) const;
     MCAPI void _placeLimb(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &) const;
+
 
 private:
 

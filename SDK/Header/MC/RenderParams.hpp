@@ -23,17 +23,17 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDERPARAMS
-public:
 #endif
     MCAPI RenderParams(class RenderParams const &);
     MCAPI RenderParams(class RenderParams &&);
     MCAPI RenderParams();
-    MCAPI class Actor * getActorTarget(enum FilterSubject const &) const;
+    MCAPI class Actor * getActorTarget(enum FilterSubject) const;
     MCAPI class RenderParams & init(class BaseActorRenderContext *, class Actor *, class AnimationComponent *, class MolangVariableMap *, class std::shared_ptr<class DataDrivenModel>, float, float, int, bool, class std::function<float (void)>);
     MCAPI class RenderParams & operator=(class RenderParams &&);
     MCAPI float & operator[](unsigned __int64);
     MCAPI ~RenderParams();
     MCAPI static class RenderParams & getRenderParams(class Actor &);
+
 
 
 };

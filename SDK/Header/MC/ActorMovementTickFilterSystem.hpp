@@ -25,11 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTTICKFILTERSYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo createBase();
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
+
 
 
 };

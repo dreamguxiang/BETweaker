@@ -47,25 +47,25 @@ public:
     /*81*/ virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const &) const;
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
-public:
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
     MCVAPI bool isActorPlacerItem() const;
     MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
 #endif
     MCAPI ActorPlacerItem(std::string const &, int, struct ActorDefinitionIdentifier const &);
-    MCAPI static void forEachCustomEgg(class std::function<void (class Item const &)> const &);
+    MCAPI static void forEachCustomEgg(class ItemRegistryRef, class std::function<void (class Item const &)> const &);
     MCAPI static std::string getCustomSpawnEggName(int);
-    MCAPI static void registerCustomEggs(class ActorInfoRegistry const &);
+    MCAPI static void registerCustomEggs(class ItemRegistryRef, class ActorInfoRegistry const &);
     MCAPI static class Actor * spawnOrMoveAgent(class Vec3 const &, class Actor &);
 
 //private:
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource &) const;
     MCAPI class Actor * _spawnActorAt(class BlockSource &, class Vec3 const &, class Vec3 const &, class ItemStack const &, class Actor *) const;
     MCAPI static void _setAgentOwner(class Player &, class Agent &);
+
 
 private:
     MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string>>> mCustomSpawnEggs;

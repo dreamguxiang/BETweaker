@@ -30,14 +30,14 @@ public:
     /*3*/ virtual void startProfiler();
     /*4*/ virtual void stopProfiler(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGER
-public:
 #endif
-    MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &);
+    MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &, std::unique_ptr<class IScriptTelemetryLogger>);
     MCAPI void checkConnections();
 
 //private:
     MCAPI class Scripting::IDebuggerController * _createController();
     MCAPI void _releaseController();
+
 
 private:
 

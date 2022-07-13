@@ -42,10 +42,9 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
-public:
 #endif
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
     MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const &);
@@ -58,6 +57,7 @@ public:
     MCAPI void _registerSpecialCompound(class ItemInstance const &, enum CompoundType);
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     MCAPI static std::string _getName(enum CompoundType);
+
 
 private:
     MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;

@@ -31,13 +31,13 @@ public:
     /*8*/ virtual class ItemStack const & getSlot(int) const;
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const PAYMENT_SLOT;
 
 //private:
     MCAPI void _resetSelectionState();
+
 
 private:
 

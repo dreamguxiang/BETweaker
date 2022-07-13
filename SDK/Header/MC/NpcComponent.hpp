@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
-public:
 #endif
     MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
@@ -66,6 +65,7 @@ public:
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
     MCAPI void _loadData(class Actor &);
     MCAPI std::string _serializeActions() const;
+
 
 private:
     MCAPI static std::string const ACTIONS_TAG;

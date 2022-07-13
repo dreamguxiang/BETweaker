@@ -16,19 +16,19 @@ class ScriptPackPermissions {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKPERMISSIONS
 public:
     class ScriptPackPermissions& operator=(class ScriptPackPermissions const &) = delete;
+    ScriptPackPermissions(class ScriptPackPermissions const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKPERMISSIONS
-public:
 #endif
-    MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     MCAPI ScriptPackPermissions();
     MCAPI bool isModuleAllowed(std::string const &) const;
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 
 //private:
+
 
 private:
     MCAPI static std::string const sWildCardModuleName;

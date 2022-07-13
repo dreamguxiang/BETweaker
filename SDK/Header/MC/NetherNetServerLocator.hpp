@@ -33,7 +33,7 @@ public:
 public:
     /*0*/ virtual ~NetherNetServerLocator();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool);
+    /*3*/ virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();
@@ -46,7 +46,6 @@ public:
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
-public:
 #endif
     MCAPI NetherNetServerLocator();
 
@@ -58,6 +57,7 @@ public:
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
+
 
 private:
 

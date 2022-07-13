@@ -42,11 +42,11 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*86*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
-public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI SuspiciousStewItem(std::string const &, short);
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
+
 
 
 };

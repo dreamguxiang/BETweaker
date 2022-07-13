@@ -28,7 +28,6 @@ public:
     /*0*/ virtual ~GameTestCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCOMMAND
-public:
 #endif
     MCAPI static void addGameTestNameEnums(class MinecraftGameTest &, class CommandRegistry &);
     MCAPI static void setup(class CommandRegistry &);
@@ -42,6 +41,7 @@ public:
     MCAPI void _handleRunThis(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _runTestAt(class MinecraftGameTest &, class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
+
 
 private:
 

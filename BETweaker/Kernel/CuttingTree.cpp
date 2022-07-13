@@ -5,6 +5,8 @@
 #include <MC/FeatureRegistry.hpp>
 #include <MC/ListTag.hpp>
 #include <mc/PlayerInventory.hpp>
+#include <MC/BedrockBlocks.hpp>
+enum MaterialType;
 namespace Module {
     std::unordered_set<string> LogBlocks{
         "minecraft:log",
@@ -170,7 +172,7 @@ namespace Module {
             if (bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mDirt
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
-                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mPodzol
+                || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == "minecraft:podzol"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMangroveRoots
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mNetherrack
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mCrimsonNylium
@@ -215,7 +217,7 @@ namespace Module {
                 lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
                 item->setCustomLore(lore);
                 sp->refreshInventory();
-                sp->sendText("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
+                sp->sendTextPacket("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
             }
             else
             {
@@ -223,13 +225,13 @@ namespace Module {
                     lore.push_back(getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()));
                     item->setCustomLore(lore);
                     sp->refreshInventory();
-                    sp->sendText("§a[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
+                    sp->sendTextPacket("§a[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreoff", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
                 }
                 else {
                     lore.push_back(getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()));
                     item->setCustomLore(lore);					
                     sp->refreshInventory();
-                    sp->sendText("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
+                    sp->sendTextPacket("§b[BETweaker-Axe]"+ getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()), TextType::JUKEBOX_POPUP);
                 }
             }
         }

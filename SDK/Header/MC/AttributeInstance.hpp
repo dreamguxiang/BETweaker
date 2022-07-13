@@ -25,7 +25,6 @@ public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCE
-public:
 #endif
     MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI AttributeInstance();
@@ -74,6 +73,7 @@ public:
     MCAPI float _calculateValue(class AttributeBuff const &);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
+
 
 private:
 

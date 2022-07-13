@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATA
-public:
 #endif
     MCAPI StructureTemplateData();
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
@@ -56,6 +55,7 @@ public:
 
 //private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
+
 
 protected:
 

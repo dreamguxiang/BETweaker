@@ -44,9 +44,9 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOEITEM
-public:
 #endif
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);
+
 
 
 };

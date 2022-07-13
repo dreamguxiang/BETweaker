@@ -34,13 +34,13 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const BANNER_SLOT;
     MCAPI static int const DYE_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
+
 
 
 };

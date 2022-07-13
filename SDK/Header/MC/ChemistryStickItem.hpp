@@ -49,7 +49,6 @@ public:
     /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /*105*/ virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
-public:
     MCVAPI bool showsDurabilityInCreative() const;
     MCVAPI bool uniqueAuxValues() const;
 #endif
@@ -64,6 +63,7 @@ public:
 
 //private:
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
+
 
 protected:
 

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMAND
-public:
 #endif
     MCAPI ScriptCommand(std::string const &);
     MCAPI std::string getMessages() const;
@@ -32,6 +31,7 @@ public:
     MCAPI std::string serializeJsonOutput() const;
     MCAPI void setJsonOutput(class Json::Value &&);
     MCAPI void setOutput(int, std::string &&);
+
 
 
 };

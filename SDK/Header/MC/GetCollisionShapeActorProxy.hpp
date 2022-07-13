@@ -33,7 +33,6 @@ public:
     /*8*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /*9*/ virtual bool isRiding() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCOLLISIONSHAPEACTORPROXY
-public:
     MCVAPI bool canDescendThroughBlock() const;
     MCVAPI enum ActorType getEntityTypeId() const;
     MCVAPI float getFeetAttachPosY() const;
@@ -41,6 +40,7 @@ public:
     MCVAPI bool isWorldBuilder() const;
 #endif
     MCAPI GetCollisionShapeActorProxy(struct IActorMovementProxy const &);
+
 
 
 };

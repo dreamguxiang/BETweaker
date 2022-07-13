@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATIONMANAGER
-public:
 #endif
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     MCAPI ScriptPackConfigurationManager();
@@ -30,6 +29,7 @@ public:
     MCAPI void loadPackConfigs(class Core::Path const &);
 
 //private:
+
 
 private:
     MCAPI static std::string const sDefaultConfigurationName;

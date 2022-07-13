@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTFILTERINGUTILS
-public:
 #endif
     MCAPI static void checkChatFilteringEventsAndSendToastIfClientWasMuted(std::vector<std::string> const &, class gsl::not_null<class PacketSender *>, class NetworkIdentifier const &, unsigned char const &);
+
 
 
 };

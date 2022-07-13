@@ -23,12 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INITIALTICKFILTERSYSTEM
-public:
 #endif
     MCAPI static void blockFilterTickEntity(class StrictEntityContext &, class FlagComponent<struct UsesECSMovementFlag> const &, class FlagComponent<struct ActorMovementTickNeededFlag> const &, struct ConstBlockSourceComponent const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &);
     MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
     MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();
     MCAPI static void tickingAreaFilterTickEntity(class StrictEntityContext &, class FlagComponent<struct UsesECSMovementFlag> const &, class FlagComponent<struct ActorMovementTickNeededFlag> const &, class TickWorldComponent &, struct CurrentTickComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &);
+
 
 
 };

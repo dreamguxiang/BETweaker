@@ -41,7 +41,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
-public:
 #endif
     MCAPI PredictedMovementComponent(class Actor &);
     MCAPI bool isEnabled() const;
@@ -54,6 +53,7 @@ public:
     MCAPI bool _isDebugLoggingEnabled() const;
     MCAPI void _tickNextPosition(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
+
 
 private:
     MCAPI static unsigned int const LERP_STEP_SIZE;

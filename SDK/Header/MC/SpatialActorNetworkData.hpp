@@ -36,12 +36,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALACTORNETWORKDATA
-public:
 #endif
     MCAPI SpatialActorNetworkData(class Actor &);
     MCAPI void enableAutoSend(bool);
     MCAPI class Vec3 getLastSentPositionForAddingEntity();
     MCAPI class Vec2 getLastSentRotationForAddingEntity();
+    MCAPI float getLastSentYBodyRotationForAddingEntity();
     MCAPI float getLastSentYHeadRotationForAddingEntity();
     MCAPI void handleClientData(class MoveActorAbsoluteData const &);
     MCAPI bool isAutoSendEnabled() const;
@@ -56,6 +56,7 @@ public:
     MCAPI unsigned __int64 _getOptimizationScore(struct ActorUniqueID const &) const;
     MCAPI void _initializeLastSentValues();
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
+
 
 private:
     MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;

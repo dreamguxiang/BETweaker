@@ -23,12 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPIRINGTICK
-public:
 #endif
     MCAPI ExpiringTick(struct Tick, unsigned short);
     MCAPI struct Tick getExpireAtTick() const;
     MCAPI bool isActive(struct Tick) const;
     MCAPI bool isExpired(struct Tick) const;
+
 
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMWINDOWS
-public:
     MCVAPI class Core::PathBuffer<std::string> _getCurrentStoragePath() const;
     MCVAPI class Core::PathBuffer<std::string> _getExternalStoragePath() const;
     MCVAPI class Core::PathBuffer<std::string> _getInternalStoragePath() const;
@@ -49,6 +48,7 @@ public:
 
 //protected:
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
+
 
 protected:
 

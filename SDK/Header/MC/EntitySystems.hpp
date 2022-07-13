@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
-public:
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     MCVAPI ~EntitySystems();
 #endif
@@ -40,6 +39,7 @@ public:
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void tick(class EntityRegistry &);
     MCAPI void tickEditor(class EntityRegistry &);
+
 
 
 };

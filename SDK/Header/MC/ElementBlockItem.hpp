@@ -42,8 +42,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTBLOCKITEM
-public:
 #endif
+
 
 
 };

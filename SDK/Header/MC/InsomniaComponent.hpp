@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIACOMPONENT
-public:
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int getInsomniaTimerTicks() const;
@@ -33,6 +32,7 @@ public:
     MCAPI int incrementTimeSinceRest();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer();
+
 
 
 };

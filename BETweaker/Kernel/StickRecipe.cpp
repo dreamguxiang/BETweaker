@@ -17,7 +17,7 @@ THook(void, "?_loadHardcodedRecipes@Recipes@@AEAAXXZ", Recipes& recipes) {
 void regtest() {
 	auto& recipes = Global<Level>->getRecipes();
     vector<HashedString> fTags{ "furnace" };
-    recipes.addFurnaceRecipeAuxData(ItemInstance(*ItemRegistry::lookupByName("minecraft:stick")), Helper::cteateBetStick(), fTags);
+    recipes.addFurnaceRecipeAuxData(ItemInstance(*ItemRegistry::mItemRegistryInstance.lookupByName("minecraft:stick")), Helper::cteateBetStick(), fTags);
 }
 
 THook(void, "?addLooseCreativeItems@Item@@SAX_NAEBVBaseGameVersion@@@Z", void* a1) {

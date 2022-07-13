@@ -31,10 +31,10 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
-public:
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
 #endif
+
 
 
 };

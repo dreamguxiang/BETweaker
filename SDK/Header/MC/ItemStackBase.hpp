@@ -33,7 +33,6 @@ public:
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKBASE
-public:
 #endif
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const &, std::string &);
@@ -99,6 +98,7 @@ public:
     MCAPI void initParams(class RenderParams &, class Actor *);
     MCAPI bool isArmorItem() const;
     MCAPI bool isBlock() const;
+    MCAPI bool isBlockInstance(class HashedString const &) const;
     MCAPI bool isDamageableItem() const;
     MCAPI bool isDamaged() const;
     MCAPI bool isEnchanted() const;
@@ -108,7 +108,6 @@ public:
     MCAPI bool isFullStack() const;
     MCAPI bool isGlint() const;
     MCAPI bool isHorseArmorItem() const;
-    MCAPI bool isInstance(class BlockLegacy const &) const;
     MCAPI bool isInstance(class HashedString const &, bool) const;
     MCAPI bool isLiquidClipItem() const;
     MCAPI bool isMusicDiscItem() const;
@@ -188,10 +187,12 @@ public:
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag> &&);
     MCAPI void _checkForItemWorldCompatibility();
     MCAPI void _cloneComponents(class ItemStackBase const &);
+    MCAPI bool _isInstance(class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _loadComponents(class CompoundTag const &);
     MCAPI void _loadItem(class CompoundTag const &);
     MCAPI void _setChargedItem(class ItemInstance const &);
     MCAPI void _updateCompareHashes();
+
 
 protected:
     MCAPI static std::string const TAG_CHARGED_ITEM;

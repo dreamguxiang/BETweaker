@@ -25,12 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
-public:
     MCVAPI enum EventResult onObjectiveAdded(std::string const &);
     MCVAPI enum EventResult onObjectiveRemoved(std::string const &);
     MCVAPI enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     MCVAPI enum EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
 #endif
+
 
 
 };

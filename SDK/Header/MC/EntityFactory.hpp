@@ -23,11 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYFACTORY
-public:
 #endif
     MCAPI EntityFactory(class gsl::not_null<class EntityRegistryBase *>);
     MCAPI class StrictEntityContextOwner create();
     MCAPI void destroy(class StrictEntityContextOwner &&);
+
 
 
 };

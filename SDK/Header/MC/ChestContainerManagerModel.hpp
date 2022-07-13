@@ -29,10 +29,10 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+
 
 
 };

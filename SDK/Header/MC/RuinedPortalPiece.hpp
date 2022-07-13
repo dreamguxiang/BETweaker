@@ -29,7 +29,6 @@ public:
     /*2*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALPIECE
-public:
 #endif
 
 //private:
@@ -41,6 +40,7 @@ public:
     MCAPI void _spreadNetherrack(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     MCAPI static class Block const & _getRandomFacingStairs(class Random &, class Block const &);
     MCAPI static bool _willLavaFlowIn(class BlockSource &, class BlockPos);
+
 
 private:
 

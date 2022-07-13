@@ -23,11 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRAZESDKMANAGER
-public:
     MCVAPI void _disableBrazeSDK();
     MCVAPI void _enableBrazeSDK();
     MCVAPI void setBrazeId(std::string const &);
 #endif
+
 
 
 };

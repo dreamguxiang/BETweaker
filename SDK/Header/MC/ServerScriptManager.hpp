@@ -38,9 +38,8 @@ public:
     /*12*/ virtual enum EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
     /*13*/ virtual enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-public:
 #endif
-    MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>);
+    MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>, class IMinecraftEventing &, bool);
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
@@ -48,6 +47,7 @@ public:
     MCAPI void _registerEventHandlers(class Level &) const;
     MCAPI void _sendInitializeEvent(class ServerLevel &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;
+
 
 private:
 

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERCOMPONENT
-public:
 #endif
     MCAPI void DecrementDwellingUpdateInterval();
     MCAPI DwellerComponent(class DwellerComponent &&);
@@ -68,6 +67,7 @@ public:
 
 //private:
     MCAPI bool _isLockedInToProfession(class Actor const &) const;
+
 
 private:
     MCAPI static class std::unordered_map<std::string, enum DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerRole>>> const DWELLING_ROLES;

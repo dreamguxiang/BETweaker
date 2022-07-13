@@ -31,10 +31,10 @@ public:
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream &);
     /*6*/ virtual struct ItemStackNetIdVariant const & getRecipeNetId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
-public:
 #endif
     MCAPI ItemStackRequestActionCraftGrindstone();
     MCAPI int getRepairCost() const;
+
 
 
 };

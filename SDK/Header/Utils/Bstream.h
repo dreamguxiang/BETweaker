@@ -59,21 +59,6 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-
-    template <typename T1, typename T2>
-    void __get(std::multimap<T1,T2>& x) {
-        bsize_t sz;
-        __get(sz);
-        for (bsize_t i = 0; i < sz; ++i) {
-            T1 local;
-            T2 local2;
-            __get(local);
-            __get(local2);
-            x.insert({ std::move(local), std::move(local2) });
-        }
-    }
-
-	
     template <typename T1>
     void __get(std::list<T1> &x) {
         bsize_t sz;
@@ -130,16 +115,6 @@ class WBStreamImpl {
             __put(v);
         }
     }
-    template <typename T1, typename T2>
-    void __put(std::multimap<T1, T2> const& x) {
-        bsize_t sz = (bsize_t)x.size();
-        __put(sz);
-        for (auto& [k, v] : x) {
-            __put(k);
-            __put(v);
-        }
-    }
-	
     template <typename T2>
     void __put(std::vector<T2> const &x) {
         bsize_t sz = x.size();

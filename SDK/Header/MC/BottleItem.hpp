@@ -42,15 +42,15 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOTTLEITEM
-public:
 #endif
     MCAPI BottleItem(std::string const &, int);
 
 //private:
     MCAPI void _createBottledItem(class Actor &, class ItemStack &, class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _fillBottleViaDispenser(class BlockSource &, class gsl::basic_string_span<char const, -1>, class Container &, int, class Vec3 const &, unsigned char) const;
+
 
 private:
 

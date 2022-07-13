@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
-public:
     MCVAPI class Player * _getPlayer();
     MCVAPI void _onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     MCVAPI void _resetPos(bool);
@@ -33,7 +32,7 @@ public:
     MCVAPI bool areHandsBusy() const;
     MCVAPI void checkMovementStats(class Vec3 const &);
     MCVAPI void fireEventPersonaEmotePlayed(bool);
-    MCVAPI class Abilities const & getAbilities() const;
+    MCVAPI class LayeredAbilities const & getAbilities() const;
     MCVAPI bool getAbilityBool(enum AbilitiesIndex) const;
     MCVAPI float getAbilityFloat(enum AbilitiesIndex) const;
     MCVAPI float getBob() const;
@@ -103,6 +102,7 @@ public:
     MCVAPI void updateTouch();
     MCVAPI bool wasAutoJumping() const;
 #endif
+
 
 
 };

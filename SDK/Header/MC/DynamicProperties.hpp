@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIES
-public:
 #endif
     MCAPI void deserialize(class CompoundTag const &);
     MCAPI unsigned __int64 getCollectionCount() const;
@@ -36,6 +35,7 @@ public:
     MCAPI static std::string const STORAGE_TAG;
     MCAPI static std::unique_ptr<class DynamicProperties> readFromLevelStorage(class LevelStorage &);
     MCAPI static std::string validateDynamicProperty(struct DynamicPropertyDefinition const *, std::string const &, class std::variant<float, bool, std::string> const *);
+
 
 
 };

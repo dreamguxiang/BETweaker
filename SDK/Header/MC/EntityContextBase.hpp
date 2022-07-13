@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
-public:
 #endif
     MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
     MCAPI bool isValid() const;
@@ -37,6 +36,7 @@ public:
     MCAPI class entt::basic_registry<class EntityId> & _enttRegistry();
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
+
 
 protected:
 

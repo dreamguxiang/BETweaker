@@ -31,7 +31,6 @@ public:
     /*4*/ virtual void processLeaveEvent(class Player const &);
     /*5*/ virtual void onStartShutdown();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMUNITYSIFTPROCESSOR
-public:
 #endif
     MCAPI CommunitySiftProcessor(std::string const &, std::string const &, class Scheduler &);
 
@@ -41,6 +40,7 @@ public:
     MCAPI void _processEvent(class Player const &, enum TextProcessingEventOrigin, class UserEntityIdentifierComponent const *, std::string const &);
     MCAPI class CallbackToken _processMessages(class Player const &, bool, enum TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     MCAPI bool _validateCommunitySiftConfiguration();
+
 
 private:
 

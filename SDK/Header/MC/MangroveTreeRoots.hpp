@@ -26,13 +26,13 @@ public:
     /*0*/ virtual ~MangroveTreeRoots();
     /*1*/ virtual class std::optional<class BlockPos> placeRoots(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVETREEROOTS
-public:
 #endif
 
 //private:
     MCAPI void _placeRoot(class IBlockWorldGenAPI &, class BlockPos const &, class Random &) const;
     MCAPI std::vector<class BlockPos> _potentialRootPositions(class BlockPos const &, unsigned char, class Random &, class BlockPos const &) const;
     MCAPI bool _simulateRoots(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, class BlockPos const &, unsigned char, std::vector<class BlockPos> *, int, struct TreeHelper::TreeParams const &) const;
+
 
 private:
     MCAPI static float const RANDOM_SKEW_CHANCE;

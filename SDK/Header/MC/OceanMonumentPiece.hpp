@@ -31,7 +31,6 @@ public:
     /*7*/ virtual int getWorldZ(int, int);
     /*11*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
-public:
 #endif
 
 //protected:
@@ -39,6 +38,7 @@ public:
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
+
 
 protected:
     MCAPI static int mGridroomLeftWingConnectIndex;

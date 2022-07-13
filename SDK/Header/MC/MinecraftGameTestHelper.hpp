@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "ScriptModuleMinecraft.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -81,13 +82,12 @@ public:
     /*53*/ virtual class std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const &, int);
     /*54*/ virtual class std::optional<struct gametest::GameTestError> triggerInternalBlockEvent(class BlockPos const &, std::string const &, std::vector<float> const &);
     /*55*/ virtual class std::optional<struct gametest::GameTestError> assertCanReachLocation(class Mob &, class BlockPos const &, bool);
-    /*56*/ virtual class std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(class BlockPos const &, enum ScriptFacing, enum ScriptFacing);
+    /*56*/ virtual class std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, enum ScriptModuleMinecraft::ScriptFacing);
     /*57*/ virtual class std::variant<struct gametest::GameTestError, class SimulatedPlayer *> spawnSimulatedPlayer(std::string const &, class BlockPos const &, enum GameType);
     /*58*/ virtual void removeSimulatedPlayer(class SimulatedPlayer &);
     /*59*/ virtual class std::variant<struct gametest::GameTestError, class Dimension *> getDimension();
     /*60*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource *&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPER
-public:
 #endif
     MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
@@ -98,6 +98,7 @@ public:
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>> _getServerNetworkHandler() const;
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &) const;
+
 
 private:
 

@@ -25,7 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
-public:
+    MCVAPI enum GameEventListener::DeliveryMode getDeliveryMode() const;
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
     MCVAPI unsigned int getRange() const;
     MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
@@ -38,6 +38,7 @@ public:
     MCAPI class SculkSpreader & getSculkSpreader();
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
+
 
 
 };

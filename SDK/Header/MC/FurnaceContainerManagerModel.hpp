@@ -34,7 +34,6 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
@@ -44,6 +43,7 @@ public:
 //private:
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     MCAPI void _updateResultSlotInfo();
+
 
 protected:
 

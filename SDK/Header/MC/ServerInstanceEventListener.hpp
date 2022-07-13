@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-public:
     MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
     MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
     MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
@@ -34,6 +33,7 @@ public:
     MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif
+
 
 
 };

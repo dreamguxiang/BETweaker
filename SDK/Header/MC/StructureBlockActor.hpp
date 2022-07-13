@@ -33,13 +33,13 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*31*/ virtual void __unk_vfn_31();
+    /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
-    /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /*35*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /*34*/ virtual void __unk_vfn_34();
+    /*35*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /*36*/ virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKACTOR
-public:
 #endif
     MCAPI StructureBlockActor(class BlockPos const &);
     MCAPI class StructureEditorData const & getStructureData() const;
@@ -54,6 +54,7 @@ public:
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
+
 
 private:
 

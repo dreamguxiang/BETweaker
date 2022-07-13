@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATEPOSTTICKPOSITIONDELTASYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
+
 
 
 };

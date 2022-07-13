@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDPHYSICSSYSTEM
-public:
 #endif
     MCAPI static void applyPhysics(enum MaterialType, class IConstBlockSource const &, struct AABBShapeComponent const &, struct StateVectorComponent &);
+
 
 
 };

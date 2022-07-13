@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGER
-public:
 #endif
     MCAPI ~OnPlayerDestroyedTrigger();
+
 
 
 };

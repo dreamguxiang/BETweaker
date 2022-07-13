@@ -32,11 +32,11 @@ public:
     /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REALMSUNKNOWNPACKSOURCE
-public:
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
+
 
 
 };

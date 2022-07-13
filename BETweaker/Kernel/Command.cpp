@@ -22,11 +22,12 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 
 
 #include <MC/Abilities.hpp>
+#include <mc/LayeredAbilities.hpp>
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();
 	
-    auto abilities = &dAccess<Abilities>(&player, 2512);//AbilitiesCommand
+    auto abilities = &dAccess<LayeredAbilities>(&player, 2508);//AbilityCommand::execute
 
     auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && player.isOnGround())
@@ -46,7 +47,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
         abilities->setAbility(AbilitiesIndex::Flying, value);
     }
     flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
-    AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, uid, false);
+    AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, uid);
 
     pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
     if (flying)

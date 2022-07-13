@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKSTATETRANSFORMUTILS
-public:
 #endif
     MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
     MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
@@ -37,6 +36,7 @@ public:
     MCAPI static enum CommonDirection _mirrorFrontBack(enum CommonDirection);
     MCAPI static enum CommonDirection _mirrorLeftRight(enum CommonDirection);
     MCAPI static enum CommonDirection _rotate(enum CommonDirection, enum Rotation);
+
 
 private:
 

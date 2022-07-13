@@ -25,7 +25,6 @@ public:
 public:
     /*0*/ virtual void containerContentChanged(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
-public:
 #endif
     MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
@@ -61,6 +60,7 @@ public:
 
 //private:
     MCAPI bool _tryMoveInItem(class BlockSource &, class ItemStack &, int, int, int);
+
 
 private:
 

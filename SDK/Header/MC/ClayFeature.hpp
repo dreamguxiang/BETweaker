@@ -26,12 +26,11 @@ public:
 
 public:
     /*0*/ virtual ~ClayFeature();
-    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLAYFEATURE
-public:
 #endif
     MCAPI ClayFeature(int);
+
 
 
 };
