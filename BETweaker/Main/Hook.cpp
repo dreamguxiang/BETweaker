@@ -278,7 +278,7 @@ TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock)
 	
 	return original(this);
 }
-
+#if 0
 TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@AEBVLayeredAbilities@@UActorUniqueID@@@Z",
 	AdventureSettingsPacket, struct AdventureSettings const& settings, class Abilities const& abilities, struct ActorUniqueID uniqueId)
 {
@@ -288,6 +288,7 @@ TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAd
 	}
 	return pkt;
 }
+#endif
 
 #include <MC/UpdateAdventureSettingsPacket.hpp>
 #include <MC/UpdateAbilitiesPacket.hpp>
