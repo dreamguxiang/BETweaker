@@ -64,43 +64,24 @@ void RegHubInfoCommand()
 
     auto command = DynamicCommand::createCommand("hubinfo", "HubInfo switch", CommandPermissionLevel::Any);
 
-
-    auto& NoHubList = command->setEnum("NoHubList", { "true","false" });
     
-    command->mandatory("NoHubEnum", ParamType::Enum, NoHubList);
+    command->mandatory("Hubenable", ParamType::Bool);
     //auto& NoHubList = command->setEnum("NoHubEnum", { "true","false" });
 
-    command->addOverload(NoHubList);
+    command->addOverload("Hubenable");
 
     command->setCallback([](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
         if (origin.getPlayer()->isPlayer()) {
+            auto isenable = results["Hubenable"].getRaw<bool>();
             auto PlayerName = origin.getPlayer()->getRealName();
-            if (results["NoHubEnum"].isSet) {
-                auto action = results["NoHubEnum"].get<std::string>();
-                switch (do_hash(action.c_str())) {
-                case do_hash("false"): {
-                    Settings::NoHubList.insert(PlayerName);
-                    output.success("Hubinfo closs successful");
-                    Settings::reloadJson(JsonFile);
-                    break;
-                }
-                case do_hash("true"): {
-                    auto it = std::find(Settings::NoHubList.begin(), Settings::NoHubList.end(), PlayerName);
-                    if (it != Settings::NoHubList.end()) {
-                        Settings::NoHubList.erase(it);
-                        output.success("Hubinfo open successful");
-                        Settings::reloadJson(JsonFile);
-                    }
-                    else {
-                        output.error("Hubinfo is already opened.");
-                    }
-                    break;
-                }
-                }
+            if (isenable) {
+                Settings::NoHubList.erase(PlayerName);
             }
             else {
-                output.error("Please enter true/false.");
+                Settings::NoHubList.insert(PlayerName);
             }
+            output.success(PlayerName + " Hubinfo " + (isenable ? "open" : "close") + " successful");
+            Settings::reloadJson(JsonFile);
         }
         });
     DynamicCommand::setup(std::move(command));

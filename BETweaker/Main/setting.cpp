@@ -70,7 +70,7 @@ namespace Settings {
         json["Fly"]["Enabled"] = FlyEnabled;
         json["BetterThanMending"]["Enabled"] = BetterThanMending;
         json["AnvilRestoration"]["Enabled"] = AnvilRestoration;
-        json["HubInfo"]["PlayerList"] = NoHubList;
+        json["HUBInfo"]["NoShowPlayerList"] = NoHubList;
         return json;
     }
 
@@ -98,7 +98,7 @@ namespace Settings {
         TRJ("Fly", "Enabled", FlyEnabled);
         TRJ("BetterThanMending", "Enabled", BetterThanMending);
         TRJ("AnvilRestoration", "Enabled", AnvilRestoration);
-        TRJ("HubInfo", "PlayerList", NoHubList);
+        TRJ("HUBInfo", "NoShowPlayerList", NoHubList);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {
