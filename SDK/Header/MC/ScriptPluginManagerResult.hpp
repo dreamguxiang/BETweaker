@@ -4,7 +4,12 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
+namespace Scripting {
+    struct  ModuleDescriptor
+    {
 
+    };
+}
 #undef BEFORE_EXTRA
 
 class ScriptPluginManagerResult {
