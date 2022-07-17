@@ -58,6 +58,56 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 
 
 
+void RegHubInfoCommand()
+{
+    using ParamType = DynamicCommand::ParameterType;
+
+    auto command = DynamicCommand::createCommand("hubinfo", "HubInfo switch", CommandPermissionLevel::Any);
+
+
+    auto& NoHubList = command->setEnum("NoHubList", { "true","false" });
+    
+    command->mandatory("NoHubEnum", ParamType::Enum, NoHubList);
+    //auto& NoHubList = command->setEnum("NoHubEnum", { "true","false" });
+
+    command->addOverload(NoHubList);
+
+    command->setCallback([](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
+        if (origin.getPlayer()->isPlayer()) {
+            auto PlayerName = origin.getPlayer()->getRealName();
+            if (results["NoHubEnum"].isSet) {
+                auto action = results["NoHubEnum"].get<std::string>();
+                switch (do_hash(action.c_str())) {
+                case do_hash("false"): {
+                    Settings::NoHubList.insert(PlayerName);
+                    output.success("Hubinfo closs successful");
+                    Settings::reloadJson(JsonFile);
+                    break;
+                }
+                case do_hash("true"): {
+                    auto it = std::find(Settings::NoHubList.begin(), Settings::NoHubList.end(), PlayerName);
+                    if (it != Settings::NoHubList.end()) {
+                        Settings::NoHubList.erase(it);
+                        output.success("Hubinfo open successful");
+                        Settings::reloadJson(JsonFile);
+                    }
+                    else {
+                        output.error("Hubinfo is already opened.");
+                    }
+                    break;
+                }
+                }
+            }
+            else {
+                output.error("Please enter true/false.");
+            }
+        }
+        });
+    DynamicCommand::setup(std::move(command));
+}
+
+
+
 void RegFlyCommand()
 {
     using ParamType = DynamicCommand::ParameterType;
@@ -381,6 +431,7 @@ void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         if(Settings::FlyEnabled) RegFlyCommand();
+        if (Settings::HUBinfo) RegHubInfoCommand();
        // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
         SeedCommand::setup(ev.mCommandRegistry);
