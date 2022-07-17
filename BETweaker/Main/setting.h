@@ -26,6 +26,7 @@ namespace Settings {
     extern bool FlyEnabled;
     extern std::vector<string> DispenserDestroyItemList;
     extern std::unordered_set<string> FlyPlayerList;
+    extern std::unordered_set<string> NoHubList;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);

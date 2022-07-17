@@ -86,84 +86,86 @@ namespace Module {
     void HUBInfo() {
         Schedule::repeat([]() {
             Global<Level>->forEachPlayer([](Player& sp)->bool {
-                Actor* ac = sp.getActorFromViewVector(5.25);
-                auto posdim = HUBHelper::getDim(sp);
-                string lang = sp.getLanguageCode();
-                if (Settings::HUBInfoShow == "TIP") {
-                    if (ac) {
-                        auto pos = ac->getBlockPos().toVec3();
-                        sp.sendFormattedText("§f{}\n§c❤ §a{}/{}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n§7{} {}",
-                            Helper::getActorDisplayName(ac, sp.getLanguageCode()),
-                            toStr(ac->getHealth()), toStr(ac->getMaxHealth()),
-                            posdim, pos.x, posdim, pos.y, posdim, pos.z,
-                            getI18n("betweaker.hubinfo.status", lang), HUBHelper::actorCategory(ac, &sp)
-                        );
-                    }
-                    else
-                    {
-                        auto bi = sp.getBlockFromViewVector();
-                        if (!bi.isNull()) {
-                            auto block = bi.getBlock();
-                            ItemInstance item = block->getSilkTouchItemInstance();
-                            auto blpos = bi.getPosition();
-                            
-                            if (block->getTypeName() == "minecraft:redstone_wire")
-                            {
-                                sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}\n§c{}§7:§e{}",
-                                    Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
-                                    getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                                    HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
-                                    posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
-                                    HUBHelper::getCategoryName(item, sp.getLanguageCode()),
-                                    getI18n("betweaker.hubinfo.redstonelevel", lang),
-                                    block->getNbt()->getCompoundTag("states")->getInt("redstone_signal")
-                                );
-                            }
-                            else
-                            {
-                                sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
-                                    Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
-                                    getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
-                                    HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
-                                    posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
-                                    HUBHelper::getCategoryName(item, sp.getLanguageCode())
-                                );
+                if (Settings::NoHubList.find(sp.getRealName()) == std::end(Settings::NoHubList)){
+                    Actor* ac = sp.getActorFromViewVector(5.25);
+                    auto posdim = HUBHelper::getDim(sp);
+                    string lang = sp.getLanguageCode();
+                    if (Settings::HUBInfoShow == "TIP") {
+                        if (ac) {
+                            auto pos = ac->getBlockPos().toVec3();
+                            sp.sendFormattedText("§f{}\n§c❤ §a{}/{}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n§7{} {}",
+                                Helper::getActorDisplayName(ac, sp.getLanguageCode()),
+                                toStr(ac->getHealth()), toStr(ac->getMaxHealth()),
+                                posdim, pos.x, posdim, pos.y, posdim, pos.z,
+                                getI18n("betweaker.hubinfo.status", lang), HUBHelper::actorCategory(ac, &sp)
+                            );
+                        }
+                        else
+                        {
+                            auto bi = sp.getBlockFromViewVector();
+                            if (!bi.isNull()) {
+                                auto block = bi.getBlock();
+                                ItemInstance item = block->getSilkTouchItemInstance();
+                                auto blpos = bi.getPosition();
+
+                                if (block->getTypeName() == "minecraft:redstone_wire")
+                                {
+                                    sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}\n§c{}§7:§e{}",
+                                        Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
+                                        getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                                        HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
+                                        posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
+                                        HUBHelper::getCategoryName(item, sp.getLanguageCode()),
+                                        getI18n("betweaker.hubinfo.redstonelevel", lang),
+                                        block->getNbt()->getCompoundTag("states")->getInt("redstone_signal")
+                                    );
+                                }
+                                else
+                                {
+                                    sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}",
+                                        Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
+                                        getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),
+                                        HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang),
+                                        posdim, blpos.x, posdim, blpos.y, posdim, blpos.z,
+                                        HUBHelper::getCategoryName(item, sp.getLanguageCode())
+                                    );
+                                }
                             }
                         }
                     }
-                }
-                else if(Settings::HUBInfoShow == "Scoreboard") {
-                    if (ac) {
-                        auto pos = ac->getBlockPos().toVec3();
-                        sp.removeSidebar();
-                        sp.setSidebar("HubInfo", vector<std::pair<string, int>>{ 
-                            { fmt::format("§f{}", Helper::getActorDisplayName(ac, sp.getLanguageCode())) , 0},
-                            { fmt::format("§c❤ §a{}/{}", toStr(ac->getHealth()), toStr(ac->getMaxHealth())),1},
-                            { fmt::format("§7X:{}{}", posdim, pos.x), 2 },
-                            { fmt::format("§7Y:{}{}", posdim, pos.y), 3 },
-                            { fmt::format("§7Z:{}{}", posdim, pos.z), 4 },
-                            { fmt::format("§7{} {}", getI18n("betweaker.hubinfo.status", lang), HUBHelper::actorCategory(ac, &sp)), 5 }
-                        }, ObjectiveSortOrder::Ascending);
-                    }
-                    else
-                    {
-                        auto bi = sp.getBlockFromViewVector();
-                        if (!bi.isNull()) {
-                            auto block = bi.getBlock();
-                            ItemInstance item = block->getSilkTouchItemInstance();
-                            auto blpos = bi.getPosition();
+                    else if (Settings::HUBInfoShow == "Scoreboard") {
+                        if (ac) {
+                            auto pos = ac->getBlockPos().toVec3();
                             sp.removeSidebar();
                             sp.setSidebar("HubInfo", vector<std::pair<string, int>>{
-                                { fmt::format("§f{}", Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode())), 0},
-                                { fmt::format("§7{} §6{}",  getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block))),1 },
-                                { fmt::format("{} {}",  HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang)), 2 },
-                                { fmt::format("§7X:{}{}", posdim, blpos.x), 3 },
-                                { fmt::format("§7Y:{}{}", posdim, blpos.y), 4 },
-                                { fmt::format("§7Z:{}{}", posdim, blpos.z), 5 },
-                                { fmt::format("{}",HUBHelper::getCategoryName(item, sp.getLanguageCode())), 6 },
+                                { fmt::format("§f{}", Helper::getActorDisplayName(ac, sp.getLanguageCode())), 0},
+                                { fmt::format("§c❤ §a{}/{}", toStr(ac->getHealth()), toStr(ac->getMaxHealth())),1 },
+                                { fmt::format("§7X:{}{}", posdim, pos.x), 2 },
+                                { fmt::format("§7Y:{}{}", posdim, pos.y), 3 },
+                                { fmt::format("§7Z:{}{}", posdim, pos.z), 4 },
+                                { fmt::format("§7{} {}", getI18n("betweaker.hubinfo.status", lang), HUBHelper::actorCategory(ac, &sp)), 5 }
                             }, ObjectiveSortOrder::Ascending);
                         }
-                    }				
+                        else
+                        {
+                            auto bi = sp.getBlockFromViewVector();
+                            if (!bi.isNull()) {
+                                auto block = bi.getBlock();
+                                ItemInstance item = block->getSilkTouchItemInstance();
+                                auto blpos = bi.getPosition();
+                                sp.removeSidebar();
+                                sp.setSidebar("HubInfo", vector<std::pair<string, int>>{
+                                    { fmt::format("§f{}", Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode())), 0},
+                                    { fmt::format("§7{} §6{}",  getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block))),1 },
+                                    { fmt::format("{} {}",  HUBHelper::canDestroy(block, sp.getHandSlot()), getI18n("betweaker.hubinfo.harvestable", lang)), 2 },
+                                    { fmt::format("§7X:{}{}", posdim, blpos.x), 3 },
+                                    { fmt::format("§7Y:{}{}", posdim, blpos.y), 4 },
+                                    { fmt::format("§7Z:{}{}", posdim, blpos.z), 5 },
+                                    { fmt::format("{}",HUBHelper::getCategoryName(item, sp.getLanguageCode())), 6 },
+                                }, ObjectiveSortOrder::Ascending);
+                            }
+                        }
+                    }
                 }
                 });
             }, 3);
