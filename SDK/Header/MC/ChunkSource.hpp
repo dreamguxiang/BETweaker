@@ -55,7 +55,6 @@ public:
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
-public:
 #endif
     MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
@@ -85,6 +84,7 @@ public:
     MCAPI void _loadChunkTask(class LevelChunk &);
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _spawnChunkGenerationTasks(int, bool);
+
 
 protected:
 

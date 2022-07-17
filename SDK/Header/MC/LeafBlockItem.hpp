@@ -45,8 +45,8 @@ public:
     /*105*/ virtual void fixupCommon(class ItemStackBase &) const;
     /*106*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEAFBLOCKITEM
-public:
 #endif
+
 
 
 };

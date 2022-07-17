@@ -27,7 +27,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACK
-public:
 #endif
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     MCAPI class PackAccessStrategy * getAccessStrategy();
@@ -46,6 +45,7 @@ public:
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(enum PackType, class PackManifest &, class PackAccessStrategy const &, class PackReport &);
 
 //private:
+
 
 private:
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;

@@ -34,7 +34,6 @@ public:
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
-public:
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
 #endif
@@ -43,6 +42,7 @@ public:
     MCAPI void configureGameTest(class Level &, class Experiments const &);
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
     MCAPI class MinecraftCommands & getCommands();
+    MCAPI class Bedrock::NonOwnerPointer<class Editor::IEditorManager> getEditorManager();
     MCAPI class GameModuleServer & getGameModuleServer();
     MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
     MCAPI double getLastTimestep();
@@ -61,6 +61,7 @@ public:
 
 //private:
     MCAPI void _tryCatchupMovementTicks();
+
 
 private:
 

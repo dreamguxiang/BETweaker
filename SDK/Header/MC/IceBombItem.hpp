@@ -46,10 +46,10 @@ public:
     /*103*/ virtual class HashedString const & getCooldownType() const;
     /*104*/ virtual int getCooldownTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEBOMBITEM
-public:
 #endif
     MCAPI IceBombItem(std::string const &, int);
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
+
 
 
 };

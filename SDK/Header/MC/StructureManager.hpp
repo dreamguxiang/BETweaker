@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREMANAGER
-public:
 #endif
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
@@ -52,6 +51,7 @@ public:
     MCAPI class LegacyStructureTemplate * _readLegacyStructure(std::string const &);
     MCAPI void _removePlacementQueueItem(std::string const &, class StructureAnimationData &);
     MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
+
 
 private:
     MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;

@@ -24,9 +24,9 @@ public:
     /*0*/ virtual ~AppPlatformNetworkSettings();
     /*1*/ virtual bool requiresNetworkOutageMessaging() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMNETWORKSETTINGS
-public:
 #endif
     MCAPI AppPlatformNetworkSettings();
+
 
 
 };

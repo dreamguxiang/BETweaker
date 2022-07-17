@@ -23,7 +23,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXT
-public:
 #endif
     MCAPI StrictEntityContext(class StrictEntityContext &&);
     MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
@@ -35,6 +34,7 @@ public:
 //protected:
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
+
 
 protected:
 

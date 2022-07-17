@@ -47,13 +47,13 @@ public:
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
-public:
 #endif
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
 //private:
     MCAPI bool _getUnencryptedAsset(class Core::Path const &, std::string &) const;
     MCAPI bool _hasUnencryptedAsset(class Core::Path const &) const;
+
 
 private:
 

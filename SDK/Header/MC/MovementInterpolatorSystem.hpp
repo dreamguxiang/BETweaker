@@ -23,10 +23,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEM
-public:
 #endif
     MCAPI static void onGroundPostTick(struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
     MCAPI static void tick(class Actor &);
+
 
 
 };

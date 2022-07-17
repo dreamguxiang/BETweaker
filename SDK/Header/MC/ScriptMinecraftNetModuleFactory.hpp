@@ -27,12 +27,13 @@ public:
 public:
     /*0*/ virtual ~ScriptMinecraftNetModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTNETMODULEFACTORY
-public:
 #endif
     MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
+    MCAPI void _addV1();
+
 
 private:
     MCAPI static char const * ModuleName;

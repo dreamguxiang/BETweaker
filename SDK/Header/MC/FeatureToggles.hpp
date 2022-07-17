@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETOGGLES
-public:
 #endif
     MCAPI FeatureToggles(class AppPlatform &);
     MCAPI class Option * get(enum FeatureOptionID);
@@ -41,6 +40,7 @@ public:
     MCAPI void _registerFeature(enum FeatureOptionTabID, enum FeatureOptionID, std::string const &, std::string const &, bool, enum FeatureOptionID, class std::function<void (class Option &)>, class std::function<void (bool &)>);
     MCAPI void _registerFeatures();
     MCAPI void _setupDependencies();
+
 
 private:
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;

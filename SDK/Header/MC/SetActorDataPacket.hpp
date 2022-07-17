@@ -14,7 +14,7 @@ class SetActorDataPacket : public Packet {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    ActorRuntimeID mrid;
+    eid_t mrid;
     Tick mtick = { 0 };
     std::vector<std::unique_ptr<DataItem>> mitems;
 
@@ -34,10 +34,10 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORDATAPACKET
-public:
 #endif
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
     MCAPI SetActorDataPacket();
+
 
 
 };

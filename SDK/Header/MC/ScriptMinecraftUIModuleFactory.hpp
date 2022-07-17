@@ -25,12 +25,13 @@ public:
 public:
     /*0*/ virtual ~ScriptMinecraftUIModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTUIMODULEFACTORY
-public:
 #endif
     MCAPI ScriptMinecraftUIModuleFactory();
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
+    MCAPI void _addV1();
+
 
 private:
     MCAPI static char const * ModuleName;

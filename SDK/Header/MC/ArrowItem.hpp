@@ -45,16 +45,16 @@ public:
     /*85*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*96*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWITEM
-public:
 #endif
     MCAPI ArrowItem(std::string const &, int);
     MCAPI void applyEffect(class Arrow *, class ItemInstance const &) const;
 
 //protected:
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
+
 
 protected:
 

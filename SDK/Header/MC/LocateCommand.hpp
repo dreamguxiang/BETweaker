@@ -28,9 +28,15 @@ public:
     /*0*/ virtual ~LocateCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCATECOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
+//private:
+    MCAPI void _executeLocateBiome(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _executeLocateStructure(class CommandOrigin const &, class CommandOutput &) const;
+
+
+private:
 
 
 };

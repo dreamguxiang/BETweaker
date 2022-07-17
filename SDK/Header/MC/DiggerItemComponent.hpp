@@ -32,14 +32,13 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEMCOMPONENT
-public:
 #endif
-    MCAPI DiggerItemComponent(class ComponentItem *);
     MCAPI bool canDestroySpecial(class Block const &) const;
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

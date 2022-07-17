@@ -30,7 +30,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSCOMPONENT
-public:
 #endif
     MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -44,6 +43,7 @@ public:
 
 //private:
     MCAPI struct GeneticsComponent::Gene _crossParentGenes(struct GeneDefinition const &, struct GeneticsComponent::Gene &, struct GeneticsComponent::Gene &);
+
 
 private:
     MCAPI static std::string const GENE_ARRAY;

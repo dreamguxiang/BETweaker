@@ -33,7 +33,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULE
-public:
 #endif
     MCAPI GameRule(class GameRule const &);
     MCAPI GameRule(class GameRule &&);
@@ -62,6 +61,7 @@ public:
 
 //private:
     MCAPI bool _set(union GameRule::Value const &, bool *, class GameRule::ValidationError *);
+
 
 protected:
 

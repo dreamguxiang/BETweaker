@@ -23,12 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRYMODIFICATIONSLOCK
-public:
 #endif
     MCAPI ~BlockTypeRegistryModificationsLock();
 
 //private:
     MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
+
 
 private:
 

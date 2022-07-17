@@ -22,11 +22,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSONAPIECE
-public:
 #endif
     MCAPI PersonaPiece();
     MCAPI ~PersonaPiece();
     MCAPI static class PersonaPiece const INVALID_PIECE;
+
 
 
 };

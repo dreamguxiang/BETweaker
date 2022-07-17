@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
-public:
 #endif
     MCAPI SpinLock();
     MCAPI void lock();
@@ -34,6 +33,7 @@ public:
 
 //private:
     MCAPI unsigned __int64 _getThreadId();
+
 
 private:
 

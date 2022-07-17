@@ -30,9 +30,9 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*9*/ virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBSTARTPIECE
-public:
 #endif
     MCAPI NBStartPiece(class Random &, int, int);
+
 
 
 };

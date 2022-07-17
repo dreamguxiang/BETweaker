@@ -27,6 +27,7 @@ namespace Settings {
     bool EndPortalDuplicateGravityBlock = false;
     bool BetterThanMending = true;
     bool AnvilRestoration = true;
+    bool FlyEnabled = true;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
@@ -64,6 +65,7 @@ namespace Settings {
         json["DispenserDestroyBlock"]["ItemList"] = DispenserDestroyItemList;
         json["EndPortalDuplicateGravityBlock"]["Enabled"] = EndPortalDuplicateGravityBlock;
         json["Fly"]["PlayerList"] = FlyPlayerList;
+        json["Fly"]["Enabled"] = FlyEnabled;
         json["BetterThanMending"]["Enabled"] = BetterThanMending;
         json["AnvilRestoration"]["Enabled"] = AnvilRestoration;
         return json;
@@ -90,6 +92,7 @@ namespace Settings {
         TRJ("DispenserDestroyBlock", "ItemList", DispenserDestroyItemList);
         TRJ("EndPortalDuplicateGravityBlock", "Enabled", EndPortalDuplicateGravityBlock);
         TRJ("Fly", "PlayerList", FlyPlayerList);
+        TRJ("Fly", "Enabled", FlyEnabled);
         TRJ("BetterThanMending", "Enabled", BetterThanMending);
         TRJ("AnvilRestoration", "Enabled", AnvilRestoration);
     }

@@ -31,7 +31,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
-public:
     MCVAPI void addHardcodedSpawnAreas(class LevelChunk &);
     MCVAPI void debugRender();
     MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
@@ -50,6 +49,7 @@ public:
 //protected:
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
+
 
 protected:
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;

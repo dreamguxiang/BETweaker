@@ -27,9 +27,9 @@ public:
     /*2*/ virtual bool isValidVibration(class GameEvent const &);
     /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENVIBRATIONCONFIG
-public:
 #endif
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
+
 
 
 };

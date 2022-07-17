@@ -54,14 +54,13 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
-public:
 #endif
     MCAPI MinecraftCommands(class Minecraft &);
     MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     MCAPI class CommandRegistry & getRegistry();
     MCAPI void handleOutput(class CommandOrigin const &, class CommandOutput const &) const;
-    MCAPI void initCoreEnums(class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
+    MCAPI void initCoreEnums(class ItemRegistryRef, class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
     MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &);
     MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const &, int, bool) const;
     MCAPI void runCommand(class Command &, class CommandOrigin &);
@@ -69,10 +68,11 @@ public:
     MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const &)>) const;
     MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
     MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
-    MCAPI static void initItemEnum(class CommandRegistry &, class BaseGameVersion const &);
+    MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry &, class BaseGameVersion const &);
 
 //private:
     MCAPI void _registerSharedClientServerEnums();
+
 
 private:
 

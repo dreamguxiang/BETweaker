@@ -32,15 +32,14 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
-public:
 #endif
-    MCAPI WeaponItemComponent(class ComponentItem *);
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERCONTEXT
-public:
 #endif
     MCAPI SerializerContext();
     MCAPI void clear();
@@ -34,6 +33,7 @@ public:
     MCAPI void popContext();
     MCAPI class SerializerContext & pushContext(std::string const &);
     MCAPI ~SerializerContext();
+
 
 
 };

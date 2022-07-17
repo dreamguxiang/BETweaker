@@ -43,7 +43,6 @@ public:
     /*37*/ virtual void load(class ListTag const &, class SemVersion const &, class Level &);
     /*38*/ virtual int getEmptySlotsCount() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLINGCONTAINER
-public:
 #endif
     MCAPI FillingContainer(class Player *, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
@@ -65,6 +64,7 @@ public:
     MCAPI int _getSlotWithRemainingSpace(class ItemStack const &) const;
     MCAPI bool _isCreative() const;
     MCAPI void _release(int);
+
 
 protected:
 

@@ -25,12 +25,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
-public:
     MCVAPI enum EventResult onActorAttackedActor(class Actor &, class Actor &);
     MCVAPI enum EventResult onActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
     MCVAPI enum EventResult onActorCreated(class Actor &);
     MCVAPI enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct DefinitionModifier> &);
+    MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);
     MCVAPI enum EventResult onActorDroppedItem(class Actor &, class ItemInstance const &);
     MCVAPI enum EventResult onActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
     MCVAPI enum EventResult onActorMobInteraction(class Actor &, enum MinecraftEventing::InteractionType, enum ActorType);
@@ -46,6 +45,7 @@ public:
     MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     MCVAPI enum EventResult onEvent(struct ActorNotificationEvent const &);
 #endif
+
 
 
 };

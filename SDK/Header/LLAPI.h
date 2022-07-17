@@ -5,13 +5,17 @@
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
-#endif // ! WIN32_LEAN_AND_MEAN
+#endif
+
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+
 #include <Windows.h>
 
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
-#include "LoggerAPI.h"
 
 // LL types
 namespace LL
@@ -48,7 +52,7 @@ struct Plugin
     std::map<std::string, std::string> others;  // `otherInformation` before
 
     std::string filePath;
-    HMODULE handler;
+    HMODULE handle;
 
     enum class PluginType
     {
@@ -62,11 +66,12 @@ struct Plugin
     template <typename ReturnType = void, typename... Args>
     inline ReturnType callFunction(const char* functionName, Args... args)
     {
-        void* address = GetProcAddress(handler, functionName);
+        void* address = GetProcAddress(handle, functionName);
         if (!address)
             return ReturnType();
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
+
 };
 
 } // namespace LL
@@ -169,12 +174,12 @@ inline bool registerPlugin(std::string name, std::string desc, LL::Version versi
  */
 LIAPI LL::Plugin* getPlugin(std::string name);
 /**
- * @brief Get a loaded plugin by HMODULE handler
+ * @brief Get a loaded plugin by HMODULE handle
  * 
  * @param  name         The name of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
-LIAPI LL::Plugin* getPlugin(HMODULE handler);
+LIAPI LL::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded
@@ -190,6 +195,13 @@ LIAPI bool hasPlugin(std::string name);
  * @return std::unordered_map<std::string, LL::Plugin*>  The loaded plugins(name-plugin)
  */
 LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+
+/**
+ * @breif Get the handle of LiteLoader.dll.
+ * 
+ * @return HMODULE  The handle
+ */
+LIAPI HMODULE getLoaderHandle();
 
 /// Server Status
 enum class ServerStatus

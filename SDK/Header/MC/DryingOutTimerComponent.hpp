@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRYINGOUTTIMERCOMPONENT
-public:
 #endif
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -34,6 +33,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     MCAPI ~DryingOutTimerComponent();
+
 
 
 };

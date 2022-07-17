@@ -33,7 +33,6 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOHOMEGOAL
-public:
 #endif
     MCAPI GoHomeGoal(class Mob &);
 
@@ -42,6 +41,7 @@ public:
     MCAPI class BlockPos _getHomePos() const;
     MCAPI bool _hasRequiredComponents() const;
     MCAPI void _triggerOnFailedEvents();
+
 
 private:
 

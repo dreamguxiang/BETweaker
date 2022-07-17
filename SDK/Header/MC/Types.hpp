@@ -197,6 +197,14 @@ public:
     }
 
     inline void setRawImage(Blob&& buffer) { data = std::move(buffer); }
+
+    Image(const Image& a1) {
+		format = a1.format;
+		width = a1.width;
+		height = a1.height;
+		usage = a1.usage;
+		data = a1.data.clone();
+    }
 };
 
 static_assert(offsetof(Image, data) == 0x10);

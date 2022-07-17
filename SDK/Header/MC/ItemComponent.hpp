@@ -31,7 +31,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
-public:
     MCVAPI bool checkComponentDataForContentErrors() const;
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);
     MCVAPI bool isNetworkComponent() const;
@@ -39,6 +38,8 @@ public:
 #endif
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
+
 
 
 };

@@ -379,10 +379,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
-public:
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
@@ -473,7 +473,7 @@ public:
     MCAPI void addToDenyList(class mce::UUID const &, std::string const &);
     MCAPI void allowIncomingConnections(std::string const &, bool);
     MCAPI class OwnerPtrT<struct EntityRefTraits> createNewPlayer(class NetworkIdentifier const &, class ConnectionRequest const &);
-    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>, std::string const &);
     MCAPI void disallowIncomingConnections();
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &, bool);
     MCAPI void disconnectClient(class NetworkIdentifier const &, unsigned char, std::string const &, bool);
@@ -507,6 +507,8 @@ public:
     MCAPI void _onSubClientAuthenticated(class NetworkIdentifier const &, class Certificate const &, class SubClientLoginPacket const &);
     MCAPI void _sendAdditionalLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     MCAPI void _sendLevelData(class ServerPlayer &, class NetworkIdentifier const &);
+    MCAPI bool _updatePermissions(class ServerPlayer const &, class RequestPermissionsPacket const &, class Abilities &, class PermissionsHandler &, class Player *);
+
 
 private:
 

@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEMOVINGFLAGSYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo createUpdateMovingFlagSystem();
+
 
 
 };

@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
-public:
 #endif
     MCAPI BreathableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -43,6 +42,7 @@ public:
     MCAPI void setAirSupply(short);
     MCAPI void updateBreathableState(class Actor &);
     MCAPI ~BreathableComponent();
+
 
 
 };

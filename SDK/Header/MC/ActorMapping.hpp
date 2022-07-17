@@ -23,7 +23,7 @@ public:
 public:
     struct ActorMapping& operator=(struct ActorMapping const &) = default;
     ActorMapping(struct ActorMapping const &) = default;
-    ActorMapping() = delete;
+    ActorMapping() = default;
 #endif
 
 public:

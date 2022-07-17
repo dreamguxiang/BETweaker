@@ -27,13 +27,14 @@ public:
 public:
     /*0*/ virtual ~ScriptMinecraftServerAdminModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTSERVERADMINMODULEFACTORY
-public:
 #endif
     MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
     MCAPI static std::string getModuleUUIDAsString();
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
+    MCAPI void _addV1();
+
 
 private:
     MCAPI static char const * ModuleName;

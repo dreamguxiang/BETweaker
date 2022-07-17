@@ -47,9 +47,9 @@ public:
     /*89*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARROTONASTICKITEM
-public:
 #endif
     MCAPI CarrotOnAStickItem(std::string const &, int);
+
 
 
 };

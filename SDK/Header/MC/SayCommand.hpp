@@ -28,9 +28,15 @@ public:
     /*0*/ virtual ~SayCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAYCOMMAND
-public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
+
+//private:
+    MCAPI void sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
+    MCAPI bool trySendSayCommandEvent(class Player const &, class Level &, std::string const &) const;
+
+
+private:
 
 
 };

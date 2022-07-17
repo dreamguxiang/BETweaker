@@ -26,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
-public:
 #endif
     MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const &, class EntityContext &) const;
@@ -54,6 +53,7 @@ public:
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
+
 
 private:
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;

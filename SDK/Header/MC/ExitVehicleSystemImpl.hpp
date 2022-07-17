@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXITVEHICLESYSTEMIMPL
-public:
 #endif
     MCAPI static bool tryPlaceAt(class Vec3 const &, class AABB const &, class IConstBlockSource const &, class optional_ref<class GetCollisionShapeInterface const>);
+
 
 
 };

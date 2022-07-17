@@ -25,10 +25,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
-public:
 #endif
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
+    MCAPI static class Block const & getDefaultBlockState(class HashedString const &, bool);
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCAPI static void initBlockEntities(class Experiments const &);
     MCAPI static void initEntityRegistry();
@@ -42,6 +42,7 @@ public:
     MCAPI static void unregisterBlocks();
 
 //private:
+
 
 private:
     MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;

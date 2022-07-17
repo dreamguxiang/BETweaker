@@ -45,13 +45,12 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*88*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PICKAXEITEM
-public:
 #endif
     MCAPI PickaxeItem(std::string const &, int, class Item::Tier const &);
 
 //private:
     MCAPI bool const _isTierOneBlock(class BlockLegacy const &) const;
-    MCAPI bool const _isTierTwoBlock(class BlockLegacy const &) const;
+
 
 private:
 

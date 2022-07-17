@@ -30,14 +30,13 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEABLEITEMCOMPONENT
-public:
 #endif
-    MCAPI ChargeableItemComponent(class ComponentItem *);
     MCAPI float getMovementModifier() const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

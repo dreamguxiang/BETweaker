@@ -20,7 +20,6 @@ enum EAxis;
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILECOMPONENT
-public:
 #endif
     MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
@@ -52,10 +51,8 @@ public:
     MCAPI class ProjectileComponent & operator=(class ProjectileComponent const &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setActiveTarget(class Actor &, class Actor *);
-    MCAPI void setCachedHitResult(class HitResult);
     MCAPI void setChanneling();
     MCAPI void setEnchantImpaler(int const &);
-    MCAPI void setHitResult(class HitResult);
     MCAPI void setKnockbackForce(float);
     MCAPI void setNoPhysics(bool);
     MCAPI void setOwnerId(struct ActorUniqueID);
@@ -69,6 +66,7 @@ public:
 //private:
     MCAPI void _handleLightningOnHit(class Actor &);
     MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
+
 
 private:
 

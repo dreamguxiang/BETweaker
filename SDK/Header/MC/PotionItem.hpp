@@ -50,17 +50,17 @@ public:
     /*86*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*96*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
-    /*119*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*121*/ virtual class Item & setIcon(std::string const &, int);
-    /*132*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /*133*/ virtual enum Potion::PotionType getPotionType() const;
+    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*135*/ virtual enum Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
-public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI PotionItem(std::string const &, int);
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
+
 
 
 };

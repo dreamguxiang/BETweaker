@@ -23,12 +23,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIESCOMPONENT
-public:
 #endif
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI class DynamicProperties & getProperties();
     MCAPI class DynamicPropertiesComponent & operator=(class DynamicPropertiesComponent &&);
+
 
 
 };

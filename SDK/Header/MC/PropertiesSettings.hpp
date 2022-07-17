@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,7 +26,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTIESSETTINGS
-public:
 #endif
     MCAPI PropertiesSettings(std::string const &);
     MCAPI bool allowCheats() const;
@@ -35,6 +35,7 @@ public:
     MCAPI unsigned short getCompressionThresholdBytesize() const;
     MCAPI std::string const & getCustomProperty(std::string const &) const;
     MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
+    MCAPI enum Bedrock::Http::Implementation getDesiredHttpImplementation() const;
     MCAPI enum Difficulty getDifficulty() const;
     MCAPI std::vector<std::string> const & getExtraTrustedKeys() const;
     MCAPI enum GameType getGameMode() const;
@@ -70,6 +71,7 @@ public:
     MCAPI ~PropertiesSettings();
     MCAPI static bool parseBoolValue(std::string const &);
     MCAPI static enum GameType parseGameMode(std::string const &);
+
 
 
 };

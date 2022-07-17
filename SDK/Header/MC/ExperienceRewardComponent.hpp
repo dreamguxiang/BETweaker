@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMPONENT
-public:
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool getIsExperienceDropEnabled() const;
@@ -36,6 +35,7 @@ public:
     MCAPI void setIsExperienceDropEnabled(bool);
 
 //private:
+
 
 private:
     MCAPI static std::string const mIsExperienceDropEnabledTag;

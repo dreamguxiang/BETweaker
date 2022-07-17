@@ -2,6 +2,7 @@
 #include "../Global.h"
 
 namespace Module {
+	extern std::unordered_map<string, string> elist;
 	bool LoadBetterHarvestingCrop(BlockInstance blockin, Player* sp);
 	void FastSleep();
 	bool EditSign(Player* pl, BlockInstance bi);
@@ -20,4 +21,8 @@ namespace Module {
 	void ChangeDispenserMode(BlockActor* ba, BlockSource* bs, Player* sp);
 	bool AnvilRestoration(ItemStack* item, Block* block, BlockPos pos, Player* sp);
 	void BetterThanMending(Player* sp);
+	//void PlayEmote(Player* a1, string uuid);
+	//void readElistJsonData();
 }
+
+void downloadEmoteList();

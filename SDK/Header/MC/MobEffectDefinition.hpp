@@ -25,7 +25,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTDEFINITION
-public:
 #endif
     MCAPI MobEffectDefinition();
     MCAPI void initialize(class EntityContext &, class MobEffectComponent &);
@@ -36,6 +35,7 @@ public:
 
 //private:
     MCAPI static int _parseMobEffectId(std::string const &);
+
 
 private:
 

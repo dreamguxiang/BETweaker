@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYCOMPONENT
-public:
 #endif
     MCAPI AngryComponent(class AngryComponent &&);
     MCAPI AngryComponent();
-    MCAPI bool canAttack(class Mob &, class Mob *, class Actor *, bool, bool);
+    MCAPI bool canGetAngry(class Mob &, class Mob *, class Actor *, bool, bool) const;
     MCAPI enum LevelSoundEvent const getAngrySound(class Mob const &) const;
     MCAPI bool getBroadcastAnger() const;
     MCAPI bool getBroadcastAngerOnAttack() const;
@@ -43,6 +42,7 @@ public:
     MCAPI void setHasTicked(bool);
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI ~AngryComponent();
+
 
 
 };

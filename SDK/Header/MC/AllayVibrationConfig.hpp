@@ -27,9 +27,9 @@ public:
     /*2*/ virtual bool isValidVibration(class GameEvent const &);
     /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLAYVIBRATIONCONFIG
-public:
 #endif
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
+
 
 
 };

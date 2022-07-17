@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDECOMPONENT
-public:
 #endif
     MCAPI HideComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
@@ -35,6 +34,7 @@ public:
     MCAPI void setInRaid();
     MCAPI void setNotHiding();
     MCAPI void setReactingToBell();
+
 
 
 };

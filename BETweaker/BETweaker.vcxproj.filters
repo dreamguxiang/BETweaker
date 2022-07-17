@@ -100,6 +100,9 @@
     <ClCompile Include="Kernel\BetterThanMending.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\EmoteList.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc">

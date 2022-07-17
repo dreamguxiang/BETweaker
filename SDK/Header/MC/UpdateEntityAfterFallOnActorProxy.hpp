@@ -28,9 +28,9 @@ public:
     /*3*/ virtual class Vec3 getPosition() const;
     /*4*/ virtual class IConstBlockSource const & getRegion() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEENTITYAFTERFALLONACTORPROXY
-public:
 #endif
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
+
 
 
 };

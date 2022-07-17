@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVINGEVENT
-public:
 #endif
     MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+
 
 
 };

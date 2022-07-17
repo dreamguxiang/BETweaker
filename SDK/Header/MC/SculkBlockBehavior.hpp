@@ -29,11 +29,11 @@ public:
     /*4*/ virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKBLOCKBEHAVIOR
-public:
 #endif
 
 //private:
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
+
 
 private:
 

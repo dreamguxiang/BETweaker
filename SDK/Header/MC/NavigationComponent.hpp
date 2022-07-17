@@ -18,15 +18,13 @@ class NavigationComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONCOMPONENT
 public:
     class NavigationComponent& operator=(class NavigationComponent const &) = delete;
-    NavigationComponent(class NavigationComponent const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
-public:
 #endif
-    MCAPI NavigationComponent(class NavigationComponent &&);
+    MCAPI NavigationComponent(class NavigationComponent const &);
     MCAPI NavigationComponent();
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Vec3 const &);
@@ -91,6 +89,7 @@ public:
     MCAPI void update(class Mob &);
     MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
+
 
 
 };

@@ -23,9 +23,11 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWEBBLOCKSYSTEM
-public:
 #endif
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
+    MCAPI static void _applySlowdown(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct BlockMovementSlowdownApplied>>);
+    MCAPI static struct TickingSystemWithInfo createSlowdownSystem();
+
 
 
 };

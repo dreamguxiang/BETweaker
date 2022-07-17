@@ -27,12 +27,13 @@ public:
 public:
     /*0*/ virtual ~MessagingCommand();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
-public:
 #endif
 
 //protected:
     MCAPI MessagingCommand(bool, bool);
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI bool tryToSIFTText(class CommandOrigin const &, class CommandOutput &, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>) const;
+
 
 protected:
 

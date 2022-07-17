@@ -24,11 +24,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLECOMPONENT
-public:
 #endif
     MCAPI PushableComponent();
     MCAPI void initFromDefinition(class Actor &);
-    MCAPI void initFromDefinition(class Actor &, struct PushableDescription &);
+    MCAPI void initFromDefinition(class Actor &, struct PushableDescription const &);
     MCAPI bool isPushable();
     MCAPI bool isPushableByPiston();
     MCAPI void push(class Actor &, class Actor &, bool);
@@ -37,6 +36,7 @@ public:
 //private:
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorBoat(class Actor &, class Actor &, bool);
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor &, class Actor &, bool);
+
 
 private:
 

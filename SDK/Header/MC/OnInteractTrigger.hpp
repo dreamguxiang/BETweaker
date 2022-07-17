@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGER
-public:
 #endif
     MCAPI ~OnInteractTrigger();
+
 
 
 };

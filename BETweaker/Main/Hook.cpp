@@ -278,18 +278,21 @@ TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock)
 	
 	return original(this);
 }
-
-TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@AEBVAbilities@@UActorUniqueID@@_N@Z",
-	AdventureSettingsPacket, struct AdventureSettings const& settings, class Abilities const& abilities, struct ActorUniqueID uniqueId, bool unk_0)
+#if 0
+TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@AEBVLayeredAbilities@@UActorUniqueID@@@Z",
+	AdventureSettingsPacket, struct AdventureSettings const& settings, class Abilities const& abilities, struct ActorUniqueID uniqueId)
 {
-	auto& pkt = original(this, settings, abilities, uniqueId, unk_0);
+	auto& pkt = original(this, settings, abilities, uniqueId);
 	if (abilities.getAbility(AbilitiesIndex::MayFly).getBool() && abilities.getAbility(AbilitiesIndex::Flying).getBool()) {
 		pkt.mFlag |= (int)AdventureFlag::Flying;
 	}
 	return pkt;
 }
+#endif
 
-
+#include <MC/UpdateAdventureSettingsPacket.hpp>
+#include <MC/UpdateAbilitiesPacket.hpp>
+#include <MC/LayeredAbilities.hpp>
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
 	ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt)
 {
@@ -305,10 +308,10 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 		bool flying;
 		if (!pkt.tryGetBool(flying))
 			return;
-		auto abilities = &dAccess<Abilities>(sp, 2512);
+		auto abilities = &dAccess<LayeredAbilities>(sp, 2508);
 		auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
 		flying = flying && mayFly;
-		AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, sp->getUniqueID(), false);
+		AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, sp->getUniqueID());
 		pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
 		if (flying)
 			pkt.mFlag |= static_cast<unsigned int>(AdventureFlag::Flying);
@@ -352,4 +355,3 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }
-

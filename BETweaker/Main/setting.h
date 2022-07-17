@@ -23,6 +23,7 @@ namespace Settings {
     extern std::unordered_set<string> CanDispenserItemList;
     extern bool DispenserDestroyBlock;
     extern bool DispenserDestroyBreakItem;
+    extern bool FlyEnabled;
     extern std::vector<string> DispenserDestroyItemList;
     extern std::unordered_set<string> FlyPlayerList;
     nlohmann::json globaljson();

@@ -46,9 +46,8 @@ public:
     /*75*/ virtual void __unk_vfn_75();
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
-    /*113*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+    /*115*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKCHARGEITEM
-public:
 #endif
     MCAPI FireworkChargeItem(std::string const &, int);
     MCAPI static std::string const TAG_EXPLOSION;
@@ -65,6 +64,7 @@ public:
 //private:
     MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
+
 
 private:
 

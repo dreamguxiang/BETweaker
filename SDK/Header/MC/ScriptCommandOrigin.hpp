@@ -41,10 +41,10 @@ public:
     /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDORIGIN
-public:
 #endif
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
     MCAPI void __autoclassinit2(unsigned __int64);
+
 
 
 };

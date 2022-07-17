@@ -25,12 +25,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTECOLLECTION
-public:
 #endif
     MCAPI static bool hasAttribute(class HashedString const &);
 
 //private:
     MCAPI static class AttributeCollection & instance();
+
 
 private:
 

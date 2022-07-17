@@ -29,7 +29,6 @@ public:
     /*2*/ virtual class GameEvents::PositionSource const & getPositionSource() const;
     /*3*/ virtual unsigned int getRange() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENER
-public:
 #endif
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const & getGameEvent() const;
@@ -41,6 +40,7 @@ public:
 //private:
     MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, struct GameEventContext const &, class GameEvents::PositionSource const &);
     MCAPI static bool _shouldIgnoreVibration(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
+
 
 private:
 

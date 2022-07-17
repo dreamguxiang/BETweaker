@@ -24,12 +24,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
-public:
 #endif
     MCAPI bool isAnyToggleEnabled() const;
     MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();
+
 
 
 };

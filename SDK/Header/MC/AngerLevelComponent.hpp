@@ -22,7 +22,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELCOMPONENT
-public:
 #endif
     MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     MCAPI AngerLevelComponent(class AngerLevelComponent const &);
@@ -35,8 +34,7 @@ public:
     MCAPI class AngerLevelComponent & operator=(class AngerLevelComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void tick(class Actor *, class ILevel const &);
-    MCAPI void tryIncreaseAngerAt(class Actor &, class Actor &, int);
-    MCAPI void tryMakeAngryAt(class Actor &, class Actor &);
+    MCAPI void tryIncreaseAngerAt(class Actor &, class Actor &, int, bool);
     MCAPI ~AngerLevelComponent();
     MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
     MCAPI static int const DEFAULT_ANGRY_BOOST;
@@ -47,6 +45,7 @@ public:
 //private:
     MCAPI void _createOrModifyAngerLevel(class Actor const &, class std::function<int (int)> const &);
     MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
+
 
 private:
 

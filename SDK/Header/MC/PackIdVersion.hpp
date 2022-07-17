@@ -22,10 +22,7 @@ enum PackType : uint8_t
 #undef BEFORE_EXTRA
 
 struct PackIdVersion {
-public:
-    mce::UUID mUUID;
-    SemVersion mVersion;
-    PackType mType;
+
 #define AFTER_EXTRA
     // Add Member There
 public:
@@ -34,19 +31,19 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION
 public:
-    struct PackIdVersion& operator=(struct PackIdVersion const&) = delete;
+    struct PackIdVersion& operator=(struct PackIdVersion const &) = delete;
 #endif
 
 public:
-    MCAPI PackIdVersion(struct PackIdVersion const&);
-    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum PackType);
+    MCAPI PackIdVersion(struct PackIdVersion const &);
+    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
     MCAPI PackIdVersion();
     MCAPI std::string asString() const;
-    MCAPI bool operator!=(struct PackIdVersion const&) const;
-    MCAPI bool operator<(struct PackIdVersion const&) const;
-    MCAPI struct PackIdVersion& operator=(struct PackIdVersion&&);
-    MCAPI bool operator==(struct PackIdVersion const&) const;
-    MCAPI bool satisfies(struct PackIdVersion const&) const;
+    MCAPI bool operator!=(struct PackIdVersion const &) const;
+    MCAPI bool operator<(struct PackIdVersion const &) const;
+    MCAPI struct PackIdVersion & operator=(struct PackIdVersion &&);
+    MCAPI bool operator==(struct PackIdVersion const &) const;
+    MCAPI bool satisfies(struct PackIdVersion const &) const;
     MCAPI ~PackIdVersion();
 
 protected:

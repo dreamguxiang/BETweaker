@@ -25,9 +25,10 @@ public:
     /*0*/ virtual ~SideBySideExtractionSystem();
     /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEEXTRACTIONSYSTEM
-public:
 #endif
     MCAPI static void onSideBySideExtractionRequest(struct OnExtractSideBySide const &);
+    MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
+
 
 
 };

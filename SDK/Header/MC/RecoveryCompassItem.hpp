@@ -39,9 +39,9 @@ public:
     /*79*/ virtual void __unk_vfn_79();
     /*80*/ virtual void __unk_vfn_80();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECOVERYCOMPASSITEM
-public:
 #endif
     MCAPI RecoveryCompassItem(std::string const &, int);
+
 
 
 };

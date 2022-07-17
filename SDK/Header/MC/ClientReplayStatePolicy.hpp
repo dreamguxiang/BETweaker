@@ -31,10 +31,10 @@ public:
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
     /*5*/ virtual void storeCurrentFrameSupported(unsigned __int64, struct IActorMovementProxy &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREPLAYSTATEPOLICY
-public:
 #endif
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
+
 
 
 };

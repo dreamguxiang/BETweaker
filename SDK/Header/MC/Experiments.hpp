@@ -24,7 +24,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTS
-public:
 #endif
     MCAPI bool DataDrivenBiomes() const;
     MCAPI bool DataDrivenItems() const;
@@ -32,8 +31,6 @@ public:
     MCAPI bool Gametest() const;
     MCAPI bool SpectatorMode() const;
     MCAPI bool UpcomingCreatorFeatures() const;
-    MCAPI bool VanillaExperiments() const;
-    MCAPI bool WildUpdate() const;
     MCAPI std::string getExperimentsActiveAsJSONList() const;
     MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const;
     MCAPI void getTagData(class CompoundTag const &);
@@ -42,6 +39,7 @@ public:
     MCAPI ~Experiments();
     MCAPI static std::string const & getExperimentTextID(enum AllExperiments);
     MCAPI static std::vector<std::string> const & getToggleNames();
+
 
 
 };

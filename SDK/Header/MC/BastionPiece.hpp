@@ -31,9 +31,9 @@ public:
     /*14*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const;
     /*15*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONPIECE
-public:
 #endif
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum VanillaBiomeTypes, class Dimension &);
+
 
 
 };

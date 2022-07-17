@@ -22,11 +22,12 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 
 
 #include <MC/Abilities.hpp>
+#include <mc/LayeredAbilities.hpp>
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();
 	
-    auto abilities = &dAccess<Abilities>(&player, 2512);//AbilitiesCommand
+    auto abilities = &dAccess<LayeredAbilities>(&player, 2508);//AbilityCommand::execute
 
     auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && player.isOnGround())
@@ -46,7 +47,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
         abilities->setAbility(AbilitiesIndex::Flying, value);
     }
     flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
-    AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, uid, false);
+    AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, uid);
 
     pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
     if (flying)
@@ -57,7 +58,7 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 
 
 
-void RegCommand()
+void RegFlyCommand()
 {
     using ParamType = DynamicCommand::ParameterType;
 	
@@ -130,6 +131,51 @@ void RegCommand()
         });
        DynamicCommand::setup(std::move(command));
 }
+
+#if 0
+void RegEmoteCommand()
+{
+    using ParamType = DynamicCommand::ParameterType;
+
+    auto command = DynamicCommand::createCommand("emote", "Play Emote", CommandPermissionLevel::Any);
+
+
+    auto& EmoteList1 = command->setEnum("EmoteList1", { "gui", });
+    auto& EmoteList2 = command->setEnum("EmoteList2", { "play" });
+
+    command->mandatory("NameEnum", ParamType::SoftEnum, command->setSoftEnum("NameList", {}));
+	
+    command->mandatory("EmoteEnum", ParamType::Enum, EmoteList1);
+    command->mandatory("EmoteEnum", ParamType::Enum, EmoteList2);
+
+    command->addOverload({ EmoteList1 });
+    command->addOverload({ EmoteList2 ,"NameEnum"});
+
+    command->setCallback([](DynamicCommand const& command, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>& results) {
+        auto sp = origin.getPlayer();
+        auto action = results["EmoteEnum"].get<std::string>();
+        switch (do_hash(action.c_str())) {
+        case do_hash("gui"): {
+			
+            break;
+        }
+        case do_hash("play"): {
+            auto name = results["NameEnum"].get<std::string>();
+            Module::PlayEmote(sp, name);
+            break;
+        }
+        }
+        });
+    auto cmd = DynamicCommand::setup(std::move(command));
+    Schedule::repeat([cmd] {
+        vector<string> out;
+        for (auto& i : Module::elist) {
+            out.push_back(i.first);
+        }
+        cmd->addSoftEnumValues("NameList", out);
+        }, 200);
+}
+#endif
 
 
 class BETCommand : public Command
@@ -280,7 +326,7 @@ public:
             {"dispenserdestroyblock", Operation::DispenserDestroyBlock},
             {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock},
             {"anvilrestoration", Operation::AnvilRestoration},
-            {"betterthanbending", Operation::BetterThanMending}
+            {"betterthanmending", Operation::BetterThanMending}
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {
@@ -334,7 +380,8 @@ public:
 void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
-        RegCommand();
+        if(Settings::FlyEnabled) RegFlyCommand();
+       // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
         SeedCommand::setup(ev.mCommandRegistry);
         return true;

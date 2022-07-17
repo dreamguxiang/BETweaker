@@ -32,15 +32,14 @@ public:
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEMCOMPONENT
-public:
 #endif
-    MCAPI RecordItemComponent(class ComponentItem *);
     MCAPI std::string getAlias() const;
     MCAPI int getComparatorSignal() const;
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
+
 
 
 };

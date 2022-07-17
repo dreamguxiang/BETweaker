@@ -54,7 +54,6 @@ public:
     /*110*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
     /*111*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
-public:
 #endif
     MCAPI ShieldItem(std::string const &, int);
     MCAPI void playBlockSound(class Player *) const;
@@ -65,6 +64,7 @@ public:
 
 //private:
     MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+
 
 private:
 

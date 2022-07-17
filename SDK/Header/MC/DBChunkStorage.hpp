@@ -46,7 +46,6 @@ public:
     /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /*27*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBCHUNKSTORAGE
-public:
 #endif
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
     MCAPI void freeCaches();
@@ -73,6 +72,7 @@ public:
     MCAPI void _writeActorDigestFormatVersion(class LevelStorageWriteBatch &, class ChunkKey const &, enum ActorDigestFormat);
     MCAPI void _writeDiscardChunksBatch();
     MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput &);
+
 
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;

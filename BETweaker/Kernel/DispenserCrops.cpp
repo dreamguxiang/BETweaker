@@ -13,7 +13,7 @@ namespace Module {
         auto pos = a3->toBlockPos();
         if (!a5->isNull()) {
             if (a5->getItem()->isSeed()) {
-                if (a2->getBlock(pos.add(0, -1, 0)).getTypeName() == VanillaBlocks::mFarmland->getTypeName() &&
+                if (a2->getBlock(pos.add(0, -1, 0)).getTypeName() == "minecraft:farmland" &&
                     a2->getBlock(pos).getTypeName() == "minecraft:air") {
                     auto out = dAccess<Block*, 8>(dAccess<SeedItemComponentLegacy*, 488>(a5->getItem()));//IDA Item::_useOn
                     Level::setBlock(pos, a2->getDimensionId(), out);
@@ -102,11 +102,11 @@ namespace Module {
     void ChangeDispenserMode(BlockActor* ba,BlockSource* bs,Player* sp) {
         if (ba->getCustomName() == "DestroyBlock-Close" || ba->getCustomName().empty()) {
             ba->setCustomName("DestroyBlock-Open");
-            sp->sendText("§b[BETweaker-Dispenser] OPEN", TextType::JUKEBOX_POPUP);
+            sp->sendTextPacket("§b[BETweaker-Dispenser] OPEN", TextType::JUKEBOX_POPUP);
         }
         else if (ba->getCustomName() == "DestroyBlock-Open") {
             ba->setCustomName("DestroyBlock-Close");
-            sp->sendText("§b[BETweaker-Dispenser] CLOSE", TextType::JUKEBOX_POPUP);
+            sp->sendTextPacket("§b[BETweaker-Dispenser] CLOSE", TextType::JUKEBOX_POPUP);
         }
         auto pkt = ba->getServerUpdatePacket(*bs);
         Level::sendPacketForAllPlayer(*pkt);

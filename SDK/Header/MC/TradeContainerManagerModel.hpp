@@ -33,10 +33,10 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADECONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
+
 
 
 };

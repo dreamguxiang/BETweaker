@@ -36,6 +36,12 @@ public:
     NonOwnerPointer(NonOwnerPointer const&) = delete;
     NonOwnerPointer(NonOwnerPointer const&&) = delete;
 };
+
+class Http {
+public:
+    enum Implementation;
+};
+
 struct StorageMigration {
     enum StorageMigrationType;
     StorageMigration() = delete;
@@ -49,6 +55,8 @@ public:
     Subscription(Subscription const&) = delete;
     Subscription(Subscription const&&) = delete;
 };
+
+
 } // namespace PubSub
 namespace Threading {
 enum AsyncStatus;

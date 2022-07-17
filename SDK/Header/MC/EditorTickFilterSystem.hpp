@@ -23,9 +23,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORTICKFILTERSYSTEM
-public:
 #endif
     MCAPI static struct TickingSystemWithInfo create();
+
 
 
 };

@@ -14,6 +14,8 @@
 #include <MC/SynchedActorData.hpp>
 #include <ScheduleAPI.h>
 #include "../Main/setting.h"
+#include <MC/Dimension.hpp>
+#include <MC/Abilities.hpp>
 
 
 namespace HUBHelper {
@@ -40,11 +42,26 @@ namespace HUBHelper {
         I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
         return out;
     };
+    Actor* findAttackTarget(Actor* a1) {
+        char Bool; // al
 
+        auto& DimensionConst = a1->getDimension();
+        auto NearestAttackablePlayer = DimensionConst.fetchNearestAttackablePlayer(*a1, float(16.0));
+        if (!NearestAttackablePlayer || !a1->canSee(*NearestAttackablePlayer))
+        {
+            return nullptr;
+        }
+        auto abilities = &dAccess<Abilities>(&NearestAttackablePlayer, 2508);//AbilityCommand::execute
+        Bool = abilities->getBool(AbilitiesIndex::ExposedAbilityCount);
+        if (!Bool)
+            return NearestAttackablePlayer;
+        return nullptr;
+    }
+	
     string actorCategory(Actor* ac, Player* sp) {
         string out = "§c" + getI18n("betweaker.hubinfo.hostile", sp->getLanguageCode());
         if (!ac->hasFamily("monster")) {
-            if (ac->findAttackTarget() != sp && !ac->isAngry())
+            if (findAttackTarget(ac) != sp && !ac->isAngry())
                 out = "§2" + getI18n("betweaker.hubinfo.frinedly", sp->getLanguageCode());
         }
         return out;

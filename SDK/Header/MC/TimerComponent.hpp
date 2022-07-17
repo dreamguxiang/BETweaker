@@ -18,15 +18,13 @@ class TimerComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMERCOMPONENT
 public:
     class TimerComponent& operator=(class TimerComponent const &) = delete;
+    TimerComponent(class TimerComponent const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMERCOMPONENT
-public:
 #endif
-    MCAPI TimerComponent(class TimerComponent &&);
-    MCAPI TimerComponent(class TimerComponent const &);
     MCAPI TimerComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool getHasExecuted() const;
@@ -36,10 +34,10 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer(class Actor &);
     MCAPI void setHasExecuted(bool);
-    MCAPI ~TimerComponent();
 
 //private:
     MCAPI int getRandomTime(class Actor &);
+
 
 private:
 

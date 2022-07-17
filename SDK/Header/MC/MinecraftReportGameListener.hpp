@@ -29,7 +29,6 @@ public:
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTREPORTGAMELISTENER
-public:
 #endif
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
@@ -40,6 +39,7 @@ public:
     MCAPI void _spawnBeacon(class Block const &);
     MCAPI void _spawnLectern(std::string const &);
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const &, class BlockSource &);
+
 
 private:
 

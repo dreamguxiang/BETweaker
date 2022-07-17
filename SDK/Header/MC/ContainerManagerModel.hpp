@@ -43,7 +43,6 @@ public:
     /*16*/ virtual bool isValid(float);
     /*17*/ virtual class ContainerScreenContext _postInit() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL
-public:
 #endif
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
     MCAPI class Player & getPlayer() const;
@@ -56,6 +55,7 @@ public:
     MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
+
 
 protected:
 

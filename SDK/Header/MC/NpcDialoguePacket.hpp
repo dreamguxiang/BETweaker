@@ -6,7 +6,10 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum NPCDialogAction {
+	OPEN = 0,
+	CLOSE = 1,
+};
 #undef BEFORE_EXTRA
 
 class NpcDialoguePacket : public Packet {
@@ -30,11 +33,11 @@ public:
     /*3*/ virtual void write(class BinaryStream &) const;
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUEPACKET
-public:
 #endif
     MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI NpcDialoguePacket();
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
+
 
 
 };

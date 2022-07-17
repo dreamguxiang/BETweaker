@@ -46,9 +46,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARPEDFUNGUSONASTICKITEM
-public:
 #endif
     MCAPI WarpedFungusOnAStickItem(std::string const &, int);
+
 
 
 };
