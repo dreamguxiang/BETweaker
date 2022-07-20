@@ -11,6 +11,7 @@ public:
     short min;
     short max;
 };
+#define ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
 #undef BEFORE_EXTRA
 
 class Dimension {

@@ -24,6 +24,7 @@ namespace Settings {
     extern bool DispenserDestroyBlock;
     extern bool DispenserDestroyBreakItem;
     extern bool FlyEnabled;
+    extern  float FastSleepProbability;
     extern std::vector<string> DispenserDestroyItemList;
     extern std::unordered_set<string> FlyPlayerList;
     extern std::unordered_set<string> NoHubList;

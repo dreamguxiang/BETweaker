@@ -193,7 +193,11 @@ void PluginInit()
     //downloadEmoteList();
     //Module::readElistJsonData();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
-       // regtest();
+        Schedule::repeat([] {
+            if (Global<Level>->getDimension(0)->isDay()) {
+                sleepList.clear();
+            };
+            },10*60*20);
         return true;
         });
     logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());

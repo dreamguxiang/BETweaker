@@ -6,11 +6,12 @@
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Abilities.hpp>
+#include <MC/ServerLevel.hpp>
 #include "../Main/Helper.hpp"
 std::mutex DispenserejectItemLock;
 bool nodis = false;
 
-THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self) {
+THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", Level* self) {
 	original(self);
 	if (Settings::FastSleeping) {
 		try {
@@ -21,6 +22,27 @@ THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", ServerLevel* self)
 		}
 	}
 }
+std::set<string> sleepList;
+
+THook(__int64, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
+	Player* a1, int* a2, const char* a3)
+{
+	auto out = original(a1, a2, a3);
+	if (out == 0) {
+		sleepList.insert(a1->getRealName());
+	}
+	return out;
+}
+
+THook(void, "?stopSleepInBed@Player@@UEAAX_N0@Z",
+	Player* self, bool a2, char a3)
+{
+	if (self->isSleeping()) {
+		sleepList.erase(self->getRealName());
+	}
+	original(self, a2, a3);
+}
+
 
 THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z", void* __this, void* a2,
 	void* a3, void* a4, float a5) {

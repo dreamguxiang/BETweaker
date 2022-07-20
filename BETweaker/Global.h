@@ -75,4 +75,4 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate = false);
 
 extern void loadCfg();
 extern void checkUpdate();
-
+extern std::set<string> sleepList;

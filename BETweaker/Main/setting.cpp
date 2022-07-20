@@ -28,6 +28,7 @@ namespace Settings {
     bool BetterThanMending = true;
     bool AnvilRestoration = true;
     bool FlyEnabled = true;
+    float FastSleepProbability = 0.5;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
     "minecraft:bamboo",//bamboo
@@ -51,6 +52,7 @@ namespace Settings {
         json["BetterHarvestingCrop"]["Enabled"] = BetterHarvestingCrop;
         json["NoFarmDestroy"]["Enabled"] = NoFarmDestroy;
         json["FastSleeping"]["Enabled"] = FastSleeping;
+        json["FastSleeping"]["Probability"] = FastSleepProbability;
         json["DispenserCrops"]["Enabled"] = DispenserCrops;
         json["FastLeafDecay"]["Enabled"] = FastLeafDecay;
         json["HUBInfo"]["Enabled"] = HUBinfo;
@@ -79,6 +81,7 @@ namespace Settings {
         TRJ("BetterHarvestingCrop","Enabled", BetterHarvestingCrop);
         TRJ("NoFarmDestroy", "Enabled", NoFarmDestroy);
         TRJ("FastSleeping", "Enabled", FastSleeping);
+        TRJ("FastSleeping", "Probability", FastSleepProbability);
         TRJ("DispenserCrops", "Enabled", DispenserCrops);
         TRJ("FastLeafDecay", "Enabled", FastLeafDecay);
         TRJ("HUBInfo", "Enabled", HUBinfo);
