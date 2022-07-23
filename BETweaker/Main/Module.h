@@ -21,6 +21,7 @@ namespace Module {
 	void ChangeDispenserMode(BlockActor* ba, BlockSource* bs, Player* sp);
 	bool AnvilRestoration(ItemStack* item, Block* block, BlockPos pos, Player* sp);
 	void BetterThanMending(Player* sp);
+	void cancelSleep();
 	//void PlayEmote(Player* a1, string uuid);
 	//void readElistJsonData();
 }

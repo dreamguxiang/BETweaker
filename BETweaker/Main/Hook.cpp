@@ -11,17 +11,17 @@
 std::mutex DispenserejectItemLock;
 bool nodis = false;
 
-THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", Level* self) {
-	original(self);
-	if (Settings::FastSleeping) {
-		try {
-			Module::FastSleep();
-		}
-		catch (...) {
-			return;
-		}
-	}
-}
+//THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", Level* self) {
+//	original(self);
+//	if (Settings::FastSleeping) {
+//		try {
+//			Module::FastSleep();
+//		}
+//		catch (...) {
+//			return;
+//		}
+//	}
+//}
 std::set<string> sleepList;
 
 THook(__int64, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
@@ -30,6 +30,7 @@ THook(__int64, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos
 	auto out = original(a1, a2, a3);
 	if (out == 0) {
 		sleepList.insert(a1->getRealName());
+		Module::FastSleep();
 	}
 	return out;
 }
@@ -39,6 +40,7 @@ THook(void, "?stopSleepInBed@Player@@UEAAX_N0@Z",
 {
 	if (self->isSleeping()) {
 		sleepList.erase(self->getRealName());
+		Module::cancelSleep();
 	}
 	original(self, a2, a3);
 }
@@ -377,3 +379,30 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 	//logger.info << t->getTypeName() << " " << a5->toBlockPos().toString() << "  " << rtn << logger.endl;
 	return rtn;
 }
+//#include <MC/LeashableComponent.hpp>
+//#include <MC/SynchedActorData.hpp>
+//#include <MC/VanillaItemNames.hpp>
+//#include <MC/ActorComponentFactory.hpp>
+//TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+//	ServerNetworkHandler, ServerPlayer* sp, bool unk) {
+//	auto uid = dAccess<ActorRuntimeID, 104>(this);
+//	auto id = dAccess<int, 112>(this);
+//	if (id == 0) {
+//		auto ac = Global<Level>->getRuntimeEntity(uid, true);
+//		auto out = SymCall("??$tryGetDefinitionInstance@VLeashableDefinition@@@DefinitionInstanceGroup@@QEBAPEBVLeashableDefinition@@XZ",
+//			void*, __int64)(*((__int64*)ac + 31) + 472);
+//		if (ac->getEntityTypeId() == ActorType::VillagerV2) {
+//			if (!ac->isLeashed()) {
+//
+//				auto item = sp->getHandSlot();
+//				if (!item->isNull() && item->isInstance(VanillaItemNames::Lead, 0)) {
+//					ac->dropLeash(0, 1);
+//					auto aaa = dAccess<SynchedActorData*>(ac, 376);
+//					aaa->setStatusFlag((ActorFlags)30, 1);
+//					ac->setLeashHolder(sp->getUniqueID());
+//				}
+//			}
+//		}
+//	}
+//	return original(this, sp, unk);
+//}

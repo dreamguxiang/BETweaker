@@ -14,23 +14,30 @@
 
 static_assert(sizeof(GameRuleId) == 4);
 static_assert(sizeof(SetTimePacket) == 56);
-
+static ScheduleTask temp;
 namespace Module {
     bool canFastSleep() {
         auto Probability = Settings::FastSleepProbability;
         auto sleepPlayerCount = sleepList.size();
         auto ActivePlayerCount = Global<Level>->getActivePlayerCount();
-        if (ActivePlayerCount * Probability <= sleepPlayerCount) {
+        if ((float)ActivePlayerCount * Probability <= (float)sleepPlayerCount) {
             return true;
         }
         return false;
+    }
+    void cancelSleep() {
+        std::cout << canFastSleep() << std::endl;
+        if (!canFastSleep()) {
+            temp.cancel();
+        }
     }
 	
     void FastSleep() {
         Global<Level>->forEachPlayer([](Player& sp)->bool {
             if (sp.isSleeping()) {
                 if (canFastSleep()) {
-                    Schedule::delay([]() {
+                    temp.cancel();
+                    temp = Schedule::delay([]() {
                         auto level = Global<Level>;
                         auto& gameRule = level->getGameRules();
                         if (gameRule.getBool(GameRuleId(1), 0)) {
@@ -56,8 +63,8 @@ namespace Module {
                                 return true;
                                 });
                         }
+                        sleepList.clear();
                         }, 80);
-                    sleepList.clear();
                 }
             }
             return true;
