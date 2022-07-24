@@ -194,7 +194,7 @@ void PluginInit()
     //Module::readElistJsonData();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
         Schedule::repeat([] {
-            if (Global<Level>->getDimension(0)->isDay()) {
+            if (Global<Level>->createDimension(0)->isDay()) {
                 sleepList.clear();
             };
             },10*60*20);
