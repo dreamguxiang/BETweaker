@@ -20,7 +20,7 @@ namespace Module {
                     a5->remove(1);
                     return true;
                 }
-            }
+            } 
             else if (Settings::CanDispenserItemList.count(a5->getTypeName()))
             {
                 //Level::broadcastText(std::to_string(a5->getBlock()->mayPlaceOn(*a2, pos.add(0, -1, 0))), TextType::RAW);

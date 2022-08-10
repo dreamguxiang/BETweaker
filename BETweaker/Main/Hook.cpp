@@ -210,7 +210,7 @@ TInstanceHook(bool, "?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockP
 #include <MC/GameMode.hpp>
 #include <MC/Inventory.hpp>
 #include <MC/ServerPlayer.hpp>
-
+#include <MC/NetworkItemStackDescriptor.hpp>
 
 TInstanceHook(void, "?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z", Player, ItemStackBase& item, int a2, bool a3)
 {

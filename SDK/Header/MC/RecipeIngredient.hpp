@@ -12,7 +12,7 @@
 class RecipeIngredient {
 
 #define AFTER_EXTRA
-// Add Member There
+// Add Member TheItemDescriptorre
 public:
     ItemDescriptor mDescriptor;
     unsigned short mCount;

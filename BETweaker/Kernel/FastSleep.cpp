@@ -26,7 +26,6 @@ namespace Module {
         return false;
     }
     void cancelSleep() {
-        std::cout << canFastSleep() << std::endl;
         if (!canFastSleep()) {
             temp.cancel();
         }

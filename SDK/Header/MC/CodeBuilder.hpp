@@ -20,7 +20,8 @@ namespace CodeBuilder {
     struct EventMessage;
     enum ResponsePurpose;
     enum ProtocolVersion;
-	
+    enum EncryptionCipherMode;
+    struct EncryptionResult;
 #undef AFTER_EXTRA
     MCAPI struct MCRESULT deserialize(class Json::Value const &, struct CodeBuilder::RequestHeader &);
     MCAPI bool fromString(std::string const &, enum CodeBuilder::EncryptionCipherMode &);
