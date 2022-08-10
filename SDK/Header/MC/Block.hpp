@@ -111,7 +111,6 @@ public:
     MCAPI enum CreativeItemCategory getCreativeCategory() const;
     MCAPI class gsl::basic_string_span<char const, -1> getCreativeGroup() const;
     MCAPI void getDebugText(std::vector<std::string> &, class BlockPos const &) const;
-    MCAPI class Block const & getDefaultState() const;
     MCAPI std::string getDescriptionId() const;
     MCAPI float getDestroySpeed() const;
     MCAPI int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;

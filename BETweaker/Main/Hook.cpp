@@ -296,10 +296,10 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	return original(this, item);
 }
 
-TInstanceHook(bool, "?canChangeDimensions@FallingBlock@@UEBA_NXZ", FallingBlock) {
-	
-	return isAlive();
-	
+TInstanceHook(bool, "?canChangeDimensionsUsingPortal@FallingBlock@@UEBA_NXZ", FallingBlock) {
+	if (Settings::EndPortalDuplicateGravityBlock) {
+		return isAlive();
+	}
 	return original(this);
 }
 #if 0
@@ -324,7 +324,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 	auto index = pkt.getAbility();
 	if (index == AbilitiesIndex::Flying)
 	{
-		auto sp = _getServerPlayer(nid, pkt.clientSubId);
+		auto sp = _getServerPlayer(nid, (SubClientId)pkt.clientSubId);
 		if (!sp)
 			return;
 		if (!sp->getUserEntityIdentifierComponent())

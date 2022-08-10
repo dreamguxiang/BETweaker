@@ -387,6 +387,7 @@ public:
 		
     }
 };
+#include <MC/LevelSeed64.hpp>
 #include <MC/CommandOutputParameter.hpp>
 class SeedCommand : public Command
 {
@@ -396,7 +397,7 @@ public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
         vector<CommandOutputParameter>opt;
-        opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getSeed())));
+        opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getLevelSeed64().mSeed)));
         output.success("commands.seed.success",opt);
     }
 

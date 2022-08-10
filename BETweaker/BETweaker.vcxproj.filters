@@ -103,6 +103,9 @@
     <ClCompile Include="Kernel\EmoteList.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="BetterBDS.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc">

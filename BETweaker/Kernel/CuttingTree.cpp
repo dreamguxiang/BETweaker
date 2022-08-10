@@ -169,12 +169,12 @@ namespace Module {
 
     void cutTree(BlockSource* bs, BlockPos a3, Player* sp) {
 		if(LogBlocks.count(bs->getBlock(a3).getTypeName())){
-            if (bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mDirt
+            if (bs->getBlock(a3.add(0, -1, 0)).getTypeName() ==  "minecraft:dirt"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
                 || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == "minecraft:podzol"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMangroveRoots
-                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mNetherrack
+                || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == "minecraft:netherrack"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mCrimsonNylium
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mWarpedNylium
                 || LogBlocks.count(bs->getBlock(a3.add(0, -1, 0)).getTypeName())

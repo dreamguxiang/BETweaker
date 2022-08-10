@@ -67,6 +67,7 @@ public:
     MCAPI unsigned int hashCode(class std::basic_string_view<char, struct std::char_traits<char>>);
     MCAPI unsigned int hashCodeAsUtf16(class std::basic_string_view<char, struct std::char_traits<char>>);
     MCAPI bool isAlphaNumeric(char);
+    MCAPI bool isAlphabeticChar(char);
     MCAPI bool isDigit(char);
     MCAPI bool isIdentifierChar(char);
     MCAPI bool isIntegral(std::string const &, bool);

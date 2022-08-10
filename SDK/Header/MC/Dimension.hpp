@@ -23,9 +23,9 @@ class Dimension {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSION
 public:
-    class Dimension& operator=(class Dimension const &) = default;
-    Dimension(class Dimension const &) = default;
-    Dimension() = default;
+    class Dimension& operator=(class Dimension const &) = delete;
+    Dimension(class Dimension const &) = delete;
+    Dimension() = delete;
 #endif
 
 
@@ -67,15 +67,16 @@ public:
     MCVAPI ~Dimension();
 #endif
     MCAPI Dimension(class ILevel &, class AutomaticID<class Dimension, int>, class DimensionHeightRange, class Scheduler &, std::string);
-    MCAPI void addActorChunkTransferToQueue(class ChunkPos &, class ChunkPos &);
     MCAPI void addActorUnloadedChunkTransferToQueue(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
     MCAPI void addWither(struct ActorUniqueID const &);
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3);
+    MCAPI class Player * fetchAnyInteractablePlayer(class Vec3 const &, float) const;
+    MCAPI class Player * fetchAnyPlayer(class Vec3 const &, float) const;
     MCAPI class Actor * fetchEntity(struct ActorUniqueID, bool);
     MCAPI class Player * fetchNearestAttackablePlayer(class Actor &, float);
     MCAPI class Player * fetchNearestAttackablePlayer(class BlockPos, float, class Actor *);
-    MCAPI class Player * fetchNearestPlayer(class Actor &, float);
-    MCAPI class Player * fetchNearestPlayer(float, float, float, float, bool);
+    MCAPI class Player * fetchNearestInteractablePlayer(class Actor &, float) const;
+    MCAPI class Player * fetchNearestInteractablePlayer(class Vec3 const &, float) const;
     MCAPI class Player * findPlayer(class std::function<bool (class Player const &)>) const;
     MCAPI void flagEntityforChunkMove(class Actor &);
     MCAPI void flushLevelChunkGarbageCollector();
@@ -132,9 +133,8 @@ public:
     MCAPI void setSkylight(bool);
     MCAPI void setUltraWarm(bool);
     MCAPI void transferEntity(class ChunkPos const &, class Vec3 const &, std::unique_ptr<class CompoundTag>, bool);
-    MCAPI void transferEntityToUnloadedChunk(class Actor &);
+    MCAPI void transferEntityToUnloadedChunk(class Actor &, class LevelChunk *);
     MCAPI void transferEntityToUnloadedChunk(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
-    MCAPI bool tryAssignNewRegionAt(class ChunkPos const &, class Actor &);
     MCAPI void tryGarbageCollectStructures();
     MCAPI class BlockSource * tryGetClosestPublicRegion(class ChunkPos const &) const;
     MCAPI void tryLoadLimboEntities(class ChunkPos const &);
@@ -151,6 +151,7 @@ public:
     MCAPI void _completeEntityTransfer(class BlockSource &, class OwnerPtrT<struct EntityRefTraits>, bool);
 
 //private:
+    MCAPI class Player * _fetchNearestPlayer(class Vec3 const &, float, bool, class std::function<bool (class Player const &)>) const;
     MCAPI void _processEntityChunkTransfers();
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const &);
     MCAPI void _sendBlocksChangedPackets();

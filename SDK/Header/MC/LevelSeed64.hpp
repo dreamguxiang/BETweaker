@@ -10,7 +10,8 @@
 class LevelSeed64 {
 
 #define AFTER_EXTRA
-
+public:
+    uint64_t mSeed;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSEED64
