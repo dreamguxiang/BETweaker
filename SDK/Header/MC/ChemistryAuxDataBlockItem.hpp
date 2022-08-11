@@ -16,14 +16,12 @@ class ChemistryAuxDataBlockItem : public AuxDataBlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYAUXDATABLOCKITEM
 public:
     class ChemistryAuxDataBlockItem& operator=(class ChemistryAuxDataBlockItem const &) = delete;
     ChemistryAuxDataBlockItem(class ChemistryAuxDataBlockItem const &) = delete;
     ChemistryAuxDataBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChemistryAuxDataBlockItem();
@@ -41,9 +39,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*106*/ virtual void fixupCommon(class ItemStackBase &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYAUXDATABLOCKITEM
 #endif
-
-
 
 };

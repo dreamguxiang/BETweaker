@@ -14,7 +14,6 @@ class TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETGOAL
 public:
     class TargetGoal& operator=(class TargetGoal const &) = delete;
@@ -22,12 +21,11 @@ public:
     TargetGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TargetGoal();
-    /*1*/ virtual bool canUse() = 0;
+    /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool isTargetGoal() const;
+    /*3*/ virtual bool isTargetGoal();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
@@ -47,8 +45,6 @@ public:
     MCAPI bool _matchesTargetTypes(class Mob *, class Actor *, bool, struct MobDescriptor const **);
     MCAPI bool _withinRange(class Actor const &);
 
-
 protected:
-
 
 };

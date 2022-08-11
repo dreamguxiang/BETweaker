@@ -12,19 +12,15 @@ struct BeforeWatchdogTerminateEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEFOREWATCHDOGTERMINATEEVENT
 public:
     struct BeforeWatchdogTerminateEvent& operator=(struct BeforeWatchdogTerminateEvent const &) = delete;
     BeforeWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent const &) = delete;
     BeforeWatchdogTerminateEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEFOREWATCHDOGTERMINATEEVENT
+#endif
     MCAPI ~BeforeWatchdogTerminateEvent();
-
-protected:
-
-private:
 
 };

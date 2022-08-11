@@ -15,14 +15,12 @@ class DecrementStackEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DECREMENTSTACKEVENTRESPONSE
 public:
     class DecrementStackEventResponse& operator=(class DecrementStackEventResponse const &) = delete;
     DecrementStackEventResponse(class DecrementStackEventResponse const &) = delete;
     DecrementStackEventResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DecrementStackEventResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECREMENTSTACKEVENTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

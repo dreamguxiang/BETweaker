@@ -18,13 +18,11 @@ public:
     unsigned short mCount; //72
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTORCOUNT
 public:
     class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = delete;
     ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
@@ -38,7 +36,5 @@ public:
     MCAPI short getStackSize() const;
     MCAPI void setStackSize(short);
     MCAPI ~ItemDescriptorCount();
-
-
 
 };

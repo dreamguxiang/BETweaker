@@ -14,14 +14,12 @@ class HealthAttributeDelegate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALTHATTRIBUTEDELEGATE
 public:
     class HealthAttributeDelegate& operator=(class HealthAttributeDelegate const &) = delete;
     HealthAttributeDelegate(class HealthAttributeDelegate const &) = delete;
     HealthAttributeDelegate() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HealthAttributeDelegate();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALTHATTRIBUTEDELEGATE
 #endif
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
-
-
 
 };

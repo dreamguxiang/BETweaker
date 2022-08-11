@@ -14,7 +14,6 @@ class DirectMobMovementProxy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTMOBMOVEMENTPROXY
 public:
     class DirectMobMovementProxy& operator=(class DirectMobMovementProxy const &) = delete;
@@ -22,11 +21,8 @@ public:
     DirectMobMovementProxy() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTMOBMOVEMENTPROXY
 #endif
-
-
 
 };

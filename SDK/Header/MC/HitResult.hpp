@@ -54,8 +54,6 @@ public:
     LIAPI HitResultType getHitResultType();
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITRESULT
 #endif
@@ -71,7 +69,5 @@ public:
     MCAPI class HitResult & operator=(class HitResult &&);
     MCAPI class HitResult & operator=(class HitResult const &);
     MCAPI ~HitResult();
-
-
 
 };

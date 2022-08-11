@@ -16,14 +16,12 @@ class EnderMan : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMAN
 public:
     class EnderMan& operator=(class EnderMan const &) = delete;
     EnderMan(class EnderMan const &) = delete;
     EnderMan() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~EnderMan();
@@ -40,11 +38,11 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender() const;
+    /*132*/ virtual bool shouldRender();
     /*134*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
-    /*213*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
+    /*213*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &);
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();
@@ -74,9 +72,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static bool mMayTakeIsSetup;
-
 
 };

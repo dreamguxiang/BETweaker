@@ -16,14 +16,12 @@ class Endermite : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMITE
 public:
     class Endermite& operator=(class Endermite const &) = delete;
     Endermite(class Endermite const &) = delete;
     Endermite() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Endermite();
@@ -61,7 +59,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMITE
 #endif
     MCAPI Endermite(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

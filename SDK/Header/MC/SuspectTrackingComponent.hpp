@@ -12,14 +12,12 @@ class SuspectTrackingComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUSPECTTRACKINGCOMPONENT
 public:
     class SuspectTrackingComponent& operator=(class SuspectTrackingComponent const &) = delete;
     SuspectTrackingComponent(class SuspectTrackingComponent const &) = delete;
     SuspectTrackingComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGCOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI class std::optional<class BlockPos> getSuspiciousPos() const;
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
-
-
 
 };

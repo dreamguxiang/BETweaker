@@ -15,14 +15,12 @@ class LootTable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLE
 public:
     class LootTable& operator=(class LootTable const &) = delete;
     LootTable(class LootTable const &) = delete;
     LootTable() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLE
@@ -36,8 +34,6 @@ public:
     MCAPI std::vector<int> getAvailableSlots(class Container &, class Random &);
     MCAPI void shuffleAndSplitItems(std::vector<class ItemStack> &, int, class Random &);
 
-
 private:
-
 
 };

@@ -21,13 +21,11 @@ class UpdateSoftEnumPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATESOFTENUMPACKET
 public:
     class UpdateSoftEnumPacket& operator=(class UpdateSoftEnumPacket const &) = delete;
     UpdateSoftEnumPacket(class UpdateSoftEnumPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateSoftEnumPacket();
@@ -39,7 +37,5 @@ public:
 #endif
     MCAPI UpdateSoftEnumPacket(enum SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
     MCAPI UpdateSoftEnumPacket();
-
-
 
 };

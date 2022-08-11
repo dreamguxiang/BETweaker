@@ -13,13 +13,11 @@ class RequestPermissionsPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REQUESTPERMISSIONSPACKET
 public:
     class RequestPermissionsPacket& operator=(class RequestPermissionsPacket const &) = delete;
     RequestPermissionsPacket(class RequestPermissionsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RequestPermissionsPacket();
@@ -33,7 +31,5 @@ public:
     MCAPI bool getCustomAbilityValue(enum AbilitiesIndex) const;
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     MCAPI struct ActorUniqueID getTargetPlayerId() const;
-
-
 
 };

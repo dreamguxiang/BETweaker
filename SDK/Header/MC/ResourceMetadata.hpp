@@ -12,7 +12,6 @@ class ResourceMetadata {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEMETADATA
 public:
     class ResourceMetadata& operator=(class ResourceMetadata const &) = delete;
@@ -20,12 +19,9 @@ public:
     ResourceMetadata() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEMETADATA
 #endif
     MCAPI ~ResourceMetadata();
-
-
 
 };

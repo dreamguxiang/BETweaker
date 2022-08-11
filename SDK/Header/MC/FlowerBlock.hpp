@@ -15,14 +15,12 @@ class FlowerBlock : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERBLOCK
 public:
     class FlowerBlock& operator=(class FlowerBlock const &) = delete;
     FlowerBlock(class FlowerBlock const &) = delete;
     FlowerBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FlowerBlock();
@@ -50,7 +48,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
@@ -64,7 +62,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -73,14 +71,12 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer();
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &);
     /*187*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERBLOCK
 #endif
     MCAPI FlowerBlock(std::string const &, int, enum FlowerBlock::Type, class Material const &);
-
-
 
 };

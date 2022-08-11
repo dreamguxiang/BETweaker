@@ -16,14 +16,12 @@ class FireworksRocketActor : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKSROCKETACTOR
 public:
     class FireworksRocketActor& operator=(class FireworksRocketActor const &) = delete;
     FireworksRocketActor(class FireworksRocketActor const &) = delete;
     FireworksRocketActor() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~FireworksRocketActor();
@@ -32,7 +30,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -67,8 +65,6 @@ public:
     MCAPI void dealExplosionDamage();
     MCAPI void initTagData(class Random &);
 
-
 private:
-
 
 };

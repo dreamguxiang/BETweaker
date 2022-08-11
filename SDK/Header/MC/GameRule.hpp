@@ -23,13 +23,11 @@ public:
 enum Type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULE
 public:
     class GameRule& operator=(class GameRule const &) = delete;
     GameRule() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULE
@@ -62,10 +60,8 @@ public:
 //private:
     MCAPI bool _set(union GameRule::Value const &, bool *, class GameRule::ValidationError *);
 
-
 protected:
 
 private:
-
 
 };

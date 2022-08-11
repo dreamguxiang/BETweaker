@@ -14,7 +14,6 @@ class BaseMobSpawner {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOBSPAWNER
 public:
     class BaseMobSpawner& operator=(class BaseMobSpawner const &) = delete;
@@ -22,13 +21,12 @@ public:
     BaseMobSpawner() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BaseMobSpawner();
     /*1*/ virtual void tick(class BlockSource &);
     /*2*/ virtual void load(class CompoundTag const &);
     /*3*/ virtual void save(class CompoundTag &);
-    /*4*/ virtual class BlockPos const & getPos() = 0;
+    /*4*/ virtual class BlockPos const & getPos();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
 #endif
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
@@ -38,8 +36,6 @@ public:
 //protected:
     MCAPI void _delay(class BlockSource &);
 
-
 protected:
-
 
 };

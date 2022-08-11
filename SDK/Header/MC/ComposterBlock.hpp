@@ -21,14 +21,12 @@ inline void emitBoneMeal(class Level& a1, class BlockSource& a2, class BlockPos 
 }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSTERBLOCK
 public:
     class ComposterBlock& operator=(class ComposterBlock const &) = delete;
     ComposterBlock(class ComposterBlock const &) = delete;
     ComposterBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ComposterBlock();
@@ -56,7 +54,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*72*/ virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
@@ -67,7 +65,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /*132*/ virtual void __unk_vfn_132();
-    /*147*/ virtual int getVariant(class Block const &) const;
+    /*147*/ virtual int getVariant(class Block const &);
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
@@ -84,7 +82,7 @@ public:
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
-    /*197*/ MCAPI std::string const & getDescriptionId() const;
+    /*197*/ MCAPI static std::string const & getDescriptionId();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
     MCVAPI bool hasComparatorSignal() const;
 #endif
@@ -101,10 +99,8 @@ public:
     MCAPI void _notifyClientComposterUsed(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
-
 private:
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     MCAPI static class Vec3 const PARTICLE_OFFSET;
-
 
 };

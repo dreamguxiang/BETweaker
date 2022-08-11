@@ -15,13 +15,11 @@ class StructureManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREMANAGER
 public:
     class StructureManager& operator=(class StructureManager const &) = delete;
     StructureManager(class StructureManager const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREMANAGER
@@ -52,10 +50,8 @@ public:
     MCAPI void _removePlacementQueueItem(std::string const &, class StructureAnimationData &);
     MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
 
-
 private:
     MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
     MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
-
 
 };

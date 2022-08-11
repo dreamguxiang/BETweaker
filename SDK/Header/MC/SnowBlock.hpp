@@ -15,14 +15,12 @@ class SnowBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNOWBLOCK
 public:
     class SnowBlock& operator=(class SnowBlock const &) = delete;
     SnowBlock(class SnowBlock const &) = delete;
     SnowBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SnowBlock();
@@ -69,7 +67,5 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI SnowBlock(std::string const &, int);
-
-
 
 };

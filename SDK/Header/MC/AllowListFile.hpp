@@ -15,14 +15,12 @@ class AllowListFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTFILE
 public:
     class AllowListFile& operator=(class AllowListFile const &) = delete;
     AllowListFile(class AllowListFile const &) = delete;
     AllowListFile() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTFILE
@@ -32,7 +30,5 @@ public:
     MCAPI void syncToDisc();
     MCAPI ~AllowListFile();
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
-
-
 
 };

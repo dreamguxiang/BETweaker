@@ -16,14 +16,12 @@ class Monster : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTER
 public:
     class Monster& operator=(class Monster const &) = delete;
     Monster(class Monster const &) = delete;
     Monster() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Monster();
@@ -64,7 +62,5 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 #endif
     MCAPI Monster(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

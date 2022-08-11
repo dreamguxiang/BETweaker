@@ -15,14 +15,12 @@ class EnchantingContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTINGCONTAINERMANAGERMODEL
 public:
     class EnchantingContainerManagerModel& operator=(class EnchantingContainerManagerModel const &) = delete;
     EnchantingContainerManagerModel(class EnchantingContainerManagerModel const &) = delete;
     EnchantingContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnchantingContainerManagerModel();
@@ -39,7 +37,5 @@ public:
     MCAPI std::vector<class ItemEnchantOption> const & getEnchantOptions() const;
     MCAPI void recalculateOptions();
     MCAPI static int const NUM_OPTIONS;
-
-
 
 };

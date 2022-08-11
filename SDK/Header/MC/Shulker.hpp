@@ -16,14 +16,12 @@ class Shulker : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKER
 public:
     class Shulker& operator=(class Shulker const &) = delete;
     Shulker(class Shulker const &) = delete;
     Shulker() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -45,7 +43,7 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*113*/ virtual bool canAttack(class Actor *, bool) const;
-    /*132*/ virtual bool shouldRender() const;
+    /*132*/ virtual bool shouldRender();
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*143*/ virtual float getPickRadius();
     /*182*/ virtual void __unk_vfn_182();
@@ -97,10 +95,8 @@ public:
     MCAPI void _trySpawnShulker();
     MCAPI bool _tryTeleportSomewhere();
 
-
 protected:
 
 private:
-
 
 };

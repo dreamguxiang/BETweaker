@@ -14,14 +14,12 @@ class OnFireServerSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESERVERSYSTEM
 public:
     class OnFireServerSystem& operator=(class OnFireServerSystem const &) = delete;
     OnFireServerSystem(class OnFireServerSystem const &) = delete;
     OnFireServerSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnFireServerSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent> &);
 
-
 private:
-
 
 };

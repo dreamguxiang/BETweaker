@@ -15,13 +15,11 @@ class AvailableActorIdentifiersPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVAILABLEACTORIDENTIFIERSPACKET
 public:
     class AvailableActorIdentifiersPacket& operator=(class AvailableActorIdentifiersPacket const &) = delete;
     AvailableActorIdentifiersPacket(class AvailableActorIdentifiersPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AvailableActorIdentifiersPacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
     MCAPI AvailableActorIdentifiersPacket();
-
-
 
 };

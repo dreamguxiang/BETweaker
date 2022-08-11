@@ -15,7 +15,6 @@ class GroupSizeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZEDEFINITION
 public:
     class GroupSizeDefinition& operator=(class GroupSizeDefinition const &) = delete;
@@ -23,12 +22,9 @@ public:
     GroupSizeDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUPSIZEDEFINITION
 #endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GroupSizeDefinition>> &);
-
-
 
 };

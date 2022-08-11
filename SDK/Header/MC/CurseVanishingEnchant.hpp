@@ -15,14 +15,12 @@ class CurseVanishingEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CURSEVANISHINGENCHANT
 public:
     class CurseVanishingEnchant& operator=(class CurseVanishingEnchant const &) = delete;
     CurseVanishingEnchant(class CurseVanishingEnchant const &) = delete;
     CurseVanishingEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CurseVanishingEnchant();
@@ -36,7 +34,5 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     MCAPI CurseVanishingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
-
-
 
 };

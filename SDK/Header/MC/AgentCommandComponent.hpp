@@ -14,13 +14,11 @@ class AgentCommandComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDCOMPONENT
 public:
     class AgentCommandComponent& operator=(class AgentCommandComponent const &) = delete;
     AgentCommandComponent(class AgentCommandComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDCOMPONENT
@@ -30,7 +28,5 @@ public:
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
-
-
 
 };

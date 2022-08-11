@@ -12,7 +12,6 @@ class InsideBubbleColumnSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBUBBLECOLUMNSYSTEM
 public:
     class InsideBubbleColumnSystem& operator=(class InsideBubbleColumnSystem const &) = delete;
@@ -20,14 +19,11 @@ public:
     InsideBubbleColumnSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBUBBLECOLUMNSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createBoatInsideBubbleColumnSystem();
     MCAPI static struct TickingSystemWithInfo createBubbleColumnMovementSystem();
     MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
-
-
 
 };

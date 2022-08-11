@@ -14,12 +14,10 @@ class BlockDescriptor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESCRIPTOR
 public:
     class BlockDescriptor& operator=(class BlockDescriptor const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTOR
@@ -50,8 +48,6 @@ public:
     MCAPI bool _anyTagsMatch(class Block const &) const;
     MCAPI void _resolveImpl() const;
 
-
 private:
-
 
 };

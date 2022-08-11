@@ -20,14 +20,12 @@ struct BlockPositionData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKPALETTE
 public:
     class StructureBlockPalette& operator=(class StructureBlockPalette const &) = delete;
     StructureBlockPalette(class StructureBlockPalette const &) = delete;
     StructureBlockPalette() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKPALETTE
@@ -50,10 +48,8 @@ public:
 //private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
 
-
 protected:
 
 private:
-
 
 };

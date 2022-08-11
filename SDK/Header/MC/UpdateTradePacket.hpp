@@ -15,13 +15,11 @@ class UpdateTradePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATETRADEPACKET
 public:
     class UpdateTradePacket& operator=(class UpdateTradePacket const &) = delete;
     UpdateTradePacket(class UpdateTradePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateTradePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI UpdateTradePacket(enum ContainerID, enum ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
     MCAPI UpdateTradePacket();
-
-
 
 };

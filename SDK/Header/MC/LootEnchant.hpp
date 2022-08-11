@@ -15,14 +15,12 @@ class LootEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTENCHANT
 public:
     class LootEnchant& operator=(class LootEnchant const &) = delete;
     LootEnchant(class LootEnchant const &) = delete;
     LootEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LootEnchant();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTENCHANT
 #endif
     MCAPI LootEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-
 
 };

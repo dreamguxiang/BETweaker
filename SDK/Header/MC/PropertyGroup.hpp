@@ -16,13 +16,11 @@ class PropertyGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYGROUP
 public:
     class PropertyGroup& operator=(class PropertyGroup const &) = delete;
     PropertyGroup(class PropertyGroup const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUP
@@ -54,8 +52,6 @@ public:
     MCAPI bool _validateDataType(class Json::Value const &, enum PropertyMetadata::ContainedPropertyType);
     MCAPI static enum PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);
 
-
 private:
-
 
 };

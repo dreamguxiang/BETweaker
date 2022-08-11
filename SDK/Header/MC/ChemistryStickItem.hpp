@@ -16,14 +16,12 @@ class ChemistryStickItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYSTICKITEM
 public:
     class ChemistryStickItem& operator=(class ChemistryStickItem const &) = delete;
     ChemistryStickItem(class ChemistryStickItem const &) = delete;
     ChemistryStickItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChemistryStickItem();
@@ -34,7 +32,7 @@ public:
     /*31*/ virtual class Item & setMaxDamage(int);
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*62*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /*62*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &);
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -44,10 +42,11 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*87*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /*102*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /*106*/ virtual void fixupCommon(class ItemStackBase &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
     MCVAPI bool showsDurabilityInCreative() const;
     MCVAPI bool uniqueAuxValues() const;
@@ -64,7 +63,6 @@ public:
 //private:
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
 
-
 protected:
 
 private:
@@ -75,6 +73,5 @@ private:
     MCAPI static int const DAMAGE_BITS;
     MCAPI static int const DAMAGE_MASK;
     MCAPI static int const DAMAGE_START_BIT;
-
 
 };

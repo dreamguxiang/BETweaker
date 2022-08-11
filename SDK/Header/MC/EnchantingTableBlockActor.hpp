@@ -15,14 +15,12 @@ class EnchantingTableBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTINGTABLEBLOCKACTOR
 public:
     class EnchantingTableBlockActor& operator=(class EnchantingTableBlockActor const &) = delete;
     EnchantingTableBlockActor(class EnchantingTableBlockActor const &) = delete;
     EnchantingTableBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnchantingTableBlockActor();
@@ -43,7 +41,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGTABLEBLOCKACTOR
 #endif
     MCAPI EnchantingTableBlockActor(class BlockPos const &);
-
-
 
 };

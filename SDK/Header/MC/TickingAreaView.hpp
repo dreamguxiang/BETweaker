@@ -14,14 +14,12 @@ class TickingAreaView {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREAVIEW
 public:
     class TickingAreaView& operator=(class TickingAreaView const &) = delete;
     TickingAreaView(class TickingAreaView const &) = delete;
     TickingAreaView() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TickingAreaView();
@@ -45,8 +43,6 @@ public:
 //private:
     MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
 
-
 private:
-
 
 };

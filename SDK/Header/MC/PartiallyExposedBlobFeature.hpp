@@ -14,14 +14,12 @@ class PartiallyExposedBlobFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTIALLYEXPOSEDBLOBFEATURE
 public:
     class PartiallyExposedBlobFeature& operator=(class PartiallyExposedBlobFeature const &) = delete;
     PartiallyExposedBlobFeature(class PartiallyExposedBlobFeature const &) = delete;
     PartiallyExposedBlobFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PartiallyExposedBlobFeature();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const &, class BlockPos const &);
 
-
 private:
-
 
 };

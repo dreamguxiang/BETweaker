@@ -35,18 +35,15 @@ struct ActorUniqueID {
     }
 #define DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEID
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEID
 public:
     struct ActorUniqueID& operator=(struct ActorUniqueID const &) = delete;
     ActorUniqueID(struct ActorUniqueID const &) = delete;
     ActorUniqueID() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUNIQUEID
+#endif
+    MCAPI static struct ActorUniqueID const INVALID_ID;
 
 };

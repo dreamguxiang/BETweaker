@@ -15,14 +15,12 @@ class EnableEncryptionCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENABLEENCRYPTIONCOMMAND
 public:
     class EnableEncryptionCommand& operator=(class EnableEncryptionCommand const &) = delete;
     EnableEncryptionCommand(class EnableEncryptionCommand const &) = delete;
     EnableEncryptionCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnableEncryptionCommand();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class IMinecraftApp * mApp;
-
 
 };

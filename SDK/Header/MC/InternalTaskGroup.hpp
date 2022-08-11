@@ -14,14 +14,12 @@ class InternalTaskGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALTASKGROUP
 public:
     class InternalTaskGroup& operator=(class InternalTaskGroup const &) = delete;
     InternalTaskGroup(class InternalTaskGroup const &) = delete;
     InternalTaskGroup() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InternalTaskGroup();
@@ -38,7 +36,5 @@ public:
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
 #endif
-
-
 
 };

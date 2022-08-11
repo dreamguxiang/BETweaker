@@ -15,7 +15,6 @@ class BuriedTreasureStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASURESTART
 public:
     class BuriedTreasureStart& operator=(class BuriedTreasureStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     BuriedTreasureStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BuriedTreasureStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASURESTART
 #endif
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
-
-
 
 };

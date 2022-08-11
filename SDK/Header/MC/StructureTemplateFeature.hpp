@@ -14,13 +14,11 @@ class StructureTemplateFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEFEATURE
 public:
     class StructureTemplateFeature& operator=(class StructureTemplateFeature const &) = delete;
     StructureTemplateFeature(class StructureTemplateFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureTemplateFeature();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEFEATURE
 #endif
     MCAPI StructureTemplateFeature();
-
-
 
 };

@@ -14,15 +14,15 @@ struct NpcActionsContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCACTIONSCONTAINER
 public:
     struct NpcActionsContainer& operator=(struct NpcActionsContainer const &) = delete;
     NpcActionsContainer(struct NpcActionsContainer const &) = delete;
     NpcActionsContainer() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCACTIONSCONTAINER
+#endif
     MCAPI std::vector<std::unique_ptr<class NpcAction>> cloneActions() const;
     MCAPI class NpcAction * getActionAt(unsigned __int64);
     MCAPI unsigned __int64 getActionCount() const;
@@ -30,9 +30,5 @@ public:
     MCAPI std::vector<std::unique_ptr<class NpcAction>> const & getActions() const;
     MCAPI int getUrlCount() const;
     MCAPI ~NpcActionsContainer();
-
-protected:
-
-private:
 
 };

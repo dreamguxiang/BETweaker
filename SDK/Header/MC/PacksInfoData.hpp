@@ -14,20 +14,16 @@ struct PacksInfoData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSINFODATA
 public:
     struct PacksInfoData& operator=(struct PacksInfoData const &) = delete;
     PacksInfoData(struct PacksInfoData const &) = delete;
     PacksInfoData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSINFODATA
+#endif
     MCAPI unsigned __int64 getBehaviorPackSize() const;
     MCAPI unsigned __int64 getResourcePackSize() const;
-
-protected:
-
-private:
 
 };

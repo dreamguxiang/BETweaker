@@ -15,14 +15,12 @@ class SeagrassFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAGRASSFEATURE
 public:
     class SeagrassFeature& operator=(class SeagrassFeature const &) = delete;
     SeagrassFeature(class SeagrassFeature const &) = delete;
     SeagrassFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SeagrassFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _isNotIce(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

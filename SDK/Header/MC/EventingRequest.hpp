@@ -12,7 +12,6 @@ class EventingRequest {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGREQUEST
 public:
     class EventingRequest& operator=(class EventingRequest const &) = delete;
@@ -20,12 +19,9 @@ public:
     EventingRequest() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUEST
 #endif
     MCAPI ~EventingRequest();
-
-
 
 };

@@ -16,13 +16,11 @@ class ClientboundMapItemDataPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBOUNDMAPITEMDATAPACKET
 public:
     class ClientboundMapItemDataPacket& operator=(class ClientboundMapItemDataPacket const &) = delete;
     ClientboundMapItemDataPacket(class ClientboundMapItemDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClientboundMapItemDataPacket();
@@ -35,7 +33,5 @@ public:
     MCAPI ClientboundMapItemDataPacket(struct ActorUniqueID, signed char, std::vector<struct std::pair<struct MapItemTrackedActor::UniqueId, class std::shared_ptr<class MapDecoration>>> const &, class buffer_span<unsigned int>, int, int, int, int, class AutomaticID<class Dimension, int>, bool, class BlockPos const &);
     MCAPI ClientboundMapItemDataPacket(class gsl::not_null<class MapItemSavedData *>, class Level &);
     MCAPI ClientboundMapItemDataPacket();
-
-
 
 };

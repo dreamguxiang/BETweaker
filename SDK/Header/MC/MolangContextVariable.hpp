@@ -12,20 +12,16 @@ struct MolangContextVariable {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLE
 public:
     struct MolangContextVariable& operator=(struct MolangContextVariable const &) = delete;
     MolangContextVariable(struct MolangContextVariable const &) = delete;
     MolangContextVariable() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLE
+#endif
     MCAPI MolangContextVariable(class HashedString const &);
     MCAPI ~MolangContextVariable();
-
-protected:
-
-private:
 
 };

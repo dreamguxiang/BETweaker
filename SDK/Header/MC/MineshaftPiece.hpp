@@ -15,14 +15,12 @@ class MineshaftPiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTPIECE
 public:
     class MineshaftPiece& operator=(class MineshaftPiece const &) = delete;
     MineshaftPiece(class MineshaftPiece const &) = delete;
     MineshaftPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftPiece();
@@ -33,7 +31,5 @@ public:
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI class StructurePiece * generateAndAddPiece(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI void setPlanksBlock(class BlockSource &, class Block const &, int, int, int);
-
-
 
 };

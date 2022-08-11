@@ -14,14 +14,12 @@ class HoldBlockSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOLDBLOCKSYSTEM
 public:
     class HoldBlockSystem& operator=(class HoldBlockSystem const &) = delete;
     HoldBlockSystem(class HoldBlockSystem const &) = delete;
     HoldBlockSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoldBlockSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 
-
 private:
-
 
 };

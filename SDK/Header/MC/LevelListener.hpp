@@ -15,14 +15,12 @@ class LevelListener : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLISTENER
 public:
     class LevelListener& operator=(class LevelListener const &) = delete;
     LevelListener(class LevelListener const &) = delete;
     LevelListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelListener();
@@ -60,7 +58,5 @@ public:
     MCVAPI void stopSoundEvent(std::string const &);
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
 #endif
-
-
 
 };

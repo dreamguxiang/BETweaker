@@ -15,14 +15,12 @@ class NewLeafBlock : public LeafBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEWLEAFBLOCK
 public:
     class NewLeafBlock& operator=(class NewLeafBlock const &) = delete;
     NewLeafBlock(class NewLeafBlock const &) = delete;
     NewLeafBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NewLeafBlock();
@@ -70,7 +68,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWLEAFBLOCK
 #endif
     MCAPI NewLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
-
 
 };

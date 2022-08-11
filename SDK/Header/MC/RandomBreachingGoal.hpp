@@ -15,14 +15,12 @@ class RandomBreachingGoal : public RandomStrollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMBREACHINGGOAL
 public:
     class RandomBreachingGoal& operator=(class RandomBreachingGoal const &) = delete;
     RandomBreachingGoal(class RandomBreachingGoal const &) = delete;
     RandomBreachingGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomBreachingGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMBREACHINGGOAL
 #endif
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
-
-
 
 };

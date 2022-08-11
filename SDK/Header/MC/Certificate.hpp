@@ -16,13 +16,11 @@ class Certificate {
     char filler[128];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CERTIFICATE
 public:
     class Certificate& operator=(class Certificate const &) = delete;
     Certificate() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 
-
 private:
-
 
 };

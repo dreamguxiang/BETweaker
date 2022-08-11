@@ -18,7 +18,6 @@ class InventoryTransactionItemGroup {
     std::unique_ptr<CompoundTag> tag; //8
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:
     class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const &) = delete;
@@ -26,13 +25,10 @@ public:
     InventoryTransactionItemGroup() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONITEMGROUP
 #endif
     MCAPI class ItemStack getItemInstance() const;
     MCAPI ~InventoryTransactionItemGroup();
-
-
 
 };

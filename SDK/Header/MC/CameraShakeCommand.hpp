@@ -15,14 +15,12 @@ class CameraShakeCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKECOMMAND
 public:
     class CameraShakeCommand& operator=(class CameraShakeCommand const &) = delete;
     CameraShakeCommand(class CameraShakeCommand const &) = delete;
     CameraShakeCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CameraShakeCommand();
@@ -35,8 +33,6 @@ public:
     MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

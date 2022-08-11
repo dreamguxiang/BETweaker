@@ -14,13 +14,11 @@ class PathfinderNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHFINDERNODE
 public:
     class PathfinderNode& operator=(class PathfinderNode const &) = delete;
     PathfinderNode() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
@@ -35,7 +33,5 @@ public:
     MCAPI bool inOpenSet();
     MCAPI void setCostMalus(float);
     MCAPI void setMoveMalus(float);
-
-
 
 };

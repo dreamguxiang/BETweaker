@@ -15,14 +15,12 @@ class OverworldGeneratorMultinoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATORMULTINOISE
 public:
     class OverworldGeneratorMultinoise& operator=(class OverworldGeneratorMultinoise const &) = delete;
     OverworldGeneratorMultinoise(class OverworldGeneratorMultinoise const &) = delete;
     OverworldGeneratorMultinoise() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
@@ -47,8 +45,6 @@ public:
     MCAPI struct TerrainInfo _attenuateOffsetAndFactor(class DividedPos2d<4>, struct TerrainInfo) const;
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &, class WorldGenCache const &, class NoodleCavifier *, class OreVeinifier *) const;
 
-
 private:
-
 
 };

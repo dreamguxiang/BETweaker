@@ -15,13 +15,11 @@ class StickInGroundSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STICKINGROUNDSUBCOMPONENT
 public:
     class StickInGroundSubcomponent& operator=(class StickInGroundSubcomponent const &) = delete;
     StickInGroundSubcomponent(class StickInGroundSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StickInGroundSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STICKINGROUNDSUBCOMPONENT
 #endif
     MCAPI StickInGroundSubcomponent();
-
-
 
 };

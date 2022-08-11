@@ -12,20 +12,16 @@ struct EventingRequestQueueComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGREQUESTQUEUECOMPONENT
 public:
     struct EventingRequestQueueComponent& operator=(struct EventingRequestQueueComponent const &) = delete;
     EventingRequestQueueComponent(struct EventingRequestQueueComponent const &) = delete;
     EventingRequestQueueComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUESTQUEUECOMPONENT
+#endif
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent &&);
     MCAPI ~EventingRequestQueueComponent();
-
-protected:
-
-private:
 
 };

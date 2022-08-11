@@ -14,14 +14,12 @@ class ActorEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTLISTENER
 public:
     class ActorEventListener& operator=(class ActorEventListener const &) = delete;
     ActorEventListener(class ActorEventListener const &) = delete;
     ActorEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
@@ -41,7 +39,5 @@ public:
     MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     MCVAPI enum EventResult onEvent(struct ActorNotificationEvent const &);
 #endif
-
-
 
 };

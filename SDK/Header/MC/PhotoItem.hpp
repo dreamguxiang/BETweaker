@@ -14,7 +14,6 @@ class PhotoItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOITEM
 public:
     class PhotoItem& operator=(class PhotoItem const &) = delete;
@@ -22,14 +21,11 @@ public:
     PhotoItem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOITEM
 #endif
     MCAPI static std::string const TAG_PHOTO_NAME;
     MCAPI static std::string const TAG_PHOTO_OWNER;
     MCAPI static std::string const TAG_PHOTO_UUID;
-
-
 
 };

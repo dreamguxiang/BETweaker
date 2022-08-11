@@ -12,7 +12,6 @@ class SeatDescriptionUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEATDESCRIPTIONUTILITY
 public:
     class SeatDescriptionUtility& operator=(class SeatDescriptionUtility const &) = delete;
@@ -20,13 +19,10 @@ public:
     SeatDescriptionUtility() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEATDESCRIPTIONUTILITY
 #endif
     MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, int, int);
     MCAPI static void setValuesToSynchedActorData(class SynchedActorData &, class Vec3 const &, struct SeatDescription const &, float);
-
-
 
 };

@@ -12,7 +12,6 @@ class MetaDataTypeVisitor_Get {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_METADATATYPEVISITOR_GET
 public:
     class MetaDataTypeVisitor_Get& operator=(class MetaDataTypeVisitor_Get const &) = delete;
@@ -20,12 +19,9 @@ public:
     MetaDataTypeVisitor_Get() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_METADATATYPEVISITOR_GET
 #endif
     MCAPI ~MetaDataTypeVisitor_Get();
-
-
 
 };

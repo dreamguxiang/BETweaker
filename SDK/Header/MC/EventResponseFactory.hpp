@@ -15,7 +15,6 @@ class EventResponseFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTRESPONSEFACTORY
 public:
     class EventResponseFactory& operator=(class EventResponseFactory const &) = delete;
@@ -23,13 +22,10 @@ public:
     EventResponseFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSEFACTORY
 #endif
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     MCAPI void initSchema(std::string const &, class SemVersion const &);
-
-
 
 };

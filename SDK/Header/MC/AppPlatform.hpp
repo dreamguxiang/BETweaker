@@ -22,14 +22,12 @@ struct AndroidScopedStorageInfo {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORM
 public:
     class AppPlatform& operator=(class AppPlatform const &) = delete;
     AppPlatform(class AppPlatform const &) = delete;
     AppPlatform() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
@@ -261,12 +259,10 @@ public:
 //private:
     MCAPI void _initializeLoadProfiler();
 
-
 protected:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
 
 private:
     MCAPI static bool mIsInitialized;
-
 
 };

@@ -15,14 +15,12 @@ class MineshaftFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTFEATURE
 public:
     class MineshaftFeature& operator=(class MineshaftFeature const &) = delete;
     MineshaftFeature(class MineshaftFeature const &) = delete;
     MineshaftFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftFeature();
@@ -31,7 +29,5 @@ public:
     /*6*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTFEATURE
 #endif
-
-
 
 };

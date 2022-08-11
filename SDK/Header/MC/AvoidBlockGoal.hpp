@@ -14,14 +14,12 @@ class AvoidBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVOIDBLOCKGOAL
 public:
     class AvoidBlockGoal& operator=(class AvoidBlockGoal const &) = delete;
     AvoidBlockGoal(class AvoidBlockGoal const &) = delete;
     AvoidBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AvoidBlockGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _isValidTarget(class Block const &) const;
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class SmithingTableMaterialContainerValidation : public ContainerValidationBase 
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLEMATERIALCONTAINERVALIDATION
 public:
     class SmithingTableMaterialContainerValidation& operator=(class SmithingTableMaterialContainerValidation const &) = delete;
@@ -23,21 +22,18 @@ public:
     SmithingTableMaterialContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmithingTableMaterialContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int);
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &);
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &);
+    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &);
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEMATERIALCONTAINERVALIDATION
 #endif
-
-
 
 };

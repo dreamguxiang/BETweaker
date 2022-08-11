@@ -15,14 +15,12 @@ class TorchBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TORCHBLOCK
 public:
     class TorchBlock& operator=(class TorchBlock const &) = delete;
     TorchBlock(class TorchBlock const &) = delete;
     TorchBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TorchBlock();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -85,12 +83,10 @@ public:
 
 //private:
 
-
 protected:
 
 private:
     MCAPI static enum TorchFacing const DATA_FROM_FACING[];
     MCAPI static unsigned short const FACING_FROM_DATA[];
-
 
 };

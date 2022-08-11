@@ -14,7 +14,6 @@ class TcpProxy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TCPPROXY
 public:
     class TcpProxy& operator=(class TcpProxy const &) = delete;
@@ -22,11 +21,8 @@ public:
     TcpProxy() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TCPPROXY
 #endif
-
-
 
 };

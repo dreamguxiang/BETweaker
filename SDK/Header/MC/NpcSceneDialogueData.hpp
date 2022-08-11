@@ -18,14 +18,12 @@ NpcComponent mComponent;
     string mString;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSCENEDIALOGUEDATA
 public:
     class NpcSceneDialogueData& operator=(class NpcSceneDialogueData const &) = delete;
     NpcSceneDialogueData(class NpcSceneDialogueData const &) = delete;
     NpcSceneDialogueData() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcSceneDialogueData();
@@ -44,7 +42,5 @@ public:
     MCVAPI class Actor const * getActor() const;
 #endif
     MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
-
-
 
 };

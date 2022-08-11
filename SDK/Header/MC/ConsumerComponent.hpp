@@ -15,13 +15,11 @@ class ConsumerComponent : public BaseCircuitComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMERCOMPONENT
 public:
     class ConsumerComponent& operator=(class ConsumerComponent const &) = delete;
     ConsumerComponent(class ConsumerComponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ConsumerComponent();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
 #endif
     MCAPI ConsumerComponent();
-
-
 
 };

@@ -14,14 +14,12 @@ class TrailSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILSYSTEM
 public:
     class TrailSystem& operator=(class TrailSystem const &) = delete;
     TrailSystem(class TrailSystem const &) = delete;
     TrailSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TrailSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class TrailComponent> &);
 
-
 private:
-
 
 };

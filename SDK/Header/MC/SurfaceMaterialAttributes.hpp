@@ -14,21 +14,17 @@ struct SurfaceMaterialAttributes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALATTRIBUTES
 public:
     struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes const &) = delete;
     SurfaceMaterialAttributes() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALATTRIBUTES
+#endif
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const &);
     MCAPI struct SurfaceMaterialAttributes & operator=(struct SurfaceMaterialAttributes &&);
     MCAPI ~SurfaceMaterialAttributes();
-
-protected:
-
-private:
 
 };

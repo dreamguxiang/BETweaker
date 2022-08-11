@@ -14,14 +14,12 @@ class ItemUseMethodMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEMETHODMAP
 public:
     class ItemUseMethodMap& operator=(class ItemUseMethodMap const &) = delete;
     ItemUseMethodMap(class ItemUseMethodMap const &) = delete;
     ItemUseMethodMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEMETHODMAP
@@ -30,9 +28,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
-
 
 };

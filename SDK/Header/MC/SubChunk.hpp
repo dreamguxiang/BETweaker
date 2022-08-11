@@ -16,14 +16,14 @@ struct SubChunk {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
 public:
     struct SubChunk& operator=(struct SubChunk const &) = delete;
     SubChunk(struct SubChunk const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNK
+#endif
     MCAPI SubChunk(struct SubChunk &&);
     MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
     MCAPI SubChunk();
@@ -55,14 +55,13 @@ public:
     MCAPI void setSubChunkState(enum SubChunk::SubChunkState);
     MCAPI void shutdown();
     MCAPI ~SubChunk();
+    MCAPI static void flushGarbageCollectors();
 
-protected:
+//protected:
     MCAPI void _createBlockLightStorage();
     MCAPI void _createSkyLightStorage();
     MCAPI void _replaceBlocks(unsigned char, std::unique_ptr<class SubChunkStorage<class Block>>, class Bedrock::Threading::LockGuard<class SpinLock> &);
     MCAPI void _resetLight(bool, bool);
     MCAPI void _setBlock(unsigned char, unsigned short, class Block const &);
-
-private:
 
 };

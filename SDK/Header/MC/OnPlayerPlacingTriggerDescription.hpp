@@ -15,14 +15,12 @@ class OnPlayerPlacingTriggerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERPLACINGTRIGGERDESCRIPTION
 public:
     class OnPlayerPlacingTriggerDescription& operator=(class OnPlayerPlacingTriggerDescription const &) = delete;
     OnPlayerPlacingTriggerDescription(class OnPlayerPlacingTriggerDescription const &) = delete;
     OnPlayerPlacingTriggerDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnPlayerPlacingTriggerDescription();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGERDESCRIPTION
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

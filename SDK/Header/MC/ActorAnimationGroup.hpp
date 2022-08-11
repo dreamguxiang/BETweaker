@@ -15,13 +15,11 @@ class ActorAnimationGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONGROUP
 public:
     class ActorAnimationGroup& operator=(class ActorAnimationGroup const &) = delete;
     ActorAnimationGroup(class ActorAnimationGroup const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUP
@@ -31,7 +29,5 @@ public:
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const &);
     MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
     MCAPI void loadActorAnimationsSync(class ResourcePackManager &);
-
-
 
 };

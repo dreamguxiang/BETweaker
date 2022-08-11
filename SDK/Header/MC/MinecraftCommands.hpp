@@ -43,14 +43,12 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTCOMMANDS
 public:
     class MinecraftCommands& operator=(class MinecraftCommands const &) = delete;
     MinecraftCommands(class MinecraftCommands const &) = delete;
     MinecraftCommands() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
@@ -74,8 +72,6 @@ public:
 //private:
     MCAPI void _registerSharedClientServerEnums();
 
-
 private:
-
 
 };

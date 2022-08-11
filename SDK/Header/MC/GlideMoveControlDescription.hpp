@@ -15,14 +15,12 @@ class GlideMoveControlDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDEMOVECONTROLDESCRIPTION
 public:
     class GlideMoveControlDescription& operator=(class GlideMoveControlDescription const &) = delete;
     GlideMoveControlDescription(class GlideMoveControlDescription const &) = delete;
     GlideMoveControlDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLIDEMOVECONTROLDESCRIPTION
 #endif
-
-
 
 };

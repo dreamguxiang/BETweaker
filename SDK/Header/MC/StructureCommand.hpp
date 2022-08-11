@@ -15,14 +15,12 @@ class StructureCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURECOMMAND
 public:
     class StructureCommand& operator=(class StructureCommand const &) = delete;
     StructureCommand(class StructureCommand const &) = delete;
     StructureCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureCommand();
@@ -38,8 +36,6 @@ public:
     MCAPI void _load(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _save(class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

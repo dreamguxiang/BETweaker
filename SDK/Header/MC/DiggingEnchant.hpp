@@ -15,14 +15,12 @@ class DiggingEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGINGENCHANT
 public:
     class DiggingEnchant& operator=(class DiggingEnchant const &) = delete;
     DiggingEnchant(class DiggingEnchant const &) = delete;
     DiggingEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DiggingEnchant();
@@ -40,9 +38,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
-
 
 };

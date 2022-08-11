@@ -14,7 +14,6 @@ class NetworkStatistics {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSTATISTICS
 public:
     class NetworkStatistics& operator=(class NetworkStatistics const &) = delete;
@@ -22,12 +21,9 @@ public:
     NetworkStatistics() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSTATISTICS
 #endif
     MCAPI std::string getVerboseInfo() const;
-
-
 
 };

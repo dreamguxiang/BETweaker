@@ -16,14 +16,12 @@ class ScriptServerNetworkEventHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERNETWORKEVENTHANDLER
 public:
     class ScriptServerNetworkEventHandler& operator=(class ScriptServerNetworkEventHandler const &) = delete;
     ScriptServerNetworkEventHandler(class ScriptServerNetworkEventHandler const &) = delete;
     ScriptServerNetworkEventHandler() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventHandler();
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 
-
 private:
-
 
 };

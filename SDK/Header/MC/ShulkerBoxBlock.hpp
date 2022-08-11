@@ -15,14 +15,12 @@ class ShulkerBoxBlock : public ChestBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXBLOCK
 public:
     class ShulkerBoxBlock& operator=(class ShulkerBoxBlock const &) = delete;
     ShulkerBoxBlock(class ShulkerBoxBlock const &) = delete;
     ShulkerBoxBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShulkerBoxBlock();
@@ -50,7 +48,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*69*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*73*/ virtual void __unk_vfn_73();
-    /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
+    /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &);
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
@@ -63,7 +61,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*136*/ virtual int getColor(class Block const &) const;
     /*139*/ virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
@@ -81,9 +79,7 @@ public:
 //protected:
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
 
-
 protected:
     MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
 
 };

@@ -12,20 +12,22 @@ struct DimensionTransitionComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONTRANSITIONCOMPONENT
 public:
     struct DimensionTransitionComponent& operator=(struct DimensionTransitionComponent const &) = delete;
     DimensionTransitionComponent(struct DimensionTransitionComponent const &) = delete;
     DimensionTransitionComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONTRANSITIONCOMPONENT
+#endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-
-protected:
-
-private:
+    MCAPI static std::string const AXIS_TAG;
+    MCAPI static std::string const COMPONENT_TAG;
+    MCAPI static std::string const DIMENSION_TAG;
+    MCAPI static std::string const POSITION_X_TAG;
+    MCAPI static std::string const POSITION_Y_TAG;
+    MCAPI static std::string const POSITION_Z_TAG;
 
 };

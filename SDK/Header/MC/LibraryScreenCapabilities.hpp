@@ -14,18 +14,16 @@ struct LibraryScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIBRARYSCREENCAPABILITIES
 public:
     struct LibraryScreenCapabilities& operator=(struct LibraryScreenCapabilities const &) = delete;
     LibraryScreenCapabilities(struct LibraryScreenCapabilities const &) = delete;
     LibraryScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~LibraryScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIBRARYSCREENCAPABILITIES
+#endif
 
 };

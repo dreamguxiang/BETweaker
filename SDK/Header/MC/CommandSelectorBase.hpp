@@ -39,14 +39,12 @@ char explicitIdSelector;
 char unk192;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORBASE
 public:
     class CommandSelectorBase& operator=(class CommandSelectorBase const &) = delete;
     CommandSelectorBase(class CommandSelectorBase const &) = delete;
     CommandSelectorBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSELECTORBASE
@@ -93,10 +91,8 @@ public:
     MCAPI bool matchTag(class Actor const &) const;
     MCAPI bool matchType(class Actor const &) const;
 
-
 protected:
 
 private:
-
 
 };

@@ -16,14 +16,12 @@ class ExperiencePotion : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEPOTION
 public:
     class ExperiencePotion& operator=(class ExperiencePotion const &) = delete;
     ExperiencePotion(class ExperiencePotion const &) = delete;
     ExperiencePotion() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~ExperiencePotion();
@@ -55,7 +53,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEPOTION
 #endif
     MCAPI ExperiencePotion(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

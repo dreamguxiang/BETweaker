@@ -14,14 +14,12 @@ class BlockEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTLISTENER
 public:
     class BlockEventListener& operator=(class BlockEventListener const &) = delete;
     BlockEventListener(class BlockEventListener const &) = delete;
     BlockEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTLISTENER
@@ -36,7 +34,5 @@ public:
     MCVAPI enum EventResult onEvent(struct BlockNotificationEvent const &);
     MCVAPI enum EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 #endif
-
-
 
 };

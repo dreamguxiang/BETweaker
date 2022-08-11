@@ -15,14 +15,12 @@ class BasaltPillarFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASALTPILLARFEATURE
 public:
     class BasaltPillarFeature& operator=(class BasaltPillarFeature const &) = delete;
     BasaltPillarFeature(class BasaltPillarFeature const &) = delete;
     BasaltPillarFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BasaltPillarFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;
 
-
 private:
-
 
 };

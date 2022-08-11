@@ -70,14 +70,12 @@ public:
     }
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
 public:
     class Actor& operator=(class Actor const &) = delete;
     Actor(class Actor const &) = delete;
     Actor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
@@ -100,7 +98,7 @@ public:
     /*17*/ virtual enum ActorType getOwnerEntityType();
     /*18*/ virtual void remove();
     /*19*/ virtual void setPos(class Vec3 const &);
-    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
+    /*20*/ virtual bool isRuntimePredictedMovementEnabled();
     /*21*/ virtual struct PredictedMovementValues const & getPredictedMovementValues() const;
     /*22*/ virtual class Vec3 const & getPosition() const;
     /*23*/ virtual class Vec3 const & getPosPrev() const;
@@ -112,8 +110,8 @@ public:
     /*29*/ virtual void move(struct IActorMovementProxy &, class Vec3 const &) const;
     /*30*/ virtual class Vec3 getInterpolatedRidingPosition(float) const;
     /*31*/ virtual float getInterpolatedBodyRot(float) const;
-    /*32*/ virtual float getInterpolatedHeadRot(float) const;
-    /*33*/ virtual float getInterpolatedBodyYaw(float) const;
+    /*32*/ virtual float getInterpolatedHeadRot(float);
+    /*33*/ virtual float getInterpolatedBodyYaw(float);
     /*34*/ virtual float getYawSpeedInDegreesPerSecond() const;
     /*35*/ virtual float getInterpolatedWalkAnimSpeed(float) const;
     /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
@@ -158,7 +156,7 @@ public:
     /*75*/ virtual bool isOverWater() const;
     /*76*/ virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /*77*/ virtual void resetBlockMovementSlowdownMultiplier();
-    /*78*/ virtual float getCameraOffset() const;
+    /*78*/ virtual float getCameraOffset();
     /*79*/ virtual float getShadowHeightOffs();
     /*80*/ virtual float getShadowRadius() const;
     /*81*/ virtual class Vec3 getHeadLookVector(float) const;
@@ -174,20 +172,20 @@ public:
     /*91*/ virtual void onInsideBubbleColumn(bool);
     /*92*/ virtual bool isImmobile() const;
     /*93*/ virtual bool isSilent() const;
-    /*94*/ virtual bool isSilentObserver() const;
+    /*94*/ virtual bool isSilentObserver();
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();
-    /*97*/ virtual bool isSleeping() const;
+    /*97*/ virtual bool isSleeping();
     /*98*/ virtual void setSleeping(bool);
     /*99*/ virtual void __unk_vfn_99();
     /*100*/ virtual void setSneaking(bool);
-    /*101*/ virtual bool isBlocking() const;
-    /*102*/ virtual bool isDamageBlocked(class ActorDamageSource const &) const;
+    /*101*/ virtual bool isBlocking();
+    /*102*/ virtual bool isDamageBlocked(class ActorDamageSource const &);
     /*103*/ virtual bool isAlive() const;
     /*104*/ virtual bool isOnFire() const;
     /*105*/ virtual bool isOnHotBlock() const;
     /*106*/ virtual void __unk_vfn_106();
-    /*107*/ virtual bool isSurfaceMob() const;
+    /*107*/ virtual bool isSurfaceMob();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*110*/ virtual bool isRemotePlayer() const;
@@ -195,7 +193,7 @@ public:
     /*112*/ virtual bool isAffectedByWaterBottle() const;
     /*113*/ virtual bool canAttack(class Actor *, bool) const;
     /*114*/ virtual void setTarget(class Actor *);
-    /*115*/ virtual bool isValidTarget(class Actor *) const;
+    /*115*/ virtual bool isValidTarget(class Actor *);
     /*116*/ virtual bool attack(class Actor &, enum ActorDamageCause const &);
     /*117*/ virtual void performRangedAttack(class Actor &, float);
     /*118*/ virtual int getEquipmentCount() const;
@@ -209,7 +207,7 @@ public:
     /*126*/ virtual void setStanding(bool);
     /*127*/ virtual bool canPowerJump() const;
     /*128*/ virtual void setCanPowerJump(bool);
-    /*129*/ virtual bool isJumping() const;
+    /*129*/ virtual bool isJumping();
     /*130*/ virtual bool isEnchanted() const;
     /*131*/ virtual void vehicleLanded(class Vec3 const &, class Vec3 const &);
     /*132*/ virtual bool shouldRender() const;
@@ -236,8 +234,8 @@ public:
     /*153*/ virtual void setArmor(enum ArmorSlot, class ItemStack const &);
     /*154*/ virtual class ItemStack const & getArmor(enum ArmorSlot) const;
     /*155*/ virtual std::vector<class ItemStack const *> getAllArmor() const;
-    /*156*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
-    /*157*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*156*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot);
+    /*157*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot);
     /*158*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*159*/ virtual class ItemStack const & getEquippedSlot(enum EquipmentSlot) const;
     /*160*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
@@ -252,19 +250,19 @@ public:
     /*169*/ virtual void loadLinks(class CompoundTag const &, std::vector<struct ActorLink> &, class DataLoadHelper &);
     /*170*/ virtual enum ActorType getEntityTypeId() const;
     /*171*/ virtual class HashedString const & queryEntityRenderer() const;
-    /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*172*/ virtual struct ActorUniqueID getSourceUniqueID();
     /*173*/ virtual void thawFreezeEffect();
-    /*174*/ virtual bool canFreeze() const;
+    /*174*/ virtual bool canFreeze();
     /*175*/ virtual bool const isWearingLeatherArmor() const;
     /*176*/ virtual class AABB getLiquidAABB(enum MaterialType) const;
     /*177*/ virtual void handleInsidePortal(class BlockPos const &);
     /*178*/ virtual int getPortalCooldown() const;
-    /*179*/ virtual int getPortalWaitTime() const;
+    /*179*/ virtual int getPortalWaitTime();
     /*180*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
-    /*181*/ virtual bool canChangeDimensionsUsingPortal() const;
+    /*181*/ virtual bool canChangeDimensionsUsingPortal();
     /*182*/ virtual void __unk_vfn_182();
     /*183*/ virtual void changeDimension(class AutomaticID<class Dimension, int>);
-    /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*184*/ virtual struct ActorUniqueID getControllingPlayer();
     /*185*/ virtual void checkFallDamage(float, bool);
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*187*/ virtual void handleFallDistanceOnServer(float, float, bool);
@@ -273,22 +271,22 @@ public:
     /*190*/ virtual void onSynchedFlagUpdate(int, __int64, __int64);
     /*191*/ virtual void onSynchedDataUpdate(int);
     /*192*/ virtual bool canAddPassenger(class Actor &) const;
-    /*193*/ virtual bool canPickupItem(class ItemStack const &) const;
-    /*194*/ virtual bool canBePulledIntoVehicle() const;
-    /*195*/ virtual bool inCaravan() const;
+    /*193*/ virtual bool canPickupItem(class ItemStack const &);
+    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*195*/ virtual bool inCaravan();
     /*196*/ virtual void __unk_vfn_196();
     /*197*/ virtual void tickLeash();
     /*198*/ virtual void sendMotionPacketIfNeeded();
-    /*199*/ virtual bool canSynchronizeNewEntity() const;
+    /*199*/ virtual bool canSynchronizeNewEntity();
     /*200*/ virtual void stopRiding(bool, bool, bool);
     /*201*/ virtual void startSwimming();
     /*202*/ virtual void stopSwimming();
-    /*203*/ virtual void buildDebugInfo(std::string &) const;
+    /*203*/ virtual void buildDebugInfo(std::string &);
     /*204*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
     /*205*/ virtual bool isClientSide() const;
     /*206*/ virtual class AttributeInstance * getMutableAttribute(class Attribute const &);
     /*207*/ virtual class AttributeInstance const & getAttribute(class Attribute const &) const;
-    /*208*/ virtual int getDeathTime() const;
+    /*208*/ virtual int getDeathTime();
     /*209*/ virtual void heal(int);
     /*210*/ virtual bool isInvertedHealAndHarm() const;
     /*211*/ virtual bool canBeAffected(int) const;
@@ -307,19 +305,19 @@ public:
     /*224*/ virtual void getDebugText(std::vector<std::string> &);
     /*225*/ virtual float getMapDecorationRotation() const;
     /*226*/ virtual float getPassengerYRotation(class Actor const &) const;
-    /*227*/ virtual float getYHeadRot() const;
+    /*227*/ virtual float getYHeadRot();
     /*228*/ virtual void setYHeadRot(float);
-    /*229*/ virtual float getYHeadRotO() const;
-    /*230*/ virtual bool isWorldBuilder() const;
-    /*231*/ virtual bool isCreative() const;
-    /*232*/ virtual bool isAdventure() const;
-    /*233*/ virtual bool isSurvival() const;
-    /*234*/ virtual bool isSpectator() const;
+    /*229*/ virtual float getYHeadRotO();
+    /*230*/ virtual bool isWorldBuilder();
+    /*231*/ virtual bool isCreative();
+    /*232*/ virtual bool isAdventure();
+    /*233*/ virtual bool isSurvival();
+    /*234*/ virtual bool isSpectator();
     /*235*/ virtual bool isAttackableGamemode() const;
     /*236*/ virtual bool add(class ItemStack &);
     /*237*/ virtual bool drop(class ItemStack const &, bool);
     /*238*/ virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
-    /*239*/ virtual bool canDestroyBlock(class Block const &) const;
+    /*239*/ virtual bool canDestroyBlock(class Block const &);
     /*240*/ virtual void setAuxValue(int);
     /*241*/ virtual void setSize(float, float);
     /*242*/ virtual void onOrphan();
@@ -344,7 +342,7 @@ public:
     /*261*/ virtual void onPush(class Actor &);
     /*262*/ virtual class std::optional<class BlockPos> getLastDeathPos() const;
     /*263*/ virtual class std::optional<class AutomaticID<class Dimension, int>> getLastDeathDimension() const;
-    /*264*/ virtual bool hasDiedBefore() const;
+    /*264*/ virtual bool hasDiedBefore();
     /*265*/ virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum HandSlot, class ItemStack const &) const;
     /*266*/ virtual bool _shouldProvideFeedbackOnArmorSet(enum ArmorSlot, class ItemStack const &) const;
     /*267*/ virtual void updateEntitySpecificMolangVariables(class RenderParams &);
@@ -821,13 +819,11 @@ public:
     MCAPI void _updateOwnerChunk();
     MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy &, class AABB const &);
 
-
 protected:
 
 private:
     MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
     MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
     MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
-
 
 };

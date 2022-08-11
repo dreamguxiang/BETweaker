@@ -15,14 +15,12 @@ class UndyedShulkerBoxBlock : public ShulkerBoxBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDYEDSHULKERBOXBLOCK
 public:
     class UndyedShulkerBoxBlock& operator=(class UndyedShulkerBoxBlock const &) = delete;
     UndyedShulkerBoxBlock(class UndyedShulkerBoxBlock const &) = delete;
     UndyedShulkerBoxBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UndyedShulkerBoxBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNDYEDSHULKERBOXBLOCK
 #endif
     MCAPI UndyedShulkerBoxBlock(std::string const &, int);
-
-
 
 };

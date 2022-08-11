@@ -12,7 +12,6 @@ class HeartbeatServerComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEARTBEATSERVERCOMPONENT
 public:
     class HeartbeatServerComponent& operator=(class HeartbeatServerComponent const &) = delete;
@@ -20,13 +19,10 @@ public:
     HeartbeatServerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEARTBEATSERVERCOMPONENT
 #endif
     MCAPI HeartbeatServerComponent(class HeartbeatServerComponent &&);
     MCAPI ~HeartbeatServerComponent();
-
-
 
 };

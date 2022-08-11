@@ -16,7 +16,6 @@ class FindActorDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDACTORDEFINITION
 public:
     class FindActorDefinition& operator=(class FindActorDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     FindActorDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FindActorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDACTORDEFINITION
 #endif
-
-
 
 };

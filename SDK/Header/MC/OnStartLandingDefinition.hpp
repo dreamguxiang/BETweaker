@@ -15,18 +15,15 @@ struct OnStartLandingDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTARTLANDINGDEFINITION
 public:
     struct OnStartLandingDefinition& operator=(struct OnStartLandingDefinition const &) = delete;
     OnStartLandingDefinition(struct OnStartLandingDefinition const &) = delete;
     OnStartLandingDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTARTLANDINGDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnStartLandingDefinition>> &);
 
 };

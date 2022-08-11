@@ -12,14 +12,12 @@ class InvestigateSuspiciousLocationGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVESTIGATESUSPICIOUSLOCATIONGOAL
 public:
     class InvestigateSuspiciousLocationGoal& operator=(class InvestigateSuspiciousLocationGoal const &) = delete;
     InvestigateSuspiciousLocationGoal(class InvestigateSuspiciousLocationGoal const &) = delete;
     InvestigateSuspiciousLocationGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InvestigateSuspiciousLocationGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVESTIGATESUSPICIOUSLOCATIONGOAL
 #endif
     MCAPI InvestigateSuspiciousLocationGoal(class Mob &);
-
-
 
 };

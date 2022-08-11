@@ -15,14 +15,12 @@ class MultifaceBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACEBLOCK
 public:
     class MultifaceBlock& operator=(class MultifaceBlock const &) = delete;
     MultifaceBlock(class MultifaceBlock const &) = delete;
     MultifaceBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MultifaceBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -71,8 +69,8 @@ public:
     /*178*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual class Block const & getMultifaceBlock() const = 0;
-    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
+    /*192*/ virtual class Block const & getMultifaceBlock();
+    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
     MCVAPI bool isMultifaceBlock() const;
 #endif
@@ -99,10 +97,8 @@ public:
 //private:
     MCAPI void _removeBlock(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, bool) const;
 
-
 protected:
 
 private:
-
 
 };

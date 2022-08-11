@@ -12,19 +12,18 @@ struct ActorSelectorArgs {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSELECTORARGS
 public:
     struct ActorSelectorArgs& operator=(struct ActorSelectorArgs const &) = delete;
     ActorSelectorArgs(struct ActorSelectorArgs const &) = delete;
     ActorSelectorArgs() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSELECTORARGS
+#endif
     MCAPI ~ActorSelectorArgs();
-
-protected:
-
-private:
+    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
+    MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;
+    MCAPI static struct std::pair<float, float> const DEFAULT_Y_ROTATION;
 
 };

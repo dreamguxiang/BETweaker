@@ -14,14 +14,12 @@ class IRandom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRANDOM
 public:
     class IRandom& operator=(class IRandom const &) = delete;
     IRandom(class IRandom const &) = delete;
     IRandom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IRandom();
@@ -37,7 +35,5 @@ public:
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
 #endif
-
-
 
 };

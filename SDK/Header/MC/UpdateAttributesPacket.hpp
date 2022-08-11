@@ -15,13 +15,11 @@ class UpdateAttributesPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEATTRIBUTESPACKET
 public:
     class UpdateAttributesPacket& operator=(class UpdateAttributesPacket const &) = delete;
     UpdateAttributesPacket(class UpdateAttributesPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateAttributesPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI UpdateAttributesPacket(class Actor const &, std::vector<class AttributeInstanceHandle> const &);
     MCAPI UpdateAttributesPacket();
-
-
 
 };

@@ -15,13 +15,11 @@ class UpdateEquipPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEEQUIPPACKET
 public:
     class UpdateEquipPacket& operator=(class UpdateEquipPacket const &) = delete;
     UpdateEquipPacket(class UpdateEquipPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateEquipPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI UpdateEquipPacket(enum ContainerID, enum ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
     MCAPI UpdateEquipPacket();
-
-
 
 };

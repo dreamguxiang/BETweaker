@@ -12,13 +12,11 @@ class AngerLevelComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGERLEVELCOMPONENT
 public:
     class AngerLevelComponent& operator=(class AngerLevelComponent const &) = delete;
     AngerLevelComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELCOMPONENT
@@ -46,8 +44,6 @@ public:
     MCAPI void _createOrModifyAngerLevel(class Actor const &, class std::function<int (int)> const &);
     MCAPI class std::optional<enum LevelSoundEvent> _getListeningSoundEvent(class Actor &) const;
 
-
 private:
-
 
 };

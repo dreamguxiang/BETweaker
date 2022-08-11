@@ -15,19 +15,16 @@ struct GroundOffsetDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDOFFSETDEFINITION
 public:
     struct GroundOffsetDefinition& operator=(struct GroundOffsetDefinition const &) = delete;
     GroundOffsetDefinition(struct GroundOffsetDefinition const &) = delete;
     GroundOffsetDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUNDOFFSETDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct GroundOffsetDefinition>> &);
 
 };

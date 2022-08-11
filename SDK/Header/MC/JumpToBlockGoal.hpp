@@ -14,14 +14,12 @@ class JumpToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPTOBLOCKGOAL
 public:
     class JumpToBlockGoal& operator=(class JumpToBlockGoal const &) = delete;
     JumpToBlockGoal(class JumpToBlockGoal const &) = delete;
     JumpToBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JumpToBlockGoal();
@@ -45,8 +43,6 @@ public:
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const &, class Vec3 const &) const;
 
-
 private:
-
 
 };

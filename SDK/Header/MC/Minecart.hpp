@@ -15,14 +15,12 @@ class Minecart : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECART
 public:
     class Minecart& operator=(class Minecart const &) = delete;
     Minecart(class Minecart const &) = delete;
     Minecart() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -34,7 +32,7 @@ public:
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -48,7 +46,7 @@ public:
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*140*/ virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /*182*/ virtual void __unk_vfn_182();
-    /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*184*/ virtual struct ActorUniqueID getControllingPlayer();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
@@ -64,8 +62,8 @@ public:
     /*284*/ virtual void _onSizeUpdated();
     /*285*/ virtual void __unk_vfn_285();
     /*286*/ virtual void destroy(class ActorDamageSource const &, bool);
-    /*287*/ virtual enum MinecartType getType() = 0;
-    /*288*/ virtual class Block const * getDefaultDisplayBlock() const;
+    /*287*/ virtual enum MinecartType getType();
+    /*288*/ virtual class Block const * getDefaultDisplayBlock();
     /*289*/ virtual void __unk_vfn_289();
     /*290*/ virtual int getDefaultDisplayOffset() const;
     /*291*/ virtual void applyNaturalSlowdown(class BlockSource &);
@@ -83,8 +81,6 @@ public:
 //private:
     MCAPI void _registerLoopingSounds();
 
-
 private:
-
 
 };

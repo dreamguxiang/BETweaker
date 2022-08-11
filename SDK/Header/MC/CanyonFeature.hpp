@@ -17,14 +17,12 @@ public:
 struct CanyonConfiguration;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANYONFEATURE
 public:
     class CanyonFeature& operator=(class CanyonFeature const &) = delete;
     CanyonFeature(class CanyonFeature const &) = delete;
     CanyonFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CanyonFeature();
@@ -39,8 +37,6 @@ public:
 //protected:
     MCAPI void addTunnel(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, float, float, float, int, int, float, struct WorldGenContext const &) const;
 
-
 protected:
-
 
 };

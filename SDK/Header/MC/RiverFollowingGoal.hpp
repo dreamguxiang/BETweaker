@@ -14,14 +14,12 @@ class RiverFollowingGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIVERFOLLOWINGGOAL
 public:
     class RiverFollowingGoal& operator=(class RiverFollowingGoal const &) = delete;
     RiverFollowingGoal(class RiverFollowingGoal const &) = delete;
     RiverFollowingGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RiverFollowingGoal();
@@ -39,8 +37,6 @@ public:
 //protected:
     MCAPI void determineSteerDirection();
 
-
 protected:
-
 
 };

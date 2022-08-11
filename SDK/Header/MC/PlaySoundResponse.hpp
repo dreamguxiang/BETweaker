@@ -15,14 +15,12 @@ class PlaySoundResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDRESPONSE
 public:
     class PlaySoundResponse& operator=(class PlaySoundResponse const &) = delete;
     PlaySoundResponse(class PlaySoundResponse const &) = delete;
     PlaySoundResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlaySoundResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

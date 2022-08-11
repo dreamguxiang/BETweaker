@@ -16,14 +16,12 @@ class ThrownIceBomb : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNICEBOMB
 public:
     class ThrownIceBomb& operator=(class ThrownIceBomb const &) = delete;
     ThrownIceBomb(class ThrownIceBomb const &) = delete;
     ThrownIceBomb() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -53,7 +51,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNICEBOMB
 #endif
     MCAPI ThrownIceBomb(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

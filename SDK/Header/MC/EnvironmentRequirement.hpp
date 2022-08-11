@@ -14,20 +14,16 @@ struct EnvironmentRequirement {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENVIRONMENTREQUIREMENT
 public:
     struct EnvironmentRequirement& operator=(struct EnvironmentRequirement const &) = delete;
     EnvironmentRequirement(struct EnvironmentRequirement const &) = delete;
     EnvironmentRequirement() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENVIRONMENTREQUIREMENT
+#endif
     MCAPI void addBlockDescriptor(class BlockDescriptor const &);
     MCAPI ~EnvironmentRequirement();
-
-protected:
-
-private:
 
 };

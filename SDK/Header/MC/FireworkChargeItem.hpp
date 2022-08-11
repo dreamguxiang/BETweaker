@@ -18,7 +18,6 @@ public:
 enum Shape;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKCHARGEITEM
 public:
     class FireworkChargeItem& operator=(class FireworkChargeItem const &) = delete;
@@ -26,14 +25,13 @@ public:
     FireworkChargeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FireworkChargeItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual bool isDyeable() const;
+    /*18*/ virtual bool isDyeable();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
@@ -47,6 +45,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*117*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKCHARGEITEM
 #endif
     MCAPI FireworkChargeItem(std::string const &, int);
@@ -65,8 +64,6 @@ public:
     MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     MCAPI static void appendColors(std::string &, std::vector<unsigned char>);
 
-
 private:
-
 
 };

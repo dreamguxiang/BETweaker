@@ -14,14 +14,12 @@ class EconomyTradeableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ECONOMYTRADEABLECOMPONENT
 public:
     class EconomyTradeableComponent& operator=(class EconomyTradeableComponent const &) = delete;
     EconomyTradeableComponent(class EconomyTradeableComponent const &) = delete;
     EconomyTradeableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLECOMPONENT
@@ -68,8 +66,6 @@ public:
     MCAPI void _setMaxTradeTier(int);
     MCAPI void _setTradeTier(int);
 
-
 private:
-
 
 };

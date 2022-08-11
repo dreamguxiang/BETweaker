@@ -12,7 +12,6 @@ class SendPacketsSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDPACKETSSYSTEMIMPL
 public:
     class SendPacketsSystemImpl& operator=(class SendPacketsSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     SendPacketsSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDPACKETSSYSTEMIMPL
 #endif
     MCAPI static void _sendPacketsSystem(class ViewedEntityContextT<class StrictEntityContext, class ActorOwnerComponent const, struct SendPacketsComponent const>);
-
-
 
 };

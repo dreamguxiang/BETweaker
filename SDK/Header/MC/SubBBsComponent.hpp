@@ -12,19 +12,15 @@ struct SubBBsComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBBBSCOMPONENT
 public:
     struct SubBBsComponent& operator=(struct SubBBsComponent const &) = delete;
     SubBBsComponent(struct SubBBsComponent const &) = delete;
     SubBBsComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBBBSCOMPONENT
+#endif
     MCAPI ~SubBBsComponent();
-
-protected:
-
-private:
 
 };

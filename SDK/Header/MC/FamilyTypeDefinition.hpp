@@ -15,19 +15,16 @@ struct FamilyTypeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAMILYTYPEDEFINITION
 public:
     struct FamilyTypeDefinition& operator=(struct FamilyTypeDefinition const &) = delete;
     FamilyTypeDefinition(struct FamilyTypeDefinition const &) = delete;
     FamilyTypeDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAMILYTYPEDEFINITION
+#endif
     MCAPI void addFamilyName(std::string const &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FamilyTypeDefinition>> &);
 
 };

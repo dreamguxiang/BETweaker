@@ -15,20 +15,16 @@ class LoomContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMCONTAINERSCREENVALIDATOR
 public:
     class LoomContainerScreenValidator& operator=(class LoomContainerScreenValidator const &) = delete;
     LoomContainerScreenValidator(class LoomContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LoomContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERSCREENVALIDATOR
 #endif
     MCAPI LoomContainerScreenValidator();
-
-
 
 };

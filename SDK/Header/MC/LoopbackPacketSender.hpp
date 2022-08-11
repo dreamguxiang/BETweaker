@@ -14,14 +14,12 @@ class LoopbackPacketSender {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOPBACKPACKETSENDER
 public:
     class LoopbackPacketSender& operator=(class LoopbackPacketSender const &) = delete;
     LoopbackPacketSender(class LoopbackPacketSender const &) = delete;
     LoopbackPacketSender() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LoopbackPacketSender();
@@ -39,7 +37,5 @@ public:
     MCAPI void addLoopbackCallback(class NetEventCallback &);
     MCAPI void removeLoopbackCallback(class NetEventCallback &);
     MCAPI void setUserList(std::vector<class OwnerPtrT<struct EntityRefTraits>> const *);
-
-
 
 };

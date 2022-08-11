@@ -15,14 +15,12 @@ class BarrelBlock : public FaceDirectionalBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELBLOCK
 public:
     class BarrelBlock& operator=(class BarrelBlock const &) = delete;
     BarrelBlock(class BarrelBlock const &) = delete;
     BarrelBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BarrelBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -75,7 +73,5 @@ public:
 #endif
     MCAPI BarrelBlock(std::string const &, int, class Material const &);
     MCAPI static void setOpen(bool, class BlockSource &, class BlockPos const &);
-
-
 
 };

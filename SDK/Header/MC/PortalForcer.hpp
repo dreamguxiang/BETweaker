@@ -14,14 +14,12 @@ class PortalForcer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PORTALFORCER
 public:
     class PortalForcer& operator=(class PortalForcer const &) = delete;
     PortalForcer(class PortalForcer const &) = delete;
     PortalForcer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PortalForcer();
@@ -43,8 +41,6 @@ public:
 //private:
     MCAPI class std::optional<class PortalRecord> _findPortal(class AutomaticID<class Dimension, int>, class BlockPos const &, int, class BlockPos &) const;
 
-
 private:
-
 
 };

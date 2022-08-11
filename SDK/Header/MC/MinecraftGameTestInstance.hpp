@@ -14,14 +14,12 @@ class MinecraftGameTestInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTINSTANCE
 public:
     class MinecraftGameTestInstance& operator=(class MinecraftGameTestInstance const &) = delete;
     MinecraftGameTestInstance(class MinecraftGameTestInstance const &) = delete;
     MinecraftGameTestInstance() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftGameTestInstance();
@@ -42,7 +40,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTINSTANCE
 #endif
     MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
-
-
 
 };

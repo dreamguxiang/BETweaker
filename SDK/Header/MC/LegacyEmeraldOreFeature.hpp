@@ -15,7 +15,6 @@ class LegacyEmeraldOreFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYEMERALDOREFEATURE
 public:
     class LegacyEmeraldOreFeature& operator=(class LegacyEmeraldOreFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     LegacyEmeraldOreFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacyEmeraldOreFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYEMERALDOREFEATURE
 #endif
-
-
 
 };

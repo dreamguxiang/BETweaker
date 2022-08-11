@@ -15,14 +15,12 @@ class GameMode {
 public:
 	LIAPI ServerPlayer* getPlayer();
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODE
 public:
     class GameMode& operator=(class GameMode const &) = delete;
     GameMode(class GameMode const &) = delete;
     GameMode() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameMode();
@@ -74,8 +72,6 @@ public:
     MCAPI bool _canUseBlock(class Block const &);
     MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class DaylightDetectorBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAYLIGHTDETECTORBLOCKACTOR
 public:
     class DaylightDetectorBlockActor& operator=(class DaylightDetectorBlockActor const &) = delete;
     DaylightDetectorBlockActor(class DaylightDetectorBlockActor const &) = delete;
     DaylightDetectorBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DaylightDetectorBlockActor();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLIGHTDETECTORBLOCKACTOR
 #endif
     MCAPI DaylightDetectorBlockActor(class BlockPos const &);
-
-
 
 };

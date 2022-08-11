@@ -16,14 +16,12 @@ class CoalItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COALITEM
 public:
     class CoalItem& operator=(class CoalItem const &) = delete;
     CoalItem(class CoalItem const &) = delete;
     CoalItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CoalItem();
@@ -41,10 +39,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*132*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COALITEM
 #endif
-
-
 
 };

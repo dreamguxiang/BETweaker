@@ -14,14 +14,12 @@ class MoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOBLOCKGOAL
 public:
     class MoveToBlockGoal& operator=(class MoveToBlockGoal const &) = delete;
     MoveToBlockGoal(class MoveToBlockGoal const &) = delete;
     MoveToBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToBlockGoal();
@@ -42,8 +40,6 @@ public:
     MCAPI void _moveToBlock();
     MCAPI bool _pathIsValid(class Path const *);
 
-
 private:
-
 
 };

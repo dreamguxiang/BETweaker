@@ -15,13 +15,11 @@ class RandomSpreadTreeCanopy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSPREADTREECANOPY
 public:
     class RandomSpreadTreeCanopy& operator=(class RandomSpreadTreeCanopy const &) = delete;
     RandomSpreadTreeCanopy(class RandomSpreadTreeCanopy const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomSpreadTreeCanopy();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSPREADTREECANOPY
 #endif
     MCAPI RandomSpreadTreeCanopy();
-
-
 
 };

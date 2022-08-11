@@ -26,14 +26,12 @@ struct SetScoreOutput {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDCOMMAND
 public:
     class ScoreboardCommand& operator=(class ScoreboardCommand const &) = delete;
     ScoreboardCommand(class ScoreboardCommand const &) = delete;
     ScoreboardCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScoreboardCommand();
@@ -62,8 +60,6 @@ public:
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard &);
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard &);
 
-
 private:
-
 
 };

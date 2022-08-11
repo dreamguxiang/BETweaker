@@ -13,14 +13,12 @@ class SculkVeinMultifaceSpreader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKVEINMULTIFACESPREADER
 public:
     class SculkVeinMultifaceSpreader& operator=(class SculkVeinMultifaceSpreader const &) = delete;
     SculkVeinMultifaceSpreader(class SculkVeinMultifaceSpreader const &) = delete;
     SculkVeinMultifaceSpreader() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkVeinMultifaceSpreader();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINMULTIFACESPREADER
 #endif
     MCAPI SculkVeinMultifaceSpreader(std::vector<enum MultifaceSpreader::SpreadType> const &);
-
-
 
 };

@@ -15,13 +15,11 @@ class CameraShakePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKEPACKET
 public:
     class CameraShakePacket& operator=(class CameraShakePacket const &) = delete;
     CameraShakePacket(class CameraShakePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CameraShakePacket();
@@ -34,7 +32,5 @@ public:
     MCAPI CameraShakePacket(float, float, enum CameraShakeType);
     MCAPI CameraShakePacket(enum CameraShakeAction);
     MCAPI CameraShakePacket();
-
-
 
 };

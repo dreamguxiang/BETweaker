@@ -16,7 +16,6 @@ class SnapshotEnv : public TransactionalWorldBlockTarget {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPSHOTENV
 public:
     class SnapshotEnv& operator=(class SnapshotEnv const &) = delete;
@@ -24,16 +23,15 @@ public:
     SnapshotEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SnapshotEnv();
     /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const &);
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTENV
-    MCVAPI class leveldb::Status DeleteFileA(std::string const &);
-    MCVAPI class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
-    MCVAPI class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    MCVAPI class leveldb::Status RenameFile(std::string const &, std::string const &);
 #endif
     MCAPI SnapshotEnv(class leveldb::Env *);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
 
-
 private:
-
 
 };

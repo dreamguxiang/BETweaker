@@ -14,14 +14,12 @@ class FindCoverGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDCOVERGOAL
 public:
     class FindCoverGoal& operator=(class FindCoverGoal const &) = delete;
     FindCoverGoal(class FindCoverGoal const &) = delete;
     FindCoverGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FindCoverGoal();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI FindCoverGoal(class Mob &, float, float);
     MCAPI class Mob const & getMob() const;
-
-
 
 };

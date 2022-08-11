@@ -14,14 +14,12 @@ class NetherDimension {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERDIMENSION
 public:
     class NetherDimension& operator=(class NetherDimension const &) = delete;
     NetherDimension(class NetherDimension const &) = delete;
     NetherDimension() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERDIMENSION
@@ -47,8 +45,6 @@ public:
 //private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, class BaseGameVersion const &);
 
-
 private:
-
 
 };

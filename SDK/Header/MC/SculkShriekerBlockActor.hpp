@@ -13,14 +13,12 @@ class SculkShriekerBlockActor : public BlockActor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSHRIEKERBLOCKACTOR
 public:
     class SculkShriekerBlockActor& operator=(class SculkShriekerBlockActor const &) = delete;
     SculkShriekerBlockActor(class SculkShriekerBlockActor const &) = delete;
     SculkShriekerBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkShriekerBlockActor();
@@ -43,7 +41,5 @@ public:
     MCAPI bool tryShriek(class BlockSource &, class BlockPos, class Player &);
     MCAPI static class SculkShriekerBlockActor * tryGet(class BlockSource &, class BlockPos);
     MCAPI static class Player * tryGetPlayerInHierarchy(class Actor *);
-
-
 
 };

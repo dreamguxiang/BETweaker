@@ -15,14 +15,12 @@ class NetworkChunkSource : public ChunkSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKSOURCE
 public:
     class NetworkChunkSource& operator=(class NetworkChunkSource const &) = delete;
     NetworkChunkSource(class NetworkChunkSource const &) = delete;
     NetworkChunkSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetworkChunkSource();
@@ -31,12 +29,10 @@ public:
     /*8*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
     /*18*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
-    /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
-    /*26*/ virtual bool canCreateViews() const;
+    /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage();
+    /*26*/ virtual bool canCreateViews();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKSOURCE
 #endif
     MCAPI NetworkChunkSource(class Dimension &);
-
-
 
 };

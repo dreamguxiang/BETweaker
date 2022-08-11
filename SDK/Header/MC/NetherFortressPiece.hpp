@@ -15,14 +15,12 @@ class NetherFortressPiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSPIECE
 public:
     class NetherFortressPiece& operator=(class NetherFortressPiece const &) = delete;
     NetherFortressPiece(class NetherFortressPiece const &) = delete;
     NetherFortressPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherFortressPiece();
@@ -37,7 +35,5 @@ public:
     MCAPI class StructurePiece * generateChildLeft(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);
     MCAPI class StructurePiece * generateChildRight(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);
     MCAPI std::unique_ptr<class NetherFortressPiece> generatePiece(class NBStartPiece &, std::vector<class PieceWeight> &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
-
-
 
 };

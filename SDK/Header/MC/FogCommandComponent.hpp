@@ -14,14 +14,12 @@ class FogCommandComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMANDCOMPONENT
 public:
     class FogCommandComponent& operator=(class FogCommandComponent const &) = delete;
     FogCommandComponent(class FogCommandComponent const &) = delete;
     FogCommandComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMANDCOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI bool pushFogSetting(std::string const &, std::string const &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI bool removeFogSettings(std::string const &);
-
-
 
 };

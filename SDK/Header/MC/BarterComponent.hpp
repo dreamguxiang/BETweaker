@@ -14,7 +14,6 @@ class BarterComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERCOMPONENT
 public:
     class BarterComponent& operator=(class BarterComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     BarterComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERCOMPONENT
 #endif
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     MCAPI void stopBarter();
-
-
 
 };

@@ -15,7 +15,6 @@ class LookAtEntityGoal : public LookAtActorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATENTITYGOAL
 public:
     class LookAtEntityGoal& operator=(class LookAtEntityGoal const &) = delete;
@@ -23,13 +22,10 @@ public:
     LookAtEntityGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtEntityGoal();
     /*3*/ virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATENTITYGOAL
 #endif
-
-
 
 };

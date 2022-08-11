@@ -15,14 +15,12 @@ class CoralFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALFEATURE
 public:
     class CoralFeature& operator=(class CoralFeature const &) = delete;
     CoralFeature(class CoralFeature const &) = delete;
     CoralFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CoralFeature();
@@ -43,8 +41,6 @@ public:
     MCAPI void _starCorners(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
     MCAPI void _starFormation(class BlockSource &, class Random &, class BlockPos const &, class gsl::not_null<class Block const *>, float, int, bool) const;
 
-
 private:
-
 
 };

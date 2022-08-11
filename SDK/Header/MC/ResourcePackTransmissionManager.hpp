@@ -14,14 +14,12 @@ class ResourcePackTransmissionManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKTRANSMISSIONMANAGER
 public:
     class ResourcePackTransmissionManager& operator=(class ResourcePackTransmissionManager const &) = delete;
     ResourcePackTransmissionManager(class ResourcePackTransmissionManager const &) = delete;
     ResourcePackTransmissionManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKTRANSMISSIONMANAGER
@@ -31,7 +29,5 @@ public:
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     MCAPI void update();
     MCAPI ~ResourcePackTransmissionManager();
-
-
 
 };

@@ -14,20 +14,16 @@ struct BlockQueuedTickingComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGCOMPONENT
 public:
     struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent const &) = delete;
     BlockQueuedTickingComponent(struct BlockQueuedTickingComponent const &) = delete;
     BlockQueuedTickingComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGCOMPONENT
+#endif
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent &&);
     MCAPI ~BlockQueuedTickingComponent();
-
-protected:
-
-private:
 
 };

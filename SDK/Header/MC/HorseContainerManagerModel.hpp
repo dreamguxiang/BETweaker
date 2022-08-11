@@ -15,14 +15,12 @@ class HorseContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSECONTAINERMANAGERMODEL
 public:
     class HorseContainerManagerModel& operator=(class HorseContainerManagerModel const &) = delete;
     HorseContainerManagerModel(class HorseContainerManagerModel const &) = delete;
     HorseContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HorseContainerManagerModel();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERMANAGERMODEL
 #endif
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
-
-
 
 };

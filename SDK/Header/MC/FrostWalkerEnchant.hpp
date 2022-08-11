@@ -15,14 +15,12 @@ class FrostWalkerEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FROSTWALKERENCHANT
 public:
     class FrostWalkerEnchant& operator=(class FrostWalkerEnchant const &) = delete;
     FrostWalkerEnchant(class FrostWalkerEnchant const &) = delete;
     FrostWalkerEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FrostWalkerEnchant();
@@ -37,7 +35,5 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     MCAPI FrostWalkerEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-
 
 };

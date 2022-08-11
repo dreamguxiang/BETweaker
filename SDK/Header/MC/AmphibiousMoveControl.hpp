@@ -15,13 +15,11 @@ class AmphibiousMoveControl : public GenericMoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROL
 public:
     class AmphibiousMoveControl& operator=(class AmphibiousMoveControl const &) = delete;
     AmphibiousMoveControl(class AmphibiousMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AmphibiousMoveControl();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPHIBIOUSMOVECONTROL
 #endif
     MCAPI AmphibiousMoveControl();
-
-
 
 };

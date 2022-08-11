@@ -18,13 +18,11 @@ public:
     std::string data;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODALFORMREQUESTPACKET
 public:
     class ModalFormRequestPacket& operator=(class ModalFormRequestPacket const &) = delete;
     ModalFormRequestPacket(class ModalFormRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ModalFormRequestPacket();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
     MCAPI ModalFormRequestPacket();
-
-
 
 };

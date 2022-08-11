@@ -14,7 +14,6 @@ class MarketplaceSkinValidator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MARKETPLACESKINVALIDATOR
 public:
     class MarketplaceSkinValidator& operator=(class MarketplaceSkinValidator const &) = delete;
@@ -22,12 +21,9 @@ public:
     MarketplaceSkinValidator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MARKETPLACESKINVALIDATOR
 #endif
     MCAPI static bool checkIfValid(std::string const &);
-
-
 
 };

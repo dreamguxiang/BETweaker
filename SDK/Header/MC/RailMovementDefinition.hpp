@@ -15,13 +15,11 @@ class RailMovementDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENTDEFINITION
 public:
     class RailMovementDefinition& operator=(class RailMovementDefinition const &) = delete;
     RailMovementDefinition(class RailMovementDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI RailMovementDefinition();
     MCAPI void initialize(class EntityContext &, class RailMovementComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailMovementDefinition>> &);
-
-
 
 };

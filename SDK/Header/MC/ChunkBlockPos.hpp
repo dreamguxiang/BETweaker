@@ -28,14 +28,12 @@ ChunkBlockPos(char x, short y, char z)
     , z(z){};
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
 public:
     class ChunkBlockPos& operator=(class ChunkBlockPos const &) = delete;
     ChunkBlockPos(class ChunkBlockPos const &) = delete;
     ChunkBlockPos() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBLOCKPOS
@@ -45,7 +43,5 @@ public:
     MCAPI class Pos toPos() const;
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
-
-
 
 };

@@ -15,7 +15,6 @@ class LegacyIceFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYICEFEATURE
 public:
     class LegacyIceFeature& operator=(class LegacyIceFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     LegacyIceFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacyIceFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYICEFEATURE
 #endif
     MCAPI LegacyIceFeature(class FeatureRegistry const &);
-
-
 
 };

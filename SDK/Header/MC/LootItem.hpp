@@ -15,7 +15,6 @@ class LootItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEM
 public:
     class LootItem& operator=(class LootItem const &) = delete;
@@ -23,13 +22,10 @@ public:
     LootItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEM
 #endif
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &, int, int, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

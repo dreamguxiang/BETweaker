@@ -14,13 +14,11 @@ class DebugAssertException {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGASSERTEXCEPTION
 public:
     class DebugAssertException& operator=(class DebugAssertException const &) = delete;
     DebugAssertException() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DebugAssertException();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static char const *const WHAT;
-
 
 };

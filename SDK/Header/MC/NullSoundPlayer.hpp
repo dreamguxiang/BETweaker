@@ -15,14 +15,12 @@ class NullSoundPlayer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSOUNDPLAYER
 public:
     class NullSoundPlayer& operator=(class NullSoundPlayer const &) = delete;
     NullSoundPlayer(class NullSoundPlayer const &) = delete;
     NullSoundPlayer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NullSoundPlayer();
@@ -66,7 +64,5 @@ public:
     MCVAPI class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64) const;
     MCVAPI void unregisterLoop(unsigned __int64, bool);
 #endif
-
-
 
 };

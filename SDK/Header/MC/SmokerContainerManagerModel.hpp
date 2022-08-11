@@ -15,7 +15,6 @@ class SmokerContainerManagerModel : public FurnaceContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERMANAGERMODEL
 public:
     class SmokerContainerManagerModel& operator=(class SmokerContainerManagerModel const &) = delete;
@@ -23,13 +22,10 @@ public:
     SmokerContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmokerContainerManagerModel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERMANAGERMODEL
 #endif
     MCAPI SmokerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

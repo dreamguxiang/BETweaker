@@ -14,14 +14,12 @@ class MoveTowardsTargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSTARGETGOAL
 public:
     class MoveTowardsTargetGoal& operator=(class MoveTowardsTargetGoal const &) = delete;
     MoveTowardsTargetGoal(class MoveTowardsTargetGoal const &) = delete;
     MoveTowardsTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveTowardsTargetGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSTARGETGOAL
 #endif
     MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
-
-
 
 };

@@ -16,14 +16,12 @@ class ScriptBlockGameplayHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKGAMEPLAYHANDLER
 public:
     class ScriptBlockGameplayHandler& operator=(class ScriptBlockGameplayHandler const &) = delete;
     ScriptBlockGameplayHandler(class ScriptBlockGameplayHandler const &) = delete;
     ScriptBlockGameplayHandler() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptBlockGameplayHandler();
@@ -43,8 +41,6 @@ public:
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 
-
 private:
-
 
 };

@@ -14,13 +14,11 @@ class BalloonComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONCOMPONENT
 public:
     class BalloonComponent& operator=(class BalloonComponent const &) = delete;
     BalloonComponent(class BalloonComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONCOMPONENT
@@ -42,7 +40,5 @@ public:
     MCAPI static std::string const MAX_HEIGHT_TAG;
     MCAPI static std::string const SHOULD_DROP_TAG;
     MCAPI static class Actor * getBalloonForActor(class Actor const &);
-
-
 
 };

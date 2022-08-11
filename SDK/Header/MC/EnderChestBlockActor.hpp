@@ -14,14 +14,12 @@ class EnderChestBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCHESTBLOCKACTOR
 public:
     class EnderChestBlockActor& operator=(class EnderChestBlockActor const &) = delete;
     EnderChestBlockActor(class EnderChestBlockActor const &) = delete;
     EnderChestBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCKACTOR
@@ -35,9 +33,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const ITEMS_SIZE;
-
 
 };

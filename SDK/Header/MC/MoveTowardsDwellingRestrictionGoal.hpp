@@ -14,14 +14,12 @@ class MoveTowardsDwellingRestrictionGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSDWELLINGRESTRICTIONGOAL
 public:
     class MoveTowardsDwellingRestrictionGoal& operator=(class MoveTowardsDwellingRestrictionGoal const &) = delete;
     MoveTowardsDwellingRestrictionGoal(class MoveTowardsDwellingRestrictionGoal const &) = delete;
     MoveTowardsDwellingRestrictionGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveTowardsDwellingRestrictionGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSDWELLINGRESTRICTIONGOAL
 #endif
     MCAPI MoveTowardsDwellingRestrictionGoal(class Mob &);
-
-
 
 };

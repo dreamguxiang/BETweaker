@@ -14,14 +14,12 @@ class ActorComponentFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMPONENTFACTORY
 public:
     class ActorComponentFactory& operator=(class ActorComponentFactory const &) = delete;
     ActorComponentFactory(class ActorComponentFactory const &) = delete;
     ActorComponentFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMPONENTFACTORY
@@ -30,8 +28,6 @@ public:
 //private:
     MCAPI void _initialize(class Experiments const &);
 
-
 private:
-
 
 };

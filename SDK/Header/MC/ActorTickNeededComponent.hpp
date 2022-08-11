@@ -15,14 +15,12 @@ class ActorTickNeededComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTICKNEEDEDCOMPONENT
 public:
     class ActorTickNeededComponent& operator=(class ActorTickNeededComponent const &) = delete;
     ActorTickNeededComponent(class ActorTickNeededComponent const &) = delete;
     ActorTickNeededComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTICKNEEDEDCOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     MCAPI ~ActorTickNeededComponent();
-
-
 
 };

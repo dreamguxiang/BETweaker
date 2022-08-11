@@ -16,14 +16,12 @@ class Balloon : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOON
 public:
     class Balloon& operator=(class Balloon const &) = delete;
     Balloon(class Balloon const &) = delete;
     Balloon() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -55,7 +53,5 @@ public:
 #endif
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void remove(bool);
-
-
 
 };

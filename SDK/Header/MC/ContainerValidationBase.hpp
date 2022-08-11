@@ -14,14 +14,12 @@ class ContainerValidationBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONBASE
 public:
     class ContainerValidationBase& operator=(class ContainerValidationBase const &) = delete;
     ContainerValidationBase(class ContainerValidationBase const &) = delete;
     ContainerValidationBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
@@ -35,7 +33,5 @@ public:
     MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
-
-
 
 };

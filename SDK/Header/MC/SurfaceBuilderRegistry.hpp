@@ -14,7 +14,6 @@ class SurfaceBuilderRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEBUILDERREGISTRY
 public:
     class SurfaceBuilderRegistry& operator=(class SurfaceBuilderRegistry const &) = delete;
@@ -22,12 +21,9 @@ public:
     SurfaceBuilderRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEBUILDERREGISTRY
 #endif
     MCAPI class ISurfaceBuilder * lookupForEntity(class EntityContext &) const;
-
-
 
 };

@@ -14,7 +14,6 @@ class IWorldTemplateManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IWORLDTEMPLATEMANAGER
 public:
     class IWorldTemplateManager& operator=(class IWorldTemplateManager const &) = delete;
@@ -22,11 +21,8 @@ public:
     IWorldTemplateManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWORLDTEMPLATEMANAGER
 #endif
-
-
 
 };

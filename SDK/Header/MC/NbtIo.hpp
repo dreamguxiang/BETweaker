@@ -14,7 +14,6 @@ class NbtIo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTIO
 public:
     class NbtIo& operator=(class NbtIo const &) = delete;
@@ -22,13 +21,10 @@ public:
     NbtIo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTIO
 #endif
     MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput &);
     MCAPI static void write(class CompoundTag const *, class IDataOutput &);
-
-
 
 };

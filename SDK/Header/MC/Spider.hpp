@@ -18,14 +18,12 @@ public:
 enum Type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPIDER
 public:
     class Spider& operator=(class Spider const &) = delete;
     Spider(class Spider const &) = delete;
     Spider() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Spider();
@@ -44,7 +42,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender() const;
+    /*132*/ virtual bool shouldRender();
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
@@ -62,12 +60,10 @@ public:
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
     /*368*/ virtual float getModelScale() const;
-    /*369*/ virtual enum Spider::Type getSpiderType() const;
+    /*369*/ virtual enum Spider::Type getSpiderType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

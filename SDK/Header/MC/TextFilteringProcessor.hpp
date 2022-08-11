@@ -12,7 +12,6 @@ class TextFilteringProcessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTFILTERINGPROCESSOR
 public:
     class TextFilteringProcessor& operator=(class TextFilteringProcessor const &) = delete;
@@ -20,11 +19,8 @@ public:
     TextFilteringProcessor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTFILTERINGPROCESSOR
 #endif
-
-
 
 };

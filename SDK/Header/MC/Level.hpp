@@ -137,14 +137,12 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVEL
 public:
     class Level& operator=(class Level const &) = delete;
     Level(class Level const &) = delete;
     Level() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
@@ -557,8 +555,6 @@ public:
     MCAPI void _saveSomeChunks();
     MCAPI void _syncTime(int);
 
-
 private:
-
 
 };

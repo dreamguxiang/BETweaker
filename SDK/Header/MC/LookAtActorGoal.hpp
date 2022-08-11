@@ -14,14 +14,12 @@ class LookAtActorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORGOAL
 public:
     class LookAtActorGoal& operator=(class LookAtActorGoal const &) = delete;
     LookAtActorGoal(class LookAtActorGoal const &) = delete;
     LookAtActorGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookAtActorGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _withinFieldOfView(class Actor &);
 
-
 private:
-
 
 };

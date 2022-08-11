@@ -15,14 +15,12 @@ class ShipwreckFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKFEATURE
 public:
     class ShipwreckFeature& operator=(class ShipwreckFeature const &) = delete;
     ShipwreckFeature(class ShipwreckFeature const &) = delete;
     ShipwreckFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShipwreckFeature();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKFEATURE
 #endif
     MCAPI ShipwreckFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
-
-
 
 };

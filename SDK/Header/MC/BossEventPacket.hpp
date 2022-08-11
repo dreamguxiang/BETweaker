@@ -27,13 +27,11 @@ class BossEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSEVENTPACKET
 public:
     class BossEventPacket& operator=(class BossEventPacket const &) = delete;
     BossEventPacket(class BossEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BossEventPacket();
@@ -46,7 +44,5 @@ public:
     MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
     MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     MCAPI BossEventPacket();
-
-
 
 };

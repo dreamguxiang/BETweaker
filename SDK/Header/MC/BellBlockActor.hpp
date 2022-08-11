@@ -16,14 +16,12 @@ class BellBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BELLBLOCKACTOR
 public:
     class BellBlockActor& operator=(class BellBlockActor const &) = delete;
     BellBlockActor(class BellBlockActor const &) = delete;
     BellBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BellBlockActor();
@@ -46,7 +44,5 @@ public:
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;
     MCAPI bool isRinging() const;
     MCAPI bool ring(enum Direction::Type, class BlockSource &, class Actor *, bool);
-
-
 
 };

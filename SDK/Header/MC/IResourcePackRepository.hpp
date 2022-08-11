@@ -14,7 +14,6 @@ class IResourcePackRepository {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRESOURCEPACKREPOSITORY
 public:
     class IResourcePackRepository& operator=(class IResourcePackRepository const &) = delete;
@@ -22,11 +21,8 @@ public:
     IResourcePackRepository() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRESOURCEPACKREPOSITORY
 #endif
-
-
 
 };

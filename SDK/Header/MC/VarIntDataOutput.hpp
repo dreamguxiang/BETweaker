@@ -14,14 +14,12 @@ class VarIntDataOutput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAOUTPUT
 public:
     class VarIntDataOutput& operator=(class VarIntDataOutput const &) = delete;
     VarIntDataOutput(class VarIntDataOutput const &) = delete;
     VarIntDataOutput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VarIntDataOutput();
@@ -38,7 +36,5 @@ public:
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif
-
-
 
 };

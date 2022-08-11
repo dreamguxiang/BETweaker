@@ -14,13 +14,11 @@ class SelectorBehaviorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SELECTORBEHAVIORNODE
 public:
     class SelectorBehaviorNode& operator=(class SelectorBehaviorNode const &) = delete;
     SelectorBehaviorNode(class SelectorBehaviorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SelectorBehaviorNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SELECTORBEHAVIORNODE
 #endif
     MCAPI SelectorBehaviorNode();
-
-
 
 };

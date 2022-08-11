@@ -12,7 +12,6 @@ class PlayerDropItemEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDROPITEMEVENT
 public:
     class PlayerDropItemEvent& operator=(class PlayerDropItemEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     PlayerDropItemEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDROPITEMEVENT
 #endif
     MCAPI ~PlayerDropItemEvent();
-
-
 
 };

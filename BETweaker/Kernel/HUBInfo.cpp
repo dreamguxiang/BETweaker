@@ -30,7 +30,7 @@ namespace HUBHelper {
     {
 
         I18n::chooseLanguage(language);
-        string standardName = item.getItem()->buildDescriptionName(item);
+        string standardName = const_cast<Item*>(item.getItem())->buildDescriptionName(item);
         I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());
         return (standardName);
     };

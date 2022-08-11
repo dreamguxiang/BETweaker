@@ -14,14 +14,12 @@ class CelebrateHuntComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CELEBRATEHUNTCOMPONENT
 public:
     class CelebrateHuntComponent& operator=(class CelebrateHuntComponent const &) = delete;
     CelebrateHuntComponent(class CelebrateHuntComponent const &) = delete;
     CelebrateHuntComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CELEBRATEHUNTCOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI void startCelebrating(struct Tick const &);
     MCAPI void stopCelebrating();
-
-
 
 };

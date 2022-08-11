@@ -14,14 +14,12 @@ class ActorLegacySaveConverter {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLEGACYSAVECONVERTER
 public:
     class ActorLegacySaveConverter& operator=(class ActorLegacySaveConverter const &) = delete;
     ActorLegacySaveConverter(class ActorLegacySaveConverter const &) = delete;
     ActorLegacySaveConverter() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLEGACYSAVECONVERTER
@@ -54,8 +52,6 @@ public:
     MCAPI static void convertZombie(class Actor &, class CompoundTag const &);
     MCAPI static void convertZombieVillager(class Actor &, class CompoundTag const &);
 
-
 private:
-
 
 };

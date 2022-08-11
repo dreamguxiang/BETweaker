@@ -14,7 +14,6 @@ class IContainerManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTAINERMANAGER
 public:
     class IContainerManager& operator=(class IContainerManager const &) = delete;
@@ -22,11 +21,8 @@ public:
     IContainerManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTAINERMANAGER
 #endif
-
-
 
 };

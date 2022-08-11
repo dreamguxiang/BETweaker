@@ -14,13 +14,11 @@ class BreakBlockNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKNODE
 public:
     class BreakBlockNode& operator=(class BreakBlockNode const &) = delete;
     BreakBlockNode(class BreakBlockNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BreakBlockNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKNODE
 #endif
     MCAPI BreakBlockNode();
-
-
 
 };

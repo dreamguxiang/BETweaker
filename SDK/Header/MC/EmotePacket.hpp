@@ -18,13 +18,11 @@ public:
     string mEmoteID;
     int8_t mFlag;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMOTEPACKET
 public:
     class EmotePacket& operator=(class EmotePacket const &) = delete;
     EmotePacket(class EmotePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EmotePacket();
@@ -37,7 +35,5 @@ public:
     MCAPI EmotePacket();
     MCAPI bool isServerSide() const;
     MCAPI void setServerSide();
-
-
 
 };

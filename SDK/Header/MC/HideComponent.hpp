@@ -14,13 +14,11 @@ class HideComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDECOMPONENT
 public:
     class HideComponent& operator=(class HideComponent const &) = delete;
     HideComponent(class HideComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDECOMPONENT
@@ -34,7 +32,5 @@ public:
     MCAPI void setInRaid();
     MCAPI void setNotHiding();
     MCAPI void setReactingToBell();
-
-
 
 };

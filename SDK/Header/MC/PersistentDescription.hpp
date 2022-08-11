@@ -15,7 +15,6 @@ class PersistentDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSISTENTDESCRIPTION
 public:
     class PersistentDescription& operator=(class PersistentDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     PersistentDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~PersistentDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTDESCRIPTION
 #endif
-
-
 
 };

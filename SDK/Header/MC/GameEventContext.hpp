@@ -12,19 +12,15 @@ struct GameEventContext {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTCONTEXT
 public:
     struct GameEventContext& operator=(struct GameEventContext const &) = delete;
     GameEventContext(struct GameEventContext const &) = delete;
     GameEventContext() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTCONTEXT
+#endif
     MCAPI GameEventContext(class Vec3 const &, class Actor *, class Block const *);
-
-protected:
-
-private:
 
 };

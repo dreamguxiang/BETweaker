@@ -21,14 +21,12 @@ public:
         return _serverLured();
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FISHINGHOOK
 public:
     class FishingHook& operator=(class FishingHook const &) = delete;
     FishingHook(class FishingHook const &) = delete;
     FishingHook() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -37,7 +35,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -48,16 +46,16 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*166*/ virtual bool save(class CompoundTag &) const;
+    /*166*/ virtual bool save(class CompoundTag &);
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*181*/ virtual bool canChangeDimensionsUsingPortal() const;
+    /*181*/ virtual bool canChangeDimensionsUsingPortal();
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();
     /*251*/ virtual void __unk_vfn_251();
-    /*254*/ virtual bool shouldDropDeathLoot() const;
+    /*254*/ virtual bool shouldDropDeathLoot();
     /*269*/ virtual void __unk_vfn_269();
     /*277*/ virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGHOOK
@@ -80,8 +78,6 @@ public:
     MCAPI void _updateGravity();
     MCAPI void _updateServer();
 
-
 protected:
-
 
 };

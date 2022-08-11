@@ -14,14 +14,12 @@ class LootTableContext {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLECONTEXT
 public:
     class LootTableContext& operator=(class LootTableContext const &) = delete;
     LootTableContext(class LootTableContext const &) = delete;
     LootTableContext() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLECONTEXT
@@ -43,7 +41,5 @@ public:
     MCAPI void removeVisitedTable(class LootTable const *);
     MCAPI void setOriginalItemName(std::string const &);
     MCAPI ~LootTableContext();
-
-
 
 };

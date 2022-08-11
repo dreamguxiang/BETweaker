@@ -17,18 +17,16 @@ public:
 enum Mode;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
 public:
     class ComparatorCapacitor& operator=(class ComparatorCapacitor const &) = delete;
     ComparatorCapacitor(class ComparatorCapacitor const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ComparatorCapacitor();
-    /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual bool canConsumerPower() const;
+    /*6*/ virtual bool canConsumePowerAnyDirection();
+    /*7*/ virtual bool canConsumerPower();
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
@@ -47,7 +45,5 @@ public:
     MCAPI bool isSubtractMode();
     MCAPI void setAnalogStrength(int, unsigned char);
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
-
-
 
 };

@@ -16,14 +16,12 @@ class ActorHasEquipmentTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASEQUIPMENTTEST
 public:
     class ActorHasEquipmentTest& operator=(class ActorHasEquipmentTest const &) = delete;
     ActorHasEquipmentTest(class ActorHasEquipmentTest const &) = delete;
     ActorHasEquipmentTest() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorHasEquipmentTest();
@@ -35,7 +33,5 @@ public:
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
 #endif
-
-
 
 };

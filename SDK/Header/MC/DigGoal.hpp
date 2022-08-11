@@ -12,14 +12,12 @@ class DigGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGOAL
 public:
     class DigGoal& operator=(class DigGoal const &) = delete;
     DigGoal(class DigGoal const &) = delete;
     DigGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DigGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGOAL
 #endif
     MCAPI DigGoal(class Mob &);
-
-
 
 };

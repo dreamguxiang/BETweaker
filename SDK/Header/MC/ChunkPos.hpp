@@ -21,14 +21,12 @@ public:
         : x(ix)
         , z(iz){};
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
 public:
     class ChunkPos& operator=(class ChunkPos const &) = delete;
     ChunkPos(class ChunkPos const &) = delete;
     ChunkPos() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPOS
@@ -41,7 +39,5 @@ public:
     MCAPI static class ChunkPos const MAX;
     MCAPI static class ChunkPos const MIN;
     MCAPI static class ChunkPos const ONE;
-
-
 
 };

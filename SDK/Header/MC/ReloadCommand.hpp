@@ -15,7 +15,6 @@ class ReloadCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELOADCOMMAND
 public:
     class ReloadCommand& operator=(class ReloadCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     ReloadCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ReloadCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELOADCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

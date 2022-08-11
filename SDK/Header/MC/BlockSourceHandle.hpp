@@ -15,14 +15,12 @@ class BlockSourceHandle : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCEHANDLE
 public:
     class BlockSourceHandle& operator=(class BlockSourceHandle const &) = delete;
     BlockSourceHandle(class BlockSourceHandle const &) = delete;
     BlockSourceHandle() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockSourceHandle();
@@ -33,7 +31,5 @@ public:
     /*6*/ virtual void __unk_vfn_6();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCEHANDLE
 #endif
-
-
 
 };

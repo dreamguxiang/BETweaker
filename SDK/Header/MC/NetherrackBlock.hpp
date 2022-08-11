@@ -15,14 +15,12 @@ class NetherrackBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERRACKBLOCK
 public:
     class NetherrackBlock& operator=(class NetherrackBlock const &) = delete;
     NetherrackBlock(class NetherrackBlock const &) = delete;
     NetherrackBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherrackBlock();
@@ -68,11 +66,9 @@ public:
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
-    /*197*/ MCAPI std::string const & getDescriptionId() const;
+    /*197*/ MCAPI static std::string const & getDescriptionId();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERRACKBLOCK
 #endif
     MCAPI NetherrackBlock(std::string const &, int);
-
-
 
 };

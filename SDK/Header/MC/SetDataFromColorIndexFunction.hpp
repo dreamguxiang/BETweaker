@@ -15,7 +15,6 @@ class SetDataFromColorIndexFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDATAFROMCOLORINDEXFUNCTION
 public:
     class SetDataFromColorIndexFunction& operator=(class SetDataFromColorIndexFunction const &) = delete;
@@ -23,14 +22,11 @@ public:
     SetDataFromColorIndexFunction() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetDataFromColorIndexFunction();
     /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDATAFROMCOLORINDEXFUNCTION
 #endif
-
-
 
 };

@@ -15,14 +15,12 @@ class RepairItemRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRITEMRECIPE
 public:
     class RepairItemRecipe& operator=(class RepairItemRecipe const &) = delete;
     RepairItemRecipe(class RepairItemRecipe const &) = delete;
     RepairItemRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RepairItemRecipe();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI RepairItemRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
     MCAPI static class mce::UUID ID;
-
-
 
 };

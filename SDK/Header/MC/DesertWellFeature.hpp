@@ -15,7 +15,6 @@ class DesertWellFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERTWELLFEATURE
 public:
     class DesertWellFeature& operator=(class DesertWellFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     DesertWellFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DesertWellFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERTWELLFEATURE
 #endif
-
-
 
 };

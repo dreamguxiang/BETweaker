@@ -14,14 +14,12 @@ class DryingOutTimerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRYINGOUTTIMERCOMPONENT
 public:
     class DryingOutTimerComponent& operator=(class DryingOutTimerComponent const &) = delete;
     DryingOutTimerComponent(class DryingOutTimerComponent const &) = delete;
     DryingOutTimerComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRYINGOUTTIMERCOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     MCAPI ~DryingOutTimerComponent();
-
-
 
 };

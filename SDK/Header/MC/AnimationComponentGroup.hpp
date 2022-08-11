@@ -12,14 +12,12 @@ class AnimationComponentGroup {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENTGROUP
 public:
     class AnimationComponentGroup& operator=(class AnimationComponentGroup const &) = delete;
     AnimationComponentGroup(class AnimationComponentGroup const &) = delete;
     AnimationComponentGroup() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENTGROUP
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI static class std::recursive_mutex & _getAnimationComponentMapLock();
 
-
 private:
-
 
 };

@@ -12,14 +12,12 @@ class DrinkMilkGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKMILKGOAL
 public:
     class DrinkMilkGoal& operator=(class DrinkMilkGoal const &) = delete;
     DrinkMilkGoal(class DrinkMilkGoal const &) = delete;
     DrinkMilkGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DrinkMilkGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRINKMILKGOAL
 #endif
     MCAPI DrinkMilkGoal(class Mob &);
-
-
 
 };

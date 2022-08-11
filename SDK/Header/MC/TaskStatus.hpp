@@ -15,13 +15,11 @@ class TaskStatus {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTATUS
 public:
     class TaskStatus& operator=(class TaskStatus const &) = delete;
     TaskStatus(class TaskStatus const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTATUS
@@ -31,7 +29,5 @@ public:
     MCAPI operator enum TaskStatus::Value() const;
     MCAPI enum Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     MCAPI class std::error_code toErrorCode() const;
-
-
 
 };

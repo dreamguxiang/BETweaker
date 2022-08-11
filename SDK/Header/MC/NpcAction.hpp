@@ -15,14 +15,12 @@ class NpcAction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCACTION
 public:
     class NpcAction& operator=(class NpcAction const &) = delete;
     NpcAction(class NpcAction const &) = delete;
     NpcAction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcAction();
@@ -45,7 +43,6 @@ public:
 
 //private:
 
-
 protected:
 
 private:
@@ -55,6 +52,5 @@ private:
     MCAPI static std::string const MODE_KEY;
     MCAPI static std::string const TEXT_KEY;
     MCAPI static std::string const TYPE_KEY;
-
 
 };

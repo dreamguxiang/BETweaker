@@ -13,13 +13,11 @@ class ChangeMobPropertyPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGEMOBPROPERTYPACKET
 public:
     class ChangeMobPropertyPacket& operator=(class ChangeMobPropertyPacket const &) = delete;
     ChangeMobPropertyPacket(class ChangeMobPropertyPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChangeMobPropertyPacket();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGEMOBPROPERTYPACKET
 #endif
     MCAPI ChangeMobPropertyPacket();
-
-
 
 };

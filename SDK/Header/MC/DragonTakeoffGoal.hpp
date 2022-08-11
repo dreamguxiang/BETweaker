@@ -14,14 +14,12 @@ class DragonTakeoffGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONTAKEOFFGOAL
 public:
     class DragonTakeoffGoal& operator=(class DragonTakeoffGoal const &) = delete;
     DragonTakeoffGoal(class DragonTakeoffGoal const &) = delete;
     DragonTakeoffGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonTakeoffGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _findNewTarget();
 
-
 private:
-
 
 };

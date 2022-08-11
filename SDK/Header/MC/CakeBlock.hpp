@@ -15,14 +15,12 @@ class CakeBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAKEBLOCK
 public:
     class CakeBlock& operator=(class CakeBlock const &) = delete;
     CakeBlock(class CakeBlock const &) = delete;
     CakeBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CakeBlock();
@@ -47,12 +45,12 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -79,7 +77,5 @@ public:
     MCAPI CakeBlock(std::string const &, int);
     MCAPI static int getComparatorSignalFromBites(int);
     MCAPI static void removeCakeSlice(class Player &, class BlockSource &, class BlockPos const &, class Block const *);
-
-
 
 };

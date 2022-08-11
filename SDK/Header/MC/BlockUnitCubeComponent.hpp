@@ -14,18 +14,15 @@ struct BlockUnitCubeComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBECOMPONENT
 public:
     struct BlockUnitCubeComponent& operator=(struct BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent(struct BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNITCUBECOMPONENT
+#endif
+    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
 };

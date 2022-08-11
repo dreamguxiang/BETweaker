@@ -15,14 +15,12 @@ class EducationMetadataError : public PackError {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONMETADATAERROR
 public:
     class EducationMetadataError& operator=(class EducationMetadataError const &) = delete;
     EducationMetadataError(class EducationMetadataError const &) = delete;
     EducationMetadataError() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EducationMetadataError();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONMETADATAERROR
 #endif
     MCAPI EducationMetadataError(enum PackParseErrorType, std::vector<std::string> const &);
-
-
 
 };

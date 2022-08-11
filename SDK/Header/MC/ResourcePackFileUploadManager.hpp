@@ -17,14 +17,12 @@ class ResourcePackFileUploadManager : public FileUploadManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEUPLOADMANAGER
 public:
     class ResourcePackFileUploadManager& operator=(class ResourcePackFileUploadManager const &) = delete;
     ResourcePackFileUploadManager(class ResourcePackFileUploadManager const &) = delete;
     ResourcePackFileUploadManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
@@ -38,8 +36,6 @@ public:
     MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
     MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);
 
-
 private:
-
 
 };

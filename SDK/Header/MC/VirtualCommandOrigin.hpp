@@ -16,14 +16,12 @@ class VirtualCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIRTUALCOMMANDORIGIN
 public:
     class VirtualCommandOrigin& operator=(class VirtualCommandOrigin const &) = delete;
     VirtualCommandOrigin(class VirtualCommandOrigin const &) = delete;
     VirtualCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VirtualCommandOrigin();
@@ -57,7 +55,5 @@ public:
     MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const &, int);
     MCAPI class CommandOrigin * getOrigin() const;
     MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
-
-
 
 };

@@ -15,13 +15,11 @@ class WorldPackHistory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKHISTORY
 public:
     class WorldPackHistory& operator=(class WorldPackHistory const &) = delete;
     WorldPackHistory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
@@ -38,7 +36,5 @@ public:
     MCAPI bool hasSourceUUID() const;
     MCAPI bool hasSubpacks() const;
     MCAPI bool initializeFromJson(class Json::Value const &);
-
-
 
 };

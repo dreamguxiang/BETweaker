@@ -15,13 +15,11 @@ class ResourcePackStackPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACKPACKET
 public:
     class ResourcePackStackPacket& operator=(class ResourcePackStackPacket const &) = delete;
     ResourcePackStackPacket(class ResourcePackStackPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackStackPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
     MCAPI ResourcePackStackPacket();
-
-
 
 };

@@ -15,14 +15,12 @@ class CommandBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKACTOR
 public:
     class CommandBlockActor& operator=(class CommandBlockActor const &) = delete;
     CommandBlockActor(class CommandBlockActor const &) = delete;
     CommandBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommandBlockActor();
@@ -72,8 +70,6 @@ public:
 //private:
     MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
 
-
 private:
-
 
 };

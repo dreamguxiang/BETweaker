@@ -13,7 +13,6 @@ class ScriptWatchdog {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTWATCHDOG
 public:
     class ScriptWatchdog& operator=(class ScriptWatchdog const &) = delete;
@@ -21,12 +20,9 @@ public:
     ScriptWatchdog() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWATCHDOG
 #endif
     MCAPI void initialize(class Scripting::IWatchdog *, class ServerLevel &, class ScriptPluginManager *, class Scripting::WeakLifetimeScope, class ServerInstance *);
-
-
 
 };

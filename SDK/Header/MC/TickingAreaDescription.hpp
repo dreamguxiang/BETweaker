@@ -14,20 +14,16 @@ struct TickingAreaDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREADESCRIPTION
 public:
     struct TickingAreaDescription& operator=(struct TickingAreaDescription const &) = delete;
     TickingAreaDescription(struct TickingAreaDescription const &) = delete;
     TickingAreaDescription() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREADESCRIPTION
+#endif
     MCAPI std::string asString() const;
     MCAPI ~TickingAreaDescription();
-
-protected:
-
-private:
 
 };

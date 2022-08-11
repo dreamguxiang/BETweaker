@@ -19,21 +19,17 @@ struct Effect {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM
 public:
     struct FeedItem& operator=(struct FeedItem const &) = delete;
     FeedItem() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEEDITEM
+#endif
     MCAPI FeedItem(struct FeedItem const &);
     MCAPI void addEffect(struct FeedItem::Effect const &);
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
     MCAPI ~FeedItem();
-
-protected:
-
-private:
 
 };

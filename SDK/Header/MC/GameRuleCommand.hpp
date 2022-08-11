@@ -22,14 +22,12 @@ struct InitProxy {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULECOMMAND
 public:
     class GameRuleCommand& operator=(class GameRuleCommand const &) = delete;
     GameRuleCommand(class GameRuleCommand const &) = delete;
     GameRuleCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameRuleCommand();
@@ -43,8 +41,6 @@ public:
     MCAPI void setGameRule(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI static void createJsonIndex(std::string const &, class GameRule const &, class Json::Value &, std::string *);
 
-
 private:
-
 
 };

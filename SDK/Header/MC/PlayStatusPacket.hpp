@@ -32,13 +32,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSTATUSPACKET
 public:
     class PlayStatusPacket& operator=(class PlayStatusPacket const &) = delete;
     PlayStatusPacket(class PlayStatusPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayStatusPacket();
@@ -50,7 +48,5 @@ public:
 #endif
     MCAPI PlayStatusPacket(enum PlayStatus);
     MCAPI PlayStatusPacket();
-
-
 
 };

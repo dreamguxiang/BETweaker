@@ -41,13 +41,11 @@ return #var;
             respawnPosition.toString(), getStateString(respawnState), runtimeId.id);
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNPACKET
 public:
     class RespawnPacket& operator=(class RespawnPacket const &) = delete;
     RespawnPacket(class RespawnPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RespawnPacket();
@@ -59,7 +57,5 @@ public:
 #endif
     MCAPI RespawnPacket(class Vec3 const &, enum PlayerRespawnState const &);
     MCAPI RespawnPacket();
-
-
 
 };

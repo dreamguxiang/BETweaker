@@ -13,14 +13,12 @@ class LootCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTCOMMAND
 public:
     class LootCommand& operator=(class LootCommand const &) = delete;
     LootCommand(class LootCommand const &) = delete;
     LootCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LootCommand();
@@ -37,8 +35,6 @@ public:
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;
     MCAPI bool _slotBoundsValidOrOutputFailure(class CommandOutput &, int, class std::optional<int>) const;
 
-
 private:
-
 
 };

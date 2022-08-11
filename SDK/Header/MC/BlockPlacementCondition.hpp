@@ -14,20 +14,16 @@ struct BlockPlacementCondition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTCONDITION
 public:
     BlockPlacementCondition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
+#endif
     MCAPI BlockPlacementCondition(struct BlockPlacementCondition const &);
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
     MCAPI ~BlockPlacementCondition();
-
-protected:
-
-private:
 
 };

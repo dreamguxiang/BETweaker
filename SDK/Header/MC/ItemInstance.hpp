@@ -15,8 +15,6 @@ class ItemInstance : public ItemStackBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
-
 public:
     /*0*/ virtual ~ItemInstance();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -34,7 +32,6 @@ public:
     MCAPI ItemInstance(class Item const &, int, int, class CompoundTag const *);
     MCAPI ItemInstance(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemInstance();
-    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI class ItemInstance clone() const;
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
     MCAPI static class ItemInstance const EMPTY_ITEM;
@@ -43,8 +40,6 @@ public:
 //protected:
     MCAPI ItemInstance(class BlockLegacy const &, int, short);
 
-
 protected:
-
 
 };

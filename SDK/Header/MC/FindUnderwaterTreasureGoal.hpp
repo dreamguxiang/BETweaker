@@ -14,14 +14,12 @@ class FindUnderwaterTreasureGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDUNDERWATERTREASUREGOAL
 public:
     class FindUnderwaterTreasureGoal& operator=(class FindUnderwaterTreasureGoal const &) = delete;
     FindUnderwaterTreasureGoal(class FindUnderwaterTreasureGoal const &) = delete;
     FindUnderwaterTreasureGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FindUnderwaterTreasureGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDUNDERWATERTREASUREGOAL
 #endif
     MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
-
-
 
 };

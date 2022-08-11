@@ -14,14 +14,12 @@ class RestrictOpenDoorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESTRICTOPENDOORGOAL
 public:
     class RestrictOpenDoorGoal& operator=(class RestrictOpenDoorGoal const &) = delete;
     RestrictOpenDoorGoal(class RestrictOpenDoorGoal const &) = delete;
     RestrictOpenDoorGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RestrictOpenDoorGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESTRICTOPENDOORGOAL
 #endif
     MCAPI RestrictOpenDoorGoal(class Mob &);
-
-
 
 };

@@ -12,20 +12,16 @@ struct ActorDefinitionModifier {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONMODIFIER
 public:
     struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier const &) = delete;
     ActorDefinitionModifier() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONMODIFIER
+#endif
     MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const &);
     MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier &&);
     MCAPI ~ActorDefinitionModifier();
-
-protected:
-
-private:
 
 };

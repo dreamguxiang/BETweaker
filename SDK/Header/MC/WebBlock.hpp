@@ -15,14 +15,12 @@ class WebBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBBLOCK
 public:
     class WebBlock& operator=(class WebBlock const &) = delete;
     WebBlock(class WebBlock const &) = delete;
     WebBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WebBlock();
@@ -69,7 +67,5 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI WebBlock(std::string const &, int);
-
-
 
 };

@@ -15,14 +15,12 @@ class EndCityFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYFEATURE
 public:
     class EndCityFeature& operator=(class EndCityFeature const &) = delete;
     EndCityFeature(class EndCityFeature const &) = delete;
     EndCityFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndCityFeature();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCITYFEATURE
 #endif
     MCAPI EndCityFeature(class Dimension &, unsigned int &);
-
-
 
 };

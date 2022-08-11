@@ -15,14 +15,12 @@ class ResourceUriCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEURICOMMAND
 public:
     class ResourceUriCommand& operator=(class ResourceUriCommand const &) = delete;
     ResourceUriCommand(class ResourceUriCommand const &) = delete;
     ResourceUriCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourceUriCommand();
@@ -36,8 +34,6 @@ public:
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
 
-
 private:
-
 
 };

@@ -16,14 +16,12 @@ class CompoundItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDITEM
 public:
     class CompoundItem& operator=(class CompoundItem const &) = delete;
     CompoundItem(class CompoundItem const &) = delete;
     CompoundItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompoundItem();
@@ -44,6 +42,7 @@ public:
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDITEM
 #endif
     MCAPI CompoundItem(std::string const &, int, class Experiments const &);
@@ -58,10 +57,8 @@ public:
     MCAPI void _registerSpecialCompounds(class Experiments const &);
     MCAPI static std::string _getName(enum CompoundType);
 
-
 private:
     MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int>>> mIdToSpecialCompound;
     MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance>>> mTypeToSpecialCompound;
-
 
 };

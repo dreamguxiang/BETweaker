@@ -15,13 +15,11 @@ class HugeMushroomFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUGEMUSHROOMFEATURE
 public:
     class HugeMushroomFeature& operator=(class HugeMushroomFeature const &) = delete;
     HugeMushroomFeature(class HugeMushroomFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HugeMushroomFeature();
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI bool _canSurvive(class Block const &) const;
 
-
 private:
-
 
 };

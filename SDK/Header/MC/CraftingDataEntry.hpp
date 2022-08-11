@@ -14,14 +14,12 @@ class CraftingDataEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGDATAENTRY
 public:
     class CraftingDataEntry& operator=(class CraftingDataEntry const &) = delete;
     CraftingDataEntry(class CraftingDataEntry const &) = delete;
     CraftingDataEntry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGDATAENTRY
@@ -30,7 +28,5 @@ public:
     MCAPI void fillFromRecipe(class Recipe const &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~CraftingDataEntry();
-
-
 
 };

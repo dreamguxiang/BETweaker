@@ -16,14 +16,12 @@ class Creeper : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREEPER
 public:
     class Creeper& operator=(class Creeper const &) = delete;
     Creeper(class Creeper const &) = delete;
     Creeper() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Creeper();
@@ -66,8 +64,6 @@ public:
 //private:
     MCAPI void _setSwellDir(int);
 
-
 private:
-
 
 };

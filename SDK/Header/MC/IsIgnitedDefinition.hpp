@@ -15,20 +15,17 @@ struct IsIgnitedDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISIGNITEDDEFINITION
 public:
     struct IsIgnitedDefinition& operator=(struct IsIgnitedDefinition const &) = delete;
     IsIgnitedDefinition(struct IsIgnitedDefinition const &) = delete;
     IsIgnitedDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISIGNITEDDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &);
     MCAPI void uninitialize(class EntityContext &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIgnitedDefinition>> &);
 
 };

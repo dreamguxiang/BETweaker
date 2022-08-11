@@ -15,14 +15,12 @@ class SpawnGroupRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNGROUPREGISTRY
 public:
     class SpawnGroupRegistry& operator=(class SpawnGroupRegistry const &) = delete;
     SpawnGroupRegistry(class SpawnGroupRegistry const &) = delete;
     SpawnGroupRegistry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnGroupRegistry();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
-
-
 
 };

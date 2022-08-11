@@ -15,14 +15,12 @@ class ProtectionEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROTECTIONENCHANT
 public:
     class ProtectionEnchant& operator=(class ProtectionEnchant const &) = delete;
     ProtectionEnchant(class ProtectionEnchant const &) = delete;
     ProtectionEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ProtectionEnchant();
@@ -43,10 +41,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float const THORNS_CHANCE_PER_LEVEL;
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
-
 
 };

@@ -14,13 +14,13 @@ struct MolangScriptArg {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGSCRIPTARG
 public:
     MolangScriptArg() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGSCRIPTARG
+#endif
     MCAPI MolangScriptArg(float);
     MCAPI MolangScriptArg(struct MolangScriptArg const &);
     MCAPI MolangScriptArg(struct MolangScriptArg &&);
@@ -29,9 +29,12 @@ public:
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
     MCAPI ~MolangScriptArg();
-
-protected:
-
-private:
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float0;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float1;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_floatNeg1;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_molangActorIdEmptyArrayPtr;
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_structUV0;
 
 };

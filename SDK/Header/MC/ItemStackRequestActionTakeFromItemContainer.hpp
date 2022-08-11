@@ -13,13 +13,11 @@ class ItemStackRequestActionTakeFromItemContainer : public ItemStackRequestActio
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONTAKEFROMITEMCONTAINER
 public:
     class ItemStackRequestActionTakeFromItemContainer& operator=(class ItemStackRequestActionTakeFromItemContainer const &) = delete;
     ItemStackRequestActionTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionTakeFromItemContainer();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTAKEFROMITEMCONTAINER
 #endif
     MCAPI ItemStackRequestActionTakeFromItemContainer();
-
-
 
 };

@@ -15,14 +15,12 @@ class DropperBlockActor {
     friend class Level;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPPERBLOCKACTOR
 public:
     class DropperBlockActor& operator=(class DropperBlockActor const &) = delete;
     DropperBlockActor(class DropperBlockActor const &) = delete;
     DropperBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCKACTOR
@@ -37,8 +35,6 @@ public:
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
     MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
 
-
 private:
-
 
 };

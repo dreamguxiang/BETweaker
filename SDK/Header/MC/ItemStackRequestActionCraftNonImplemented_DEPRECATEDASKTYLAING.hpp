@@ -14,13 +14,11 @@ class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTNONIMPLEMENTED_DEPRECATEDASKTYLAING
 public:
     class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING& operator=(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
     ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTNONIMPLEMENTED_DEPRECATEDASKTYLAING
 #endif
     MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
-
-
 
 };

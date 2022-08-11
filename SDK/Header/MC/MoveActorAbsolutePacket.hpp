@@ -26,13 +26,11 @@ public:
     uint8_t mRotYHead = 0;
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEPACKET
 public:
     class MoveActorAbsolutePacket& operator=(class MoveActorAbsolutePacket const &) = delete;
     MoveActorAbsolutePacket(class MoveActorAbsolutePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveActorAbsolutePacket();
@@ -44,7 +42,5 @@ public:
 #endif
     MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const &);
     MCAPI MoveActorAbsolutePacket();
-
-
 
 };

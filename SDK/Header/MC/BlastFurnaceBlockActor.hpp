@@ -14,7 +14,6 @@ class BlastFurnaceBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLASTFURNACEBLOCKACTOR
 public:
     class BlastFurnaceBlockActor& operator=(class BlastFurnaceBlockActor const &) = delete;
@@ -22,13 +21,10 @@ public:
     BlastFurnaceBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACEBLOCKACTOR
     MCVAPI std::string getName() const;
 #endif
     MCAPI BlastFurnaceBlockActor(class BlockPos const &);
-
-
 
 };

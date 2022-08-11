@@ -14,7 +14,6 @@ class GrowCropSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWCROPSYSTEM
 public:
     class GrowCropSystem& operator=(class GrowCropSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     GrowCropSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GrowCropSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWCROPSYSTEM
 #endif
-
-
 
 };

@@ -15,7 +15,6 @@ class ReedsFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REEDSFEATURE
 public:
     class ReedsFeature& operator=(class ReedsFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     ReedsFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ReedsFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDSFEATURE
 #endif
-
-
 
 };

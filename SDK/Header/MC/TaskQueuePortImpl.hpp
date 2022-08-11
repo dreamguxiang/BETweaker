@@ -12,13 +12,11 @@ class TaskQueuePortImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKQUEUEPORTIMPL
 public:
     class TaskQueuePortImpl& operator=(class TaskQueuePortImpl const &) = delete;
     TaskQueuePortImpl(class TaskQueuePortImpl const &) = delete;
 #endif
-
 
 public:
     /*3*/ virtual struct XTaskQueuePortObject * GetHandle();
@@ -51,8 +49,6 @@ public:
     MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry> *);
     MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE *, void *, struct _TP_WAIT *, unsigned long);
 
-
 private:
-
 
 };

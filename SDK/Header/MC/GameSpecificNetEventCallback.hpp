@@ -14,7 +14,6 @@ class GameSpecificNetEventCallback {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMESPECIFICNETEVENTCALLBACK
 public:
     class GameSpecificNetEventCallback& operator=(class GameSpecificNetEventCallback const &) = delete;
@@ -22,13 +21,10 @@ public:
     GameSpecificNetEventCallback() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GameSpecificNetEventCallback();
     /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESPECIFICNETEVENTCALLBACK
 #endif
-
-
 
 };

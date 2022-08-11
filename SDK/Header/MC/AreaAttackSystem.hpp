@@ -14,14 +14,12 @@ class AreaAttackSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKSYSTEM
 public:
     class AreaAttackSystem& operator=(class AreaAttackSystem const &) = delete;
     AreaAttackSystem(class AreaAttackSystem const &) = delete;
     AreaAttackSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AreaAttackSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AreaAttackComponent> &);
 
-
 private:
-
 
 };

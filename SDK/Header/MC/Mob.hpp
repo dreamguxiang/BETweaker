@@ -26,14 +26,12 @@ public:
     LIAPI bool refreshInventory();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOB
 public:
     class Mob& operator=(class Mob const &) = delete;
     Mob(class Mob const &) = delete;
     Mob() = delete;
 #endif
-
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const &) const;
@@ -89,7 +87,7 @@ public:
     /*174*/ virtual bool canFreeze() const;
     /*182*/ virtual void __unk_vfn_182();
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
-    /*194*/ virtual bool canBePulledIntoVehicle() const;
+    /*194*/ virtual bool canBePulledIntoVehicle();
     /*195*/ virtual bool inCaravan() const;
     /*196*/ virtual void __unk_vfn_196();
     /*200*/ virtual void stopRiding(bool, bool, bool);
@@ -138,9 +136,9 @@ public:
     /*305*/ virtual bool checkSpawnRules(bool);
     /*306*/ virtual bool checkSpawnObstruction() const;
     /*307*/ virtual float getAttackAnim(float);
-    /*308*/ virtual int getItemUseDuration() const;
-    /*309*/ virtual float getItemUseStartupProgress() const;
-    /*310*/ virtual float getItemUseIntervalProgress() const;
+    /*308*/ virtual int getItemUseDuration();
+    /*309*/ virtual float getItemUseStartupProgress();
+    /*310*/ virtual float getItemUseIntervalProgress();
     /*311*/ virtual int getItemUseIntervalAxis() const;
     /*312*/ virtual int getTimeAlongSwing() const;
     /*313*/ virtual void __unk_vfn_313();
@@ -328,11 +326,9 @@ public:
     MCAPI void _verifyAttributes();
     MCAPI static bool _tryApplyingLevitation(struct IMobMovementProxy const &, class Vec3 &);
 
-
 protected:
     MCAPI static int const MAX_INACTIVITY_TIMER;
 
 private:
-
 
 };

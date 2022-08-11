@@ -14,12 +14,10 @@ class MolangVariableMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVARIABLEMAP
 public:
     MolangVariableMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLEMAP
@@ -49,8 +47,6 @@ public:
     MCAPI class MolangVariable * _getOrAddMolangVariable(unsigned __int64 const &, char const *, bool);
     MCAPI class MolangVariable * _getOrAddMolangVariable(enum MolangVariableIndex);
 
-
 private:
-
 
 };

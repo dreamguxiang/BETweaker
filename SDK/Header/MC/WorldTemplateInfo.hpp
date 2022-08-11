@@ -15,15 +15,15 @@ struct WorldTemplateInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEINFO
 public:
     struct WorldTemplateInfo& operator=(struct WorldTemplateInfo const &) = delete;
     WorldTemplateInfo(struct WorldTemplateInfo const &) = delete;
     WorldTemplateInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEINFO
+#endif
     MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const &);
     MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource &);
     MCAPI class WorldTemplatePackManifest const & getPackManifest() const;
@@ -31,9 +31,5 @@ public:
     MCAPI class Core::PathBuffer<std::string> const & getWorldPath() const;
     MCAPI bool isVirtualCatalogItem() const;
     MCAPI ~WorldTemplateInfo();
-
-protected:
-
-private:
 
 };

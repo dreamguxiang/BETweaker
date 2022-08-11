@@ -12,18 +12,16 @@ struct LevelChunkAndSubChunkLoggingData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKANDSUBCHUNKLOGGINGDATA
 public:
     struct LevelChunkAndSubChunkLoggingData& operator=(struct LevelChunkAndSubChunkLoggingData const &) = delete;
     LevelChunkAndSubChunkLoggingData(struct LevelChunkAndSubChunkLoggingData const &) = delete;
     LevelChunkAndSubChunkLoggingData() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKANDSUBCHUNKLOGGINGDATA
+#endif
+    MCAPI static void logLevelChunkEvent(class ChunkPos const &, char const *, bool);
+    MCAPI static void logSubChunkEvent(class SubChunkPos const &, char const *, bool);
 
 };

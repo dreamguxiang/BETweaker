@@ -14,14 +14,12 @@ class WeakStorageFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEFEATURE
 public:
     class WeakStorageFeature& operator=(class WeakStorageFeature const &) = delete;
     WeakStorageFeature(class WeakStorageFeature const &) = delete;
     WeakStorageFeature() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEFEATURE
@@ -34,8 +32,6 @@ public:
     MCAPI bool _isSet() const;
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);
 
-
 protected:
-
 
 };

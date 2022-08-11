@@ -16,14 +16,12 @@ class WaterAnimal : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERANIMAL
 public:
     class WaterAnimal& operator=(class WaterAnimal const &) = delete;
     WaterAnimal(class WaterAnimal const &) = delete;
     WaterAnimal() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~WaterAnimal();
@@ -61,7 +59,5 @@ public:
 #endif
     MCAPI WaterAnimal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void preAiStep();
-
-
 
 };

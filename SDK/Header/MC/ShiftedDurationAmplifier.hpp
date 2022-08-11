@@ -14,14 +14,12 @@ class ShiftedDurationAmplifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIFTEDDURATIONAMPLIFIER
 public:
     class ShiftedDurationAmplifier& operator=(class ShiftedDurationAmplifier const &) = delete;
     ShiftedDurationAmplifier(class ShiftedDurationAmplifier const &) = delete;
     ShiftedDurationAmplifier() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShiftedDurationAmplifier();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDDURATIONAMPLIFIER
 #endif
     MCAPI ShiftedDurationAmplifier(int);
-
-
 
 };

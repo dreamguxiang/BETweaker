@@ -12,14 +12,12 @@ class BlockMovementSlowdownMultiplierSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMOVEMENTSLOWDOWNMULTIPLIERSYSTEM
 public:
     class BlockMovementSlowdownMultiplierSystem& operator=(class BlockMovementSlowdownMultiplierSystem const &) = delete;
     BlockMovementSlowdownMultiplierSystem(class BlockMovementSlowdownMultiplierSystem const &) = delete;
     BlockMovementSlowdownMultiplierSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMOVEMENTSLOWDOWNMULTIPLIERSYSTEM
@@ -32,7 +30,5 @@ public:
     MCAPI static struct TickingSystemWithInfo createImmunePlayerSystem();
     MCAPI static struct TickingSystemWithInfo createImmuneSpiderSystem();
     MCAPI static struct TickingSystemWithInfo createImmuneWitherBossSystem();
-
-
 
 };

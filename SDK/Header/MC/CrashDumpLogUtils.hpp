@@ -12,7 +12,6 @@ class CrashDumpLogUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPLOGUTILS
 public:
     class CrashDumpLogUtils& operator=(class CrashDumpLogUtils const &) = delete;
@@ -20,12 +19,9 @@ public:
     CrashDumpLogUtils() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOGUTILS
 #endif
     MCAPI static enum CrashDumpLogStringID getTagFromOptions(unsigned __int64, class gsl::span<enum CrashDumpLogStringID const, -1>);
-
-
 
 };

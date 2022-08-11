@@ -14,13 +14,11 @@ class JigsawStructureRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREREGISTRY
 public:
     class JigsawStructureRegistry& operator=(class JigsawStructureRegistry const &) = delete;
     JigsawStructureRegistry(class JigsawStructureRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREREGISTRY
@@ -33,7 +31,5 @@ public:
     MCAPI class StructureTemplatePool const * lookupByName(std::string) const;
     MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool> &&);
     MCAPI ~JigsawStructureRegistry();
-
-
 
 };

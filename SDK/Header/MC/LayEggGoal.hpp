@@ -15,14 +15,12 @@ class LayEggGoal : public BaseMoveToGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAYEGGGOAL
 public:
     class LayEggGoal& operator=(class LayEggGoal const &) = delete;
     LayEggGoal(class LayEggGoal const &) = delete;
     LayEggGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LayEggGoal();
@@ -45,8 +43,6 @@ public:
     MCAPI bool _isTargetBlock(class BlockLegacy const &) const;
     MCAPI void _layEgg(class BlockPos const &);
 
-
 protected:
-
 
 };

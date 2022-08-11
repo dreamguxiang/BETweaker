@@ -16,14 +16,12 @@ class Painting : public HangingActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAINTING
 public:
     class Painting& operator=(class Painting const &) = delete;
     Painting(class Painting const &) = delete;
     Painting() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Painting();
@@ -33,7 +31,7 @@ public:
     /*48*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -63,7 +61,5 @@ public:
 #endif
     MCAPI Painting(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI class Motive const & getCurrentMotive() const;
-
-
 
 };

@@ -21,14 +21,12 @@ struct FunctionInfo {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULECOMMAND
 public:
     class ScheduleCommand& operator=(class ScheduleCommand const &) = delete;
     ScheduleCommand(class ScheduleCommand const &) = delete;
     ScheduleCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScheduleCommand();
@@ -42,8 +40,6 @@ public:
     MCAPI void _onAreaLoaded(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager &, class CommandOutput &) const;
 
-
 private:
-
 
 };

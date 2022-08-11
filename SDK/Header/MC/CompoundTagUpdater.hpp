@@ -14,7 +14,6 @@ class CompoundTagUpdater {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATER
 public:
     class CompoundTagUpdater& operator=(class CompoundTagUpdater const &) = delete;
@@ -22,13 +21,10 @@ public:
     CompoundTagUpdater() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATER
 #endif
     MCAPI bool update(class CompoundTag &) const;
     MCAPI ~CompoundTagUpdater();
-
-
 
 };

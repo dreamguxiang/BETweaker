@@ -13,14 +13,12 @@ class SwiftSneakEnchant : public Enchant {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIFTSNEAKENCHANT
 public:
     class SwiftSneakEnchant& operator=(class SwiftSneakEnchant const &) = delete;
     SwiftSneakEnchant(class SwiftSneakEnchant const &) = delete;
     SwiftSneakEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwiftSneakEnchant();
@@ -37,7 +35,5 @@ public:
 #endif
     MCAPI SwiftSneakEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI static float getExtraSneakingMovementFactor(class Actor const &);
-
-
 
 };

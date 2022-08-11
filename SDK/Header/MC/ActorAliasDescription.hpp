@@ -15,20 +15,18 @@ struct ActorAliasDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORALIASDESCRIPTION
 public:
     ActorAliasDescription(struct ActorAliasDescription const &) = delete;
     ActorAliasDescription() = delete;
 #endif
-
 public:
+    /*0*/ virtual ~ActorAliasDescription();
+    /*1*/ virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
+#endif
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     MCAPI struct ActorAliasDescription & operator=(struct ActorAliasDescription const &);
     MCAPI void parse(class Json::Value &, bool);
-
-protected:
-
-private:
 
 };

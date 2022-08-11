@@ -12,7 +12,6 @@ class ActorParticleEffectEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPARTICLEEFFECTEVENT
 public:
     class ActorParticleEffectEvent& operator=(class ActorParticleEffectEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorParticleEffectEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPARTICLEEFFECTEVENT
 #endif
     MCAPI ~ActorParticleEffectEvent();
-
-
 
 };

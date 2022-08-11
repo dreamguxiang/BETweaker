@@ -14,8 +14,6 @@ class ActorDefinitionDescriptor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDESCRIPTOR
 #endif
@@ -42,8 +40,6 @@ public:
     MCAPI static bool _executeEvent(class Actor &, std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
     MCAPI static void _forceExecuteTrigger(class Actor &, class ActorDefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class VariantParameterList const &);
 
-
 private:
-
 
 };

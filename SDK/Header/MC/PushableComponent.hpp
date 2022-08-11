@@ -14,13 +14,11 @@ class PushableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLECOMPONENT
 public:
     class PushableComponent& operator=(class PushableComponent const &) = delete;
     PushableComponent(class PushableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLECOMPONENT
@@ -37,8 +35,6 @@ public:
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorBoat(class Actor &, class Actor &, bool);
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor &, class Actor &, bool);
 
-
 private:
-
 
 };

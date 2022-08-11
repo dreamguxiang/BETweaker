@@ -14,13 +14,11 @@ class ActorInfoRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFOREGISTRY
 public:
     class ActorInfoRegistry& operator=(class ActorInfoRegistry const &) = delete;
     ActorInfoRegistry(class ActorInfoRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINFOREGISTRY
@@ -33,7 +31,5 @@ public:
     MCAPI bool isSpawnEggAvailable(std::string);
     MCAPI void registerActorInfo(struct ActorInfo const &);
     MCAPI void setSpawnEggAvailable(std::string, bool);
-
-
 
 };

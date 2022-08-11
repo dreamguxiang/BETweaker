@@ -12,19 +12,15 @@ struct ServerPlayerCurrentMovementComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
 public:
     struct ServerPlayerCurrentMovementComponent& operator=(struct ServerPlayerCurrentMovementComponent const &) = delete;
     ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent const &) = delete;
     ServerPlayerCurrentMovementComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
+#endif
     MCAPI ~ServerPlayerCurrentMovementComponent();
-
-protected:
-
-private:
 
 };

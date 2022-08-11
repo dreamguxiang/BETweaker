@@ -15,14 +15,12 @@ class MelonBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELONBLOCK
 public:
     class MelonBlock& operator=(class MelonBlock const &) = delete;
     MelonBlock(class MelonBlock const &) = delete;
     MelonBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MelonBlock();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELONBLOCK
 #endif
     MCAPI MelonBlock(std::string const &, int);
-
-
 
 };

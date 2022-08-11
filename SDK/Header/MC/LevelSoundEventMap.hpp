@@ -14,14 +14,12 @@ class LevelSoundEventMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTMAP
 public:
     class LevelSoundEventMap& operator=(class LevelSoundEventMap const &) = delete;
     LevelSoundEventMap(class LevelSoundEventMap const &) = delete;
     LevelSoundEventMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTMAP
@@ -32,9 +30,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<std::string, enum LevelSoundEvent> const map;
-
 
 };

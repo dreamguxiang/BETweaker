@@ -12,13 +12,11 @@ class ActorDefinitionTrigger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONTRIGGER
 public:
     ActorDefinitionTrigger(class ActorDefinitionTrigger const &) = delete;
     ActorDefinitionTrigger() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONTRIGGER
@@ -28,7 +26,5 @@ public:
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger &&);
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger const &);
     MCAPI ~ActorDefinitionTrigger();
-
-
 
 };

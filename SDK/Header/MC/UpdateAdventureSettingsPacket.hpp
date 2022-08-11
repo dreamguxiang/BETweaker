@@ -13,13 +13,11 @@ class UpdateAdventureSettingsPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEADVENTURESETTINGSPACKET
 public:
     class UpdateAdventureSettingsPacket& operator=(class UpdateAdventureSettingsPacket const &) = delete;
     UpdateAdventureSettingsPacket(class UpdateAdventureSettingsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateAdventureSettingsPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI UpdateAdventureSettingsPacket(struct AdventureSettings const &);
     MCAPI UpdateAdventureSettingsPacket();
-
-
 
 };

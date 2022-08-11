@@ -14,13 +14,11 @@ class InverterNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVERTERNODE
 public:
     class InverterNode& operator=(class InverterNode const &) = delete;
     InverterNode(class InverterNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InverterNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVERTERNODE
 #endif
     MCAPI InverterNode();
-
-
 
 };

@@ -13,14 +13,12 @@ class SetPropertyResponse {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETPROPERTYRESPONSE
 public:
     class SetPropertyResponse& operator=(class SetPropertyResponse const &) = delete;
     SetPropertyResponse(class SetPropertyResponse const &) = delete;
     SetPropertyResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetPropertyResponse();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETPROPERTYRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

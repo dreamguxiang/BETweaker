@@ -15,14 +15,12 @@ class BastionFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASTIONFEATURE
 public:
     class BastionFeature& operator=(class BastionFeature const &) = delete;
     BastionFeature(class BastionFeature const &) = delete;
     BastionFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BastionFeature();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONFEATURE
 #endif
     MCAPI BastionFeature(unsigned int, class BaseGameVersion const &);
-
-
 
 };

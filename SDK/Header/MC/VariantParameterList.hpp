@@ -14,7 +14,6 @@ class VariantParameterList {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTPARAMETERLIST
 public:
     class VariantParameterList& operator=(class VariantParameterList const &) = delete;
@@ -22,12 +21,9 @@ public:
     VariantParameterList() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARIANTPARAMETERLIST
 #endif
     MCAPI bool hasParameter(enum FilterSubject) const;
-
-
 
 };

@@ -29,21 +29,17 @@ public:
     LIAPI void operator=(TagMemoryChunk&& a1);
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
 public:
     struct TagMemoryChunk& operator=(struct TagMemoryChunk const &) = delete;
     TagMemoryChunk(struct TagMemoryChunk const &) = delete;
     TagMemoryChunk() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAGMEMORYCHUNK
+#endif
     MCAPI struct TagMemoryChunk copy() const;
     MCAPI bool operator!=(struct TagMemoryChunk const &) const;
     MCAPI ~TagMemoryChunk();
-
-protected:
-
-private:
 
 };

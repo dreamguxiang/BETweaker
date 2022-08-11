@@ -15,20 +15,16 @@ class SmokerContainerScreenValidator : public FurnaceContainerScreenValidator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERSCREENVALIDATOR
 public:
     class SmokerContainerScreenValidator& operator=(class SmokerContainerScreenValidator const &) = delete;
     SmokerContainerScreenValidator(class SmokerContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmokerContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERSCREENVALIDATOR
 #endif
     MCAPI SmokerContainerScreenValidator();
-
-
 
 };

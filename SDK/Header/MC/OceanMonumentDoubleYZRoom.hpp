@@ -15,7 +15,6 @@ class OceanMonumentDoubleYZRoom : public OceanMonumentPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTDOUBLEYZROOM
 public:
     class OceanMonumentDoubleYZRoom& operator=(class OceanMonumentDoubleYZRoom const &) = delete;
@@ -23,14 +22,11 @@ public:
     OceanMonumentDoubleYZRoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentDoubleYZRoom();
     /*2*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTDOUBLEYZROOM
 #endif
-
-
 
 };

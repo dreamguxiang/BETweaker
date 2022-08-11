@@ -14,14 +14,12 @@ class TickingAreaListBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREALISTBASE
 public:
     class TickingAreaListBase& operator=(class TickingAreaListBase const &) = delete;
     TickingAreaListBase(class TickingAreaListBase const &) = delete;
     TickingAreaListBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TickingAreaListBase();
@@ -51,8 +49,6 @@ public:
 //protected:
     MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;
 
-
 protected:
-
 
 };

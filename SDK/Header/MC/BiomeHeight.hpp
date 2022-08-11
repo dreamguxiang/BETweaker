@@ -14,18 +14,15 @@ struct BiomeHeight {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEHEIGHT
 public:
     struct BiomeHeight& operator=(struct BiomeHeight const &) = delete;
     BiomeHeight(struct BiomeHeight const &) = delete;
     BiomeHeight() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEHEIGHT
+#endif
+    MCAPI static float const MIN_DEPTH;
 
 };

@@ -16,14 +16,12 @@ class ShulkerBullet : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBULLET
 public:
     class ShulkerBullet& operator=(class ShulkerBullet const &) = delete;
     ShulkerBullet(class ShulkerBullet const &) = delete;
     ShulkerBullet() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -38,7 +36,7 @@ public:
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();
     /*99*/ virtual void __unk_vfn_99();
-    /*104*/ virtual bool isOnFire() const;
+    /*104*/ virtual bool isOnFire();
     /*106*/ virtual void __unk_vfn_106();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
@@ -52,12 +50,10 @@ public:
     /*251*/ virtual void __unk_vfn_251();
     /*269*/ virtual void __unk_vfn_269();
     /*273*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*277*/ virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBULLET
 #endif
     MCAPI ShulkerBullet(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

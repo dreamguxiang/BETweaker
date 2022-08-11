@@ -15,14 +15,12 @@ class LecternBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LECTERNBLOCK
 public:
     class LecternBlock& operator=(class LecternBlock const &) = delete;
     LecternBlock(class LecternBlock const &) = delete;
     LecternBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LecternBlock();
@@ -46,12 +44,12 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*61*/ virtual bool canContainLiquid();
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -64,7 +62,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /*132*/ virtual void __unk_vfn_132();
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();
@@ -85,8 +83,6 @@ public:
 //private:
     MCAPI bool _dropBook(class Player &, class BlockPos const &) const;
 
-
 private:
-
 
 };

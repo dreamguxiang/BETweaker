@@ -16,14 +16,12 @@ public:
     LIAPI bool setDisplay(const std::string& slotName, ObjectiveSortOrder sort);
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBJECTIVE
 public:
     class Objective& operator=(class Objective const &) = delete;
     Objective(class Objective const &) = delete;
     Objective() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
@@ -47,8 +45,6 @@ public:
     MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
     MCAPI void _resetPlayer(struct ScoreboardId const &);
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class SHStartPiece : public SHStairsDown {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHSTARTPIECE
 public:
     class SHStartPiece& operator=(class SHStartPiece const &) = delete;
@@ -23,14 +22,11 @@ public:
     SHStartPiece() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SHStartPiece();
     /*2*/ virtual enum StructurePieceType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTARTPIECE
 #endif
     MCAPI SHStartPiece(int, class Random &, int, int);
-
-
 
 };

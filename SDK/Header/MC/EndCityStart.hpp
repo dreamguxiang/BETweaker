@@ -15,14 +15,12 @@ class EndCityStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYSTART
 public:
     class EndCityStart& operator=(class EndCityStart const &) = delete;
     EndCityStart(class EndCityStart const &) = delete;
     EndCityStart() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndCityStart();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
     MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
-
-
 
 };

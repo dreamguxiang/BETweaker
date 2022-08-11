@@ -14,14 +14,12 @@ class MeleeAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELEEATTACKGOAL
 public:
     class MeleeAttackGoal& operator=(class MeleeAttackGoal const &) = delete;
     MeleeAttackGoal(class MeleeAttackGoal const &) = delete;
     MeleeAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MeleeAttackGoal();
@@ -45,9 +43,7 @@ public:
     MCAPI float _getAttackReachSqr(class Actor const &) const;
     MCAPI bool _inSunlight(class Actor const &) const;
 
-
 protected:
     MCAPI static class BaseGameVersion const min3DAttackVersion;
-
 
 };

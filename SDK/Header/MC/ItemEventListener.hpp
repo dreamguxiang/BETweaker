@@ -12,14 +12,12 @@ class ItemEventListener {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTLISTENER
 public:
     class ItemEventListener& operator=(class ItemEventListener const &) = delete;
     ItemEventListener(class ItemEventListener const &) = delete;
     ItemEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTLISTENER
@@ -40,7 +38,5 @@ public:
     MCVAPI enum EventResult onPreviewItemPopulatedInContainer(class ItemStackBase const &, std::string const &);
     MCVAPI enum EventResult onRecipeSelected(class ItemStackBase const &);
 #endif
-
-
 
 };

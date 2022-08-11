@@ -15,14 +15,12 @@ class SHFillerCorridor : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHFILLERCORRIDOR
 public:
     class SHFillerCorridor& operator=(class SHFillerCorridor const &) = delete;
     SHFillerCorridor(class SHFillerCorridor const &) = delete;
     SHFillerCorridor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHFillerCorridor();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHFILLERCORRIDOR
 #endif
     MCAPI static class BoundingBox findPieceBox(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int);
-
-
 
 };

@@ -14,14 +14,12 @@ class PlayerContainerSetter {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERCONTAINERSETTER
 public:
     class PlayerContainerSetter& operator=(class PlayerContainerSetter const &) = delete;
     PlayerContainerSetter(class PlayerContainerSetter const &) = delete;
     PlayerContainerSetter() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerContainerSetter();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCONTAINERSETTER
 #endif
     MCAPI PlayerContainerSetter(class Player &);
-
-
 
 };

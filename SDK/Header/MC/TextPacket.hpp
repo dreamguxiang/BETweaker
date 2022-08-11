@@ -16,13 +16,11 @@ class TextPacket : public Packet {
     char filler[168];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTPACKET
 public:
     class TextPacket& operator=(class TextPacket const &) = delete;
     TextPacket(class TextPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TextPacket();
@@ -47,8 +45,6 @@ public:
 //private:
     MCAPI TextPacket(enum TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class DragonEggBlock : public HeavyBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONEGGBLOCK
 public:
     class DragonEggBlock& operator=(class DragonEggBlock const &) = delete;
     DragonEggBlock(class DragonEggBlock const &) = delete;
     DragonEggBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonEggBlock();
@@ -75,8 +73,6 @@ public:
 //private:
     MCAPI void _teleport(class BlockSource &, class Random &, class BlockPos const &) const;
 
-
 private:
-
 
 };

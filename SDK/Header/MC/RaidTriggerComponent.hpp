@@ -14,7 +14,6 @@ class RaidTriggerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDTRIGGERCOMPONENT
 public:
     class RaidTriggerComponent& operator=(class RaidTriggerComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     RaidTriggerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERCOMPONENT
 #endif
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void reloadComponent(class Actor &);
-
-
 
 };

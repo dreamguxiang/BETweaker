@@ -15,14 +15,12 @@ class RandomFlyingGoal : public RandomStrollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMFLYINGGOAL
 public:
     class RandomFlyingGoal& operator=(class RandomFlyingGoal const &) = delete;
     RandomFlyingGoal(class RandomFlyingGoal const &) = delete;
     RandomFlyingGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomFlyingGoal();
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI bool _getTreePos(class Vec3 &) const;
 
-
 private:
-
 
 };

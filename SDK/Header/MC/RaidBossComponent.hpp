@@ -14,14 +14,12 @@ class RaidBossComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDBOSSCOMPONENT
 public:
     class RaidBossComponent& operator=(class RaidBossComponent const &) = delete;
     RaidBossComponent(class RaidBossComponent const &) = delete;
     RaidBossComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSCOMPONENT
@@ -53,8 +51,6 @@ public:
     MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor &);
     MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player &);
 
-
 private:
-
 
 };

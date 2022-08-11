@@ -14,14 +14,12 @@ class ChemistryTableBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYTABLEBLOCKACTOR
 public:
     class ChemistryTableBlockActor& operator=(class ChemistryTableBlockActor const &) = delete;
     ChemistryTableBlockActor(class ChemistryTableBlockActor const &) = delete;
     ChemistryTableBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
@@ -51,8 +49,6 @@ public:
     MCAPI void _popPendingReactionOutput(class BlockSource &);
     MCAPI enum ChemistryTableType _updateType(class BlockSource &);
 
-
 private:
-
 
 };

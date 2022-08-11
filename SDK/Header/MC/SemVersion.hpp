@@ -26,8 +26,6 @@ public:
     bool valid_version{}, any_version{};          // 104, 105
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION
 #endif
@@ -58,8 +56,6 @@ public:
 //private:
     MCAPI void _parseVersionToString();
 
-
 private:
-
 
 };

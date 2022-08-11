@@ -15,7 +15,6 @@ class OpenDoorAnnotationDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPENDOORANNOTATIONDESCRIPTION
 public:
     class OpenDoorAnnotationDescription& operator=(class OpenDoorAnnotationDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     OpenDoorAnnotationDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~OpenDoorAnnotationDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONDESCRIPTION
 #endif
-
-
 
 };

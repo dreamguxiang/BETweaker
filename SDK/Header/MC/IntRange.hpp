@@ -15,24 +15,21 @@ struct IntRange {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTRANGE
 public:
     struct IntRange& operator=(struct IntRange const &) = delete;
     IntRange(struct IntRange const &) = delete;
     IntRange() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTRANGE
+#endif
     MCAPI IntRange(int, int);
     MCAPI IntRange(int);
     MCAPI int getValue(class Random &) const;
     MCAPI int getValueInclusive(class Random &) const;
     MCAPI bool isInRangeInclusive(int) const;
     MCAPI bool parseJson(class Json::Value, int, int);
-
-protected:
-
-private:
+    MCAPI static struct IntRange const ZERO;
 
 };

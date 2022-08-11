@@ -12,7 +12,6 @@ class ICerealDefinitionSerializer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEREALDEFINITIONSERIALIZER
 public:
     class ICerealDefinitionSerializer& operator=(class ICerealDefinitionSerializer const &) = delete;
@@ -20,12 +19,9 @@ public:
     ICerealDefinitionSerializer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
     MCVAPI ~ICerealDefinitionSerializer();
 #endif
-
-
 
 };

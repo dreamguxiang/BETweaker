@@ -12,7 +12,6 @@ class ExpectedAnywhereConsume {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPECTEDANYWHERECONSUME
 public:
     class ExpectedAnywhereConsume& operator=(class ExpectedAnywhereConsume const &) = delete;
@@ -20,12 +19,9 @@ public:
     ExpectedAnywhereConsume() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDANYWHERECONSUME
 #endif
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
-
-
 
 };

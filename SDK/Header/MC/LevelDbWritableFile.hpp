@@ -15,14 +15,12 @@ class LevelDbWritableFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBWRITABLEFILE
 public:
     class LevelDbWritableFile& operator=(class LevelDbWritableFile const &) = delete;
     LevelDbWritableFile(class LevelDbWritableFile const &) = delete;
     LevelDbWritableFile() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelDbWritableFile();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBWRITABLEFILE
 #endif
     MCAPI LevelDbWritableFile(std::string, class Core::File &&);
-
-
 
 };

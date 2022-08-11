@@ -15,14 +15,12 @@ class RuinedPortalPiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUINEDPORTALPIECE
 public:
     class RuinedPortalPiece& operator=(class RuinedPortalPiece const &) = delete;
     RuinedPortalPiece(class RuinedPortalPiece const &) = delete;
     RuinedPortalPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RuinedPortalPiece();
@@ -42,8 +40,6 @@ public:
     MCAPI static bool _isLava(class BlockSource &, class BlockPos);
     MCAPI static bool _willLavaFlowIn(class BlockSource &, class BlockPos);
 
-
 private:
-
 
 };

@@ -14,7 +14,6 @@ class CircuitComponentList {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
 public:
     class CircuitComponentList& operator=(class CircuitComponentList const &) = delete;
@@ -22,13 +21,10 @@ public:
     CircuitComponentList() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITCOMPONENTLIST
 #endif
     MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     MCAPI ~CircuitComponentList();
-
-
 
 };

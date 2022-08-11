@@ -15,13 +15,11 @@ class ItemComponentPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPONENTPACKET
 public:
     class ItemComponentPacket& operator=(class ItemComponentPacket const &) = delete;
     ItemComponentPacket(class ItemComponentPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemComponentPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENTPACKET
 #endif
     MCAPI ItemComponentPacket();
-
-
 
 };

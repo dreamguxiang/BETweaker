@@ -15,14 +15,12 @@ class DeepslateOreBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEEPSLATEOREBLOCK
 public:
     class DeepslateOreBlock& operator=(class DeepslateOreBlock const &) = delete;
     DeepslateOreBlock(class DeepslateOreBlock const &) = delete;
     DeepslateOreBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeepslateOreBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -69,7 +67,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEEPSLATEOREBLOCK
 #endif
     MCAPI DeepslateOreBlock(std::string const &, int);
-
-
 
 };

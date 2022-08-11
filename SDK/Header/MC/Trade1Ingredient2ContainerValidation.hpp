@@ -13,7 +13,6 @@ class Trade1Ingredient2ContainerValidation : public ContainerValidationBase {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE1INGREDIENT2CONTAINERVALIDATION
 public:
     class Trade1Ingredient2ContainerValidation& operator=(class Trade1Ingredient2ContainerValidation const &) = delete;
@@ -21,22 +20,19 @@ public:
     Trade1Ingredient2ContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Trade1Ingredient2ContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int);
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &);
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &);
+    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &);
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const &, class Container const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE1INGREDIENT2CONTAINERVALIDATION
 #endif
     MCAPI Trade1Ingredient2ContainerValidation(bool);
-
-
 
 };

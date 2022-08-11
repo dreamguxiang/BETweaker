@@ -13,19 +13,15 @@ struct GameRuleId {
 public:
     int num;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULEID
 public:
     struct GameRuleId& operator=(struct GameRuleId const &) = delete;
     GameRuleId(struct GameRuleId const &) = delete;
     GameRuleId() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULEID
+#endif
     MCAPI GameRuleId(int);
-
-protected:
-
-private:
 
 };

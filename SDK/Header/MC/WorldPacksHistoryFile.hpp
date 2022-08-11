@@ -17,13 +17,11 @@ public:
 enum ParseResult;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKSHISTORYFILE
 public:
     class WorldPacksHistoryFile& operator=(class WorldPacksHistoryFile const &) = delete;
     WorldPacksHistoryFile(class WorldPacksHistoryFile const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKSHISTORYFILE
@@ -32,7 +30,5 @@ public:
     MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
     MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     MCAPI ~WorldPacksHistoryFile();
-
-
 
 };

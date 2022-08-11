@@ -12,7 +12,6 @@ class MolangArrayVariable {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGARRAYVARIABLE
 public:
     class MolangArrayVariable& operator=(class MolangArrayVariable const &) = delete;
@@ -20,12 +19,9 @@ public:
     MolangArrayVariable() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGARRAYVARIABLE
 #endif
     MCAPI ~MolangArrayVariable();
-
-
 
 };

@@ -14,14 +14,12 @@ class ScriptDebuggerTransport {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGERTRANSPORT
 public:
     class ScriptDebuggerTransport& operator=(class ScriptDebuggerTransport const &) = delete;
     ScriptDebuggerTransport(class ScriptDebuggerTransport const &) = delete;
     ScriptDebuggerTransport() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptDebuggerTransport();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERTRANSPORT
 #endif
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
-
-
 
 };

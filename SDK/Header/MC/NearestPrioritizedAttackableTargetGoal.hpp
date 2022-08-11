@@ -15,14 +15,12 @@ class NearestPrioritizedAttackableTargetGoal : public NearestAttackableTargetGoa
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTPRIORITIZEDATTACKABLETARGETGOAL
 public:
     class NearestPrioritizedAttackableTargetGoal& operator=(class NearestPrioritizedAttackableTargetGoal const &) = delete;
     NearestPrioritizedAttackableTargetGoal(class NearestPrioritizedAttackableTargetGoal const &) = delete;
     NearestPrioritizedAttackableTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTPRIORITIZEDATTACKABLETARGETGOAL
 #endif
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, bool, bool, int, float, bool, int, bool);
-
-
 
 };

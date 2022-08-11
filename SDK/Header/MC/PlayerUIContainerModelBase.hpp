@@ -15,14 +15,12 @@ class PlayerUIContainerModelBase : public ContainerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODELBASE
 public:
     class PlayerUIContainerModelBase& operator=(class PlayerUIContainerModelBase const &) = delete;
     PlayerUIContainerModelBase(class PlayerUIContainerModelBase const &) = delete;
     PlayerUIContainerModelBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -37,7 +35,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container * _getContainer() const;
-    /*21*/ virtual int _getContainerOffset() const;
+    /*21*/ virtual int _getContainerOffset();
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
 #endif
@@ -46,8 +44,6 @@ public:
 //protected:
     MCAPI void _refreshContainer(bool);
 
-
 protected:
-
 
 };

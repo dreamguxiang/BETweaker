@@ -15,14 +15,12 @@ class FrostedIceBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FROSTEDICEBLOCK
 public:
     class FrostedIceBlock& operator=(class FrostedIceBlock const &) = delete;
     FrostedIceBlock(class FrostedIceBlock const &) = delete;
     FrostedIceBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FrostedIceBlock();
@@ -51,7 +49,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -76,10 +74,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const MAX_AGE;
     MCAPI static int const MIN_NEIGHBORS;
-
 
 };

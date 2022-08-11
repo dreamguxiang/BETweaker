@@ -15,14 +15,12 @@ class BannerDuplicateRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERDUPLICATERECIPE
 public:
     class BannerDuplicateRecipe& operator=(class BannerDuplicateRecipe const &) = delete;
     BannerDuplicateRecipe(class BannerDuplicateRecipe const &) = delete;
     BannerDuplicateRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BannerDuplicateRecipe();
@@ -37,7 +35,5 @@ public:
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const ID;
-
-
 
 };

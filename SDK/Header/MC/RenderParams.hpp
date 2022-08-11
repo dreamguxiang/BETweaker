@@ -14,12 +14,10 @@ class RenderParams {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDERPARAMS
 public:
     class RenderParams& operator=(class RenderParams const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDERPARAMS
@@ -33,7 +31,5 @@ public:
     MCAPI float & operator[](unsigned __int64);
     MCAPI ~RenderParams();
     MCAPI static class RenderParams & getRenderParams(class Actor &);
-
-
 
 };

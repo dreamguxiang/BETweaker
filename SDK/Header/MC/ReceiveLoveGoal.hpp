@@ -14,14 +14,12 @@ class ReceiveLoveGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECEIVELOVEGOAL
 public:
     class ReceiveLoveGoal& operator=(class ReceiveLoveGoal const &) = delete;
     ReceiveLoveGoal(class ReceiveLoveGoal const &) = delete;
     ReceiveLoveGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ReceiveLoveGoal();
@@ -37,7 +35,5 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI ReceiveLoveGoal(class VillagerBase &);
-
-
 
 };

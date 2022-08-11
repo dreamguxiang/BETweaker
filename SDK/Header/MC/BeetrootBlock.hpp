@@ -15,14 +15,12 @@ class BeetrootBlock : public CropBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEETROOTBLOCK
 public:
     class BeetrootBlock& operator=(class BeetrootBlock const &) = delete;
     BeetrootBlock(class BeetrootBlock const &) = delete;
     BeetrootBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BeetrootBlock();
@@ -69,7 +67,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEETROOTBLOCK
 #endif
     MCAPI BeetrootBlock(std::string const &, int);
-
-
 
 };

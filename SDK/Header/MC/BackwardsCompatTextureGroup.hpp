@@ -14,7 +14,6 @@ class BackwardsCompatTextureGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKWARDSCOMPATTEXTUREGROUP
 public:
     class BackwardsCompatTextureGroup& operator=(class BackwardsCompatTextureGroup const &) = delete;
@@ -22,16 +21,13 @@ public:
     BackwardsCompatTextureGroup() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREGROUP
 #endif
 
 //private:
 
-
 private:
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
-
 
 };

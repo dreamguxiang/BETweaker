@@ -16,14 +16,12 @@ class XoroshiroPositionalRandomFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_XOROSHIROPOSITIONALRANDOMFACTORY
 public:
     class XoroshiroPositionalRandomFactory& operator=(class XoroshiroPositionalRandomFactory const &) = delete;
     XoroshiroPositionalRandomFactory(class XoroshiroPositionalRandomFactory const &) = delete;
     XoroshiroPositionalRandomFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~XoroshiroPositionalRandomFactory();
@@ -35,9 +33,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Crypto::Hash::md5, class std::allocator<class Crypto::Hash::md5>> mThreadLocalDigest;
-
 
 };

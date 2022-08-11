@@ -15,13 +15,11 @@ class SimulationTypePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATIONTYPEPACKET
 public:
     class SimulationTypePacket& operator=(class SimulationTypePacket const &) = delete;
     SimulationTypePacket(class SimulationTypePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SimulationTypePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMULATIONTYPEPACKET
 #endif
     MCAPI SimulationTypePacket();
-
-
 
 };

@@ -14,7 +14,6 @@ class CrashDumpAssertData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPASSERTDATA
 public:
     class CrashDumpAssertData& operator=(class CrashDumpAssertData const &) = delete;
@@ -22,12 +21,9 @@ public:
     CrashDumpAssertData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPASSERTDATA
 #endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
-
-
 
 };

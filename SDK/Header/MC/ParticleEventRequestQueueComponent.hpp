@@ -12,20 +12,16 @@ struct ParticleEventRequestQueueComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEEVENTREQUESTQUEUECOMPONENT
 public:
     struct ParticleEventRequestQueueComponent& operator=(struct ParticleEventRequestQueueComponent const &) = delete;
     ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent const &) = delete;
     ParticleEventRequestQueueComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLEEVENTREQUESTQUEUECOMPONENT
+#endif
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent &&);
     MCAPI ~ParticleEventRequestQueueComponent();
-
-protected:
-
-private:
 
 };

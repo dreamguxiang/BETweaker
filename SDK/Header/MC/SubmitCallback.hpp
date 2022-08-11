@@ -12,7 +12,6 @@ class SubmitCallback {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBMITCALLBACK
 public:
     class SubmitCallback& operator=(class SubmitCallback const &) = delete;
@@ -20,13 +19,10 @@ public:
     SubmitCallback() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBMITCALLBACK
 #endif
     MCAPI long Register(void *, void ( *)(void *, struct XTaskQueueObject *, enum XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
-
-
 
 };

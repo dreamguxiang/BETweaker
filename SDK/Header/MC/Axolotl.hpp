@@ -16,14 +16,12 @@ class Axolotl : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AXOLOTL
 public:
     class Axolotl& operator=(class Axolotl const &) = delete;
     Axolotl(class Axolotl const &) = delete;
     Axolotl() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -58,7 +56,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AXOLOTL
 #endif
     MCAPI Axolotl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

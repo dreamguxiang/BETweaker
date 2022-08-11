@@ -14,14 +14,12 @@ class BlockGraphics {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGRAPHICS
 public:
     class BlockGraphics& operator=(class BlockGraphics const &) = delete;
     BlockGraphics(class BlockGraphics const &) = delete;
     BlockGraphics() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
@@ -42,7 +40,6 @@ public:
 
 //private:
 
-
 protected:
     MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
 
@@ -52,6 +49,5 @@ private:
     MCAPI static bool mInitialized;
     MCAPI static class std::map<std::string, std::unique_ptr<struct BlockGeometry::Model>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<struct BlockGeometry::Model>>>> mModels;
     MCAPI static class std::map<std::string, std::unique_ptr<class BlockGeometry::TessellatedModel>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class BlockGeometry::TessellatedModel>>>> mTessellatedModels;
-
 
 };

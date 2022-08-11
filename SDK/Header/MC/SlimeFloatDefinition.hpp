@@ -15,13 +15,11 @@ class SlimeFloatDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEFLOATDEFINITION
 public:
     class SlimeFloatDefinition& operator=(class SlimeFloatDefinition const &) = delete;
     SlimeFloatDefinition(class SlimeFloatDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEFLOATDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI SlimeFloatDefinition();
     MCAPI void initialize(class EntityContext &, class SlimeFloatGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>> &);
-
-
 
 };

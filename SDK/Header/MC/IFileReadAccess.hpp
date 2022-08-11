@@ -14,7 +14,6 @@ class IFileReadAccess {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEREADACCESS
 public:
     class IFileReadAccess& operator=(class IFileReadAccess const &) = delete;
@@ -22,11 +21,8 @@ public:
     IFileReadAccess() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEREADACCESS
 #endif
-
-
 
 };

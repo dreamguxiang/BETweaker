@@ -15,13 +15,11 @@ class DebugInfoPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGINFOPACKET
 public:
     class DebugInfoPacket& operator=(class DebugInfoPacket const &) = delete;
     DebugInfoPacket(class DebugInfoPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DebugInfoPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOPACKET
 #endif
     MCAPI DebugInfoPacket();
-
-
 
 };

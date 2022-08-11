@@ -14,14 +14,12 @@ class GameTestLevelListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTLEVELLISTENER
 public:
     class GameTestLevelListener& operator=(class GameTestLevelListener const &) = delete;
     GameTestLevelListener(class GameTestLevelListener const &) = delete;
     GameTestLevelListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameTestLevelListener();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTLEVELLISTENER
 #endif
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
-
-
 
 };

@@ -21,14 +21,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERPARAMS
 public:
     class ScatterParams& operator=(class ScatterParams const &) = delete;
     ScatterParams(class ScatterParams const &) = delete;
     ScatterParams() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMS
@@ -44,8 +42,6 @@ public:
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
     MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
 
-
 private:
-
 
 };

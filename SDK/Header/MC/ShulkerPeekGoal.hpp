@@ -14,14 +14,12 @@ class ShulkerPeekGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERPEEKGOAL
 public:
     class ShulkerPeekGoal& operator=(class ShulkerPeekGoal const &) = delete;
     ShulkerPeekGoal(class ShulkerPeekGoal const &) = delete;
     ShulkerPeekGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShulkerPeekGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERPEEKGOAL
 #endif
     MCAPI ShulkerPeekGoal(class Mob &);
-
-
 
 };

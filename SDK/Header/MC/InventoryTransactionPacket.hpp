@@ -21,13 +21,11 @@ public:
     bool isClientSide;                                                           //88
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONPACKET
 public:
     class InventoryTransactionPacket& operator=(class InventoryTransactionPacket const &) = delete;
     InventoryTransactionPacket(class InventoryTransactionPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InventoryTransactionPacket();
@@ -40,7 +38,5 @@ public:
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
     MCAPI InventoryTransactionPacket();
     MCAPI void postLoadItems(class BlockPalette &, bool) const;
-
-
 
 };

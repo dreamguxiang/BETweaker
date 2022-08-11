@@ -14,14 +14,12 @@ class SitGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SITGOAL
 public:
     class SitGoal& operator=(class SitGoal const &) = delete;
     SitGoal(class SitGoal const &) = delete;
     SitGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SitGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SITGOAL
 #endif
     MCAPI SitGoal(class Mob &);
-
-
 
 };

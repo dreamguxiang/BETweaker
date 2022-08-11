@@ -14,14 +14,12 @@ class MinecraftGameTestBatchRunner {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTBATCHRUNNER
 public:
     class MinecraftGameTestBatchRunner& operator=(class MinecraftGameTestBatchRunner const &) = delete;
     MinecraftGameTestBatchRunner(class MinecraftGameTestBatchRunner const &) = delete;
     MinecraftGameTestBatchRunner() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftGameTestBatchRunner();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTBATCHRUNNER
 #endif
     MCAPI MinecraftGameTestBatchRunner(std::vector<class gametest::GameTestBatch> &&, class gametest::GameTestTicker &, struct gametest::TestParameters &&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
-
-
 
 };

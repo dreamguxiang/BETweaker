@@ -14,14 +14,12 @@ class WorldBlockTarget {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDBLOCKTARGET
 public:
     class WorldBlockTarget& operator=(class WorldBlockTarget const &) = delete;
     WorldBlockTarget(class WorldBlockTarget const &) = delete;
     WorldBlockTarget() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorldBlockTarget();
@@ -55,7 +53,5 @@ public:
     MCVAPI bool canGetChunk() const;
 #endif
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);
-
-
 
 };

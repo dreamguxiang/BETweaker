@@ -14,14 +14,12 @@ class ClassroomModeNetworkHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSROOMMODENETWORKHANDLER
 public:
     class ClassroomModeNetworkHandler& operator=(class ClassroomModeNetworkHandler const &) = delete;
     ClassroomModeNetworkHandler(class ClassroomModeNetworkHandler const &) = delete;
     ClassroomModeNetworkHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODENETWORKHANDLER
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _connect(std::string const &);
 
-
 private:
-
 
 };

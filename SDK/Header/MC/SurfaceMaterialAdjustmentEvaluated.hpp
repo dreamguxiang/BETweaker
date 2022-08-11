@@ -14,21 +14,17 @@ struct SurfaceMaterialAdjustmentEvaluated {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTEVALUATED
 public:
     struct SurfaceMaterialAdjustmentEvaluated& operator=(struct SurfaceMaterialAdjustmentEvaluated const &) = delete;
     SurfaceMaterialAdjustmentEvaluated(struct SurfaceMaterialAdjustmentEvaluated const &) = delete;
     SurfaceMaterialAdjustmentEvaluated() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALADJUSTMENTEVALUATED
+#endif
     MCAPI bool empty() const;
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks &, int) const;
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
-
-protected:
-
-private:
 
 };

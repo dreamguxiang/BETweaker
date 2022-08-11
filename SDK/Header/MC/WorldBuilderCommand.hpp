@@ -15,14 +15,12 @@ class WorldBuilderCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDBUILDERCOMMAND
 public:
     class WorldBuilderCommand& operator=(class WorldBuilderCommand const &) = delete;
     WorldBuilderCommand(class WorldBuilderCommand const &) = delete;
     WorldBuilderCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorldBuilderCommand();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI static void setWorldBuilder(class LayeredAbilities &, bool);
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

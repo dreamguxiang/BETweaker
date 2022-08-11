@@ -19,14 +19,12 @@ public:
         return _getEntity();
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMODEL
 public:
     class LevelContainerModel& operator=(class LevelContainerModel const &) = delete;
     LevelContainerModel(class LevelContainerModel const &) = delete;
     LevelContainerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -54,8 +52,6 @@ public:
     MCAPI class Actor * _getEntity() const;
     MCAPI void _refreshSlot(int);
 
-
 private:
-
 
 };

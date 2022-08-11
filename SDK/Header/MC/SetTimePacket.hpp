@@ -15,13 +15,11 @@ class SetTimePacket : public Packet {
 // Add Member There
     int32_t mTime; // 0x28
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTIMEPACKET
 public:
     class SetTimePacket& operator=(class SetTimePacket const &) = delete;
     SetTimePacket(class SetTimePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetTimePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetTimePacket(int);
     MCAPI SetTimePacket();
-
-
 
 };

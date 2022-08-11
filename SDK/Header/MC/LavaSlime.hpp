@@ -16,7 +16,6 @@ class LavaSlime : public Slime {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAVASLIME
 public:
     class LavaSlime& operator=(class LavaSlime const &) = delete;
@@ -24,21 +23,20 @@ public:
     LavaSlime() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~LavaSlime();
     /*41*/ virtual void __unk_vfn_41();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*73*/ virtual bool isInLava() const;
+    /*73*/ virtual bool isInLava();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*87*/ virtual float getBrightness(float) const;
     /*88*/ virtual void __unk_vfn_88();
     /*96*/ virtual void __unk_vfn_96();
     /*99*/ virtual void __unk_vfn_99();
-    /*104*/ virtual bool isOnFire() const;
+    /*104*/ virtual bool isOnFire();
     /*106*/ virtual void __unk_vfn_106();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
@@ -59,7 +57,7 @@ public:
     /*351*/ virtual void __unk_vfn_351();
     /*357*/ virtual void jumpFromGround();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn() const;
+    /*367*/ virtual bool isDarkEnoughToSpawn();
     /*368*/ virtual bool canDealDamage();
     /*372*/ virtual bool doPlayLandSound();
     /*375*/ virtual void decreaseSquish();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAVASLIME
 #endif
     MCAPI LavaSlime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

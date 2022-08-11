@@ -15,14 +15,12 @@ class CurseBindingEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CURSEBINDINGENCHANT
 public:
     class CurseBindingEnchant& operator=(class CurseBindingEnchant const &) = delete;
     CurseBindingEnchant(class CurseBindingEnchant const &) = delete;
     CurseBindingEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CurseBindingEnchant();
@@ -36,7 +34,5 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     MCAPI CurseBindingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
-
-
 
 };

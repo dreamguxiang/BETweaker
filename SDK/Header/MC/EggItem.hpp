@@ -16,7 +16,6 @@ class EggItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EGGITEM
 public:
     class EggItem& operator=(class EggItem const &) = delete;
@@ -24,14 +23,13 @@ public:
     EggItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EggItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable() const;
+    /*23*/ virtual bool isThrowable();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -43,9 +41,8 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EGGITEM
 #endif
-
-
 
 };

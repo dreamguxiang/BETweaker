@@ -22,13 +22,11 @@ struct BlockResource {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDEFINITIONGROUP
 public:
     class BlockDefinitionGroup& operator=(class BlockDefinitionGroup const &) = delete;
     BlockDefinitionGroup(class BlockDefinitionGroup const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITIONGROUP
@@ -55,8 +53,6 @@ public:
     MCAPI bool _loadEvents(class Json::Value const &, struct BlockDefinition &);
     MCAPI bool _parseComponents(class Json::Value const &, struct BlockComponentGroupDescription &, std::string const &, class SemVersion const &, class Experiments const &);
 
-
 private:
-
 
 };

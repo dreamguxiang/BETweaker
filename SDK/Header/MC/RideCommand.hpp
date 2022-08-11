@@ -15,14 +15,12 @@ class RideCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDECOMMAND
 public:
     class RideCommand& operator=(class RideCommand const &) = delete;
     RideCommand(class RideCommand const &) = delete;
     RideCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RideCommand();
@@ -38,8 +36,6 @@ public:
     MCAPI void summonPassenger(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void summonVehicle(class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

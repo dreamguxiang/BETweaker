@@ -15,14 +15,12 @@ class FaceDirectionalBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACEDIRECTIONALBLOCK
 public:
     class FaceDirectionalBlock& operator=(class FaceDirectionalBlock const &) = delete;
     FaceDirectionalBlock(class FaceDirectionalBlock const &) = delete;
     FaceDirectionalBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FaceDirectionalBlock();
@@ -72,7 +70,5 @@ public:
     MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const &, bool);
     MCAPI static unsigned char getFacingDirection(class Block const &, bool);
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const &, bool);
-
-
 
 };

@@ -14,13 +14,11 @@ class TickingAreasManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREASMANAGER
 public:
     class TickingAreasManager& operator=(class TickingAreasManager const &) = delete;
     TickingAreasManager(class TickingAreasManager const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASMANAGER
@@ -57,8 +55,6 @@ public:
     MCAPI void _processRemoves(class Level &, class LevelStorage &);
     MCAPI void _savePendingArea(class LevelStorage &, class AutomaticID<class Dimension, int>, struct PendingArea const &);
 
-
 private:
-
 
 };

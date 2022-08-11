@@ -14,14 +14,12 @@ class FixedBiomeSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIXEDBIOMESOURCE
 public:
     class FixedBiomeSource& operator=(class FixedBiomeSource const &) = delete;
     FixedBiomeSource(class FixedBiomeSource const &) = delete;
     FixedBiomeSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FixedBiomeSource();
@@ -35,7 +33,5 @@ public:
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
 #endif
     MCAPI FixedBiomeSource(class Biome const &);
-
-
 
 };

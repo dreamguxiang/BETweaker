@@ -13,14 +13,12 @@ class NewUniqueIdsDataLoadHelper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEWUNIQUEIDSDATALOADHELPER
 public:
     class NewUniqueIdsDataLoadHelper& operator=(class NewUniqueIdsDataLoadHelper const &) = delete;
     NewUniqueIdsDataLoadHelper(class NewUniqueIdsDataLoadHelper const &) = delete;
     NewUniqueIdsDataLoadHelper() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NewUniqueIdsDataLoadHelper();
@@ -56,7 +54,5 @@ public:
     MCVAPI float loadRotationRadiansY(float);
 #endif
     MCAPI NewUniqueIdsDataLoadHelper(class ILevel &);
-
-
 
 };

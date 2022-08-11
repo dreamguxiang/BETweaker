@@ -15,14 +15,12 @@ class ServerScoreboard {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSCOREBOARD
 public:
     class ServerScoreboard& operator=(class ServerScoreboard const &) = delete;
     ServerScoreboard(class ServerScoreboard const &) = delete;
     ServerScoreboard() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerScoreboard();
@@ -56,8 +54,6 @@ public:
     MCAPI void _stopTrackingObjective(class Objective const &);
     MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
 
-
 private:
-
 
 };

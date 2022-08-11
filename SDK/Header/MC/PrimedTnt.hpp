@@ -16,14 +16,12 @@ class PrimedTnt : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRIMEDTNT
 public:
     class PrimedTnt& operator=(class PrimedTnt const &) = delete;
     PrimedTnt(class PrimedTnt const &) = delete;
     PrimedTnt() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -37,7 +35,7 @@ public:
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -58,13 +56,11 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*270*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*273*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*277*/ virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIMEDTNT
 #endif
     MCAPI PrimedTnt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void postNormalTick();
-
-
 
 };

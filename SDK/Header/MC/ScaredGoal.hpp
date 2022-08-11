@@ -14,14 +14,12 @@ class ScaredGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCAREDGOAL
 public:
     class ScaredGoal& operator=(class ScaredGoal const &) = delete;
     ScaredGoal(class ScaredGoal const &) = delete;
     ScaredGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScaredGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAREDGOAL
 #endif
     MCAPI ScaredGoal(class Mob &, int);
-
-
 
 };

@@ -15,13 +15,11 @@ class LevelEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELEVENTPACKET
 public:
     class LevelEventPacket& operator=(class LevelEventPacket const &) = delete;
     LevelEventPacket(class LevelEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelEventPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     MCAPI LevelEventPacket();
-
-
 
 };

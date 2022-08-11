@@ -15,13 +15,11 @@ class FlockingDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGDEFINITION
 public:
     class FlockingDefinition& operator=(class FlockingDefinition const &) = delete;
     FlockingDefinition(class FlockingDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI FlockingDefinition();
     MCAPI void initialize(class EntityContext &, class FlockingComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>> &);
-
-
 
 };

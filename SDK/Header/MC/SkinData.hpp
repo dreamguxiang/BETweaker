@@ -15,22 +15,18 @@ struct SkinData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINDATA
 public:
     struct SkinData& operator=(struct SkinData const &) = delete;
     SkinData(struct SkinData const &) = delete;
     SkinData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINDATA
+#endif
     MCAPI SkinData(class Actor const &);
     MCAPI SkinData(class Json::Value const &);
     MCAPI void applyToActor(class Actor &) const;
     MCAPI bool softMatch(struct SkinData const &, bool &) const;
-
-protected:
-
-private:
 
 };

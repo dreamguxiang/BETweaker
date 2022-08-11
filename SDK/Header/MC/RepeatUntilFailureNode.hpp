@@ -14,13 +14,11 @@ class RepeatUntilFailureNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATUNTILFAILURENODE
 public:
     class RepeatUntilFailureNode& operator=(class RepeatUntilFailureNode const &) = delete;
     RepeatUntilFailureNode(class RepeatUntilFailureNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RepeatUntilFailureNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILURENODE
 #endif
     MCAPI RepeatUntilFailureNode();
-
-
 
 };

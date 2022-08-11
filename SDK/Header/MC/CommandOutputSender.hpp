@@ -15,13 +15,11 @@ class CommandOutputSender {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTSENDER
 public:
     class CommandOutputSender& operator=(class CommandOutputSender const &) = delete;
     CommandOutputSender(class CommandOutputSender const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommandOutputSender();
@@ -36,8 +34,6 @@ public:
 //protected:
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
 
-
 protected:
-
 
 };

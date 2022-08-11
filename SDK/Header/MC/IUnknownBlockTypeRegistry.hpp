@@ -14,7 +14,6 @@ class IUnknownBlockTypeRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUNKNOWNBLOCKTYPEREGISTRY
 public:
     class IUnknownBlockTypeRegistry& operator=(class IUnknownBlockTypeRegistry const &) = delete;
@@ -22,12 +21,9 @@ public:
     IUnknownBlockTypeRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif
-
-
 
 };

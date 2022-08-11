@@ -14,14 +14,12 @@ class VibrationListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENER
 public:
     class VibrationListener& operator=(class VibrationListener const &) = delete;
     VibrationListener(class VibrationListener const &) = delete;
     VibrationListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VibrationListener();
@@ -41,8 +39,6 @@ public:
     MCAPI static bool _isVibrationOccluded(class BlockSource &, class Vec3 const &, class Vec3 const &);
     MCAPI static bool _shouldIgnoreVibration(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 
-
 private:
-
 
 };

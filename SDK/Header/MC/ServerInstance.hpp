@@ -16,14 +16,12 @@ class ServerInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCE
 public:
     class ServerInstance& operator=(class ServerInstance const &) = delete;
     ServerInstance(class ServerInstance const &) = delete;
     ServerInstance() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCE
@@ -58,8 +56,6 @@ public:
     MCAPI void _threadSafeExecute(class std::function<void (void)>);
     MCAPI void _update();
 
-
 private:
-
 
 };

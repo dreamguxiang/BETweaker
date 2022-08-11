@@ -15,20 +15,16 @@ class FeatureTypeFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETYPEFACTORY
 public:
     class FeatureTypeFactory& operator=(class FeatureTypeFactory const &) = delete;
     FeatureTypeFactory(class FeatureTypeFactory const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETYPEFACTORY
 #endif
     MCAPI FeatureTypeFactory();
     MCAPI void processFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, class Json::Value &, class SemVersion const &) const;
-
-
 
 };

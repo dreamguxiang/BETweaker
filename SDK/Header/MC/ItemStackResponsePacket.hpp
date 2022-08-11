@@ -15,13 +15,11 @@ class ItemStackResponsePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSEPACKET
 public:
     class ItemStackResponsePacket& operator=(class ItemStackResponsePacket const &) = delete;
     ItemStackResponsePacket(class ItemStackResponsePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackResponsePacket();
@@ -34,7 +32,5 @@ public:
     MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI ItemStackResponsePacket();
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
-
-
 
 };

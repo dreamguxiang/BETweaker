@@ -15,14 +15,12 @@ class ScaffoldingBlock : public HeavyBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCAFFOLDINGBLOCK
 public:
     class ScaffoldingBlock& operator=(class ScaffoldingBlock const &) = delete;
     ScaffoldingBlock(class ScaffoldingBlock const &) = delete;
     ScaffoldingBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScaffoldingBlock();
@@ -34,7 +32,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -51,7 +49,7 @@ public:
     /*53*/ virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
@@ -91,10 +89,8 @@ public:
 //private:
     MCAPI bool _updateBlockStability(class BlockSource &, class BlockPos const &) const;
 
-
 protected:
 
 private:
-
 
 };

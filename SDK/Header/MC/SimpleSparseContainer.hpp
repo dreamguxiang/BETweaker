@@ -20,14 +20,12 @@ inline class ItemStack const& getItem(int a0) const
     return (this->*rv)(std::forward<int>(a0));
 }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLESPARSECONTAINER
 public:
     class SimpleSparseContainer& operator=(class SimpleSparseContainer const &) = delete;
     SimpleSparseContainer(class SimpleSparseContainer const &) = delete;
     SimpleSparseContainer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
@@ -47,8 +45,6 @@ public:
 //private:
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 
-
 private:
-
 
 };

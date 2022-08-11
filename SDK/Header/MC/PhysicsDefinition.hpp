@@ -15,13 +15,11 @@ class PhysicsDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHYSICSDEFINITION
 public:
     class PhysicsDefinition& operator=(class PhysicsDefinition const &) = delete;
     PhysicsDefinition(class PhysicsDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHYSICSDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI PhysicsDefinition();
     MCAPI void initialize(class EntityContext &, class PhysicsComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>> &);
-
-
 
 };

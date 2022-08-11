@@ -14,7 +14,6 @@ class PauseManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAUSEMANAGER
 public:
     class PauseManager& operator=(class PauseManager const &) = delete;
@@ -22,13 +21,10 @@ public:
     PauseManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAUSEMANAGER
 #endif
     MCAPI static enum SimulationType const DEFAULT_SIMULATION_TYPE;
     MCAPI static enum SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
-
-
 
 };

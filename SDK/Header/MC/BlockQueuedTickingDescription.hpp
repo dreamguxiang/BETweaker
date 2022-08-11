@@ -14,18 +14,20 @@ struct BlockQueuedTickingDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGDESCRIPTION
 public:
     struct BlockQueuedTickingDescription& operator=(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockQueuedTickingDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

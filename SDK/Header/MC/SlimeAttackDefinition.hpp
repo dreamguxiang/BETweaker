@@ -15,13 +15,11 @@ class SlimeAttackDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEATTACKDEFINITION
 public:
     class SlimeAttackDefinition& operator=(class SlimeAttackDefinition const &) = delete;
     SlimeAttackDefinition(class SlimeAttackDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEATTACKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI SlimeAttackDefinition();
     MCAPI void initialize(class EntityContext &, class SlimeAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeAttackDefinition>> &);
-
-
 
 };

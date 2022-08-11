@@ -14,7 +14,6 @@ class IPacketHandlerDispatcher {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKETHANDLERDISPATCHER
 public:
     class IPacketHandlerDispatcher& operator=(class IPacketHandlerDispatcher const &) = delete;
@@ -22,11 +21,8 @@ public:
     IPacketHandlerDispatcher() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETHANDLERDISPATCHER
 #endif
-
-
 
 };

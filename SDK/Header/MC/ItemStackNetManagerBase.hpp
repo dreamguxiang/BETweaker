@@ -14,7 +14,6 @@ class ItemStackNetManagerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERBASE
 public:
     class ItemStackNetManagerBase& operator=(class ItemStackNetManagerBase const &) = delete;
@@ -22,13 +21,12 @@ public:
     ItemStackNetManagerBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
-    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
+    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId();
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
-    /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
+    /*4*/ virtual bool allowInventoryTransactionManager();
     /*5*/ virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose();
@@ -48,8 +46,6 @@ public:
 //protected:
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
-
 protected:
-
 
 };

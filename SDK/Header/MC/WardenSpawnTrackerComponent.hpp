@@ -14,13 +14,11 @@ class WardenSpawnTrackerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WARDENSPAWNTRACKERCOMPONENT
 public:
     class WardenSpawnTrackerComponent& operator=(class WardenSpawnTrackerComponent const &) = delete;
     WardenSpawnTrackerComponent(class WardenSpawnTrackerComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERCOMPONENT
@@ -34,7 +32,5 @@ public:
     MCAPI int tryIncreaseThreatLevel();
     MCAPI static class std::optional<enum LevelSoundEvent> getSoundEventForThreatLevel(int);
     MCAPI static bool hasNearbyWarden(class BlockSource &, class BlockPos const &);
-
-
 
 };

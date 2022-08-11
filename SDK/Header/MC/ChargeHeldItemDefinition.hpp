@@ -15,7 +15,6 @@ class ChargeHeldItemDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEHELDITEMDEFINITION
 public:
     class ChargeHeldItemDefinition& operator=(class ChargeHeldItemDefinition const &) = delete;
@@ -23,13 +22,10 @@ public:
     ChargeHeldItemDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEHELDITEMDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class ChargeHeldItemGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition>> &);
-
-
 
 };

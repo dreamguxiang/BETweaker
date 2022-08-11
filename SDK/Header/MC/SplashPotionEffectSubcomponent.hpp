@@ -15,13 +15,11 @@ class SplashPotionEffectSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONEFFECTSUBCOMPONENT
 public:
     class SplashPotionEffectSubcomponent& operator=(class SplashPotionEffectSubcomponent const &) = delete;
     SplashPotionEffectSubcomponent(class SplashPotionEffectSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SplashPotionEffectSubcomponent();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SplashPotionEffectSubcomponent();
     MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
-
-
 
 };

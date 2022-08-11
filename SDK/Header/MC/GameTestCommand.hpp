@@ -15,14 +15,12 @@ class GameTestCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTCOMMAND
 public:
     class GameTestCommand& operator=(class GameTestCommand const &) = delete;
     GameTestCommand(class GameTestCommand const &) = delete;
     GameTestCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameTestCommand();
@@ -42,8 +40,6 @@ public:
     MCAPI void _handleShowPosition(class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _runTestAt(class MinecraftGameTest &, class BlockSource &, class CommandOutput *, class BlockPos const &, class std::optional<enum Rotation>) const;
 
-
 private:
-
 
 };

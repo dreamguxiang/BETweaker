@@ -12,20 +12,16 @@ struct AttributesComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTESCOMPONENT
 public:
     struct AttributesComponent& operator=(struct AttributesComponent const &) = delete;
     AttributesComponent(struct AttributesComponent const &) = delete;
     AttributesComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTESCOMPONENT
+#endif
     MCAPI AttributesComponent(struct AttributesComponent &&);
     MCAPI ~AttributesComponent();
-
-protected:
-
-private:
 
 };

@@ -14,14 +14,12 @@ class ScopedGameTestTickingArea {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOPEDGAMETESTTICKINGAREA
 public:
     class ScopedGameTestTickingArea& operator=(class ScopedGameTestTickingArea const &) = delete;
     ScopedGameTestTickingArea(class ScopedGameTestTickingArea const &) = delete;
     ScopedGameTestTickingArea() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDGAMETESTTICKINGAREA
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI void _removeTickingArea();
 
-
 private:
-
 
 };

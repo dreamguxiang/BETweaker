@@ -15,14 +15,12 @@ class FarmBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FARMBLOCK
 public:
     class FarmBlock& operator=(class FarmBlock const &) = delete;
     FarmBlock(class FarmBlock const &) = delete;
     FarmBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FarmBlock();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*70*/ virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
@@ -75,7 +73,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI FarmBlock(std::string const &, int);
-
-
 
 };

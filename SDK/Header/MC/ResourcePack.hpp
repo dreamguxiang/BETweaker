@@ -15,14 +15,12 @@ class ResourcePack {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACK
 public:
     class ResourcePack& operator=(class ResourcePack const &) = delete;
     ResourcePack(class ResourcePack const &) = delete;
     ResourcePack() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
@@ -63,8 +61,6 @@ public:
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();
 
-
 private:
-
 
 };

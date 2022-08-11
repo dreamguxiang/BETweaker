@@ -16,14 +16,12 @@ class EmptyMapItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYMAPITEM
 public:
     class EmptyMapItem& operator=(class EmptyMapItem const &) = delete;
     EmptyMapItem(class EmptyMapItem const &) = delete;
     EmptyMapItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EmptyMapItem();
@@ -33,7 +31,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract() const;
+    /*60*/ virtual bool requiresInteract();
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -44,14 +42,13 @@ public:
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*119*/ virtual std::string getInteractText(class Player const &) const;
-    /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
+    /*130*/ virtual void __unk_vfn_130();
+    /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYMAPITEM
 #endif
     MCAPI EmptyMapItem(std::string const &, short);
     MCAPI static void addPlayerMarker(class ItemStack &);
     MCAPI static void addPlayerMarker(class ItemInstance &);
     MCAPI static bool isLocatorMap(class ItemStack const &);
-
-
 
 };

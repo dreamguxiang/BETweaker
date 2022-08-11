@@ -14,14 +14,12 @@ class WebviewObserver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBVIEWOBSERVER
 public:
     class WebviewObserver& operator=(class WebviewObserver const &) = delete;
     WebviewObserver(class WebviewObserver const &) = delete;
     WebviewObserver() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
@@ -35,7 +33,5 @@ public:
     MCVAPI void onMessageRecieved(std::string const &);
     MCVAPI void onWebviewChanged();
 #endif
-
-
 
 };

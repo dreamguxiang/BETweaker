@@ -13,14 +13,12 @@ class MoveOutdoorsGoal : public BaseMoveToBlockGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEOUTDOORSGOAL
 public:
     class MoveOutdoorsGoal& operator=(class MoveOutdoorsGoal const &) = delete;
     MoveOutdoorsGoal(class MoveOutdoorsGoal const &) = delete;
     MoveOutdoorsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveOutdoorsGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _setNextTargetTick();
 
-
 private:
-
 
 };

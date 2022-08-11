@@ -14,14 +14,12 @@ class UnknownBlockTypeRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNKNOWNBLOCKTYPEREGISTRY
 public:
     class UnknownBlockTypeRegistry& operator=(class UnknownBlockTypeRegistry const &) = delete;
     UnknownBlockTypeRegistry(class UnknownBlockTypeRegistry const &) = delete;
     UnknownBlockTypeRegistry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI void _registerBlock(std::string const &, unsigned __int64);
 
-
 private:
-
 
 };

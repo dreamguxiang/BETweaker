@@ -14,7 +14,6 @@ class FitDoubleXYRoom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FITDOUBLEXYROOM
 public:
     class FitDoubleXYRoom& operator=(class FitDoubleXYRoom const &) = delete;
@@ -22,14 +21,11 @@ public:
     FitDoubleXYRoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FitDoubleXYRoom();
     /*1*/ virtual bool fits(class RoomDefinition const &) const;
     /*2*/ virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITDOUBLEXYROOM
 #endif
-
-
 
 };

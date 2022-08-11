@@ -15,14 +15,12 @@ class HungerAttributeDelegate : public AttributeInstanceDelegate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUNGERATTRIBUTEDELEGATE
 public:
     class HungerAttributeDelegate& operator=(class HungerAttributeDelegate const &) = delete;
     HungerAttributeDelegate(class HungerAttributeDelegate const &) = delete;
     HungerAttributeDelegate() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HungerAttributeDelegate();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUNGERATTRIBUTEDELEGATE
 #endif
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
-
-
 
 };

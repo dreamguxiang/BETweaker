@@ -14,7 +14,6 @@ class BedrockItems {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKITEMS
 public:
     class BedrockItems& operator=(class BedrockItems const &) = delete;
@@ -22,14 +21,11 @@ public:
     BedrockItems() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKITEMS
 #endif
     MCAPI static class WeakPtr<class Item> mAir;
     MCAPI static void registerItems();
     MCAPI static void unregisterItems(class ItemRegistryRef);
-
-
 
 };

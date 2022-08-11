@@ -14,14 +14,12 @@ class ShieldItemUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIELDITEMUTILS
 public:
     class ShieldItemUtils& operator=(class ShieldItemUtils const &) = delete;
     ShieldItemUtils(class ShieldItemUtils const &) = delete;
     ShieldItemUtils() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEMUTILS
@@ -30,9 +28,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
-
 
 };

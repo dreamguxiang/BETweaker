@@ -14,14 +14,12 @@ class LegacyJigsawPlacement {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYJIGSAWPLACEMENT
 public:
     class LegacyJigsawPlacement& operator=(class LegacyJigsawPlacement const &) = delete;
     LegacyJigsawPlacement(class LegacyJigsawPlacement const &) = delete;
     LegacyJigsawPlacement() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYJIGSAWPLACEMENT
@@ -35,8 +33,6 @@ public:
     MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class PoolElementStructurePiece const &, class Random &, class JigsawBlockInfo const &, class BoundingBox const &, std::vector<class BoundingBox> &, class BlockPos const &, class StructureTemplatePool const *, class JigsawStructureRegistry const &, class Dimension &, class BlockVolume &, class BlockPos const &);
     MCAPI static class std::shared_ptr<bool> _setTerrainAdjustment(enum AdjustmentEffect, class BoundingBox const &, struct JigsawJunction const &, class Dimension &);
 
-
 private:
-
 
 };

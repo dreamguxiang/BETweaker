@@ -14,7 +14,6 @@ class StructurePoolActorPredicateActorMatch {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLACTORPREDICATEACTORMATCH
 public:
     class StructurePoolActorPredicateActorMatch& operator=(class StructurePoolActorPredicateActorMatch const &) = delete;
@@ -22,14 +21,11 @@ public:
     StructurePoolActorPredicateActorMatch() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructurePoolActorPredicateActorMatch();
     /*1*/ virtual bool test(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLACTORPREDICATEACTORMATCH
 #endif
     MCAPI StructurePoolActorPredicateActorMatch(std::string);
-
-
 
 };

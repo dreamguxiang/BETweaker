@@ -15,14 +15,12 @@ class PlayAnimationCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYANIMATIONCOMMAND
 public:
     class PlayAnimationCommand& operator=(class PlayAnimationCommand const &) = delete;
     PlayAnimationCommand(class PlayAnimationCommand const &) = delete;
     PlayAnimationCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayAnimationCommand();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static enum MolangVersion const mStopExpressionVersion;
-
 
 };

@@ -12,7 +12,6 @@ class CodeBuilderServerCommands {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERSERVERCOMMANDS
 public:
     class CodeBuilderServerCommands& operator=(class CodeBuilderServerCommands const &) = delete;
@@ -20,12 +19,9 @@ public:
     CodeBuilderServerCommands() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERSERVERCOMMANDS
 #endif
     MCAPI static void setupStandardServer(class Minecraft &, std::string const &);
-
-
 
 };

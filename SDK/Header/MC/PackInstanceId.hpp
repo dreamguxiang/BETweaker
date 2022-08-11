@@ -12,21 +12,17 @@ struct PackInstanceId {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCEID
 public:
     struct PackInstanceId& operator=(struct PackInstanceId const &) = delete;
     PackInstanceId(struct PackInstanceId const &) = delete;
     PackInstanceId() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCEID
+#endif
     MCAPI PackInstanceId(struct PackInstanceId &&);
     MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
     MCAPI ~PackInstanceId();
-
-protected:
-
-private:
 
 };

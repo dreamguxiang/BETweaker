@@ -14,7 +14,6 @@ class ItemStackNetManagerScreen {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSCREEN
 public:
     class ItemStackNetManagerScreen& operator=(class ItemStackNetManagerScreen const &) = delete;
@@ -22,14 +21,11 @@ public:
     ItemStackNetManagerScreen() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREEN
 #endif
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     MCAPI class EntityContext & getEntity();
     MCAPI class EntityContext const & getEntity() const;
-
-
 
 };

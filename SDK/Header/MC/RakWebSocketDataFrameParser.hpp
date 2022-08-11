@@ -15,14 +15,12 @@ class RakWebSocketDataFrameParser {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAMEPARSER
 public:
     class RakWebSocketDataFrameParser& operator=(class RakWebSocketDataFrameParser const &) = delete;
     RakWebSocketDataFrameParser(class RakWebSocketDataFrameParser const &) = delete;
     RakWebSocketDataFrameParser() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEPARSER
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const &, enum CloseStatusCode);
 
-
 private:
-
 
 };

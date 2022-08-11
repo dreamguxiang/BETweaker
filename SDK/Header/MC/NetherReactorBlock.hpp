@@ -15,14 +15,12 @@ class NetherReactorBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERREACTORBLOCK
 public:
     class NetherReactorBlock& operator=(class NetherReactorBlock const &) = delete;
     NetherReactorBlock(class NetherReactorBlock const &) = delete;
     NetherReactorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherReactorBlock();
@@ -49,7 +47,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERREACTORBLOCK
 #endif
     MCAPI NetherReactorBlock(std::string const &, int, class Material const &);
-
-
 
 };

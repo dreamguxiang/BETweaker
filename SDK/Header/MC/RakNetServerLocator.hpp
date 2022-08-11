@@ -23,14 +23,12 @@ struct AnnounceServerData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNETSERVERLOCATOR
 public:
     class RakNetServerLocator& operator=(class RakNetServerLocator const &) = delete;
     RakNetServerLocator(class RakNetServerLocator const &) = delete;
     RakNetServerLocator() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RakNetServerLocator();
@@ -77,8 +75,6 @@ public:
     MCAPI void _updateNetwork();
     MCAPI bool _updateQueuedPings();
 
-
 private:
-
 
 };

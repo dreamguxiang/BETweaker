@@ -15,14 +15,12 @@ class LakeFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAKEFEATURE
 public:
     class LakeFeature& operator=(class LakeFeature const &) = delete;
     LakeFeature(class LakeFeature const &) = delete;
     LakeFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LakeFeature();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 
-
 private:
-
 
 };

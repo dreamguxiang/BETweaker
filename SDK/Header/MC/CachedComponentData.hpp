@@ -14,7 +14,6 @@ class CachedComponentData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CACHEDCOMPONENTDATA
 public:
     class CachedComponentData& operator=(class CachedComponentData const &) = delete;
@@ -22,12 +21,9 @@ public:
     CachedComponentData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACHEDCOMPONENTDATA
 #endif
     MCAPI void cacheComponentData(class Block const &);
-
-
 
 };

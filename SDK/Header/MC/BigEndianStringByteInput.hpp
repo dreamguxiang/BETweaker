@@ -15,14 +15,12 @@ class BigEndianStringByteInput : public StringByteInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIGENDIANSTRINGBYTEINPUT
 public:
     class BigEndianStringByteInput& operator=(class BigEndianStringByteInput const &) = delete;
     BigEndianStringByteInput(class BigEndianStringByteInput const &) = delete;
     BigEndianStringByteInput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BigEndianStringByteInput();
@@ -35,7 +33,5 @@ public:
     /*11*/ virtual bool readBigEndianBytes(void *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
 #endif
-
-
 
 };

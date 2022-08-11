@@ -14,14 +14,12 @@ class AddOceanTemperatureOperationNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDOCEANTEMPERATUREOPERATIONNODE
 public:
     class AddOceanTemperatureOperationNode& operator=(class AddOceanTemperatureOperationNode const &) = delete;
     AddOceanTemperatureOperationNode(class AddOceanTemperatureOperationNode const &) = delete;
     AddOceanTemperatureOperationNode() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AddOceanTemperatureOperationNode();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<enum BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDOCEANTEMPERATUREOPERATIONNODE
 #endif
-
-
 
 };

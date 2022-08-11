@@ -15,13 +15,11 @@ class ActorEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTPACKET
 public:
     class ActorEventPacket& operator=(class ActorEventPacket const &) = delete;
     ActorEventPacket(class ActorEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorEventPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
     MCAPI ActorEventPacket();
-
-
 
 };

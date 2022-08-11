@@ -14,14 +14,12 @@ class HoldGroundGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOLDGROUNDGOAL
 public:
     class HoldGroundGoal& operator=(class HoldGroundGoal const &) = delete;
     HoldGroundGoal(class HoldGroundGoal const &) = delete;
     HoldGroundGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoldGroundGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDGROUNDGOAL
 #endif
     MCAPI HoldGroundGoal(class Mob &, float, bool, float, class ActorDefinitionTrigger const &);
-
-
 
 };

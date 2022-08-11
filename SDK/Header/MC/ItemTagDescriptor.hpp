@@ -14,7 +14,6 @@ class ItemTagDescriptor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMTAGDESCRIPTOR
 public:
     class ItemTagDescriptor& operator=(class ItemTagDescriptor const &) = delete;
@@ -22,24 +21,21 @@ public:
     ItemTagDescriptor() = delete;
 #endif
 
-
 public:
     /*0*/ virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /*1*/ virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const &, bool) const;
     /*2*/ virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
-    /*3*/ virtual std::string const & getFullName() const;
+    /*3*/ virtual std::string const & getFullName();
     /*4*/ virtual struct ItemDescriptor::ItemEntry getItem() const;
     /*5*/ virtual bool forEachItemUntil(class std::function<bool (class Item const &, short)>) const;
     /*6*/ virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /*7*/ virtual class std::optional<class CompoundTag> save() const;
     /*8*/ virtual void serialize(class Json::Value &) const;
     /*9*/ virtual enum ItemDescriptor::InternalType getType() const;
-    /*10*/ virtual bool shouldResolve() const;
+    /*10*/ virtual bool shouldResolve();
     /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
+    /*12*/ virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMTAGDESCRIPTOR
 #endif
-
-
 
 };

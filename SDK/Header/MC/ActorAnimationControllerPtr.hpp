@@ -14,14 +14,12 @@ class ActorAnimationControllerPtr {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERPTR
 public:
     class ActorAnimationControllerPtr& operator=(class ActorAnimationControllerPtr const &) = delete;
     ActorAnimationControllerPtr(class ActorAnimationControllerPtr const &) = delete;
     ActorAnimationControllerPtr() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERPTR
@@ -33,7 +31,5 @@ public:
     MCAPI class ActorAnimationController * operator->();
     MCAPI ~ActorAnimationControllerPtr();
     MCAPI static class ActorAnimationControllerPtr const NONE;
-
-
 
 };

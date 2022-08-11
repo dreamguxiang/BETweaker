@@ -15,13 +15,11 @@ class EnderChestContainer : public FillingContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCHESTCONTAINER
 public:
     class EnderChestContainer& operator=(class EnderChestContainer const &) = delete;
     EnderChestContainer(class EnderChestContainer const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnderChestContainer();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI EnderChestContainer();
     MCAPI static int const ITEMS_SIZE;
-
-
 
 };

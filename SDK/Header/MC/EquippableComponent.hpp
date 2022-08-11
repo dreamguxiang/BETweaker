@@ -14,14 +14,12 @@ class EquippableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPPABLECOMPONENT
 public:
     class EquippableComponent& operator=(class EquippableComponent const &) = delete;
     EquippableComponent(class EquippableComponent const &) = delete;
     EquippableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLECOMPONENT
@@ -35,7 +33,5 @@ public:
     MCAPI class EquippableComponent & operator=(class EquippableComponent &&);
     MCAPI std::vector<class ItemDescriptor> const * tryGetSlotAllowedItems(int) const;
     MCAPI ~EquippableComponent();
-
-
 
 };

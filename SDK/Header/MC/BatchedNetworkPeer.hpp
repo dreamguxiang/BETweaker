@@ -15,14 +15,12 @@ class BatchedNetworkPeer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATCHEDNETWORKPEER
 public:
     class BatchedNetworkPeer& operator=(class BatchedNetworkPeer const &) = delete;
     BatchedNetworkPeer(class BatchedNetworkPeer const &) = delete;
     BatchedNetworkPeer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BatchedNetworkPeer();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _startSendTask();
 
-
 private:
-
 
 };

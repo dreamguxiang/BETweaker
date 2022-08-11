@@ -16,7 +16,6 @@ class ActorIsVisibleTest : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISVISIBLETEST
 public:
     class ActorIsVisibleTest& operator=(class ActorIsVisibleTest const &) = delete;
@@ -24,14 +23,11 @@ public:
     ActorIsVisibleTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorIsVisibleTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORISVISIBLETEST
 #endif
-
-
 
 };

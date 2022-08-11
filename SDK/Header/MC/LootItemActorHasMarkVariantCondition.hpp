@@ -15,7 +15,6 @@ class LootItemActorHasMarkVariantCondition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMACTORHASMARKVARIANTCONDITION
 public:
     class LootItemActorHasMarkVariantCondition& operator=(class LootItemActorHasMarkVariantCondition const &) = delete;
@@ -23,14 +22,11 @@ public:
     LootItemActorHasMarkVariantCondition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootItemActorHasMarkVariantCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMACTORHASMARKVARIANTCONDITION
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
-
-
 
 };

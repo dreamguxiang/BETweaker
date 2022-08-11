@@ -14,14 +14,12 @@ class DragonHoldingPatternGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONHOLDINGPATTERNGOAL
 public:
     class DragonHoldingPatternGoal& operator=(class DragonHoldingPatternGoal const &) = delete;
     DragonHoldingPatternGoal(class DragonHoldingPatternGoal const &) = delete;
     DragonHoldingPatternGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonHoldingPatternGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void findNewTarget();
 
-
 private:
-
 
 };

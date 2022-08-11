@@ -13,13 +13,11 @@ class MangroveTreeCanopy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVETREECANOPY
 public:
     class MangroveTreeCanopy& operator=(class MangroveTreeCanopy const &) = delete;
     MangroveTreeCanopy(class MangroveTreeCanopy const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MangroveTreeCanopy();
@@ -27,7 +25,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVETREECANOPY
 #endif
     MCAPI MangroveTreeCanopy();
-
-
 
 };

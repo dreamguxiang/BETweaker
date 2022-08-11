@@ -12,7 +12,6 @@ class BiomeMetadata {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEMETADATA
 public:
     class BiomeMetadata& operator=(class BiomeMetadata const &) = delete;
@@ -20,12 +19,9 @@ public:
     BiomeMetadata() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEMETADATA
 #endif
     MCAPI ~BiomeMetadata();
-
-
 
 };

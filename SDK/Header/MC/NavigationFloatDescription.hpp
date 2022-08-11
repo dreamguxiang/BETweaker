@@ -15,7 +15,6 @@ class NavigationFloatDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONFLOATDESCRIPTION
 public:
     class NavigationFloatDescription& operator=(class NavigationFloatDescription const &) = delete;
@@ -23,13 +22,10 @@ public:
     NavigationFloatDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFloatDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLOATDESCRIPTION
 #endif
-
-
 
 };

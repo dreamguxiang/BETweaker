@@ -16,8 +16,6 @@ public:
 enum EAxis;
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILECOMPONENT
 #endif
@@ -67,8 +65,6 @@ public:
     MCAPI void _handleLightningOnHit(class Actor &);
     MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
 
-
 private:
-
 
 };

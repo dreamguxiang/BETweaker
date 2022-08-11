@@ -14,13 +14,11 @@ class ItemStackRequestActionCraftRecipeOptional {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
 public:
     class ItemStackRequestActionCraftRecipeOptional& operator=(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
     ItemStackRequestActionCraftRecipeOptional(class ItemStackRequestActionCraftRecipeOptional const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftRecipeOptional();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
-
-
 
 };

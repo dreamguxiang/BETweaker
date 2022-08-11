@@ -12,14 +12,12 @@ class InitialTickFilterSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INITIALTICKFILTERSYSTEM
 public:
     class InitialTickFilterSystem& operator=(class InitialTickFilterSystem const &) = delete;
     InitialTickFilterSystem(class InitialTickFilterSystem const &) = delete;
     InitialTickFilterSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INITIALTICKFILTERSYSTEM
@@ -28,7 +26,5 @@ public:
     MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
     MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();
     MCAPI static void tickingAreaFilterTickEntity(class StrictEntityContext &, class FlagComponent<struct UsesECSMovementFlag> const &, class FlagComponent<struct ActorMovementTickNeededFlag> const &, class TickWorldComponent &, struct CurrentTickComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &);
-
-
 
 };

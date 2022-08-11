@@ -15,14 +15,12 @@ class OceanMonumentPenthouse : public OceanMonumentPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTPENTHOUSE
 public:
     class OceanMonumentPenthouse& operator=(class OceanMonumentPenthouse const &) = delete;
     OceanMonumentPenthouse(class OceanMonumentPenthouse const &) = delete;
     OceanMonumentPenthouse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OceanMonumentPenthouse();
@@ -31,7 +29,5 @@ public:
     /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPENTHOUSE
 #endif
-
-
 
 };

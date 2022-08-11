@@ -14,19 +14,16 @@ struct SlotData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDATA
 public:
     struct SlotData& operator=(struct SlotData const &) = delete;
     SlotData(struct SlotData const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDATA
+#endif
     MCAPI SlotData();
     MCAPI ~SlotData();
-
-protected:
-
-private:
+    MCAPI static struct SlotData UNKNOWN_LOCATION;
 
 };

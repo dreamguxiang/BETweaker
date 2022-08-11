@@ -13,7 +13,6 @@ class IMinecraftEventing {
 public:
     enum StructureBlockActionType;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMINECRAFTEVENTING
 public:
     class IMinecraftEventing& operator=(class IMinecraftEventing const &) = delete;
@@ -21,13 +20,10 @@ public:
     IMinecraftEventing() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
     MCVAPI ~IMinecraftEventing();
 #endif
-
-
 
 };

@@ -14,14 +14,12 @@ class SwimWanderGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWANDERGOAL
 public:
     class SwimWanderGoal& operator=(class SwimWanderGoal const &) = delete;
     SwimWanderGoal(class SwimWanderGoal const &) = delete;
     SwimWanderGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwimWanderGoal();
@@ -39,8 +37,6 @@ public:
 //protected:
     MCAPI bool _setWantedPosition();
 
-
 protected:
-
 
 };

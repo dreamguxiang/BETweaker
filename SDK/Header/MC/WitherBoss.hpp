@@ -16,14 +16,12 @@ class WitherBoss : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERBOSS
 public:
     class WitherBoss& operator=(class WitherBoss const &) = delete;
     WitherBoss(class WitherBoss const &) = delete;
     WitherBoss() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -47,7 +45,7 @@ public:
     /*111*/ virtual void __unk_vfn_111();
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*174*/ virtual bool canFreeze() const;
+    /*174*/ virtual bool canFreeze();
     /*182*/ virtual void __unk_vfn_182();
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*196*/ virtual void __unk_vfn_196();
@@ -101,9 +99,7 @@ public:
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
     MCAPI bool canShoot();
 
-
 private:
     MCAPI static int const TIME_BEFORE_MOVING;
-
 
 };

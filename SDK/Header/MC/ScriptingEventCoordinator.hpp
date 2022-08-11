@@ -12,7 +12,6 @@ class ScriptingEventCoordinator {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGEVENTCOORDINATOR
 public:
     class ScriptingEventCoordinator& operator=(class ScriptingEventCoordinator const &) = delete;
@@ -20,14 +19,11 @@ public:
     ScriptingEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGEVENTCOORDINATOR
 #endif
     MCAPI class ScriptingEventHandler & getScriptingEventHandler();
     MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<enum CoordinatorResult>>);
-
-
 
 };

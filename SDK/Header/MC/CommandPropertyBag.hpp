@@ -15,13 +15,11 @@ class CommandPropertyBag {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPROPERTYBAG
 public:
     class CommandPropertyBag& operator=(class CommandPropertyBag const &) = delete;
     CommandPropertyBag(class CommandPropertyBag const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
@@ -33,7 +31,5 @@ public:
     MCAPI void set(std::string const &, class BlockPos const &);
     MCAPI void set(std::string const &, class Json::Value const &);
     MCAPI void set(std::string const &, class Vec3);
-
-
 
 };

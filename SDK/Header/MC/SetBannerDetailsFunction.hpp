@@ -16,14 +16,12 @@ class SetBannerDetailsFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBANNERDETAILSFUNCTION
 public:
     class SetBannerDetailsFunction& operator=(class SetBannerDetailsFunction const &) = delete;
     SetBannerDetailsFunction(class SetBannerDetailsFunction const &) = delete;
     SetBannerDetailsFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetBannerDetailsFunction();
@@ -37,8 +35,6 @@ public:
     MCAPI void _apply(class ItemStackBase &, class Random &, class LootTableContext &) const;
     MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum ItemColor>> &, class Json::Value const &);
 
-
 private:
-
 
 };

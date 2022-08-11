@@ -14,22 +14,18 @@ struct PlayerTickComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERTICKCOMPONENT
 public:
     struct PlayerTickComponent& operator=(struct PlayerTickComponent const &) = delete;
     PlayerTickComponent(struct PlayerTickComponent const &) = delete;
     PlayerTickComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKCOMPONENT
+#endif
     MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
     MCAPI struct PlayerTickComponent & operator=(struct PlayerTickComponent &&);
     MCAPI ~PlayerTickComponent();
-
-protected:
-
-private:
 
 };

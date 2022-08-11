@@ -15,14 +15,12 @@ class GenericPathNavigation : public PathNavigation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICPATHNAVIGATION
 public:
     class GenericPathNavigation& operator=(class GenericPathNavigation const &) = delete;
     GenericPathNavigation(class GenericPathNavigation const &) = delete;
     GenericPathNavigation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GenericPathNavigation();
@@ -33,7 +31,5 @@ public:
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
 #endif
-
-
 
 };

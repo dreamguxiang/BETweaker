@@ -14,13 +14,11 @@ class NpcComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCCOMPONENT
 public:
     class NpcComponent& operator=(class NpcComponent const &) = delete;
     NpcComponent(class NpcComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
@@ -66,7 +64,6 @@ public:
     MCAPI void _loadData(class Actor &);
     MCAPI std::string _serializeActions() const;
 
-
 private:
     MCAPI static std::string const ACTIONS_TAG;
     MCAPI static std::string const INTERACTIVE_TAG;
@@ -75,6 +72,5 @@ private:
     MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
     MCAPI static std::string const SCENE_NAME_TAG;
     MCAPI static std::string const URL_TAG;
-
 
 };

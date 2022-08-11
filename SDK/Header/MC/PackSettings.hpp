@@ -15,14 +15,12 @@ class PackSettings {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGS
 public:
     class PackSettings& operator=(class PackSettings const &) = delete;
     PackSettings(class PackSettings const &) = delete;
     PackSettings() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGS
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 
-
 private:
-
 
 };

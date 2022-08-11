@@ -15,7 +15,6 @@ class ReplaceItemCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLACEITEMCOMMAND
 public:
     class ReplaceItemCommand& operator=(class ReplaceItemCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     ReplaceItemCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ReplaceItemCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLACEITEMCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

@@ -14,14 +14,12 @@ class VexRandomMoveGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEXRANDOMMOVEGOAL
 public:
     class VexRandomMoveGoal& operator=(class VexRandomMoveGoal const &) = delete;
     VexRandomMoveGoal(class VexRandomMoveGoal const &) = delete;
     VexRandomMoveGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VexRandomMoveGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXRANDOMMOVEGOAL
 #endif
     MCAPI VexRandomMoveGoal(class Mob &);
-
-
 
 };

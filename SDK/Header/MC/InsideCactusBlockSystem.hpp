@@ -12,7 +12,6 @@ class InsideCactusBlockSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDECACTUSBLOCKSYSTEM
 public:
     class InsideCactusBlockSystem& operator=(class InsideCactusBlockSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     InsideCactusBlockSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDECACTUSBLOCKSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
-
-
 
 };

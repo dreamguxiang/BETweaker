@@ -14,14 +14,12 @@ class ExperienceRewardComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDCOMPONENT
 public:
     class ExperienceRewardComponent& operator=(class ExperienceRewardComponent const &) = delete;
     ExperienceRewardComponent(class ExperienceRewardComponent const &) = delete;
     ExperienceRewardComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMPONENT
@@ -36,9 +34,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const mIsExperienceDropEnabledTag;
-
 
 };

@@ -34,14 +34,12 @@ public:
         return (this->*rv)();
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCKACTOR
 public:
     class DispenserBlockActor& operator=(class DispenserBlockActor const &) = delete;
     DispenserBlockActor(class DispenserBlockActor const &) = delete;
     DispenserBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
@@ -65,7 +63,5 @@ public:
 #endif
     MCAPI DispenserBlockActor(class BlockPos);
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
-
-
 
 };

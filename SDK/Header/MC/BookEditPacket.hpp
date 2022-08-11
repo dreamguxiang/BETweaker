@@ -15,12 +15,10 @@ class BookEditPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKEDITPACKET
 public:
     class BookEditPacket& operator=(class BookEditPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BookEditPacket();
@@ -38,8 +36,6 @@ public:
     MCAPI void _readPage(class ReadOnlyBinaryStream &);
     MCAPI void _writePage(class BinaryStream &) const;
 
-
 private:
-
 
 };

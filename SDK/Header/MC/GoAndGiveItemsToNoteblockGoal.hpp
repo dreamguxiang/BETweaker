@@ -12,14 +12,12 @@ class GoAndGiveItemsToNoteblockGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOANDGIVEITEMSTONOTEBLOCKGOAL
 public:
     class GoAndGiveItemsToNoteblockGoal& operator=(class GoAndGiveItemsToNoteblockGoal const &) = delete;
     GoAndGiveItemsToNoteblockGoal(class GoAndGiveItemsToNoteblockGoal const &) = delete;
     GoAndGiveItemsToNoteblockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GoAndGiveItemsToNoteblockGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOANDGIVEITEMSTONOTEBLOCKGOAL
 #endif
     MCAPI GoAndGiveItemsToNoteblockGoal(class Mob &);
-
-
 
 };

@@ -13,18 +13,15 @@ struct ActorEventResponseCollection {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSECOLLECTION
 public:
     struct ActorEventResponseCollection& operator=(struct ActorEventResponseCollection const &) = delete;
     ActorEventResponseCollection(struct ActorEventResponseCollection const &) = delete;
     ActorEventResponseCollection() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSECOLLECTION
+#endif
+    MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> buildSchema(std::string const &, class SemVersion const &, class Factory<class ActorEventResponse> const &);
 
 };

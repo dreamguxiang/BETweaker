@@ -14,7 +14,6 @@ class BoostItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTITEM
 public:
     class BoostItem& operator=(class BoostItem const &) = delete;
@@ -22,13 +21,10 @@ public:
     BoostItem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTITEM
 #endif
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
     MCAPI ~BoostItem();
-
-
 
 };

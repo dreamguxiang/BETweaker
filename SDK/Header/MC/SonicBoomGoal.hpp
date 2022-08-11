@@ -12,14 +12,12 @@ class SonicBoomGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SONICBOOMGOAL
 public:
     class SonicBoomGoal& operator=(class SonicBoomGoal const &) = delete;
     SonicBoomGoal(class SonicBoomGoal const &) = delete;
     SonicBoomGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SonicBoomGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SONICBOOMGOAL
 #endif
     MCAPI SonicBoomGoal(class Mob &);
-
-
 
 };

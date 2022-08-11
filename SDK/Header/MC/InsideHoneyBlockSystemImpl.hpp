@@ -12,7 +12,6 @@ class InsideHoneyBlockSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEHONEYBLOCKSYSTEMIMPL
 public:
     class InsideHoneyBlockSystemImpl& operator=(class InsideHoneyBlockSystemImpl const &) = delete;
@@ -20,13 +19,10 @@ public:
     InsideHoneyBlockSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEMIMPL
 #endif
     MCAPI static bool isSlidingDown(class BlockPos const &, class Vec3 const &, class Vec3 const &, class Vec2 const &);
     MCAPI static void movementSystem(class StrictEntityContext const &, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag> const &, struct AABBShapeComponent const &, struct StateVectorComponent &, struct FallDistanceComponent &);
-
-
 
 };

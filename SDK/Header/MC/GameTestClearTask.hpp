@@ -14,7 +14,6 @@ class GameTestClearTask {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTCLEARTASK
 public:
     class GameTestClearTask& operator=(class GameTestClearTask const &) = delete;
@@ -22,14 +21,11 @@ public:
     GameTestClearTask() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCLEARTASK
 #endif
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     MCAPI bool isDone() const;
     MCAPI void tick();
-
-
 
 };

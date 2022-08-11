@@ -14,14 +14,12 @@ class FullPlayerInventoryWrapper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FULLPLAYERINVENTORYWRAPPER
 public:
     class FullPlayerInventoryWrapper& operator=(class FullPlayerInventoryWrapper const &) = delete;
     FullPlayerInventoryWrapper(class FullPlayerInventoryWrapper const &) = delete;
     FullPlayerInventoryWrapper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FULLPLAYERINVENTORYWRAPPER
@@ -38,8 +36,6 @@ public:
     MCAPI int _removeSimpleContainerItem(class SimpleContainer &, enum ContainerID, int, class ItemStack const &, bool, int);
     MCAPI void _sendCursorSlotPacket() const;
 
-
 private:
-
 
 };

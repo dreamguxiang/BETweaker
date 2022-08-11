@@ -16,14 +16,12 @@ class ServerCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCOMMANDORIGIN
 public:
     class ServerCommandOrigin& operator=(class ServerCommandOrigin const &) = delete;
     ServerCommandOrigin(class ServerCommandOrigin const &) = delete;
     ServerCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerCommandOrigin();
@@ -37,16 +35,14 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*18*/ virtual bool isSelectorExpansionAllowed();
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual bool isValid() const;
+    /*30*/ virtual bool isValid();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
 #endif
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     MCAPI static std::unique_ptr<class ServerCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
-
-
 
 };

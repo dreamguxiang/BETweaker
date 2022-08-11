@@ -12,23 +12,19 @@ struct ContainerValidationSlotInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONSLOTINFO
 public:
     struct ContainerValidationSlotInfo& operator=(struct ContainerValidationSlotInfo const &) = delete;
     ContainerValidationSlotInfo(struct ContainerValidationSlotInfo const &) = delete;
     ContainerValidationSlotInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTINFO
+#endif
     MCAPI ContainerValidationSlotInfo(struct ContainerValidationSlotData const &, class std::shared_ptr<class SimpleSparseContainer>, class std::shared_ptr<class ContainerValidationBase const>);
     MCAPI class ItemStack const & getItem() const;
     MCAPI operator bool() const;
     MCAPI void setItem(class ItemStack const &);
     MCAPI ~ContainerValidationSlotInfo();
-
-protected:
-
-private:
 
 };

@@ -15,13 +15,11 @@ class TaskResult {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKRESULT
 public:
     class TaskResult& operator=(class TaskResult const &) = delete;
     TaskResult(class TaskResult const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKRESULT
@@ -37,7 +35,5 @@ public:
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;
     MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
-
-
 
 };

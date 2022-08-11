@@ -15,14 +15,12 @@ class DedicatedServerCommands {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVERCOMMANDS
 public:
     class DedicatedServerCommands& operator=(class DedicatedServerCommands const &) = delete;
     DedicatedServerCommands(class DedicatedServerCommands const &) = delete;
     DedicatedServerCommands() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVERCOMMANDS
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<std::string> mSaveAllFileList;
-
 
 };

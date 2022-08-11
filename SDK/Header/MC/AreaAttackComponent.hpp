@@ -14,13 +14,11 @@ class AreaAttackComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKCOMPONENT
 public:
     class AreaAttackComponent& operator=(class AreaAttackComponent const &) = delete;
     AreaAttackComponent(class AreaAttackComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAATTACKCOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI AreaAttackComponent();
     MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
     MCAPI ~AreaAttackComponent();
-
-
 
 };

@@ -15,14 +15,12 @@ class TemplateStructurePiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPLATESTRUCTUREPIECE
 public:
     class TemplateStructurePiece& operator=(class TemplateStructurePiece const &) = delete;
     TemplateStructurePiece(class TemplateStructurePiece const &) = delete;
     TemplateStructurePiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TemplateStructurePiece();
@@ -38,10 +36,8 @@ public:
 //private:
     MCAPI void _setBoundingBoxFromTemplate();
 
-
 protected:
 
 private:
-
 
 };

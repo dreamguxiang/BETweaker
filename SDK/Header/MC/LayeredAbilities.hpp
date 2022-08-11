@@ -13,8 +13,6 @@ class LayeredAbilities {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYEREDABILITIES
 #endif
@@ -47,8 +45,6 @@ public:
 //private:
     MCAPI void _handlePlayerPermissionsChange(enum PlayerPermissionLevel, enum PlayerPermissionLevel);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class BlockPileFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPILEFEATURE
 public:
     class BlockPileFeature& operator=(class BlockPileFeature const &) = delete;
     BlockPileFeature(class BlockPileFeature const &) = delete;
     BlockPileFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockPileFeature();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPILEFEATURE
 #endif
     MCAPI BlockPileFeature(class Block const &);
-
-
 
 };

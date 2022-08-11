@@ -14,14 +14,12 @@ class JigsawStructureBlockTagRulesRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREBLOCKTAGRULESREGISTRY
 public:
     class JigsawStructureBlockTagRulesRegistry& operator=(class JigsawStructureBlockTagRulesRegistry const &) = delete;
     JigsawStructureBlockTagRulesRegistry(class JigsawStructureBlockTagRulesRegistry const &) = delete;
     JigsawStructureBlockTagRulesRegistry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKTAGRULESREGISTRY
@@ -30,7 +28,5 @@ public:
     MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const * lookupByName(std::string) const;
     MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule>>>> &&);
     MCAPI ~JigsawStructureBlockTagRulesRegistry();
-
-
 
 };

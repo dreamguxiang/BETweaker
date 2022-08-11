@@ -15,14 +15,12 @@ class GrassBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRASSBLOCK
 public:
     class GrassBlock& operator=(class GrassBlock const &) = delete;
     GrassBlock(class GrassBlock const &) = delete;
     GrassBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrassBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -83,8 +81,6 @@ public:
 //private:
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;
 
-
 private:
-
 
 };

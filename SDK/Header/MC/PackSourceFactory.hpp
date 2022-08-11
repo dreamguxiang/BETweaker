@@ -15,14 +15,12 @@ class PackSourceFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCEFACTORY
 public:
     class PackSourceFactory& operator=(class PackSourceFactory const &) = delete;
     PackSourceFactory(class PackSourceFactory const &) = delete;
     PackSourceFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackSourceFactory();
@@ -43,7 +41,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEFACTORY
 #endif
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const &);
-
-
 
 };

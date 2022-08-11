@@ -21,13 +21,11 @@ struct SavedCommand {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCCOMMANDACTION
 public:
     class NpcCommandAction& operator=(class NpcCommandAction const &) = delete;
     NpcCommandAction(class NpcCommandAction const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcCommandAction();
@@ -42,10 +40,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const COMMAND_LINE_KEY;
     MCAPI static std::string const COMMAND_VERSION_KEY;
-
 
 };

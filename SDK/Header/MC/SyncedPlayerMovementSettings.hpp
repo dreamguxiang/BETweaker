@@ -12,20 +12,16 @@ class SyncedPlayerMovementSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCEDPLAYERMOVEMENTSETTINGS
 public:
     class SyncedPlayerMovementSettings& operator=(class SyncedPlayerMovementSettings const &) = delete;
     SyncedPlayerMovementSettings(class SyncedPlayerMovementSettings const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDPLAYERMOVEMENTSETTINGS
 #endif
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCAPI SyncedPlayerMovementSettings();
-
-
 
 };

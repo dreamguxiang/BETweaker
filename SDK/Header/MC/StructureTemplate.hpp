@@ -30,14 +30,12 @@ public:
     LIAPI StructureTemplateData* getData();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
 public:
     class StructureTemplate& operator=(class StructureTemplate const &) = delete;
     StructureTemplate(class StructureTemplate const &) = delete;
     StructureTemplate() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
@@ -64,8 +62,6 @@ public:
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 
-
 private:
-
 
 };

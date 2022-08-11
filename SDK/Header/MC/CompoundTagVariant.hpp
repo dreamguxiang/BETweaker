@@ -74,14 +74,12 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGVARIANT
 public:
     class CompoundTagVariant& operator=(class CompoundTagVariant const &) = delete;
     CompoundTagVariant(class CompoundTagVariant const &) = delete;
     CompoundTagVariant() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGVARIANT
@@ -91,7 +89,5 @@ public:
     MCAPI class Tag * get();
     MCAPI class Tag const * get() const;
     MCAPI ~CompoundTagVariant();
-
-
 
 };

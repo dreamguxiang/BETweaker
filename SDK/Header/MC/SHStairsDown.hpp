@@ -15,14 +15,12 @@ class SHStairsDown : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHSTAIRSDOWN
 public:
     class SHStairsDown& operator=(class SHStairsDown const &) = delete;
     SHStairsDown(class SHStairsDown const &) = delete;
     SHStairsDown() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHStairsDown();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTAIRSDOWN
 #endif
-
-
 
 };

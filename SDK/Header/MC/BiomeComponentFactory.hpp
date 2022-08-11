@@ -15,14 +15,12 @@ class BiomeComponentFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMECOMPONENTFACTORY
 public:
     class BiomeComponentFactory& operator=(class BiomeComponentFactory const &) = delete;
     BiomeComponentFactory(class BiomeComponentFactory const &) = delete;
     BiomeComponentFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMECOMPONENTFACTORY
@@ -31,7 +29,5 @@ public:
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
     MCAPI void registrationFinished();
-
-
 
 };

@@ -15,13 +15,11 @@ class EducationSettingsPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONSETTINGSPACKET
 public:
     class EducationSettingsPacket& operator=(class EducationSettingsPacket const &) = delete;
     EducationSettingsPacket(class EducationSettingsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EducationSettingsPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI EducationSettingsPacket(struct EducationLevelSettings);
     MCAPI EducationSettingsPacket();
-
-
 
 };

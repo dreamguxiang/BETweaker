@@ -15,14 +15,12 @@ class StrollTowardsVillageGoal : public MoveToVillageGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STROLLTOWARDSVILLAGEGOAL
 public:
     class StrollTowardsVillageGoal& operator=(class StrollTowardsVillageGoal const &) = delete;
     StrollTowardsVillageGoal(class StrollTowardsVillageGoal const &) = delete;
     StrollTowardsVillageGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StrollTowardsVillageGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STROLLTOWARDSVILLAGEGOAL
 #endif
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
-
-
 
 };

@@ -16,14 +16,12 @@ class BlockSource {
 public:
 	LIAPI BlockInstance getBlockInstance(BlockPos);
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE
 public:
     class BlockSource& operator=(class BlockSource const &) = delete;
     BlockSource(class BlockSource const &) = delete;
     BlockSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockSource();
@@ -208,10 +206,8 @@ public:
     MCAPI struct Brightness _getRawBrightness(class BlockPos const &, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum TickingQueueType);
 
-
 protected:
 
 private:
-
 
 };

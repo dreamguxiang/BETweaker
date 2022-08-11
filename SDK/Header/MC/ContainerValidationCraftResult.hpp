@@ -12,20 +12,16 @@ struct ContainerValidationCraftResult {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONCRAFTRESULT
 public:
     struct ContainerValidationCraftResult& operator=(struct ContainerValidationCraftResult const &) = delete;
     ContainerValidationCraftResult(struct ContainerValidationCraftResult const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONCRAFTRESULT
+#endif
     MCAPI ContainerValidationCraftResult();
     MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
     MCAPI ~ContainerValidationCraftResult();
-
-protected:
-
-private:
 
 };

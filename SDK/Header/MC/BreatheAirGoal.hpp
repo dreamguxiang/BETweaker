@@ -14,14 +14,12 @@ class BreatheAirGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHEAIRGOAL
 public:
     class BreatheAirGoal& operator=(class BreatheAirGoal const &) = delete;
     BreatheAirGoal(class BreatheAirGoal const &) = delete;
     BreatheAirGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BreatheAirGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI int _determineApproximateDepth();
     MCAPI void _findAirPosition();
 
-
 private:
-
 
 };

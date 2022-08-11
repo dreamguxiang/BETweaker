@@ -15,20 +15,16 @@ struct ChunkLoadTelemetryData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADTELEMETRYDATA
 public:
     struct ChunkLoadTelemetryData& operator=(struct ChunkLoadTelemetryData const &) = delete;
     ChunkLoadTelemetryData(struct ChunkLoadTelemetryData const &) = delete;
     ChunkLoadTelemetryData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADTELEMETRYDATA
+#endif
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     MCAPI class Json::Value toJson() const;
-
-protected:
-
-private:
 
 };

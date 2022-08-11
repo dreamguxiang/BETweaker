@@ -15,14 +15,12 @@ class Coral : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORAL
 public:
     class Coral& operator=(class Coral const &) = delete;
     Coral(class Coral const &) = delete;
     Coral() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Coral();
@@ -34,7 +32,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -54,10 +52,10 @@ public:
     /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
+    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &);
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -65,9 +63,9 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
-    /*136*/ virtual int getColor(class Block const &) const;
-    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*136*/ virtual int getColor(class Block const &);
+    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &);
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
@@ -90,8 +88,6 @@ public:
 //protected:
     MCAPI void checkAlive(class BlockSource &, class BlockPos const &) const;
 
-
 protected:
-
 
 };

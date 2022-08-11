@@ -16,14 +16,12 @@ class SetItemDamageFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETITEMDAMAGEFUNCTION
 public:
     class SetItemDamageFunction& operator=(class SetItemDamageFunction const &) = delete;
     SetItemDamageFunction(class SetItemDamageFunction const &) = delete;
     SetItemDamageFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetItemDamageFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETITEMDAMAGEFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

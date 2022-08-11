@@ -14,14 +14,12 @@ class ItemStackRequestActionTransferBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONTRANSFERBASE
 public:
     class ItemStackRequestActionTransferBase& operator=(class ItemStackRequestActionTransferBase const &) = delete;
     ItemStackRequestActionTransferBase(class ItemStackRequestActionTransferBase const &) = delete;
     ItemStackRequestActionTransferBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionTransferBase();
@@ -35,7 +33,5 @@ public:
     MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
-
-
 
 };

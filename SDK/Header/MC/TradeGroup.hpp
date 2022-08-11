@@ -12,19 +12,15 @@ struct TradeGroup {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEGROUP
 public:
     struct TradeGroup& operator=(struct TradeGroup const &) = delete;
     TradeGroup(struct TradeGroup const &) = delete;
     TradeGroup() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEGROUP
+#endif
     MCAPI ~TradeGroup();
-
-protected:
-
-private:
 
 };

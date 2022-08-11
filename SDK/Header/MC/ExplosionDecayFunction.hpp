@@ -16,14 +16,12 @@ class ExplosionDecayFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONDECAYFUNCTION
 public:
     class ExplosionDecayFunction& operator=(class ExplosionDecayFunction const &) = delete;
     ExplosionDecayFunction(class ExplosionDecayFunction const &) = delete;
     ExplosionDecayFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExplosionDecayFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSIONDECAYFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

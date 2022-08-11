@@ -16,14 +16,12 @@ class Skeleton : public HumanoidMonster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKELETON
 public:
     class Skeleton& operator=(class Skeleton const &) = delete;
     Skeleton(class Skeleton const &) = delete;
     Skeleton() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Skeleton();
@@ -68,9 +66,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
-
 
 };

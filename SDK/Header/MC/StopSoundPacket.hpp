@@ -15,13 +15,11 @@ class StopSoundPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPSOUNDPACKET
 public:
     class StopSoundPacket& operator=(class StopSoundPacket const &) = delete;
     StopSoundPacket(class StopSoundPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StopSoundPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI StopSoundPacket(std::string const &, bool);
     MCAPI StopSoundPacket();
-
-
 
 };

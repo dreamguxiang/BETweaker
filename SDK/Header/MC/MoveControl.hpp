@@ -14,13 +14,11 @@ class MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROL
 public:
     class MoveControl& operator=(class MoveControl const &) = delete;
     MoveControl(class MoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveControl();
@@ -41,8 +39,6 @@ public:
     MCAPI float calculateMoveSpeed(class MoveControlComponent const &, class Mob &, class Vec3 const &, float);
     MCAPI float calculateYRotation(class MoveControlComponent const &, class Mob const &, class Vec3 const &, float);
 
-
 protected:
-
 
 };

@@ -12,14 +12,12 @@ class StayNearNoteblockGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STAYNEARNOTEBLOCKGOAL
 public:
     class StayNearNoteblockGoal& operator=(class StayNearNoteblockGoal const &) = delete;
     StayNearNoteblockGoal(class StayNearNoteblockGoal const &) = delete;
     StayNearNoteblockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StayNearNoteblockGoal();
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 
-
 private:
-
 
 };

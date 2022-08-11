@@ -15,7 +15,6 @@ class NBMonsterThrone : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBMONSTERTHRONE
 public:
     class NBMonsterThrone& operator=(class NBMonsterThrone const &) = delete;
@@ -23,14 +22,11 @@ public:
     NBMonsterThrone() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NBMonsterThrone();
     /*2*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBMONSTERTHRONE
 #endif
-
-
 
 };

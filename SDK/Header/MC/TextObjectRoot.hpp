@@ -15,14 +15,12 @@ class TextObjectRoot {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTROOT
 public:
     class TextObjectRoot& operator=(class TextObjectRoot const &) = delete;
     TextObjectRoot(class TextObjectRoot const &) = delete;
     TextObjectRoot() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TextObjectRoot();
@@ -35,7 +33,5 @@ public:
     MCAPI void clear();
     MCAPI bool isEmpty() const;
     MCAPI class ResolvedTextObject resolveRoot(class Actor const &, class Scoreboard const &) const;
-
-
 
 };

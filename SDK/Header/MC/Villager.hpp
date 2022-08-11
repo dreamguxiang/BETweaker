@@ -16,14 +16,12 @@ class Villager : public VillagerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGER
 public:
     class Villager& operator=(class Villager const &) = delete;
     Villager(class Villager const &) = delete;
     Villager() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -57,7 +55,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGER
 #endif
     MCAPI Villager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

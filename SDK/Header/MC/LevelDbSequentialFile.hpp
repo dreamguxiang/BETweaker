@@ -15,14 +15,12 @@ class LevelDbSequentialFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBSEQUENTIALFILE
 public:
     class LevelDbSequentialFile& operator=(class LevelDbSequentialFile const &) = delete;
     LevelDbSequentialFile(class LevelDbSequentialFile const &) = delete;
     LevelDbSequentialFile() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelDbSequentialFile();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBSEQUENTIALFILE
 #endif
     MCAPI LevelDbSequentialFile(class Core::File &&);
-
-
 
 };

@@ -15,13 +15,11 @@ class LecternUpdatePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LECTERNUPDATEPACKET
 public:
     class LecternUpdatePacket& operator=(class LecternUpdatePacket const &) = delete;
     LecternUpdatePacket(class LecternUpdatePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LecternUpdatePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNUPDATEPACKET
 #endif
     MCAPI LecternUpdatePacket();
-
-
 
 };

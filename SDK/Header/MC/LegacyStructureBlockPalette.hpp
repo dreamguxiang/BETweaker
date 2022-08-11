@@ -14,13 +14,11 @@ class LegacyStructureBlockPalette {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREBLOCKPALETTE
 public:
     class LegacyStructureBlockPalette& operator=(class LegacyStructureBlockPalette const &) = delete;
     LegacyStructureBlockPalette(class LegacyStructureBlockPalette const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREBLOCKPALETTE
@@ -30,7 +28,5 @@ public:
     MCAPI void clearMap();
     MCAPI class Block const & getBlock(int);
     MCAPI ~LegacyStructureBlockPalette();
-
-
 
 };

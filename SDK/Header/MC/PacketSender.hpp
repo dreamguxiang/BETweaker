@@ -14,7 +14,6 @@ class PacketSender {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETSENDER
 public:
     class PacketSender& operator=(class PacketSender const &) = delete;
@@ -22,11 +21,8 @@ public:
     PacketSender() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETSENDER
 #endif
-
-
 
 };

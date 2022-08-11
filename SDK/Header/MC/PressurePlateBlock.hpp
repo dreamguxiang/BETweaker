@@ -15,14 +15,12 @@ class PressurePlateBlock : public BasePressurePlateBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRESSUREPLATEBLOCK
 public:
     class PressurePlateBlock& operator=(class PressurePlateBlock const &) = delete;
     PressurePlateBlock(class PressurePlateBlock const &) = delete;
     PressurePlateBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PressurePlateBlock();
@@ -50,7 +48,7 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -69,7 +67,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRESSUREPLATEBLOCK
 #endif
     MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum PressurePlateBlock::Sensitivity);
-
-
 
 };

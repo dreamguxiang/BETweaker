@@ -15,14 +15,12 @@ class CompoundCreatorContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDCREATORCONTAINERMANAGERMODEL
 public:
     class CompoundCreatorContainerManagerModel& operator=(class CompoundCreatorContainerManagerModel const &) = delete;
     CompoundCreatorContainerManagerModel(class CompoundCreatorContainerManagerModel const &) = delete;
     CompoundCreatorContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompoundCreatorContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERMANAGERMODEL
 #endif
     MCAPI CompoundCreatorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

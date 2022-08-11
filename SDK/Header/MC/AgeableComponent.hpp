@@ -14,14 +14,12 @@ class AgeableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLECOMPONENT
 public:
     class AgeableComponent& operator=(class AgeableComponent const &) = delete;
     AgeableComponent(class AgeableComponent const &) = delete;
     AgeableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLECOMPONENT
@@ -31,7 +29,5 @@ public:
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setAge(int);
-
-
 
 };

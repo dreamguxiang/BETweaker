@@ -15,7 +15,6 @@ class KelpFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KELPFEATURE
 public:
     class KelpFeature& operator=(class KelpFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     KelpFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~KelpFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KELPFEATURE
 #endif
-
-
 
 };

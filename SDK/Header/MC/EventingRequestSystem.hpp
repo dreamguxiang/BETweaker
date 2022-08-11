@@ -12,14 +12,12 @@ class EventingRequestSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGREQUESTSYSTEM
 public:
     class EventingRequestSystem& operator=(class EventingRequestSystem const &) = delete;
     EventingRequestSystem(class EventingRequestSystem const &) = delete;
     EventingRequestSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUESTSYSTEM
@@ -29,8 +27,6 @@ public:
 //private:
     MCAPI static void _eventingRequestSystem(class StrictEntityContext const &, struct EventingRequestQueueComponent &, class LevelComponent &);
 
-
 private:
-
 
 };

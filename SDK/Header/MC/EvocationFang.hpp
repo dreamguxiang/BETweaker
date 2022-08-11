@@ -15,14 +15,12 @@ class EvocationFang : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVOCATIONFANG
 public:
     class EvocationFang& operator=(class EvocationFang const &) = delete;
     EvocationFang(class EvocationFang const &) = delete;
     EvocationFang() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~EvocationFang();
@@ -57,8 +55,6 @@ public:
 //private:
     MCAPI void _dealDamageTo(class Mob &);
 
-
 private:
-
 
 };

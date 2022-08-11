@@ -15,18 +15,15 @@ struct EventResponseCollection {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTRESPONSECOLLECTION
 public:
     struct EventResponseCollection& operator=(struct EventResponseCollection const &) = delete;
     EventResponseCollection(struct EventResponseCollection const &) = delete;
     EventResponseCollection() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSECOLLECTION
+#endif
+    MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> buildSchema(std::string const &, class SemVersion const &, class Factory<class EventResponse> const &);
 
 };

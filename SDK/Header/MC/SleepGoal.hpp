@@ -15,14 +15,12 @@ class SleepGoal : public MoveToPOIGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLEEPGOAL
 public:
     class SleepGoal& operator=(class SleepGoal const &) = delete;
     SleepGoal(class SleepGoal const &) = delete;
     SleepGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SleepGoal();
@@ -45,8 +43,6 @@ public:
     MCAPI void _setSleepVariables();
     MCAPI void _wakeUp();
 
-
 private:
-
 
 };

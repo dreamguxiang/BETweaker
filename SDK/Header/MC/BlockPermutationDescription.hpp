@@ -12,7 +12,6 @@ class BlockPermutationDescription {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPERMUTATIONDESCRIPTION
 public:
     class BlockPermutationDescription& operator=(class BlockPermutationDescription const &) = delete;
@@ -20,12 +19,9 @@ public:
     BlockPermutationDescription() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPERMUTATIONDESCRIPTION
 #endif
     MCAPI ~BlockPermutationDescription();
-
-
 
 };

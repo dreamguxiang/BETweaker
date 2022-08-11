@@ -15,14 +15,12 @@ class BannerBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERBLOCKACTOR
 public:
     class BannerBlockActor& operator=(class BannerBlockActor const &) = delete;
     BannerBlockActor(class BannerBlockActor const &) = delete;
     BannerBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BannerBlockActor();
@@ -56,7 +54,5 @@ public:
     MCAPI static int getPatternCount(class CompoundTag const *);
     MCAPI static bool isDefaultBanner(class ItemStackBase const &);
     MCAPI static bool removeLastPattern(class ItemStack &, class Player &);
-
-
 
 };

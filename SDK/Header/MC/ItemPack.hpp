@@ -12,13 +12,11 @@ class ItemPack {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMPACK
 public:
     class ItemPack& operator=(class ItemPack const &) = delete;
     ItemPack(class ItemPack const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMPACK
@@ -26,7 +24,5 @@ public:
     MCAPI ItemPack();
     MCAPI void add(class RecipeIngredient const &, int);
     MCAPI ~ItemPack();
-
-
 
 };

@@ -14,14 +14,12 @@ class OnFireComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRECOMPONENT
 public:
     class OnFireComponent& operator=(class OnFireComponent const &) = delete;
     OnFireComponent(class OnFireComponent const &) = delete;
     OnFireComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRECOMPONENT
@@ -33,10 +31,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const LEGACY_FIRE_TAG;
     MCAPI static std::string const ON_FIRE_TAG;
-
 
 };

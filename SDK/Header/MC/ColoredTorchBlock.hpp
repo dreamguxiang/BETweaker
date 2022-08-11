@@ -15,14 +15,12 @@ class ColoredTorchBlock : public TorchBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLOREDTORCHBLOCK
 public:
     class ColoredTorchBlock& operator=(class ColoredTorchBlock const &) = delete;
     ColoredTorchBlock(class ColoredTorchBlock const &) = delete;
     ColoredTorchBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ColoredTorchBlock();
@@ -47,7 +45,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
+    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
@@ -59,7 +57,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
@@ -77,8 +75,6 @@ public:
 //private:
     MCAPI enum ColoredTorchColor _getColor(class Block const &) const;
 
-
 private:
-
 
 };

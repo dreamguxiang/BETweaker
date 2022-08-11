@@ -12,14 +12,12 @@ class ChargeableItemComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEABLEITEMCOMPONENT
 public:
     class ChargeableItemComponent& operator=(class ChargeableItemComponent const &) = delete;
     ChargeableItemComponent(class ChargeableItemComponent const &) = delete;
     ChargeableItemComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChargeableItemComponent();
@@ -36,7 +34,5 @@ public:
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
-
 
 };

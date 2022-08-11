@@ -12,7 +12,6 @@ class TagUpdateToken {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGUPDATETOKEN
 public:
     class TagUpdateToken& operator=(class TagUpdateToken const &) = delete;
@@ -20,12 +19,9 @@ public:
     TagUpdateToken() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAGUPDATETOKEN
 #endif
     MCAPI ~TagUpdateToken();
-
-
 
 };

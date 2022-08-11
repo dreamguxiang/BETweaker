@@ -14,13 +14,11 @@ class DamageSensorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORCOMPONENT
 public:
     class DamageSensorComponent& operator=(class DamageSensorComponent const &) = delete;
     DamageSensorComponent(class DamageSensorComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORCOMPONENT
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI bool _recordDamage(class Actor &, class Actor *, enum ActorDamageCause const &, class Actor *, int, bool, class VariantParameterList, bool);
 
-
 private:
-
 
 };

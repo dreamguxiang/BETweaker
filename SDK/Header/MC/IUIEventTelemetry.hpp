@@ -14,7 +14,6 @@ class IUIEventTelemetry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUIEVENTTELEMETRY
 public:
     class IUIEventTelemetry& operator=(class IUIEventTelemetry const &) = delete;
@@ -22,11 +21,8 @@ public:
     IUIEventTelemetry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUIEVENTTELEMETRY
 #endif
-
-
 
 };

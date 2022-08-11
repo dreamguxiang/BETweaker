@@ -12,14 +12,12 @@ class TaskQueuePortContextImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKQUEUEPORTCONTEXTIMPL
 public:
     class TaskQueuePortContextImpl& operator=(class TaskQueuePortContextImpl const &) = delete;
     TaskQueuePortContextImpl(class TaskQueuePortContextImpl const &) = delete;
     TaskQueuePortContextImpl() = delete;
 #endif
-
 
 public:
     /*0*/ virtual unsigned int AddRef();
@@ -36,7 +34,5 @@ public:
     /*11*/ virtual bool RemoveSuspend();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
 #endif
-
-
 
 };

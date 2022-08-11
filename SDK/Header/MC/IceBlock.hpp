@@ -15,14 +15,12 @@ class IceBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEBLOCK
 public:
     class IceBlock& operator=(class IceBlock const &) = delete;
     IceBlock(class IceBlock const &) = delete;
     IceBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IceBlock();
@@ -51,7 +49,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -69,7 +67,5 @@ public:
 #endif
     MCAPI IceBlock(std::string const &, int, bool);
     MCAPI static void melt(class BlockSource &, class BlockPos const &);
-
-
 
 };

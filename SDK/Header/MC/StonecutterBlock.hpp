@@ -15,14 +15,12 @@ class StonecutterBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONECUTTERBLOCK
 public:
     class StonecutterBlock& operator=(class StonecutterBlock const &) = delete;
     StonecutterBlock(class StonecutterBlock const &) = delete;
     StonecutterBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StonecutterBlock();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
@@ -67,14 +65,12 @@ public:
     /*170*/ virtual void __unk_vfn_170();
     /*173*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERBLOCK
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI StonecutterBlock(std::string const &, int);
-
-
 
 };

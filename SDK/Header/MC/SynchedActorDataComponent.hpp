@@ -12,19 +12,15 @@ struct SynchedActorDataComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATACOMPONENT
 public:
     struct SynchedActorDataComponent& operator=(struct SynchedActorDataComponent const &) = delete;
     SynchedActorDataComponent(struct SynchedActorDataComponent const &) = delete;
     SynchedActorDataComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATACOMPONENT
+#endif
     MCAPI ~SynchedActorDataComponent();
-
-protected:
-
-private:
 
 };

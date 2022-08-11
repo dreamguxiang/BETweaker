@@ -14,13 +14,11 @@ class DynamicJumpControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICJUMPCONTROL
 public:
     class DynamicJumpControl& operator=(class DynamicJumpControl const &) = delete;
     DynamicJumpControl(class DynamicJumpControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DynamicJumpControl();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
 #endif
     MCAPI DynamicJumpControl();
-
-
 
 };

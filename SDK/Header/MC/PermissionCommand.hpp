@@ -15,14 +15,12 @@ class PermissionCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONCOMMAND
 public:
     class PermissionCommand& operator=(class PermissionCommand const &) = delete;
     PermissionCommand(class PermissionCommand const &) = delete;
     PermissionCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PermissionCommand();
@@ -36,9 +34,7 @@ public:
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
     MCAPI static class PermissionsFile * mPermissionsFile;
-
 
 };

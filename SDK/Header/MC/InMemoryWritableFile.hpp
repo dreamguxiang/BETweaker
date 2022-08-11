@@ -14,14 +14,12 @@ class InMemoryWritableFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYWRITABLEFILE
 public:
     class InMemoryWritableFile& operator=(class InMemoryWritableFile const &) = delete;
     InMemoryWritableFile(class InMemoryWritableFile const &) = delete;
     InMemoryWritableFile() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InMemoryWritableFile();
@@ -32,7 +30,5 @@ public:
     MCVAPI class leveldb::Status Sync();
 #endif
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
-
-
 
 };

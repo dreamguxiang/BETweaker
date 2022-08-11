@@ -22,12 +22,10 @@ struct LegacyMapping {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFILTERGROUP
 public:
     ActorFilterGroup() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorFilterGroup();
@@ -45,8 +43,6 @@ public:
     MCAPI bool _processLegacyArray(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
     MCAPI bool _processLegacyMember(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
 
-
 protected:
-
 
 };

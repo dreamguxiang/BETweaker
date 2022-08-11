@@ -13,14 +13,12 @@ class InternalItemDescriptor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALITEMDESCRIPTOR
 public:
     class InternalItemDescriptor& operator=(class InternalItemDescriptor const &) = delete;
     InternalItemDescriptor(class InternalItemDescriptor const &) = delete;
     InternalItemDescriptor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
@@ -35,7 +33,5 @@ public:
     /*9*/ virtual enum ItemDescriptor::InternalType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALITEMDESCRIPTOR
 #endif
-
-
 
 };

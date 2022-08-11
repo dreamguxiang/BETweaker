@@ -14,13 +14,11 @@ class TeleportToSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTTOSUBCOMPONENT
 public:
     class TeleportToSubcomponent& operator=(class TeleportToSubcomponent const &) = delete;
     TeleportToSubcomponent(class TeleportToSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TeleportToSubcomponent();
@@ -33,7 +31,5 @@ public:
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI TeleportToSubcomponent();
-
-
 
 };

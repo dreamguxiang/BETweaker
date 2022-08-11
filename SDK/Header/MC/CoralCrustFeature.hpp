@@ -15,14 +15,12 @@ class CoralCrustFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALCRUSTFEATURE
 public:
     class CoralCrustFeature& operator=(class CoralCrustFeature const &) = delete;
     CoralCrustFeature(class CoralCrustFeature const &) = delete;
     CoralCrustFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CoralCrustFeature();
@@ -37,8 +35,6 @@ public:
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
 
-
 private:
-
 
 };

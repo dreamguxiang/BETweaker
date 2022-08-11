@@ -14,7 +14,6 @@ class ActorMovementTickFilterSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTTICKFILTERSYSTEM
 public:
     class ActorMovementTickFilterSystem& operator=(class ActorMovementTickFilterSystem const &) = delete;
@@ -22,13 +21,10 @@ public:
     ActorMovementTickFilterSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTTICKFILTERSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createBase();
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
-
-
 
 };

@@ -14,14 +14,12 @@ class LayDownGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAYDOWNGOAL
 public:
     class LayDownGoal& operator=(class LayDownGoal const &) = delete;
     LayDownGoal(class LayDownGoal const &) = delete;
     LayDownGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LayDownGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYDOWNGOAL
 #endif
     MCAPI LayDownGoal(class Mob &, int, int);
-
-
 
 };

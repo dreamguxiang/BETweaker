@@ -14,14 +14,12 @@ class ScoreboardEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDEVENTLISTENER
 public:
     class ScoreboardEventListener& operator=(class ScoreboardEventListener const &) = delete;
     ScoreboardEventListener(class ScoreboardEventListener const &) = delete;
     ScoreboardEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
@@ -30,7 +28,5 @@ public:
     MCVAPI enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     MCVAPI enum EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
 #endif
-
-
 
 };

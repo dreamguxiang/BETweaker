@@ -15,14 +15,12 @@ class MineshaftCorridor : public MineshaftPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTCORRIDOR
 public:
     class MineshaftCorridor& operator=(class MineshaftCorridor const &) = delete;
     MineshaftCorridor(class MineshaftCorridor const &) = delete;
     MineshaftCorridor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftCorridor();
@@ -39,8 +37,6 @@ public:
     MCAPI void _fillPillarDownOrChainUp(class BlockSource &, int, int, int, class BoundingBox const &);
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource &, class BoundingBox const &, int, int, int);
 
-
 private:
-
 
 };

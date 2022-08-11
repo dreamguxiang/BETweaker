@@ -14,14 +14,12 @@ class SculkCatalystBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKCATALYSTBLOCKACTOR
 public:
     class SculkCatalystBlockActor& operator=(class SculkCatalystBlockActor const &) = delete;
     SculkCatalystBlockActor(class SculkCatalystBlockActor const &) = delete;
     SculkCatalystBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
 
-
 private:
-
 
 };

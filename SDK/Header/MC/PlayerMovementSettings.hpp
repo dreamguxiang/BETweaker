@@ -14,18 +14,16 @@ struct PlayerMovementSettings {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVEMENTSETTINGS
 public:
     struct PlayerMovementSettings& operator=(struct PlayerMovementSettings const &) = delete;
     PlayerMovementSettings(struct PlayerMovementSettings const &) = delete;
     PlayerMovementSettings() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTSETTINGS
+#endif
+    MCAPI static struct PlayerMovementSettings const INVALID;
+    MCAPI static struct PlayerMovementSettings getDefault();
 
 };

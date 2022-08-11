@@ -15,14 +15,12 @@ class FlatWorldGeneratorOptions {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLATWORLDGENERATOROPTIONS
 public:
     class FlatWorldGeneratorOptions& operator=(class FlatWorldGeneratorOptions const &) = delete;
     FlatWorldGeneratorOptions(class FlatWorldGeneratorOptions const &) = delete;
     FlatWorldGeneratorOptions() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOROPTIONS
@@ -34,8 +32,6 @@ public:
 //protected:
     MCAPI bool _load(class Json::Value const &, class BlockPalette const &, class LevelData const &);
 
-
 protected:
-
 
 };

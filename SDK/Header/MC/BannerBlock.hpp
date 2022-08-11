@@ -15,14 +15,12 @@ class BannerBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERBLOCK
 public:
     class BannerBlock& operator=(class BannerBlock const &) = delete;
     BannerBlock(class BannerBlock const &) = delete;
     BannerBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BannerBlock();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
@@ -60,7 +58,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /*147*/ virtual int getVariant(class Block const &) const;
+    /*147*/ virtual int getVariant(class Block const &);
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();
@@ -84,8 +82,6 @@ public:
 //private:
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const *>) const;
 
-
 private:
-
 
 };

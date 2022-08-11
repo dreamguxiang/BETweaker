@@ -15,14 +15,12 @@ class StopCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPCOMMAND
 public:
     class StopCommand& operator=(class StopCommand const &) = delete;
     StopCommand(class StopCommand const &) = delete;
     StopCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StopCommand();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class DedicatedServer * mServer;
-
 
 };

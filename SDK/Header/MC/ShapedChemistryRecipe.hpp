@@ -15,14 +15,12 @@ class ShapedChemistryRecipe : public ShapedRecipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDCHEMISTRYRECIPE
 public:
     class ShapedChemistryRecipe& operator=(class ShapedChemistryRecipe const &) = delete;
     ShapedChemistryRecipe(class ShapedChemistryRecipe const &) = delete;
     ShapedChemistryRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShapedChemistryRecipe();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPEDCHEMISTRYRECIPE
 #endif
     MCAPI static class mce::UUID const ID;
-
-
 
 };

@@ -15,7 +15,6 @@ class SetBlockCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBLOCKCOMMAND
 public:
     class SetBlockCommand& operator=(class SetBlockCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     SetBlockCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SetBlockCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

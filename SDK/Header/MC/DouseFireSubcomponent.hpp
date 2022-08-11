@@ -14,13 +14,11 @@ class DouseFireSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUSEFIRESUBCOMPONENT
 public:
     class DouseFireSubcomponent& operator=(class DouseFireSubcomponent const &) = delete;
     DouseFireSubcomponent(class DouseFireSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DouseFireSubcomponent();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI DouseFireSubcomponent();
     MCAPI void douseFire(class Actor &, class BlockSource &, class BlockPos const &);
-
-
 
 };

@@ -14,13 +14,11 @@ class MoveActorAbsoluteData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEDATA
 public:
     class MoveActorAbsoluteData& operator=(class MoveActorAbsoluteData const &) = delete;
     MoveActorAbsoluteData(class MoveActorAbsoluteData const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORABSOLUTEDATA
@@ -35,7 +33,5 @@ public:
     MCAPI void setRot(class Vec2 const &);
     MCAPI void setYBodyRot(float);
     MCAPI void setYHeadRot(float);
-
-
 
 };

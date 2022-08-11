@@ -13,7 +13,6 @@ class VanillaAncientCityJigsawStructureElements {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAANCIENTCITYJIGSAWSTRUCTUREELEMENTS
 public:
     class VanillaAncientCityJigsawStructureElements& operator=(class VanillaAncientCityJigsawStructureElements const &) = delete;
@@ -21,12 +20,9 @@ public:
     VanillaAncientCityJigsawStructureElements() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAANCIENTCITYJIGSAWSTRUCTUREELEMENTS
 #endif
     MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry &, class JigsawStructureRegistry &);
-
-
 
 };

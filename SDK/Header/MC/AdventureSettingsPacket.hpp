@@ -23,13 +23,11 @@ public:
     int unk72;                                      // 72
     unsigned int mCustomStoredPermissions;          // 76
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGSPACKET
 public:
     class AdventureSettingsPacket& operator=(class AdventureSettingsPacket const &) = delete;
     AdventureSettingsPacket(class AdventureSettingsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AdventureSettingsPacket();
@@ -46,8 +44,6 @@ public:
     MCAPI void _initAbilitiesData(class Abilities const &);
     MCAPI void _initCustomCacheData(class Abilities const &);
 
-
 private:
-
 
 };

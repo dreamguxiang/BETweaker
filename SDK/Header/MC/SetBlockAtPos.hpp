@@ -15,14 +15,12 @@ class SetBlockAtPos {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBLOCKATPOS
 public:
     class SetBlockAtPos& operator=(class SetBlockAtPos const &) = delete;
     SetBlockAtPos(class SetBlockAtPos const &) = delete;
     SetBlockAtPos() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetBlockAtPos();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKATPOS
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

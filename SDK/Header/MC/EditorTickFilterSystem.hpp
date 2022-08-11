@@ -12,7 +12,6 @@ class EditorTickFilterSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDITORTICKFILTERSYSTEM
 public:
     class EditorTickFilterSystem& operator=(class EditorTickFilterSystem const &) = delete;
@@ -20,14 +19,11 @@ public:
     EditorTickFilterSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORTICKFILTERSYSTEM
 #endif
     MCAPI static void _addPauseTickNeeded(class StrictEntityContext &, class ActorTickNeededComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EditorActorPauseTickNeededComponent> &);
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
     MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
-
-
 
 };

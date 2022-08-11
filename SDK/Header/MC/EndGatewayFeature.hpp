@@ -15,7 +15,6 @@ class EndGatewayFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDGATEWAYFEATURE
 public:
     class EndGatewayFeature& operator=(class EndGatewayFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     EndGatewayFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndGatewayFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYFEATURE
 #endif
-
-
 
 };

@@ -17,13 +17,11 @@ public:
     struct SubChunkPacketData;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET
 public:
     class SubChunkPacket& operator=(class SubChunkPacket const &) = delete;
     SubChunkPacket(class SubChunkPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SubChunkPacket();
@@ -35,7 +33,5 @@ public:
 #endif
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
     MCAPI SubChunkPacket();
-
-
 
 };

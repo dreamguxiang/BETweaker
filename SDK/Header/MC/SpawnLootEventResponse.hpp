@@ -15,14 +15,12 @@ class SpawnLootEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNLOOTEVENTRESPONSE
 public:
     class SpawnLootEventResponse& operator=(class SpawnLootEventResponse const &) = delete;
     SpawnLootEventResponse(class SpawnLootEventResponse const &) = delete;
     SpawnLootEventResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnLootEventResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNLOOTEVENTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

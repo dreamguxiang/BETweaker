@@ -14,13 +14,11 @@ class ConsumeItemNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMNODE
 public:
     class ConsumeItemNode& operator=(class ConsumeItemNode const &) = delete;
     ConsumeItemNode(class ConsumeItemNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ConsumeItemNode();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMNODE
 #endif
     MCAPI ConsumeItemNode();
-
-
 
 };

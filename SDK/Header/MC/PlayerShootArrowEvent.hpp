@@ -12,19 +12,15 @@ struct PlayerShootArrowEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSHOOTARROWEVENT
 public:
     struct PlayerShootArrowEvent& operator=(struct PlayerShootArrowEvent const &) = delete;
     PlayerShootArrowEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSHOOTARROWEVENT
+#endif
     MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const &);
     MCAPI ~PlayerShootArrowEvent();
-
-protected:
-
-private:
 
 };

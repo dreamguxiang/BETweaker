@@ -14,14 +14,12 @@ class NetheriteArmorEquippedListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERITEARMOREQUIPPEDLISTENER
 public:
     class NetheriteArmorEquippedListener& operator=(class NetheriteArmorEquippedListener const &) = delete;
     NetheriteArmorEquippedListener(class NetheriteArmorEquippedListener const &) = delete;
     NetheriteArmorEquippedListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetheriteArmorEquippedListener();
@@ -54,7 +52,5 @@ public:
     /*27*/ virtual enum EventResult onEvent(struct ActorEquippedArmorEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERITEARMOREQUIPPEDLISTENER
 #endif
-
-
 
 };

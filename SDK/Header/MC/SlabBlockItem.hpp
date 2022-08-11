@@ -16,14 +16,12 @@ class SlabBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLABBLOCKITEM
 public:
     class SlabBlockItem& operator=(class SlabBlockItem const &) = delete;
     SlabBlockItem(class SlabBlockItem const &) = delete;
     SlabBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlabBlockItem();
@@ -40,6 +38,7 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLABBLOCKITEM
@@ -49,8 +48,6 @@ public:
 //private:
     MCAPI bool _canConvertToDoubleBlock(class ItemStackBase &, class Actor &, unsigned char &, class Block const &) const;
 
-
 private:
-
 
 };

@@ -27,13 +27,11 @@ public:
         return value;
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELATIVEFLOAT
 public:
     class RelativeFloat& operator=(class RelativeFloat const &) = delete;
     RelativeFloat(class RelativeFloat const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELATIVEFLOAT
@@ -41,7 +39,5 @@ public:
     MCAPI RelativeFloat(float, bool);
     MCAPI RelativeFloat();
     MCAPI float getValue(float) const;
-
-
 
 };

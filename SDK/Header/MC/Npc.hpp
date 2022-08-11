@@ -16,7 +16,6 @@ class Npc : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPC
 public:
     class Npc& operator=(class Npc const &) = delete;
@@ -24,13 +23,12 @@ public:
     Npc() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Npc();
     /*41*/ virtual void __unk_vfn_41();
-    /*60*/ virtual bool canShowNameTag() const;
+    /*60*/ virtual bool canShowNameTag();
     /*61*/ virtual void __unk_vfn_61();
     /*65*/ virtual std::string getFormattedNameTag() const;
     /*68*/ virtual void __unk_vfn_68();
@@ -44,10 +42,10 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle() const;
+    /*194*/ virtual bool canBePulledIntoVehicle();
     /*196*/ virtual void __unk_vfn_196();
     /*203*/ virtual void buildDebugInfo(std::string &) const;
-    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &);
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();
@@ -61,7 +59,7 @@ public:
     /*286*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
-    /*350*/ virtual bool canExistWhenDisallowMob() const;
+    /*350*/ virtual bool canExistWhenDisallowMob();
     /*351*/ virtual void __unk_vfn_351();
     /*360*/ virtual void newServerAiStep();
     /*361*/ virtual void _serverAiMobStep();
@@ -76,7 +74,5 @@ public:
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static std::string const SKIN_ID_TAG;
     MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
-
-
 
 };

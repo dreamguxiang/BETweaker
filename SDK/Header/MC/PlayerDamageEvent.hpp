@@ -12,20 +12,16 @@ struct PlayerDamageEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDAMAGEEVENT
 public:
     struct PlayerDamageEvent& operator=(struct PlayerDamageEvent const &) = delete;
     PlayerDamageEvent(struct PlayerDamageEvent const &) = delete;
     PlayerDamageEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDAMAGEEVENT
+#endif
     MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
     MCAPI ~PlayerDamageEvent();
-
-protected:
-
-private:
 
 };

@@ -12,7 +12,6 @@ class SoundDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDDEFINITION
 public:
     class SoundDefinition& operator=(class SoundDefinition const &) = delete;
@@ -20,12 +19,9 @@ public:
     SoundDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDDEFINITION
 #endif
     MCAPI ~SoundDefinition();
-
-
 
 };

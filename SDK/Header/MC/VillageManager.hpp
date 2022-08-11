@@ -16,14 +16,12 @@ public:
 enum BedAvailabilityState;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER
 public:
     class VillageManager& operator=(class VillageManager const &) = delete;
     VillageManager(class VillageManager const &) = delete;
     VillageManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEMANAGER
@@ -62,11 +60,9 @@ public:
     MCAPI void _tryAssignPOIOrCreateVillage(class std::shared_ptr<class POIInstance> &&);
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);
 
-
 private:
     MCAPI static unsigned __int64 const MAX_POI_QUERIES;
     MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
     MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
-
 
 };

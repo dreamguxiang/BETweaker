@@ -15,14 +15,12 @@ class NBBridgeStraight : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBBRIDGESTRAIGHT
 public:
     class NBBridgeStraight& operator=(class NBBridgeStraight const &) = delete;
     NBBridgeStraight(class NBBridgeStraight const &) = delete;
     NBBridgeStraight() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBBridgeStraight();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBBRIDGESTRAIGHT
 #endif
-
-
 
 };

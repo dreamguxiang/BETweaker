@@ -14,14 +14,12 @@ class RandomizableBlockActorFillingContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
 public:
     class RandomizableBlockActorFillingContainer& operator=(class RandomizableBlockActorFillingContainer const &) = delete;
     RandomizableBlockActorFillingContainer(class RandomizableBlockActorFillingContainer const &) = delete;
     RandomizableBlockActorFillingContainer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
@@ -32,7 +30,5 @@ public:
     MCVAPI ~RandomizableBlockActorFillingContainer();
 #endif
     MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
-
-
 
 };

@@ -15,13 +15,11 @@ class ContainerSetDataPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSETDATAPACKET
 public:
     class ContainerSetDataPacket& operator=(class ContainerSetDataPacket const &) = delete;
     ContainerSetDataPacket(class ContainerSetDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerSetDataPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
     MCAPI ContainerSetDataPacket();
-
-
 
 };

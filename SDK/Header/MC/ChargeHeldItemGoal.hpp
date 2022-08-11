@@ -14,14 +14,12 @@ class ChargeHeldItemGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEHELDITEMGOAL
 public:
     class ChargeHeldItemGoal& operator=(class ChargeHeldItemGoal const &) = delete;
     ChargeHeldItemGoal(class ChargeHeldItemGoal const &) = delete;
     ChargeHeldItemGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChargeHeldItemGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEHELDITEMGOAL
 #endif
     MCAPI ChargeHeldItemGoal(class Mob &);
-
-
 
 };

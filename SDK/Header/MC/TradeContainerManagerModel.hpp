@@ -15,14 +15,12 @@ class TradeContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADECONTAINERMANAGERMODEL
 public:
     class TradeContainerManagerModel& operator=(class TradeContainerManagerModel const &) = delete;
     TradeContainerManagerModel(class TradeContainerManagerModel const &) = delete;
     TradeContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TradeContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI class Actor * getEntity() const;
-
-
 
 };

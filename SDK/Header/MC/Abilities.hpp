@@ -50,12 +50,10 @@ class Abilities {
 #define AFTER_EXTRA
 // Add Member There
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIES
 public:
     Abilities() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
@@ -89,9 +87,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
-
 
 };

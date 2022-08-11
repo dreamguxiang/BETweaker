@@ -16,7 +16,6 @@ class WrittenBookItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WRITTENBOOKITEM
 public:
     class WrittenBookItem& operator=(class WrittenBookItem const &) = delete;
@@ -24,17 +23,16 @@ public:
     WrittenBookItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WrittenBookItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
+    /*51*/ virtual bool isGlint(class ItemStackBase const &);
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract() const;
+    /*60*/ virtual bool requiresInteract();
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
@@ -46,6 +44,7 @@ public:
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*119*/ virtual std::string getInteractText(class Player const &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
 #endif
     MCAPI WrittenBookItem(std::string const &, int);
@@ -66,7 +65,5 @@ public:
     MCAPI static int getGeneration(class CompoundTag const *);
     MCAPI static int getPageCount(class ItemStack const &);
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
-
-
 
 };

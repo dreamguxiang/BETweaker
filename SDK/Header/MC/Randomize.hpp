@@ -14,14 +14,12 @@ class Randomize {
 // Add Member There
     char size[16];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZE
 public:
     class Randomize& operator=(class Randomize const &) = delete;
     Randomize(class Randomize const &) = delete;
     Randomize() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
@@ -37,7 +35,5 @@ public:
     MCAPI int nextIntInclusive(int, int) const;
     MCAPI ~Randomize();
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
-
-
 
 };

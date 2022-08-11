@@ -16,7 +16,6 @@ class FindBlockDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDBLOCKDEFINITION
 public:
     class FindBlockDefinition& operator=(class FindBlockDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     FindBlockDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FindBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDBLOCKDEFINITION
 #endif
-
-
 
 };

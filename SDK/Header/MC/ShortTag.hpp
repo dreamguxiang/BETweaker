@@ -24,13 +24,11 @@ public:
     LIAPI operator short() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHORTTAG
 public:
     class ShortTag& operator=(class ShortTag const &) = delete;
     ShortTag(class ShortTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShortTag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI ShortTag(short);
     MCAPI ShortTag();
-
-
 
 };

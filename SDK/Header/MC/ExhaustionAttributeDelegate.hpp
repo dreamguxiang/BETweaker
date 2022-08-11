@@ -15,7 +15,6 @@ class ExhaustionAttributeDelegate : public AttributeInstanceDelegate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXHAUSTIONATTRIBUTEDELEGATE
 public:
     class ExhaustionAttributeDelegate& operator=(class ExhaustionAttributeDelegate const &) = delete;
@@ -23,14 +22,11 @@ public:
     ExhaustionAttributeDelegate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONATTRIBUTEDELEGATE
 #endif
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
-
-
 
 };

@@ -12,19 +12,15 @@ class AppLifecycleContext {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPLIFECYCLECONTEXT
 public:
     class AppLifecycleContext& operator=(class AppLifecycleContext const &) = delete;
     AppLifecycleContext(class AppLifecycleContext const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPLIFECYCLECONTEXT
 #endif
     MCAPI AppLifecycleContext();
-
-
 
 };

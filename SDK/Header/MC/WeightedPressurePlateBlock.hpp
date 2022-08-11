@@ -15,14 +15,12 @@ class WeightedPressurePlateBlock : public BasePressurePlateBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEIGHTEDPRESSUREPLATEBLOCK
 public:
     class WeightedPressurePlateBlock& operator=(class WeightedPressurePlateBlock const &) = delete;
     WeightedPressurePlateBlock(class WeightedPressurePlateBlock const &) = delete;
     WeightedPressurePlateBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WeightedPressurePlateBlock();
@@ -64,14 +62,12 @@ public:
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual int getTickDelay() const;
     /*193*/ virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
-    /*194*/ virtual int getSignalForData(int) const;
-    /*195*/ virtual int getRedstoneSignal(int) const;
+    /*194*/ virtual int getSignalForData(int);
+    /*195*/ virtual int getRedstoneSignal(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEIGHTEDPRESSUREPLATEBLOCK
 #endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;
-
-
 
 };

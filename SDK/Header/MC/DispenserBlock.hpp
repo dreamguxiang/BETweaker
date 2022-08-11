@@ -18,14 +18,12 @@ public:
         return getFacing(a1);
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCK
 public:
     class DispenserBlock& operator=(class DispenserBlock const &) = delete;
     DispenserBlock(class DispenserBlock const &) = delete;
     DispenserBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DispenserBlock();
@@ -54,8 +52,8 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -67,7 +65,7 @@ public:
     /*148*/ virtual void __unk_vfn_148();
     /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
@@ -92,8 +90,6 @@ public:
     MCAPI class Vec3 getDispensePosition(class BlockSource &, class Vec3 const &) const;
     MCAPI unsigned char getFacing(class Block const &) const;
 
-
 protected:
-
 
 };

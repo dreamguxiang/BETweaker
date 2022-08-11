@@ -30,19 +30,15 @@ public:
         , fake_name(fake) {
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 public:
     struct ScorePacketInfo& operator=(struct ScorePacketInfo const &) = delete;
     ScorePacketInfo(struct ScorePacketInfo const &) = delete;
     ScorePacketInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREPACKETINFO
+#endif
     MCAPI ~ScorePacketInfo();
-
-protected:
-
-private:
 
 };

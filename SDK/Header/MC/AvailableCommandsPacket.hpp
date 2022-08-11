@@ -113,13 +113,11 @@ inline std::vector<std::string> getSoftEnumValues(std::string const& name)
 
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVAILABLECOMMANDSPACKET
 public:
     class AvailableCommandsPacket& operator=(class AvailableCommandsPacket const &) = delete;
     AvailableCommandsPacket(class AvailableCommandsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AvailableCommandsPacket();
@@ -131,7 +129,5 @@ public:
 #endif
     MCAPI AvailableCommandsPacket(std::vector<std::string> const &, std::vector<std::string> const &, std::vector<struct AvailableCommandsPacket::EnumData> &&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData> &&, std::vector<struct AvailableCommandsPacket::CommandData> &&, std::vector<struct AvailableCommandsPacket::SoftEnumData> &&);
     MCAPI AvailableCommandsPacket();
-
-
 
 };

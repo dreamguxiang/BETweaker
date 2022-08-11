@@ -14,14 +14,12 @@ class NapGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAPGOAL
 public:
     class NapGoal& operator=(class NapGoal const &) = delete;
     NapGoal(class NapGoal const &) = delete;
     NapGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NapGoal();
@@ -41,9 +39,7 @@ public:
     MCAPI bool _detectsMobs() const;
     MCAPI void _setCooldown();
 
-
 private:
     MCAPI static float const MOB_DETECT_TIME;
-
 
 };

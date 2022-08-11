@@ -14,13 +14,11 @@ class CommandOutputParameter {
     std::string str;
     int type;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTPARAMETER
 public:
     class CommandOutputParameter& operator=(class CommandOutputParameter const &) = delete;
     CommandOutputParameter() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPARAMETER
@@ -42,7 +40,5 @@ public:
     MCAPI CommandOutputParameter(enum CommandOutputParameter::NoCountType);
     MCAPI CommandOutputParameter(bool);
     MCAPI ~CommandOutputParameter();
-
-
 
 };

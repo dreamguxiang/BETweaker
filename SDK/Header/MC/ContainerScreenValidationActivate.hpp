@@ -13,7 +13,6 @@ class ContainerScreenValidationActivate : public ContainerScreenValidation {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATIONACTIVATE
 public:
     class ContainerScreenValidationActivate& operator=(class ContainerScreenValidationActivate const &) = delete;
@@ -21,13 +20,10 @@ public:
     ContainerScreenValidationActivate() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ContainerScreenValidationActivate();
     /*3*/ virtual struct ContainerValidationResult tryActivate();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONACTIVATE
 #endif
-
-
 
 };

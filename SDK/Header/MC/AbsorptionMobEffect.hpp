@@ -15,14 +15,12 @@ class AbsorptionMobEffect : public MobEffect {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSORPTIONMOBEFFECT
 public:
     class AbsorptionMobEffect& operator=(class AbsorptionMobEffect const &) = delete;
     AbsorptionMobEffect(class AbsorptionMobEffect const &) = delete;
     AbsorptionMobEffect() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AbsorptionMobEffect();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSORPTIONMOBEFFECT
 #endif
     MCAPI AbsorptionMobEffect(int, std::string const &, std::string const &, bool, int, int);
-
-
 
 };

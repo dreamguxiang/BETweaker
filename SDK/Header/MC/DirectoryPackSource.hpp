@@ -16,14 +16,12 @@ class DirectoryPackSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKSOURCE
 public:
     class DirectoryPackSource& operator=(class DirectoryPackSource const &) = delete;
     DirectoryPackSource(class DirectoryPackSource const &) = delete;
     DirectoryPackSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DirectoryPackSource();
@@ -40,7 +38,5 @@ public:
     MCAPI class Core::PathBuffer<std::string> const & getPath() const;
     MCAPI bool removePack(class Core::Path const &);
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
-
-
 
 };

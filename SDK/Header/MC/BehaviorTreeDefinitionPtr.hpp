@@ -14,8 +14,6 @@ class BehaviorTreeDefinitionPtr {
 // Add Member There
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITIONPTR
 #endif
@@ -27,7 +25,5 @@ public:
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
     MCAPI ~BehaviorTreeDefinitionPtr();
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
-
-
 
 };

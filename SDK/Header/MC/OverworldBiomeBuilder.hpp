@@ -15,14 +15,12 @@ class OverworldBiomeBuilder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBIOMEBUILDER
 public:
     class OverworldBiomeBuilder& operator=(class OverworldBiomeBuilder const &) = delete;
     OverworldBiomeBuilder(class OverworldBiomeBuilder const &) = delete;
     OverworldBiomeBuilder() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBIOMEBUILDER
@@ -41,7 +39,6 @@ public:
     MCAPI void _addUndergroundBiome(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, struct ClimateUtils::Parameter const &, float, class Biome *) const;
     MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
 
-
 private:
     MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
     MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
@@ -57,6 +54,5 @@ private:
     MCAPI static struct ClimateUtils::Parameter const mushroomFieldsContinentalness;
     MCAPI static struct ClimateUtils::Parameter const nearInlandContinentalness;
     MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
-
 
 };

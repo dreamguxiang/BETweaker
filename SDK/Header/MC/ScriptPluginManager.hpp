@@ -16,14 +16,12 @@ class ScriptPluginManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINMANAGER
 public:
     class ScriptPluginManager& operator=(class ScriptPluginManager const &) = delete;
     ScriptPluginManager(class ScriptPluginManager const &) = delete;
     ScriptPluginManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
@@ -40,8 +38,6 @@ public:
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
 
-
 private:
-
 
 };

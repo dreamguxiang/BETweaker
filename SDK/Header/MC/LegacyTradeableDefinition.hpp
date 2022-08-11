@@ -15,13 +15,11 @@ class LegacyTradeableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYTRADEABLEDEFINITION
 public:
     class LegacyTradeableDefinition& operator=(class LegacyTradeableDefinition const &) = delete;
     LegacyTradeableDefinition(class LegacyTradeableDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLEDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI LegacyTradeableDefinition();
     MCAPI void initialize(class EntityContext &, class LegacyTradeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>> &);
-
-
 
 };

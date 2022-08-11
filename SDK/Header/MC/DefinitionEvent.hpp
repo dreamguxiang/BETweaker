@@ -14,12 +14,10 @@ class DefinitionEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONEVENT
 public:
     DefinitionEvent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENT
@@ -29,7 +27,5 @@ public:
     MCAPI void evaluateEvent(class RenderParams &, std::vector<struct DefinitionModifier> &) const;
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     MCAPI ~DefinitionEvent();
-
-
 
 };

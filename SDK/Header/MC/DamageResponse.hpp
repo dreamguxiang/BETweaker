@@ -15,14 +15,12 @@ class DamageResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGERESPONSE
 public:
     class DamageResponse& operator=(class DamageResponse const &) = delete;
     DamageResponse(class DamageResponse const &) = delete;
     DamageResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DamageResponse();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 
-
 private:
-
 
 };

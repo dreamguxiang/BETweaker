@@ -14,20 +14,19 @@ struct Brightness {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIGHTNESS
 public:
     Brightness() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIGHTNESS
+#endif
     MCAPI Brightness(struct Brightness const &);
     MCAPI Brightness(unsigned char const &);
     MCAPI struct Brightness & operator=(struct Brightness const &);
     MCAPI struct Brightness & operator=(struct Brightness &&);
-
-protected:
-
-private:
+    MCAPI static struct Brightness const INVALID;
+    MCAPI static struct Brightness const MAX;
+    MCAPI static struct Brightness const MIN;
 
 };

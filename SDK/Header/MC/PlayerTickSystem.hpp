@@ -14,7 +14,6 @@ class PlayerTickSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERTICKSYSTEM
 public:
     class PlayerTickSystem& operator=(class PlayerTickSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     PlayerTickSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo create();
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
-
-
 
 };

@@ -15,14 +15,12 @@ class NetworkStackLatencyPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSTACKLATENCYPACKET
 public:
     class NetworkStackLatencyPacket& operator=(class NetworkStackLatencyPacket const &) = delete;
     NetworkStackLatencyPacket(class NetworkStackLatencyPacket const &) = delete;
     NetworkStackLatencyPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetworkStackLatencyPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSTACKLATENCYPACKET
 #endif
-
-
 
 };

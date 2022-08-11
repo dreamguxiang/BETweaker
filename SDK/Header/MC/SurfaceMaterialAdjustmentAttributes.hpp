@@ -14,22 +14,18 @@ struct SurfaceMaterialAdjustmentAttributes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTATTRIBUTES
 public:
     struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
     SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
     SurfaceMaterialAdjustmentAttributes() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALADJUSTMENTATTRIBUTES
+#endif
     MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams &, class gsl::not_null<class PerlinSimplexNoise *>, class BlockPos const &, int, int) const;
     MCAPI struct SurfaceMaterialAdjustmentAttributes & operator=(struct SurfaceMaterialAdjustmentAttributes &&);
     MCAPI void parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
     MCAPI ~SurfaceMaterialAdjustmentAttributes();
-
-protected:
-
-private:
 
 };

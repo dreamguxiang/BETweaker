@@ -15,20 +15,17 @@ struct IsHiddenWhenInvisibleDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISHIDDENWHENINVISIBLEDEFINITION
 public:
     struct IsHiddenWhenInvisibleDefinition& operator=(struct IsHiddenWhenInvisibleDefinition const &) = delete;
     IsHiddenWhenInvisibleDefinition(struct IsHiddenWhenInvisibleDefinition const &) = delete;
     IsHiddenWhenInvisibleDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISHIDDENWHENINVISIBLEDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &);
     MCAPI void uninitialize(class EntityContext &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsHiddenWhenInvisibleDefinition>> &);
 
 };

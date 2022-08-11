@@ -12,13 +12,11 @@ class GameEventListenerComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTLISTENERCOMPONENT
 public:
     class GameEventListenerComponent& operator=(class GameEventListenerComponent const &) = delete;
     GameEventListenerComponent(class GameEventListenerComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERCOMPONENT
@@ -29,7 +27,5 @@ public:
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     MCAPI ~GameEventListenerComponent();
-
-
 
 };

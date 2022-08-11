@@ -14,14 +14,12 @@ class SwimWithEntityGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWITHENTITYGOAL
 public:
     class SwimWithEntityGoal& operator=(class SwimWithEntityGoal const &) = delete;
     SwimWithEntityGoal(class SwimWithEntityGoal const &) = delete;
     SwimWithEntityGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwimWithEntityGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _setWantedMob();
 
-
 private:
-
 
 };

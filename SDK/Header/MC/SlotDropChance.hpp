@@ -14,7 +14,6 @@ class SlotDropChance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDROPCHANCE
 public:
     class SlotDropChance& operator=(class SlotDropChance const &) = delete;
@@ -22,12 +21,9 @@ public:
     SlotDropChance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDROPCHANCE
 #endif
     MCAPI void setEquipmentSlot(std::string const &);
-
-
 
 };

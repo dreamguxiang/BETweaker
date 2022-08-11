@@ -12,19 +12,15 @@ struct MountainAttributes {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTAINATTRIBUTES
 public:
     struct MountainAttributes& operator=(struct MountainAttributes const &) = delete;
     MountainAttributes(struct MountainAttributes const &) = delete;
     MountainAttributes() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTAINATTRIBUTES
+#endif
     MCAPI ~MountainAttributes();
-
-protected:
-
-private:
 
 };

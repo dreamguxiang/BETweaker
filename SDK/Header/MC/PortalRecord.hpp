@@ -12,14 +12,12 @@ class PortalRecord {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PORTALRECORD
 public:
     class PortalRecord& operator=(class PortalRecord const &) = delete;
     PortalRecord(class PortalRecord const &) = delete;
     PortalRecord() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALRECORD
@@ -29,7 +27,5 @@ public:
     MCAPI class BlockPos closestBlockPosTo(class Actor const &) const;
     MCAPI unsigned __int64 hashCode() const;
     MCAPI bool operator==(class PortalRecord const &) const;
-
-
 
 };

@@ -13,14 +13,12 @@ class EditorBootstrapper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDITORBOOTSTRAPPER
 public:
     class EditorBootstrapper& operator=(class EditorBootstrapper const &) = delete;
     EditorBootstrapper(class EditorBootstrapper const &) = delete;
     EditorBootstrapper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORBOOTSTRAPPER
@@ -30,7 +28,5 @@ public:
     MCAPI bool hasRequestedMap() const;
     MCAPI bool isEditorModeEnabled() const;
     MCAPI void processActivationArguments(class Bedrock::ActivationArguments const &);
-
-
 
 };

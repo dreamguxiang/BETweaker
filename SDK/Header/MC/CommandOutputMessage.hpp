@@ -14,13 +14,11 @@ class CommandOutputMessage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTMESSAGE
 public:
     class CommandOutputMessage& operator=(class CommandOutputMessage const &) = delete;
     CommandOutputMessage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTMESSAGE
@@ -33,7 +31,5 @@ public:
     MCAPI enum CommandOutputMessageType getType() const;
     MCAPI std::string getUserMessage() const;
     MCAPI ~CommandOutputMessage();
-
-
 
 };

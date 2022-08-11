@@ -14,13 +14,11 @@ class Stopwatch {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPWATCH
 public:
     class Stopwatch& operator=(class Stopwatch const &) = delete;
     Stopwatch(class Stopwatch const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Stopwatch();
@@ -32,7 +30,5 @@ public:
     MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();
-
-
 
 };

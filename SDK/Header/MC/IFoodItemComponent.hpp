@@ -12,7 +12,6 @@ class IFoodItemComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFOODITEMCOMPONENT
 public:
     class IFoodItemComponent& operator=(class IFoodItemComponent const &) = delete;
@@ -20,14 +19,11 @@ public:
     IFoodItemComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFOODITEMCOMPONENT
 #endif
     MCAPI static char const CAN_ALWAYS_EAT[];
     MCAPI static char const NUTRITION[];
     MCAPI static char const SATURATION_MODIFIER[];
-
-
 
 };

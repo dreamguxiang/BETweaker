@@ -15,14 +15,12 @@ class TridentLoyaltyEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTLOYALTYENCHANT
 public:
     class TridentLoyaltyEnchant& operator=(class TridentLoyaltyEnchant const &) = delete;
     TridentLoyaltyEnchant(class TridentLoyaltyEnchant const &) = delete;
     TridentLoyaltyEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TridentLoyaltyEnchant();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTLOYALTYENCHANT
 #endif
     MCAPI TridentLoyaltyEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
-
-
 
 };

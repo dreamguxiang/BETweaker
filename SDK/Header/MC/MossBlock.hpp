@@ -15,14 +15,12 @@ class MossBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOSSBLOCK
 public:
     class MossBlock& operator=(class MossBlock const &) = delete;
     MossBlock(class MossBlock const &) = delete;
     MossBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MossBlock();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSBLOCK
 #endif
     MCAPI MossBlock(std::string const &, int);
-
-
 
 };

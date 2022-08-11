@@ -14,14 +14,12 @@ class ServerPlayerEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYEREVENTCOORDINATOR
 public:
     class ServerPlayerEventCoordinator& operator=(class ServerPlayerEventCoordinator const &) = delete;
     ServerPlayerEventCoordinator(class ServerPlayerEventCoordinator const &) = delete;
     ServerPlayerEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYEREVENTCOORDINATOR
@@ -31,7 +29,5 @@ public:
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     MCAPI void sendPlayerOnGround(class Player &);
-
-
 
 };

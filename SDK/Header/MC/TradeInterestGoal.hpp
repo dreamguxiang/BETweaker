@@ -14,14 +14,12 @@ class TradeInterestGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEINTERESTGOAL
 public:
     class TradeInterestGoal& operator=(class TradeInterestGoal const &) = delete;
     TradeInterestGoal(class TradeInterestGoal const &) = delete;
     TradeInterestGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TradeInterestGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEINTERESTGOAL
 #endif
     MCAPI TradeInterestGoal(class Mob &, float, float, float, float, float);
-
-
 
 };

@@ -14,12 +14,10 @@ class RideableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENT
 public:
     class RideableComponent& operator=(class RideableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENT
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI void _setCanPlayerRide(class Player &, bool) const;
 
-
 private:
-
 
 };

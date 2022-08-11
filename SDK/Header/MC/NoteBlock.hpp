@@ -15,14 +15,12 @@ class NoteBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOTEBLOCK
 public:
     class NoteBlock& operator=(class NoteBlock const &) = delete;
     NoteBlock(class NoteBlock const &) = delete;
     NoteBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NoteBlock();
@@ -71,7 +69,5 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI NoteBlock(std::string const &, int);
-
-
 
 };

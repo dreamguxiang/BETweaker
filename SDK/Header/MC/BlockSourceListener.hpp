@@ -14,14 +14,12 @@ class BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCELISTENER
 public:
     class BlockSourceListener& operator=(class BlockSourceListener const &) = delete;
     BlockSourceListener(class BlockSourceListener const &) = delete;
     BlockSourceListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockSourceListener();
@@ -40,7 +38,5 @@ public:
     MCVAPI void onEntityChanged(class BlockSource &, class Actor &);
     MCVAPI void onSourceCreated(class BlockSource &);
 #endif
-
-
 
 };

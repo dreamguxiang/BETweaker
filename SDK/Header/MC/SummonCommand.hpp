@@ -15,7 +15,6 @@ class SummonCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONCOMMAND
 public:
     class SummonCommand& operator=(class SummonCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     SummonCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SummonCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

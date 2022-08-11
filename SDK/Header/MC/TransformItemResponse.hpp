@@ -15,14 +15,12 @@ class TransformItemResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFORMITEMRESPONSE
 public:
     class TransformItemResponse& operator=(class TransformItemResponse const &) = delete;
     TransformItemResponse(class TransformItemResponse const &) = delete;
     TransformItemResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TransformItemResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMITEMRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

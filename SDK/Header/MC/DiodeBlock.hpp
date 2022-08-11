@@ -15,14 +15,12 @@ class DiodeBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIODEBLOCK
 public:
     class DiodeBlock& operator=(class DiodeBlock const &) = delete;
     DiodeBlock(class DiodeBlock const &) = delete;
     DiodeBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DiodeBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*58*/ virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
@@ -70,7 +68,7 @@ public:
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
-    /*193*/ virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
+    /*193*/ virtual bool isLocked(class BlockSource &, class BlockPos const &);
     /*194*/ virtual bool isSameDiode(class Block const &) const;
     /*195*/ virtual bool shouldPrioritize(class BlockSource &, class BlockPos const &) const;
     /*196*/ virtual bool isOn() const;
@@ -80,9 +78,9 @@ public:
     /*200*/ virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
     /*201*/ virtual int getOutputSignal(class Block const &) const;
     /*202*/ virtual int getTurnOffDelay(class Block const &) const;
-    /*203*/ virtual int getTurnOnDelay(class Block const &) const = 0;
-    /*204*/ virtual class Block const * getOnBlock(class Block const *) const = 0;
-    /*205*/ virtual class Block const * getOffBlock(class Block const *) const = 0;
+    /*203*/ virtual int getTurnOnDelay(class Block const &);
+    /*204*/ virtual class Block const * getOnBlock(class Block const *);
+    /*205*/ virtual class Block const * getOffBlock(class Block const *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIODEBLOCK
     MCVAPI bool canSpawnOn() const;
 #endif
@@ -92,8 +90,6 @@ public:
 //protected:
     MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;
 
-
 protected:
-
 
 };

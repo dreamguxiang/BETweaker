@@ -16,14 +16,12 @@ class ActorInWeatherTest : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINWEATHERTEST
 public:
     class ActorInWeatherTest& operator=(class ActorInWeatherTest const &) = delete;
     ActorInWeatherTest(class ActorInWeatherTest const &) = delete;
     ActorInWeatherTest() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorInWeatherTest();
@@ -33,7 +31,5 @@ public:
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINWEATHERTEST
 #endif
-
-
 
 };

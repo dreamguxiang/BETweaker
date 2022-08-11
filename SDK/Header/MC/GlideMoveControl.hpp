@@ -15,13 +15,11 @@ class GlideMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDEMOVECONTROL
 public:
     class GlideMoveControl& operator=(class GlideMoveControl const &) = delete;
     GlideMoveControl(class GlideMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlideMoveControl();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLIDEMOVECONTROL
 #endif
     MCAPI GlideMoveControl();
-
-
 
 };

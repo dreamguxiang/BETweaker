@@ -15,14 +15,12 @@ class CraftHandlerGrindstone : public CraftHandlerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERGRINDSTONE
 public:
     class CraftHandlerGrindstone& operator=(class CraftHandlerGrindstone const &) = delete;
     CraftHandlerGrindstone(class CraftHandlerGrindstone const &) = delete;
     CraftHandlerGrindstone() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftHandlerGrindstone();
@@ -38,8 +36,6 @@ public:
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
     MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
 
-
 private:
-
 
 };

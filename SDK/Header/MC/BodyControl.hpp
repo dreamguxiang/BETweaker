@@ -14,13 +14,11 @@ class BodyControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROL
 public:
     class BodyControl& operator=(class BodyControl const &) = delete;
     BodyControl(class BodyControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BodyControl();
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float const MAX_CLAMP_ANGLE;
-
 
 };

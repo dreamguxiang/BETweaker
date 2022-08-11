@@ -15,13 +15,11 @@ class RemoveEntityPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEENTITYPACKET
 public:
     class RemoveEntityPacket& operator=(class RemoveEntityPacket const &) = delete;
     RemoveEntityPacket(class RemoveEntityPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveEntityPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI RemoveEntityPacket(class EntityContext &);
     MCAPI RemoveEntityPacket();
-
-
 
 };

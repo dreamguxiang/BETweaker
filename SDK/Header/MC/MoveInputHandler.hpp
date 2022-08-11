@@ -15,13 +15,11 @@ class MoveInputHandler : public MoveInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEINPUTHANDLER
 public:
     class MoveInputHandler& operator=(class MoveInputHandler const &) = delete;
     MoveInputHandler(class MoveInputHandler const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveInputHandler();
@@ -44,8 +42,6 @@ public:
 //protected:
     MCAPI MoveInputHandler();
 
-
 protected:
-
 
 };

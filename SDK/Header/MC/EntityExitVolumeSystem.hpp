@@ -15,14 +15,12 @@ class EntityExitVolumeSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYEXITVOLUMESYSTEM
 public:
     class EntityExitVolumeSystem& operator=(class EntityExitVolumeSystem const &) = delete;
     EntityExitVolumeSystem(class EntityExitVolumeSystem const &) = delete;
     EntityExitVolumeSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EntityExitVolumeSystem();
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &, class EntitiesInsideVolumeComponent &) const;
 
-
 private:
-
 
 };

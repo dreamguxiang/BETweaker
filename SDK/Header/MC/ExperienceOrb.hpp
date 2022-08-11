@@ -17,14 +17,12 @@ public:
 enum DropType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEORB
 public:
     class ExperienceOrb& operator=(class ExperienceOrb const &) = delete;
     ExperienceOrb(class ExperienceOrb const &) = delete;
     ExperienceOrb() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -33,7 +31,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -70,9 +68,7 @@ public:
 //private:
     MCAPI void _handleMending(class Player &);
 
-
 private:
     MCAPI static int const LIFETIME;
-
 
 };

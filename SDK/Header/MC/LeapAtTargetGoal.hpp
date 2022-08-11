@@ -14,14 +14,12 @@ class LeapAtTargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEAPATTARGETGOAL
 public:
     class LeapAtTargetGoal& operator=(class LeapAtTargetGoal const &) = delete;
     LeapAtTargetGoal(class LeapAtTargetGoal const &) = delete;
     LeapAtTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LeapAtTargetGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEAPATTARGETGOAL
 #endif
     MCAPI LeapAtTargetGoal(class Mob &, float, bool, bool);
-
-
 
 };

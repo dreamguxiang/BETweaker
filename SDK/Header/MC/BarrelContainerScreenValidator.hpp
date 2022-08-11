@@ -15,20 +15,16 @@ class BarrelContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELCONTAINERSCREENVALIDATOR
 public:
     class BarrelContainerScreenValidator& operator=(class BarrelContainerScreenValidator const &) = delete;
     BarrelContainerScreenValidator(class BarrelContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BarrelContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELCONTAINERSCREENVALIDATOR
 #endif
     MCAPI BarrelContainerScreenValidator();
-
-
 
 };

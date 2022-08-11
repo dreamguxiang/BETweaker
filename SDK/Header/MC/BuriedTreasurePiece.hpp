@@ -15,14 +15,12 @@ class BuriedTreasurePiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASUREPIECE
 public:
     class BuriedTreasurePiece& operator=(class BuriedTreasurePiece const &) = delete;
     BuriedTreasurePiece(class BuriedTreasurePiece const &) = delete;
     BuriedTreasurePiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BuriedTreasurePiece();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
 
-
 private:
-
 
 };

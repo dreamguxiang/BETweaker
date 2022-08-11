@@ -12,7 +12,6 @@ class BedrockLoadContext {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKLOADCONTEXT
 public:
     class BedrockLoadContext& operator=(class BedrockLoadContext const &) = delete;
@@ -20,13 +19,10 @@ public:
     BedrockLoadContext() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKLOADCONTEXT
 #endif
     MCAPI BedrockLoadContext(class SemVersion const &);
     MCAPI ~BedrockLoadContext();
-
-
 
 };

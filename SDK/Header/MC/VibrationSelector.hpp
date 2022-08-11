@@ -12,13 +12,11 @@ class VibrationSelector {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONSELECTOR
 public:
     class VibrationSelector& operator=(class VibrationSelector const &) = delete;
     VibrationSelector(class VibrationSelector const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONSELECTOR
@@ -28,7 +26,5 @@ public:
     MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void save(class CompoundTag &) const;
-
-
 
 };

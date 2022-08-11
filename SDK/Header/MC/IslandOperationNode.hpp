@@ -14,14 +14,12 @@ class IslandOperationNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISLANDOPERATIONNODE
 public:
     class IslandOperationNode& operator=(class IslandOperationNode const &) = delete;
     IslandOperationNode(class IslandOperationNode const &) = delete;
     IslandOperationNode() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IslandOperationNode();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<enum OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISLANDOPERATIONNODE
 #endif
-
-
 
 };

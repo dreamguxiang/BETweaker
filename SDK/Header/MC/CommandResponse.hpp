@@ -15,14 +15,12 @@ class CommandResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRESPONSE
 public:
     class CommandResponse& operator=(class CommandResponse const &) = delete;
     CommandResponse(class CommandResponse const &) = delete;
     CommandResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommandResponse();
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRESPONSE
 #endif
-
-
 
 };

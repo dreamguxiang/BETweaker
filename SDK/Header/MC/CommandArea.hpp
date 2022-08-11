@@ -12,7 +12,6 @@ class CommandArea {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDAREA
 public:
     class CommandArea& operator=(class CommandArea const &) = delete;
@@ -20,13 +19,10 @@ public:
     CommandArea() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREA
 #endif
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     MCAPI ~CommandArea();
-
-
 
 };

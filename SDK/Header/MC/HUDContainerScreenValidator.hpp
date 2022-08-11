@@ -15,20 +15,16 @@ class HUDContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERSCREENVALIDATOR
 public:
     class HUDContainerScreenValidator& operator=(class HUDContainerScreenValidator const &) = delete;
     HUDContainerScreenValidator(class HUDContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HUDContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERSCREENVALIDATOR
 #endif
     MCAPI HUDContainerScreenValidator();
-
-
 
 };

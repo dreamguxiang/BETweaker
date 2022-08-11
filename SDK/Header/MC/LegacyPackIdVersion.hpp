@@ -14,21 +14,17 @@ struct LegacyPackIdVersion {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYPACKIDVERSION
 public:
     struct LegacyPackIdVersion& operator=(struct LegacyPackIdVersion const &) = delete;
     LegacyPackIdVersion(struct LegacyPackIdVersion const &) = delete;
     LegacyPackIdVersion() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYPACKIDVERSION
+#endif
     MCAPI LegacyPackIdVersion(std::string const &, std::string const &);
     MCAPI struct PackIdVersion getUpgradedPackId() const;
     MCAPI ~LegacyPackIdVersion();
-
-protected:
-
-private:
 
 };

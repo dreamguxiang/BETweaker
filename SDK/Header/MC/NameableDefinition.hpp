@@ -15,13 +15,11 @@ class NameableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEABLEDEFINITION
 public:
     class NameableDefinition& operator=(class NameableDefinition const &) = delete;
     NameableDefinition(class NameableDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLEDEFINITION
@@ -31,7 +29,5 @@ public:
     MCAPI void initialize(class EntityContext &, class NameableComponent &) const;
     MCAPI ~NameableDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>> &);
-
-
 
 };

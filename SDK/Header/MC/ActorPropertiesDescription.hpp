@@ -15,19 +15,17 @@ struct ActorPropertiesDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPROPERTIESDESCRIPTION
 public:
     ActorPropertiesDescription(struct ActorPropertiesDescription const &) = delete;
     ActorPropertiesDescription() = delete;
 #endif
-
 public:
+    /*0*/ virtual ~ActorPropertiesDescription();
+    /*1*/ virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
+#endif
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
     MCAPI void parse(class Json::Value &, class SemVersion const &);
-
-protected:
-
-private:
 
 };

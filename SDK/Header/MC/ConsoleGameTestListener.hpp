@@ -14,14 +14,12 @@ class ConsoleGameTestListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEGAMETESTLISTENER
 public:
     class ConsoleGameTestListener& operator=(class ConsoleGameTestListener const &) = delete;
     ConsoleGameTestListener(class ConsoleGameTestListener const &) = delete;
     ConsoleGameTestListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ConsoleGameTestListener();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
 #endif
-
-
 
 };

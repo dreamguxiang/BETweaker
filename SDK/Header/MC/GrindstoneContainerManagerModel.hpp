@@ -15,14 +15,12 @@ class GrindstoneContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRINDSTONECONTAINERMANAGERMODEL
 public:
     class GrindstoneContainerManagerModel& operator=(class GrindstoneContainerManagerModel const &) = delete;
     GrindstoneContainerManagerModel(class GrindstoneContainerManagerModel const &) = delete;
     GrindstoneContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrindstoneContainerManagerModel();
@@ -39,7 +37,5 @@ public:
     MCAPI static int const ADDITIONAL_SLOT;
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const RESULT_SLOT;
-
-
 
 };

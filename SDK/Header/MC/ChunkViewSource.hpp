@@ -15,13 +15,11 @@ class ChunkViewSource : public ChunkSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKVIEWSOURCE
 public:
     class ChunkViewSource& operator=(class ChunkViewSource const &) = delete;
     ChunkViewSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChunkViewSource();
@@ -44,7 +42,5 @@ public:
     MCAPI void move(class BlockPos const &, int, bool, enum ChunkSource::ChunkSourceViewGenerateMode, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, struct ActorUniqueID);
     MCAPI void rebuildSpecificArea(struct Bounds const &, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI static enum ChunkSource::ChunkSourceViewGenerateMode getGenerateMode(bool);
-
-
 
 };

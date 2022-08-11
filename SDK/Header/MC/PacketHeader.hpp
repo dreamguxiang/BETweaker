@@ -12,7 +12,6 @@ class PacketHeader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETHEADER
 public:
     class PacketHeader& operator=(class PacketHeader const &) = delete;
@@ -20,12 +19,9 @@ public:
     PacketHeader() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETHEADER
 #endif
     MCAPI unsigned int getChannel() const;
-
-
 
 };

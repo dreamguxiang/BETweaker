@@ -29,14 +29,12 @@ public:
 enum SectionType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES
 public:
     class EndCityPieces& operator=(class EndCityPieces const &) = delete;
     EndCityPieces(class EndCityPieces const &) = delete;
     EndCityPieces() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCITYPIECES
@@ -49,10 +47,8 @@ public:
     MCAPI static std::unique_ptr<class EndCityPieces::EndCityPiece> _createPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class EndCityPieces::EndCityPiece *, class BlockPos const &, std::string const &, enum Rotation, bool);
     MCAPI static bool _recursiveChildren(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const &, enum EndCityPieces::SectionType, int, class EndCityPieces::EndCityPiece *, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
 
-
 private:
     MCAPI static class LegacyStructureSettings mInsertSettings;
     MCAPI static class LegacyStructureSettings mOverwriteSettings;
-
 
 };

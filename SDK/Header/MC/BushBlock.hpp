@@ -15,14 +15,12 @@ class BushBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUSHBLOCK
 public:
     class BushBlock& operator=(class BushBlock const &) = delete;
     BushBlock(class BushBlock const &) = delete;
     BushBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BushBlock();
@@ -72,7 +70,5 @@ public:
 #endif
     MCAPI BushBlock(std::string const &, int, class Material const &);
     MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
-
-
 
 };

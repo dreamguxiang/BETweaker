@@ -16,14 +16,12 @@ class ArrowEffectSubcomponent : public MobEffectSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARROWEFFECTSUBCOMPONENT
 public:
     class ArrowEffectSubcomponent& operator=(class ArrowEffectSubcomponent const &) = delete;
     ArrowEffectSubcomponent(class ArrowEffectSubcomponent const &) = delete;
     ArrowEffectSubcomponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ArrowEffectSubcomponent();
@@ -32,7 +30,5 @@ public:
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWEFFECTSUBCOMPONENT
 #endif
-
-
 
 };

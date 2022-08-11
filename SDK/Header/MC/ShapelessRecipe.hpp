@@ -21,7 +21,6 @@ class ShapelessRecipe : public Recipe {
     void* unk240[3] = { 0,0,0 }; //240
     //pair<enum BlockActorType, const string> 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPELESSRECIPE
 public:
     class ShapelessRecipe& operator=(class ShapelessRecipe const &) = delete;
@@ -29,13 +28,12 @@ public:
     ShapelessRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShapelessRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &);
     /*2*/ virtual int getCraftingSize() const;
     /*3*/ virtual class RecipeIngredient const & getIngredient(int, int) const;
-    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem();
     /*5*/ virtual bool isShapeless() const;
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
@@ -48,8 +46,6 @@ public:
 //private:
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, class mce::UUID const *);
 
-
 private:
-
 
 };

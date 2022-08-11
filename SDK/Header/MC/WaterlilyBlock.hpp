@@ -15,14 +15,12 @@ class WaterlilyBlock : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERLILYBLOCK
 public:
     class WaterlilyBlock& operator=(class WaterlilyBlock const &) = delete;
     WaterlilyBlock(class WaterlilyBlock const &) = delete;
     WaterlilyBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WaterlilyBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,7 +47,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
@@ -59,8 +57,8 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*136*/ virtual int getColor(class Block const &) const;
-    /*138*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
+    /*136*/ virtual int getColor(class Block const &);
+    /*138*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &);
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();
@@ -72,7 +70,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERLILYBLOCK
 #endif
     MCAPI WaterlilyBlock(std::string const &, int);
-
-
 
 };

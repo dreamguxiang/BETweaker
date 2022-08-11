@@ -12,18 +12,15 @@ struct AdultRidingHeightOffsetComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADULTRIDINGHEIGHTOFFSETCOMPONENT
 public:
     struct AdultRidingHeightOffsetComponent& operator=(struct AdultRidingHeightOffsetComponent const &) = delete;
     AdultRidingHeightOffsetComponent(struct AdultRidingHeightOffsetComponent const &) = delete;
     AdultRidingHeightOffsetComponent() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADULTRIDINGHEIGHTOFFSETCOMPONENT
+#endif
+    MCAPI static float const SITTING_ANIMATION_OFFSET;
 
 };

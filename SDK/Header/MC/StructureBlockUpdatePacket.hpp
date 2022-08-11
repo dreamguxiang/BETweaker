@@ -15,12 +15,10 @@ class StructureBlockUpdatePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKUPDATEPACKET
 public:
     class StructureBlockUpdatePacket& operator=(class StructureBlockUpdatePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureBlockUpdatePacket();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
     MCAPI StructureBlockUpdatePacket();
-
-
 
 };

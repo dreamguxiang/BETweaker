@@ -15,7 +15,6 @@ class MeCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MECOMMAND
 public:
     class MeCommand& operator=(class MeCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     MeCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MeCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MECOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

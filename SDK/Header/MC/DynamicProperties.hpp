@@ -12,14 +12,12 @@ class DynamicProperties {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICPROPERTIES
 public:
     class DynamicProperties& operator=(class DynamicProperties const &) = delete;
     DynamicProperties(class DynamicProperties const &) = delete;
     DynamicProperties() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIES
@@ -35,7 +33,5 @@ public:
     MCAPI static std::string const STORAGE_TAG;
     MCAPI static std::unique_ptr<class DynamicProperties> readFromLevelStorage(class LevelStorage &);
     MCAPI static std::string validateDynamicProperty(struct DynamicPropertyDefinition const *, std::string const &, class std::variant<float, bool, std::string> const *);
-
-
 
 };

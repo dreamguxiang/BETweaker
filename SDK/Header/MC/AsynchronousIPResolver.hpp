@@ -14,14 +14,12 @@ class AsynchronousIPResolver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCHRONOUSIPRESOLVER
 public:
     class AsynchronousIPResolver& operator=(class AsynchronousIPResolver const &) = delete;
     AsynchronousIPResolver(class AsynchronousIPResolver const &) = delete;
     AsynchronousIPResolver() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCHRONOUSIPRESOLVER
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI void _resolve();
 
-
 private:
-
 
 };

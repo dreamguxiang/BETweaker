@@ -14,7 +14,6 @@ class BodyControlSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROLSYSTEM
 public:
     class BodyControlSystem& operator=(class BodyControlSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     BodyControlSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BodyControlSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROLSYSTEM
 #endif
-
-
 
 };

@@ -15,13 +15,11 @@ class StubServerLocator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STUBSERVERLOCATOR
 public:
     class StubServerLocator& operator=(class StubServerLocator const &) = delete;
     StubServerLocator(class StubServerLocator const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StubServerLocator();
@@ -48,7 +46,5 @@ public:
     MCVAPI bool isIPv6Supported() const;
 #endif
     MCAPI StubServerLocator();
-
-
 
 };

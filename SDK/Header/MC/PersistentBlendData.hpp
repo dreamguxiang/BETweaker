@@ -12,20 +12,16 @@ struct PersistentBlendData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSISTENTBLENDDATA
 public:
     struct PersistentBlendData& operator=(struct PersistentBlendData const &) = delete;
     PersistentBlendData(struct PersistentBlendData const &) = delete;
     PersistentBlendData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTBLENDDATA
+#endif
     MCAPI PersistentBlendData(class StringByteInput &);
     MCAPI void serialize(class StringByteOutput &) const;
-
-protected:
-
-private:
 
 };

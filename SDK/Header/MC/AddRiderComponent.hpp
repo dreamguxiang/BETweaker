@@ -12,7 +12,6 @@ class AddRiderComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDRIDERCOMPONENT
 public:
     class AddRiderComponent& operator=(class AddRiderComponent const &) = delete;
@@ -20,13 +19,10 @@ public:
     AddRiderComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERCOMPONENT
 #endif
     MCAPI void reloadComponent(class Actor &);
     MCAPI ~AddRiderComponent();
-
-
 
 };

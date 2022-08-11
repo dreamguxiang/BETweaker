@@ -12,14 +12,12 @@ class ScriptCommandProcessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMANDPROCESSOR
 public:
     class ScriptCommandProcessor& operator=(class ScriptCommandProcessor const &) = delete;
     ScriptCommandProcessor(class ScriptCommandProcessor const &) = delete;
     ScriptCommandProcessor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDPROCESSOR
@@ -29,7 +27,5 @@ public:
     MCAPI bool queueCommand(class std::shared_ptr<struct ScriptPendingCommand> &&);
     MCAPI void rejectAll();
     MCAPI ~ScriptCommandProcessor();
-
-
 
 };

@@ -15,14 +15,12 @@ class RealmsUnknownPackSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REALMSUNKNOWNPACKSOURCE
 public:
     class RealmsUnknownPackSource& operator=(class RealmsUnknownPackSource const &) = delete;
     RealmsUnknownPackSource(class RealmsUnknownPackSource const &) = delete;
     RealmsUnknownPackSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RealmsUnknownPackSource();
@@ -36,7 +34,5 @@ public:
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
-
-
 
 };

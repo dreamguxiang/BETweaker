@@ -15,7 +15,6 @@ class ImmutableWorldCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMMUTABLEWORLDCOMMAND
 public:
     class ImmutableWorldCommand& operator=(class ImmutableWorldCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     ImmutableWorldCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ImmutableWorldCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMMUTABLEWORLDCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

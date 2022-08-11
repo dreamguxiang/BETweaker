@@ -16,14 +16,12 @@ class EnchantRandomEquipmentFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTRANDOMEQUIPMENTFUNCTION
 public:
     class EnchantRandomEquipmentFunction& operator=(class EnchantRandomEquipmentFunction const &) = delete;
     EnchantRandomEquipmentFunction(class EnchantRandomEquipmentFunction const &) = delete;
     EnchantRandomEquipmentFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnchantRandomEquipmentFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTRANDOMEQUIPMENTFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

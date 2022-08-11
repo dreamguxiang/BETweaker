@@ -24,13 +24,11 @@ public:
 	uint8_t clientSubId;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTIONREQUEST
 public:
     class ConnectionRequest& operator=(class ConnectionRequest const &) = delete;
     ConnectionRequest() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTIONREQUEST
@@ -82,8 +80,6 @@ public:
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 
-
 private:
-
 
 };

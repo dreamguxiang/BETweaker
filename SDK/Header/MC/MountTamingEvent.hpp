@@ -12,7 +12,6 @@ class MountTamingEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGEVENT
 public:
     class MountTamingEvent& operator=(class MountTamingEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     MountTamingEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMINGEVENT
 #endif
     MCAPI ~MountTamingEvent();
-
-
 
 };

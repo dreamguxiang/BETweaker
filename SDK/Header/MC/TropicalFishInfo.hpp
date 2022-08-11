@@ -12,7 +12,6 @@ class TropicalFishInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
 public:
     class TropicalFishInfo& operator=(class TropicalFishInfo const &) = delete;
@@ -20,12 +19,9 @@ public:
     TropicalFishInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TROPICALFISHINFO
 #endif
     MCAPI ~TropicalFishInfo();
-
-
 
 };

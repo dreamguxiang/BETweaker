@@ -14,14 +14,12 @@ class FollowTargetCaptainGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWTARGETCAPTAINGOAL
 public:
     class FollowTargetCaptainGoal& operator=(class FollowTargetCaptainGoal const &) = delete;
     FollowTargetCaptainGoal(class FollowTargetCaptainGoal const &) = delete;
     FollowTargetCaptainGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowTargetCaptainGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _determineMovePos();
 
-
 private:
-
 
 };

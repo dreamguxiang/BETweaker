@@ -14,7 +14,6 @@ class NetworkDebugManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKDEBUGMANAGER
 public:
     class NetworkDebugManager& operator=(class NetworkDebugManager const &) = delete;
@@ -22,13 +21,10 @@ public:
     NetworkDebugManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKDEBUGMANAGER
 #endif
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
     MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
-
-
 
 };

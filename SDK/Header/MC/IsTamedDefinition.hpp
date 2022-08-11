@@ -15,20 +15,17 @@ struct IsTamedDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISTAMEDDEFINITION
 public:
     struct IsTamedDefinition& operator=(struct IsTamedDefinition const &) = delete;
     IsTamedDefinition(struct IsTamedDefinition const &) = delete;
     IsTamedDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISTAMEDDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &);
     MCAPI void uninitialize(class EntityContext &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsTamedDefinition>> &);
 
 };

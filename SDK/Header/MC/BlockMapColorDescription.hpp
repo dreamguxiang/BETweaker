@@ -14,18 +14,20 @@ struct BlockMapColorDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORDESCRIPTION
 public:
     struct BlockMapColorDescription& operator=(struct BlockMapColorDescription const &) = delete;
     BlockMapColorDescription(struct BlockMapColorDescription const &) = delete;
     BlockMapColorDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockMapColorDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMAPCOLORDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

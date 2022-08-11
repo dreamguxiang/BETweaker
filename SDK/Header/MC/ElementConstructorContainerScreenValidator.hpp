@@ -15,20 +15,16 @@ class ElementConstructorContainerScreenValidator : public ContainerScreenValidat
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
 public:
     class ElementConstructorContainerScreenValidator& operator=(class ElementConstructorContainerScreenValidator const &) = delete;
     ElementConstructorContainerScreenValidator(class ElementConstructorContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ElementConstructorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
 #endif
     MCAPI ElementConstructorContainerScreenValidator();
-
-
 
 };

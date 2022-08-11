@@ -15,13 +15,11 @@ class FurnaceContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACECONTAINERSCREENVALIDATOR
 public:
     class FurnaceContainerScreenValidator& operator=(class FurnaceContainerScreenValidator const &) = delete;
     FurnaceContainerScreenValidator(class FurnaceContainerScreenValidator const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
 #endif
     MCAPI FurnaceContainerScreenValidator();
-
-
 
 };

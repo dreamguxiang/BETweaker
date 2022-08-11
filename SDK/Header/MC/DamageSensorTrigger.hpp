@@ -14,20 +14,16 @@ struct DamageSensorTrigger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORTRIGGER
 public:
     struct DamageSensorTrigger& operator=(struct DamageSensorTrigger const &) = delete;
     DamageSensorTrigger() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORTRIGGER
+#endif
     MCAPI DamageSensorTrigger(struct DamageSensorTrigger const &);
     MCAPI void setCause(std::string const &);
     MCAPI ~DamageSensorTrigger();
-
-protected:
-
-private:
 
 };

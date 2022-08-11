@@ -15,14 +15,12 @@ class MobEffectChangeDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTCHANGEDESCRIPTION
 public:
     class MobEffectChangeDescription& operator=(class MobEffectChangeDescription const &) = delete;
     MobEffectChangeDescription(class MobEffectChangeDescription const &) = delete;
     MobEffectChangeDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCHANGEDESCRIPTION
 #endif
-
-
 
 };

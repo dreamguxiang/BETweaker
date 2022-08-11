@@ -14,12 +14,10 @@ class PermissionsHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONSHANDLER
 public:
     class PermissionsHandler& operator=(class PermissionsHandler const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
@@ -35,7 +33,5 @@ public:
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
     MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
-
-
 
 };

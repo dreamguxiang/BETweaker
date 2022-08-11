@@ -12,7 +12,6 @@ class SendEventStage {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTSTAGE
 public:
     class SendEventStage& operator=(class SendEventStage const &) = delete;
@@ -20,12 +19,9 @@ public:
     SendEventStage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTSTAGE
 #endif
     MCAPI ~SendEventStage();
-
-
 
 };

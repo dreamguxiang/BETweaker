@@ -12,7 +12,6 @@ class MobOnPlayerJumpSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBONPLAYERJUMPSYSTEM
 public:
     class MobOnPlayerJumpSystem& operator=(class MobOnPlayerJumpSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     MobOnPlayerJumpSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBONPLAYERJUMPSYSTEM
 #endif
     MCAPI static float getPlayerJumpPendingScale(int);
-
-
 
 };

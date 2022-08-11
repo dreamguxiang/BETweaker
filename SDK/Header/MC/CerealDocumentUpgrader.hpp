@@ -14,14 +14,12 @@ class CerealDocumentUpgrader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALDOCUMENTUPGRADER
 public:
     class CerealDocumentUpgrader& operator=(class CerealDocumentUpgrader const &) = delete;
     CerealDocumentUpgrader(class CerealDocumentUpgrader const &) = delete;
     CerealDocumentUpgrader() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALDOCUMENTUPGRADER
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI std::string _getVersion(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &);
 
-
 private:
-
 
 };

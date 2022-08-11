@@ -13,14 +13,12 @@ class CerealSchemaUpgrade {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALSCHEMAUPGRADE
 public:
     class CerealSchemaUpgrade& operator=(class CerealSchemaUpgrade const &) = delete;
     CerealSchemaUpgrade(class CerealSchemaUpgrade const &) = delete;
     CerealSchemaUpgrade() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CerealSchemaUpgrade();
@@ -42,7 +40,5 @@ public:
     MCAPI class SemVersion const & getTargetVersion() const;
     MCAPI void registerLegacySchema();
     MCAPI void setPreviousVersion(class SemVersion const &);
-
-
 
 };

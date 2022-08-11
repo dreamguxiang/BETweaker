@@ -13,13 +13,11 @@ class CodeBuilderSourcePacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERSOURCEPACKET
 public:
     class CodeBuilderSourcePacket& operator=(class CodeBuilderSourcePacket const &) = delete;
     CodeBuilderSourcePacket(class CodeBuilderSourcePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CodeBuilderSourcePacket();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERSOURCEPACKET
 #endif
     MCAPI CodeBuilderSourcePacket();
-
-
 
 };

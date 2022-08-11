@@ -14,14 +14,12 @@ class WorldChangeTransaction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDCHANGETRANSACTION
 public:
     class WorldChangeTransaction& operator=(class WorldChangeTransaction const &) = delete;
     WorldChangeTransaction(class WorldChangeTransaction const &) = delete;
     WorldChangeTransaction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDCHANGETRANSACTION
@@ -31,7 +29,5 @@ public:
     MCAPI class Block const & getBlock(class BlockPos const &) const;
     MCAPI void setBlock(class BlockPos const &, class Block const &, int);
     MCAPI ~WorldChangeTransaction();
-
-
 
 };

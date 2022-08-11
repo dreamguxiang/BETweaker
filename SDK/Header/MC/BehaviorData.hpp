@@ -16,7 +16,6 @@ public:
 enum DataType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORDATA
 public:
     class BehaviorData& operator=(class BehaviorData const &) = delete;
@@ -24,13 +23,10 @@ public:
     BehaviorData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORDATA
 #endif
     MCAPI void copyData(std::string const &, std::string const &, class BehaviorData &);
     MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
-
-
 
 };

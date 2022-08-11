@@ -12,19 +12,15 @@ struct SideBySideValidationFailureComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDEVALIDATIONFAILURECOMPONENT
 public:
     struct SideBySideValidationFailureComponent& operator=(struct SideBySideValidationFailureComponent const &) = delete;
     SideBySideValidationFailureComponent(struct SideBySideValidationFailureComponent const &) = delete;
     SideBySideValidationFailureComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONFAILURECOMPONENT
+#endif
     MCAPI ~SideBySideValidationFailureComponent();
-
-protected:
-
-private:
 
 };

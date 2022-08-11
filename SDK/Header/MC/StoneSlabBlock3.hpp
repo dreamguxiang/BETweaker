@@ -15,14 +15,12 @@ class StoneSlabBlock3 : public SlabBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONESLABBLOCK3
 public:
     class StoneSlabBlock3& operator=(class StoneSlabBlock3 const &) = delete;
     StoneSlabBlock3(class StoneSlabBlock3 const &) = delete;
     StoneSlabBlock3() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneSlabBlock3();
@@ -72,7 +70,5 @@ public:
 #endif
     MCAPI StoneSlabBlock3(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
     MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
-
-
 
 };

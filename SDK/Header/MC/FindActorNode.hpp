@@ -14,13 +14,11 @@ class FindActorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDACTORNODE
 public:
     class FindActorNode& operator=(class FindActorNode const &) = delete;
     FindActorNode(class FindActorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FindActorNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDACTORNODE
 #endif
     MCAPI FindActorNode();
-
-
 
 };

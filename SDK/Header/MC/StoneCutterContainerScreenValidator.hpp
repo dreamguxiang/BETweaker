@@ -14,13 +14,11 @@ class StoneCutterContainerScreenValidator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONECUTTERCONTAINERSCREENVALIDATOR
 public:
     class StoneCutterContainerScreenValidator& operator=(class StoneCutterContainerScreenValidator const &) = delete;
     StoneCutterContainerScreenValidator(class StoneCutterContainerScreenValidator const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneCutterContainerScreenValidator();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERCONTAINERSCREENVALIDATOR
 #endif
     MCAPI StoneCutterContainerScreenValidator();
-
-
 
 };

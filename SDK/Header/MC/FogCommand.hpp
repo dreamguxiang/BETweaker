@@ -15,7 +15,6 @@ class FogCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMAND
 public:
     class FogCommand& operator=(class FogCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     FogCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FogCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

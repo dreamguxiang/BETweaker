@@ -16,14 +16,12 @@ class BowItem : public RangedWeaponItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOWITEM
 public:
     class BowItem& operator=(class BowItem const &) = delete;
     BowItem(class BowItem const &) = delete;
     BowItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BowItem();
@@ -44,10 +42,9 @@ public:
     /*114*/ virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOWITEM
 #endif
     MCAPI BowItem(std::string const &, int);
-
-
 
 };

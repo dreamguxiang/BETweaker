@@ -15,13 +15,11 @@ class ShowProfilePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWPROFILEPACKET
 public:
     class ShowProfilePacket& operator=(class ShowProfilePacket const &) = delete;
     ShowProfilePacket(class ShowProfilePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShowProfilePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOWPROFILEPACKET
 #endif
     MCAPI ShowProfilePacket();
-
-
 
 };

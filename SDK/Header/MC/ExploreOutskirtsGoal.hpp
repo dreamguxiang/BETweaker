@@ -14,14 +14,12 @@ class ExploreOutskirtsGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOREOUTSKIRTSGOAL
 public:
     class ExploreOutskirtsGoal& operator=(class ExploreOutskirtsGoal const &) = delete;
     ExploreOutskirtsGoal(class ExploreOutskirtsGoal const &) = delete;
     ExploreOutskirtsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExploreOutskirtsGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOREOUTSKIRTSGOAL
 #endif
     MCAPI ExploreOutskirtsGoal(class Mob &);
-
-
 
 };

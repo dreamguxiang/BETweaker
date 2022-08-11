@@ -14,7 +14,6 @@ class CrashDumpGlobalData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPGLOBALDATA
 public:
     class CrashDumpGlobalData& operator=(class CrashDumpGlobalData const &) = delete;
@@ -22,12 +21,9 @@ public:
     CrashDumpGlobalData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPGLOBALDATA
 #endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
-
-
 
 };

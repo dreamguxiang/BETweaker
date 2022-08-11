@@ -15,14 +15,12 @@ class RotatedPillarBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROTATEDPILLARBLOCK
 public:
     class RotatedPillarBlock& operator=(class RotatedPillarBlock const &) = delete;
     RotatedPillarBlock(class RotatedPillarBlock const &) = delete;
     RotatedPillarBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RotatedPillarBlock();
@@ -71,10 +69,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const mRotatedX[];
     MCAPI static int const mRotatedZ[];
-
 
 };

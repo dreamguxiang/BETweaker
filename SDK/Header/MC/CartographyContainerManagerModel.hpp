@@ -15,14 +15,12 @@ class CartographyContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CARTOGRAPHYCONTAINERMANAGERMODEL
 public:
     class CartographyContainerManagerModel& operator=(class CartographyContainerManagerModel const &) = delete;
     CartographyContainerManagerModel(class CartographyContainerManagerModel const &) = delete;
     CartographyContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CartographyContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERMANAGERMODEL
 #endif
     MCAPI CartographyContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

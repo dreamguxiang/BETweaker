@@ -12,19 +12,15 @@ struct ActorAcquiredItemEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORACQUIREDITEMEVENT
 public:
     struct ActorAcquiredItemEvent& operator=(struct ActorAcquiredItemEvent const &) = delete;
     ActorAcquiredItemEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORACQUIREDITEMEVENT
+#endif
     MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const &);
     MCAPI ~ActorAcquiredItemEvent();
-
-protected:
-
-private:
 
 };

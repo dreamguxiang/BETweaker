@@ -14,18 +14,22 @@ struct BlockUnitCubeDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBEDESCRIPTION
 public:
     struct BlockUnitCubeDescription& operator=(struct BlockUnitCubeDescription const &) = delete;
     BlockUnitCubeDescription(struct BlockUnitCubeDescription const &) = delete;
     BlockUnitCubeDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockUnitCubeDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void initializeFromNetwork(class CompoundTag const &);
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNITCUBEDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
 
 };

@@ -22,14 +22,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPIKEFEATURE
 public:
     class SpikeFeature& operator=(class SpikeFeature const &) = delete;
     SpikeFeature(class SpikeFeature const &) = delete;
     SpikeFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpikeFeature();
@@ -41,7 +39,5 @@ public:
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
     MCAPI void setCrystalInvulnerable(bool);
-
-
 
 };

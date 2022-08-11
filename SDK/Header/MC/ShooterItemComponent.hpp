@@ -14,21 +14,19 @@ class ShooterItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
 public:
     class ShooterItemComponent& operator=(class ShooterItemComponent const &) = delete;
     ShooterItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShooterItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual bool isNetworkComponent() const;
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*4*/ virtual bool isNetworkComponent();
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
 #endif
@@ -43,8 +41,6 @@ public:
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
 
-
 private:
-
 
 };

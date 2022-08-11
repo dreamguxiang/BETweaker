@@ -14,13 +14,11 @@ class MoveToNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETONODE
 public:
     class MoveToNode& operator=(class MoveToNode const &) = delete;
     MoveToNode(class MoveToNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETONODE
 #endif
     MCAPI MoveToNode();
-
-
 
 };

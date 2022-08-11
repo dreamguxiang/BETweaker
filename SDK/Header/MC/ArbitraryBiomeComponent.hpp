@@ -12,7 +12,6 @@ class ArbitraryBiomeComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARBITRARYBIOMECOMPONENT
 public:
     class ArbitraryBiomeComponent& operator=(class ArbitraryBiomeComponent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ArbitraryBiomeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARBITRARYBIOMECOMPONENT
 #endif
     MCAPI ~ArbitraryBiomeComponent();
-
-
 
 };

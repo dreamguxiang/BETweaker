@@ -16,14 +16,12 @@ class LocalConnector {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALCONNECTOR
 public:
     class LocalConnector& operator=(class LocalConnector const &) = delete;
     LocalConnector(class LocalConnector const &) = delete;
     LocalConnector() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LocalConnector();
@@ -54,9 +52,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
-
 
 };

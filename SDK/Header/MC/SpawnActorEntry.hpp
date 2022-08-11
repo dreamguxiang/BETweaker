@@ -12,19 +12,15 @@ struct SpawnActorEntry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORENTRY
 public:
     struct SpawnActorEntry& operator=(struct SpawnActorEntry const &) = delete;
     SpawnActorEntry(struct SpawnActorEntry const &) = delete;
     SpawnActorEntry() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORENTRY
+#endif
     MCAPI ~SpawnActorEntry();
-
-protected:
-
-private:
 
 };

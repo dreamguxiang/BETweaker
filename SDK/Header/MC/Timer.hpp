@@ -14,14 +14,12 @@ class Timer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMER
 public:
     class Timer& operator=(class Timer const &) = delete;
     Timer(class Timer const &) = delete;
     Timer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMER
@@ -34,7 +32,5 @@ public:
     MCAPI void setTimeScale(float);
     MCAPI void stepTick(int);
     MCAPI bool stepping() const;
-
-
 
 };

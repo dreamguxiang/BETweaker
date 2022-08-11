@@ -15,14 +15,12 @@ class ObserverBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBSERVERBLOCK
 public:
     class ObserverBlock& operator=(class ObserverBlock const &) = delete;
     ObserverBlock(class ObserverBlock const &) = delete;
     ObserverBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ObserverBlock();
@@ -45,12 +43,12 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*54*/ virtual bool isValidAuxValue(int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool);
     /*73*/ virtual void __unk_vfn_73();
     /*74*/ virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
@@ -84,8 +82,6 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
 
-
 private:
-
 
 };

@@ -14,13 +14,11 @@ class ChunkLoadActionList {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADACTIONLIST
 public:
     class ChunkLoadActionList& operator=(class ChunkLoadActionList const &) = delete;
     ChunkLoadActionList(class ChunkLoadActionList const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADACTIONLIST
@@ -40,8 +38,6 @@ public:
     MCAPI void _updateAsyncList(class LevelStorage &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
     MCAPI void _updateTickingList(class ServerLevel &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
 
-
 private:
-
 
 };

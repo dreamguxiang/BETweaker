@@ -15,14 +15,12 @@ class PropertiesSettings {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTIESSETTINGS
 public:
     class PropertiesSettings& operator=(class PropertiesSettings const &) = delete;
     PropertiesSettings(class PropertiesSettings const &) = delete;
     PropertiesSettings() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTIESSETTINGS
@@ -74,7 +72,5 @@ public:
     MCAPI ~PropertiesSettings();
     MCAPI static bool parseBoolValue(std::string const &);
     MCAPI static enum GameType parseGameMode(std::string const &);
-
-
 
 };

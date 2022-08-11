@@ -15,14 +15,12 @@ class LootPoolEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOLENTRY
 public:
     class LootPoolEntry& operator=(class LootPoolEntry const &) = delete;
     LootPoolEntry(class LootPoolEntry const &) = delete;
     LootPoolEntry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLENTRY
@@ -31,7 +29,5 @@ public:
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     MCAPI int getWeight(float) const;
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &);
-
-
 
 };

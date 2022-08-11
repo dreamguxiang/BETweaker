@@ -20,14 +20,12 @@ struct BlockVolumeDimensions {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENERATOR
 public:
     class WorldGenerator& operator=(class WorldGenerator const &) = delete;
     WorldGenerator(class WorldGenerator const &) = delete;
     WorldGenerator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
@@ -50,9 +48,7 @@ public:
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
-
 protected:
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
-
 
 };

@@ -12,7 +12,6 @@ class SetActorLinkPacketSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORLINKPACKETSYSTEM
 public:
     class SetActorLinkPacketSystem& operator=(class SetActorLinkPacketSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     SetActorLinkPacketSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORLINKPACKETSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
-
-
 
 };

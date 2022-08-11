@@ -14,14 +14,12 @@ class DimensionBrightnessRamp {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONBRIGHTNESSRAMP
 public:
     class DimensionBrightnessRamp& operator=(class DimensionBrightnessRamp const &) = delete;
     DimensionBrightnessRamp(class DimensionBrightnessRamp const &) = delete;
     DimensionBrightnessRamp() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DimensionBrightnessRamp();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONBRIGHTNESSRAMP
 #endif
     MCAPI float getBrightnessRampValue(int) const;
-
-
 
 };

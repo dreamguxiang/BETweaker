@@ -12,7 +12,6 @@ class SpawnConditions {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNCONDITIONS
 public:
     class SpawnConditions& operator=(class SpawnConditions const &) = delete;
@@ -20,12 +19,9 @@ public:
     SpawnConditions() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCONDITIONS
 #endif
     MCAPI static class SpawnConditions createSpawnConditionsWithSpawnRules(class SpawnConditions const &, class MobSpawnRules const &);
-
-
 
 };

@@ -14,20 +14,16 @@ class ScreenCapabilitiesRepo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENCAPABILITIESREPO
 public:
     class ScreenCapabilitiesRepo& operator=(class ScreenCapabilitiesRepo const &) = delete;
     ScreenCapabilitiesRepo(class ScreenCapabilitiesRepo const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENCAPABILITIESREPO
 #endif
     MCAPI ScreenCapabilitiesRepo();
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const &) const;
-
-
 
 };

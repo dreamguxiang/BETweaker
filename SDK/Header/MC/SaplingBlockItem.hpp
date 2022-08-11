@@ -16,14 +16,12 @@ class SaplingBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAPLINGBLOCKITEM
 public:
     class SaplingBlockItem& operator=(class SaplingBlockItem const &) = delete;
     SaplingBlockItem(class SaplingBlockItem const &) = delete;
     SaplingBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SaplingBlockItem();
@@ -42,9 +40,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAPLINGBLOCKITEM
 #endif
-
-
 
 };

@@ -16,14 +16,12 @@ class VillagerBase : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERBASE
 public:
     class VillagerBase& operator=(class VillagerBase const &) = delete;
     VillagerBase(class VillagerBase const &) = delete;
     VillagerBase() = delete;
 #endif
-
 
 public:
     /*11*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -76,8 +74,6 @@ public:
 //private:
     MCAPI void _addParticlesAroundSelf(enum ParticleType);
 
-
 private:
-
 
 };

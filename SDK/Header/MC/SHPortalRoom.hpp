@@ -15,14 +15,12 @@ class SHPortalRoom : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHPORTALROOM
 public:
     class SHPortalRoom& operator=(class SHPortalRoom const &) = delete;
     SHPortalRoom(class SHPortalRoom const &) = delete;
     SHPortalRoom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHPortalRoom();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHPORTALROOM
 #endif
-
-
 
 };

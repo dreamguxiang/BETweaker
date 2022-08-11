@@ -12,7 +12,6 @@ class DimensionChunkMoveSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONCHUNKMOVESYSTEM
 public:
     class DimensionChunkMoveSystem& operator=(class DimensionChunkMoveSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     DimensionChunkMoveSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONCHUNKMOVESYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
-
-
 
 };

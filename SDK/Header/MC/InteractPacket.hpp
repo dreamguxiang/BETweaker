@@ -15,13 +15,11 @@ class InteractPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTPACKET
 public:
     class InteractPacket& operator=(class InteractPacket const &) = delete;
     InteractPacket(class InteractPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InteractPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI InteractPacket(enum InteractPacket::Action, class ActorRuntimeID, class Vec3 const &);
     MCAPI InteractPacket();
-
-
 
 };

@@ -16,14 +16,12 @@ class RangedWeaponItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDWEAPONITEM
 public:
     class RangedWeaponItem& operator=(class RangedWeaponItem const &) = delete;
     RangedWeaponItem(class RangedWeaponItem const &) = delete;
     RangedWeaponItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RangedWeaponItem();
@@ -33,7 +31,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*64*/ virtual int getEnchantValue() const;
+    /*64*/ virtual int getEnchantValue();
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -43,14 +41,13 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*88*/ virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDWEAPONITEM
 #endif
     MCAPI RangedWeaponItem(std::string const &, int);
     MCAPI float getLaunchPower(int, int, int) const;
-
-
 
 };

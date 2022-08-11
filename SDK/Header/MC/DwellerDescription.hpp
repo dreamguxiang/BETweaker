@@ -15,14 +15,12 @@ class DwellerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERDESCRIPTION
 public:
     class DwellerDescription& operator=(class DwellerDescription const &) = delete;
     DwellerDescription(class DwellerDescription const &) = delete;
     DwellerDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERDESCRIPTION
 #endif
-
-
 
 };

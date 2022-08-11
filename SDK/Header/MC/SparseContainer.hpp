@@ -14,14 +14,12 @@ class SparseContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARSECONTAINER
 public:
     class SparseContainer& operator=(class SparseContainer const &) = delete;
     SparseContainer(class SparseContainer const &) = delete;
     SparseContainer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINER
@@ -35,8 +33,6 @@ public:
     MCAPI void _onItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 
-
 protected:
-
 
 };

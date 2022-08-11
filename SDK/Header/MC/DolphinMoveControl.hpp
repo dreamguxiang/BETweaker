@@ -15,13 +15,11 @@ class DolphinMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOLPHINMOVECONTROL
 public:
     class DolphinMoveControl& operator=(class DolphinMoveControl const &) = delete;
     DolphinMoveControl(class DolphinMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DolphinMoveControl();
@@ -37,8 +35,6 @@ public:
     MCAPI bool _isInWater(class Mob const &) const;
     MCAPI void _setupBreach(class Mob &);
 
-
 private:
-
 
 };

@@ -12,7 +12,6 @@ class OverloadSyntaxInformation {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERLOADSYNTAXINFORMATION
 public:
     class OverloadSyntaxInformation& operator=(class OverloadSyntaxInformation const &) = delete;
@@ -20,12 +19,9 @@ public:
     OverloadSyntaxInformation() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERLOADSYNTAXINFORMATION
 #endif
     MCAPI OverloadSyntaxInformation(std::string const &, unsigned int, unsigned int);
-
-
 
 };

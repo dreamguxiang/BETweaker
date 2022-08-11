@@ -15,13 +15,11 @@ class ResourcePackChunkRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKCHUNKREQUESTPACKET
 public:
     class ResourcePackChunkRequestPacket& operator=(class ResourcePackChunkRequestPacket const &) = delete;
     ResourcePackChunkRequestPacket(class ResourcePackChunkRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackChunkRequestPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKCHUNKREQUESTPACKET
 #endif
     MCAPI ResourcePackChunkRequestPacket();
-
-
 
 };

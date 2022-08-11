@@ -15,14 +15,12 @@ class StoneBrickBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONEBRICKBLOCK
 public:
     class StoneBrickBlock& operator=(class StoneBrickBlock const &) = delete;
     StoneBrickBlock(class StoneBrickBlock const &) = delete;
     StoneBrickBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneBrickBlock();
@@ -56,7 +54,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -69,7 +67,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONEBRICKBLOCK
 #endif
     MCAPI StoneBrickBlock(std::string const &, int, class Material const &);
-
-
 
 };

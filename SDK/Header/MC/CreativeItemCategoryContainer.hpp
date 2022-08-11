@@ -12,18 +12,15 @@ struct CreativeItemCategoryContainer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMCATEGORYCONTAINER
 public:
     struct CreativeItemCategoryContainer& operator=(struct CreativeItemCategoryContainer const &) = delete;
     CreativeItemCategoryContainer(struct CreativeItemCategoryContainer const &) = delete;
     CreativeItemCategoryContainer() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMCATEGORYCONTAINER
+#endif
+    MCAPI static void fromString(struct CreativeItemCategoryContainer &, std::string const &);
 
 };

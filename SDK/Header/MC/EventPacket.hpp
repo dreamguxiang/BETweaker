@@ -67,13 +67,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTPACKET
 public:
     class EventPacket& operator=(class EventPacket const &) = delete;
     EventPacket(class EventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EventPacket();
@@ -101,7 +99,5 @@ public:
     MCAPI EventPacket(class Player const *, enum MinecraftEventing::AchievementIds, bool);
     MCAPI EventPacket();
     MCAPI class EventPacket & operator=(class EventPacket &&);
-
-
 
 };

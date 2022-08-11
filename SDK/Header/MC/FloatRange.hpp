@@ -15,20 +15,16 @@ struct FloatRange {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATRANGE
 public:
     struct FloatRange& operator=(struct FloatRange const &) = delete;
     FloatRange(struct FloatRange const &) = delete;
     FloatRange() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATRANGE
+#endif
     MCAPI float getValue(class Random &) const;
     MCAPI bool parseJson(class Json::Value const &, float, float);
-
-protected:
-
-private:
 
 };

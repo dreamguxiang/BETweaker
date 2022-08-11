@@ -12,7 +12,6 @@ class ActorGoalFactory {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORGOALFACTORY
 public:
     class ActorGoalFactory& operator=(class ActorGoalFactory const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorGoalFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORGOALFACTORY
 #endif
     MCAPI void _initializeBedrock();
-
-
 
 };

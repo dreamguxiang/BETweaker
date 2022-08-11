@@ -14,13 +14,11 @@ class MoveControlComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLCOMPONENT
 public:
     class MoveControlComponent& operator=(class MoveControlComponent const &) = delete;
     MoveControlComponent(class MoveControlComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLCOMPONENT
@@ -45,8 +43,6 @@ public:
 //private:
     MCAPI void _setWantedPosition(class Vec3 const &);
 
-
 private:
-
 
 };

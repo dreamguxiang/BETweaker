@@ -14,14 +14,12 @@ class ScriptCommandOrigin : public CommandOrigin {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMANDORIGIN
 public:
     class ScriptCommandOrigin& operator=(class ScriptCommandOrigin const &) = delete;
     ScriptCommandOrigin(class ScriptCommandOrigin const &) = delete;
     ScriptCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptCommandOrigin();
@@ -33,18 +31,15 @@ public:
     /*6*/ virtual class Level * getLevel() const;
     /*7*/ virtual class Dimension * getDimension() const;
     /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*18*/ virtual bool isSelectorExpansionAllowed();
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
-    /*30*/ virtual bool isValid() const;
+    /*30*/ virtual bool isValid();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDORIGIN
 #endif
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
-    MCAPI void __autoclassinit2(unsigned __int64);
-
-
 
 };

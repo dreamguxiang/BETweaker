@@ -14,14 +14,12 @@ class NpcI18nObserver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCI18NOBSERVER
 public:
     class NpcI18nObserver& operator=(class NpcI18nObserver const &) = delete;
     NpcI18nObserver(class NpcI18nObserver const &) = delete;
     NpcI18nObserver() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcI18nObserver();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _loadNpcData();
 
-
 private:
-
 
 };

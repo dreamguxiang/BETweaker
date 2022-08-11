@@ -14,14 +14,12 @@ class RandomLookAroundAndSitGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMLOOKAROUNDANDSITGOAL
 public:
     class RandomLookAroundAndSitGoal& operator=(class RandomLookAroundAndSitGoal const &) = delete;
     RandomLookAroundAndSitGoal(class RandomLookAroundAndSitGoal const &) = delete;
     RandomLookAroundAndSitGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomLookAroundAndSitGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMLOOKAROUNDANDSITGOAL
 #endif
     MCAPI RandomLookAroundAndSitGoal(class Mob &, int, int, int, int, float);
-
-
 
 };

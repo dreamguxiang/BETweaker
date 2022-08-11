@@ -14,14 +14,12 @@ class SendEventGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTGOAL
 public:
     class SendEventGoal& operator=(class SendEventGoal const &) = delete;
     SendEventGoal(class SendEventGoal const &) = delete;
     SendEventGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SendEventGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI int _selectBestSpell();
 
-
 private:
-
 
 };

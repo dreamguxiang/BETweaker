@@ -15,14 +15,12 @@ class VanillaItemTiers {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAITEMTIERS
 public:
     class VanillaItemTiers& operator=(class VanillaItemTiers const &) = delete;
     VanillaItemTiers(class VanillaItemTiers const &) = delete;
     VanillaItemTiers() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTIERS
@@ -34,7 +32,5 @@ public:
     MCAPI static class Item::Tier const STONE;
     MCAPI static class Item::Tier const WOOD;
     MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
-
-
 
 };

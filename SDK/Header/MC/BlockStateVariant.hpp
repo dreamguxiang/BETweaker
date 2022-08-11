@@ -14,7 +14,6 @@ class BlockStateVariant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEVARIANT
 public:
     class BlockStateVariant& operator=(class BlockStateVariant const &) = delete;
@@ -22,14 +21,11 @@ public:
     BlockStateVariant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockStateVariant();
     /*1*/ virtual void toNBT(class CompoundTag &, int) const;
     /*2*/ virtual bool fromNBT(class CompoundTag const &, int &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEVARIANT
 #endif
-
-
 
 };

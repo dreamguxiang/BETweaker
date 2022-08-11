@@ -15,14 +15,12 @@ class FurnaceContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACECONTAINERMANAGERMODEL
 public:
     class FurnaceContainerManagerModel& operator=(class FurnaceContainerManagerModel const &) = delete;
     FurnaceContainerManagerModel(class FurnaceContainerManagerModel const &) = delete;
     FurnaceContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FurnaceContainerManagerModel();
@@ -44,10 +42,8 @@ public:
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     MCAPI void _updateResultSlotInfo();
 
-
 protected:
 
 private:
-
 
 };

@@ -16,14 +16,12 @@ class GoatHornItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOATHORNITEM
 public:
     class GoatHornItem& operator=(class GoatHornItem const &) = delete;
     GoatHornItem(class GoatHornItem const &) = delete;
     GoatHornItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GoatHornItem();
@@ -44,12 +42,11 @@ public:
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*104*/ virtual class HashedString const & getCooldownType() const;
     /*105*/ virtual int getCooldownTime() const;
-    /*128*/ virtual bool canBeCharged() const;
+    /*128*/ virtual bool canBeCharged();
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOATHORNITEM
 #endif
     MCAPI GoatHornItem(std::string const &, int);
     MCAPI static void addGoatHornVarationSaveData(class Goat &, class ItemStack &);
-
-
 
 };

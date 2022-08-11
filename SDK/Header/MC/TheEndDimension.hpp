@@ -14,14 +14,12 @@ class TheEndDimension {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THEENDDIMENSION
 public:
     class TheEndDimension& operator=(class TheEndDimension const &) = delete;
     TheEndDimension(class TheEndDimension const &) = delete;
     TheEndDimension() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDDIMENSION
@@ -56,8 +54,6 @@ public:
 //private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, unsigned int);
 
-
 private:
-
 
 };

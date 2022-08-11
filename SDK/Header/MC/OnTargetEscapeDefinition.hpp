@@ -15,18 +15,15 @@ struct OnTargetEscapeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONTARGETESCAPEDEFINITION
 public:
     struct OnTargetEscapeDefinition& operator=(struct OnTargetEscapeDefinition const &) = delete;
     OnTargetEscapeDefinition(struct OnTargetEscapeDefinition const &) = delete;
     OnTargetEscapeDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONTARGETESCAPEDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnTargetEscapeDefinition>> &);
 
 };

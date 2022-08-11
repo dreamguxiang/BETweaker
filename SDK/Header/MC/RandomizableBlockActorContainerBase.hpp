@@ -15,14 +15,12 @@ class RandomizableBlockActorContainerBase : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORCONTAINERBASE
 public:
     class RandomizableBlockActorContainerBase& operator=(class RandomizableBlockActorContainerBase const &) = delete;
     RandomizableBlockActorContainerBase(class RandomizableBlockActorContainerBase const &) = delete;
     RandomizableBlockActorContainerBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomizableBlockActorContainerBase();
@@ -40,7 +38,5 @@ public:
 #endif
     MCAPI void setLootTable(std::string const &, int);
     MCAPI void unPackLootTable(class Level &, class Container &, class AutomaticID<class Dimension, int>, class Actor *);
-
-
 
 };

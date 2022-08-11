@@ -14,13 +14,11 @@ class ContentLog {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOG
 public:
     class ContentLog& operator=(class ContentLog const &) = delete;
     ContentLog(class ContentLog const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOG
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
 
-
 private:
-
 
 };

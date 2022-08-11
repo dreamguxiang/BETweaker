@@ -15,13 +15,11 @@ class OnScreenTextureAnimationPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSCREENTEXTUREANIMATIONPACKET
 public:
     class OnScreenTextureAnimationPacket& operator=(class OnScreenTextureAnimationPacket const &) = delete;
     OnScreenTextureAnimationPacket(class OnScreenTextureAnimationPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnScreenTextureAnimationPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI OnScreenTextureAnimationPacket(unsigned int);
     MCAPI OnScreenTextureAnimationPacket();
-
-
 
 };

@@ -15,14 +15,12 @@ class GildedBlackstone : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GILDEDBLACKSTONE
 public:
     class GildedBlackstone& operator=(class GildedBlackstone const &) = delete;
     GildedBlackstone(class GildedBlackstone const &) = delete;
     GildedBlackstone() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GildedBlackstone();
@@ -67,7 +65,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI GildedBlackstone(std::string const &, int, class Material const &);
-
-
 
 };

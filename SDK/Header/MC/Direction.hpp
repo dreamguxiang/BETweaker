@@ -16,14 +16,12 @@ public:
 enum Type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTION
 public:
     class Direction& operator=(class Direction const &) = delete;
     Direction(class Direction const &) = delete;
     Direction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTION
@@ -37,7 +35,5 @@ public:
     MCAPI static int const STEP_Z[];
     MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
     MCAPI static enum Direction::Type getDirection(float, float);
-
-
 
 };

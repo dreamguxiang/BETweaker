@@ -14,13 +14,11 @@ class TrustComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRUSTCOMPONENT
 public:
     class TrustComponent& operator=(class TrustComponent const &) = delete;
     TrustComponent(class TrustComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI void initFromDefinition(class Actor &);
     MCAPI class TrustComponent & operator=(class TrustComponent &&);
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-
-
 
 };

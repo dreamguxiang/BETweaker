@@ -15,14 +15,12 @@ class EnchantUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTUTILS
 public:
     class EnchantUtils& operator=(class EnchantUtils const &) = delete;
     EnchantUtils(class EnchantUtils const &) = delete;
     EnchantUtils() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTUTILS
@@ -69,9 +67,7 @@ public:
 //private:
     MCAPI static void _convertBookCheck(class ItemStackBase &);
 
-
 private:
     MCAPI static std::vector<std::string> mEnchantmentNames;
-
 
 };

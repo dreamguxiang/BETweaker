@@ -12,7 +12,6 @@ class SideBySideValidationFailure {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDEVALIDATIONFAILURE
 public:
     class SideBySideValidationFailure& operator=(class SideBySideValidationFailure const &) = delete;
@@ -20,14 +19,11 @@ public:
     SideBySideValidationFailure() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONFAILURE
 #endif
     MCAPI std::string generateMessage(bool, bool, bool, std::string const &, class Vec3 const &) const;
     MCAPI ~SideBySideValidationFailure();
     MCAPI static std::string toString(enum SideBySideValidationFailure::FailureReason);
-
-
 
 };

@@ -14,14 +14,12 @@ class PanicGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PANICGOAL
 public:
     class PanicGoal& operator=(class PanicGoal const &) = delete;
     PanicGoal(class PanicGoal const &) = delete;
     PanicGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PanicGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _tryGeneratePathEnd();
 
-
 private:
-
 
 };

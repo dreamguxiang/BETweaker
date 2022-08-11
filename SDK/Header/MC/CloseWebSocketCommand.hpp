@@ -15,14 +15,12 @@ class CloseWebSocketCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLOSEWEBSOCKETCOMMAND
 public:
     class CloseWebSocketCommand& operator=(class CloseWebSocketCommand const &) = delete;
     CloseWebSocketCommand(class CloseWebSocketCommand const &) = delete;
     CloseWebSocketCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CloseWebSocketCommand();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class IMinecraftApp * mApp;
-
 
 };

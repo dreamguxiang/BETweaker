@@ -12,14 +12,12 @@ class ScriptPluginPackSourceEnumerator {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINPACKSOURCEENUMERATOR
 public:
     class ScriptPluginPackSourceEnumerator& operator=(class ScriptPluginPackSourceEnumerator const &) = delete;
     ScriptPluginPackSourceEnumerator(class ScriptPluginPackSourceEnumerator const &) = delete;
     ScriptPluginPackSourceEnumerator() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptPluginPackSourceEnumerator();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCEENUMERATOR
 #endif
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
-
-
 
 };

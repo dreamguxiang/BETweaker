@@ -14,14 +14,12 @@ class InventoryMenu {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYMENU
 public:
     class InventoryMenu& operator=(class InventoryMenu const &) = delete;
     InventoryMenu(class InventoryMenu const &) = delete;
     InventoryMenu() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
@@ -34,7 +32,5 @@ public:
     MCVAPI ~InventoryMenu();
 #endif
     MCAPI InventoryMenu(class Player &, class Container *);
-
-
 
 };

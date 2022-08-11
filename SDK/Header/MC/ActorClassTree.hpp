@@ -14,14 +14,12 @@ class ActorClassTree {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCLASSTREE
 public:
     class ActorClassTree& operator=(class ActorClassTree const &) = delete;
     ActorClassTree(class ActorClassTree const &) = delete;
     ActorClassTree() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCLASSTREE
@@ -34,7 +32,5 @@ public:
     MCAPI static bool isMobLegacy(enum ActorType);
     MCAPI static bool isOfType(enum ActorType, enum ActorType);
     MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
-
-
 
 };

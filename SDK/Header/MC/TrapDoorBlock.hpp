@@ -15,14 +15,12 @@ class TrapDoorBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAPDOORBLOCK
 public:
     class TrapDoorBlock& operator=(class TrapDoorBlock const &) = delete;
     TrapDoorBlock(class TrapDoorBlock const &) = delete;
     TrapDoorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TrapDoorBlock();
@@ -84,9 +82,7 @@ public:
 //private:
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
 
-
 private:
     MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
 
 };

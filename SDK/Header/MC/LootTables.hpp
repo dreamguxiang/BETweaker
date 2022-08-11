@@ -14,7 +14,6 @@ class LootTables {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLES
 public:
     class LootTables& operator=(class LootTables const &) = delete;
@@ -22,13 +21,10 @@ public:
     LootTables() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLES
 #endif
     MCAPI class LootTable * lookupByName(std::string const &, class ResourcePackManager &);
     MCAPI ~LootTables();
-
-
 
 };

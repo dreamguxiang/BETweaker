@@ -15,13 +15,11 @@ class AddPaintingPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDPAINTINGPACKET
 public:
     class AddPaintingPacket& operator=(class AddPaintingPacket const &) = delete;
     AddPaintingPacket(class AddPaintingPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AddPaintingPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI AddPaintingPacket(class Painting const &);
     MCAPI AddPaintingPacket();
-
-
 
 };

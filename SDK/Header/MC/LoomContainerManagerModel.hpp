@@ -15,14 +15,12 @@ class LoomContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMCONTAINERMANAGERMODEL
 public:
     class LoomContainerManagerModel& operator=(class LoomContainerManagerModel const &) = delete;
     LoomContainerManagerModel(class LoomContainerManagerModel const &) = delete;
     LoomContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LoomContainerManagerModel();
@@ -40,7 +38,5 @@ public:
     MCAPI static int const DYE_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
-
-
 
 };

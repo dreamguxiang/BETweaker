@@ -14,14 +14,12 @@ class MesaSurfaceBuilderNoises {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESASURFACEBUILDERNOISES
 public:
     class MesaSurfaceBuilderNoises& operator=(class MesaSurfaceBuilderNoises const &) = delete;
     MesaSurfaceBuilderNoises(class MesaSurfaceBuilderNoises const &) = delete;
     MesaSurfaceBuilderNoises() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESASURFACEBUILDERNOISES
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI MesaSurfaceBuilderNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>);
 
-
 private:
-
 
 };

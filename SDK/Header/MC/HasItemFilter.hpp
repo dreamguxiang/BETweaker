@@ -12,7 +12,6 @@ class HasItemFilter {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASITEMFILTER
 public:
     class HasItemFilter& operator=(class HasItemFilter const &) = delete;
@@ -20,12 +19,9 @@ public:
     HasItemFilter() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASITEMFILTER
 #endif
     MCAPI ~HasItemFilter();
-
-
 
 };

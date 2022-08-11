@@ -12,19 +12,15 @@ struct MolangGeometryVariable {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGGEOMETRYVARIABLE
 public:
     struct MolangGeometryVariable& operator=(struct MolangGeometryVariable const &) = delete;
     MolangGeometryVariable(struct MolangGeometryVariable const &) = delete;
     MolangGeometryVariable() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGGEOMETRYVARIABLE
+#endif
     MCAPI ~MolangGeometryVariable();
-
-protected:
-
-private:
 
 };

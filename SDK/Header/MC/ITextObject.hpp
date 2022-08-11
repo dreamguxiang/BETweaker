@@ -14,14 +14,12 @@ class ITextObject {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEXTOBJECT
 public:
     class ITextObject& operator=(class ITextObject const &) = delete;
     ITextObject(class ITextObject const &) = delete;
     ITextObject() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEXTOBJECT
@@ -30,7 +28,5 @@ public:
     MCAPI static std::string const RAW_TEXT_TEXT_KEY;
     MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
     MCAPI static std::string const RAW_TEXT_WITH_KEY;
-
-
 
 };

@@ -16,13 +16,11 @@ public:
 enum PreValidationStatus;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONMINEBLOCK
 public:
     class ItemStackRequestActionMineBlock& operator=(class ItemStackRequestActionMineBlock const &) = delete;
     ItemStackRequestActionMineBlock(class ItemStackRequestActionMineBlock const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionMineBlock();
@@ -38,7 +36,5 @@ public:
     MCAPI int getPredictedDurability() const;
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
-
-
 
 };

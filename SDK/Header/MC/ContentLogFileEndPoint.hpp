@@ -15,14 +15,12 @@ class ContentLogFileEndPoint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGFILEENDPOINT
 public:
     class ContentLogFileEndPoint& operator=(class ContentLogFileEndPoint const &) = delete;
     ContentLogFileEndPoint(class ContentLogFileEndPoint const &) = delete;
     ContentLogFileEndPoint() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
-
-
 
 };

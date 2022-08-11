@@ -12,19 +12,15 @@ struct MessageEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESSAGEEVENT
 public:
     struct MessageEvent& operator=(struct MessageEvent const &) = delete;
     MessageEvent(struct MessageEvent const &) = delete;
     MessageEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGEEVENT
+#endif
     MCAPI ~MessageEvent();
-
-protected:
-
-private:
 
 };

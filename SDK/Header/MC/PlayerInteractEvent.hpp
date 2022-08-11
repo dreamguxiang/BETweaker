@@ -12,19 +12,15 @@ struct PlayerInteractEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINTERACTEVENT
 public:
     struct PlayerInteractEvent& operator=(struct PlayerInteractEvent const &) = delete;
     PlayerInteractEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTEVENT
+#endif
     MCAPI PlayerInteractEvent(struct PlayerInteractEvent const &);
     MCAPI ~PlayerInteractEvent();
-
-protected:
-
-private:
 
 };

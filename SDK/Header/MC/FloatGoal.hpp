@@ -14,14 +14,12 @@ class FloatGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATGOAL
 public:
     class FloatGoal& operator=(class FloatGoal const &) = delete;
     FloatGoal(class FloatGoal const &) = delete;
     FloatGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FloatGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATGOAL
 #endif
     MCAPI FloatGoal(class Mob &);
-
-
 
 };

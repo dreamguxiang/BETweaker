@@ -15,14 +15,12 @@ class SetScoreboardIdentityPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSCOREBOARDIDENTITYPACKET
 public:
     class SetScoreboardIdentityPacket& operator=(class SetScoreboardIdentityPacket const &) = delete;
     SetScoreboardIdentityPacket(class SetScoreboardIdentityPacket const &) = delete;
     SetScoreboardIdentityPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetScoreboardIdentityPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSCOREBOARDIDENTITYPACKET
 #endif
     MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const &, struct PlayerScoreboardId const &);
-
-
 
 };

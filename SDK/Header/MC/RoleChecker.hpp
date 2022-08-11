@@ -14,13 +14,11 @@ class RoleChecker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROLECHECKER
 public:
     class RoleChecker& operator=(class RoleChecker const &) = delete;
     RoleChecker(class RoleChecker const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLECHECKER
@@ -29,7 +27,5 @@ public:
     MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
     MCAPI bool lookupInProgress() const;
     MCAPI ~RoleChecker();
-
-
 
 };

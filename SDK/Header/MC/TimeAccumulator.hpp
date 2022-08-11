@@ -12,13 +12,11 @@ class TimeAccumulator {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMEACCUMULATOR
 public:
     class TimeAccumulator& operator=(class TimeAccumulator const &) = delete;
     TimeAccumulator(class TimeAccumulator const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMEACCUMULATOR
@@ -28,7 +26,5 @@ public:
     MCAPI float getTimeSumAverageMS() const;
     MCAPI float getTimeSumAverageSeconds() const;
     MCAPI float getTimeSumSeconds() const;
-
-
 
 };

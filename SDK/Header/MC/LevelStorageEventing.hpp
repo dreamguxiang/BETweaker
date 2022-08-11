@@ -14,7 +14,6 @@ class LevelStorageEventing {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEEVENTING
 public:
     class LevelStorageEventing& operator=(class LevelStorageEventing const &) = delete;
@@ -22,14 +21,11 @@ public:
     LevelStorageEventing() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEEVENTING
 #endif
     MCAPI LevelStorageEventing(std::string const &, class LevelData const &, std::string const &);
     MCAPI void fireDBStorageError(char const *);
     MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const &, class std::optional<bool>);
-
-
 
 };

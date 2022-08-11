@@ -15,14 +15,12 @@ class MingleGoal : public MoveToPOIGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLEGOAL
 public:
     class MingleGoal& operator=(class MingleGoal const &) = delete;
     MingleGoal(class MingleGoal const &) = delete;
     MingleGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MingleGoal();
@@ -44,11 +42,9 @@ public:
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     MCAPI void _lookAt(class Actor *);
 
-
 private:
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
-
 
 };

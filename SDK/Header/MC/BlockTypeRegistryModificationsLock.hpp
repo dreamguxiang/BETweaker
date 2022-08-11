@@ -12,14 +12,12 @@ class BlockTypeRegistryModificationsLock {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRYMODIFICATIONSLOCK
 public:
     class BlockTypeRegistryModificationsLock& operator=(class BlockTypeRegistryModificationsLock const &) = delete;
     BlockTypeRegistryModificationsLock(class BlockTypeRegistryModificationsLock const &) = delete;
     BlockTypeRegistryModificationsLock() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRYMODIFICATIONSLOCK
@@ -29,8 +27,6 @@ public:
 //private:
     MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
 
-
 private:
-
 
 };

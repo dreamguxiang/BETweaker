@@ -15,14 +15,12 @@ class NBBridgeCrossing : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBBRIDGECROSSING
 public:
     class NBBridgeCrossing& operator=(class NBBridgeCrossing const &) = delete;
     NBBridgeCrossing(class NBBridgeCrossing const &) = delete;
     NBBridgeCrossing() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBBridgeCrossing();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBBRIDGECROSSING
 #endif
-
-
 
 };

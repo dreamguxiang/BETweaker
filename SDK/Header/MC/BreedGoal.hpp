@@ -14,14 +14,12 @@ class BreedGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDGOAL
 public:
     class BreedGoal& operator=(class BreedGoal const &) = delete;
     BreedGoal(class BreedGoal const &) = delete;
     BreedGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BreedGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     MCAPI class Mob * _moveToFreePartner() const;
 
-
 private:
-
 
 };

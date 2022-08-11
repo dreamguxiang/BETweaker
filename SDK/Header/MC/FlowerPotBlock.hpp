@@ -15,14 +15,12 @@ class FlowerPotBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERPOTBLOCK
 public:
     class FlowerPotBlock& operator=(class FlowerPotBlock const &) = delete;
     FlowerPotBlock(class FlowerPotBlock const &) = delete;
     FlowerPotBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FlowerPotBlock();
@@ -48,7 +46,7 @@ public:
     /*54*/ virtual bool isValidAuxValue(int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
@@ -86,8 +84,6 @@ public:
     MCAPI void _updateFlowerPotEntity(class BlockSource &, class BlockPos const &, class FlowerPotBlockActor *, class Block const *, class Actor &) const;
     MCAPI bool isSupportedBlock(class Block const &) const;
 
-
 private:
-
 
 };

@@ -12,19 +12,15 @@ struct ProjectileHitEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEHITEVENT
 public:
     struct ProjectileHitEvent& operator=(struct ProjectileHitEvent const &) = delete;
     ProjectileHitEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEHITEVENT
+#endif
     MCAPI ProjectileHitEvent(struct ProjectileHitEvent const &);
     MCAPI ~ProjectileHitEvent();
-
-protected:
-
-private:
 
 };

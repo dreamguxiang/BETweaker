@@ -14,7 +14,6 @@ class NullLogger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLLOGGER
 public:
     class NullLogger& operator=(class NullLogger const &) = delete;
@@ -22,14 +21,11 @@ public:
     NullLogger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NullLogger();
     /*1*/ virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
 #endif
     MCAPI static class NullLogger instance;
-
-
 
 };

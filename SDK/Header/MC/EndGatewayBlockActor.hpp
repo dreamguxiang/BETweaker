@@ -15,14 +15,12 @@ class EndGatewayBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDGATEWAYBLOCKACTOR
 public:
     class EndGatewayBlockActor& operator=(class EndGatewayBlockActor const &) = delete;
     EndGatewayBlockActor(class EndGatewayBlockActor const &) = delete;
     EndGatewayBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndGatewayBlockActor();
@@ -33,7 +31,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual bool hasAlphaLayer() const;
+    /*18*/ virtual bool hasAlphaLayer();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -59,8 +57,6 @@ public:
 //private:
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 
-
 private:
-
 
 };

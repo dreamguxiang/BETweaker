@@ -13,7 +13,6 @@ class BlockSelectionBoxProcessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTIONBOXPROCESSOR
 public:
     class BlockSelectionBoxProcessor& operator=(class BlockSelectionBoxProcessor const &) = delete;
@@ -21,13 +20,10 @@ public:
     BlockSelectionBoxProcessor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTIONBOXPROCESSOR
 #endif
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockSelectionBoxComponent *);
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
-
-
 
 };

@@ -20,14 +20,12 @@ struct FluidSample {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AQUIFER
 public:
     class Aquifer& operator=(class Aquifer const &) = delete;
     Aquifer(class Aquifer const &) = delete;
     Aquifer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFER
@@ -42,9 +40,7 @@ public:
 //private:
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
 
-
 private:
     MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
-
 
 };

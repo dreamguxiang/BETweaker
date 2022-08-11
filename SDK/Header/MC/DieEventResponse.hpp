@@ -15,14 +15,12 @@ class DieEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIEEVENTRESPONSE
 public:
     class DieEventResponse& operator=(class DieEventResponse const &) = delete;
     DieEventResponse(class DieEventResponse const &) = delete;
     DieEventResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DieEventResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIEEVENTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

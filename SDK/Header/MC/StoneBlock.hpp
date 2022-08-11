@@ -15,14 +15,12 @@ class StoneBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONEBLOCK
 public:
     class StoneBlock& operator=(class StoneBlock const &) = delete;
     StoneBlock(class StoneBlock const &) = delete;
     StoneBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -57,7 +55,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*161*/ virtual class Block const * tryGetInfested(class Block const &) const;
@@ -72,7 +70,5 @@ public:
 #endif
     MCAPI StoneBlock(std::string const &, int);
     MCAPI static class mce::Color getStoneBlockMapColor(enum StoneType);
-
-
 
 };

@@ -13,13 +13,11 @@ class ScriptMessagePacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMESSAGEPACKET
 public:
     class ScriptMessagePacket& operator=(class ScriptMessagePacket const &) = delete;
     ScriptMessagePacket(class ScriptMessagePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptMessagePacket();
@@ -33,7 +31,5 @@ public:
     MCAPI ScriptMessagePacket();
     MCAPI std::string const & getMessageId() const;
     MCAPI std::string const & getMessageValue() const;
-
-
 
 };

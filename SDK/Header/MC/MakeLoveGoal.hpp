@@ -14,14 +14,12 @@ class MakeLoveGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAKELOVEGOAL
 public:
     class MakeLoveGoal& operator=(class MakeLoveGoal const &) = delete;
     MakeLoveGoal(class MakeLoveGoal const &) = delete;
     MakeLoveGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MakeLoveGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI class VillagerBase * _findMate() const;
 
-
 private:
-
 
 };

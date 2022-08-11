@@ -14,14 +14,12 @@ class DragonStrafePlayerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSTRAFEPLAYERGOAL
 public:
     class DragonStrafePlayerGoal& operator=(class DragonStrafePlayerGoal const &) = delete;
     DragonStrafePlayerGoal(class DragonStrafePlayerGoal const &) = delete;
     DragonStrafePlayerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonStrafePlayerGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI void navigateToNextPathNode();
     MCAPI void setTarget(class Actor *);
 
-
 private:
-
 
 };

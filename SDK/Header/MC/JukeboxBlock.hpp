@@ -15,14 +15,12 @@ class JukeboxBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUKEBOXBLOCK
 public:
     class JukeboxBlock& operator=(class JukeboxBlock const &) = delete;
     JukeboxBlock(class JukeboxBlock const &) = delete;
     JukeboxBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JukeboxBlock();
@@ -45,12 +43,12 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
     /*73*/ virtual void __unk_vfn_73();
-    /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
+    /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &);
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -64,7 +62,7 @@ public:
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
-    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &);
     /*177*/ virtual void __unk_vfn_177();
     /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
@@ -77,8 +75,6 @@ public:
     MCAPI void _dropRecording(class BlockSource &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

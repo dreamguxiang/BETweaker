@@ -14,18 +14,16 @@ struct DefaultScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCREENCAPABILITIES
 public:
     struct DefaultScreenCapabilities& operator=(struct DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities(struct DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~DefaultScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTSCREENCAPABILITIES
+#endif
 
 };

@@ -15,14 +15,12 @@ class MineshaftRoom : public MineshaftPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTROOM
 public:
     class MineshaftRoom& operator=(class MineshaftRoom const &) = delete;
     MineshaftRoom(class MineshaftRoom const &) = delete;
     MineshaftRoom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftRoom();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTROOM
 #endif
     MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
-
-
 
 };

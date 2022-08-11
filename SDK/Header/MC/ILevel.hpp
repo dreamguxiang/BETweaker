@@ -14,7 +14,6 @@ class ILevel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILEVEL
 public:
     class ILevel& operator=(class ILevel const &) = delete;
@@ -22,14 +21,11 @@ public:
     ILevel() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
     MCVAPI class Level * asLevel();
     MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
     MCVAPI class TradeTables * getTradeTables();
 #endif
-
-
 
 };

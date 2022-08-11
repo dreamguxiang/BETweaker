@@ -15,14 +15,12 @@ class InstantaneousAttributeBuff : public AttributeBuff {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTANEOUSATTRIBUTEBUFF
 public:
     class InstantaneousAttributeBuff& operator=(class InstantaneousAttributeBuff const &) = delete;
     InstantaneousAttributeBuff(class InstantaneousAttributeBuff const &) = delete;
     InstantaneousAttributeBuff() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
-
-
 
 };

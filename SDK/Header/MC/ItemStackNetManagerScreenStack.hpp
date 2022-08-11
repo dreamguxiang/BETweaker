@@ -14,14 +14,12 @@ class ItemStackNetManagerScreenStack {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSCREENSTACK
 public:
     class ItemStackNetManagerScreenStack& operator=(class ItemStackNetManagerScreenStack const &) = delete;
     ItemStackNetManagerScreenStack(class ItemStackNetManagerScreenStack const &) = delete;
     ItemStackNetManagerScreenStack() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREENSTACK
@@ -34,7 +32,5 @@ public:
     MCAPI class ItemStackNetManagerScreen const * top() const;
     MCAPI class ItemStackNetManagerScreen * top();
     MCAPI ~ItemStackNetManagerScreenStack();
-
-
 
 };

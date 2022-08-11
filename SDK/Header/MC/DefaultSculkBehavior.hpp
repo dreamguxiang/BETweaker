@@ -12,14 +12,12 @@ class DefaultSculkBehavior {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCULKBEHAVIOR
 public:
     class DefaultSculkBehavior& operator=(class DefaultSculkBehavior const &) = delete;
     DefaultSculkBehavior(class DefaultSculkBehavior const &) = delete;
     DefaultSculkBehavior() = delete;
 #endif
-
 
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
@@ -30,7 +28,5 @@ public:
     /*5*/ virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTSCULKBEHAVIOR
 #endif
-
-
 
 };

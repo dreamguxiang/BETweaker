@@ -21,7 +21,6 @@ struct Definition {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEST
 public:
     class FilterTest& operator=(class FilterTest const &) = delete;
@@ -29,15 +28,14 @@ public:
     FilterTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterTest();
     /*1*/ virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
-    /*2*/ virtual bool evaluate(struct FilterContext const &) const = 0;
+    /*2*/ virtual bool evaluate(struct FilterContext const &);
     /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
-    /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
+    /*4*/ virtual class gsl::basic_string_span<char const, -1> getName();
     /*5*/ virtual class Json::Value _serializeDomain() const;
-    /*6*/ virtual class Json::Value _serializeValue() const = 0;
+    /*6*/ virtual class Json::Value _serializeValue();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
 #endif
     MCAPI class Json::Value serialize() const;
@@ -47,8 +45,6 @@ public:
     MCAPI bool _testValuesWithOperator(float, float) const;
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 
-
 protected:
-
 
 };

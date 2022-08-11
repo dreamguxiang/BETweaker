@@ -12,14 +12,12 @@ class SculkBlockBehavior {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKBLOCKBEHAVIOR
 public:
     class SculkBlockBehavior& operator=(class SculkBlockBehavior const &) = delete;
     SculkBlockBehavior(class SculkBlockBehavior const &) = delete;
     SculkBlockBehavior() = delete;
 #endif
-
 
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
 
-
 private:
-
 
 };

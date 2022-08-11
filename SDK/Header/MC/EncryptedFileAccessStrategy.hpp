@@ -17,7 +17,6 @@ class EncryptedFileAccessStrategy : public DirectoryPackAccessStrategy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDFILEACCESSSTRATEGY
 public:
     class EncryptedFileAccessStrategy& operator=(class EncryptedFileAccessStrategy const &) = delete;
@@ -25,10 +24,9 @@ public:
     EncryptedFileAccessStrategy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
-    /*4*/ virtual bool isWritable() const;
+    /*4*/ virtual bool isWritable();
     /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
     /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
@@ -49,10 +47,8 @@ public:
     MCAPI static bool _getContentIdentityFromEncryptedStream(std::string &, class ContentIdentity &);
     MCAPI static void _transformStream(std::string &, std::string const &, unsigned __int64);
 
-
 protected:
 
 private:
-
 
 };

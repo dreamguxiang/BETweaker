@@ -15,13 +15,11 @@ class DisconnectPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISCONNECTPACKET
 public:
     class DisconnectPacket& operator=(class DisconnectPacket const &) = delete;
     DisconnectPacket(class DisconnectPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DisconnectPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI DisconnectPacket(std::string const &, bool);
     MCAPI DisconnectPacket();
-
-
 
 };

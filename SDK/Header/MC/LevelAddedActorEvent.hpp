@@ -12,7 +12,6 @@ class LevelAddedActorEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELADDEDACTOREVENT
 public:
     class LevelAddedActorEvent& operator=(class LevelAddedActorEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     LevelAddedActorEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELADDEDACTOREVENT
 #endif
     MCAPI ~LevelAddedActorEvent();
-
-
 
 };

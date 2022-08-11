@@ -14,14 +14,12 @@ class VanillaItems {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAITEMS
 public:
     class VanillaItems& operator=(class VanillaItems const &) = delete;
     VanillaItems(class VanillaItems const &) = delete;
     VanillaItems() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMS
@@ -36,8 +34,6 @@ public:
     MCAPI static void _addItemsCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
     MCAPI static void _addNatureCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
 
-
 private:
-
 
 };

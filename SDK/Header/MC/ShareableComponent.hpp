@@ -14,14 +14,12 @@ class ShareableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREABLECOMPONENT
 public:
     class ShareableComponent& operator=(class ShareableComponent const &) = delete;
     ShareableComponent(class ShareableComponent const &) = delete;
     ShareableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLECOMPONENT
@@ -40,8 +38,6 @@ public:
     MCAPI bool _shouldReplaceItem(class ItemStack const &, class ItemStack const &, class ShareableDefinition const &, bool) const;
     MCAPI static bool _useLegacySurplusRules(class Level const &);
 
-
 private:
-
 
 };

@@ -13,9 +13,9 @@ struct GoalDefinition {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOALDEFINITION
+#endif
     MCAPI GoalDefinition(struct GoalDefinition &&);
     MCAPI GoalDefinition(struct GoalDefinition const &);
     MCAPI GoalDefinition();
@@ -24,9 +24,10 @@ public:
     MCAPI struct GoalDefinition & operator=(struct GoalDefinition const &);
     MCAPI bool parse(struct ConstDeserializeDataParams const &, int);
     MCAPI ~GoalDefinition();
-
-protected:
-
-private:
+    MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob &, struct GoalDefinition const &);
+    MCAPI static bool GoalExists(std::string const &);
+    MCAPI static void init();
+    MCAPI static class std::unordered_map<std::string, class std::function<std::unique_ptr<class Goal> (class Mob &, struct GoalDefinition const &)>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::function<std::unique_ptr<class Goal> (class Mob &, struct GoalDefinition const &)>>>> mGoalMap;
+    MCAPI static void shutdown();
 
 };

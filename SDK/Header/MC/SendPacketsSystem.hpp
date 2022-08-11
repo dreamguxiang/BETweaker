@@ -12,7 +12,6 @@ class SendPacketsSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDPACKETSSYSTEM
 public:
     class SendPacketsSystem& operator=(class SendPacketsSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     SendPacketsSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDPACKETSSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
-
-
 
 };

@@ -12,7 +12,6 @@ class BossbarManager {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSBARMANAGER
 public:
     class BossbarManager& operator=(class BossbarManager const &) = delete;
@@ -20,12 +19,9 @@ public:
     BossbarManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSBARMANAGER
 #endif
     MCAPI ~BossbarManager();
-
-
 
 };

@@ -14,21 +14,17 @@ struct PackedItemUseLegacyInventoryTransaction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
 public:
     struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
     PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
     PackedItemUseLegacyInventoryTransaction() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
+#endif
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
     MCAPI struct PackedItemUseLegacyInventoryTransaction & operator=(struct PackedItemUseLegacyInventoryTransaction &&);
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
-
-protected:
-
-private:
 
 };

@@ -14,7 +14,6 @@ class BlockEventResponseFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTRESPONSEFACTORY
 public:
     class BlockEventResponseFactory& operator=(class BlockEventResponseFactory const &) = delete;
@@ -22,14 +21,11 @@ public:
     BlockEventResponseFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
     /*2*/ virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
 #endif
-
-
 
 };

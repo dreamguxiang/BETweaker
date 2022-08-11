@@ -19,20 +19,16 @@ struct MCRESULT {
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
 public:
     struct MCRESULT& operator=(struct MCRESULT const &) = delete;
     MCRESULT(struct MCRESULT const &) = delete;
     MCRESULT() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MCRESULT
+#endif
     MCAPI int getFullCode() const;
     MCAPI bool isSuccess() const;
-
-protected:
-
-private:
 
 };

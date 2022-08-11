@@ -13,14 +13,12 @@ class SculkSensorVibrationConfig : public VibrationListenerConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSENSORVIBRATIONCONFIG
 public:
     class SculkSensorVibrationConfig& operator=(class SculkSensorVibrationConfig const &) = delete;
     SculkSensorVibrationConfig(class SculkSensorVibrationConfig const &) = delete;
     SculkSensorVibrationConfig() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkSensorVibrationConfig();
@@ -29,7 +27,5 @@ public:
     /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORVIBRATIONCONFIG
 #endif
-
-
 
 };

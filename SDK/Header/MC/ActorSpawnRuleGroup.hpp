@@ -15,14 +15,12 @@ class ActorSpawnRuleGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEGROUP
 public:
     class ActorSpawnRuleGroup& operator=(class ActorSpawnRuleGroup const &) = delete;
     ActorSpawnRuleGroup(class ActorSpawnRuleGroup const &) = delete;
     ActorSpawnRuleGroup() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorSpawnRuleGroup();
@@ -37,7 +35,5 @@ public:
     MCAPI int getDelayEnd(std::string) const;
     MCAPI void offSetDelayByCurrentTick(struct Tick const &);
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
-
-
 
 };

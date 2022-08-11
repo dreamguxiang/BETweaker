@@ -16,7 +16,6 @@ class EnderEyeItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDEREYEITEM
 public:
     class EnderEyeItem& operator=(class EnderEyeItem const &) = delete;
@@ -24,14 +23,13 @@ public:
     EnderEyeItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnderEyeItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable() const;
+    /*23*/ virtual bool isThrowable();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -42,10 +40,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDEREYEITEM
 #endif
     MCAPI EnderEyeItem(std::string const &, int);
-
-
 
 };

@@ -15,14 +15,12 @@ class WorkerPool {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKERPOOL
 public:
     class WorkerPool& operator=(class WorkerPool const &) = delete;
     WorkerPool(class WorkerPool const &) = delete;
     WorkerPool() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
@@ -40,12 +38,10 @@ public:
 //private:
     MCAPI bool _checkPendingWork();
 
-
 protected:
     MCAPI static class SmallSet<class WorkerPool *> sAllPools;
     MCAPI static class std::mutex sAllPoolsMutex;
 
 private:
-
 
 };

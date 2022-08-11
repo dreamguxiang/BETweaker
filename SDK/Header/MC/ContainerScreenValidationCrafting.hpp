@@ -12,14 +12,12 @@ class ContainerScreenValidationCrafting {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATIONCRAFTING
 public:
     class ContainerScreenValidationCrafting& operator=(class ContainerScreenValidationCrafting const &) = delete;
     ContainerScreenValidationCrafting(class ContainerScreenValidationCrafting const &) = delete;
     ContainerScreenValidationCrafting() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerScreenValidationCrafting();
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
 
-
 private:
-
 
 };

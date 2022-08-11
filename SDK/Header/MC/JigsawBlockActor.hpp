@@ -15,14 +15,12 @@ class JigsawBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWBLOCKACTOR
 public:
     class JigsawBlockActor& operator=(class JigsawBlockActor const &) = delete;
     JigsawBlockActor(class JigsawBlockActor const &) = delete;
     JigsawBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JigsawBlockActor();
@@ -41,7 +39,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKACTOR
 #endif
     MCAPI JigsawBlockActor(class BlockPos const &);
-
-
 
 };

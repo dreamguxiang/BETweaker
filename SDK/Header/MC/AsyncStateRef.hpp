@@ -12,7 +12,6 @@ class AsyncStateRef {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCSTATEREF
 public:
     class AsyncStateRef& operator=(class AsyncStateRef const &) = delete;
@@ -20,12 +19,9 @@ public:
     AsyncStateRef() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCSTATEREF
 #endif
     MCAPI ~AsyncStateRef();
-
-
 
 };

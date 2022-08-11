@@ -15,13 +15,11 @@ class MotionPredictionHintsPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOTIONPREDICTIONHINTSPACKET
 public:
     class MotionPredictionHintsPacket& operator=(class MotionPredictionHintsPacket const &) = delete;
     MotionPredictionHintsPacket(class MotionPredictionHintsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MotionPredictionHintsPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI MotionPredictionHintsPacket(class Actor const &);
     MCAPI MotionPredictionHintsPacket();
-
-
 
 };

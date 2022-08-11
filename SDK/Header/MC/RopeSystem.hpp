@@ -14,13 +14,11 @@ class RopeSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPESYSTEM
 public:
     class RopeSystem& operator=(class RopeSystem const &) = delete;
     RopeSystem(class RopeSystem const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPESYSTEM
@@ -53,8 +51,6 @@ public:
     MCAPI void _tick();
     MCAPI void _tickWaves();
 
-
 private:
-
 
 };

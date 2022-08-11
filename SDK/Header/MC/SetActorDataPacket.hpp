@@ -19,13 +19,11 @@ public:
     std::vector<std::unique_ptr<DataItem>> mitems;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORDATAPACKET
 public:
     class SetActorDataPacket& operator=(class SetActorDataPacket const &) = delete;
     SetActorDataPacket(class SetActorDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetActorDataPacket();
@@ -37,7 +35,5 @@ public:
 #endif
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
     MCAPI SetActorDataPacket();
-
-
 
 };

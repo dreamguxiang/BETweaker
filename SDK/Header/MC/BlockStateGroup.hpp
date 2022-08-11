@@ -15,13 +15,11 @@ class BlockStateGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEGROUP
 public:
     class BlockStateGroup& operator=(class BlockStateGroup const &) = delete;
     BlockStateGroup(class BlockStateGroup const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEGROUP
@@ -35,7 +33,5 @@ public:
     MCAPI static std::unique_ptr<struct BlockStateDefinition> createFromItemState(std::string const &, class ItemState const &);
     MCAPI static std::unique_ptr<class ListTag> createItemStateEnum(class ItemState const &);
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
-
-
 
 };

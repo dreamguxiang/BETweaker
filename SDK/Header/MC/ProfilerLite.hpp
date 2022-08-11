@@ -14,13 +14,11 @@ class ProfilerLite {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROFILERLITE
 public:
     class ProfilerLite& operator=(class ProfilerLite const &) = delete;
     ProfilerLite(class ProfilerLite const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROFILERLITE
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class ProfilerLite gProfilerLiteInstance;
-
 
 };

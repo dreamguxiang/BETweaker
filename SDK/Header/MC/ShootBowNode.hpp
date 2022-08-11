@@ -14,13 +14,11 @@ class ShootBowNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTBOWNODE
 public:
     class ShootBowNode& operator=(class ShootBowNode const &) = delete;
     ShootBowNode(class ShootBowNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShootBowNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWNODE
 #endif
     MCAPI ShootBowNode();
-
-
 
 };

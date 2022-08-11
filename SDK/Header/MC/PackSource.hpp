@@ -15,14 +15,12 @@ class PackSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCE
 public:
     class PackSource& operator=(class PackSource const &) = delete;
     PackSource(class PackSource const &) = delete;
     PackSource() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI class Pack * fetchPack(struct PackIdVersion const &);
     MCAPI void resolveUpgradeDependencies(class Pack &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
-
-
 
 };

@@ -16,14 +16,12 @@ class UnderwaterCanyonFeature : public CanyonFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDERWATERCANYONFEATURE
 public:
     class UnderwaterCanyonFeature& operator=(class UnderwaterCanyonFeature const &) = delete;
     UnderwaterCanyonFeature(class UnderwaterCanyonFeature const &) = delete;
     UnderwaterCanyonFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UnderwaterCanyonFeature();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI UnderwaterCanyonFeature(short);
     MCAPI static bool isDiggable(class Block const &);
-
-
 
 };

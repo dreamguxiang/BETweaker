@@ -12,7 +12,6 @@ class RefreshAABBSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REFRESHAABBSYSTEM
 public:
     class RefreshAABBSystem& operator=(class RefreshAABBSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     RefreshAABBSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REFRESHAABBSYSTEM
 #endif
     MCAPI static class AABB refreshAABB(float, class Vec3 const &, class Vec2 const &, class Vec2 const &);
-
-
 
 };

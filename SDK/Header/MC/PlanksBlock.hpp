@@ -15,14 +15,12 @@ class PlanksBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLANKSBLOCK
 public:
     class PlanksBlock& operator=(class PlanksBlock const &) = delete;
     PlanksBlock(class PlanksBlock const &) = delete;
     PlanksBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlanksBlock();
@@ -56,7 +54,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -71,7 +69,5 @@ public:
     MCAPI PlanksBlock(std::string const &, int);
     MCAPI static class std::array<std::string, 7> const WOOD_NAMES;
     MCAPI static bool isValidWoodMaterial(int);
-
-
 
 };

@@ -14,14 +14,12 @@ class CommandLexer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDLEXER
 public:
     class CommandLexer& operator=(class CommandLexer const &) = delete;
     CommandLexer(class CommandLexer const &) = delete;
     CommandLexer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDLEXER
@@ -31,7 +29,5 @@ public:
     MCAPI void step();
     MCAPI static bool isDigit(char);
     MCAPI static bool isFilePathCharacter(char);
-
-
 
 };

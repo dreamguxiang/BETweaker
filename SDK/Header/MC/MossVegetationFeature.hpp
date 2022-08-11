@@ -15,13 +15,11 @@ class MossVegetationFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOSSVEGETATIONFEATURE
 public:
     class MossVegetationFeature& operator=(class MossVegetationFeature const &) = delete;
     MossVegetationFeature(class MossVegetationFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MossVegetationFeature();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSVEGETATIONFEATURE
 #endif
     MCAPI MossVegetationFeature();
-
-
 
 };

@@ -14,7 +14,6 @@ class SensingSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGSYSTEM
 public:
     class SensingSystem& operator=(class SensingSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     SensingSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SensingSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENSINGSYSTEM
 #endif
-
-
 
 };

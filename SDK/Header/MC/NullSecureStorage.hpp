@@ -14,14 +14,12 @@ class NullSecureStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSECURESTORAGE
 public:
     class NullSecureStorage& operator=(class NullSecureStorage const &) = delete;
     NullSecureStorage(class NullSecureStorage const &) = delete;
     NullSecureStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
@@ -30,7 +28,5 @@ public:
     MCVAPI bool get(std::string const &, std::string &);
     MCVAPI bool remove(std::string const &);
 #endif
-
-
 
 };

@@ -16,14 +16,12 @@ class LlamaSpit : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LLAMASPIT
 public:
     class LlamaSpit& operator=(class LlamaSpit const &) = delete;
     LlamaSpit(class LlamaSpit const &) = delete;
     LlamaSpit() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~LlamaSpit();
@@ -34,7 +32,7 @@ public:
     /*79*/ virtual float getShadowHeightOffs();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
-    /*87*/ virtual float getBrightness(float) const;
+    /*87*/ virtual float getBrightness(float);
     /*88*/ virtual void __unk_vfn_88();
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();
@@ -56,7 +54,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LLAMASPIT
 #endif
     MCAPI LlamaSpit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

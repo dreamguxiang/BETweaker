@@ -12,20 +12,16 @@ struct ReplayStateConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATECONFIG
 public:
     struct ReplayStateConfig& operator=(struct ReplayStateConfig const &) = delete;
     ReplayStateConfig(struct ReplayStateConfig const &) = delete;
     ReplayStateConfig() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECONFIG
+#endif
     MCAPI ReplayStateConfig(enum ReplayStateMode);
     MCAPI bool usesUnsupportedThresholds() const;
-
-protected:
-
-private:
 
 };

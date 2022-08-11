@@ -12,7 +12,6 @@ class PlayerUpdateInteractionEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUPDATEINTERACTIONEVENT
 public:
     class PlayerUpdateInteractionEvent& operator=(class PlayerUpdateInteractionEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     PlayerUpdateInteractionEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUPDATEINTERACTIONEVENT
 #endif
     MCAPI ~PlayerUpdateInteractionEvent();
-
-
 
 };

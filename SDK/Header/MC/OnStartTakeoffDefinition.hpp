@@ -15,18 +15,15 @@ struct OnStartTakeoffDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTARTTAKEOFFDEFINITION
 public:
     struct OnStartTakeoffDefinition& operator=(struct OnStartTakeoffDefinition const &) = delete;
     OnStartTakeoffDefinition(struct OnStartTakeoffDefinition const &) = delete;
     OnStartTakeoffDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTARTTAKEOFFDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnStartTakeoffDefinition>> &);
 
 };

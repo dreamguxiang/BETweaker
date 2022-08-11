@@ -16,14 +16,12 @@ class PolarBear : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POLARBEAR
 public:
     class PolarBear& operator=(class PolarBear const &) = delete;
     PolarBear(class PolarBear const &) = delete;
     PolarBear() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~PolarBear();
@@ -40,7 +38,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*174*/ virtual bool canFreeze() const;
+    /*174*/ virtual bool canFreeze();
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
@@ -61,9 +59,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float const STAND_ANIMATION_TICKS;
-
 
 };

@@ -14,14 +14,12 @@ class SkeletonHorseTrapGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKELETONHORSETRAPGOAL
 public:
     class SkeletonHorseTrapGoal& operator=(class SkeletonHorseTrapGoal const &) = delete;
     SkeletonHorseTrapGoal(class SkeletonHorseTrapGoal const &) = delete;
     SkeletonHorseTrapGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SkeletonHorseTrapGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
 
-
 private:
-
 
 };

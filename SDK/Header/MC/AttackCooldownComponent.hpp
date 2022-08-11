@@ -14,7 +14,6 @@ class AttackCooldownComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKCOOLDOWNCOMPONENT
 public:
     class AttackCooldownComponent& operator=(class AttackCooldownComponent const &) = delete;
@@ -22,14 +21,11 @@ public:
     AttackCooldownComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKCOOLDOWNCOMPONENT
 #endif
     MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
     MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     MCAPI ~AttackCooldownComponent();
-
-
 
 };

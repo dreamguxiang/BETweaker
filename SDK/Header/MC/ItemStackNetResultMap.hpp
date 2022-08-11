@@ -18,14 +18,12 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETRESULTMAP
 public:
     class ItemStackNetResultMap& operator=(class ItemStackNetResultMap const &) = delete;
     ItemStackNetResultMap(class ItemStackNetResultMap const &) = delete;
     ItemStackNetResultMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETRESULTMAP
@@ -34,9 +32,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string> const mMap;
-
 
 };

@@ -15,14 +15,12 @@ class HudContainerModel : public ContainerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERMODEL
 public:
     class HudContainerModel& operator=(class HudContainerModel const &) = delete;
     HudContainerModel(class HudContainerModel const &) = delete;
     HudContainerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI void _refreshContainer();
 
-
 private:
-
 
 };

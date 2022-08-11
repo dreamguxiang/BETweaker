@@ -14,12 +14,10 @@ class NavigationComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONCOMPONENT
 public:
     class NavigationComponent& operator=(class NavigationComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
@@ -89,7 +87,5 @@ public:
     MCAPI void update(class Mob &);
     MCAPI void updateLastStuckCheck(class Mob const &);
     MCAPI ~NavigationComponent();
-
-
 
 };

@@ -14,14 +14,12 @@ class WanderingTraderScheduler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WANDERINGTRADERSCHEDULER
 public:
     class WanderingTraderScheduler& operator=(class WanderingTraderScheduler const &) = delete;
     WanderingTraderScheduler(class WanderingTraderScheduler const &) = delete;
     WanderingTraderScheduler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
@@ -40,7 +38,6 @@ public:
     MCAPI class Actor * _getRandomPlayerInOverworld() const;
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
 
-
 private:
     MCAPI static float const CHANCE_TO_SPAWN_IN_WILDERNESS;
     MCAPI static std::vector<float> const CHANCE_TO_SPAWN_PER_DAY;
@@ -48,6 +45,5 @@ private:
     MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER;
     MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
     MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
-
 
 };

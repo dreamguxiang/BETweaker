@@ -16,7 +16,6 @@ class FileUploadManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEUPLOADMANAGER
 public:
     class FileUploadManager& operator=(class FileUploadManager const &) = delete;
@@ -24,11 +23,10 @@ public:
     FileUploadManager() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FileUploadManager();
     /*1*/ virtual float getUploadProgress() const;
-    /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &) = 0;
+    /*2*/ virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEUPLOADMANAGER
 #endif
     MCAPI FileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
@@ -47,12 +45,10 @@ public:
 
 //private:
 
-
 protected:
     MCAPI static int const CHUNK_UPLOAD_SIZE;
 
 private:
     MCAPI static std::string const BOUNDARY;
-
 
 };

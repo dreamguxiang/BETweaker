@@ -13,13 +13,11 @@ class ScriptMinecraftCommonModuleFactory {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMINECRAFTCOMMONMODULEFACTORY
 public:
     class ScriptMinecraftCommonModuleFactory& operator=(class ScriptMinecraftCommonModuleFactory const &) = delete;
     ScriptMinecraftCommonModuleFactory(class ScriptMinecraftCommonModuleFactory const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTCOMMONMODULEFACTORY
@@ -27,7 +25,5 @@ public:
     MCAPI ScriptMinecraftCommonModuleFactory();
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
     MCAPI ~ScriptMinecraftCommonModuleFactory();
-
-
 
 };

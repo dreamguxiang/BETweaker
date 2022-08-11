@@ -15,14 +15,12 @@ class SHPrisonHall : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHPRISONHALL
 public:
     class SHPrisonHall& operator=(class SHPrisonHall const &) = delete;
     SHPrisonHall(class SHPrisonHall const &) = delete;
     SHPrisonHall() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHPrisonHall();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHPRISONHALL
 #endif
-
-
 
 };

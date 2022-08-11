@@ -15,13 +15,11 @@ class AppConfigs {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPCONFIGS
 public:
     class AppConfigs& operator=(class AppConfigs const &) = delete;
     AppConfigs(class AppConfigs const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AppConfigs();
@@ -92,7 +90,5 @@ public:
     MCVAPI bool worldsAreSingleUse() const;
 #endif
     MCAPI AppConfigs();
-
-
 
 };

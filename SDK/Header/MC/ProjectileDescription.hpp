@@ -15,13 +15,11 @@ class ProjectileDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEDESCRIPTION
 public:
     class ProjectileDescription& operator=(class ProjectileDescription const &) = delete;
     ProjectileDescription(class ProjectileDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEDESCRIPTION
 #endif
     MCAPI ProjectileDescription();
-
-
 
 };

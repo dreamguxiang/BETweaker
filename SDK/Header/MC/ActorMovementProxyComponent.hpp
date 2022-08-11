@@ -12,7 +12,6 @@ class ActorMovementProxyComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTPROXYCOMPONENT
 public:
     class ActorMovementProxyComponent& operator=(class ActorMovementProxyComponent const &) = delete;
@@ -20,14 +19,11 @@ public:
     ActorMovementProxyComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTPROXYCOMPONENT
 #endif
     MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
-
-
 
 };

@@ -13,7 +13,6 @@ class AddRiderDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDRIDERDEFINITION
 public:
     class AddRiderDefinition& operator=(class AddRiderDefinition const &) = delete;
@@ -21,13 +20,10 @@ public:
     AddRiderDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class AddRiderComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>> &);
-
-
 
 };

@@ -14,14 +14,12 @@ class BlendedMultiNoiseBiomeProvider {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLENDEDMULTINOISEBIOMEPROVIDER
 public:
     class BlendedMultiNoiseBiomeProvider& operator=(class BlendedMultiNoiseBiomeProvider const &) = delete;
     BlendedMultiNoiseBiomeProvider(class BlendedMultiNoiseBiomeProvider const &) = delete;
     BlendedMultiNoiseBiomeProvider() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDEDMULTINOISEBIOMEPROVIDER
@@ -30,7 +28,5 @@ public:
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &) const;
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     MCAPI ~BlendedMultiNoiseBiomeProvider();
-
-
 
 };

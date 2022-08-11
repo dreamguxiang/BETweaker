@@ -14,7 +14,6 @@ class IJsonSerializable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IJSONSERIALIZABLE
 public:
     class IJsonSerializable& operator=(class IJsonSerializable const &) = delete;
@@ -22,11 +21,8 @@ public:
     IJsonSerializable() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IJSONSERIALIZABLE
 #endif
-
-
 
 };

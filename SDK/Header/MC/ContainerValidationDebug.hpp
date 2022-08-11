@@ -12,7 +12,6 @@ class ContainerValidationDebug {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONDEBUG
 public:
     class ContainerValidationDebug& operator=(class ContainerValidationDebug const &) = delete;
@@ -20,12 +19,9 @@ public:
     ContainerValidationDebug() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONDEBUG
 #endif
     MCAPI ContainerValidationDebug(enum ContainerValidationCaller);
-
-
 
 };

@@ -15,7 +15,6 @@ class CraftHandlerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERBASE
 public:
     class CraftHandlerBase& operator=(class CraftHandlerBase const &) = delete;
@@ -23,13 +22,12 @@ public:
     CraftHandlerBase() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
     /*3*/ virtual void endRequestBatch();
-    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const * _getLevelRecipes() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
@@ -46,8 +44,6 @@ public:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 
-
 protected:
-
 
 };

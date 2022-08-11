@@ -15,14 +15,12 @@ class DripleafFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRIPLEAFFEATURE
 public:
     class DripleafFeature& operator=(class DripleafFeature const &) = delete;
     DripleafFeature(class DripleafFeature const &) = delete;
     DripleafFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DripleafFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
 
-
 private:
-
 
 };

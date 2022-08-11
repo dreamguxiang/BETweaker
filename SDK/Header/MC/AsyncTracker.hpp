@@ -14,7 +14,6 @@ class AsyncTracker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCTRACKER
 public:
     class AsyncTracker& operator=(class AsyncTracker const &) = delete;
@@ -22,12 +21,9 @@ public:
     AsyncTracker() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCTRACKER
 #endif
     MCAPI bool hasAsyncOperationTimedOut();
-
-
 
 };

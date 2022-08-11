@@ -12,7 +12,6 @@ class ExternalLinkSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALLINKSETTINGS
 public:
     class ExternalLinkSettings& operator=(class ExternalLinkSettings const &) = delete;
@@ -20,12 +19,9 @@ public:
     ExternalLinkSettings() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALLINKSETTINGS
 #endif
     MCAPI ~ExternalLinkSettings();
-
-
 
 };

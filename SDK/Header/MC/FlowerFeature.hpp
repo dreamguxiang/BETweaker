@@ -15,14 +15,12 @@ class FlowerFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERFEATURE
 public:
     class FlowerFeature& operator=(class FlowerFeature const &) = delete;
     FlowerFeature(class FlowerFeature const &) = delete;
     FlowerFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FlowerFeature();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 
-
 private:
-
 
 };

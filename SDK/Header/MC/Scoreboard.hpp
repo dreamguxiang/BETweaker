@@ -60,14 +60,12 @@ public:
 
     LIAPI static bool scoreboardIdIsValid(ScoreboardId* id);
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARD
 public:
     class Scoreboard& operator=(class Scoreboard const &) = delete;
     Scoreboard(class Scoreboard const &) = delete;
     Scoreboard() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Scoreboard();
@@ -149,10 +147,8 @@ public:
 //private:
     MCAPI void _init();
 
-
 protected:
 
 private:
-
 
 };

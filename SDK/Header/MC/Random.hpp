@@ -15,13 +15,11 @@ class Random {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOM
 public:
     class Random& operator=(class Random const &) = delete;
     Random(class Random const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
@@ -46,9 +44,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
-
 
 };

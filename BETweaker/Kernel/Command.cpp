@@ -112,7 +112,7 @@ void RegFlyCommand()
             auto action = results["FlyEnum"].get<std::string>();
             switch (do_hash(action.c_str())) {
             case do_hash("add"): {
-                if (origin.getPermissionsLevel() > 0) {
+                if (const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
                     auto PlayerName = results["PlayerName"].get<std::string>();
                     Settings::FlyPlayerList.insert(PlayerName);
                     output.success("Added " + PlayerName + " to FlyList");
@@ -124,7 +124,7 @@ void RegFlyCommand()
                 break;
             }
             case do_hash("remove"): {
-                if (origin.getPermissionsLevel() > 0) {
+                if (const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
                     auto PlayerName = results["PlayerName"].get<std::string>();
                     auto it = std::find(Settings::FlyPlayerList.begin(), Settings::FlyPlayerList.end(), PlayerName);
                     if (it != Settings::FlyPlayerList.end()) {
@@ -244,7 +244,7 @@ class BETCommand : public Command
 	
 public:
 
-    void execute(CommandOrigin const& ori, CommandOutput& output) const override
+    void execute(CommandOrigin const& ori, CommandOutput& output) override
     {
         switch (operation)
         {
@@ -394,7 +394,7 @@ class SeedCommand : public Command
 
 public:
 
-    void execute(CommandOrigin const& ori, CommandOutput& output) const override
+    void execute(CommandOrigin const& ori, CommandOutput& output) override
     {
         vector<CommandOutputParameter>opt;
         opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getLevelSeed64().mSeed)));

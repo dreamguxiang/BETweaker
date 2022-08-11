@@ -15,14 +15,12 @@ class OcelotSitOnBlockGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTSITONBLOCKGOAL
 public:
     class OcelotSitOnBlockGoal& operator=(class OcelotSitOnBlockGoal const &) = delete;
     OcelotSitOnBlockGoal(class OcelotSitOnBlockGoal const &) = delete;
     OcelotSitOnBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OcelotSitOnBlockGoal();
@@ -39,7 +37,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCELOTSITONBLOCKGOAL
 #endif
     MCAPI OcelotSitOnBlockGoal(class Mob &, float);
-
-
 
 };

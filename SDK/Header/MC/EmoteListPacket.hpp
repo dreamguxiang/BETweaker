@@ -15,13 +15,11 @@ class EmoteListPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMOTELISTPACKET
 public:
     class EmoteListPacket& operator=(class EmoteListPacket const &) = delete;
     EmoteListPacket(class EmoteListPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EmoteListPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI EmoteListPacket(class ActorRuntimeID);
     MCAPI EmoteListPacket();
     MCAPI static int const MAX_EMOTE_PIECE_IDS;
-
-
 
 };

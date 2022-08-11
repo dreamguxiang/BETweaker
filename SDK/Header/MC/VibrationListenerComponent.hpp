@@ -12,7 +12,6 @@ class VibrationListenerComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENERCOMPONENT
 public:
     class VibrationListenerComponent& operator=(class VibrationListenerComponent const &) = delete;
@@ -20,14 +19,11 @@ public:
     VibrationListenerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCOMPONENT
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI ~VibrationListenerComponent();
-
-
 
 };

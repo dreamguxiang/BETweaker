@@ -15,14 +15,12 @@ class PodzolBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PODZOLBLOCK
 public:
     class PodzolBlock& operator=(class PodzolBlock const &) = delete;
     PodzolBlock(class PodzolBlock const &) = delete;
     PodzolBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PodzolBlock();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PODZOLBLOCK
 #endif
     MCAPI PodzolBlock(std::string const &, int);
-
-
 
 };

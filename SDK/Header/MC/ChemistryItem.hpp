@@ -16,14 +16,12 @@ class ChemistryItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYITEM
 public:
     class ChemistryItem& operator=(class ChemistryItem const &) = delete;
     ChemistryItem(class ChemistryItem const &) = delete;
     ChemistryItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChemistryItem();
@@ -41,10 +39,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*106*/ virtual void fixupCommon(class ItemStackBase &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYITEM
 #endif
     MCAPI static void validate(class ItemStackBase &);
-
-
 
 };

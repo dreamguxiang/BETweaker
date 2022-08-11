@@ -12,14 +12,14 @@ struct RakWebSocketDataFrameHeader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAMEHEADER
 public:
     struct RakWebSocketDataFrameHeader& operator=(struct RakWebSocketDataFrameHeader const &) = delete;
     RakWebSocketDataFrameHeader(struct RakWebSocketDataFrameHeader const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEHEADER
+#endif
     MCAPI RakWebSocketDataFrameHeader();
     MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum OpCode, unsigned char);
     MCAPI int getFinBit() const;
@@ -30,9 +30,5 @@ public:
     MCAPI int getRSV2Bit() const;
     MCAPI int getRSV3Bit() const;
     MCAPI ~RakWebSocketDataFrameHeader();
-
-protected:
-
-private:
 
 };

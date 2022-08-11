@@ -13,14 +13,12 @@ class ServerScriptDebugCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSCRIPTDEBUGCOMMAND
 public:
     class ServerScriptDebugCommand& operator=(class ServerScriptDebugCommand const &) = delete;
     ServerScriptDebugCommand(class ServerScriptDebugCommand const &) = delete;
     ServerScriptDebugCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerScriptDebugCommand();
@@ -31,10 +29,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::optional<unsigned short> sForcedPort;
     MCAPI static class IScriptDebugger * sServerScriptDebugger;
-
 
 };

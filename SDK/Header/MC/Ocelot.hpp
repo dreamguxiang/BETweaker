@@ -16,14 +16,12 @@ class Ocelot : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOT
 public:
     class Ocelot& operator=(class Ocelot const &) = delete;
     Ocelot(class Ocelot const &) = delete;
     Ocelot() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Ocelot();
@@ -59,7 +57,5 @@ public:
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;
-
-
 
 };

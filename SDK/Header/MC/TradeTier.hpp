@@ -12,19 +12,15 @@ struct TradeTier {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADETIER
 public:
     struct TradeTier& operator=(struct TradeTier const &) = delete;
     TradeTier(struct TradeTier const &) = delete;
     TradeTier() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETIER
+#endif
     MCAPI ~TradeTier();
-
-protected:
-
-private:
 
 };

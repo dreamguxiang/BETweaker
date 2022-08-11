@@ -16,7 +16,6 @@ class CarrotOnAStickItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CARROTONASTICKITEM
 public:
     class CarrotOnAStickItem& operator=(class CarrotOnAStickItem const &) = delete;
@@ -24,19 +23,18 @@ public:
     CarrotOnAStickItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CarrotOnAStickItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*50*/ virtual bool isHandEquipped() const;
+    /*50*/ virtual bool isHandEquipped();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract() const;
+    /*60*/ virtual bool requiresInteract();
     /*63*/ virtual int getEnchantSlot() const;
-    /*64*/ virtual int getEnchantValue() const;
+    /*64*/ virtual int getEnchantValue();
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -44,12 +42,11 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARROTONASTICKITEM
 #endif
     MCAPI CarrotOnAStickItem(std::string const &, int);
-
-
 
 };

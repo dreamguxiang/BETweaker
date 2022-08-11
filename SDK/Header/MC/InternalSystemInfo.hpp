@@ -12,7 +12,6 @@ class InternalSystemInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALSYSTEMINFO
 public:
     class InternalSystemInfo& operator=(class InternalSystemInfo const &) = delete;
@@ -20,12 +19,9 @@ public:
     InternalSystemInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALSYSTEMINFO
 #endif
     MCAPI ~InternalSystemInfo();
-
-
 
 };

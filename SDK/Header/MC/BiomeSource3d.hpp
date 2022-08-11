@@ -12,14 +12,12 @@ class BiomeSource3d {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMESOURCE3D
 public:
     class BiomeSource3d& operator=(class BiomeSource3d const &) = delete;
     BiomeSource3d(class BiomeSource3d const &) = delete;
     BiomeSource3d() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BiomeSource3d();
@@ -32,7 +30,5 @@ public:
     /*7*/ virtual class Biome const * getBiome(int, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE3D
 #endif
-
-
 
 };

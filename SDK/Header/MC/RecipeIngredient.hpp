@@ -23,12 +23,10 @@ private:
 #define DISABLE_CONSTRUCTOR_PREVENTION_RECIPEINGREDIENT
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEINGREDIENT
 public:
     class RecipeIngredient& operator=(class RecipeIngredient const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
@@ -39,10 +37,7 @@ public:
     MCAPI RecipeIngredient(class Item const &, int, unsigned short);
     MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     MCAPI RecipeIngredient();
-    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~RecipeIngredient();
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
-
-
 
 };

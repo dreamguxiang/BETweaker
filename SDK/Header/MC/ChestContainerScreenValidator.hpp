@@ -15,20 +15,16 @@ class ChestContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTCONTAINERSCREENVALIDATOR
 public:
     class ChestContainerScreenValidator& operator=(class ChestContainerScreenValidator const &) = delete;
     ChestContainerScreenValidator(class ChestContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChestContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERSCREENVALIDATOR
 #endif
     MCAPI ChestContainerScreenValidator();
-
-
 
 };

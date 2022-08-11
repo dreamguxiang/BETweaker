@@ -13,13 +13,11 @@ class CapacitorComponent : public ProducerComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAPACITORCOMPONENT
 public:
     class CapacitorComponent& operator=(class CapacitorComponent const &) = delete;
     CapacitorComponent(class CapacitorComponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CapacitorComponent();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAPACITORCOMPONENT
 #endif
     MCAPI CapacitorComponent();
-
-
 
 };

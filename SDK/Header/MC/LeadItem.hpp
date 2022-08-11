@@ -16,14 +16,12 @@ class LeadItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEADITEM
 public:
     class LeadItem& operator=(class LeadItem const &) = delete;
     LeadItem(class LeadItem const &) = delete;
     LeadItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LeadItem();
@@ -40,13 +38,12 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEADITEM
 #endif
     MCAPI LeadItem(std::string const &, int);
     MCAPI static bool bindPlayerMobs(class Actor &, int, int, int, class ItemInstance *);
     MCAPI static bool canBindPlayerMobs(class Actor const &, class BlockPos const &);
-
-
 
 };

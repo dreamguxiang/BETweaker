@@ -14,14 +14,12 @@ class PackSettingsError {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGSERROR
 public:
     class PackSettingsError& operator=(class PackSettingsError const &) = delete;
     PackSettingsError(class PackSettingsError const &) = delete;
     PackSettingsError() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackSettingsError();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSERROR
 #endif
     MCAPI PackSettingsError(std::vector<std::string> const &);
-
-
 
 };

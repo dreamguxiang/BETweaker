@@ -14,14 +14,12 @@ class ITreeFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREEFEATURE
 public:
     class ITreeFeature& operator=(class ITreeFeature const &) = delete;
     ITreeFeature(class ITreeFeature const &) = delete;
     ITreeFeature() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
@@ -31,8 +29,6 @@ public:
 //protected:
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
-
 protected:
-
 
 };

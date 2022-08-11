@@ -12,19 +12,15 @@ struct MolangMemberAccessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERACCESSOR
 public:
     struct MolangMemberAccessor& operator=(struct MolangMemberAccessor const &) = delete;
     MolangMemberAccessor(struct MolangMemberAccessor const &) = delete;
     MolangMemberAccessor() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERACCESSOR
+#endif
     MCAPI ~MolangMemberAccessor();
-
-protected:
-
-private:
 
 };

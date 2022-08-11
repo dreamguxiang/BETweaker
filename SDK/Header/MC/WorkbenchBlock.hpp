@@ -15,14 +15,12 @@ class WorkbenchBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKBENCHBLOCK
 public:
     class WorkbenchBlock& operator=(class WorkbenchBlock const &) = delete;
     WorkbenchBlock(class WorkbenchBlock const &) = delete;
     WorkbenchBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorkbenchBlock();
@@ -66,7 +64,5 @@ public:
     MCVAPI bool isCraftingBlock() const;
 #endif
     MCAPI WorkbenchBlock(std::string const &, int);
-
-
 
 };

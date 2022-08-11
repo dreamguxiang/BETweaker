@@ -12,19 +12,15 @@ struct MolangQueryFunction {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGQUERYFUNCTION
 public:
     struct MolangQueryFunction& operator=(struct MolangQueryFunction const &) = delete;
     MolangQueryFunction(struct MolangQueryFunction const &) = delete;
     MolangQueryFunction() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGQUERYFUNCTION
+#endif
     MCAPI ~MolangQueryFunction();
-
-protected:
-
-private:
 
 };

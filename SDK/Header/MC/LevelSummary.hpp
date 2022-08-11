@@ -15,14 +15,12 @@ class LevelSummary {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSUMMARY
 public:
     class LevelSummary& operator=(class LevelSummary const &) = delete;
     LevelSummary(class LevelSummary const &) = delete;
     LevelSummary() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSUMMARY
@@ -33,7 +31,5 @@ public:
     MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
     MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const &);
     MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const &);
-
-
 
 };

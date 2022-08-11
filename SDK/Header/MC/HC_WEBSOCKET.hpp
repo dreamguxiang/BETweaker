@@ -12,15 +12,15 @@ struct HC_WEBSOCKET {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HC_WEBSOCKET
 public:
     struct HC_WEBSOCKET& operator=(struct HC_WEBSOCKET const &) = delete;
     HC_WEBSOCKET(struct HC_WEBSOCKET const &) = delete;
     HC_WEBSOCKET() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HC_WEBSOCKET
+#endif
     MCAPI void AddRef();
     MCAPI long Connect(char const *, char const *, struct XAsyncBlock *);
     MCAPI void DecRef();
@@ -29,9 +29,8 @@ public:
     MCAPI bool const ProxyDecryptsHttps() const;
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const & ProxyUri() const;
     MCAPI long Send(char const *, struct XAsyncBlock *);
-
-protected:
-
-private:
+    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET *, unsigned char const *, unsigned int, void *);
+    MCAPI static void CloseFunc(struct HC_WEBSOCKET *, enum HCWebSocketCloseStatus, void *);
+    MCAPI static void MessageFunc(struct HC_WEBSOCKET *, char const *, void *);
 
 };

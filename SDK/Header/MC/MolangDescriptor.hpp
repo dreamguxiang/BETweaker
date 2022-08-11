@@ -15,14 +15,12 @@ class MolangDescriptor : public ItemTagDescriptor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGDESCRIPTOR
 public:
     class MolangDescriptor& operator=(class MolangDescriptor const &) = delete;
     MolangDescriptor(class MolangDescriptor const &) = delete;
     MolangDescriptor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
@@ -36,7 +34,5 @@ public:
     /*11*/ virtual void __unk_vfn_11();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGDESCRIPTOR
 #endif
-
-
 
 };

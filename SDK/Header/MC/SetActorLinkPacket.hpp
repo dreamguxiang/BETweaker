@@ -15,13 +15,11 @@ class SetActorLinkPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORLINKPACKET
 public:
     class SetActorLinkPacket& operator=(class SetActorLinkPacket const &) = delete;
     SetActorLinkPacket(class SetActorLinkPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetActorLinkPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetActorLinkPacket(struct ActorLink const &);
     MCAPI SetActorLinkPacket();
-
-
 
 };

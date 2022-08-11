@@ -12,7 +12,6 @@ class ScriptingEventListener {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGEVENTLISTENER
 public:
     class ScriptingEventListener& operator=(class ScriptingEventListener const &) = delete;
@@ -20,13 +19,10 @@ public:
     ScriptingEventListener() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScriptingEventListener();
     /*1*/ virtual enum EventResult onEvent(struct ScriptingNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGEVENTLISTENER
 #endif
-
-
 
 };

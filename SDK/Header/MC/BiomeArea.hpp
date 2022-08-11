@@ -12,7 +12,6 @@ class BiomeArea {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEAREA
 public:
     class BiomeArea& operator=(class BiomeArea const &) = delete;
@@ -20,13 +19,10 @@ public:
     BiomeArea() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEAREA
 #endif
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     MCAPI ~BiomeArea();
-
-
 
 };

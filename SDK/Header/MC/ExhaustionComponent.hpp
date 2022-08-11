@@ -12,14 +12,12 @@ class ExhaustionComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXHAUSTIONCOMPONENT
 public:
     class ExhaustionComponent& operator=(class ExhaustionComponent const &) = delete;
     ExhaustionComponent(class ExhaustionComponent const &) = delete;
     ExhaustionComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONCOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI float getSprintValue() const;
     MCAPI float getSwimValue() const;
     MCAPI float getWalkValue() const;
-
-
 
 };

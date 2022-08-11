@@ -12,20 +12,16 @@ struct ItemStackResponseSlotInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSESLOTINFO
 public:
     struct ItemStackResponseSlotInfo& operator=(struct ItemStackResponseSlotInfo const &) = delete;
     ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo const &) = delete;
     ItemStackResponseSlotInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSESLOTINFO
+#endif
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo &&);
     MCAPI ~ItemStackResponseSlotInfo();
-
-protected:
-
-private:
 
 };

@@ -12,7 +12,6 @@ class AnimationComponentID {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENTID
 public:
     class AnimationComponentID& operator=(class AnimationComponentID const &) = delete;
@@ -20,14 +19,11 @@ public:
     AnimationComponentID() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENTID
 #endif
     MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool operator==(class AnimationComponentID const &) const;
-
-
 
 };

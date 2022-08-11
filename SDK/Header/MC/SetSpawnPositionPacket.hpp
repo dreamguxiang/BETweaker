@@ -15,13 +15,11 @@ class SetSpawnPositionPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSPAWNPOSITIONPACKET
 public:
     class SetSpawnPositionPacket& operator=(class SetSpawnPositionPacket const &) = delete;
     SetSpawnPositionPacket(class SetSpawnPositionPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetSpawnPositionPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI SetSpawnPositionPacket(class AutomaticID<class Dimension, int>, class BlockPos const &, class BlockPos const &);
     MCAPI SetSpawnPositionPacket(enum SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
     MCAPI SetSpawnPositionPacket();
-
-
 
 };

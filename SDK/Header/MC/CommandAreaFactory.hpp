@@ -14,14 +14,12 @@ class CommandAreaFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDAREAFACTORY
 public:
     class CommandAreaFactory& operator=(class CommandAreaFactory const &) = delete;
     CommandAreaFactory(class CommandAreaFactory const &) = delete;
     CommandAreaFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREAFACTORY
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
 
-
 private:
-
 
 };

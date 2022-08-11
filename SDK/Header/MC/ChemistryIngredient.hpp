@@ -12,19 +12,15 @@ struct ChemistryIngredient {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYINGREDIENT
 public:
     struct ChemistryIngredient& operator=(struct ChemistryIngredient const &) = delete;
     ChemistryIngredient(struct ChemistryIngredient const &) = delete;
     ChemistryIngredient() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYINGREDIENT
+#endif
     MCAPI ~ChemistryIngredient();
-
-protected:
-
-private:
 
 };

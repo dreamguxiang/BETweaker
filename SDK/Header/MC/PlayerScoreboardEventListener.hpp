@@ -14,14 +14,12 @@ class PlayerScoreboardEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDEVENTLISTENER
 public:
     class PlayerScoreboardEventListener& operator=(class PlayerScoreboardEventListener const &) = delete;
     PlayerScoreboardEventListener(class PlayerScoreboardEventListener const &) = delete;
     PlayerScoreboardEventListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
-
-
 
 };

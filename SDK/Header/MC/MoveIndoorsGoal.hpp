@@ -14,14 +14,12 @@ class MoveIndoorsGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEINDOORSGOAL
 public:
     class MoveIndoorsGoal& operator=(class MoveIndoorsGoal const &) = delete;
     MoveIndoorsGoal(class MoveIndoorsGoal const &) = delete;
     MoveIndoorsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveIndoorsGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI bool _isInside(class BlockPos const &);
     MCAPI void _startPathfinding();
 
-
 private:
-
 
 };

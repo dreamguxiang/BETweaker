@@ -15,14 +15,12 @@ class Parser {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARSER
 public:
     class Parser& operator=(class Parser const &) = delete;
     Parser(class Parser const &) = delete;
     Parser() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARSER
@@ -71,7 +69,5 @@ public:
     MCAPI static void serialize(enum Difficulty const &, class Json::Value &, char const *);
     MCAPI static void serialize(enum FilterSubject const &, class Json::Value &, char const *);
     MCAPI static void serialize(enum ParticleType const &, class Json::Value &, char const *);
-
-
 
 };

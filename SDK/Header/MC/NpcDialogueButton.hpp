@@ -15,19 +15,16 @@ struct NpcDialogueButton {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUEBUTTON
 public:
     struct NpcDialogueButton& operator=(struct NpcDialogueButton const &) = delete;
     NpcDialogueButton(struct NpcDialogueButton const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUEBUTTON
+#endif
     MCAPI NpcDialogueButton();
     MCAPI ~NpcDialogueButton();
-
-protected:
-
-private:
+    MCAPI static struct NpcDialogueButton parse(class Json::Value const &, std::string const &, int);
 
 };

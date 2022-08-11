@@ -14,14 +14,12 @@ class WeakStorageEntity {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEENTITY
 public:
     class WeakStorageEntity& operator=(class WeakStorageEntity const &) = delete;
     WeakStorageEntity(class WeakStorageEntity const &) = delete;
     WeakStorageEntity() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
@@ -36,8 +34,6 @@ public:
     MCAPI bool _isSet() const;
     MCAPI void _reset();
 
-
 protected:
-
 
 };

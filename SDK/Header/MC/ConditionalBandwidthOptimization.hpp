@@ -14,20 +14,16 @@ struct ConditionalBandwidthOptimization {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATION
 public:
     ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &) = delete;
     ConditionalBandwidthOptimization() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATION
+#endif
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization &&);
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization const &);
     MCAPI ~ConditionalBandwidthOptimization();
-
-protected:
-
-private:
 
 };

@@ -14,7 +14,6 @@ class EntityPlacerItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYPLACERITEMCOMPONENT
 public:
     class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const &) = delete;
@@ -22,14 +21,13 @@ public:
     EntityPlacerItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EntityPlacerItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual bool isNetworkComponent();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYPLACERITEMCOMPONENT
 #endif
@@ -41,8 +39,6 @@ public:
     MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;
 
-
 private:
-
 
 };

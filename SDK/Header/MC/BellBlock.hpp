@@ -15,7 +15,6 @@ class BellBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BELLBLOCK
 public:
     class BellBlock& operator=(class BellBlock const &) = delete;
@@ -23,13 +22,12 @@ public:
     BellBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BellBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*15*/ virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &);
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -50,14 +48,14 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*61*/ virtual bool canContainLiquid();
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
     /*73*/ virtual void __unk_vfn_73();
     /*74*/ virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
@@ -68,7 +66,7 @@ public:
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
@@ -90,8 +88,6 @@ public:
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
     MCAPI void _sendBellUsedEventToClient(class BlockSource const &, class Actor const &) const;
 
-
 private:
-
 
 };

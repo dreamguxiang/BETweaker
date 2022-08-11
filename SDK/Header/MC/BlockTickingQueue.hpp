@@ -21,14 +21,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTICKINGQUEUE
 public:
     class BlockTickingQueue& operator=(class BlockTickingQueue const &) = delete;
     BlockTickingQueue(class BlockTickingQueue const &) = delete;
     BlockTickingQueue() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTICKINGQUEUE
@@ -65,10 +63,8 @@ public:
     MCAPI void _acquireAllTicks(class BlockTickingQueue &);
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
 
-
 protected:
 
 private:
-
 
 };

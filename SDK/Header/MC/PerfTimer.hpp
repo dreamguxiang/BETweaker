@@ -16,14 +16,12 @@ class PerfTimer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFTIMER
 public:
     class PerfTimer& operator=(class PerfTimer const &) = delete;
     PerfTimer(class PerfTimer const &) = delete;
     PerfTimer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
@@ -35,10 +33,8 @@ public:
 
 //protected:
 
-
 protected:
     MCAPI static int const MultiplyDeBruijnBitPosition[];
     MCAPI static class Core::PathBuffer<std::string> mPath;
-
 
 };

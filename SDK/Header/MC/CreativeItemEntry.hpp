@@ -14,14 +14,12 @@ class CreativeItemEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMENTRY
 public:
     class CreativeItemEntry& operator=(class CreativeItemEntry const &) = delete;
     CreativeItemEntry(class CreativeItemEntry const &) = delete;
     CreativeItemEntry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMENTRY
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void _setGroup(class CreativeGroupInfo *);
 
-
 private:
-
 
 };

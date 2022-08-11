@@ -14,7 +14,6 @@ class SpawnActorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORCOMPONENT
 public:
     class SpawnActorComponent& operator=(class SpawnActorComponent const &) = delete;
@@ -22,14 +21,11 @@ public:
     SpawnActorComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORCOMPONENT
 #endif
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-
-
 
 };

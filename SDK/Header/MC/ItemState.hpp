@@ -14,7 +14,6 @@ class ItemState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATE
 public:
     class ItemState& operator=(class ItemState const &) = delete;
@@ -22,11 +21,8 @@ public:
     ItemState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTATE
 #endif
-
-
 
 };

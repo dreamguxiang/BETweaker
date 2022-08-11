@@ -16,7 +16,6 @@ class MinecartBlockCommandOrigin : public BlockCommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTBLOCKCOMMANDORIGIN
 public:
     class MinecartBlockCommandOrigin& operator=(class MinecartBlockCommandOrigin const &) = delete;
@@ -24,14 +23,13 @@ public:
     MinecartBlockCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MinecartBlockCommandOrigin();
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*8*/ virtual class Actor * getEntity() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
@@ -41,7 +39,5 @@ public:
 #endif
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
-
-
 
 };

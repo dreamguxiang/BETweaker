@@ -14,14 +14,12 @@ class AppPlatform_win32 {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORM_WIN32
 public:
     class AppPlatform_win32& operator=(class AppPlatform_win32 const &) = delete;
     AppPlatform_win32(class AppPlatform_win32 const &) = delete;
     AppPlatform_win32() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM_WIN32
@@ -78,8 +76,6 @@ public:
 //private:
     MCAPI struct OSInformation _fetchOSInformation() const;
 
-
 private:
-
 
 };

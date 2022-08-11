@@ -14,21 +14,17 @@ struct Bounds {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDS
 public:
     struct Bounds& operator=(struct Bounds const &) = delete;
     Bounds(struct Bounds const &) = delete;
     Bounds() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOUNDS
+#endif
     MCAPI Bounds(class BlockPos const &, int, int, short, short);
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
-
-protected:
-
-private:
 
 };

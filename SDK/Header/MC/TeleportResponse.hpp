@@ -15,14 +15,12 @@ class TeleportResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTRESPONSE
 public:
     class TeleportResponse& operator=(class TeleportResponse const &) = delete;
     TeleportResponse(class TeleportResponse const &) = delete;
     TeleportResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TeleportResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

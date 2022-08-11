@@ -15,14 +15,12 @@ class EncryptedZipTransforms {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDZIPTRANSFORMS
 public:
     class EncryptedZipTransforms& operator=(class EncryptedZipTransforms const &) = delete;
     EncryptedZipTransforms(class EncryptedZipTransforms const &) = delete;
     EncryptedZipTransforms() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EncryptedZipTransforms();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDZIPTRANSFORMS
 #endif
     MCAPI EncryptedZipTransforms(class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
-
-
 
 };

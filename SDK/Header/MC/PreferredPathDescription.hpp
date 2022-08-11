@@ -15,18 +15,18 @@ struct PreferredPathDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREFERREDPATHDESCRIPTION
 public:
     struct PreferredPathDescription& operator=(struct PreferredPathDescription const &) = delete;
     PreferredPathDescription(struct PreferredPathDescription const &) = delete;
 #endif
-
 public:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~PreferredPathDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHDESCRIPTION
+#endif
     MCAPI PreferredPathDescription();
-
-protected:
-
-private:
 
 };

@@ -15,14 +15,12 @@ class SeaGrass : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAGRASS
 public:
     class SeaGrass& operator=(class SeaGrass const &) = delete;
     SeaGrass(class SeaGrass const &) = delete;
     SeaGrass() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SeaGrass();
@@ -53,11 +51,11 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &);
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -85,7 +83,5 @@ public:
 #endif
     MCAPI SeaGrass(std::string const &, int);
     MCAPI static bool trySpawnSeaGrass(class BlockSource &, class BlockPos const &);
-
-
 
 };

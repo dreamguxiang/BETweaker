@@ -14,14 +14,12 @@ class FreezingComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZINGCOMPONENT
 public:
     class FreezingComponent& operator=(class FreezingComponent const &) = delete;
     FreezingComponent(class FreezingComponent const &) = delete;
     FreezingComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGCOMPONENT
@@ -35,7 +33,5 @@ public:
     MCAPI bool operator==(class FreezingComponent const &) const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void resetFreezingEffect();
-
-
 
 };

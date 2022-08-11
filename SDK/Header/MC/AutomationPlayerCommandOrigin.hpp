@@ -16,7 +16,6 @@ class AutomationPlayerCommandOrigin : public PlayerCommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AUTOMATIONPLAYERCOMMANDORIGIN
 public:
     class AutomationPlayerCommandOrigin& operator=(class AutomationPlayerCommandOrigin const &) = delete;
@@ -24,15 +23,14 @@ public:
     AutomationPlayerCommandOrigin() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
     /*1*/ virtual std::string const & getRequestId() const;
     /*2*/ virtual std::string getName() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*13*/ virtual bool hasChatPerms() const;
-    /*14*/ virtual bool hasTellPerms() const;
+    /*13*/ virtual bool hasChatPerms();
+    /*14*/ virtual bool hasTellPerms();
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
@@ -42,7 +40,5 @@ public:
 #endif
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
-
-
 
 };

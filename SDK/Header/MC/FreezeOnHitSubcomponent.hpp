@@ -15,14 +15,12 @@ class FreezeOnHitSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZEONHITSUBCOMPONENT
 public:
     class FreezeOnHitSubcomponent& operator=(class FreezeOnHitSubcomponent const &) = delete;
     FreezeOnHitSubcomponent(class FreezeOnHitSubcomponent const &) = delete;
     FreezeOnHitSubcomponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FreezeOnHitSubcomponent();
@@ -32,7 +30,5 @@ public:
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZEONHITSUBCOMPONENT
 #endif
-
-
 
 };

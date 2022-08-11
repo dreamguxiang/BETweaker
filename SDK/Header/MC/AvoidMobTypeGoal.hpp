@@ -14,14 +14,12 @@ class AvoidMobTypeGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVOIDMOBTYPEGOAL
 public:
     class AvoidMobTypeGoal& operator=(class AvoidMobTypeGoal const &) = delete;
     AvoidMobTypeGoal(class AvoidMobTypeGoal const &) = delete;
     AvoidMobTypeGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AvoidMobTypeGoal();
@@ -37,7 +35,5 @@ public:
     MCAPI AvoidMobTypeGoal(class Mob &);
     MCAPI bool canFindAvoidPath(class Actor *);
     MCAPI class Actor * findNearestEntityToAvoid(float);
-
-
 
 };

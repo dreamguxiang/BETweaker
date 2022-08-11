@@ -14,7 +14,6 @@ class PreferredPathComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREFERREDPATHCOMPONENT
 public:
     class PreferredPathComponent& operator=(class PreferredPathComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     PreferredPathComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHCOMPONENT
 #endif
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
     MCAPI void initFromDefinition(class Actor &);
-
-
 
 };

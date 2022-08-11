@@ -14,14 +14,12 @@ class PetSleepWithOwnerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PETSLEEPWITHOWNERGOAL
 public:
     class PetSleepWithOwnerGoal& operator=(class PetSleepWithOwnerGoal const &) = delete;
     PetSleepWithOwnerGoal(class PetSleepWithOwnerGoal const &) = delete;
     PetSleepWithOwnerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PetSleepWithOwnerGoal();
@@ -39,7 +37,5 @@ public:
     MCAPI struct PetSleepWithOwnerGoalData getData() const;
     MCAPI class Mob & getMob() const;
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
-
-
 
 };

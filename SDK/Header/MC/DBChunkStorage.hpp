@@ -18,14 +18,12 @@ class DBChunkStorage : public ChunkSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBCHUNKSTORAGE
 public:
     class DBChunkStorage& operator=(class DBChunkStorage const &) = delete;
     DBChunkStorage(class DBChunkStorage const &) = delete;
     DBChunkStorage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DBChunkStorage();
@@ -73,10 +71,8 @@ public:
     MCAPI void _writeDiscardChunksBatch();
     MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput &);
 
-
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
-
 
 };

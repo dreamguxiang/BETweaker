@@ -12,7 +12,6 @@ class PlayerAddLevelEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDLEVELEVENT
 public:
     class PlayerAddLevelEvent& operator=(class PlayerAddLevelEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     PlayerAddLevelEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERADDLEVELEVENT
 #endif
     MCAPI ~PlayerAddLevelEvent();
-
-
 
 };

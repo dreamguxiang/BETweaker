@@ -15,20 +15,18 @@ struct CollisionBoxDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLLISIONBOXDEFINITION
 public:
     struct CollisionBoxDefinition& operator=(struct CollisionBoxDefinition const &) = delete;
     CollisionBoxDefinition(struct CollisionBoxDefinition const &) = delete;
     CollisionBoxDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLLISIONBOXDEFINITION
+#endif
     MCAPI void setHeight(float const &);
     MCAPI void setWidth(float const &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition>> &);
+    MCAPI static float const mBoxEpsilon;
 
 };

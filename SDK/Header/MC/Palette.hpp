@@ -14,14 +14,12 @@ class Palette {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PALETTE
 public:
     class Palette& operator=(class Palette const &) = delete;
     Palette(class Palette const &) = delete;
     Palette() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PALETTE
@@ -44,7 +42,5 @@ public:
     MCAPI static class mce::Color const YELLOW;
     MCAPI static enum PaletteColor fromByte(unsigned char);
     MCAPI static class mce::Color const & getColor(enum PaletteColor);
-
-
 
 };

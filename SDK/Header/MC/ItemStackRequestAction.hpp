@@ -18,14 +18,12 @@ public:
         return actionTypeMap.mMap1;
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTION
 public:
     class ItemStackRequestAction& operator=(class ItemStackRequestAction const &) = delete;
     ItemStackRequestAction(class ItemStackRequestAction const &) = delete;
     ItemStackRequestAction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestAction();
@@ -42,9 +40,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
-
 
 };

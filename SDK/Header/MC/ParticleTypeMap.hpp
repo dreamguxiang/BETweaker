@@ -14,14 +14,12 @@ class ParticleTypeMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLETYPEMAP
 public:
     class ParticleTypeMap& operator=(class ParticleTypeMap const &) = delete;
     ParticleTypeMap(class ParticleTypeMap const &) = delete;
     ParticleTypeMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLETYPEMAP
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
-
 
 };

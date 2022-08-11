@@ -14,14 +14,12 @@ class ScreenHandlerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBASE
 public:
     class ScreenHandlerBase& operator=(class ScreenHandlerBase const &) = delete;
     ScreenHandlerBase(class ScreenHandlerBase const &) = delete;
     ScreenHandlerBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScreenHandlerBase();
@@ -36,8 +34,6 @@ public:
 //protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
 
-
 protected:
-
 
 };

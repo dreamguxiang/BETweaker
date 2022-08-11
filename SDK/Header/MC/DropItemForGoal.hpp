@@ -15,14 +15,12 @@ class DropItemForGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPITEMFORGOAL
 public:
     class DropItemForGoal& operator=(class DropItemForGoal const &) = delete;
     DropItemForGoal(class DropItemForGoal const &) = delete;
     DropItemForGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DropItemForGoal();
@@ -40,7 +38,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPITEMFORGOAL
 #endif
     MCAPI DropItemForGoal(class Mob &);
-
-
 
 };

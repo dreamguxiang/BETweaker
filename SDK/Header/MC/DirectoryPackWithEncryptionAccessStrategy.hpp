@@ -17,7 +17,6 @@ class DirectoryPackWithEncryptionAccessStrategy : public PackAccessStrategy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
 public:
     class DirectoryPackWithEncryptionAccessStrategy& operator=(class DirectoryPackWithEncryptionAccessStrategy const &) = delete;
@@ -25,15 +24,14 @@ public:
     DirectoryPackWithEncryptionAccessStrategy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DirectoryPackWithEncryptionAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
     /*2*/ virtual class ResourceLocation const & getPackLocation() const;
     /*3*/ virtual std::string const & getPackName() const;
-    /*4*/ virtual bool isWritable() const;
+    /*4*/ virtual bool isWritable();
     /*5*/ virtual void setIsTrusted(bool);
-    /*6*/ virtual bool isTrusted() const;
+    /*6*/ virtual bool isTrusted();
     /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
     /*8*/ virtual bool hasFolder(class Core::Path const &) const;
     /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
@@ -54,8 +52,6 @@ public:
     MCAPI bool _getUnencryptedAsset(class Core::Path const &, std::string &) const;
     MCAPI bool _hasUnencryptedAsset(class Core::Path const &) const;
 
-
 private:
-
 
 };

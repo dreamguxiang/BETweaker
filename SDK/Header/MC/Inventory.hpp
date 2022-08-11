@@ -15,14 +15,12 @@ class Inventory : public FillingContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORY
 public:
     class Inventory& operator=(class Inventory const &) = delete;
     Inventory(class Inventory const &) = delete;
     Inventory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Inventory();
@@ -43,7 +41,5 @@ public:
     MCAPI std::vector<class ItemStack> getComplexItems();
     MCAPI void setupDefault();
     MCAPI void tick(int);
-
-
 
 };

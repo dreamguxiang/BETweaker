@@ -14,13 +14,11 @@ class PerlinNoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERLINNOISE
 public:
     class PerlinNoise& operator=(class PerlinNoise const &) = delete;
     PerlinNoise() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINNOISE
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI void _init(class IRandom &, struct YBlendingBugSettings);
 
-
 private:
-
 
 };

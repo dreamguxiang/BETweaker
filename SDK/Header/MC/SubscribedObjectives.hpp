@@ -14,7 +14,6 @@ class SubscribedObjectives {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBSCRIBEDOBJECTIVES
 public:
     class SubscribedObjectives& operator=(class SubscribedObjectives const &) = delete;
@@ -22,14 +21,11 @@ public:
     SubscribedObjectives() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBSCRIBEDOBJECTIVES
 #endif
     MCAPI void addObjective(std::string const &);
     MCAPI void removeObjective(std::string const &);
     MCAPI void sendEvent(std::string const &, int) const;
-
-
 
 };

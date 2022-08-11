@@ -16,7 +16,6 @@ class LookAtActorDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORDEFINITION
 public:
     class LookAtActorDefinition& operator=(class LookAtActorDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     LookAtActorDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LookAtActorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATACTORDEFINITION
 #endif
-
-
 
 };

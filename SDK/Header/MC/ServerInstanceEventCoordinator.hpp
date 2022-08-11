@@ -15,14 +15,12 @@ class ServerInstanceEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEEVENTCOORDINATOR
 public:
     class ServerInstanceEventCoordinator& operator=(class ServerInstanceEventCoordinator const &) = delete;
     ServerInstanceEventCoordinator(class ServerInstanceEventCoordinator const &) = delete;
     ServerInstanceEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTCOORDINATOR
@@ -38,7 +36,5 @@ public:
     MCAPI void sendServerUpdateEnd(class ServerInstance &);
     MCAPI void sendServerUpdateStart(class ServerInstance &);
     MCAPI void sendStartLeaveGame(class ServerInstance &);
-
-
 
 };

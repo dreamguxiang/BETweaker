@@ -14,14 +14,12 @@ class StackResultStorageFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEFEATURE
 public:
     class StackResultStorageFeature& operator=(class StackResultStorageFeature const &) = delete;
     StackResultStorageFeature(class StackResultStorageFeature const &) = delete;
     StackResultStorageFeature() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEFEATURE
@@ -32,8 +30,6 @@ public:
     MCAPI class IFeature & _getStackRef() const;
     MCAPI bool _hasValue() const;
 
-
 protected:
-
 
 };

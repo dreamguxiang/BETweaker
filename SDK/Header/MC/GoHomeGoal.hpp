@@ -14,14 +14,12 @@ class GoHomeGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOHOMEGOAL
 public:
     class GoHomeGoal& operator=(class GoHomeGoal const &) = delete;
     GoHomeGoal(class GoHomeGoal const &) = delete;
     GoHomeGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GoHomeGoal();
@@ -42,8 +40,6 @@ public:
     MCAPI bool _hasRequiredComponents() const;
     MCAPI void _triggerOnFailedEvents();
 
-
 private:
-
 
 };

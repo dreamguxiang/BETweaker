@@ -14,13 +14,11 @@ class PacketViolationHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONHANDLER
 public:
     class PacketViolationHandler& operator=(class PacketViolationHandler const &) = delete;
     PacketViolationHandler(class PacketViolationHandler const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONHANDLER
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 
-
 private:
-
 
 };

@@ -14,13 +14,11 @@ class AppPlatformWindows {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMWINDOWS
 public:
     class AppPlatformWindows& operator=(class AppPlatformWindows const &) = delete;
     AppPlatformWindows(class AppPlatformWindows const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMWINDOWS
@@ -49,8 +47,6 @@ public:
 //protected:
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 
-
 protected:
-
 
 };

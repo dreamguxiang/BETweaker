@@ -15,7 +15,6 @@ class AbilityCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITYCOMMAND
 public:
     class AbilityCommand& operator=(class AbilityCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     AbilityCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AbilityCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITYCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

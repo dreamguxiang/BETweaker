@@ -16,7 +16,6 @@ class MoveDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEDEFINITION
 public:
     class MoveDefinition& operator=(class MoveDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     MoveDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MoveDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEDEFINITION
 #endif
-
-
 
 };

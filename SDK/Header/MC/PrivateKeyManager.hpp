@@ -15,14 +15,12 @@ class PrivateKeyManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRIVATEKEYMANAGER
 public:
     class PrivateKeyManager& operator=(class PrivateKeyManager const &) = delete;
     PrivateKeyManager(class PrivateKeyManager const &) = delete;
     PrivateKeyManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PrivateKeyManager();
@@ -32,7 +30,5 @@ public:
     MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
     MCAPI std::string computeSecret(class KeyManager const &) const;
     MCAPI std::string sign(std::string const &, enum Crypto::Hash::HashType) const;
-
-
 
 };

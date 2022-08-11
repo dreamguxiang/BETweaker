@@ -12,7 +12,6 @@ class ExpectedSlotConsume {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPECTEDSLOTCONSUME
 public:
     class ExpectedSlotConsume& operator=(class ExpectedSlotConsume const &) = delete;
@@ -20,12 +19,9 @@ public:
     ExpectedSlotConsume() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDSLOTCONSUME
 #endif
     MCAPI ExpectedSlotConsume(enum ContainerEnumName, unsigned char, class ItemStack const &, unsigned char);
-
-
 
 };

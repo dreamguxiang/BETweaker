@@ -26,14 +26,12 @@ public:
         return get(key, args, mCurrentLanguage);
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18N
 public:
     class I18n& operator=(class I18n const &) = delete;
     I18n(class I18n const &) = delete;
     I18n() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18N
@@ -64,7 +62,6 @@ public:
     MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
 
-
 private:
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
     MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
@@ -80,6 +77,5 @@ private:
     MCAPI static std::vector<std::string> const mPackReservedKeys;
     MCAPI static class ResourcePackManager * mResourcePackManager;
     MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
-
 
 };

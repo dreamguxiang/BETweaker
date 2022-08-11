@@ -15,7 +15,6 @@ class LootItemKilledByPlayerCondition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMKILLEDBYPLAYERCONDITION
 public:
     class LootItemKilledByPlayerCondition& operator=(class LootItemKilledByPlayerCondition const &) = delete;
@@ -23,14 +22,11 @@ public:
     LootItemKilledByPlayerCondition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootItemKilledByPlayerCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMKILLEDBYPLAYERCONDITION
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
-
-
 
 };

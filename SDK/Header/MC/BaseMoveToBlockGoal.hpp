@@ -15,14 +15,12 @@ class BaseMoveToBlockGoal : public BaseMoveToGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOVETOBLOCKGOAL
 public:
     class BaseMoveToBlockGoal& operator=(class BaseMoveToBlockGoal const &) = delete;
     BaseMoveToBlockGoal(class BaseMoveToBlockGoal const &) = delete;
     BaseMoveToBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BaseMoveToBlockGoal();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
 #endif
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
-
-
 
 };

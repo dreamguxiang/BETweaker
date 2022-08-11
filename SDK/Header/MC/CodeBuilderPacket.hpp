@@ -15,14 +15,12 @@ class CodeBuilderPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERPACKET
 public:
     class CodeBuilderPacket& operator=(class CodeBuilderPacket const &) = delete;
     CodeBuilderPacket(class CodeBuilderPacket const &) = delete;
     CodeBuilderPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CodeBuilderPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERPACKET
 #endif
-
-
 
 };

@@ -14,14 +14,12 @@ class FollowMobGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWMOBGOAL
 public:
     class FollowMobGoal& operator=(class FollowMobGoal const &) = delete;
     FollowMobGoal(class FollowMobGoal const &) = delete;
     FollowMobGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowMobGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _setWantedMob();
 
-
 private:
-
 
 };

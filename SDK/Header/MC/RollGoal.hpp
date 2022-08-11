@@ -14,14 +14,12 @@ class RollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROLLGOAL
 public:
     class RollGoal& operator=(class RollGoal const &) = delete;
     RollGoal(class RollGoal const &) = delete;
     RollGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RollGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 
-
 private:
-
 
 };

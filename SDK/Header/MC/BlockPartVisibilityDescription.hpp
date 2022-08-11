@@ -14,18 +14,24 @@ struct BlockPartVisibilityDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPARTVISIBILITYDESCRIPTION
 public:
     struct BlockPartVisibilityDescription& operator=(struct BlockPartVisibilityDescription const &) = delete;
     BlockPartVisibilityDescription(struct BlockPartVisibilityDescription const &) = delete;
 #endif
-
 public:
+    /*0*/ virtual ~BlockPartVisibilityDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPARTVISIBILITYDESCRIPTION
+#endif
     MCAPI BlockPartVisibilityDescription();
-
-protected:
-
-private:
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

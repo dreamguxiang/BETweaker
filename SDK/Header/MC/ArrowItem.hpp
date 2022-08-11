@@ -16,14 +16,12 @@ class ArrowItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARROWITEM
 public:
     class ArrowItem& operator=(class ArrowItem const &) = delete;
     ArrowItem(class ArrowItem const &) = delete;
     ArrowItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ArrowItem();
@@ -47,6 +45,7 @@ public:
     /*97*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWITEM
 #endif
     MCAPI ArrowItem(std::string const &, int);
@@ -55,8 +54,6 @@ public:
 //protected:
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
 
-
 protected:
-
 
 };

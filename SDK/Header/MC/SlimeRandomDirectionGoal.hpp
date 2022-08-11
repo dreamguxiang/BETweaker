@@ -14,14 +14,12 @@ class SlimeRandomDirectionGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMERANDOMDIRECTIONGOAL
 public:
     class SlimeRandomDirectionGoal& operator=(class SlimeRandomDirectionGoal const &) = delete;
     SlimeRandomDirectionGoal(class SlimeRandomDirectionGoal const &) = delete;
     SlimeRandomDirectionGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlimeRandomDirectionGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMERANDOMDIRECTIONGOAL
 #endif
     MCAPI SlimeRandomDirectionGoal(class Mob &);
-
-
 
 };

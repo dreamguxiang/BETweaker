@@ -14,14 +14,12 @@ class GameRulesChangedPacketData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKETDATA
 public:
     class GameRulesChangedPacketData& operator=(class GameRulesChangedPacketData const &) = delete;
     GameRulesChangedPacketData(class GameRulesChangedPacketData const &) = delete;
     GameRulesChangedPacketData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULESCHANGEDPACKETDATA
@@ -30,7 +28,5 @@ public:
     MCAPI std::vector<class GameRule> const & getRules() const;
     MCAPI void setRules(std::vector<class GameRule>);
     MCAPI ~GameRulesChangedPacketData();
-
-
 
 };

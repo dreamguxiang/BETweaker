@@ -15,14 +15,12 @@ class MoveToLandGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOLANDGOAL
 public:
     class MoveToLandGoal& operator=(class MoveToLandGoal const &) = delete;
     MoveToLandGoal(class MoveToLandGoal const &) = delete;
     MoveToLandGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToLandGoal();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLANDGOAL
 #endif
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
-
-
 
 };

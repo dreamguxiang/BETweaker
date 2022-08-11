@@ -15,14 +15,12 @@ class DebugEndPoint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGENDPOINT
 public:
     class DebugEndPoint& operator=(class DebugEndPoint const &) = delete;
     DebugEndPoint(class DebugEndPoint const &) = delete;
     DebugEndPoint() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::unordered_map<enum LogArea, bool, struct std::hash<enum LogArea>, struct std::equal_to<enum LogArea>, class std::allocator<struct std::pair<enum LogArea const, bool>>> const mAssertAreas;
-
 
 };

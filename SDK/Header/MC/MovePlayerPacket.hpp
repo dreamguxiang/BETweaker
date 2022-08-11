@@ -39,13 +39,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEPLAYERPACKET
 public:
     class MovePlayerPacket& operator=(class MovePlayerPacket const &) = delete;
     MovePlayerPacket(class MovePlayerPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MovePlayerPacket();
@@ -58,7 +56,5 @@ public:
     MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
     MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
     MCAPI MovePlayerPacket();
-
-
 
 };

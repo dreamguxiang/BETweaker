@@ -15,13 +15,11 @@ class GeneticsDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICSDEFINITION
 public:
     class GeneticsDefinition& operator=(class GeneticsDefinition const &) = delete;
     GeneticsDefinition(class GeneticsDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float const DEFAULT_MUTATION_RATE;
-
 
 };

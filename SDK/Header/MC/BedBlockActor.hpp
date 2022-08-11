@@ -15,14 +15,12 @@ class BedBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDBLOCKACTOR
 public:
     class BedBlockActor& operator=(class BedBlockActor const &) = delete;
     BedBlockActor(class BedBlockActor const &) = delete;
     BedBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BedBlockActor();
@@ -50,7 +48,5 @@ public:
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     MCAPI void startSleepingOn();
     MCAPI void stopSleepingOn(class BlockSource &, bool);
-
-
 
 };

@@ -28,13 +28,11 @@ public:
 
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWCREDITSPACKET
 public:
     class ShowCreditsPacket& operator=(class ShowCreditsPacket const &) = delete;
     ShowCreditsPacket(class ShowCreditsPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShowCreditsPacket();
@@ -46,7 +44,5 @@ public:
 #endif
     MCAPI ShowCreditsPacket(class ActorRuntimeID, enum ShowCreditsPacket::CreditsState);
     MCAPI ShowCreditsPacket();
-
-
 
 };

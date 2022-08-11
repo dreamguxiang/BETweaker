@@ -15,14 +15,12 @@ class DelayedAttackGoal : public MeleeAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYEDATTACKGOAL
 public:
     class DelayedAttackGoal& operator=(class DelayedAttackGoal const &) = delete;
     DelayedAttackGoal(class DelayedAttackGoal const &) = delete;
     DelayedAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DelayedAttackGoal();
@@ -45,8 +43,6 @@ public:
     MCAPI void _attemptStartAttacking(class Actor *) const;
     MCAPI void _manageAttackTime();
 
-
 private:
-
 
 };

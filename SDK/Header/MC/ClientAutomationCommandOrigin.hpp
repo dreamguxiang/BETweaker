@@ -16,14 +16,12 @@ class ClientAutomationCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTAUTOMATIONCOMMANDORIGIN
 public:
     class ClientAutomationCommandOrigin& operator=(class ClientAutomationCommandOrigin const &) = delete;
     ClientAutomationCommandOrigin(class ClientAutomationCommandOrigin const &) = delete;
     ClientAutomationCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClientAutomationCommandOrigin();
@@ -32,13 +30,13 @@ public:
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const;
-    /*6*/ virtual class Level * getLevel() const;
-    /*7*/ virtual class Dimension * getDimension() const;
-    /*8*/ virtual class Actor * getEntity() const;
+    /*6*/ virtual class Level * getLevel();
+    /*7*/ virtual class Dimension * getDimension();
+    /*8*/ virtual class Actor * getEntity();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*18*/ virtual bool isSelectorExpansionAllowed();
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*29*/ virtual class CompoundTag serialize() const;
@@ -46,7 +44,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTAUTOMATIONCOMMANDORIGIN
 #endif
     MCAPI ClientAutomationCommandOrigin(std::string const &);
-
-
 
 };

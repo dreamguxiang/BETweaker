@@ -15,14 +15,12 @@ class OceanRuinPieces {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINPIECES
 public:
     class OceanRuinPieces& operator=(class OceanRuinPieces const &) = delete;
     OceanRuinPieces(class OceanRuinPieces const &) = delete;
     OceanRuinPieces() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINPIECES
@@ -33,7 +31,6 @@ public:
     MCAPI static void _addClusterRuins(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
     MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
-
 
 private:
     MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
@@ -51,6 +48,5 @@ private:
     MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
     MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
     MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
-
 
 };

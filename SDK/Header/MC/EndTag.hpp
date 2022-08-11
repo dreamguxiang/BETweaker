@@ -20,7 +20,6 @@ public:
     LIAPI nullptr_t get();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDTAG
 public:
     class EndTag& operator=(class EndTag const &) = delete;
@@ -28,10 +27,9 @@ public:
     EndTag() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndTag();
-    /*2*/ virtual void write(class IDataOutput &) const;
+    /*2*/ virtual void write(class IDataOutput &);
     /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
@@ -40,7 +38,5 @@ public:
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDTAG
 #endif
-
-
 
 };

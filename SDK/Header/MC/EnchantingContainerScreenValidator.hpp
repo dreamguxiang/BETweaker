@@ -15,20 +15,16 @@ class EnchantingContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTINGCONTAINERSCREENVALIDATOR
 public:
     class EnchantingContainerScreenValidator& operator=(class EnchantingContainerScreenValidator const &) = delete;
     EnchantingContainerScreenValidator(class EnchantingContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnchantingContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGCONTAINERSCREENVALIDATOR
 #endif
     MCAPI EnchantingContainerScreenValidator();
-
-
 
 };

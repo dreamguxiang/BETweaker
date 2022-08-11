@@ -15,14 +15,12 @@ class RespawnAnchorBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNANCHORBLOCK
 public:
     class RespawnAnchorBlock& operator=(class RespawnAnchorBlock const &) = delete;
     RespawnAnchorBlock(class RespawnAnchorBlock const &) = delete;
     RespawnAnchorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RespawnAnchorBlock();
@@ -85,8 +83,6 @@ public:
     MCAPI static void explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);
     MCAPI static bool trySetSpawn(class Player &, class BlockPos const &, class BlockSource &, class Level &);
 
-
 private:
-
 
 };

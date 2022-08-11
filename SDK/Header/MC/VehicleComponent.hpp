@@ -12,19 +12,15 @@ struct VehicleComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEHICLECOMPONENT
 public:
     struct VehicleComponent& operator=(struct VehicleComponent const &) = delete;
     VehicleComponent(struct VehicleComponent const &) = delete;
     VehicleComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEHICLECOMPONENT
+#endif
     MCAPI ~VehicleComponent();
-
-protected:
-
-private:
 
 };

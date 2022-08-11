@@ -15,13 +15,11 @@ class HurtOwnerSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTOWNERSUBCOMPONENT
 public:
     class HurtOwnerSubcomponent& operator=(class HurtOwnerSubcomponent const &) = delete;
     HurtOwnerSubcomponent(class HurtOwnerSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HurtOwnerSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTOWNERSUBCOMPONENT
 #endif
     MCAPI HurtOwnerSubcomponent();
-
-
 
 };

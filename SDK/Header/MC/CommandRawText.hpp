@@ -21,7 +21,6 @@ inline operator std::string()const
 }
 #define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRAWTEXT
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRAWTEXT
 public:
     class CommandRawText& operator=(class CommandRawText const &) = delete;
@@ -29,12 +28,9 @@ public:
     CommandRawText() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRAWTEXT
 #endif
     MCAPI std::string const & getText() const;
-
-
 
 };

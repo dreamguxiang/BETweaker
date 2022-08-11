@@ -14,14 +14,12 @@ class TemptGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPTGOAL
 public:
     class TemptGoal& operator=(class TemptGoal const &) = delete;
     TemptGoal(class TemptGoal const &) = delete;
     TemptGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TemptGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPTGOAL
 #endif
     MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
-
-
 
 };

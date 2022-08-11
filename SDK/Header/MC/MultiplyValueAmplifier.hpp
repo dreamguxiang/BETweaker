@@ -14,7 +14,6 @@ class MultiplyValueAmplifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIPLYVALUEAMPLIFIER
 public:
     class MultiplyValueAmplifier& operator=(class MultiplyValueAmplifier const &) = delete;
@@ -22,14 +21,11 @@ public:
     MultiplyValueAmplifier() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MultiplyValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLYVALUEAMPLIFIER
 #endif
     MCAPI MultiplyValueAmplifier(float);
-
-
 
 };

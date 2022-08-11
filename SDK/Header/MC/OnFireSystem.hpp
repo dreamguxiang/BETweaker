@@ -14,14 +14,12 @@ class OnFireSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESYSTEM
 public:
     class OnFireSystem& operator=(class OnFireSystem const &) = delete;
     OnFireSystem(class OnFireSystem const &) = delete;
     OnFireSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
@@ -35,8 +33,6 @@ public:
 //protected:
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
 
-
 protected:
-
 
 };

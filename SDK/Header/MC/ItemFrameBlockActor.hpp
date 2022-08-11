@@ -15,14 +15,12 @@ class ItemFrameBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMFRAMEBLOCKACTOR
 public:
     class ItemFrameBlockActor& operator=(class ItemFrameBlockActor const &) = delete;
     ItemFrameBlockActor(class ItemFrameBlockActor const &) = delete;
     ItemFrameBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemFrameBlockActor();
@@ -33,7 +31,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void onRemoved(class BlockSource &);
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual float getShadowRadius(class BlockSource &) const;
+    /*17*/ virtual float getShadowRadius(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -59,8 +57,6 @@ public:
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 
-
 private:
-
 
 };

@@ -14,14 +14,12 @@ class ActorPermutationEventHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPERMUTATIONEVENTHANDLER
 public:
     class ActorPermutationEventHandler& operator=(class ActorPermutationEventHandler const &) = delete;
     ActorPermutationEventHandler(class ActorPermutationEventHandler const &) = delete;
     ActorPermutationEventHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPERMUTATIONEVENTHANDLER
@@ -33,7 +31,5 @@ public:
     MCAPI void initPermutations(std::vector<class std::shared_ptr<class ActorPermutation>> &);
     MCAPI void reload(class RenderParams &);
     MCAPI ~ActorPermutationEventHandler();
-
-
 
 };

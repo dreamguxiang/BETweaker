@@ -14,14 +14,12 @@ class SimpleRandom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLERANDOM
 public:
     class SimpleRandom& operator=(class SimpleRandom const &) = delete;
     SimpleRandom(class SimpleRandom const &) = delete;
     SimpleRandom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SimpleRandom();
@@ -37,7 +35,5 @@ public:
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
 #endif
-
-
 
 };

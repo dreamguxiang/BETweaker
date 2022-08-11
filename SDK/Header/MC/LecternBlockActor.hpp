@@ -14,14 +14,12 @@ class LecternBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LECTERNBLOCKACTOR
 public:
     class LecternBlockActor& operator=(class LecternBlockActor const &) = delete;
     LecternBlockActor(class LecternBlockActor const &) = delete;
     LecternBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
@@ -48,7 +46,5 @@ public:
     MCAPI void setItemFromBlock(int, class ItemStack const &);
     MCAPI void setPageOnServer(int, class BlockSource &);
     MCAPI void setTotalPages(int);
-
-
 
 };

@@ -15,13 +15,11 @@ class AddBehaviorTreePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDBEHAVIORTREEPACKET
 public:
     class AddBehaviorTreePacket& operator=(class AddBehaviorTreePacket const &) = delete;
     AddBehaviorTreePacket(class AddBehaviorTreePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AddBehaviorTreePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDBEHAVIORTREEPACKET
 #endif
     MCAPI AddBehaviorTreePacket();
-
-
 
 };

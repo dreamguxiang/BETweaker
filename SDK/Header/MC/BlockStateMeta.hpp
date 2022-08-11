@@ -15,14 +15,12 @@ class BlockStateMeta {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEMETA
 public:
     class BlockStateMeta& operator=(class BlockStateMeta const &) = delete;
     BlockStateMeta(class BlockStateMeta const &) = delete;
     BlockStateMeta() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEMETA
@@ -36,7 +34,5 @@ public:
     MCAPI std::string const & getString(int) const;
     MCAPI enum Tag::Type const getType() const;
     MCAPI int indexOf(unsigned __int64 const &) const;
-
-
 
 };

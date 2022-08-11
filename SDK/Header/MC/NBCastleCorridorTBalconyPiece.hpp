@@ -15,14 +15,12 @@ class NBCastleCorridorTBalconyPiece : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBCASTLECORRIDORTBALCONYPIECE
 public:
     class NBCastleCorridorTBalconyPiece& operator=(class NBCastleCorridorTBalconyPiece const &) = delete;
     NBCastleCorridorTBalconyPiece(class NBCastleCorridorTBalconyPiece const &) = delete;
     NBCastleCorridorTBalconyPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBCastleCorridorTBalconyPiece();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLECORRIDORTBALCONYPIECE
 #endif
-
-
 
 };

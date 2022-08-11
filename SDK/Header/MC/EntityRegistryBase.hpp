@@ -14,14 +14,12 @@ class EntityRegistryBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYBASE
 public:
     class EntityRegistryBase& operator=(class EntityRegistryBase const &) = delete;
     EntityRegistryBase(class EntityRegistryBase const &) = delete;
     EntityRegistryBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRYBASE
@@ -33,9 +31,7 @@ public:
 //protected:
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
 
-
 protected:
     MCAPI static struct std::atomic<unsigned int> mRegistryCount;
-
 
 };

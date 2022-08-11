@@ -18,14 +18,12 @@ public:
 enum ZombieType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZOMBIE
 public:
     class Zombie& operator=(class Zombie const &) = delete;
     Zombie(class Zombie const &) = delete;
     Zombie() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -66,10 +64,8 @@ public:
 
 //protected:
 
-
 protected:
     MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
     MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
-
 
 };

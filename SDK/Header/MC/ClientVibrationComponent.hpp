@@ -12,7 +12,6 @@ class ClientVibrationComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTVIBRATIONCOMPONENT
 public:
     class ClientVibrationComponent& operator=(class ClientVibrationComponent const &) = delete;
@@ -20,13 +19,10 @@ public:
     ClientVibrationComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTVIBRATIONCOMPONENT
 #endif
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     MCAPI void setLastVibrationTick(struct Tick);
-
-
 
 };

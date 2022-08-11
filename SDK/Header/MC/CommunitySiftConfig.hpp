@@ -12,19 +12,15 @@ struct CommunitySiftConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMUNITYSIFTCONFIG
 public:
     struct CommunitySiftConfig& operator=(struct CommunitySiftConfig const &) = delete;
     CommunitySiftConfig(struct CommunitySiftConfig const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMUNITYSIFTCONFIG
+#endif
     MCAPI CommunitySiftConfig();
     MCAPI ~CommunitySiftConfig();
-
-protected:
-
-private:
 
 };

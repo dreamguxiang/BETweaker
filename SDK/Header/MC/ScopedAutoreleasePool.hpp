@@ -14,13 +14,11 @@ class ScopedAutoreleasePool {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOPEDAUTORELEASEPOOL
 public:
     class ScopedAutoreleasePool& operator=(class ScopedAutoreleasePool const &) = delete;
     ScopedAutoreleasePool(class ScopedAutoreleasePool const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDAUTORELEASEPOOL
@@ -30,7 +28,5 @@ public:
     MCAPI void drainNow();
     MCAPI void reset();
     MCAPI ~ScopedAutoreleasePool();
-
-
 
 };

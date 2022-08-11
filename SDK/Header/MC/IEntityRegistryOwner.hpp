@@ -12,7 +12,6 @@ class IEntityRegistryOwner {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYREGISTRYOWNER
 public:
     class IEntityRegistryOwner& operator=(class IEntityRegistryOwner const &) = delete;
@@ -20,12 +19,9 @@ public:
     IEntityRegistryOwner() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
     MCVAPI ~IEntityRegistryOwner();
 #endif
-
-
 
 };

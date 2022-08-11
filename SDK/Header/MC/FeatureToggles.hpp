@@ -14,14 +14,12 @@ class FeatureToggles {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETOGGLES
 public:
     class FeatureToggles& operator=(class FeatureToggles const &) = delete;
     FeatureToggles(class FeatureToggles const &) = delete;
     FeatureToggles() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETOGGLES
@@ -42,9 +40,7 @@ public:
     MCAPI void _registerFeatures();
     MCAPI void _setupDependencies();
 
-
 private:
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
-
 
 };

@@ -16,7 +16,6 @@ class AttackDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKDEFINITION
 public:
     class AttackDefinition& operator=(class AttackDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     AttackDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttackDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKDEFINITION
 #endif
-
-
 
 };

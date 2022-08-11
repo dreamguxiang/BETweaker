@@ -14,14 +14,12 @@ class ActorLegacyTickSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLEGACYTICKSYSTEM
 public:
     class ActorLegacyTickSystem& operator=(class ActorLegacyTickSystem const &) = delete;
     ActorLegacyTickSystem(class ActorLegacyTickSystem const &) = delete;
     ActorLegacyTickSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorLegacyTickSystem();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI static void _runActorLegacyTick(class ViewedEntityContextT<class EntityContext, class ActorTickNeededComponent, class FlagComponent<struct ActorFlag>> &);
 
-
 private:
-
 
 };

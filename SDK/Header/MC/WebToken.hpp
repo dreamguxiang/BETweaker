@@ -22,14 +22,12 @@ public:
 	std::string signature;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBTOKEN
 public:
     class WebToken& operator=(class WebToken const &) = delete;
     WebToken(class WebToken const &) = delete;
     WebToken() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBTOKEN
@@ -45,8 +43,6 @@ public:
     MCAPI std::string _signatureToDER() const;
     MCAPI static std::string _DERToBinary(std::string const &, int);
 
-
 private:
-
 
 };

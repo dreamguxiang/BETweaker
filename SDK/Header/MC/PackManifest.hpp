@@ -21,13 +21,11 @@ struct CapabilityRegisterer {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKMANIFEST
 public:
     class PackManifest& operator=(class PackManifest const &) = delete;
     PackManifest() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackManifest();
@@ -115,9 +113,7 @@ public:
     MCAPI void _serializeModules(class Json::Value &) const;
     MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
 
-
 private:
     MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
-
 
 };

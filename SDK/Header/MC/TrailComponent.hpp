@@ -14,20 +14,16 @@ class TrailComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILCOMPONENT
 public:
     class TrailComponent& operator=(class TrailComponent const &) = delete;
     TrailComponent(class TrailComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILCOMPONENT
 #endif
     MCAPI TrailComponent();
     MCAPI void initFromDefinition(class Actor &);
-
-
 
 };

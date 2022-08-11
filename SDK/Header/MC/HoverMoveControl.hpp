@@ -15,13 +15,11 @@ class HoverMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOVERMOVECONTROL
 public:
     class HoverMoveControl& operator=(class HoverMoveControl const &) = delete;
     HoverMoveControl(class HoverMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoverMoveControl();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERMOVECONTROL
 #endif
     MCAPI HoverMoveControl();
-
-
 
 };

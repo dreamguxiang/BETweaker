@@ -15,20 +15,17 @@ struct AmbientSoundIntervalDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDINTERVALDEFINITION
 public:
     struct AmbientSoundIntervalDefinition& operator=(struct AmbientSoundIntervalDefinition const &) = delete;
     AmbientSoundIntervalDefinition(struct AmbientSoundIntervalDefinition const &) = delete;
     AmbientSoundIntervalDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDINTERVALDEFINITION
+#endif
     MCAPI void addDynamic(struct DynamicAmbientSound const &);
     MCAPI void initialize(class EntityContext &, class AmbientSoundServerComponent &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct AmbientSoundIntervalDefinition>> &);
 
 };

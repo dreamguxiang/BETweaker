@@ -14,14 +14,12 @@ class PathFinder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHFINDER
 public:
     class PathFinder& operator=(class PathFinder const &) = delete;
     PathFinder(class PathFinder const &) = delete;
     PathFinder() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDER
@@ -57,8 +55,6 @@ public:
     MCAPI enum NodeType _isFreeWaterNode(class Actor &, class BlockPos const &, class BlockPos const &);
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode *, enum PathCompletionType, struct ActorUniqueID);
 
-
 private:
-
 
 };

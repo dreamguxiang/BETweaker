@@ -16,14 +16,12 @@ class FilterTestBiomeHasTag : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTBIOMEHASTAG
 public:
     class FilterTestBiomeHasTag& operator=(class FilterTestBiomeHasTag const &) = delete;
     FilterTestBiomeHasTag(class FilterTestBiomeHasTag const &) = delete;
     FilterTestBiomeHasTag() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FilterTestBiomeHasTag();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
 
-
 private:
-
 
 };

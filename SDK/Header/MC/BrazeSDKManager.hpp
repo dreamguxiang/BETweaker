@@ -12,7 +12,6 @@ class BrazeSDKManager {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRAZESDKMANAGER
 public:
     class BrazeSDKManager& operator=(class BrazeSDKManager const &) = delete;
@@ -20,14 +19,11 @@ public:
     BrazeSDKManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRAZESDKMANAGER
     MCVAPI void _disableBrazeSDK();
     MCVAPI void _enableBrazeSDK();
     MCVAPI void setBrazeId(std::string const &);
 #endif
-
-
 
 };

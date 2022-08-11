@@ -14,18 +14,18 @@ struct BlockUnwalkableDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNWALKABLEDESCRIPTION
 public:
     struct BlockUnwalkableDescription& operator=(struct BlockUnwalkableDescription const &) = delete;
     BlockUnwalkableDescription(struct BlockUnwalkableDescription const &) = delete;
     BlockUnwalkableDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockUnwalkableDescription();
+    /*1*/ virtual std::string const & getName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNWALKABLEDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

@@ -17,13 +17,11 @@ public:
 enum InputData;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERAUTHINPUTPACKET
 public:
     class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket const &) = delete;
     PlayerAuthInputPacket(class PlayerAuthInputPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerAuthInputPacket();
@@ -40,7 +38,5 @@ public:
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;
-
-
 
 };

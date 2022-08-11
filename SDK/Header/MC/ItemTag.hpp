@@ -12,19 +12,15 @@ struct ItemTag {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMTAG
 public:
     struct ItemTag& operator=(struct ItemTag const &) = delete;
     ItemTag(struct ItemTag const &) = delete;
     ItemTag() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMTAG
+#endif
     MCAPI ~ItemTag();
-
-protected:
-
-private:
 
 };

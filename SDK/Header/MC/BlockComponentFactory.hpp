@@ -21,14 +21,12 @@ struct Constructor {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTFACTORY
 public:
     class BlockComponentFactory& operator=(class BlockComponentFactory const &) = delete;
     BlockComponentFactory(class BlockComponentFactory const &) = delete;
     BlockComponentFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTFACTORY
@@ -43,8 +41,6 @@ public:
 //private:
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
-
 private:
-
 
 };

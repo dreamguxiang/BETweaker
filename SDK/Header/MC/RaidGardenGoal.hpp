@@ -15,14 +15,12 @@ class RaidGardenGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDGARDENGOAL
 public:
     class RaidGardenGoal& operator=(class RaidGardenGoal const &) = delete;
     RaidGardenGoal(class RaidGardenGoal const &) = delete;
     RaidGardenGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RaidGardenGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDGARDENGOAL
 #endif
     MCAPI RaidGardenGoal(class Mob &, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const &);
-
-
 
 };

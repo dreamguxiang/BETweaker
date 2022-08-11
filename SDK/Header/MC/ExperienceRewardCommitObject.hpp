@@ -12,14 +12,12 @@ class ExperienceRewardCommitObject {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDCOMMITOBJECT
 public:
     class ExperienceRewardCommitObject& operator=(class ExperienceRewardCommitObject const &) = delete;
     ExperienceRewardCommitObject(class ExperienceRewardCommitObject const &) = delete;
     ExperienceRewardCommitObject() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExperienceRewardCommitObject();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMMITOBJECT
 #endif
     MCAPI ExperienceRewardCommitObject(int);
-
-
 
 };

@@ -15,14 +15,12 @@ class TextObjectLocalizedTextWithParams {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTLOCALIZEDTEXTWITHPARAMS
 public:
     class TextObjectLocalizedTextWithParams& operator=(class TextObjectLocalizedTextWithParams const &) = delete;
     TextObjectLocalizedTextWithParams(class TextObjectLocalizedTextWithParams const &) = delete;
     TextObjectLocalizedTextWithParams() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TextObjectLocalizedTextWithParams();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::unique_ptr<class TextObjectRoot>);
-
-
 
 };

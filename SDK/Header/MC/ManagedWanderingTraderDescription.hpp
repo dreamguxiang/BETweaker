@@ -15,7 +15,6 @@ class ManagedWanderingTraderDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANAGEDWANDERINGTRADERDESCRIPTION
 public:
     class ManagedWanderingTraderDescription& operator=(class ManagedWanderingTraderDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     ManagedWanderingTraderDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~ManagedWanderingTraderDescription();
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERDESCRIPTION
 #endif
-
-
 
 };

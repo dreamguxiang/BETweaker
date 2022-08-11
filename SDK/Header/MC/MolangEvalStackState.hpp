@@ -12,7 +12,6 @@ class MolangEvalStackState {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGEVALSTACKSTATE
 public:
     class MolangEvalStackState& operator=(class MolangEvalStackState const &) = delete;
@@ -20,12 +19,9 @@ public:
     MolangEvalStackState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGEVALSTACKSTATE
 #endif
     MCAPI MolangEvalStackState(struct MolangEvalParams &);
-
-
 
 };

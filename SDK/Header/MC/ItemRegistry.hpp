@@ -26,14 +26,12 @@ struct ItemAlias {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRY
 public:
     class ItemRegistry& operator=(class ItemRegistry const &) = delete;
     ItemRegistry(class ItemRegistry const &) = delete;
     ItemRegistry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
@@ -91,7 +89,6 @@ public:
     MCAPI void unregisterItem(class HashedString const &);
     MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
 
-
 private:
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;
     MCAPI static class std::unordered_map<class HashedString, class std::function<class HashedString (short)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<class HashedString (short)>>>> mComplexAliasLookupMap;
@@ -108,6 +105,5 @@ private:
     MCAPI static class std::unordered_map<struct ItemTag, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>, struct std::hash<struct ItemTag>, struct std::equal_to<struct ItemTag>, class std::allocator<struct std::pair<struct ItemTag const, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>>>> mTagToItemsMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileItemNameToItemMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileNamespaceToItemMap;
-
 
 };

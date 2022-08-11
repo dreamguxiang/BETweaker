@@ -12,13 +12,11 @@ class NBTSchemaWriter {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSCHEMAWRITER
 public:
     class NBTSchemaWriter& operator=(class NBTSchemaWriter const &) = delete;
     NBTSchemaWriter(class NBTSchemaWriter const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBTSchemaWriter();
@@ -56,8 +54,6 @@ public:
 //private:
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class CryingObsidianBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRYINGOBSIDIANBLOCK
 public:
     class CryingObsidianBlock& operator=(class CryingObsidianBlock const &) = delete;
     CryingObsidianBlock(class CryingObsidianBlock const &) = delete;
     CryingObsidianBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CryingObsidianBlock();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRYINGOBSIDIANBLOCK
 #endif
     MCAPI CryingObsidianBlock(std::string const &, int);
-
-
 
 };

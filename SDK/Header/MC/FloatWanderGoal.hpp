@@ -14,14 +14,12 @@ class FloatWanderGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATWANDERGOAL
 public:
     class FloatWanderGoal& operator=(class FloatWanderGoal const &) = delete;
     FloatWanderGoal(class FloatWanderGoal const &) = delete;
     FloatWanderGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FloatWanderGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _canReach(class Vec3 const &, float);
 
-
 private:
-
 
 };

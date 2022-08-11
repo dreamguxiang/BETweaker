@@ -14,13 +14,11 @@ class FakeThermalMonitorInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAKETHERMALMONITORINTERFACE
 public:
     class FakeThermalMonitorInterface& operator=(class FakeThermalMonitorInterface const &) = delete;
     FakeThermalMonitorInterface(class FakeThermalMonitorInterface const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKETHERMALMONITORINTERFACE
 #endif
     MCAPI FakeThermalMonitorInterface();
-
-
 
 };

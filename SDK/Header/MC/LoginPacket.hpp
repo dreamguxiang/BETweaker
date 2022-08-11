@@ -15,13 +15,11 @@ class LoginPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGINPACKET
 public:
     class LoginPacket& operator=(class LoginPacket const &) = delete;
     LoginPacket(class LoginPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LoginPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOGINPACKET
 #endif
     MCAPI LoginPacket();
-
-
 
 };

@@ -14,14 +14,12 @@ class RandomPos {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMPOS
 public:
     class RandomPos& operator=(class RandomPos const &) = delete;
     RandomPos(class RandomPos const &) = delete;
     RandomPos() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMPOS
@@ -41,8 +39,6 @@ public:
     MCAPI static bool snapToGround(class BlockPos &, int, int, class std::function<bool (class BlockPos &)>);
     MCAPI static bool spawnSnapToGround(class BlockSource &, class BlockPos &, float, int);
 
-
 private:
-
 
 };

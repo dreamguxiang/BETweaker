@@ -16,14 +16,12 @@ class Panda : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PANDA
 public:
     class Panda& operator=(class Panda const &) = delete;
     Panda(class Panda const &) = delete;
     Panda() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Panda();
@@ -65,7 +63,5 @@ public:
     MCAPI int getSneezeCounter() const;
     MCAPI int getUnhappyCounter() const;
     MCAPI void postNormalTick();
-
-
 
 };

@@ -14,14 +14,12 @@ class RegistryKey {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGISTRYKEY
 public:
     class RegistryKey& operator=(class RegistryKey const &) = delete;
     RegistryKey(class RegistryKey const &) = delete;
     RegistryKey() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGISTRYKEY
@@ -31,7 +29,5 @@ public:
     MCAPI bool readValue(char const *, std::string &) const;
     MCAPI ~RegistryKey();
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
-
-
 
 };

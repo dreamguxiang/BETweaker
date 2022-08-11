@@ -15,14 +15,12 @@ class FunctionManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNCTIONMANAGER
 public:
     class FunctionManager& operator=(class FunctionManager const &) = delete;
     FunctionManager(class FunctionManager const &) = delete;
     FunctionManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONMANAGER
@@ -45,10 +43,8 @@ public:
     MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &);
     MCAPI void _removeOriginReference(class CommandOrigin const &, unsigned int);
 
-
 protected:
 
 private:
-
 
 };

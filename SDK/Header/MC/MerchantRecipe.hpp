@@ -34,13 +34,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPE
 public:
     class MerchantRecipe& operator=(class MerchantRecipe const &) = delete;
     MerchantRecipe() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPE
@@ -82,7 +80,5 @@ public:
     MCAPI void setUses(int);
     MCAPI bool shouldRewardExp() const;
     MCAPI ~MerchantRecipe();
-
-
 
 };

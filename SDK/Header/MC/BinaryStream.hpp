@@ -47,13 +47,11 @@ public:
 
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BINARYSTREAM
 public:
     class BinaryStream& operator=(class BinaryStream const &) = delete;
     BinaryStream(class BinaryStream const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BinaryStream();
@@ -84,8 +82,6 @@ public:
 //private:
     MCAPI void write(void const *, unsigned __int64);
 
-
 private:
-
 
 };

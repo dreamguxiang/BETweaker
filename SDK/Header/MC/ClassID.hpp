@@ -14,14 +14,12 @@ class ClassID {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSID
 public:
     class ClassID& operator=(class ClassID const &) = delete;
     ClassID(class ClassID const &) = delete;
     ClassID() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSID
@@ -30,8 +28,6 @@ public:
 //private:
     MCAPI static unsigned __int64 getNextID();
 
-
 private:
-
 
 };

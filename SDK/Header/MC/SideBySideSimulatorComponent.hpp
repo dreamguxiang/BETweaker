@@ -12,19 +12,15 @@ struct SideBySideSimulatorComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDESIMULATORCOMPONENT
 public:
     struct SideBySideSimulatorComponent& operator=(struct SideBySideSimulatorComponent const &) = delete;
     SideBySideSimulatorComponent(struct SideBySideSimulatorComponent const &) = delete;
     SideBySideSimulatorComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORCOMPONENT
+#endif
     MCAPI ~SideBySideSimulatorComponent();
-
-protected:
-
-private:
 
 };

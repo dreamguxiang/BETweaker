@@ -22,14 +22,12 @@ struct ChunkBounds {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMSAVEDDATA
 public:
     class MapItemSavedData& operator=(class MapItemSavedData const &) = delete;
     MapItemSavedData(class MapItemSavedData const &) = delete;
     MapItemSavedData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEMSAVEDDATA
@@ -85,8 +83,6 @@ public:
     MCAPI void _updateTrackedEntityDecorations(class BlockSource &);
     MCAPI void _updateTrackedPlayerDecorations(class BlockSource &, class Player &, class Vec3 &, std::string &, class mce::Color &, class AutomaticID<class Dimension, int>, enum MapDecoration::Type &);
 
-
 private:
-
 
 };

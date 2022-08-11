@@ -22,7 +22,6 @@ struct Pose {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORSTAND
 public:
     class ArmorStand& operator=(class ArmorStand const &) = delete;
@@ -30,14 +29,13 @@ public:
     ArmorStand() = delete;
 #endif
 
-
 public:
     /*14*/ virtual ~ArmorStand();
     /*41*/ virtual void __unk_vfn_41();
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -83,7 +81,6 @@ public:
     MCAPI void _dropItem(class ItemStack const &);
     MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
 
-
 private:
     MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
     MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
@@ -99,6 +96,5 @@ private:
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
     MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
-
 
 };

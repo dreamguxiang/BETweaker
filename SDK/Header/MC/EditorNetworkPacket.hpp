@@ -13,13 +13,11 @@ class EditorNetworkPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDITORNETWORKPACKET
 public:
     class EditorNetworkPacket& operator=(class EditorNetworkPacket const &) = delete;
     EditorNetworkPacket(class EditorNetworkPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EditorNetworkPacket();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORNETWORKPACKET
 #endif
     MCAPI EditorNetworkPacket();
-
-
 
 };

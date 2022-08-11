@@ -16,14 +16,12 @@ class WorldTemplateManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGER
 public:
     class WorldTemplateManager& operator=(class WorldTemplateManager const &) = delete;
     WorldTemplateManager(class WorldTemplateManager const &) = delete;
     WorldTemplateManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorldTemplateManager();
@@ -39,8 +37,6 @@ public:
     MCAPI void _initializePackSources();
     MCAPI void _onDiscoverWorldTemplate(class Pack const &);
 
-
 private:
-
 
 };

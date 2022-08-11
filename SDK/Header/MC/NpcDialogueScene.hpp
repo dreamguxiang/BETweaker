@@ -15,19 +15,16 @@ struct NpcDialogueScene {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUESCENE
 public:
     struct NpcDialogueScene& operator=(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESCENE
+#endif
     MCAPI ~NpcDialogueScene();
-
-protected:
-
-private:
+    MCAPI static struct NpcDialogueScene parse(class Json::Value const &, std::string const &, int);
 
 };

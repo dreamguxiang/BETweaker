@@ -14,7 +14,6 @@ class RailActivatorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORCOMPONENT
 public:
     class RailActivatorComponent& operator=(class RailActivatorComponent const &) = delete;
@@ -22,12 +21,9 @@ public:
     RailActivatorComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILACTIVATORCOMPONENT
 #endif
     MCAPI void ejectAllPassengers(class Actor &);
-
-
 
 };

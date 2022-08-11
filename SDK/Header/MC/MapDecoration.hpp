@@ -16,13 +16,11 @@ public:
 enum Type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPDECORATION
 public:
     class MapDecoration& operator=(class MapDecoration const &) = delete;
     MapDecoration(class MapDecoration const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPDECORATION
@@ -38,7 +36,5 @@ public:
     MCAPI void load(class CompoundTag const &);
     MCAPI void save(class CompoundTag &);
     MCAPI ~MapDecoration();
-
-
 
 };

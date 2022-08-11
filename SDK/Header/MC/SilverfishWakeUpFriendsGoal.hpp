@@ -14,14 +14,12 @@ class SilverfishWakeUpFriendsGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SILVERFISHWAKEUPFRIENDSGOAL
 public:
     class SilverfishWakeUpFriendsGoal& operator=(class SilverfishWakeUpFriendsGoal const &) = delete;
     SilverfishWakeUpFriendsGoal(class SilverfishWakeUpFriendsGoal const &) = delete;
     SilverfishWakeUpFriendsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SilverfishWakeUpFriendsGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISHWAKEUPFRIENDSGOAL
 #endif
     MCAPI SilverfishWakeUpFriendsGoal(class Silverfish &);
-
-
 
 };

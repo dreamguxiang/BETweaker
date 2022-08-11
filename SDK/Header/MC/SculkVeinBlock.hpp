@@ -15,14 +15,12 @@ class SculkVeinBlock : public MultifaceBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKVEINBLOCK
 public:
     class SculkVeinBlock& operator=(class SculkVeinBlock const &) = delete;
     SculkVeinBlock(class SculkVeinBlock const &) = delete;
     SculkVeinBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkVeinBlock();
@@ -47,15 +45,15 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*104*/ virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
-    /*114*/ virtual int getExperienceDrop(class Random &) const;
+    /*114*/ virtual int getExperienceDrop(class Random &);
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
@@ -74,7 +72,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SculkVeinBlock(std::string const &, int, class Material const &);
-
-
 
 };

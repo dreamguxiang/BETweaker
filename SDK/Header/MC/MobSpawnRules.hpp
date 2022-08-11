@@ -14,12 +14,10 @@ class MobSpawnRules {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNRULES
 public:
     class MobSpawnRules& operator=(class MobSpawnRules const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNRULES
@@ -76,7 +74,5 @@ public:
     MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
     MCAPI static unsigned __int64 const MAX_WORLD_AGE;
     MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
-
-
 
 };

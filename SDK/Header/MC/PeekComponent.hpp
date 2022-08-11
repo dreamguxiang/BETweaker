@@ -14,7 +14,6 @@ class PeekComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKCOMPONENT
 public:
     class PeekComponent& operator=(class PeekComponent const &) = delete;
@@ -22,14 +21,11 @@ public:
     PeekComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKCOMPONENT
 #endif
     MCAPI int & getDuration();
     MCAPI bool getHadTarget() const;
     MCAPI void setHadTarget(bool);
-
-
 
 };

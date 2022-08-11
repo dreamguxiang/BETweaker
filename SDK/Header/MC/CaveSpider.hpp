@@ -16,14 +16,12 @@ class CaveSpider : public Spider {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVESPIDER
 public:
     class CaveSpider& operator=(class CaveSpider const &) = delete;
     CaveSpider(class CaveSpider const &) = delete;
     CaveSpider() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~CaveSpider();
@@ -58,7 +56,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVESPIDER
 #endif
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

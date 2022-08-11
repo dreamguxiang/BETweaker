@@ -16,14 +16,12 @@ class DragonFireball : public Fireball {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONFIREBALL
 public:
     class DragonFireball& operator=(class DragonFireball const &) = delete;
     DragonFireball(class DragonFireball const &) = delete;
     DragonFireball() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~DragonFireball();
@@ -57,7 +55,5 @@ public:
 #endif
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI static float SPLASH_RANGE;
-
-
 
 };

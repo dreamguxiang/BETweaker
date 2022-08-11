@@ -15,13 +15,11 @@ class SpawnParticleEffectPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNPARTICLEEFFECTPACKET
 public:
     class SpawnParticleEffectPacket& operator=(class SpawnParticleEffectPacket const &) = delete;
     SpawnParticleEffectPacket(class SpawnParticleEffectPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnParticleEffectPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SpawnParticleEffectPacket(class Vec3 const &, std::string const &, unsigned char, class std::optional<class MolangVariableMap>);
     MCAPI SpawnParticleEffectPacket();
-
-
 
 };

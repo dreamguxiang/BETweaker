@@ -12,20 +12,16 @@ struct InsideBubbleColumnBlockComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBUBBLECOLUMNBLOCKCOMPONENT
 public:
     struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent const &) = delete;
     InsideBubbleColumnBlockComponent(struct InsideBubbleColumnBlockComponent const &) = delete;
     InsideBubbleColumnBlockComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBUBBLECOLUMNBLOCKCOMPONENT
+#endif
     MCAPI struct InsideBubbleColumnBlockComponent & operator=(struct InsideBubbleColumnBlockComponent &&);
     MCAPI ~InsideBubbleColumnBlockComponent();
-
-protected:
-
-private:
 
 };

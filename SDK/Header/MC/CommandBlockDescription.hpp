@@ -15,14 +15,12 @@ class CommandBlockDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKDESCRIPTION
 public:
     class CommandBlockDescription& operator=(class CommandBlockDescription const &) = delete;
     CommandBlockDescription(class CommandBlockDescription const &) = delete;
     CommandBlockDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKDESCRIPTION
 #endif
-
-
 
 };

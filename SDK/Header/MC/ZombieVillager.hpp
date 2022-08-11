@@ -16,14 +16,12 @@ class ZombieVillager : public Zombie {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZOMBIEVILLAGER
 public:
     class ZombieVillager& operator=(class ZombieVillager const &) = delete;
     ZombieVillager(class ZombieVillager const &) = delete;
     ZombieVillager() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -59,7 +57,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZOMBIEVILLAGER
 #endif
     MCAPI ZombieVillager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

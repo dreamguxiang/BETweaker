@@ -15,7 +15,6 @@ class NetherFortressStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSSTART
 public:
     class NetherFortressStart& operator=(class NetherFortressStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     NetherFortressStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~NetherFortressStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSSTART
 #endif
     MCAPI NetherFortressStart(class Random &, short, int, int);
-
-
 
 };

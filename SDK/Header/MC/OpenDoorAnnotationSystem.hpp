@@ -14,7 +14,6 @@ class OpenDoorAnnotationSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPENDOORANNOTATIONSYSTEM
 public:
     class OpenDoorAnnotationSystem& operator=(class OpenDoorAnnotationSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     OpenDoorAnnotationSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OpenDoorAnnotationSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONSYSTEM
 #endif
-
-
 
 };

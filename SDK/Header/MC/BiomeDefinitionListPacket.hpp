@@ -15,13 +15,11 @@ class BiomeDefinitionListPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEDEFINITIONLISTPACKET
 public:
     class BiomeDefinitionListPacket& operator=(class BiomeDefinitionListPacket const &) = delete;
     BiomeDefinitionListPacket(class BiomeDefinitionListPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BiomeDefinitionListPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEDEFINITIONLISTPACKET
 #endif
     MCAPI BiomeDefinitionListPacket();
-
-
 
 };

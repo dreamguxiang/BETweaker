@@ -14,20 +14,16 @@ struct GeneDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENEDEFINITION
 public:
     struct GeneDefinition& operator=(struct GeneDefinition const &) = delete;
     GeneDefinition(struct GeneDefinition const &) = delete;
     GeneDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENEDEFINITION
+#endif
     MCAPI void addGeneticVariant(struct GeneticVariant const &);
     MCAPI ~GeneDefinition();
-
-protected:
-
-private:
 
 };

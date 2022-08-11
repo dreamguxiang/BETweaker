@@ -15,14 +15,12 @@ class ChalkboardBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHALKBOARDBLOCKACTOR
 public:
     class ChalkboardBlockActor& operator=(class ChalkboardBlockActor const &) = delete;
     ChalkboardBlockActor(class ChalkboardBlockActor const &) = delete;
     ChalkboardBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChalkboardBlockActor();
@@ -58,8 +56,6 @@ public:
 //private:
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource &, class BlockPos const &);
 
-
 private:
-
 
 };

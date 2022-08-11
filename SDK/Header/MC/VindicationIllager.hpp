@@ -16,14 +16,12 @@ class VindicationIllager : public HumanoidMonster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VINDICATIONILLAGER
 public:
     class VindicationIllager& operator=(class VindicationIllager const &) = delete;
     VindicationIllager(class VindicationIllager const &) = delete;
     VindicationIllager() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~VindicationIllager();
@@ -58,7 +56,5 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI VindicationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

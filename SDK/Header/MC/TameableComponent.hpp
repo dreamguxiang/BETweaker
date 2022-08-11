@@ -14,13 +14,11 @@ class TameableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAMEABLECOMPONENT
 public:
     class TameableComponent& operator=(class TameableComponent const &) = delete;
     TameableComponent(class TameableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLECOMPONENT
@@ -33,8 +31,6 @@ public:
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     MCAPI bool _canTame(class Actor &, class Player &);
 
-
 private:
-
 
 };

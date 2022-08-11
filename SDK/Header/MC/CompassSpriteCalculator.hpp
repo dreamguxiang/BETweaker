@@ -14,14 +14,12 @@ class CompassSpriteCalculator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPASSSPRITECALCULATOR
 public:
     class CompassSpriteCalculator& operator=(class CompassSpriteCalculator const &) = delete;
     CompassSpriteCalculator(class CompassSpriteCalculator const &) = delete;
     CompassSpriteCalculator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPASSSPRITECALCULATOR
@@ -36,7 +34,5 @@ public:
     MCAPI static class std::function<bool (class BlockSource const *, class Actor *)> isInOverworldDimension();
     MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsLastDeathLocation();
     MCAPI static class std::function<class BlockPos (class BlockSource const *, class Actor *)> pointTowardsSpawnPoint();
-
-
 
 };

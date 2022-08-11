@@ -16,13 +16,11 @@ class SetHealthPacket : public Packet {
     char filler[8];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETHEALTHPACKET
 public:
     class SetHealthPacket& operator=(class SetHealthPacket const &) = delete;
     SetHealthPacket(class SetHealthPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetHealthPacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI SetHealthPacket(int);
     MCAPI SetHealthPacket();
-
-
 
 };

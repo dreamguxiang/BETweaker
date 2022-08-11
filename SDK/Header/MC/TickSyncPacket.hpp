@@ -15,14 +15,12 @@ class TickSyncPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKSYNCPACKET
 public:
     class TickSyncPacket& operator=(class TickSyncPacket const &) = delete;
     TickSyncPacket(class TickSyncPacket const &) = delete;
     TickSyncPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TickSyncPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKSYNCPACKET
 #endif
-
-
 
 };

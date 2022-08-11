@@ -15,13 +15,11 @@ class ItemStackDescriptor {
     char filler[88];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKDESCRIPTOR
 public:
     class ItemStackDescriptor& operator=(class ItemStackDescriptor const &) = delete;
     ItemStackDescriptor(class ItemStackDescriptor const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKDESCRIPTOR
@@ -30,7 +28,5 @@ public:
     MCAPI ItemStackDescriptor();
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);
     MCAPI ~ItemStackDescriptor();
-
-
 
 };

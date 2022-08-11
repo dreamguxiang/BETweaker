@@ -12,14 +12,12 @@ class NBTSchemaReader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSCHEMAREADER
 public:
     class NBTSchemaReader& operator=(class NBTSchemaReader const &) = delete;
     NBTSchemaReader(class NBTSchemaReader const &) = delete;
     NBTSchemaReader() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBTSchemaReader();
@@ -75,7 +73,5 @@ public:
     MCVAPI bool isUInt8() const;
 #endif
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
-
-
 
 };

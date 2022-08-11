@@ -14,14 +14,12 @@ class ReplayStateComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATECOMPONENT
 public:
     class ReplayStateComponent& operator=(class ReplayStateComponent const &) = delete;
     ReplayStateComponent(class ReplayStateComponent const &) = delete;
     ReplayStateComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy &, class PlayerAuthInputPacket const &) const;
     MCAPI void tick(struct IActorMovementProxy *, unsigned __int64);
     MCAPI ~ReplayStateComponent();
-
-
 
 };

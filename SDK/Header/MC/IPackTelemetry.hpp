@@ -14,7 +14,6 @@ class IPackTelemetry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKTELEMETRY
 public:
     class IPackTelemetry& operator=(class IPackTelemetry const &) = delete;
@@ -22,11 +21,8 @@ public:
     IPackTelemetry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKTELEMETRY
 #endif
-
-
 
 };

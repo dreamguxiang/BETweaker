@@ -12,7 +12,6 @@ class WorldTemplateManagerProxy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGERPROXY
 public:
     class WorldTemplateManagerProxy& operator=(class WorldTemplateManagerProxy const &) = delete;
@@ -20,13 +19,10 @@ public:
     WorldTemplateManagerProxy() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXY
 #endif
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
     MCAPI ~WorldTemplateManagerProxy();
-
-
 
 };

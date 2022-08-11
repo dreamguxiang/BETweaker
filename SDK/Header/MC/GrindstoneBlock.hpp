@@ -15,14 +15,12 @@ class GrindstoneBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRINDSTONEBLOCK
 public:
     class GrindstoneBlock& operator=(class GrindstoneBlock const &) = delete;
     GrindstoneBlock(class GrindstoneBlock const &) = delete;
     GrindstoneBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrindstoneBlock();
@@ -48,11 +46,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -62,13 +60,13 @@ public:
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONEBLOCK
@@ -79,8 +77,6 @@ public:
 //private:
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
 
-
 private:
-
 
 };

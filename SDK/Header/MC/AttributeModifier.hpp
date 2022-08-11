@@ -14,8 +14,6 @@ class AttributeModifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
-
 public:
     /*0*/ virtual ~AttributeModifier();
     /*1*/ virtual bool isInstantaneous() const;
@@ -36,9 +34,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class mce::UUID const mInvalidUUID;
-
 
 };

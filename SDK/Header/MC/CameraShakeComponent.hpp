@@ -14,7 +14,6 @@ class CameraShakeComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKECOMPONENT
 public:
     class CameraShakeComponent& operator=(class CameraShakeComponent const &) = delete;
@@ -22,12 +21,9 @@ public:
     CameraShakeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMPONENT
 #endif
     MCAPI static float getMaxIntensity();
-
-
 
 };

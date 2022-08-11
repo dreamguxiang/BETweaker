@@ -12,20 +12,17 @@ struct Dependencies {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPENDENCIES
 public:
     Dependencies(struct Dependencies const &) = delete;
     Dependencies() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPENDENCIES
+#endif
     MCAPI struct Dependencies & operator=(struct Dependencies &&);
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
     MCAPI ~Dependencies();
-
-protected:
-
-private:
+    MCAPI static void bindType();
 
 };

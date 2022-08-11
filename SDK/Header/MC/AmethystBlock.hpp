@@ -15,14 +15,12 @@ class AmethystBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMETHYSTBLOCK
 public:
     class AmethystBlock& operator=(class AmethystBlock const &) = delete;
     AmethystBlock(class AmethystBlock const &) = delete;
     AmethystBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AmethystBlock();
@@ -50,8 +48,8 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -68,7 +66,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI AmethystBlock(std::string const &, int, class Material const &);
-
-
 
 };

@@ -14,7 +14,6 @@ class SkinInfoData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKININFODATA
 public:
     class SkinInfoData& operator=(class SkinInfoData const &) = delete;
@@ -22,12 +21,9 @@ public:
     SkinInfoData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKININFODATA
 #endif
     MCAPI static bool isValidSize(unsigned __int64);
-
-
 
 };

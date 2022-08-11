@@ -12,19 +12,15 @@ struct ItemNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMNOTIFICATIONEVENT
 public:
     struct ItemNotificationEvent& operator=(struct ItemNotificationEvent const &) = delete;
     ItemNotificationEvent(struct ItemNotificationEvent const &) = delete;
     ItemNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMNOTIFICATIONEVENT
+#endif
     MCAPI ~ItemNotificationEvent();
-
-protected:
-
-private:
 
 };

@@ -12,14 +12,12 @@ class MultifaceSpreader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACESPREADER
 public:
     class MultifaceSpreader& operator=(class MultifaceSpreader const &) = delete;
     MultifaceSpreader(class MultifaceSpreader const &) = delete;
     MultifaceSpreader() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MultifaceSpreader();
@@ -41,8 +39,6 @@ public:
 //protected:
     MCAPI bool _canSpreadToFace(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
 
-
 protected:
-
 
 };

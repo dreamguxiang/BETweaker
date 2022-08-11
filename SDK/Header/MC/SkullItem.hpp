@@ -16,14 +16,12 @@ class SkullItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKULLITEM
 public:
     class SkullItem& operator=(class SkullItem const &) = delete;
     SkullItem(class SkullItem const &) = delete;
     SkullItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SkullItem();
@@ -49,13 +47,12 @@ public:
     /*115*/ virtual enum ActorLocation getEquipLocation() const;
     /*116*/ virtual enum LevelSoundEvent getEquipSound() const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*133*/ virtual std::string getAuxValuesDescription() const;
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKULLITEM
 #endif
     MCAPI SkullItem(std::string const &, int);
-
-
 
 };

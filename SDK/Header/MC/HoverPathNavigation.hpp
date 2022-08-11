@@ -15,14 +15,12 @@ class HoverPathNavigation : public PathNavigation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOVERPATHNAVIGATION
 public:
     class HoverPathNavigation& operator=(class HoverPathNavigation const &) = delete;
     HoverPathNavigation(class HoverPathNavigation const &) = delete;
     HoverPathNavigation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoverPathNavigation();
@@ -36,7 +34,5 @@ public:
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERPATHNAVIGATION
 #endif
-
-
 
 };

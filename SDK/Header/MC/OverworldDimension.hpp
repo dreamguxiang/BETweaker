@@ -14,14 +14,12 @@ class OverworldDimension {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDDIMENSION
 public:
     class OverworldDimension& operator=(class OverworldDimension const &) = delete;
     OverworldDimension(class OverworldDimension const &) = delete;
     OverworldDimension() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDDIMENSION
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(unsigned int, bool, class BaseGameVersion const &, class Experiments const &);
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class GetEduServerInfoCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETEDUSERVERINFOCOMMAND
 public:
     class GetEduServerInfoCommand& operator=(class GetEduServerInfoCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     GetEduServerInfoCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetEduServerInfoCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETEDUSERVERINFOCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

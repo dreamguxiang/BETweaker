@@ -14,14 +14,14 @@ struct SerializerTraits {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERTRAITS
 public:
     struct SerializerTraits& operator=(struct SerializerTraits const &) = delete;
     SerializerTraits() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERTRAITS
+#endif
     MCAPI SerializerTraits(struct SerializerTraits &&);
     MCAPI SerializerTraits(struct SerializerTraits const &);
     MCAPI struct SerializerTraits & name(std::string);
@@ -29,9 +29,7 @@ public:
     MCAPI struct SerializerTraits & validate(class std::function<bool (class entt::meta_any &, class SerializerContext &)>);
     MCAPI ~SerializerTraits();
 
-protected:
-
-private:
+//private:
     MCAPI bool performValidation(class entt::meta_any, class SerializerContext &) const;
 
 };

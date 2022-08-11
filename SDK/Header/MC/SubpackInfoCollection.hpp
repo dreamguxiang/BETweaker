@@ -12,14 +12,12 @@ class SubpackInfoCollection {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBPACKINFOCOLLECTION
 public:
     class SubpackInfoCollection& operator=(class SubpackInfoCollection const &) = delete;
     SubpackInfoCollection(class SubpackInfoCollection const &) = delete;
     SubpackInfoCollection() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFOCOLLECTION
@@ -29,7 +27,5 @@ public:
     MCAPI std::string const & getSubpackFolderName(int) const;
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     MCAPI bool hasSubpacks() const;
-
-
 
 };

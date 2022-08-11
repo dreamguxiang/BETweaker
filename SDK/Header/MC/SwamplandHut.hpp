@@ -15,14 +15,12 @@ class SwamplandHut : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWAMPLANDHUT
 public:
     class SwamplandHut& operator=(class SwamplandHut const &) = delete;
     SwamplandHut(class SwamplandHut const &) = delete;
     SwamplandHut() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwamplandHut();
@@ -37,8 +35,6 @@ public:
 //protected:
     MCAPI void placeCauldron(class BlockSource &, class Random &, int, int, int, class BoundingBox const &);
 
-
 protected:
-
 
 };

@@ -16,14 +16,12 @@ class BannerAddPatternRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERADDPATTERNRECIPE
 public:
     class BannerAddPatternRecipe& operator=(class BannerAddPatternRecipe const &) = delete;
     BannerAddPatternRecipe(class BannerAddPatternRecipe const &) = delete;
     BannerAddPatternRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BannerAddPatternRecipe();
@@ -39,7 +37,5 @@ public:
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
     MCAPI static class mce::UUID const ID;
-
-
 
 };

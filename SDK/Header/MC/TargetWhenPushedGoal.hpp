@@ -14,14 +14,12 @@ class TargetWhenPushedGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETWHENPUSHEDGOAL
 public:
     class TargetWhenPushedGoal& operator=(class TargetWhenPushedGoal const &) = delete;
     TargetWhenPushedGoal(class TargetWhenPushedGoal const &) = delete;
     TargetWhenPushedGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TargetWhenPushedGoal();
@@ -36,7 +34,5 @@ public:
     MCVAPI bool canContinueToUse();
 #endif
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
-
-
 
 };

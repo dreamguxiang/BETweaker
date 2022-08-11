@@ -14,14 +14,12 @@ class NoiseCellInterpolator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOISECELLINTERPOLATOR
 public:
     class NoiseCellInterpolator& operator=(class NoiseCellInterpolator const &) = delete;
     NoiseCellInterpolator(class NoiseCellInterpolator const &) = delete;
     NoiseCellInterpolator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
@@ -32,7 +30,5 @@ public:
     MCAPI void selectCellXZ(int, int, int, int);
     MCAPI void updateForX(unsigned char);
     MCAPI void updateForZ(unsigned char);
-
-
 
 };

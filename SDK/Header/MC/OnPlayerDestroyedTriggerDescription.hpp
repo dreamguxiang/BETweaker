@@ -15,7 +15,6 @@ class OnPlayerDestroyedTriggerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
 public:
     class OnPlayerDestroyedTriggerDescription& operator=(class OnPlayerDestroyedTriggerDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     OnPlayerDestroyedTriggerDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OnPlayerDestroyedTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

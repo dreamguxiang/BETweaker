@@ -12,7 +12,6 @@ class IDimension {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDIMENSION
 public:
     class IDimension& operator=(class IDimension const &) = delete;
@@ -20,11 +19,8 @@ public:
     IDimension() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDIMENSION
 #endif
-
-
 
 };

@@ -20,14 +20,12 @@ struct DwellerData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGE
 public:
     class Village& operator=(class Village const &) = delete;
     Village(class Village const &) = delete;
     Village() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGE
@@ -117,7 +115,6 @@ public:
     MCAPI void _updateClaimedPOIs(class BlockSource &);
     MCAPI void _updateUnclaimedPOIs(class BlockSource &);
 
-
 private:
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
     MCAPI static std::string const CELEBRATION_EVENT;
@@ -146,6 +143,5 @@ private:
     MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
     MCAPI static unsigned __int64 const VILLAGE_UPDATE_TICK_DELAY;
     MCAPI static unsigned char const VILLAGE_VERSION_CURRENT;
-
 
 };

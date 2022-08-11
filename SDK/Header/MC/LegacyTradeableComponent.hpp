@@ -14,13 +14,11 @@ class LegacyTradeableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYTRADEABLECOMPONENT
 public:
     class LegacyTradeableComponent& operator=(class LegacyTradeableComponent const &) = delete;
     LegacyTradeableComponent(class LegacyTradeableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLECOMPONENT
@@ -62,8 +60,6 @@ public:
     MCAPI void _rearrangeTradeList(class Actor &, std::vector<struct Trade> &, unsigned __int64);
     MCAPI bool _refreshTrades(class Actor &);
 
-
 private:
-
 
 };

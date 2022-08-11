@@ -22,13 +22,11 @@ class CommandPosition {
     bool local;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPOSITION
 public:
     class CommandPosition& operator=(class CommandPosition const &) = delete;
     CommandPosition(class CommandPosition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
@@ -41,7 +39,5 @@ public:
     MCAPI class Vec3 getPosition(class CommandOrigin const &, class Vec3 const &) const;
     MCAPI void load(class CompoundTag const &);
     MCAPI class CompoundTag serialize() const;
-
-
 
 };

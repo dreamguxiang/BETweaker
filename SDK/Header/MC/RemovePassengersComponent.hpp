@@ -12,19 +12,15 @@ struct RemovePassengersComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEPASSENGERSCOMPONENT
 public:
     struct RemovePassengersComponent& operator=(struct RemovePassengersComponent const &) = delete;
     RemovePassengersComponent(struct RemovePassengersComponent const &) = delete;
     RemovePassengersComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSCOMPONENT
+#endif
     MCAPI ~RemovePassengersComponent();
-
-protected:
-
-private:
 
 };

@@ -14,13 +14,11 @@ class ContainerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCOMPONENT
 public:
     class ContainerComponent& operator=(class ContainerComponent const &) = delete;
     ContainerComponent(class ContainerComponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -62,8 +60,6 @@ public:
 //private:
     MCAPI bool _tryMoveInItem(class BlockSource &, class ItemStack &, int, int, int);
 
-
 private:
-
 
 };

@@ -368,14 +368,12 @@ inline void handle(class NetworkIdentifier const& a0, class PhotoTransferPacket 
     return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class PhotoTransferPacket const&>(a1));
 }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKHANDLER
 public:
     class ServerNetworkHandler& operator=(class ServerNetworkHandler const &) = delete;
     ServerNetworkHandler(class ServerNetworkHandler const &) = delete;
     ServerNetworkHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
@@ -509,8 +507,6 @@ public:
     MCAPI void _sendLevelData(class ServerPlayer &, class NetworkIdentifier const &);
     MCAPI bool _updatePermissions(class ServerPlayer const &, class RequestPermissionsPacket const &, class Abilities &, class PermissionsHandler &, class Player *);
 
-
 private:
-
 
 };

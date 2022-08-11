@@ -14,14 +14,12 @@ class FollowParentGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWPARENTGOAL
 public:
     class FollowParentGoal& operator=(class FollowParentGoal const &) = delete;
     FollowParentGoal(class FollowParentGoal const &) = delete;
     FollowParentGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowParentGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWPARENTGOAL
 #endif
     MCAPI FollowParentGoal(class Mob &, float);
-
-
 
 };

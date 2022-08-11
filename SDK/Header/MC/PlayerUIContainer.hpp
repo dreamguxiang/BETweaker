@@ -15,14 +15,12 @@ class PlayerUIContainer : public SimpleContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINER
 public:
     class PlayerUIContainer& operator=(class PlayerUIContainer const &) = delete;
     PlayerUIContainer(class PlayerUIContainer const &) = delete;
     PlayerUIContainer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerUIContainer();
@@ -33,7 +31,5 @@ public:
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     MCAPI void load(class ListTag const &, class SemVersion const &);
     MCAPI std::unique_ptr<class ListTag> save() const;
-
-
 
 };

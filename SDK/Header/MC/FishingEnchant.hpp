@@ -15,14 +15,12 @@ class FishingEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FISHINGENCHANT
 public:
     class FishingEnchant& operator=(class FishingEnchant const &) = delete;
     FishingEnchant(class FishingEnchant const &) = delete;
     FishingEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FishingEnchant();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGENCHANT
 #endif
     MCAPI FishingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-
 
 };

@@ -12,7 +12,6 @@ class PlayerRespawnEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNEVENT
 public:
     class PlayerRespawnEvent& operator=(class PlayerRespawnEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     PlayerRespawnEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNEVENT
 #endif
     MCAPI ~PlayerRespawnEvent();
-
-
 
 };

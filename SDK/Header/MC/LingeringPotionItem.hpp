@@ -17,7 +17,6 @@ class LingeringPotionItem : public PotionItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LINGERINGPOTIONITEM
 public:
     class LingeringPotionItem& operator=(class LingeringPotionItem const &) = delete;
@@ -25,14 +24,13 @@ public:
     LingeringPotionItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LingeringPotionItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable() const;
+    /*23*/ virtual bool isThrowable();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
@@ -48,11 +46,10 @@ public:
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual enum Potion::PotionType getPotionType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LINGERINGPOTIONITEM
 #endif
     MCAPI LingeringPotionItem(std::string const &, int);
-
-
 
 };

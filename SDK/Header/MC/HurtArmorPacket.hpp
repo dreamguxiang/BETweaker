@@ -15,13 +15,11 @@ class HurtArmorPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTARMORPACKET
 public:
     class HurtArmorPacket& operator=(class HurtArmorPacket const &) = delete;
     HurtArmorPacket(class HurtArmorPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HurtArmorPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI HurtArmorPacket(enum ActorDamageCause, int, class std::bitset<4>);
     MCAPI HurtArmorPacket();
-
-
 
 };

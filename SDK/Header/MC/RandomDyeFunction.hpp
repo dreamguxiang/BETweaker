@@ -16,14 +16,12 @@ class RandomDyeFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMDYEFUNCTION
 public:
     class RandomDyeFunction& operator=(class RandomDyeFunction const &) = delete;
     RandomDyeFunction(class RandomDyeFunction const &) = delete;
     RandomDyeFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomDyeFunction();
@@ -38,8 +36,6 @@ public:
     MCAPI class mce::Color _getRandomArmorColor(class Random &) const;
     MCAPI class mce::Color _getRandomDyeColor(class Random &) const;
 
-
 private:
-
 
 };

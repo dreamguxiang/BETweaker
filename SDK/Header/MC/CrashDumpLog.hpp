@@ -14,14 +14,12 @@ class CrashDumpLog {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPLOG
 public:
     class CrashDumpLog& operator=(class CrashDumpLog const &) = delete;
     CrashDumpLog(class CrashDumpLog const &) = delete;
     CrashDumpLog() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
@@ -42,7 +40,6 @@ public:
 //private:
     MCAPI static void crashDumpLogThreadRoutine();
 
-
 protected:
     MCAPI static struct CrashDump_AllData * mAllData;
 
@@ -59,6 +56,5 @@ private:
     MCAPI static class std::mutex mKeyValueDataMutex;
     MCAPI static class std::mutex mPlayerDataMutex;
     MCAPI static class std::mutex mRenderDataMutex;
-
 
 };

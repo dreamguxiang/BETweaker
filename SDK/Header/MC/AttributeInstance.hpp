@@ -14,12 +14,10 @@ class AttributeInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCE
 public:
     class AttributeInstance& operator=(class AttributeInstance const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AttributeInstance();
@@ -77,8 +75,6 @@ public:
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
 
-
 private:
-
 
 };

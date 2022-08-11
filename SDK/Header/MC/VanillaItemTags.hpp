@@ -14,14 +14,12 @@ class VanillaItemTags {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAITEMTAGS
 public:
     class VanillaItemTags& operator=(class VanillaItemTags const &) = delete;
     VanillaItemTags(class VanillaItemTags const &) = delete;
     VanillaItemTags() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
@@ -63,7 +61,5 @@ public:
     MCAPI static struct ItemTag const Tool;
     MCAPI static struct ItemTag const VibrationDamper;
     MCAPI static struct ItemTag const WoodenTier;
-
-
 
 };

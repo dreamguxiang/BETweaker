@@ -12,14 +12,12 @@ class UpdateEntityAfterFallOnActorProxy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEENTITYAFTERFALLONACTORPROXY
 public:
     class UpdateEntityAfterFallOnActorProxy& operator=(class UpdateEntityAfterFallOnActorProxy const &) = delete;
     UpdateEntityAfterFallOnActorProxy(class UpdateEntityAfterFallOnActorProxy const &) = delete;
     UpdateEntityAfterFallOnActorProxy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual class Vec3 & getPosDeltaNonConst();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEENTITYAFTERFALLONACTORPROXY
 #endif
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
-
-
 
 };

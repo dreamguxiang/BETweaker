@@ -16,14 +16,12 @@ class Throwable : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWABLE
 public:
     class Throwable& operator=(class Throwable const &) = delete;
     Throwable(class Throwable const &) = delete;
     Throwable() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -67,7 +65,5 @@ public:
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void shoot(class Mob &);
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);
-
-
 
 };

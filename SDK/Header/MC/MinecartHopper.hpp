@@ -16,14 +16,12 @@ class MinecartHopper : public Minecart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTHOPPER
 public:
     class MinecartHopper& operator=(class MinecartHopper const &) = delete;
     MinecartHopper(class MinecartHopper const &) = delete;
     MinecartHopper() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~MinecartHopper();
@@ -57,7 +55,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTHOPPER
 #endif
     MCAPI MinecartHopper(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

@@ -12,19 +12,15 @@ struct ActorInsideBlockEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINSIDEBLOCKEVENT
 public:
     struct ActorInsideBlockEvent& operator=(struct ActorInsideBlockEvent const &) = delete;
     ActorInsideBlockEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINSIDEBLOCKEVENT
+#endif
     MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
     MCAPI ~ActorInsideBlockEvent();
-
-protected:
-
-private:
 
 };

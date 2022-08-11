@@ -14,13 +14,11 @@ class BaseAttributeMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEATTRIBUTEMAP
 public:
     class BaseAttributeMap& operator=(class BaseAttributeMap const &) = delete;
     BaseAttributeMap(class BaseAttributeMap const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEATTRIBUTEMAP
@@ -49,9 +47,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class AttributeInstance mInvalidInstance;
-
 
 };

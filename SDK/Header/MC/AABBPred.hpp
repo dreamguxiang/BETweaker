@@ -14,7 +14,6 @@ class AABBPred {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBPRED
 public:
     class AABBPred& operator=(class AABBPred const &) = delete;
@@ -22,12 +21,9 @@ public:
     AABBPred() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBPRED
 #endif
     MCAPI bool operator()(class AABB const &, class AABB const &) const;
-
-
 
 };

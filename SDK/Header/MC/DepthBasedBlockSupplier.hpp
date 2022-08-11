@@ -14,7 +14,6 @@ class DepthBasedBlockSupplier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPTHBASEDBLOCKSUPPLIER
 public:
     class DepthBasedBlockSupplier& operator=(class DepthBasedBlockSupplier const &) = delete;
@@ -22,13 +21,10 @@ public:
     DepthBasedBlockSupplier() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPTHBASEDBLOCKSUPPLIER
 #endif
     MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const *);
     MCAPI class Block const * getBlock(class BlockPos const &, class Block const *) const;
-
-
 
 };

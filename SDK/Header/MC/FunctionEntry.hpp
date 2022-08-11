@@ -14,14 +14,12 @@ class FunctionEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNCTIONENTRY
 public:
     class FunctionEntry& operator=(class FunctionEntry const &) = delete;
     FunctionEntry(class FunctionEntry const &) = delete;
     FunctionEntry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FunctionEntry();
@@ -31,7 +29,5 @@ public:
     MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum FunctionState);
     MCAPI FunctionEntry(enum FunctionState);
     MCAPI enum FunctionState getErrorState() const;
-
-
 
 };

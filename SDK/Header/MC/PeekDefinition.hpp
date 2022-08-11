@@ -15,7 +15,6 @@ class PeekDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PEEKDEFINITION
 public:
     class PeekDefinition& operator=(class PeekDefinition const &) = delete;
@@ -23,12 +22,9 @@ public:
     PeekDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKDEFINITION
 #endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);
-
-
 
 };

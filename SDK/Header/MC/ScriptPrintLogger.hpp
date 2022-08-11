@@ -15,14 +15,12 @@ class ScriptPrintLogger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPRINTLOGGER
 public:
     class ScriptPrintLogger& operator=(class ScriptPrintLogger const &) = delete;
     ScriptPrintLogger(class ScriptPrintLogger const &) = delete;
     ScriptPrintLogger() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptPrintLogger();
@@ -33,7 +31,5 @@ public:
     /*5*/ virtual bool shouldPrintException(struct Scripting::Error const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
 #endif
-
-
 
 };

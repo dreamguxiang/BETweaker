@@ -12,19 +12,15 @@ struct DynamicPropertyDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICPROPERTYDEFINITION
 public:
     struct DynamicPropertyDefinition& operator=(struct DynamicPropertyDefinition const &) = delete;
     DynamicPropertyDefinition(struct DynamicPropertyDefinition const &) = delete;
     DynamicPropertyDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTYDEFINITION
+#endif
     MCAPI ~DynamicPropertyDefinition();
-
-protected:
-
-private:
 
 };

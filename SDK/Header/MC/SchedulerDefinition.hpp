@@ -15,13 +15,11 @@ class SchedulerDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERDEFINITION
 public:
     class SchedulerDefinition& operator=(class SchedulerDefinition const &) = delete;
     SchedulerDefinition(class SchedulerDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERDEFINITION
@@ -31,7 +29,5 @@ public:
     MCAPI void setMaxDelayTicks(float const &);
     MCAPI void setMinDelayTicks(float const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
-
-
 
 };

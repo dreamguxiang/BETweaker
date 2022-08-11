@@ -13,7 +13,6 @@ class LessonCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LESSONCOMMAND
 public:
     class LessonCommand& operator=(class LessonCommand const &) = delete;
@@ -21,14 +20,11 @@ public:
     LessonCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LessonCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LESSONCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

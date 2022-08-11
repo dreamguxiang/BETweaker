@@ -14,14 +14,12 @@ class Explosion {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSION
 public:
     class Explosion& operator=(class Explosion const &) = delete;
     Explosion(class Explosion const &) = delete;
     Explosion() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSION
@@ -34,7 +32,5 @@ public:
     MCAPI void setFire(bool);
     MCAPI void setMaxResistance(float);
     MCAPI ~Explosion();
-
-
 
 };

@@ -15,14 +15,12 @@ class MineshaftStairs : public MineshaftPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTSTAIRS
 public:
     class MineshaftStairs& operator=(class MineshaftStairs const &) = delete;
     MineshaftStairs(class MineshaftStairs const &) = delete;
     MineshaftStairs() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftStairs();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTSTAIRS
 #endif
-
-
 
 };

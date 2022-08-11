@@ -17,13 +17,11 @@ enum PotionType;
 enum PotionVariant;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTION
 public:
     class Potion& operator=(class Potion const &) = delete;
     Potion() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTION
@@ -100,11 +98,9 @@ public:
     MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
 
-
 private:
     MCAPI static int mLastId;
     MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
-
 
 };

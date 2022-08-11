@@ -15,14 +15,12 @@ class IceSpikeFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICESPIKEFEATURE
 public:
     class IceSpikeFeature& operator=(class IceSpikeFeature const &) = delete;
     IceSpikeFeature(class IceSpikeFeature const &) = delete;
     IceSpikeFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IceSpikeFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _isValidPlaceBlock(class Block const &) const;
 
-
 private:
-
 
 };

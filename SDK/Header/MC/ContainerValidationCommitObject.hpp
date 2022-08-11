@@ -12,7 +12,6 @@ class ContainerValidationCommitObject {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONCOMMITOBJECT
 public:
     class ContainerValidationCommitObject& operator=(class ContainerValidationCommitObject const &) = delete;
@@ -20,12 +19,9 @@ public:
     ContainerValidationCommitObject() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONCOMMITOBJECT
 #endif
     MCAPI static void append(class std::shared_ptr<class ContainerValidationCommitObject>, std::vector<class std::shared_ptr<class ContainerValidationCommitObject>> &);
-
-
 
 };

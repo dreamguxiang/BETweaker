@@ -13,13 +13,11 @@ class ItemStackRequestActionPlaceInItemContainer : public ItemStackRequestAction
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONPLACEINITEMCONTAINER
 public:
     class ItemStackRequestActionPlaceInItemContainer& operator=(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
     ItemStackRequestActionPlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionPlaceInItemContainer();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONPLACEINITEMCONTAINER
 #endif
     MCAPI ItemStackRequestActionPlaceInItemContainer();
-
-
 
 };

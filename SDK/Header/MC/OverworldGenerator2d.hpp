@@ -15,14 +15,12 @@ class OverworldGenerator2d {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATOR2D
 public:
     class OverworldGenerator2d& operator=(class OverworldGenerator2d const &) = delete;
     OverworldGenerator2d(class OverworldGenerator2d const &) = delete;
     OverworldGenerator2d() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR2D
@@ -43,8 +41,6 @@ public:
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class Dimension const &);
     MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum GeneratorType, class BiomeRegistry const &);
 
-
 private:
-
 
 };

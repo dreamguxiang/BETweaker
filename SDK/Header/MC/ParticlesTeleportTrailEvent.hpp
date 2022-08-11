@@ -14,7 +14,6 @@ class ParticlesTeleportTrailEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLESTELEPORTTRAILEVENT
 public:
     class ParticlesTeleportTrailEvent& operator=(class ParticlesTeleportTrailEvent const &) = delete;
@@ -22,12 +21,9 @@ public:
     ParticlesTeleportTrailEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESTELEPORTTRAILEVENT
 #endif
     MCAPI std::unique_ptr<class CompoundTag> save() const;
-
-
 
 };

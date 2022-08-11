@@ -14,14 +14,12 @@ class DisplayObjective {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPLAYOBJECTIVE
 public:
     class DisplayObjective& operator=(class DisplayObjective const &) = delete;
     DisplayObjective(class DisplayObjective const &) = delete;
     DisplayObjective() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPLAYOBJECTIVE
@@ -34,7 +32,5 @@ public:
     MCAPI bool isValid() const;
     MCAPI static class DisplayObjective deserialize(class CompoundTag const &, class Scoreboard const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class DisplayObjective const &);
-
-
 
 };

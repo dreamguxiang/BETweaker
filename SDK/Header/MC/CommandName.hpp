@@ -12,19 +12,15 @@ struct CommandName {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDNAME
 public:
     struct CommandName& operator=(struct CommandName const &) = delete;
     CommandName(struct CommandName const &) = delete;
     CommandName() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDNAME
+#endif
     MCAPI ~CommandName();
-
-protected:
-
-private:
 
 };

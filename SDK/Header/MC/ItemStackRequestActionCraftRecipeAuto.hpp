@@ -14,13 +14,11 @@ class ItemStackRequestActionCraftRecipeAuto {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTRECIPEAUTO
 public:
     class ItemStackRequestActionCraftRecipeAuto& operator=(class ItemStackRequestActionCraftRecipeAuto const &) = delete;
     ItemStackRequestActionCraftRecipeAuto(class ItemStackRequestActionCraftRecipeAuto const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftRecipeAuto();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     MCAPI unsigned char getNumCrafts() const;
-
-
 
 };

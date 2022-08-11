@@ -14,7 +14,6 @@ class EntityComponentFactoryBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCOMPONENTFACTORYBASE
 public:
     class EntityComponentFactoryBase& operator=(class EntityComponentFactoryBase const &) = delete;
@@ -22,14 +21,11 @@ public:
     EntityComponentFactoryBase() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
     MCVAPI ~EntityComponentFactoryBase();
 #endif
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
-
-
 
 };

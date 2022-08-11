@@ -19,7 +19,6 @@ public:
     LIAPI bool setDespawnTime(int);
     LIAPI int getLatestSpawnTime();
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTOR
 public:
     class ItemActor& operator=(class ItemActor const &) = delete;
@@ -27,11 +26,10 @@ public:
     ItemActor() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ItemActor();
-    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
+    /*20*/ virtual bool isRuntimePredictedMovementEnabled();
     /*40*/ virtual bool isFireImmune() const;
     /*41*/ virtual void __unk_vfn_41();
     /*48*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
@@ -78,9 +76,7 @@ public:
     MCAPI bool _merge(class ItemActor *);
     MCAPI void _validateItem();
 
-
 private:
     MCAPI static int const LIFETIME;
-
 
 };

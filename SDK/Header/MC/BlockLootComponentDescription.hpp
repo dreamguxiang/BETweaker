@@ -12,18 +12,20 @@ struct BlockLootComponentDescription {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLOOTCOMPONENTDESCRIPTION
 public:
     struct BlockLootComponentDescription& operator=(struct BlockLootComponentDescription const &) = delete;
     BlockLootComponentDescription(struct BlockLootComponentDescription const &) = delete;
     BlockLootComponentDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockLootComponentDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLOOTCOMPONENTDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

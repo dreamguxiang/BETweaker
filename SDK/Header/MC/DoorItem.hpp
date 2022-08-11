@@ -17,14 +17,12 @@ class DoorItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOORITEM
 public:
     class DoorItem& operator=(class DoorItem const &) = delete;
     DoorItem(class DoorItem const &) = delete;
     DoorItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DoorItem();
@@ -41,12 +39,11 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORITEM
 #endif
     MCAPI DoorItem(std::string const &, int, enum DoorBlock::DoorType);
     MCAPI static bool place(class BlockSource *, int, int, int, int, class Block const *);
-
-
 
 };

@@ -14,13 +14,11 @@ class CommandBlockComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKCOMPONENT
 public:
     class CommandBlockComponent& operator=(class CommandBlockComponent const &) = delete;
     CommandBlockComponent(class CommandBlockComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
@@ -39,7 +37,5 @@ public:
     MCAPI void resetCurrentTick();
     MCAPI void setLastOutput(class Actor &, std::string const &);
     MCAPI void setTicking(bool);
-
-
 
 };

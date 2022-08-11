@@ -13,14 +13,12 @@ class VolumeAreaCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEAREACOMMAND
 public:
     class VolumeAreaCommand& operator=(class VolumeAreaCommand const &) = delete;
     VolumeAreaCommand(class VolumeAreaCommand const &) = delete;
     VolumeAreaCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VolumeAreaCommand();
@@ -35,8 +33,6 @@ public:
     MCAPI void _remove(class CommandOrigin const &, class CommandOutput &, class Dimension const &, class VolumeEntityManagerServer &, class PacketSender &) const;
     MCAPI void _removeAll(class CommandOrigin const &, class CommandOutput &, class Dimension const &, class VolumeEntityManagerServer &, class PacketSender &) const;
 
-
 private:
-
 
 };

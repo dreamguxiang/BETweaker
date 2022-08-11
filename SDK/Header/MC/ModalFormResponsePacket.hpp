@@ -18,13 +18,11 @@ public:
     std::string data;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODALFORMRESPONSEPACKET
 public:
     class ModalFormResponsePacket& operator=(class ModalFormResponsePacket const &) = delete;
     ModalFormResponsePacket(class ModalFormResponsePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ModalFormResponsePacket();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMRESPONSEPACKET
 #endif
     MCAPI ModalFormResponsePacket();
-
-
 
 };

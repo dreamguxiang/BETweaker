@@ -15,13 +15,11 @@ class RangedAttackDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDATTACKDEFINITION
 public:
     class RangedAttackDefinition& operator=(class RangedAttackDefinition const &) = delete;
     RangedAttackDefinition(class RangedAttackDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDATTACKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI RangedAttackDefinition();
     MCAPI void initialize(class EntityContext &, class RangedAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>> &);
-
-
 
 };

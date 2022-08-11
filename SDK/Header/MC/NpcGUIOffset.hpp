@@ -13,7 +13,6 @@ class NpcGUIOffset {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCGUIOFFSET
 public:
     class NpcGUIOffset& operator=(class NpcGUIOffset const &) = delete;
@@ -21,12 +20,9 @@ public:
     NpcGUIOffset() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCGUIOFFSET
 #endif
     MCAPI NpcGUIOffset(class Json::Value const &);
-
-
 
 };

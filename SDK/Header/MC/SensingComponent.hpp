@@ -14,7 +14,6 @@ class SensingComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGCOMPONENT
 public:
     class SensingComponent& operator=(class SensingComponent const &) = delete;
@@ -22,14 +21,11 @@ public:
     SensingComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENSINGCOMPONENT
 #endif
     MCAPI bool canSee(class Mob &, class Actor const &);
     MCAPI void reset();
     MCAPI bool withinFOV(class Mob &, class Vec3 const &, float);
-
-
 
 };

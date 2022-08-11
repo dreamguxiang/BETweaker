@@ -12,7 +12,6 @@ class SendLinkPacketOfPassengersSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDLINKPACKETOFPASSENGERSSYSTEM
 public:
     class SendLinkPacketOfPassengersSystem& operator=(class SendLinkPacketOfPassengersSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     SendLinkPacketOfPassengersSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDLINKPACKETOFPASSENGERSSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
     MCAPI static void sendLinkPacketOfPassengers(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent>, struct ActorUniqueIDComponent const>);
-
-
 
 };

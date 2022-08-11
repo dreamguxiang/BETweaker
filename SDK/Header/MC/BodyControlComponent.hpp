@@ -12,7 +12,6 @@ class BodyControlComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROLCOMPONENT
 public:
     class BodyControlComponent& operator=(class BodyControlComponent const &) = delete;
@@ -20,12 +19,9 @@ public:
     BodyControlComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROLCOMPONENT
 #endif
     MCAPI ~BodyControlComponent();
-
-
 
 };

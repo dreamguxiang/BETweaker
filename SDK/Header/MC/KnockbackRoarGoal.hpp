@@ -14,14 +14,12 @@ class KnockbackRoarGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKROARGOAL
 public:
     class KnockbackRoarGoal& operator=(class KnockbackRoarGoal const &) = delete;
     KnockbackRoarGoal(class KnockbackRoarGoal const &) = delete;
     KnockbackRoarGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~KnockbackRoarGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKROARGOAL
 #endif
     MCAPI KnockbackRoarGoal(class Mob &);
-
-
 
 };

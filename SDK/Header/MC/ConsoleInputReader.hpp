@@ -14,13 +14,11 @@ class ConsoleInputReader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEINPUTREADER
 public:
     class ConsoleInputReader& operator=(class ConsoleInputReader const &) = delete;
     ConsoleInputReader(class ConsoleInputReader const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEINPUTREADER
@@ -29,7 +27,5 @@ public:
     MCAPI bool getLine(std::string &);
     MCAPI void unblockReading();
     MCAPI ~ConsoleInputReader();
-
-
 
 };

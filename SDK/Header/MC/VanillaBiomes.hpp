@@ -14,14 +14,12 @@ class VanillaBiomes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABIOMES
 public:
     class VanillaBiomes& operator=(class VanillaBiomes const &) = delete;
     VanillaBiomes(class VanillaBiomes const &) = delete;
     VanillaBiomes() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABIOMES
@@ -112,7 +110,5 @@ public:
     MCAPI static class Biome * mTaigaHills;
     MCAPI static class Biome * mWarpedForest;
     MCAPI static void shutdownBiomes();
-
-
 
 };

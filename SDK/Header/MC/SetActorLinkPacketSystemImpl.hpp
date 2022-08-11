@@ -12,7 +12,6 @@ class SetActorLinkPacketSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORLINKPACKETSYSTEMIMPL
 public:
     class SetActorLinkPacketSystemImpl& operator=(class SetActorLinkPacketSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     SetActorLinkPacketSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORLINKPACKETSYSTEMIMPL
 #endif
     MCAPI static void _setActorLinkPacketSystem(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct RemovePassengersComponent const &, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const>, class Optional<class FlagComponent<struct PassengerInitiatedFlag> const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorUniqueIDComponent const> &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
-
-
 
 };

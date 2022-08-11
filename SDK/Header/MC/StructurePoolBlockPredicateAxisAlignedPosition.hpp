@@ -14,14 +14,12 @@ class StructurePoolBlockPredicateAxisAlignedPosition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEAXISALIGNEDPOSITION
 public:
     class StructurePoolBlockPredicateAxisAlignedPosition& operator=(class StructurePoolBlockPredicateAxisAlignedPosition const &) = delete;
     StructurePoolBlockPredicateAxisAlignedPosition(class StructurePoolBlockPredicateAxisAlignedPosition const &) = delete;
     StructurePoolBlockPredicateAxisAlignedPosition() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEAXISALIGNEDPOSITION
 #endif
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
-
-
 
 };

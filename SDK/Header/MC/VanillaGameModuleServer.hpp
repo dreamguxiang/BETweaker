@@ -15,13 +15,11 @@ class VanillaGameModuleServer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAGAMEMODULESERVER
 public:
     class VanillaGameModuleServer& operator=(class VanillaGameModuleServer const &) = delete;
     VanillaGameModuleServer(class VanillaGameModuleServer const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VanillaGameModuleServer();
@@ -43,8 +41,6 @@ public:
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     MCAPI void _registerListeners(class Level &);
 
-
 private:
-
 
 };

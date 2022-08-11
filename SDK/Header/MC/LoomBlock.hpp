@@ -15,14 +15,12 @@ class LoomBlock : public FaceDirectionalBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMBLOCK
 public:
     class LoomBlock& operator=(class LoomBlock const &) = delete;
     LoomBlock(class LoomBlock const &) = delete;
     LoomBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LoomBlock();
@@ -60,14 +58,12 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMBLOCK
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI LoomBlock(std::string const &, int);
-
-
 
 };

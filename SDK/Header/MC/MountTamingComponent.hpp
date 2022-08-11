@@ -14,13 +14,11 @@ class MountTamingComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGCOMPONENT
 public:
     class MountTamingComponent& operator=(class MountTamingComponent const &) = delete;
     MountTamingComponent(class MountTamingComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMINGCOMPONENT
@@ -40,8 +38,6 @@ public:
     MCAPI void _feedItem(class Actor &, class Player &, int);
     MCAPI static bool _autoReject(class ItemStack const &, class MountTameableDefinition const *);
 
-
 private:
-
 
 };

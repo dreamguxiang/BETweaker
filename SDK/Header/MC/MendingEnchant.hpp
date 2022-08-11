@@ -15,7 +15,6 @@ class MendingEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MENDINGENCHANT
 public:
     class MendingEnchant& operator=(class MendingEnchant const &) = delete;
@@ -23,12 +22,11 @@ public:
     MendingEnchant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MendingEnchant();
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*5*/ virtual int getMaxLevel() const;
+    /*5*/ virtual int getMaxLevel();
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
@@ -37,7 +35,5 @@ public:
     MCVAPI bool isTreasureOnly() const;
 #endif
     MCAPI MendingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-
-
 
 };

@@ -16,14 +16,12 @@ public:
 enum PushSlotPredictionResult;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARSECONTAINERCLIENT
 public:
     class SparseContainerClient& operator=(class SparseContainerClient const &) = delete;
     SparseContainerClient(class SparseContainerClient const &) = delete;
     SparseContainerClient() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINERCLIENT
@@ -32,9 +30,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
-
 
 };

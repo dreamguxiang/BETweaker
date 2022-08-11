@@ -14,14 +14,12 @@ class ItemStackRequestActionCraftHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTHANDLER
 public:
     class ItemStackRequestActionCraftHandler& operator=(class ItemStackRequestActionCraftHandler const &) = delete;
     ItemStackRequestActionCraftHandler(class ItemStackRequestActionCraftHandler const &) = delete;
     ItemStackRequestActionCraftHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTHANDLER
@@ -46,8 +44,6 @@ public:
     MCAPI std::unique_ptr<struct ContainerValidationCraftInputs> _createCraftInputs(class ItemStackRequestActionCraftBase const &);
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
 
-
 private:
-
 
 };

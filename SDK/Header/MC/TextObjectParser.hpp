@@ -26,14 +26,12 @@ struct ServerData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTPARSER
 public:
     class TextObjectParser& operator=(class TextObjectParser const &) = delete;
     TextObjectParser(class TextObjectParser const &) = delete;
     TextObjectParser() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTPARSER
@@ -59,8 +57,6 @@ public:
     MCAPI static bool _textObjectFromJson(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
     MCAPI static bool _textObjectFromString(std::string const &, class TextObjectRoot &, struct TextObjectParser::ServerData *, struct TextObjectParser::ErrorLocalization &);
 
-
 private:
-
 
 };

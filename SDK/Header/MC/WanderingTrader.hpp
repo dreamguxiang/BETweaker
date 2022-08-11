@@ -16,14 +16,12 @@ class WanderingTrader : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WANDERINGTRADER
 public:
     class WanderingTrader& operator=(class WanderingTrader const &) = delete;
     WanderingTrader(class WanderingTrader const &) = delete;
     WanderingTrader() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~WanderingTrader();
@@ -58,7 +56,5 @@ public:
     MCVAPI bool interactPreventDefault();
 #endif
     MCAPI WanderingTrader(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

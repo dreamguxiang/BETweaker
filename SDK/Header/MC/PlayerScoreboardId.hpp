@@ -14,21 +14,18 @@ struct PlayerScoreboardId {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
 public:
     struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const &) = delete;
     PlayerScoreboardId(struct PlayerScoreboardId const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDID
+#endif
     MCAPI PlayerScoreboardId(__int64);
     MCAPI PlayerScoreboardId();
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
-
-protected:
-
-private:
+    MCAPI static struct PlayerScoreboardId const INVALID;
 
 };

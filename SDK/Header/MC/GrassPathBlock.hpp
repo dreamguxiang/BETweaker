@@ -15,14 +15,12 @@ class GrassPathBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRASSPATHBLOCK
 public:
     class GrassPathBlock& operator=(class GrassPathBlock const &) = delete;
     GrassPathBlock(class GrassPathBlock const &) = delete;
     GrassPathBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrassPathBlock();
@@ -46,10 +44,10 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*93*/ virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
@@ -73,7 +71,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSPATHBLOCK
 #endif
     MCAPI GrassPathBlock(std::string const &, int);
-
-
 
 };

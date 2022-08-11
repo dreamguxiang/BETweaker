@@ -14,13 +14,11 @@ class UseActorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USEACTORNODE
 public:
     class UseActorNode& operator=(class UseActorNode const &) = delete;
     UseActorNode(class UseActorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UseActorNode();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORNODE
 #endif
     MCAPI UseActorNode();
-
-
 
 };

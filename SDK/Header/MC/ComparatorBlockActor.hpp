@@ -15,14 +15,12 @@ class ComparatorBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORBLOCKACTOR
 public:
     class ComparatorBlockActor& operator=(class ComparatorBlockActor const &) = delete;
     ComparatorBlockActor(class ComparatorBlockActor const &) = delete;
     ComparatorBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ComparatorBlockActor();
@@ -42,7 +40,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCKACTOR
 #endif
     MCAPI ComparatorBlockActor(class BlockPos const &);
-
-
 
 };

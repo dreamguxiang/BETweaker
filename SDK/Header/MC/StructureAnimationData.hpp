@@ -14,14 +14,12 @@ class StructureAnimationData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREANIMATIONDATA
 public:
     class StructureAnimationData& operator=(class StructureAnimationData const &) = delete;
     StructureAnimationData(class StructureAnimationData const &) = delete;
     StructureAnimationData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREANIMATIONDATA
@@ -45,7 +43,5 @@ public:
     MCAPI void setTargetDimension(class AutomaticID<class Dimension, int> const &);
     MCAPI ~StructureAnimationData();
     MCAPI static class StructureAnimationData load(std::string const &, class CompoundTag const &);
-
-
 
 };

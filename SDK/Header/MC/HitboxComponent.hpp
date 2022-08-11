@@ -14,13 +14,11 @@ class HitboxComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXCOMPONENT
 public:
     class HitboxComponent& operator=(class HitboxComponent const &) = delete;
     HitboxComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXCOMPONENT
@@ -30,7 +28,5 @@ public:
     MCAPI class HitboxComponent & operator=(class HitboxComponent &&);
     MCAPI void toCompoundTag(class CompoundTag &);
     MCAPI ~HitboxComponent();
-
-
 
 };

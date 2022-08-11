@@ -43,7 +43,6 @@ public:
 
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSOURCE
 public:
     class InventorySource& operator=(class InventorySource const &) = delete;
@@ -51,13 +50,10 @@ public:
     InventorySource() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSOURCE
 #endif
     MCAPI bool operator==(class InventorySource const &) const;
     MCAPI std::string toString() const;
-
-
 
 };

@@ -15,14 +15,12 @@ class WoodBlock : public RotatedPillarBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODBLOCK
 public:
     class WoodBlock& operator=(class WoodBlock const &) = delete;
     WoodBlock(class WoodBlock const &) = delete;
     WoodBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WoodBlock();
@@ -59,7 +57,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
@@ -78,8 +76,6 @@ public:
 //private:
     MCAPI class Block const & _createBlockWithStates(class Block const &) const;
 
-
 private:
-
 
 };

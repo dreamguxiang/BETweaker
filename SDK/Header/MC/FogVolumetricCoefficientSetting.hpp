@@ -14,18 +14,15 @@ struct FogVolumetricCoefficientSetting {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGVOLUMETRICCOEFFICIENTSETTING
 public:
     struct FogVolumetricCoefficientSetting& operator=(struct FogVolumetricCoefficientSetting const &) = delete;
     FogVolumetricCoefficientSetting(struct FogVolumetricCoefficientSetting const &) = delete;
     FogVolumetricCoefficientSetting() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGVOLUMETRICCOEFFICIENTSETTING
+#endif
+    MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 
 };

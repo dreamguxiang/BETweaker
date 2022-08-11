@@ -12,7 +12,6 @@ class TickEndResetSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKENDRESETSYSTEM
 public:
     class TickEndResetSystem& operator=(class TickEndResetSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     TickEndResetSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKENDRESETSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
-
-
 
 };

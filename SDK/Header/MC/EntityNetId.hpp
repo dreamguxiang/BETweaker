@@ -14,7 +14,6 @@ class EntityNetId {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYNETID
 public:
     class EntityNetId& operator=(class EntityNetId const &) = delete;
@@ -22,12 +21,9 @@ public:
     EntityNetId() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYNETID
 #endif
     MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
-
-
 
 };

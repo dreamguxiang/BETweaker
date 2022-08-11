@@ -14,14 +14,12 @@ class StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURESTART
 public:
     class StructureStart& operator=(class StructureStart const &) = delete;
     StructureStart(class StructureStart const &) = delete;
     StructureStart() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureStart();
@@ -37,8 +35,6 @@ public:
     MCAPI void moveInsideHeights(class Random &, short, short);
     MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 
-
 protected:
-
 
 };

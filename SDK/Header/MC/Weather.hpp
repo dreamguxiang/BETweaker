@@ -15,14 +15,12 @@ class Weather : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEATHER
 public:
     class Weather& operator=(class Weather const &) = delete;
     Weather(class Weather const &) = delete;
     Weather() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Weather();
@@ -75,7 +73,5 @@ public:
     MCAPI static int calcRainCycleTime(class IRandom &);
     MCAPI static int calcRainDuration(class IRandom &);
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
-
-
 
 };

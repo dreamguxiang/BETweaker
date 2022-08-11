@@ -12,19 +12,16 @@ struct PersonaAnimationDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSONAANIMATIONDEFINITION
 public:
     struct PersonaAnimationDefinition& operator=(struct PersonaAnimationDefinition const &) = delete;
     PersonaAnimationDefinition(struct PersonaAnimationDefinition const &) = delete;
     PersonaAnimationDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSONAANIMATIONDEFINITION
+#endif
     MCAPI ~PersonaAnimationDefinition();
-
-protected:
-
-private:
+    MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
 
 };

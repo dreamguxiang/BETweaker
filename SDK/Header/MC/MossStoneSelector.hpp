@@ -14,7 +14,6 @@ class MossStoneSelector {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOSSSTONESELECTOR
 public:
     class MossStoneSelector& operator=(class MossStoneSelector const &) = delete;
@@ -22,13 +21,10 @@ public:
     MossStoneSelector() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MossStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSSTONESELECTOR
 #endif
-
-
 
 };

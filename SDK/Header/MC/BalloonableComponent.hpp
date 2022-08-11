@@ -14,14 +14,12 @@ class BalloonableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONABLECOMPONENT
 public:
     class BalloonableComponent& operator=(class BalloonableComponent const &) = delete;
     BalloonableComponent(class BalloonableComponent const &) = delete;
     BalloonableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONABLECOMPONENT
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
 
-
 private:
-
 
 };

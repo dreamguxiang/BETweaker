@@ -14,14 +14,12 @@ class AgentCommandExecutionGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDEXECUTIONGOAL
 public:
     class AgentCommandExecutionGoal& operator=(class AgentCommandExecutionGoal const &) = delete;
     AgentCommandExecutionGoal(class AgentCommandExecutionGoal const &) = delete;
     AgentCommandExecutionGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AgentCommandExecutionGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDEXECUTIONGOAL
 #endif
     MCAPI AgentCommandExecutionGoal(class Mob &);
-
-
 
 };

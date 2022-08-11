@@ -15,13 +15,11 @@ class EntitySensorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSENSORDEFINITION
 public:
     class EntitySensorDefinition& operator=(class EntitySensorDefinition const &) = delete;
     EntitySensorDefinition(class EntitySensorDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI EntitySensorDefinition();
     MCAPI void initialize(class EntityContext &, class EntitySensorComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
-
-
 
 };

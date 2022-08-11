@@ -15,14 +15,12 @@ class PlayerFogPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERFOGPACKET
 public:
     class PlayerFogPacket& operator=(class PlayerFogPacket const &) = delete;
     PlayerFogPacket(class PlayerFogPacket const &) = delete;
     PlayerFogPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerFogPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERFOGPACKET
 #endif
     MCAPI PlayerFogPacket(std::vector<std::string>);
-
-
 
 };

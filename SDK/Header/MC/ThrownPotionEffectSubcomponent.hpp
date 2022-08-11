@@ -16,14 +16,12 @@ class ThrownPotionEffectSubcomponent : public SplashPotionEffectSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNPOTIONEFFECTSUBCOMPONENT
 public:
     class ThrownPotionEffectSubcomponent& operator=(class ThrownPotionEffectSubcomponent const &) = delete;
     ThrownPotionEffectSubcomponent(class ThrownPotionEffectSubcomponent const &) = delete;
     ThrownPotionEffectSubcomponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ThrownPotionEffectSubcomponent();
@@ -32,7 +30,5 @@ public:
     /*4*/ virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNPOTIONEFFECTSUBCOMPONENT
 #endif
-
-
 
 };

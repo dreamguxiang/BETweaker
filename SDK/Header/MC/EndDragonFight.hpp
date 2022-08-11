@@ -21,14 +21,12 @@ struct GateWayGenerator {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDDRAGONFIGHT
 public:
     class EndDragonFight& operator=(class EndDragonFight const &) = delete;
     EndDragonFight(class EndDragonFight const &) = delete;
     EndDragonFight() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDDRAGONFIGHT
@@ -60,7 +58,6 @@ public:
     MCAPI void _updateCrystalCount();
     MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
-
 private:
     MCAPI static int const ARENA_SIZE_CHUNKS;
     MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
@@ -71,6 +68,5 @@ private:
     MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
     MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
-
 
 };

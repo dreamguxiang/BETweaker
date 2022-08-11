@@ -12,19 +12,15 @@ struct DeserializedChunkLoadedRequest {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZEDCHUNKLOADEDREQUEST
 public:
     struct DeserializedChunkLoadedRequest& operator=(struct DeserializedChunkLoadedRequest const &) = delete;
     DeserializedChunkLoadedRequest(struct DeserializedChunkLoadedRequest const &) = delete;
     DeserializedChunkLoadedRequest() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERIALIZEDCHUNKLOADEDREQUEST
+#endif
     MCAPI ~DeserializedChunkLoadedRequest();
-
-protected:
-
-private:
 
 };

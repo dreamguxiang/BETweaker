@@ -14,14 +14,12 @@ class FollowOwnerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWOWNERGOAL
 public:
     class FollowOwnerGoal& operator=(class FollowOwnerGoal const &) = delete;
     FollowOwnerGoal(class FollowOwnerGoal const &) = delete;
     FollowOwnerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowOwnerGoal();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWOWNERGOAL
 #endif
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
-
-
 
 };

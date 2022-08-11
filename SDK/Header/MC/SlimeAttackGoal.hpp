@@ -14,14 +14,12 @@ class SlimeAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEATTACKGOAL
 public:
     class SlimeAttackGoal& operator=(class SlimeAttackGoal const &) = delete;
     SlimeAttackGoal(class SlimeAttackGoal const &) = delete;
     SlimeAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlimeAttackGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEATTACKGOAL
 #endif
     MCAPI SlimeAttackGoal(class Mob &);
-
-
 
 };

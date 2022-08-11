@@ -15,14 +15,12 @@ class DeadBush : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEADBUSH
 public:
     class DeadBush& operator=(class DeadBush const &) = delete;
     DeadBush(class DeadBush const &) = delete;
     DeadBush() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeadBush();
@@ -68,7 +66,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEADBUSH
 #endif
     MCAPI DeadBush(std::string const &, int);
-
-
 
 };

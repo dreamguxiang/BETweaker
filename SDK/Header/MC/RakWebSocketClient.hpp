@@ -15,14 +15,12 @@ class RakWebSocketClient : public RakWebSocket {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETCLIENT
 public:
     class RakWebSocketClient& operator=(class RakWebSocketClient const &) = delete;
     RakWebSocketClient(class RakWebSocketClient const &) = delete;
     RakWebSocketClient() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RakWebSocketClient();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
 #endif
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
-
-
 
 };

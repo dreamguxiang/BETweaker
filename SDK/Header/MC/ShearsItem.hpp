@@ -16,14 +16,12 @@ class ShearsItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHEARSITEM
 public:
     class ShearsItem& operator=(class ShearsItem const &) = delete;
     ShearsItem(class ShearsItem const &) = delete;
     ShearsItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShearsItem();
@@ -44,12 +42,11 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*89*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
     /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEARSITEM
 #endif
-
-
 
 };

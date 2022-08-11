@@ -15,7 +15,6 @@ class PreviewContainerValidation : public ContainerValidationBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREVIEWCONTAINERVALIDATION
 public:
     class PreviewContainerValidation& operator=(class PreviewContainerValidation const &) = delete;
@@ -23,22 +22,19 @@ public:
     PreviewContainerValidation() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PreviewContainerValidation();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &);
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &);
+    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREVIEWCONTAINERVALIDATION
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
-
-
 
 };

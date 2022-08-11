@@ -15,14 +15,12 @@ class GameSession {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMESESSION
 public:
     class GameSession& operator=(class GameSession const &) = delete;
     GameSession(class GameSession const &) = delete;
     GameSession() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESESSION
@@ -34,7 +32,5 @@ public:
     MCAPI void startLeaveGame();
     MCAPI void tick();
     MCAPI ~GameSession();
-
-
 
 };

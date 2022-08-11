@@ -14,21 +14,17 @@ struct FilterStringMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERSTRINGMAP
 public:
     struct FilterStringMap& operator=(struct FilterStringMap const &) = delete;
     FilterStringMap() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERSTRINGMAP
+#endif
     MCAPI FilterStringMap(struct FilterStringMap const &);
     MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
     MCAPI struct FilterStringMap & operator=(struct FilterStringMap &&);
     MCAPI ~FilterStringMap();
-
-protected:
-
-private:
 
 };

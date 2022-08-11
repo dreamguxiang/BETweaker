@@ -14,13 +14,11 @@ class MultifaceFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACEFEATURE
 public:
     class MultifaceFeature& operator=(class MultifaceFeature const &) = delete;
     MultifaceFeature(class MultifaceFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MultifaceFeature();
@@ -33,8 +31,6 @@ public:
     MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource &, class BlockPos const &, class Random &, std::vector<unsigned char> const &) const;
     MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
 
-
 private:
-
 
 };

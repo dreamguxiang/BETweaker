@@ -15,14 +15,12 @@ class FleeSunGoal : public FindCoverGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLEESUNGOAL
 public:
     class FleeSunGoal& operator=(class FleeSunGoal const &) = delete;
     FleeSunGoal(class FleeSunGoal const &) = delete;
     FleeSunGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FleeSunGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
 #endif
     MCAPI FleeSunGoal(class Mob &, float);
-
-
 
 };

@@ -14,13 +14,13 @@ struct BlockComponentGroupDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTGROUPDESCRIPTION
 public:
     struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTGROUPDESCRIPTION
+#endif
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     MCAPI BlockComponentGroupDescription();
@@ -28,9 +28,5 @@ public:
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
     MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription &&);
     MCAPI ~BlockComponentGroupDescription();
-
-protected:
-
-private:
 
 };

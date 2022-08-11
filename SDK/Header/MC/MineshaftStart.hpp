@@ -15,7 +15,6 @@ class MineshaftStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTSTART
 public:
     class MineshaftStart& operator=(class MineshaftStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     MineshaftStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MineshaftStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTSTART
 #endif
     MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
-
-
 
 };

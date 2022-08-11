@@ -15,13 +15,11 @@ class MonsterRoomFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTERROOMFEATURE
 public:
     class MonsterRoomFeature& operator=(class MonsterRoomFeature const &) = delete;
     MonsterRoomFeature(class MonsterRoomFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MonsterRoomFeature();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTERROOMFEATURE
 #endif
     MCAPI MonsterRoomFeature();
-
-
 
 };

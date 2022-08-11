@@ -14,7 +14,6 @@ class DBStoragePerformanceData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGEPERFORMANCEDATA
 public:
     class DBStoragePerformanceData& operator=(class DBStoragePerformanceData const &) = delete;
@@ -22,14 +21,11 @@ public:
     DBStoragePerformanceData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEPERFORMANCEDATA
 #endif
     MCAPI void resetAll();
     MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
     MCAPI static class std::array<char const *, 4> OPERATION_NAMES;
-
-
 
 };

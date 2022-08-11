@@ -15,14 +15,12 @@ class VineBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VINEBLOCK
 public:
     class VineBlock& operator=(class VineBlock const &) = delete;
     VineBlock(class VineBlock const &) = delete;
     VineBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VineBlock();
@@ -52,7 +50,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -93,8 +91,6 @@ public:
     MCAPI bool _canSideSpread(class BlockSource &, class BlockPos const &) const;
     MCAPI int _nextVineDirections(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

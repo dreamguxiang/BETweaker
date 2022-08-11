@@ -14,22 +14,21 @@ struct Token {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOKEN
 public:
     struct Token& operator=(struct Token const &) = delete;
     Token(struct Token const &) = delete;
     Token() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOKEN
+#endif
     MCAPI Token(std::string const &);
     MCAPI std::string const & getText(std::string const &) const;
     MCAPI ~Token();
+    MCAPI static std::vector<struct Token> tokenize(std::string const &);
 
-protected:
+//protected:
     MCAPI bool _parseRandom();
-
-private:
 
 };

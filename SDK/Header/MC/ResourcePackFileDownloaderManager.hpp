@@ -14,14 +14,12 @@ class ResourcePackFileDownloaderManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEDOWNLOADERMANAGER
 public:
     class ResourcePackFileDownloaderManager& operator=(class ResourcePackFileDownloaderManager const &) = delete;
     ResourcePackFileDownloaderManager(class ResourcePackFileDownloaderManager const &) = delete;
     ResourcePackFileDownloaderManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEDOWNLOADERMANAGER
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
-
 
 };

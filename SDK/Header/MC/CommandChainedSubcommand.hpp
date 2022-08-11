@@ -12,7 +12,6 @@ class CommandChainedSubcommand {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCHAINEDSUBCOMMAND
 public:
     class CommandChainedSubcommand& operator=(class CommandChainedSubcommand const &) = delete;
@@ -20,13 +19,10 @@ public:
     CommandChainedSubcommand() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDCHAINEDSUBCOMMAND
 #endif
     MCAPI class Command * getCommand() const;
     MCAPI void setCommand(std::unique_ptr<class Command>);
-
-
 
 };

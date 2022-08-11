@@ -15,13 +15,11 @@ class ParticleOnHitSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEONHITSUBCOMPONENT
 public:
     class ParticleOnHitSubcomponent& operator=(class ParticleOnHitSubcomponent const &) = delete;
     ParticleOnHitSubcomponent(class ParticleOnHitSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ParticleOnHitSubcomponent();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI bool isParticleTypeIconBreak() const;
 
-
 private:
-
 
 };

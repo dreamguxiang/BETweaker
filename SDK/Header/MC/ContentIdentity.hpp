@@ -16,8 +16,6 @@ public:
     mce::UUID uuid;
     bool valid{};
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTIDENTITY
 #endif
@@ -34,7 +32,5 @@ public:
     MCAPI bool operator==(class ContentIdentity const &) const;
     MCAPI static class ContentIdentity EMPTY;
     MCAPI static class ContentIdentity fromString(std::string const &);
-
-
 
 };

@@ -15,13 +15,11 @@ class InventoryContentPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYCONTENTPACKET
 public:
     class InventoryContentPacket& operator=(class InventoryContentPacket const &) = delete;
     InventoryContentPacket(class InventoryContentPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InventoryContentPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI InventoryContentPacket();
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
-
-
 
 };

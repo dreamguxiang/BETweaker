@@ -12,14 +12,12 @@ class RoarGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROARGOAL
 public:
     class RoarGoal& operator=(class RoarGoal const &) = delete;
     RoarGoal(class RoarGoal const &) = delete;
     RoarGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RoarGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROARGOAL
 #endif
     MCAPI RoarGoal(class Mob &);
-
-
 
 };

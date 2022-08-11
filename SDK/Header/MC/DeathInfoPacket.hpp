@@ -13,13 +13,11 @@ class DeathInfoPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEATHINFOPACKET
 public:
     class DeathInfoPacket& operator=(class DeathInfoPacket const &) = delete;
     DeathInfoPacket(class DeathInfoPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeathInfoPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI DeathInfoPacket(struct std::pair<std::string, std::vector<std::string>> const &);
     MCAPI DeathInfoPacket();
-
-
 
 };

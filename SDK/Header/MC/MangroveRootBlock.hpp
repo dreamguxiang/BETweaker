@@ -13,14 +13,12 @@ class MangroveRootBlock : public BlockLegacy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVEROOTBLOCK
 public:
     class MangroveRootBlock& operator=(class MangroveRootBlock const &) = delete;
     MangroveRootBlock(class MangroveRootBlock const &) = delete;
     MangroveRootBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MangroveRootBlock();
@@ -46,7 +44,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
@@ -64,7 +62,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVEROOTBLOCK
 #endif
     MCAPI MangroveRootBlock(std::string const &, int, class Material const &);
-
-
 
 };

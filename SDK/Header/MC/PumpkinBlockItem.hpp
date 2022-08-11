@@ -16,14 +16,12 @@ class PumpkinBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUMPKINBLOCKITEM
 public:
     class PumpkinBlockItem& operator=(class PumpkinBlockItem const &) = delete;
     PumpkinBlockItem(class PumpkinBlockItem const &) = delete;
     PumpkinBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PumpkinBlockItem();
@@ -43,10 +41,9 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*115*/ virtual enum ActorLocation getEquipLocation() const;
     /*116*/ virtual enum LevelSoundEvent getEquipSound() const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCKITEM
 #endif
     MCAPI PumpkinBlockItem(std::string const &, int);
-
-
 
 };

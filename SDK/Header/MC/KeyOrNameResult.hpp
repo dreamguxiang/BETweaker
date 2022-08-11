@@ -15,19 +15,15 @@ public:
     bool misKey;
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYORNAMERESULT
 public:
     struct KeyOrNameResult& operator=(struct KeyOrNameResult const &) = delete;
     KeyOrNameResult(struct KeyOrNameResult const &) = delete;
     KeyOrNameResult() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYORNAMERESULT
+#endif
     MCAPI ~KeyOrNameResult();
-
-protected:
-
-private:
 
 };

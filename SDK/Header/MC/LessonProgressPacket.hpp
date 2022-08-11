@@ -13,13 +13,11 @@ class LessonProgressPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LESSONPROGRESSPACKET
 public:
     class LessonProgressPacket& operator=(class LessonProgressPacket const &) = delete;
     LessonProgressPacket(class LessonProgressPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LessonProgressPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI LessonProgressPacket(enum LessonAction, int, std::string const &);
     MCAPI LessonProgressPacket();
-
-
 
 };

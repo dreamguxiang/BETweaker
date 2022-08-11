@@ -12,19 +12,15 @@ struct PistonActionEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONACTIONEVENT
 public:
     struct PistonActionEvent& operator=(struct PistonActionEvent const &) = delete;
     PistonActionEvent(struct PistonActionEvent const &) = delete;
     PistonActionEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONACTIONEVENT
+#endif
     MCAPI ~PistonActionEvent();
-
-protected:
-
-private:
 
 };

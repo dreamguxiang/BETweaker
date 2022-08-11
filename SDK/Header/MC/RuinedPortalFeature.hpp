@@ -15,14 +15,12 @@ class RuinedPortalFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUINEDPORTALFEATURE
 public:
     class RuinedPortalFeature& operator=(class RuinedPortalFeature const &) = delete;
     RuinedPortalFeature(class RuinedPortalFeature const &) = delete;
     RuinedPortalFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RuinedPortalFeature();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALFEATURE
 #endif
     MCAPI RuinedPortalFeature(unsigned int, bool);
-
-
 
 };

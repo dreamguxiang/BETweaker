@@ -13,14 +13,12 @@ class MangroveTreeTrunk {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVETREETRUNK
 public:
     class MangroveTreeTrunk& operator=(class MangroveTreeTrunk const &) = delete;
     MangroveTreeTrunk(class MangroveTreeTrunk const &) = delete;
     MangroveTreeTrunk() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MangroveTreeTrunk();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI void _placeBranch(class IBlockWorldGenAPI &, std::vector<class BlockPos> *, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class BlockPos &, int, unsigned char, int, int, class Block const *) const;
 
-
 private:
-
 
 };

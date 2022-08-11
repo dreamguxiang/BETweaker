@@ -14,13 +14,11 @@ class Goal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOAL
 public:
     class Goal& operator=(class Goal const &) = delete;
     Goal(class Goal const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Goal();
@@ -43,7 +41,5 @@ public:
     MCAPI unsigned short getTypeId() const;
     MCAPI void setRequiredControlFlags(int);
     MCAPI void setTypeId(unsigned short);
-
-
 
 };

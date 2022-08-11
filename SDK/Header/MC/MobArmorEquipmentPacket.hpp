@@ -15,13 +15,11 @@ class MobArmorEquipmentPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBARMOREQUIPMENTPACKET
 public:
     class MobArmorEquipmentPacket& operator=(class MobArmorEquipmentPacket const &) = delete;
     MobArmorEquipmentPacket(class MobArmorEquipmentPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MobArmorEquipmentPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI MobArmorEquipmentPacket(class Actor const &);
     MCAPI MobArmorEquipmentPacket();
-
-
 
 };

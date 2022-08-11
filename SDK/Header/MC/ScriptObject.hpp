@@ -15,14 +15,12 @@ class ScriptObject {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTOBJECT
 public:
     class ScriptObject& operator=(class ScriptObject const &) = delete;
     ScriptObject(class ScriptObject const &) = delete;
     ScriptObject() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptObject();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTOBJECT
 #endif
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
-
-
 
 };

@@ -15,13 +15,11 @@ class ResourcePackClientResponsePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKCLIENTRESPONSEPACKET
 public:
     class ResourcePackClientResponsePacket& operator=(class ResourcePackClientResponsePacket const &) = delete;
     ResourcePackClientResponsePacket(class ResourcePackClientResponsePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackClientResponsePacket();
@@ -34,7 +32,5 @@ public:
     MCAPI ResourcePackClientResponsePacket();
     MCAPI class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> const & getDownloadingPacks() const;
     MCAPI bool isResponse(enum ResourcePackResponse) const;
-
-
 
 };

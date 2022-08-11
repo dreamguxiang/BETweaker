@@ -19,13 +19,11 @@ public:
 	LIAPI void error(const string& str);
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUT
 public:
     class CommandOutput& operator=(class CommandOutput const &) = delete;
     CommandOutput() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
@@ -52,8 +50,6 @@ public:
 //private:
     MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
 
-
 private:
-
 
 };

@@ -12,19 +12,15 @@ struct ActorEquippedArmorEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREQUIPPEDARMOREVENT
 public:
     struct ActorEquippedArmorEvent& operator=(struct ActorEquippedArmorEvent const &) = delete;
     ActorEquippedArmorEvent(struct ActorEquippedArmorEvent const &) = delete;
     ActorEquippedArmorEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREQUIPPEDARMOREVENT
+#endif
     MCAPI ~ActorEquippedArmorEvent();
-
-protected:
-
-private:
 
 };

@@ -12,19 +12,15 @@ struct ServerInstanceNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCENOTIFICATIONEVENT
 public:
     struct ServerInstanceNotificationEvent& operator=(struct ServerInstanceNotificationEvent const &) = delete;
     ServerInstanceNotificationEvent(struct ServerInstanceNotificationEvent const &) = delete;
     ServerInstanceNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCENOTIFICATIONEVENT
+#endif
     MCAPI ~ServerInstanceNotificationEvent();
-
-protected:
-
-private:
 
 };

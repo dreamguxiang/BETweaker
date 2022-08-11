@@ -15,14 +15,12 @@ class DirtBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRTBLOCK
 public:
     class DirtBlock& operator=(class DirtBlock const &) = delete;
     DirtBlock(class DirtBlock const &) = delete;
     DirtBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DirtBlock();
@@ -46,14 +44,14 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*54*/ virtual bool isValidAuxValue(int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
+    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &);
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*93*/ virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -64,7 +62,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
@@ -80,7 +78,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRTBLOCK
 #endif
     MCAPI DirtBlock(std::string const &, int);
-
-
 
 };

@@ -14,14 +14,12 @@ class CraftHandlerCrafting {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERCRAFTING
 public:
     class CraftHandlerCrafting& operator=(class CraftHandlerCrafting const &) = delete;
     CraftHandlerCrafting(class CraftHandlerCrafting const &) = delete;
     CraftHandlerCrafting() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftHandlerCrafting();
@@ -39,8 +37,6 @@ public:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
     MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 
-
 private:
-
 
 };

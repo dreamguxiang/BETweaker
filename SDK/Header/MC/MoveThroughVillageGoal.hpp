@@ -14,14 +14,12 @@ class MoveThroughVillageGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETHROUGHVILLAGEGOAL
 public:
     class MoveThroughVillageGoal& operator=(class MoveThroughVillageGoal const &) = delete;
     MoveThroughVillageGoal(class MoveThroughVillageGoal const &) = delete;
     MoveThroughVillageGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveThroughVillageGoal();
@@ -37,7 +35,5 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
-
-
 
 };

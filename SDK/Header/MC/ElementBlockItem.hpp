@@ -16,14 +16,12 @@ class ElementBlockItem : public AuxDataBlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTBLOCKITEM
 public:
     class ElementBlockItem& operator=(class ElementBlockItem const &) = delete;
     ElementBlockItem(class ElementBlockItem const &) = delete;
     ElementBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ElementBlockItem();
@@ -41,9 +39,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*106*/ virtual void fixupCommon(class ItemStackBase &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTBLOCKITEM
 #endif
-
-
 
 };

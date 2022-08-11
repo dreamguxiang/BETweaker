@@ -24,13 +24,11 @@ public:
     LIAPI operator int() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTTAG
 public:
     class IntTag& operator=(class IntTag const &) = delete;
     IntTag(class IntTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IntTag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI IntTag(int);
     MCAPI IntTag();
-
-
 
 };

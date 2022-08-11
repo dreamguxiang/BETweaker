@@ -12,19 +12,15 @@ struct MesaSurfaceAttributes {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESASURFACEATTRIBUTES
 public:
     struct MesaSurfaceAttributes& operator=(struct MesaSurfaceAttributes const &) = delete;
     MesaSurfaceAttributes(struct MesaSurfaceAttributes const &) = delete;
     MesaSurfaceAttributes() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESASURFACEATTRIBUTES
+#endif
     MCAPI ~MesaSurfaceAttributes();
-
-protected:
-
-private:
 
 };

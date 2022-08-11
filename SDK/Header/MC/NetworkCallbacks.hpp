@@ -12,7 +12,6 @@ class NetworkCallbacks {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCALLBACKS
 public:
     class NetworkCallbacks& operator=(class NetworkCallbacks const &) = delete;
@@ -20,13 +19,10 @@ public:
     NetworkCallbacks() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCALLBACKS
 #endif
     MCAPI void SetBroadcastRequestCallback(class std::function<bool (void *, int *)> const &);
     MCAPI void SetBroadcastResponseCallback(class std::function<void (struct NetherNet::NetworkID const &, void const *, int)> const &);
-
-
 
 };

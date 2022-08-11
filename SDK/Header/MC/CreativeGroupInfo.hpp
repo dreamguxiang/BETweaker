@@ -14,13 +14,11 @@ class CreativeGroupInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEGROUPINFO
 public:
     class CreativeGroupInfo& operator=(class CreativeGroupInfo const &) = delete;
     CreativeGroupInfo() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEGROUPINFO
@@ -31,7 +29,5 @@ public:
     MCAPI class ItemInstance const getIcon() const;
     MCAPI unsigned int getIndex() const;
     MCAPI std::string const getName() const;
-
-
 
 };

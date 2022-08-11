@@ -15,14 +15,12 @@ class LightningBolt : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIGHTNINGBOLT
 public:
     class LightningBolt& operator=(class LightningBolt const &) = delete;
     LightningBolt(class LightningBolt const &) = delete;
     LightningBolt() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -32,7 +30,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -50,7 +48,7 @@ public:
     /*251*/ virtual void __unk_vfn_251();
     /*269*/ virtual void __unk_vfn_269();
     /*273*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &);
     /*277*/ virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTNINGBOLT
     MCVAPI bool shouldAlwaysRender();
@@ -60,8 +58,6 @@ public:
 //private:
     MCAPI bool _shouldSetOnFire() const;
 
-
 private:
-
 
 };

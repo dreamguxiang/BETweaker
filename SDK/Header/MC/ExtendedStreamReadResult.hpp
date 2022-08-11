@@ -12,20 +12,16 @@ struct ExtendedStreamReadResult {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTENDEDSTREAMREADRESULT
 public:
     struct ExtendedStreamReadResult& operator=(struct ExtendedStreamReadResult const &) = delete;
     ExtendedStreamReadResult(struct ExtendedStreamReadResult const &) = delete;
     ExtendedStreamReadResult() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTENDEDSTREAMREADRESULT
+#endif
     MCAPI ExtendedStreamReadResult(enum StreamReadResult);
     MCAPI ~ExtendedStreamReadResult();
-
-protected:
-
-private:
 
 };

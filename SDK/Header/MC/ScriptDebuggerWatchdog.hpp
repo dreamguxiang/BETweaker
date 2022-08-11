@@ -14,14 +14,12 @@ class ScriptDebuggerWatchdog {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGERWATCHDOG
 public:
     class ScriptDebuggerWatchdog& operator=(class ScriptDebuggerWatchdog const &) = delete;
     ScriptDebuggerWatchdog(class ScriptDebuggerWatchdog const &) = delete;
     ScriptDebuggerWatchdog() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptDebuggerWatchdog();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     MCAPI void startLeaveGame();
-
-
 
 };

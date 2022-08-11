@@ -14,13 +14,11 @@ class ContainerWeakRef {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERWEAKREF
 public:
     class ContainerWeakRef& operator=(class ContainerWeakRef const &) = delete;
     ContainerWeakRef(class ContainerWeakRef const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERWEAKREF
@@ -30,7 +28,5 @@ public:
     MCAPI ContainerWeakRef();
     MCAPI operator bool() const;
     MCAPI ~ContainerWeakRef();
-
-
 
 };

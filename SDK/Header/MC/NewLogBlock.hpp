@@ -15,14 +15,12 @@ class NewLogBlock : public LogBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEWLOGBLOCK
 public:
     class NewLogBlock& operator=(class NewLogBlock const &) = delete;
     NewLogBlock(class NewLogBlock const &) = delete;
     NewLogBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NewLogBlock();
@@ -71,7 +69,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWLOGBLOCK
 #endif
     MCAPI NewLogBlock(std::string const &, int);
-
-
 
 };

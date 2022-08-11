@@ -14,14 +14,12 @@ class InMemorySequentialFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYSEQUENTIALFILE
 public:
     class InMemorySequentialFile& operator=(class InMemorySequentialFile const &) = delete;
     InMemorySequentialFile(class InMemorySequentialFile const &) = delete;
     InMemorySequentialFile() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InMemorySequentialFile();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYSEQUENTIALFILE
 #endif
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
-
-
 
 };

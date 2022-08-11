@@ -14,14 +14,12 @@ class CompoundTagUpdaterBuilder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERBUILDER
 public:
     class CompoundTagUpdaterBuilder& operator=(class CompoundTagUpdaterBuilder const &) = delete;
     CompoundTagUpdaterBuilder(class CompoundTagUpdaterBuilder const &) = delete;
     CompoundTagUpdaterBuilder() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERBUILDER
@@ -34,7 +32,5 @@ public:
     MCAPI class CompoundTagUpdaterBuilder & rename(std::string const &, std::string const &);
     MCAPI class CompoundTagUpdaterBuilder & tryEdit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
     MCAPI class CompoundTagUpdaterBuilder & visit(std::string const &);
-
-
 
 };

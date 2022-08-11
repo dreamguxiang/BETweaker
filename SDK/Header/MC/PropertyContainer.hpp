@@ -12,14 +12,12 @@ class PropertyContainer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYCONTAINER
 public:
     class PropertyContainer& operator=(class PropertyContainer const &) = delete;
     PropertyContainer(class PropertyContainer const &) = delete;
     PropertyContainer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCONTAINER
@@ -39,8 +37,6 @@ public:
     MCAPI void _addDataToCompoundTag(class CompoundTag &, class PropertyMetadata const &) const;
     MCAPI bool _readValueFromTag(class PropertyMetadata const &, class Tag const &);
 
-
 private:
-
 
 };

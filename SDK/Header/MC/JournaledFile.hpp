@@ -15,14 +15,12 @@ class JournaledFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JOURNALEDFILE
 public:
     class JournaledFile& operator=(class JournaledFile const &) = delete;
     JournaledFile(class JournaledFile const &) = delete;
     JournaledFile() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JOURNALEDFILE
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI void _flushFiles();
 
-
 private:
-
 
 };

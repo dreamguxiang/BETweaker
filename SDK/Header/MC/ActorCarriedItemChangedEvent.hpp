@@ -12,19 +12,15 @@ struct ActorCarriedItemChangedEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCARRIEDITEMCHANGEDEVENT
 public:
     struct ActorCarriedItemChangedEvent& operator=(struct ActorCarriedItemChangedEvent const &) = delete;
     ActorCarriedItemChangedEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCARRIEDITEMCHANGEDEVENT
+#endif
     MCAPI ActorCarriedItemChangedEvent(struct ActorCarriedItemChangedEvent const &);
     MCAPI ~ActorCarriedItemChangedEvent();
-
-protected:
-
-private:
 
 };

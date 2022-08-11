@@ -26,20 +26,16 @@ struct PackInfoData {
     bool isRtxCapable;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
 public:
     struct PackInfoData& operator=(struct PackInfoData const &) = delete;
     PackInfoData(struct PackInfoData const &) = delete;
     PackInfoData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINFODATA
+#endif
     MCAPI PackInfoData(class mce::UUID const &, class SemVersion const &, unsigned __int64, std::string const &, std::string const &, class ContentIdentity const &, bool, bool);
     MCAPI ~PackInfoData();
-
-protected:
-
-private:
 
 };

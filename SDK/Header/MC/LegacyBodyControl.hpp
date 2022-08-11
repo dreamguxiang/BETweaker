@@ -14,13 +14,11 @@ class LegacyBodyControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBODYCONTROL
 public:
     class LegacyBodyControl& operator=(class LegacyBodyControl const &) = delete;
     LegacyBodyControl(class LegacyBodyControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LegacyBodyControl();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBODYCONTROL
 #endif
     MCAPI LegacyBodyControl();
-
-
 
 };

@@ -12,7 +12,6 @@ class SummonSpellStage {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLSTAGE
 public:
     class SummonSpellStage& operator=(class SummonSpellStage const &) = delete;
@@ -20,12 +19,9 @@ public:
     SummonSpellStage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONSPELLSTAGE
 #endif
     MCAPI ~SummonSpellStage();
-
-
 
 };

@@ -15,14 +15,12 @@ class BookshelfBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKSHELFBLOCK
 public:
     class BookshelfBlock& operator=(class BookshelfBlock const &) = delete;
     BookshelfBlock(class BookshelfBlock const &) = delete;
     BookshelfBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BookshelfBlock();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKSHELFBLOCK
 #endif
     MCAPI BookshelfBlock(std::string const &, int);
-
-
 
 };

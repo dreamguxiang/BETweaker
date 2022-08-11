@@ -15,14 +15,12 @@ class EnderCrystal : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCRYSTAL
 public:
     class EnderCrystal& operator=(class EnderCrystal const &) = delete;
     EnderCrystal(class EnderCrystal const &) = delete;
     EnderCrystal() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -61,7 +59,5 @@ public:
     MCAPI void setBeamTarget(class BlockPos const &);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
     MCAPI static float const HEAL_DISTANCE;
-
-
 
 };

@@ -15,7 +15,6 @@ class LootItemRandomChanceCondition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMCHANCECONDITION
 public:
     class LootItemRandomChanceCondition& operator=(class LootItemRandomChanceCondition const &) = delete;
@@ -23,14 +22,11 @@ public:
     LootItemRandomChanceCondition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootItemRandomChanceCondition();
     /*1*/ virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMRANDOMCHANCECONDITION
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
-
-
 
 };

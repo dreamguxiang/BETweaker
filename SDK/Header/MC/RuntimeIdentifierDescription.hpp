@@ -15,7 +15,6 @@ class RuntimeIdentifierDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNTIMEIDENTIFIERDESCRIPTION
 public:
     class RuntimeIdentifierDescription& operator=(class RuntimeIdentifierDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     RuntimeIdentifierDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMEIDENTIFIERDESCRIPTION
 #endif
     MCAPI void parse(class Json::Value const &);
-
-
 
 };

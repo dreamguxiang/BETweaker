@@ -14,14 +14,12 @@ class LabTableReaction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEREACTION
 public:
     class LabTableReaction& operator=(class LabTableReaction const &) = delete;
     LabTableReaction(class LabTableReaction const &) = delete;
     LabTableReaction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTION
@@ -32,7 +30,5 @@ public:
     MCAPI enum LabTableReactionType getType();
     MCAPI bool tick(class BlockSource &);
     MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const &, bool);
-
-
 
 };

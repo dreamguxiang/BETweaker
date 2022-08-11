@@ -15,14 +15,12 @@ class EnchantBookForTradingFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTBOOKFORTRADINGFUNCTION
 public:
     class EnchantBookForTradingFunction& operator=(class EnchantBookForTradingFunction const &) = delete;
     EnchantBookForTradingFunction(class EnchantBookForTradingFunction const &) = delete;
     EnchantBookForTradingFunction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTBOOKFORTRADINGFUNCTION
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase &, class Random &, int &) const;
 
-
 private:
-
 
 };

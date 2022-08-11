@@ -14,14 +14,12 @@ class EntitySystems {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSYSTEMS
 public:
     class EntitySystems& operator=(class EntitySystems const &) = delete;
     EntitySystems(class EntitySystems const &) = delete;
     EntitySystems() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
@@ -40,7 +38,5 @@ public:
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void tick(class EntityRegistry &);
     MCAPI void tickEditor(class EntityRegistry &);
-
-
 
 };

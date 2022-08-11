@@ -15,7 +15,6 @@ class EquippableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPPABLEDEFINITION
 public:
     class EquippableDefinition& operator=(class EquippableDefinition const &) = delete;
@@ -23,13 +22,10 @@ public:
     EquippableDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLEDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class EquippableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>> &);
-
-
 
 };

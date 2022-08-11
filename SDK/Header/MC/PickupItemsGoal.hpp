@@ -14,14 +14,12 @@ class PickupItemsGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PICKUPITEMSGOAL
 public:
     class PickupItemsGoal& operator=(class PickupItemsGoal const &) = delete;
     PickupItemsGoal(class PickupItemsGoal const &) = delete;
     PickupItemsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PickupItemsGoal();
@@ -43,8 +41,6 @@ public:
     MCAPI bool _hasRoomForCarriedItem() const;
     MCAPI void _pickItemUp(class ItemActor *);
 
-
 private:
-
 
 };

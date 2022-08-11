@@ -20,14 +20,12 @@ struct Descriptions {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETERRAINADJUSTMENTS
 public:
     class FeatureTerrainAdjustments& operator=(class FeatureTerrainAdjustments const &) = delete;
     FeatureTerrainAdjustments(class FeatureTerrainAdjustments const &) = delete;
     FeatureTerrainAdjustments() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETERRAINADJUSTMENTS
@@ -45,9 +43,7 @@ public:
 //private:
     MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
 
-
 private:
     MCAPI static struct BeardKernel mBeardKernel;
-
 
 };

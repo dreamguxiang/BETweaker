@@ -12,18 +12,15 @@ struct BlockPlacementDirectionalFilter {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTDIRECTIONALFILTER
 public:
     struct BlockPlacementDirectionalFilter& operator=(struct BlockPlacementDirectionalFilter const &) = delete;
     BlockPlacementDirectionalFilter(struct BlockPlacementDirectionalFilter const &) = delete;
     BlockPlacementDirectionalFilter() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTDIRECTIONALFILTER
+#endif
+    MCAPI static void fromStringVector(struct BlockPlacementDirectionalFilter &, std::vector<std::string>);
 
 };

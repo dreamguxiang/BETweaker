@@ -12,7 +12,6 @@ class IEntitySystems {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYSYSTEMS
 public:
     class IEntitySystems& operator=(class IEntitySystems const &) = delete;
@@ -20,11 +19,8 @@ public:
     IEntitySystems() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYSYSTEMS
 #endif
-
-
 
 };

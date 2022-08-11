@@ -15,7 +15,6 @@ class AirBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AIRBLOCK
 public:
     class AirBlock& operator=(class AirBlock const &) = delete;
@@ -23,14 +22,13 @@ public:
     AirBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AirBlock();
-    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>);
+    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &);
+    /*9*/ virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &);
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>);
     /*19*/ virtual void __unk_vfn_19();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -52,32 +50,32 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*87*/ virtual bool mayPick() const;
-    /*88*/ virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
-    /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
-    /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
-    /*92*/ virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
-    /*95*/ virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
-    /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
+    /*87*/ virtual bool mayPick();
+    /*88*/ virtual bool mayPick(class BlockSource const &, class Block const &, bool);
+    /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char);
+    /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &);
+    /*92*/ virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *);
+    /*95*/ virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *);
+    /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &);
+    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int);
     /*105*/ virtual void __unk_vfn_105();
-    /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &);
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
-    /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
+    /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool);
+    /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool);
     /*148*/ virtual void __unk_vfn_148();
-    /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &);
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
-    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &);
     /*177*/ virtual void __unk_vfn_177();
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCK
@@ -85,7 +83,5 @@ public:
     MCVAPI bool canHaveExtraData() const;
 #endif
     MCAPI AirBlock(std::string const &, int, class Material const &);
-
-
 
 };

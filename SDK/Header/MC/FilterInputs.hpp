@@ -12,19 +12,15 @@ struct FilterInputs {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTS
 public:
     struct FilterInputs& operator=(struct FilterInputs const &) = delete;
     FilterInputs(struct FilterInputs const &) = delete;
     FilterInputs() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTS
+#endif
     MCAPI ~FilterInputs();
-
-protected:
-
-private:
 
 };

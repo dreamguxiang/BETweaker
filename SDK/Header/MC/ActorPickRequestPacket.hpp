@@ -15,13 +15,11 @@ class ActorPickRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPICKREQUESTPACKET
 public:
     class ActorPickRequestPacket& operator=(class ActorPickRequestPacket const &) = delete;
     ActorPickRequestPacket(class ActorPickRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorPickRequestPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPICKREQUESTPACKET
 #endif
     MCAPI ActorPickRequestPacket();
-
-
 
 };

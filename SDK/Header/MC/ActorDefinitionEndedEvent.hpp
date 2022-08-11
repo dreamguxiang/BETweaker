@@ -12,7 +12,6 @@ class ActorDefinitionEndedEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONENDEDEVENT
 public:
     class ActorDefinitionEndedEvent& operator=(class ActorDefinitionEndedEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorDefinitionEndedEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONENDEDEVENT
 #endif
     MCAPI ~ActorDefinitionEndedEvent();
-
-
 
 };

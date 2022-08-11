@@ -16,13 +16,11 @@ public:
 enum Surface;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPTOSURFACEFEATURE
 public:
     class SnapToSurfaceFeature& operator=(class SnapToSurfaceFeature const &) = delete;
     SnapToSurfaceFeature(class SnapToSurfaceFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SnapToSurfaceFeature();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum SnapToSurfaceFeature::Surface) const;
 
-
 private:
-
 
 };

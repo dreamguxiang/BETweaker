@@ -12,7 +12,6 @@ class BoostableRemovePassengerSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLEREMOVEPASSENGERSYSTEM
 public:
     class BoostableRemovePassengerSystem& operator=(class BoostableRemovePassengerSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     BoostableRemovePassengerSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLEREMOVEPASSENGERSYSTEM
 #endif
     MCAPI static void boostableRemovePassenger(class StrictEntityContext &, struct RemovePassengersComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent, class FlagComponent<struct PlayerComponentFlag>>, struct FOVModifierComponent> &);
     MCAPI static struct TickingSystemWithInfo createSystem();
-
-
 
 };

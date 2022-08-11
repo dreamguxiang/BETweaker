@@ -14,12 +14,10 @@ class PositionTrackingId {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGID
 public:
     PositionTrackingId() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
@@ -37,9 +35,7 @@ public:
 
 //protected:
 
-
 protected:
     MCAPI static unsigned int sNextId;
-
 
 };

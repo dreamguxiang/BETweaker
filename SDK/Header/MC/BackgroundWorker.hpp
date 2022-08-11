@@ -17,14 +17,12 @@ public:
 enum RunOneResult;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDWORKER
 public:
     class BackgroundWorker& operator=(class BackgroundWorker const &) = delete;
     BackgroundWorker(class BackgroundWorker const &) = delete;
     BackgroundWorker() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BackgroundWorker();
@@ -49,9 +47,7 @@ public:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
 
-
 private:
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
-
 
 };

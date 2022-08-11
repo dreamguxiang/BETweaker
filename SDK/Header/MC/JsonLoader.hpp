@@ -14,7 +14,6 @@ class JsonLoader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONLOADER
 public:
     class JsonLoader& operator=(class JsonLoader const &) = delete;
@@ -22,11 +21,8 @@ public:
     JsonLoader() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONLOADER
 #endif
-
-
 
 };

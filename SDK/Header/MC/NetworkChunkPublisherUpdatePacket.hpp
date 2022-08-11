@@ -15,13 +15,11 @@ class NetworkChunkPublisherUpdatePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKPUBLISHERUPDATEPACKET
 public:
     class NetworkChunkPublisherUpdatePacket& operator=(class NetworkChunkPublisherUpdatePacket const &) = delete;
     NetworkChunkPublisherUpdatePacket(class NetworkChunkPublisherUpdatePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetworkChunkPublisherUpdatePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
     MCAPI NetworkChunkPublisherUpdatePacket();
-
-
 
 };

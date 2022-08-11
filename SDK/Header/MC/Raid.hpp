@@ -14,14 +14,12 @@ class Raid {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAID
 public:
     class Raid& operator=(class Raid const &) = delete;
     Raid(class Raid const &) = delete;
     Raid() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAID
@@ -41,11 +39,9 @@ public:
     MCAPI float _getTotalRaiderHealth() const;
     MCAPI void _tickGroupInPlay();
 
-
 private:
     MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
     MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
     MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
-
 
 };

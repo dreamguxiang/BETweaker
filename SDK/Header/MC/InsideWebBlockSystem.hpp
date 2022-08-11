@@ -12,7 +12,6 @@ class InsideWebBlockSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEWEBBLOCKSYSTEM
 public:
     class InsideWebBlockSystem& operator=(class InsideWebBlockSystem const &) = delete;
@@ -20,14 +19,11 @@ public:
     InsideWebBlockSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWEBBLOCKSYSTEM
 #endif
     MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
     MCAPI static void _applySlowdown(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct BlockMovementSlowdownApplied>>);
     MCAPI static struct TickingSystemWithInfo createSlowdownSystem();
-
-
 
 };

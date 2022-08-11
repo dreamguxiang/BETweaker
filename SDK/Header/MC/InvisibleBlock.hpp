@@ -15,14 +15,12 @@ class InvisibleBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVISIBLEBLOCK
 public:
     class InvisibleBlock& operator=(class InvisibleBlock const &) = delete;
     InvisibleBlock(class InvisibleBlock const &) = delete;
     InvisibleBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InvisibleBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVISIBLEBLOCK
 #endif
     MCAPI InvisibleBlock(std::string const &, int, class Material const &);
-
-
 
 };

@@ -15,13 +15,11 @@ class MeadowFlowerFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEADOWFLOWERFEATURE
 public:
     class MeadowFlowerFeature& operator=(class MeadowFlowerFeature const &) = delete;
     MeadowFlowerFeature(class MeadowFlowerFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MeadowFlowerFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class HellSpringFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELLSPRINGFEATURE
 public:
     class HellSpringFeature& operator=(class HellSpringFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     HellSpringFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HellSpringFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLSPRINGFEATURE
 #endif
     MCAPI HellSpringFeature(class Block const &, bool);
-
-
 
 };

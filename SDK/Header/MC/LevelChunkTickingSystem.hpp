@@ -12,14 +12,12 @@ class LevelChunkTickingSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKTICKINGSYSTEM
 public:
     class LevelChunkTickingSystem& operator=(class LevelChunkTickingSystem const &) = delete;
     LevelChunkTickingSystem(class LevelChunkTickingSystem const &) = delete;
     LevelChunkTickingSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelChunkTickingSystem();
@@ -33,8 +31,6 @@ public:
     MCAPI static void _tickLevelChunksAroundActor(class Actor &, class BlockSource &, class LoadedChunksComponent &);
     MCAPI static void _tickLevelChunksAroundActorView(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorFlag>, class BlockSourceComponent, class LoadedChunksComponent> &);
 
-
 private:
-
 
 };

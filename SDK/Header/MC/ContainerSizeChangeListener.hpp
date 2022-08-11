@@ -14,7 +14,6 @@ class ContainerSizeChangeListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSIZECHANGELISTENER
 public:
     class ContainerSizeChangeListener& operator=(class ContainerSizeChangeListener const &) = delete;
@@ -22,11 +21,8 @@ public:
     ContainerSizeChangeListener() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
 #endif
-
-
 
 };

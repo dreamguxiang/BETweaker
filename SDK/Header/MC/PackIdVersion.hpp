@@ -28,13 +28,13 @@ struct PackIdVersion {
 public:
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION
 public:
     struct PackIdVersion& operator=(struct PackIdVersion const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKIDVERSION
+#endif
     MCAPI PackIdVersion(struct PackIdVersion const &);
     MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
     MCAPI PackIdVersion();
@@ -45,9 +45,5 @@ public:
     MCAPI bool operator==(struct PackIdVersion const &) const;
     MCAPI bool satisfies(struct PackIdVersion const &) const;
     MCAPI ~PackIdVersion();
-
-protected:
-
-private:
 
 };

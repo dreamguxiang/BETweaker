@@ -25,14 +25,12 @@ struct PendingWriteResult {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGE
 public:
     class DBStorage& operator=(class DBStorage const &) = delete;
     DBStorage(class DBStorage const &) = delete;
     DBStorage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DBStorage();
@@ -90,10 +88,8 @@ public:
     MCAPI void _scheduleNextAutoCompaction();
     MCAPI bool _suspendAndPerformSaveAction(class std::function<class TaskResult (void)>, class std::function<void (void)>);
 
-
 protected:
 
 private:
-
 
 };

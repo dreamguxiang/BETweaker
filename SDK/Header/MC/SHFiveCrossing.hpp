@@ -15,14 +15,12 @@ class SHFiveCrossing : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHFIVECROSSING
 public:
     class SHFiveCrossing& operator=(class SHFiveCrossing const &) = delete;
     SHFiveCrossing(class SHFiveCrossing const &) = delete;
     SHFiveCrossing() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHFiveCrossing();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHFIVECROSSING
 #endif
     MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
-
-
 
 };

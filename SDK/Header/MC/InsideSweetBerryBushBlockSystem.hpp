@@ -12,7 +12,6 @@ class InsideSweetBerryBushBlockSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDESWEETBERRYBUSHBLOCKSYSTEM
 public:
     class InsideSweetBerryBushBlockSystem& operator=(class InsideSweetBerryBushBlockSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     InsideSweetBerryBushBlockSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDESWEETBERRYBUSHBLOCKSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
-
-
 
 };

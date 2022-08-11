@@ -15,14 +15,12 @@ class AgeableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLEDEFINITION
 public:
     class AgeableDefinition& operator=(class AgeableDefinition const &) = delete;
     AgeableDefinition(class AgeableDefinition const &) = delete;
     AgeableDefinition() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLEDEFINITION
@@ -34,7 +32,5 @@ public:
     MCAPI int getTicksAsBaby() const;
     MCAPI void initialize(class EntityContext &, class AgeableComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
-
-
 
 };

@@ -14,7 +14,6 @@ class TransportInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTINTERFACE
 public:
     class TransportInterface& operator=(class TransportInterface const &) = delete;
@@ -22,12 +21,9 @@ public:
     TransportInterface() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
     MCVAPI ~TransportInterface();
 #endif
-
-
 
 };

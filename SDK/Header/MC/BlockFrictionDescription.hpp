@@ -14,18 +14,24 @@ struct BlockFrictionDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFRICTIONDESCRIPTION
 public:
     struct BlockFrictionDescription& operator=(struct BlockFrictionDescription const &) = delete;
     BlockFrictionDescription(struct BlockFrictionDescription const &) = delete;
     BlockFrictionDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockFrictionDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKFRICTIONDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

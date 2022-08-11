@@ -14,13 +14,11 @@ class TransformationComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFORMATIONCOMPONENT
 public:
     class TransformationComponent& operator=(class TransformationComponent const &) = delete;
     TransformationComponent(class TransformationComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMATIONCOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI void reloadComponent(class Actor &);
     MCAPI void setDelayTicks(int);
     MCAPI void transformIfAble(class Actor &, bool);
-
-
 
 };

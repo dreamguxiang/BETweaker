@@ -16,14 +16,12 @@ class MinecartRideable : public Minecart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTRIDEABLE
 public:
     class MinecartRideable& operator=(class MinecartRideable const &) = delete;
     MinecartRideable(class MinecartRideable const &) = delete;
     MinecartRideable() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~MinecartRideable();
@@ -53,7 +51,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTRIDEABLE
 #endif
     MCAPI MinecartRideable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

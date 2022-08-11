@@ -15,7 +15,6 @@ class TestForCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTFORCOMMAND
 public:
     class TestForCommand& operator=(class TestForCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     TestForCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TestForCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTFORCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

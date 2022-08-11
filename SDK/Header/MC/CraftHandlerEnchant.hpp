@@ -15,14 +15,12 @@ class CraftHandlerEnchant : public CraftHandlerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERENCHANT
 public:
     class CraftHandlerEnchant& operator=(class CraftHandlerEnchant const &) = delete;
     CraftHandlerEnchant(class CraftHandlerEnchant const &) = delete;
     CraftHandlerEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
@@ -37,8 +35,6 @@ public:
     MCAPI class EnchantingContainerManagerModel & _getEnchantingModel() const;
     MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 
-
 private:
-
 
 };

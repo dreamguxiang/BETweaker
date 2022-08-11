@@ -28,14 +28,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING
 public:
     class PotionBrewing& operator=(class PotionBrewing const &) = delete;
     PotionBrewing(class PotionBrewing const &) = delete;
     PotionBrewing() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONBREWING
@@ -55,7 +53,6 @@ public:
     MCAPI static void addChemistryMix(class ItemInstance const &, class PotionBrewing::Ingredient const &, class ItemInstance const &);
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
 
-
 private:
     MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
     MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
@@ -63,6 +60,5 @@ private:
     MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
     MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
     MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
-
 
 };

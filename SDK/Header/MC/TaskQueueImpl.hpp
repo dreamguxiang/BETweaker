@@ -12,13 +12,11 @@ class TaskQueueImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKQUEUEIMPL
 public:
     class TaskQueueImpl& operator=(class TaskQueueImpl const &) = delete;
     TaskQueueImpl(class TaskQueueImpl const &) = delete;
 #endif
-
 
 public:
     /*3*/ virtual struct XTaskQueueObject * GetHandle();
@@ -41,8 +39,6 @@ public:
 //private:
     MCAPI static void OnTerminationCallback(void *);
 
-
 private:
-
 
 };

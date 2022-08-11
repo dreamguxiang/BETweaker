@@ -14,14 +14,12 @@ class EndPortalShape {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPORTALSHAPE
 public:
     class EndPortalShape& operator=(class EndPortalShape const &) = delete;
     EndPortalShape(class EndPortalShape const &) = delete;
     EndPortalShape() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALSHAPE
@@ -30,7 +28,5 @@ public:
     MCAPI class BlockPos getOrigin() const;
     MCAPI bool isValid(class BlockSource &);
     MCAPI ~EndPortalShape();
-
-
 
 };

@@ -12,7 +12,6 @@ class OnPlayerDestroyedTrigger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGER
 public:
     class OnPlayerDestroyedTrigger& operator=(class OnPlayerDestroyedTrigger const &) = delete;
@@ -20,12 +19,9 @@ public:
     OnPlayerDestroyedTrigger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGER
 #endif
     MCAPI ~OnPlayerDestroyedTrigger();
-
-
 
 };

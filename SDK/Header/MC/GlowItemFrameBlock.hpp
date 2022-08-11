@@ -15,14 +15,12 @@ class GlowItemFrameBlock : public ItemFrameBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWITEMFRAMEBLOCK
 public:
     class GlowItemFrameBlock& operator=(class GlowItemFrameBlock const &) = delete;
     GlowItemFrameBlock(class GlowItemFrameBlock const &) = delete;
     GlowItemFrameBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlowItemFrameBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWITEMFRAMEBLOCK
 #endif
     MCAPI GlowItemFrameBlock(std::string const &, int);
-
-
 
 };

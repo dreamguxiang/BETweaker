@@ -14,7 +14,6 @@ class ITickingArea {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREA
 public:
     class ITickingArea& operator=(class ITickingArea const &) = delete;
@@ -22,12 +21,9 @@ public:
     ITickingArea() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
 #endif
     MCAPI class CompoundTag serialize() const;
-
-
 
 };

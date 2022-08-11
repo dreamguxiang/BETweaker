@@ -15,13 +15,11 @@ class SetDefaultGameTypePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDEFAULTGAMETYPEPACKET
 public:
     class SetDefaultGameTypePacket& operator=(class SetDefaultGameTypePacket const &) = delete;
     SetDefaultGameTypePacket(class SetDefaultGameTypePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetDefaultGameTypePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetDefaultGameTypePacket(enum GameType);
     MCAPI SetDefaultGameTypePacket();
-
-
 
 };

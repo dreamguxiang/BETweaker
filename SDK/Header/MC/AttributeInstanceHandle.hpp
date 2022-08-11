@@ -14,14 +14,12 @@ class AttributeInstanceHandle {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCEHANDLE
 public:
     class AttributeInstanceHandle& operator=(class AttributeInstanceHandle const &) = delete;
     AttributeInstanceHandle(class AttributeInstanceHandle const &) = delete;
     AttributeInstanceHandle() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEHANDLE
@@ -30,7 +28,5 @@ public:
     MCAPI class AttributeInstance * getMutableInstance() const;
     MCAPI void inheritFrom(class AttributeInstanceHandle const &, class BaseAttributeMap *);
     MCAPI bool operator==(class AttributeInstanceHandle const &) const;
-
-
 
 };

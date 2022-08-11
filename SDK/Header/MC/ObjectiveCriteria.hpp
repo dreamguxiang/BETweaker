@@ -14,14 +14,12 @@ class ObjectiveCriteria {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBJECTIVECRITERIA
 public:
     class ObjectiveCriteria& operator=(class ObjectiveCriteria const &) = delete;
     ObjectiveCriteria(class ObjectiveCriteria const &) = delete;
     ObjectiveCriteria() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVECRITERIA
@@ -31,7 +29,5 @@ public:
     MCAPI bool isReadOnly() const;
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const &);
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const &);
-
-
 
 };

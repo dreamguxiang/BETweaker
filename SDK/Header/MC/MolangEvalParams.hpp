@@ -15,15 +15,15 @@ struct MolangEvalParams {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGEVALPARAMS
 public:
     struct MolangEvalParams& operator=(struct MolangEvalParams const &) = delete;
     MolangEvalParams(struct MolangEvalParams const &) = delete;
     MolangEvalParams() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGEVALPARAMS
+#endif
     MCAPI class Actor * getActorFromArg(struct MolangScriptArg const &) const;
     MCAPI class Actor * getActorPtrFromPushedArray(unsigned __int64, unsigned __int64, bool &) const;
     MCAPI class Actor * popActor();
@@ -41,10 +41,8 @@ public:
     MCAPI class RenderParams const & renderParams() const;
     MCAPI void restoreAndPopStackState();
     MCAPI ~MolangEvalParams();
+    MCAPI static struct MolangEvalParams & getLocalThreadEvalParams();
 
-protected:
-
-private:
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<struct MolangEvalParams, class std::allocator<struct MolangEvalParams>> mThreadLocalMolangEvalParams;
+//private:
 
 };

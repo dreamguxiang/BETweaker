@@ -15,14 +15,12 @@ class BorderBlock : public WallBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BORDERBLOCK
 public:
     class BorderBlock& operator=(class BorderBlock const &) = delete;
     BorderBlock(class BorderBlock const &) = delete;
     BorderBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BorderBlock();
@@ -61,7 +59,7 @@ public:
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
     /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /*147*/ virtual int getVariant(class Block const &) const;
+    /*147*/ virtual int getVariant(class Block const &);
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*157*/ virtual void __unk_vfn_157();
@@ -75,7 +73,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BORDERBLOCK
 #endif
     MCAPI BorderBlock(std::string const &, int);
-
-
 
 };

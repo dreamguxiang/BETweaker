@@ -16,14 +16,12 @@ class HumanoidMonster : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUMANOIDMONSTER
 public:
     class HumanoidMonster& operator=(class HumanoidMonster const &) = delete;
     HumanoidMonster(class HumanoidMonster const &) = delete;
     HumanoidMonster() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~HumanoidMonster();
@@ -63,12 +61,10 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
-
 
 };

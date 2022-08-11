@@ -12,14 +12,12 @@ class SniffGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNIFFGOAL
 public:
     class SniffGoal& operator=(class SniffGoal const &) = delete;
     SniffGoal(class SniffGoal const &) = delete;
     SniffGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SniffGoal();
@@ -38,8 +36,6 @@ public:
     MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum ActorType) const;
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
 
-
 private:
-
 
 };

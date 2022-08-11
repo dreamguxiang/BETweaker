@@ -12,7 +12,6 @@ class ExitVehicleSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXITVEHICLESYSTEMIMPL
 public:
     class ExitVehicleSystemImpl& operator=(class ExitVehicleSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     ExitVehicleSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXITVEHICLESYSTEMIMPL
 #endif
     MCAPI static bool tryPlaceAt(class Vec3 const &, class AABB const &, class IConstBlockSource const &, class optional_ref<class GetCollisionShapeInterface const>);
-
-
 
 };

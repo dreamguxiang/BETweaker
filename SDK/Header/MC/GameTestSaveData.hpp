@@ -12,7 +12,6 @@ class GameTestSaveData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTSAVEDATA
 public:
     class GameTestSaveData& operator=(class GameTestSaveData const &) = delete;
@@ -20,12 +19,9 @@ public:
     GameTestSaveData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTSAVEDATA
 #endif
     MCAPI ~GameTestSaveData();
-
-
 
 };

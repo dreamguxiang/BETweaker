@@ -12,20 +12,16 @@ struct MolangTempVariable {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGTEMPVARIABLE
 public:
     struct MolangTempVariable& operator=(struct MolangTempVariable const &) = delete;
     MolangTempVariable(struct MolangTempVariable const &) = delete;
     MolangTempVariable() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGTEMPVARIABLE
+#endif
     MCAPI MolangTempVariable(class HashedString const &);
     MCAPI ~MolangTempVariable();
-
-protected:
-
-private:
 
 };

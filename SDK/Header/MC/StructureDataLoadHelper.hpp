@@ -16,14 +16,12 @@ class StructureDataLoadHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREDATALOADHELPER
 public:
     class StructureDataLoadHelper& operator=(class StructureDataLoadHelper const &) = delete;
     StructureDataLoadHelper(class StructureDataLoadHelper const &) = delete;
     StructureDataLoadHelper() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureDataLoadHelper();
@@ -50,7 +48,5 @@ public:
     MCVAPI float loadRotationRadiansX(float);
 #endif
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
-
-
 
 };

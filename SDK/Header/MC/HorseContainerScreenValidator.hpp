@@ -15,20 +15,16 @@ class HorseContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSECONTAINERSCREENVALIDATOR
 public:
     class HorseContainerScreenValidator& operator=(class HorseContainerScreenValidator const &) = delete;
     HorseContainerScreenValidator(class HorseContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HorseContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERSCREENVALIDATOR
 #endif
     MCAPI HorseContainerScreenValidator();
-
-
 
 };

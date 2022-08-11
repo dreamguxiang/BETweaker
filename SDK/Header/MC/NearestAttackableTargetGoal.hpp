@@ -15,14 +15,12 @@ class NearestAttackableTargetGoal : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTATTACKABLETARGETGOAL
 public:
     class NearestAttackableTargetGoal& operator=(class NearestAttackableTargetGoal const &) = delete;
     NearestAttackableTargetGoal(class NearestAttackableTargetGoal const &) = delete;
     NearestAttackableTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NearestAttackableTargetGoal();
@@ -45,10 +43,8 @@ public:
 //private:
     MCAPI bool _selectTarget();
 
-
 protected:
 
 private:
-
 
 };

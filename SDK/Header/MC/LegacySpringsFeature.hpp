@@ -15,7 +15,6 @@ class LegacySpringsFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSPRINGSFEATURE
 public:
     class LegacySpringsFeature& operator=(class LegacySpringsFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     LegacySpringsFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacySpringsFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSPRINGSFEATURE
 #endif
     MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
-
-
 
 };

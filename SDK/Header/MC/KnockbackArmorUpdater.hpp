@@ -14,14 +14,12 @@ class KnockbackArmorUpdater {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKARMORUPDATER
 public:
     class KnockbackArmorUpdater& operator=(class KnockbackArmorUpdater const &) = delete;
     KnockbackArmorUpdater(class KnockbackArmorUpdater const &) = delete;
     KnockbackArmorUpdater() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~KnockbackArmorUpdater();
@@ -54,7 +52,5 @@ public:
     /*27*/ virtual enum EventResult onEvent(struct ActorEquippedArmorEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKARMORUPDATER
 #endif
-
-
 
 };

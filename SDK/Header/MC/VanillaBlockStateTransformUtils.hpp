@@ -15,14 +15,12 @@ class VanillaBlockStateTransformUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKSTATETRANSFORMUTILS
 public:
     class VanillaBlockStateTransformUtils& operator=(class VanillaBlockStateTransformUtils const &) = delete;
     VanillaBlockStateTransformUtils(class VanillaBlockStateTransformUtils const &) = delete;
     VanillaBlockStateTransformUtils() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKSTATETRANSFORMUTILS
@@ -37,8 +35,6 @@ public:
     MCAPI static enum CommonDirection _mirrorLeftRight(enum CommonDirection);
     MCAPI static enum CommonDirection _rotate(enum CommonDirection, enum Rotation);
 
-
 private:
-
 
 };

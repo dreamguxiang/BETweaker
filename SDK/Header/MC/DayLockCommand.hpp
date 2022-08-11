@@ -15,7 +15,6 @@ class DayLockCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAYLOCKCOMMAND
 public:
     class DayLockCommand& operator=(class DayLockCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     DayLockCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DayLockCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLOCKCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

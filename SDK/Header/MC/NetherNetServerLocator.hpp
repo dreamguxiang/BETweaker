@@ -22,13 +22,11 @@ struct ServerData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSERVERLOCATOR
 public:
     class NetherNetServerLocator& operator=(class NetherNetServerLocator const &) = delete;
     NetherNetServerLocator(class NetherNetServerLocator const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherNetServerLocator();
@@ -58,8 +56,6 @@ public:
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
 
-
 private:
-
 
 };

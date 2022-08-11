@@ -15,13 +15,11 @@ class InventorySlotPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSLOTPACKET
 public:
     class InventorySlotPacket& operator=(class InventorySlotPacket const &) = delete;
     InventorySlotPacket(class InventorySlotPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InventorySlotPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
     MCAPI InventorySlotPacket();
-
-
 
 };

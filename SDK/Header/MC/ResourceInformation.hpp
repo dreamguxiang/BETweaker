@@ -16,13 +16,11 @@ public:
 enum ResourceType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEINFORMATION
 public:
     class ResourceInformation& operator=(class ResourceInformation const &) = delete;
     ResourceInformation() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEINFORMATION
@@ -34,7 +32,5 @@ public:
     MCAPI ~ResourceInformation();
     MCAPI static enum ResourceInformation::ResourceType ResourceTypeFromString(std::string const &);
     MCAPI static std::string const & StringFromResourceType(enum ResourceInformation::ResourceType);
-
-
 
 };

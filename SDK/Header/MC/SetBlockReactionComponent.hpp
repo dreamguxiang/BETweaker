@@ -14,14 +14,12 @@ class SetBlockReactionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBLOCKREACTIONCOMPONENT
 public:
     class SetBlockReactionComponent& operator=(class SetBlockReactionComponent const &) = delete;
     SetBlockReactionComponent(class SetBlockReactionComponent const &) = delete;
     SetBlockReactionComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetBlockReactionComponent();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKREACTIONCOMPONENT
 #endif
-
-
 
 };

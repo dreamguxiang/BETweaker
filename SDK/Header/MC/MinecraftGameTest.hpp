@@ -15,14 +15,12 @@ class MinecraftGameTest : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETEST
 public:
     class MinecraftGameTest& operator=(class MinecraftGameTest const &) = delete;
     MinecraftGameTest(class MinecraftGameTest const &) = delete;
     MinecraftGameTest() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftGameTest();
@@ -65,8 +63,6 @@ public:
 //private:
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const &);
 
-
 private:
-
 
 };

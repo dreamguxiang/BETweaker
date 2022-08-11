@@ -13,14 +13,12 @@ class AllowListCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTCOMMAND
 public:
     class AllowListCommand& operator=(class AllowListCommand const &) = delete;
     AllowListCommand(class AllowListCommand const &) = delete;
     AllowListCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AllowListCommand();
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class AllowListFile * mAllowListFile;
-
 
 };

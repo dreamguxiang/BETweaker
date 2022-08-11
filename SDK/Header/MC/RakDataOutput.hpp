@@ -14,14 +14,12 @@ class RakDataOutput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKDATAOUTPUT
 public:
     class RakDataOutput& operator=(class RakDataOutput const &) = delete;
     RakDataOutput(class RakDataOutput const &) = delete;
     RakDataOutput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RakDataOutput();
@@ -36,7 +34,5 @@ public:
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
 #endif
-
-
 
 };

@@ -15,14 +15,12 @@ class Igloo : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IGLOO
 public:
     class Igloo& operator=(class Igloo const &) = delete;
     Igloo(class Igloo const &) = delete;
     Igloo() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Igloo();
@@ -35,12 +33,10 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
     MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
     MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
-
 
 };

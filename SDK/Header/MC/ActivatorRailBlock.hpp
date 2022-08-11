@@ -15,14 +15,12 @@ class ActivatorRailBlock : public BaseRailBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVATORRAILBLOCK
 public:
     class ActivatorRailBlock& operator=(class ActivatorRailBlock const &) = delete;
     ActivatorRailBlock(class ActivatorRailBlock const &) = delete;
     ActivatorRailBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActivatorRailBlock();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATORRAILBLOCK
 #endif
     MCAPI ActivatorRailBlock(std::string const &, int);
-
-
 
 };

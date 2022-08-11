@@ -15,13 +15,11 @@ class TestAction : public IRequestAction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTACTION
 public:
     class TestAction& operator=(class TestAction const &) = delete;
     TestAction(class TestAction const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TestAction();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTACTION
 #endif
     MCAPI TestAction();
-
-
 
 };

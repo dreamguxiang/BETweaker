@@ -26,14 +26,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RTREE
 public:
     class RTree& operator=(class RTree const &) = delete;
     RTree(class RTree const &) = delete;
     RTree() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RTREE
@@ -44,8 +42,6 @@ public:
 //private:
     MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node> &&);
 
-
 private:
-
 
 };

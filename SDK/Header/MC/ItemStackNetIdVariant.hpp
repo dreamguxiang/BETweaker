@@ -24,9 +24,9 @@ struct ItemStackNetIdVariant {
     int netId;
     unsigned char type;
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETIDVARIANT
+#endif
     MCAPI ItemStackNetIdVariant();
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
@@ -44,9 +44,5 @@ public:
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const * tryGetRequestId() const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     MCAPI ~ItemStackNetIdVariant();
-
-protected:
-
-private:
 
 };

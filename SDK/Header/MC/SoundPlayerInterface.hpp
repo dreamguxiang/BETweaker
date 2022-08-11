@@ -14,7 +14,6 @@ class SoundPlayerInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDPLAYERINTERFACE
 public:
     class SoundPlayerInterface& operator=(class SoundPlayerInterface const &) = delete;
@@ -22,11 +21,8 @@ public:
     SoundPlayerInterface() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDPLAYERINTERFACE
 #endif
-
-
 
 };

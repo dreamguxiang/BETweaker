@@ -16,14 +16,12 @@ class FilterTestDimensionWeather : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTDIMENSIONWEATHER
 public:
     class FilterTestDimensionWeather& operator=(class FilterTestDimensionWeather const &) = delete;
     FilterTestDimensionWeather(class FilterTestDimensionWeather const &) = delete;
     FilterTestDimensionWeather() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FilterTestDimensionWeather();
@@ -33,7 +31,5 @@ public:
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDIMENSIONWEATHER
 #endif
-
-
 
 };

@@ -14,14 +14,12 @@ class EatBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATBLOCKGOAL
 public:
     class EatBlockGoal& operator=(class EatBlockGoal const &) = delete;
     EatBlockGoal(class EatBlockGoal const &) = delete;
     EatBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EatBlockGoal();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI EatBlockGoal(class Mob &);
     MCAPI float getEatSuccessChance(class Actor &) const;
-
-
 
 };

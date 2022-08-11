@@ -14,7 +14,6 @@ class NetworkPacketEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPACKETEVENTCOORDINATOR
 public:
     class NetworkPacketEventCoordinator& operator=(class NetworkPacketEventCoordinator const &) = delete;
@@ -22,12 +21,9 @@ public:
     NetworkPacketEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPACKETEVENTCOORDINATOR
 #endif
     MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);
-
-
 
 };

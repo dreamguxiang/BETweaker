@@ -22,7 +22,6 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONVALIDATOR
 public:
     class JsonValidator& operator=(class JsonValidator const &) = delete;
@@ -30,12 +29,9 @@ public:
     JsonValidator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONVALIDATOR
 #endif
     MCAPI static bool validate(class JsonValidator::Property const &, class Json::Value const &, std::vector<std::string> *);
-
-
 
 };

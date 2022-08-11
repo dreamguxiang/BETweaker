@@ -14,14 +14,12 @@ class ServerInstanceEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEEVENTLISTENER
 public:
     class ServerInstanceEventListener& operator=(class ServerInstanceEventListener const &) = delete;
     ServerInstanceEventListener(class ServerInstanceEventListener const &) = delete;
     ServerInstanceEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
@@ -33,7 +31,5 @@ public:
     MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif
-
-
 
 };

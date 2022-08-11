@@ -25,13 +25,11 @@ public:
     enum PlayerListPacketType type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERLISTPACKET
 public:
     class PlayerListPacket& operator=(class PlayerListPacket const &) = delete;
     PlayerListPacket(class PlayerListPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerListPacket();
@@ -45,7 +43,5 @@ public:
     MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI PlayerListPacket();
     MCAPI void emplace(class PlayerListEntry &&);
-
-
 
 };

@@ -12,13 +12,11 @@ class StructureFeatureRegistry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREFEATUREREGISTRY
 public:
     class StructureFeatureRegistry& operator=(class StructureFeatureRegistry const &) = delete;
     StructureFeatureRegistry(class StructureFeatureRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATUREREGISTRY
@@ -29,7 +27,5 @@ public:
     MCAPI class StructureFeature * getStructureFeatureOfType(enum StructureFeatureType) const;
     MCAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
     MCAPI ~StructureFeatureRegistry();
-
-
 
 };

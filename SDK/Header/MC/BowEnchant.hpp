@@ -15,14 +15,12 @@ class BowEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOWENCHANT
 public:
     class BowEnchant& operator=(class BowEnchant const &) = delete;
     BowEnchant(class BowEnchant const &) = delete;
     BowEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BowEnchant();
@@ -40,9 +38,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
-
 
 };

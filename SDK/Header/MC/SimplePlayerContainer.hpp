@@ -15,14 +15,12 @@ class SimplePlayerContainer : public SimpleContainer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEPLAYERCONTAINER
 public:
     class SimplePlayerContainer& operator=(class SimplePlayerContainer const &) = delete;
     SimplePlayerContainer(class SimplePlayerContainer const &) = delete;
     SimplePlayerContainer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SimplePlayerContainer();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEPLAYERCONTAINER
 #endif
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
-
-
 
 };

@@ -16,13 +16,11 @@ class BuoyancyDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYDEFINITION
 public:
     class BuoyancyDefinition& operator=(class BuoyancyDefinition const &) = delete;
     BuoyancyDefinition(class BuoyancyDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYDEFINITION
@@ -36,8 +34,6 @@ public:
     MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const &);
     MCAPI class Json::Value _serialize() const;
 
-
 private:
-
 
 };

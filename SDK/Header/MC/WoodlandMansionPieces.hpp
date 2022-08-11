@@ -15,7 +15,6 @@ class WoodlandMansionPieces {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODLANDMANSIONPIECES
 public:
     class WoodlandMansionPieces& operator=(class WoodlandMansionPieces const &) = delete;
@@ -23,12 +22,9 @@ public:
     WoodlandMansionPieces() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODLANDMANSIONPIECES
 #endif
     MCAPI static void generateMansion(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum Rotation, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
-
-
 
 };

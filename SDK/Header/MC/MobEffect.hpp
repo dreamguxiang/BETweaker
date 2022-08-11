@@ -53,14 +53,12 @@ public:
     };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECT
 public:
     class MobEffect& operator=(class MobEffect const &) = delete;
     MobEffect(class MobEffect const &) = delete;
     MobEffect() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MobEffect();
@@ -133,10 +131,8 @@ public:
 //private:
     MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData &, int);
 
-
 protected:
 
 private:
-
 
 };

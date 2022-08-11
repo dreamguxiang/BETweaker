@@ -14,13 +14,11 @@ class CallbackToken {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CALLBACKTOKEN
 public:
     class CallbackToken& operator=(class CallbackToken const &) = delete;
     CallbackToken(class CallbackToken const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKEN
@@ -32,7 +30,5 @@ public:
     MCAPI class CallbackToken & operator=(class CallbackToken &&);
     MCAPI void release();
     MCAPI ~CallbackToken();
-
-
 
 };

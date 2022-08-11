@@ -15,14 +15,12 @@ class LevelContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMANAGERMODEL
 public:
     class LevelContainerManagerModel& operator=(class LevelContainerManagerModel const &) = delete;
     LevelContainerManagerModel(class LevelContainerManagerModel const &) = delete;
     LevelContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelContainerManagerModel();
@@ -44,8 +42,6 @@ public:
     MCAPI class BlockActor * _getBlockEntity();
     MCAPI class Container * _getRawContainer();
 
-
 protected:
-
 
 };

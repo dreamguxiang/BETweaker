@@ -14,7 +14,6 @@ class IDefinitionInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDEFINITIONINSTANCE
 public:
     class IDefinitionInstance& operator=(class IDefinitionInstance const &) = delete;
@@ -22,13 +21,10 @@ public:
     IDefinitionInstance() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
 #endif
-
-
 
 };

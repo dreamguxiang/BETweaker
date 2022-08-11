@@ -14,14 +14,12 @@ class CombatRegenerationComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONCOMPONENT
 public:
     class CombatRegenerationComponent& operator=(class CombatRegenerationComponent const &) = delete;
     CombatRegenerationComponent(class CombatRegenerationComponent const &) = delete;
     CombatRegenerationComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONCOMPONENT
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);
 
-
 private:
-
 
 };

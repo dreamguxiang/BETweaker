@@ -12,14 +12,12 @@ class BlendingData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLENDINGDATA
 public:
     class BlendingData& operator=(class BlendingData const &) = delete;
     BlendingData(class BlendingData const &) = delete;
     BlendingData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDINGDATA
@@ -30,7 +28,5 @@ public:
     MCAPI class ScalarOptional<float> getDensity(int, int, int) const;
     MCAPI class ScalarOptional<short> getHeight(int, int) const;
     MCAPI bool hasBlendDataAt(int, int) const;
-
-
 
 };

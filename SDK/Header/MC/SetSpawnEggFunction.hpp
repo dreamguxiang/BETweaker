@@ -16,14 +16,12 @@ class SetSpawnEggFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSPAWNEGGFUNCTION
 public:
     class SetSpawnEggFunction& operator=(class SetSpawnEggFunction const &) = delete;
     SetSpawnEggFunction(class SetSpawnEggFunction const &) = delete;
     SetSpawnEggFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetSpawnEggFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSPAWNEGGFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

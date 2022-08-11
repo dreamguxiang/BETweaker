@@ -14,14 +14,12 @@ class Hopper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPER
 public:
     class Hopper& operator=(class Hopper const &) = delete;
     Hopper(class Hopper const &) = delete;
     Hopper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPER
@@ -49,8 +47,6 @@ public:
     MCAPI bool _tryPushToComposter(class BlockSource &, class Container &, class BlockPos, int);
     MCAPI bool _tryTakeInItemFromSlot(class BlockSource &, class Container &, class Container &, int, int);
 
-
 protected:
-
 
 };

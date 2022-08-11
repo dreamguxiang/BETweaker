@@ -15,7 +15,6 @@ class LightBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIGHTBLOCK
 public:
     class LightBlock& operator=(class LightBlock const &) = delete;
@@ -23,14 +22,13 @@ public:
     LightBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LightBlock();
-    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>);
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>);
     /*19*/ virtual void __unk_vfn_19();
-    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType);
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -64,7 +62,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*153*/ virtual class BlockLegacy & init();
     /*154*/ virtual struct Brightness getLightEmission(class Block const &) const;
@@ -78,7 +76,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIGHTBLOCK
 #endif
     MCAPI LightBlock(std::string const &, int, class Material const &);
-
-
 
 };

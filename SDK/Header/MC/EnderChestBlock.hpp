@@ -15,14 +15,12 @@ class EnderChestBlock : public ChestBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCHESTBLOCK
 public:
     class EnderChestBlock& operator=(class EnderChestBlock const &) = delete;
     EnderChestBlock(class EnderChestBlock const &) = delete;
     EnderChestBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnderChestBlock();
@@ -68,7 +66,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI EnderChestBlock(std::string const &, int);
-
-
 
 };

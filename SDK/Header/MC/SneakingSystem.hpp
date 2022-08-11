@@ -12,14 +12,12 @@ class SneakingSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNEAKINGSYSTEM
 public:
     class SneakingSystem& operator=(class SneakingSystem const &) = delete;
     SneakingSystem(class SneakingSystem const &) = delete;
     SneakingSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SneakingSystem();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNEAKINGSYSTEM
 #endif
     MCAPI static void _tickSneakingSystem(class StrictEntityContext &, class FlagComponent<struct PlayerComponentFlag> const &, struct SneakingComponent &, class ActorOwnerComponent &);
-
-
 
 };

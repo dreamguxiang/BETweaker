@@ -12,14 +12,12 @@ class SculkVeinBlockBehavior {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKVEINBLOCKBEHAVIOR
 public:
     class SculkVeinBlockBehavior& operator=(class SculkVeinBlockBehavior const &) = delete;
     SculkVeinBlockBehavior(class SculkVeinBlockBehavior const &) = delete;
     SculkVeinBlockBehavior() = delete;
 #endif
-
 
 public:
     /*0*/ virtual int updateDecayDelay(int) const;
@@ -35,8 +33,6 @@ public:
     MCAPI static bool _attemptPlaceSculk(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class SculkSpreader &, class Random &);
     MCAPI static void _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &);
 
-
 private:
-
 
 };

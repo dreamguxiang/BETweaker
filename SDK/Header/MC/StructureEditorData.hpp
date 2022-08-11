@@ -14,12 +14,10 @@ class StructureEditorData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREEDITORDATA
 public:
     class StructureEditorData& operator=(class StructureEditorData const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
@@ -74,9 +72,7 @@ public:
 //private:
     MCAPI void _setPivotFromStructureSize();
 
-
 private:
     MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
-
 
 };

@@ -16,14 +16,12 @@ class Pig : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIG
 public:
     class Pig& operator=(class Pig const &) = delete;
     Pig(class Pig const &) = delete;
     Pig() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Pig();
@@ -59,7 +57,5 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Pig(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

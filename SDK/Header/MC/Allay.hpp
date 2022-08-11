@@ -14,14 +14,12 @@ class Allay : public Mob {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLAY
 public:
     class Allay& operator=(class Allay const &) = delete;
     Allay(class Allay const &) = delete;
     Allay() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -59,7 +57,5 @@ public:
     MCAPI Allay(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI bool hasDuplicationCooldown();
     MCAPI void setNewDuplicationCooldown();
-
-
 
 };

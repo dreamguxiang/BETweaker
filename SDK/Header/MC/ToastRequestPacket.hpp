@@ -15,13 +15,11 @@ public:
     string mTitle;
     string mMessage;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOASTREQUESTPACKET
 public:
     class ToastRequestPacket& operator=(class ToastRequestPacket const &) = delete;
     ToastRequestPacket(class ToastRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ToastRequestPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ToastRequestPacket(std::string const &, std::string const &);
     MCAPI ToastRequestPacket();
-
-
 
 };

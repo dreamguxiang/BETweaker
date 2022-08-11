@@ -14,14 +14,12 @@ class NoodleCavifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOODLECAVIFIER
 public:
     class NoodleCavifier& operator=(class NoodleCavifier const &) = delete;
     NoodleCavifier(class NoodleCavifier const &) = delete;
     NoodleCavifier() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIER
@@ -30,7 +28,5 @@ public:
     MCAPI float cavify(float, class BlockPos const &) const;
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
-
-
 
 };

@@ -15,13 +15,11 @@ class RequestChunkRadiusPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REQUESTCHUNKRADIUSPACKET
 public:
     class RequestChunkRadiusPacket& operator=(class RequestChunkRadiusPacket const &) = delete;
     RequestChunkRadiusPacket(class RequestChunkRadiusPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RequestChunkRadiusPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTCHUNKRADIUSPACKET
 #endif
     MCAPI RequestChunkRadiusPacket();
-
-
 
 };

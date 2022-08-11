@@ -12,19 +12,15 @@ struct ActorDefinitionStartedEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONSTARTEDEVENT
 public:
     struct ActorDefinitionStartedEvent& operator=(struct ActorDefinitionStartedEvent const &) = delete;
     ActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent const &) = delete;
     ActorDefinitionStartedEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONSTARTEDEVENT
+#endif
     MCAPI ~ActorDefinitionStartedEvent();
-
-protected:
-
-private:
 
 };

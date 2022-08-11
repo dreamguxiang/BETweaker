@@ -16,14 +16,12 @@ class ThrownEgg : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNEGG
 public:
     class ThrownEgg& operator=(class ThrownEgg const &) = delete;
     ThrownEgg(class ThrownEgg const &) = delete;
     ThrownEgg() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -53,7 +51,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNEGG
 #endif
     MCAPI ThrownEgg(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

@@ -14,15 +14,15 @@ struct MolangProgramBuildState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGPROGRAMBUILDSTATE
 public:
     struct MolangProgramBuildState& operator=(struct MolangProgramBuildState const &) = delete;
     MolangProgramBuildState(struct MolangProgramBuildState const &) = delete;
     MolangProgramBuildState() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGPROGRAMBUILDSTATE
+#endif
     MCAPI unsigned __int64 allocateInstruction();
     MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
     MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams &)>);
@@ -34,9 +34,5 @@ public:
     MCAPI void pushReturnValue();
     MCAPI void setReturnValue(float);
     MCAPI ~MolangProgramBuildState();
-
-protected:
-
-private:
 
 };

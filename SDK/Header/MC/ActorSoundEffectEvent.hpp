@@ -12,7 +12,6 @@ class ActorSoundEffectEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSOUNDEFFECTEVENT
 public:
     class ActorSoundEffectEvent& operator=(class ActorSoundEffectEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorSoundEffectEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSOUNDEFFECTEVENT
 #endif
     MCAPI ~ActorSoundEffectEvent();
-
-
 
 };

@@ -14,14 +14,12 @@ class RunAroundLikeCrazyGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNAROUNDLIKECRAZYGOAL
 public:
     class RunAroundLikeCrazyGoal& operator=(class RunAroundLikeCrazyGoal const &) = delete;
     RunAroundLikeCrazyGoal(class RunAroundLikeCrazyGoal const &) = delete;
     RunAroundLikeCrazyGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RunAroundLikeCrazyGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNAROUNDLIKECRAZYGOAL
 #endif
     MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
-
-
 
 };

@@ -12,13 +12,11 @@ class SculkSpreader {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSPREADER
 public:
     class SculkSpreader& operator=(class SculkSpreader const &) = delete;
     SculkSpreader(class SculkSpreader const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSPREADER
@@ -41,7 +39,5 @@ public:
     MCAPI void save(class CompoundTag &) const;
     MCAPI void updateCursors(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, bool);
     MCAPI ~SculkSpreader();
-
-
 
 };

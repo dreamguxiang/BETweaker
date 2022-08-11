@@ -44,8 +44,6 @@ public:
 	bool mIsPremium, mIsPersona, mIsPersonaCapeOnClassicSkin, misPrimaryUser;
 	
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
 #endif
@@ -66,7 +64,5 @@ public:
     MCAPI ~SerializedSkin();
     MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
     MCAPI static bool isSkinDisabled(class SerializedSkin const &, class LevelData const &);
-
-
 
 };

@@ -14,14 +14,12 @@ class MinecraftReportGameListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTREPORTGAMELISTENER
 public:
     class MinecraftReportGameListener& operator=(class MinecraftReportGameListener const &) = delete;
     MinecraftReportGameListener(class MinecraftReportGameListener const &) = delete;
     MinecraftReportGameListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftReportGameListener();
@@ -40,8 +38,6 @@ public:
     MCAPI void _spawnLectern(std::string const &);
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const &, class BlockSource &);
 
-
 private:
-
 
 };

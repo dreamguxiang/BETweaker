@@ -16,14 +16,12 @@ class HellCaveFeature : public CaveFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELLCAVEFEATURE
 public:
     class HellCaveFeature& operator=(class HellCaveFeature const &) = delete;
     HellCaveFeature(class HellCaveFeature const &) = delete;
     HellCaveFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HellCaveFeature();
@@ -33,7 +31,5 @@ public:
     /*6*/ virtual void addFeature(class IBlockWorldGenAPI &, class ChunkPos const &, class Random &, class ChunkPos const &, class RenderParams &, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams> &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLCAVEFEATURE
 #endif
-
-
 
 };

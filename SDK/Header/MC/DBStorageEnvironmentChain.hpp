@@ -16,14 +16,12 @@ class DBStorageEnvironmentChain {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGEENVIRONMENTCHAIN
 public:
     class DBStorageEnvironmentChain& operator=(class DBStorageEnvironmentChain const &) = delete;
     DBStorageEnvironmentChain(class DBStorageEnvironmentChain const &) = delete;
     DBStorageEnvironmentChain() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEENVIRONMENTCHAIN
@@ -41,8 +39,6 @@ public:
 //private:
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const &);
 
-
 private:
-
 
 };

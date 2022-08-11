@@ -15,7 +15,6 @@ class TitleCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TITLECOMMAND
 public:
     class TitleCommand& operator=(class TitleCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     TitleCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TitleCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TITLECOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

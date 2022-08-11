@@ -14,14 +14,12 @@ class GameCallbacks {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMECALLBACKS
 public:
     class GameCallbacks& operator=(class GameCallbacks const &) = delete;
     GameCallbacks(class GameCallbacks const &) = delete;
     GameCallbacks() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameCallbacks();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void onBeforeSimTick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMECALLBACKS
 #endif
-
-
 
 };

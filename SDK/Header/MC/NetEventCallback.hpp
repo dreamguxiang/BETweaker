@@ -14,14 +14,12 @@ class NetEventCallback {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETEVENTCALLBACK
 public:
     class NetEventCallback& operator=(class NetEventCallback const &) = delete;
     NetEventCallback(class NetEventCallback const &) = delete;
     NetEventCallback() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetEventCallback();
@@ -238,7 +236,5 @@ public:
     MCVAPI void onUnableToConnect();
     MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
 #endif
-
-
 
 };

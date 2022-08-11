@@ -12,7 +12,6 @@ class AllowedAnywhereConsume {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWEDANYWHERECONSUME
 public:
     class AllowedAnywhereConsume& operator=(class AllowedAnywhereConsume const &) = delete;
@@ -20,12 +19,9 @@ public:
     AllowedAnywhereConsume() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWEDANYWHERECONSUME
 #endif
     MCAPI AllowedAnywhereConsume(enum ContainerEnumName, unsigned char, unsigned char);
-
-
 
 };

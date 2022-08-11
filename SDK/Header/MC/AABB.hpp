@@ -18,14 +18,12 @@ public:
     Vec3 pointB{};
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABB
 public:
     class AABB& operator=(class AABB const &) = delete;
     AABB(class AABB const &) = delete;
     AABB() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABB
@@ -66,7 +64,5 @@ public:
     MCAPI class AABB & translateCenterTo(class Vec3 const &);
     MCAPI static class AABB const BLOCK_SHAPE;
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
-
-
 
 };

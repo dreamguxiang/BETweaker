@@ -15,19 +15,16 @@ struct ItemControlDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCONTROLDEFINITION
 public:
     struct ItemControlDefinition& operator=(struct ItemControlDefinition const &) = delete;
     ItemControlDefinition(struct ItemControlDefinition const &) = delete;
     ItemControlDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCONTROLDEFINITION
+#endif
     MCAPI void addItemByName(std::string const &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ItemControlDefinition>> &);
 
 };

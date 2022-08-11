@@ -15,14 +15,12 @@ class CompressedNetworkPeer : public NetworkPeer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPRESSEDNETWORKPEER
 public:
     class CompressedNetworkPeer& operator=(class CompressedNetworkPeer const &) = delete;
     CompressedNetworkPeer(class CompressedNetworkPeer const &) = delete;
     CompressedNetworkPeer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompressedNetworkPeer();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPRESSEDNETWORKPEER
 #endif
     MCAPI CompressedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
-
-
 
 };

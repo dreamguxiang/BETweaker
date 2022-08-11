@@ -14,14 +14,12 @@ class ChestBoat : public Boat {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBOAT
 public:
     class ChestBoat& operator=(class ChestBoat const &) = delete;
     ChestBoat(class ChestBoat const &) = delete;
     ChestBoat() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~ChestBoat();
@@ -50,7 +48,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOAT
 #endif
     MCAPI ChestBoat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

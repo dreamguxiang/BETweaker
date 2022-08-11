@@ -16,13 +16,11 @@ class BlockActorDataPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTORDATAPACKET
 public:
     class BlockActorDataPacket& operator=(class BlockActorDataPacket const &) = delete;
     BlockActorDataPacket(class BlockActorDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockActorDataPacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI BlockActorDataPacket(class BlockPos const &, class CompoundTag);
     MCAPI BlockActorDataPacket();
-
-
 
 };

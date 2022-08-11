@@ -14,13 +14,11 @@ class LookAtActorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORNODE
 public:
     class LookAtActorNode& operator=(class LookAtActorNode const &) = delete;
     LookAtActorNode(class LookAtActorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookAtActorNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATACTORNODE
 #endif
     MCAPI LookAtActorNode();
-
-
 
 };

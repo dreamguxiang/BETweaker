@@ -14,20 +14,16 @@ struct ChunkPerformanceData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPERFORMANCEDATA
 public:
     struct ChunkPerformanceData& operator=(struct ChunkPerformanceData const &) = delete;
     ChunkPerformanceData(struct ChunkPerformanceData const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPERFORMANCEDATA
+#endif
     MCAPI ChunkPerformanceData();
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     MCAPI void resetAll();
-
-protected:
-
-private:
 
 };

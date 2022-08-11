@@ -12,14 +12,12 @@ class StorageItemComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STORAGEITEMCOMPONENT
 public:
     class StorageItemComponent& operator=(class StorageItemComponent const &) = delete;
     StorageItemComponent(class StorageItemComponent const &) = delete;
     StorageItemComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STORAGEITEMCOMPONENT
@@ -41,8 +39,6 @@ public:
     MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, unsigned int) const;
     MCAPI void _updateRemainingWeight(class ItemStack &, class ItemStack const &, int) const;
 
-
 private:
-
 
 };

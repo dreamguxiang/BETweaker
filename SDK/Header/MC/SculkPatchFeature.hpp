@@ -14,14 +14,12 @@ class SculkPatchFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKPATCHFEATURE
 public:
     class SculkPatchFeature& operator=(class SculkPatchFeature const &) = delete;
     SculkPatchFeature(class SculkPatchFeature const &) = delete;
     SculkPatchFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkPatchFeature();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI class std::optional<class BlockPos> _getNearestSolidNeighborPos(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
-
 private:
-
 
 };

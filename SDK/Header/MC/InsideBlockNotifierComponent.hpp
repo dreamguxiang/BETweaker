@@ -14,14 +14,12 @@ class InsideBlockNotifierComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERCOMPONENT
 public:
     class InsideBlockNotifierComponent& operator=(class InsideBlockNotifierComponent const &) = delete;
     InsideBlockNotifierComponent(class InsideBlockNotifierComponent const &) = delete;
     InsideBlockNotifierComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKNOTIFIERCOMPONENT
@@ -30,7 +28,5 @@ public:
     MCAPI bool isTrackedBlock(class Block const &) const;
     MCAPI void resetBlocksInsideState();
     MCAPI void setInsideBlock(class Block const &, bool);
-
-
 
 };

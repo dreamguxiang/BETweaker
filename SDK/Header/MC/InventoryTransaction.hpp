@@ -19,13 +19,11 @@ public:
     std::vector<class InventoryTransactionItemGroup> items;                                // 0x40
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTION
 public:
     class InventoryTransaction& operator=(class InventoryTransaction const &) = delete;
     InventoryTransaction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTION
@@ -49,9 +47,7 @@ public:
     MCAPI void _dropCreatedItems(class Player &) const;
     MCAPI void addItemToContent(class ItemStack const &, int);
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
-
 
 };

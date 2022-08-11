@@ -15,7 +15,6 @@ class TakePictureCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAKEPICTURECOMMAND
 public:
     class TakePictureCommand& operator=(class TakePictureCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     TakePictureCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TakePictureCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEPICTURECOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

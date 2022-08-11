@@ -15,14 +15,12 @@ class NetherFossilFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFOSSILFEATURE
 public:
     class NetherFossilFeature& operator=(class NetherFossilFeature const &) = delete;
     NetherFossilFeature(class NetherFossilFeature const &) = delete;
     NetherFossilFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherFossilFeature();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
-
 
 };

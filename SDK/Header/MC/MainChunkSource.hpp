@@ -15,14 +15,12 @@ class MainChunkSource : public ChunkSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAINCHUNKSOURCE
 public:
     class MainChunkSource& operator=(class MainChunkSource const &) = delete;
     MainChunkSource(class MainChunkSource const &) = delete;
     MainChunkSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MainChunkSource();
@@ -32,13 +30,11 @@ public:
     /*7*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
     /*18*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
-    /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
+    /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage();
     /*25*/ virtual void clearDeletedEntities();
-    /*26*/ virtual bool canCreateViews() const;
+    /*26*/ virtual bool canCreateViews();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAINCHUNKSOURCE
 #endif
     MCAPI MainChunkSource(std::unique_ptr<class ChunkSource>);
-
-
 
 };

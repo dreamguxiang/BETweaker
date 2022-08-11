@@ -12,14 +12,12 @@ class GoAndGiveItemsToOwnerGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOANDGIVEITEMSTOOWNERGOAL
 public:
     class GoAndGiveItemsToOwnerGoal& operator=(class GoAndGiveItemsToOwnerGoal const &) = delete;
     GoAndGiveItemsToOwnerGoal(class GoAndGiveItemsToOwnerGoal const &) = delete;
     GoAndGiveItemsToOwnerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GoAndGiveItemsToOwnerGoal();
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI bool _attemptToGiveItem();
 
-
 private:
-
 
 };

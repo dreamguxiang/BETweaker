@@ -14,13 +14,11 @@ class MobEffectComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTCOMPONENT
 public:
     class MobEffectComponent& operator=(class MobEffectComponent const &) = delete;
     MobEffectComponent(class MobEffectComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void tick(class Actor &);
     MCAPI ~MobEffectComponent();
-
-
 
 };

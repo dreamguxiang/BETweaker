@@ -16,13 +16,11 @@ class RemoveActorPacket : public Packet {
 public:
     ActorUniqueID mUid;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEACTORPACKET
 public:
     class RemoveActorPacket& operator=(class RemoveActorPacket const &) = delete;
     RemoveActorPacket(class RemoveActorPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveActorPacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI RemoveActorPacket(struct ActorUniqueID);
     MCAPI RemoveActorPacket();
-
-
 
 };

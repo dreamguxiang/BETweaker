@@ -14,14 +14,12 @@ class FindMountGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDMOUNTGOAL
 public:
     class FindMountGoal& operator=(class FindMountGoal const &) = delete;
     FindMountGoal(class FindMountGoal const &) = delete;
     FindMountGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FindMountGoal();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
-
-
 
 };

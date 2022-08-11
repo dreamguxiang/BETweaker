@@ -14,14 +14,12 @@ class HopperBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERBLOCKACTOR
 public:
     class HopperBlockActor& operator=(class HopperBlockActor const &) = delete;
     HopperBlockActor(class HopperBlockActor const &) = delete;
     HopperBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
@@ -56,8 +54,6 @@ public:
     MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
     MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
 
-
 private:
-
 
 };

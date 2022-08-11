@@ -14,7 +14,6 @@ class ToolRecipes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOOLRECIPES
 public:
     class ToolRecipes& operator=(class ToolRecipes const &) = delete;
@@ -22,12 +21,9 @@ public:
     ToolRecipes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOOLRECIPES
 #endif
     MCAPI static void addRecipes(class Recipes &);
-
-
 
 };

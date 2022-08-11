@@ -15,14 +15,12 @@ class InspectBookshelfGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSPECTBOOKSHELFGOAL
 public:
     class InspectBookshelfGoal& operator=(class InspectBookshelfGoal const &) = delete;
     InspectBookshelfGoal(class InspectBookshelfGoal const &) = delete;
     InspectBookshelfGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InspectBookshelfGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSPECTBOOKSHELFGOAL
 #endif
     MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
-
-
 
 };

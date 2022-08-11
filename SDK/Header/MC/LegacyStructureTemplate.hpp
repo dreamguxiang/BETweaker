@@ -14,13 +14,11 @@ class LegacyStructureTemplate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURETEMPLATE
 public:
     class LegacyStructureTemplate& operator=(class LegacyStructureTemplate const &) = delete;
     LegacyStructureTemplate(class LegacyStructureTemplate const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string>>> getMarkers(class BlockPos const &, class LegacyStructureSettings &) const;
@@ -61,8 +59,6 @@ public:
     MCAPI static void _mapPropertyToTag(class CompoundTag &, std::string const &, std::string const &);
     MCAPI static std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const &);
 
-
 private:
-
 
 };

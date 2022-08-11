@@ -17,14 +17,12 @@ public:
 enum UseAction;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAITEMCOMPONENTLEGACY
 public:
     class CameraItemComponentLegacy& operator=(class CameraItemComponentLegacy const &) = delete;
     CameraItemComponentLegacy(class CameraItemComponentLegacy const &) = delete;
     CameraItemComponentLegacy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CameraItemComponentLegacy();
@@ -48,8 +46,6 @@ public:
 //private:
     MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 
-
 private:
-
 
 };

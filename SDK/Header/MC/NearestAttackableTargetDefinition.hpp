@@ -15,14 +15,12 @@ class NearestAttackableTargetDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTATTACKABLETARGETDEFINITION
 public:
     class NearestAttackableTargetDefinition& operator=(class NearestAttackableTargetDefinition const &) = delete;
     NearestAttackableTargetDefinition(class NearestAttackableTargetDefinition const &) = delete;
     NearestAttackableTargetDefinition() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NearestAttackableTargetDefinition();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI void initialize(class EntityContext &, class NearestAttackableTargetGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>> &);
-
-
 
 };

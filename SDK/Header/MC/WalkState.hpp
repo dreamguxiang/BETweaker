@@ -15,14 +15,12 @@ class WalkState : public PetSleepWithOwnerState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALKSTATE
 public:
     class WalkState& operator=(class WalkState const &) = delete;
     WalkState(class WalkState const &) = delete;
     WalkState() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WalkState();
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALKSTATE
 #endif
-
-
 
 };

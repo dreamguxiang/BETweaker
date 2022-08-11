@@ -15,14 +15,12 @@ class PackManifestFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKMANIFESTFACTORY
 public:
     class PackManifestFactory& operator=(class PackManifestFactory const &) = delete;
     PackManifestFactory(class PackManifestFactory const &) = delete;
     PackManifestFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackManifestFactory();
@@ -39,7 +37,5 @@ public:
     MCAPI static std::string contentKeyLookup(std::string const &);
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;
     MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mContentKeys;
-
-
 
 };

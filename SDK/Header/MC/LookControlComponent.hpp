@@ -14,13 +14,11 @@ class LookControlComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKCONTROLCOMPONENT
 public:
     class LookControlComponent& operator=(class LookControlComponent const &) = delete;
     LookControlComponent(class LookControlComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROLCOMPONENT
@@ -42,7 +40,5 @@ public:
     MCAPI void setLookAtRotation(class Vec3 const &, float, float);
     MCAPI void setYMax(float);
     MCAPI void update(class Mob &);
-
-
 
 };

@@ -16,7 +16,6 @@ class GetInteractionPositionForBlockDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
 public:
     class GetInteractionPositionForBlockDefinition& operator=(class GetInteractionPositionForBlockDefinition const &) = delete;
@@ -24,13 +23,10 @@ public:
     GetInteractionPositionForBlockDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
 #endif
-
-
 
 };

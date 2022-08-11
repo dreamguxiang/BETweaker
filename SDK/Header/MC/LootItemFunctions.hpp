@@ -15,7 +15,6 @@ class LootItemFunctions {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMFUNCTIONS
 public:
     class LootItemFunctions& operator=(class LootItemFunctions const &) = delete;
@@ -23,12 +22,9 @@ public:
     LootItemFunctions() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTIONS
 #endif
     MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value);
-
-
 
 };

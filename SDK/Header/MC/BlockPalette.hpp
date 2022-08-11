@@ -14,14 +14,12 @@ class BlockPalette {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPALETTE
 public:
     class BlockPalette& operator=(class BlockPalette const &) = delete;
     BlockPalette(class BlockPalette const &) = delete;
     BlockPalette() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;
 
-
 private:
-
 
 };

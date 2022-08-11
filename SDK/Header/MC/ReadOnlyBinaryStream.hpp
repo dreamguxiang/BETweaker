@@ -54,14 +54,12 @@ public:
     LIAPI std::unique_ptr<class CompoundTag> getCompoundTag();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_READONLYBINARYSTREAM
 public:
     class ReadOnlyBinaryStream& operator=(class ReadOnlyBinaryStream const &) = delete;
     ReadOnlyBinaryStream(class ReadOnlyBinaryStream const &) = delete;
     ReadOnlyBinaryStream() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
@@ -90,7 +88,5 @@ public:
     MCAPI unsigned __int64 getUnsignedVarInt64();
     MCAPI int getVarInt();
     MCAPI __int64 getVarInt64();
-
-
 
 };

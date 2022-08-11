@@ -14,14 +14,12 @@ class AgentCommandSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDSYSTEM
 public:
     class AgentCommandSystem& operator=(class AgentCommandSystem const &) = delete;
     AgentCommandSystem(class AgentCommandSystem const &) = delete;
     AgentCommandSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AgentCommandSystem();
@@ -33,7 +31,5 @@ public:
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct AgentComponents::InitializingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
     MCAPI static void tickAgentCooldown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::CommandCooldown, class AgentComponents::ActionQueue> &);
     MCAPI static void tickLegacy(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentCommandComponent, class FlagComponent<struct AgentComponents::ExecutingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
-
-
 
 };

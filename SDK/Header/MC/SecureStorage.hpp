@@ -14,7 +14,6 @@ class SecureStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SECURESTORAGE
 public:
     class SecureStorage& operator=(class SecureStorage const &) = delete;
@@ -22,11 +21,8 @@ public:
     SecureStorage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
 #endif
-
-
 
 };

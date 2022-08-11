@@ -12,7 +12,6 @@ class SpatialQueryUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPATIALQUERYUTILITY
 public:
     class SpatialQueryUtility& operator=(class SpatialQueryUtility const &) = delete;
@@ -20,12 +19,9 @@ public:
     SpatialQueryUtility() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALQUERYUTILITY
 #endif
     MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, class std::function<void (class Block const &, class BlockPos const &)> const &);
-
-
 
 };

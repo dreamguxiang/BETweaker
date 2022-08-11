@@ -15,14 +15,12 @@ class TextObjectSelector {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTSELECTOR
 public:
     class TextObjectSelector& operator=(class TextObjectSelector const &) = delete;
     TextObjectSelector(class TextObjectSelector const &) = delete;
     TextObjectSelector() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TextObjectSelector();
@@ -34,7 +32,5 @@ public:
     MCAPI TextObjectSelector(std::string);
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
-
-
 
 };

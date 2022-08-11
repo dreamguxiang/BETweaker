@@ -15,13 +15,11 @@ class ActorSkeletalAnimationPtr {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATIONPTR
 public:
     ActorSkeletalAnimationPtr(class ActorSkeletalAnimationPtr const &) = delete;
     ActorSkeletalAnimationPtr() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPTR
@@ -34,7 +32,5 @@ public:
     MCAPI class ActorSkeletalAnimationPtr & operator=(class ActorSkeletalAnimationPtr const &);
     MCAPI ~ActorSkeletalAnimationPtr();
     MCAPI static class ActorSkeletalAnimationPtr const NONE;
-
-
 
 };

@@ -12,7 +12,6 @@ class EducationLocalLevelSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONLOCALLEVELSETTINGS
 public:
     class EducationLocalLevelSettings& operator=(class EducationLocalLevelSettings const &) = delete;
@@ -20,12 +19,9 @@ public:
     EducationLocalLevelSettings() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONLOCALLEVELSETTINGS
 #endif
     MCAPI ~EducationLocalLevelSettings();
-
-
 
 };

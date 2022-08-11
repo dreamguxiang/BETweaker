@@ -15,13 +15,11 @@ class BlockBreakSensorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREAKSENSORDEFINITION
 public:
     class BlockBreakSensorDefinition& operator=(class BlockBreakSensorDefinition const &) = delete;
     BlockBreakSensorDefinition(class BlockBreakSensorDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI BlockBreakSensorDefinition();
     MCAPI void initialize(class EntityContext &, class BlockBreakSensorComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>> &);
-
-
 
 };

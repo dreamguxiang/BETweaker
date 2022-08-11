@@ -15,12 +15,10 @@ class LevelSettings {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSETTINGS
 public:
     class LevelSettings& operator=(class LevelSettings const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSETTINGS
@@ -107,7 +105,5 @@ public:
     MCAPI bool useMsaGamertagsOnly() const;
     MCAPI ~LevelSettings();
     MCAPI static class std::optional<class LevelSeed64> parseSeedString(std::string const &);
-
-
 
 };

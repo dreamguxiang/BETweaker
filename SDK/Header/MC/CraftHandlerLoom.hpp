@@ -15,7 +15,6 @@ class CraftHandlerLoom : public CraftHandlerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERLOOM
 public:
     class CraftHandlerLoom& operator=(class CraftHandlerLoom const &) = delete;
@@ -23,14 +22,11 @@ public:
     CraftHandlerLoom() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CraftHandlerLoom();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERLOOM
 #endif
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
-
-
 
 };

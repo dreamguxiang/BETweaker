@@ -14,13 +14,11 @@ class LevelDbEnv {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBENV
 public:
     class LevelDbEnv& operator=(class LevelDbEnv const &) = delete;
     LevelDbEnv(class LevelDbEnv const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBENV
@@ -50,9 +48,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class LevelDbEnv * sSingleton;
-
 
 };

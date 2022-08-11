@@ -12,14 +12,12 @@ class AllayVibrationConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLAYVIBRATIONCONFIG
 public:
     class AllayVibrationConfig& operator=(class AllayVibrationConfig const &) = delete;
     AllayVibrationConfig(class AllayVibrationConfig const &) = delete;
     AllayVibrationConfig() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AllayVibrationConfig();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLAYVIBRATIONCONFIG
 #endif
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
-
-
 
 };

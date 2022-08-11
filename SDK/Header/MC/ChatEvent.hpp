@@ -12,20 +12,16 @@ struct ChatEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHATEVENT
 public:
     struct ChatEvent& operator=(struct ChatEvent const &) = delete;
     ChatEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHATEVENT
+#endif
     MCAPI ChatEvent(struct ChatEvent &&);
     MCAPI ChatEvent(struct ChatEvent const &);
     MCAPI ~ChatEvent();
-
-protected:
-
-private:
 
 };

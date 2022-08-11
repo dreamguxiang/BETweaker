@@ -15,14 +15,12 @@ class RakWebSocket {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKET
 public:
     class RakWebSocket& operator=(class RakWebSocket const &) = delete;
     RakWebSocket(class RakWebSocket const &) = delete;
     RakWebSocket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RakWebSocket();
@@ -33,8 +31,8 @@ public:
     /*5*/ virtual void setOnCloseHandler(class std::function<void (enum CloseStatusCode, std::string const &)> const &);
     /*6*/ virtual void setOnConnectedHandler(class std::function<void (std::string const &)> const &);
     /*7*/ virtual void tick();
-    /*8*/ virtual void _updateState() = 0;
-    /*9*/ virtual unsigned int _genMaskingKey() const = 0;
+    /*8*/ virtual void _updateState();
+    /*9*/ virtual unsigned int _genMaskingKey();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
 #endif
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
@@ -63,8 +61,6 @@ public:
     MCAPI void _validateFields();
     MCAPI bool _validateWebSocketURI();
 
-
 protected:
-
 
 };

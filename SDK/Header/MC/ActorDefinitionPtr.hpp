@@ -14,12 +14,10 @@ class ActorDefinitionPtr {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONPTR
 public:
     class ActorDefinitionPtr& operator=(class ActorDefinitionPtr const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONPTR
@@ -30,7 +28,5 @@ public:
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     MCAPI ~ActorDefinitionPtr();
     MCAPI static class ActorDefinitionPtr const NONE;
-
-
 
 };

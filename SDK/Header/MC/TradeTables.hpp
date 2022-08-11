@@ -15,14 +15,12 @@ class TradeTables {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADETABLES
 public:
     class TradeTables& operator=(class TradeTables const &) = delete;
     TradeTables(class TradeTables const &) = delete;
     TradeTables() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETABLES
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager *, class Core::Path const &);
 
-
 private:
-
 
 };

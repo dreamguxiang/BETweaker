@@ -15,14 +15,12 @@ class WebRTCNetworkPeer : public NetworkPeer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBRTCNETWORKPEER
 public:
     class WebRTCNetworkPeer& operator=(class WebRTCNetworkPeer const &) = delete;
     WebRTCNetworkPeer(class WebRTCNetworkPeer const &) = delete;
     WebRTCNetworkPeer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WebRTCNetworkPeer();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _updateConnectionStatus();
 
-
 private:
-
 
 };

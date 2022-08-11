@@ -15,14 +15,12 @@ class NBBridgeEndFiller : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBBRIDGEENDFILLER
 public:
     class NBBridgeEndFiller& operator=(class NBBridgeEndFiller const &) = delete;
     NBBridgeEndFiller(class NBBridgeEndFiller const &) = delete;
     NBBridgeEndFiller() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBBridgeEndFiller();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBBRIDGEENDFILLER
 #endif
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
-
-
 
 };

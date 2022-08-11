@@ -14,7 +14,6 @@ class MobEffectSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTSYSTEM
 public:
     class MobEffectSystem& operator=(class MobEffectSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     MobEffectSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MobEffectSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSYSTEM
 #endif
-
-
 
 };

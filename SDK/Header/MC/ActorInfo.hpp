@@ -14,21 +14,17 @@ struct ActorInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFO
 public:
     ActorInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINFO
+#endif
     MCAPI ActorInfo(struct ActorInfo const &);
     MCAPI void load(class CompoundTag const *);
     MCAPI struct ActorInfo & operator=(struct ActorInfo const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~ActorInfo();
-
-protected:
-
-private:
 
 };

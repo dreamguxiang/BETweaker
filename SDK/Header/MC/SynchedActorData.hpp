@@ -151,13 +151,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATA
 public:
     class SynchedActorData& operator=(class SynchedActorData const &) = delete;
     SynchedActorData(class SynchedActorData const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
@@ -193,8 +191,6 @@ public:
     MCAPI class DataItem & _get(unsigned short);
     MCAPI void _resizeToContain(unsigned short);
 
-
 private:
-
 
 };

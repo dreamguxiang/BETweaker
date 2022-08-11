@@ -15,7 +15,6 @@ class CoralHangFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALHANGFEATURE
 public:
     class CoralHangFeature& operator=(class CoralHangFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     CoralHangFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CoralHangFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALHANGFEATURE
 #endif
-
-
 
 };

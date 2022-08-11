@@ -12,14 +12,12 @@ class AmbientSoundServerSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDSERVERSYSTEM
 public:
     class AmbientSoundServerSystem& operator=(class AmbientSoundServerSystem const &) = delete;
     AmbientSoundServerSystem(class AmbientSoundServerSystem const &) = delete;
     AmbientSoundServerSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AmbientSoundServerSystem();
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
 
-
 private:
-
 
 };

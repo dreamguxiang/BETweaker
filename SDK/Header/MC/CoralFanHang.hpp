@@ -15,14 +15,12 @@ class CoralFanHang : public CoralFan {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALFANHANG
 public:
     class CoralFanHang& operator=(class CoralFanHang const &) = delete;
     CoralFanHang(class CoralFanHang const &) = delete;
     CoralFanHang() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CoralFanHang();
@@ -53,7 +51,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -76,7 +74,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFANHANG
 #endif
     MCAPI CoralFanHang(std::string const &, int);
-
-
 
 };

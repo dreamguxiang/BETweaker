@@ -14,13 +14,11 @@ class AppPlatformListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMLISTENER
 public:
     class AppPlatformListener& operator=(class AppPlatformListener const &) = delete;
     AppPlatformListener(class AppPlatformListener const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
@@ -44,7 +42,5 @@ public:
 #endif
     MCAPI AppPlatformListener();
     MCAPI void terminate();
-
-
 
 };

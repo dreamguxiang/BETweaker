@@ -13,14 +13,12 @@ class MangroveTreeRoots {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVETREEROOTS
 public:
     class MangroveTreeRoots& operator=(class MangroveTreeRoots const &) = delete;
     MangroveTreeRoots(class MangroveTreeRoots const &) = delete;
     MangroveTreeRoots() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MangroveTreeRoots();
@@ -33,9 +31,7 @@ public:
     MCAPI std::vector<class BlockPos> _potentialRootPositions(class BlockPos const &, unsigned char, class Random &, class BlockPos const &) const;
     MCAPI bool _simulateRoots(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, class BlockPos const &, unsigned char, std::vector<class BlockPos> *, int, struct TreeHelper::TreeParams const &) const;
 
-
 private:
     MCAPI static float const RANDOM_SKEW_CHANCE;
-
 
 };

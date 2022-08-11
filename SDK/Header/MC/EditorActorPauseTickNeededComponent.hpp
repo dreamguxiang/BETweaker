@@ -12,19 +12,15 @@ struct EditorActorPauseTickNeededComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDITORACTORPAUSETICKNEEDEDCOMPONENT
 public:
     struct EditorActorPauseTickNeededComponent& operator=(struct EditorActorPauseTickNeededComponent const &) = delete;
     EditorActorPauseTickNeededComponent(struct EditorActorPauseTickNeededComponent const &) = delete;
     EditorActorPauseTickNeededComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORACTORPAUSETICKNEEDEDCOMPONENT
+#endif
     MCAPI ~EditorActorPauseTickNeededComponent();
-
-protected:
-
-private:
 
 };

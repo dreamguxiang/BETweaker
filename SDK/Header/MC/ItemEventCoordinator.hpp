@@ -14,13 +14,11 @@ class ItemEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTCOORDINATOR
 public:
     class ItemEventCoordinator& operator=(class ItemEventCoordinator const &) = delete;
     ItemEventCoordinator(class ItemEventCoordinator const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTCOORDINATOR
@@ -31,7 +29,5 @@ public:
     MCAPI void onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult>>);
-
-
 
 };

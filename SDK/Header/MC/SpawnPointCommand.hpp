@@ -15,7 +15,6 @@ class SpawnPointCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNPOINTCOMMAND
 public:
     class SpawnPointCommand& operator=(class SpawnPointCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     SpawnPointCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SpawnPointCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNPOINTCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

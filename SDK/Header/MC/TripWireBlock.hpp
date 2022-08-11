@@ -15,14 +15,12 @@ class TripWireBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPWIREBLOCK
 public:
     class TripWireBlock& operator=(class TripWireBlock const &) = delete;
     TripWireBlock(class TripWireBlock const &) = delete;
     TripWireBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TripWireBlock();
@@ -51,8 +49,8 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*112*/ virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
@@ -63,7 +61,7 @@ public:
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
@@ -81,8 +79,6 @@ public:
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
     MCAPI void updateSource(class BlockSource &, class BlockPos const &, class Block const &) const;
 
-
 private:
-
 
 };

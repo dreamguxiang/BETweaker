@@ -14,13 +14,11 @@ class FilterInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUT
 public:
     FilterInput(class FilterInput const &) = delete;
     FilterInput() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUT
@@ -28,7 +26,5 @@ public:
     MCAPI FilterInput(int);
     MCAPI class FilterInput & operator=(class FilterInput const &);
     MCAPI ~FilterInput();
-
-
 
 };

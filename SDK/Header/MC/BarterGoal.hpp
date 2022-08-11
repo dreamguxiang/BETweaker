@@ -14,14 +14,12 @@ class BarterGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERGOAL
 public:
     class BarterGoal& operator=(class BarterGoal const &) = delete;
     BarterGoal(class BarterGoal const &) = delete;
     BarterGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BarterGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI class Vec3 _getThrowVector();
 
-
 private:
-
 
 };

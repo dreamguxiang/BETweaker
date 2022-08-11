@@ -22,14 +22,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLELEMENT
 public:
     class StructurePoolElement& operator=(class StructurePoolElement const &) = delete;
     StructurePoolElement(class StructurePoolElement const &) = delete;
     StructurePoolElement() = delete;
 #endif
-
 
 public:
     /*0*/ virtual class BlockPos getSize(enum Rotation) const;
@@ -53,8 +51,6 @@ public:
 //private:
     MCAPI class StructurePoolElement::LazyTemplate const & _getTemplate() const;
 
-
 private:
-
 
 };

@@ -14,14 +14,12 @@ class ScatteredFeaturePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTEREDFEATUREPIECE
 public:
     class ScatteredFeaturePiece& operator=(class ScatteredFeaturePiece const &) = delete;
     ScatteredFeaturePiece(class ScatteredFeaturePiece const &) = delete;
     ScatteredFeaturePiece() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
@@ -31,8 +29,6 @@ public:
 //protected:
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
-
 protected:
-
 
 };

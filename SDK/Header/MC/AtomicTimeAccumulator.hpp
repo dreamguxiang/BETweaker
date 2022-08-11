@@ -14,13 +14,11 @@ class AtomicTimeAccumulator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATOMICTIMEACCUMULATOR
 public:
     class AtomicTimeAccumulator& operator=(class AtomicTimeAccumulator const &) = delete;
     AtomicTimeAccumulator(class AtomicTimeAccumulator const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATOMICTIMEACCUMULATOR
@@ -28,7 +26,5 @@ public:
     MCAPI AtomicTimeAccumulator();
     MCAPI void addTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     MCAPI void reset();
-
-
 
 };

@@ -15,13 +15,11 @@ class SlimeMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEMOVECONTROL
 public:
     class SlimeMoveControl& operator=(class SlimeMoveControl const &) = delete;
     SlimeMoveControl(class SlimeMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlimeMoveControl();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEMOVECONTROL
 #endif
     MCAPI SlimeMoveControl();
-
-
 
 };

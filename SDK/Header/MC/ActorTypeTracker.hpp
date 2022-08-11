@@ -14,13 +14,11 @@ class ActorTypeTracker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTYPETRACKER
 public:
     class ActorTypeTracker& operator=(class ActorTypeTracker const &) = delete;
     ActorTypeTracker(class ActorTypeTracker const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTYPETRACKER
@@ -29,7 +27,5 @@ public:
     MCAPI void markSeenType(class Actor const &);
     MCAPI bool shouldSendPropertyUpdate(class Actor const &);
     MCAPI ~ActorTypeTracker();
-
-
 
 };

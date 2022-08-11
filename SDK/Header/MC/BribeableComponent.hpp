@@ -14,13 +14,11 @@ class BribeableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIBEABLECOMPONENT
 public:
     class BribeableComponent& operator=(class BribeableComponent const &) = delete;
     BribeableComponent(class BribeableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIBEABLECOMPONENT
@@ -38,8 +36,6 @@ public:
     MCAPI void _bribe(class Actor &, class Player &);
     MCAPI bool _canBribe(class ItemStack const &);
 
-
 private:
-
 
 };

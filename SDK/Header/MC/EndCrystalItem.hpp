@@ -16,7 +16,6 @@ class EndCrystalItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCRYSTALITEM
 public:
     class EndCrystalItem& operator=(class EndCrystalItem const &) = delete;
@@ -24,17 +23,16 @@ public:
     EndCrystalItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EndCrystalItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
+    /*51*/ virtual bool isGlint(class ItemStackBase const &);
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*57*/ virtual bool isDestructive(int) const;
+    /*57*/ virtual bool isDestructive(int);
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -42,11 +40,10 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCRYSTALITEM
 #endif
     MCAPI EndCrystalItem(std::string const &, int);
-
-
 
 };

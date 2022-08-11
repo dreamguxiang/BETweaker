@@ -15,13 +15,11 @@ class DropItemForDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPITEMFORDEFINITION
 public:
     class DropItemForDefinition& operator=(class DropItemForDefinition const &) = delete;
     DropItemForDefinition(class DropItemForDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPITEMFORDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI DropItemForDefinition();
     MCAPI void initialize(class EntityContext &, class DropItemForGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>> &);
-
-
 
 };

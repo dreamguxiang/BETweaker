@@ -15,14 +15,12 @@ class DefaultDataLoadHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTDATALOADHELPER
 public:
     class DefaultDataLoadHelper& operator=(class DefaultDataLoadHelper const &) = delete;
     DefaultDataLoadHelper(class DefaultDataLoadHelper const &) = delete;
     DefaultDataLoadHelper() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DefaultDataLoadHelper();
@@ -59,7 +57,5 @@ public:
     MCVAPI float loadRotationRadiansX(float);
     MCVAPI float loadRotationRadiansY(float);
 #endif
-
-
 
 };

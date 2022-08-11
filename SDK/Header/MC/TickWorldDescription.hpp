@@ -15,13 +15,11 @@ class TickWorldDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKWORLDDESCRIPTION
 public:
     class TickWorldDescription& operator=(class TickWorldDescription const &) = delete;
     TickWorldDescription(class TickWorldDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDDESCRIPTION
 #endif
     MCAPI TickWorldDescription();
-
-
 
 };

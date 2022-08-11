@@ -15,14 +15,12 @@ class VexCopyOwnerTargetGoal : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEXCOPYOWNERTARGETGOAL
 public:
     class VexCopyOwnerTargetGoal& operator=(class VexCopyOwnerTargetGoal const &) = delete;
     VexCopyOwnerTargetGoal(class VexCopyOwnerTargetGoal const &) = delete;
     VexCopyOwnerTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VexCopyOwnerTargetGoal();
@@ -34,7 +32,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXCOPYOWNERTARGETGOAL
 #endif
     MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
-
-
 
 };

@@ -14,14 +14,12 @@ class BeaconBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONBLOCKACTOR
 public:
     class BeaconBlockActor& operator=(class BeaconBlockActor const &) = delete;
     BeaconBlockActor(class BeaconBlockActor const &) = delete;
     BeaconBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONBLOCKACTOR
@@ -60,8 +58,6 @@ public:
     MCAPI void _loadClientSideState(class Level &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
 
-
 private:
-
 
 };

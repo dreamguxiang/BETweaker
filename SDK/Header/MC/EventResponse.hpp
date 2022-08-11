@@ -15,14 +15,12 @@ class EventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTRESPONSE
 public:
     class EventResponse& operator=(class EventResponse const &) = delete;
     EventResponse(class EventResponse const &) = delete;
     EventResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EventResponse();
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSE
 #endif
-
-
 
 };

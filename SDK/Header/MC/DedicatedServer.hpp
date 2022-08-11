@@ -18,13 +18,11 @@ public:
 enum StartResult;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVER
 public:
     class DedicatedServer& operator=(class DedicatedServer const &) = delete;
     DedicatedServer(class DedicatedServer const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
@@ -49,8 +47,6 @@ public:
     MCAPI void initializeHttp(enum Bedrock::Http::Implementation);
     MCAPI void initializeLogging();
 
-
 private:
-
 
 };

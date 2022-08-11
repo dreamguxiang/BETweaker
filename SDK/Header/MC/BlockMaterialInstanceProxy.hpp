@@ -12,19 +12,16 @@ struct BlockMaterialInstanceProxy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCEPROXY
 public:
     struct BlockMaterialInstanceProxy& operator=(struct BlockMaterialInstanceProxy const &) = delete;
     BlockMaterialInstanceProxy() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCEPROXY
+#endif
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const &);
     MCAPI ~BlockMaterialInstanceProxy();
-
-protected:
-
-private:
+    MCAPI static void bindType();
 
 };

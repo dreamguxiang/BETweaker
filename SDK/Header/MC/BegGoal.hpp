@@ -14,14 +14,12 @@ class BegGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEGGOAL
 public:
     class BegGoal& operator=(class BegGoal const &) = delete;
     BegGoal(class BegGoal const &) = delete;
     BegGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BegGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _playerHoldingInteresting(class Player *);
 
-
 private:
-
 
 };

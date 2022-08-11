@@ -16,14 +16,12 @@ class ComplexItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLEXITEM
 public:
     class ComplexItem& operator=(class ComplexItem const &) = delete;
     ComplexItem(class ComplexItem const &) = delete;
     ComplexItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ComplexItem();
@@ -40,12 +38,11 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXITEM
     MCVAPI bool isComplex() const;
 #endif
     MCAPI ComplexItem(std::string const &, int);
-
-
 
 };

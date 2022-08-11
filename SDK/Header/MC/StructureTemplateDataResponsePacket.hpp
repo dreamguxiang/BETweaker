@@ -15,13 +15,11 @@ class StructureTemplateDataResponsePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATARESPONSEPACKET
 public:
     class StructureTemplateDataResponsePacket& operator=(class StructureTemplateDataResponsePacket const &) = delete;
     StructureTemplateDataResponsePacket(class StructureTemplateDataResponsePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureTemplateDataResponsePacket();
@@ -34,7 +32,5 @@ public:
     MCAPI StructureTemplateDataResponsePacket(std::string const &, std::unique_ptr<class CompoundTag>, enum StructureTemplateResponseType);
     MCAPI StructureTemplateDataResponsePacket();
     MCAPI class StructureTemplateDataResponsePacket & operator=(class StructureTemplateDataResponsePacket &&);
-
-
 
 };

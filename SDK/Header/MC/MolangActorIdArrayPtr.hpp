@@ -12,20 +12,16 @@ struct MolangActorIdArrayPtr {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGACTORIDARRAYPTR
 public:
     struct MolangActorIdArrayPtr& operator=(struct MolangActorIdArrayPtr const &) = delete;
     MolangActorIdArrayPtr(struct MolangActorIdArrayPtr const &) = delete;
     MolangActorIdArrayPtr() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORIDARRAYPTR
+#endif
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
     MCAPI ~MolangActorIdArrayPtr();
-
-protected:
-
-private:
 
 };

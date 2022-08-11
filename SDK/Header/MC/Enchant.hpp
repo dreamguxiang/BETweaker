@@ -95,7 +95,6 @@ enum class Type : uint8_t
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANT
 public:
     class Enchant& operator=(class Enchant const &) = delete;
@@ -103,23 +102,22 @@ public:
     Enchant() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Enchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual int getMinLevel() const;
-    /*5*/ virtual int getMaxLevel() const;
+    /*4*/ virtual int getMinLevel();
+    /*5*/ virtual int getMaxLevel();
     /*6*/ virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /*7*/ virtual float getDamageBonus(int, class Actor const &) const;
-    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int) const;
-    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
+    /*8*/ virtual void doPostAttack(class Actor &, class Actor &, int);
+    /*9*/ virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int);
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANT
     MCVAPI bool isDiscoverable() const;
     MCVAPI bool isMeleeDamageEnchant() const;
@@ -146,7 +144,5 @@ public:
     MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;
     MCAPI static void shutdownEnchants();
     MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
-
-
 
 };

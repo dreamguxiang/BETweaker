@@ -16,14 +16,12 @@ class EnderDragon : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERDRAGON
 public:
     class EnderDragon& operator=(class EnderDragon const &) = delete;
     EnderDragon(class EnderDragon const &) = delete;
     EnderDragon() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -47,11 +45,11 @@ public:
     /*120*/ virtual void setSitting(bool);
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*181*/ virtual bool canChangeDimensionsUsingPortal() const;
+    /*181*/ virtual bool canChangeDimensionsUsingPortal();
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle() const;
+    /*194*/ virtual bool canBePulledIntoVehicle();
     /*196*/ virtual void __unk_vfn_196();
-    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &);
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();
@@ -104,7 +102,6 @@ public:
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode &, class PathfinderNode &, enum PathCompletionType);
     MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const &);
 
-
 protected:
 
 private:
@@ -112,6 +109,5 @@ private:
     MCAPI static int GROWL_INTERVAL_MIN;
     MCAPI static int MAX_PATH_RADIUS;
     MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
-
 
 };

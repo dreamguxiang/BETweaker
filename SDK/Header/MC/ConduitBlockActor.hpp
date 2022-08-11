@@ -15,14 +15,12 @@ class ConduitBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDUITBLOCKACTOR
 public:
     class ConduitBlockActor& operator=(class ConduitBlockActor const &) = delete;
     ConduitBlockActor(class ConduitBlockActor const &) = delete;
     ConduitBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ConduitBlockActor();
@@ -31,7 +29,7 @@ public:
     /*7*/ virtual void tick(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual bool hasAlphaLayer() const;
+    /*18*/ virtual bool hasAlphaLayer();
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -49,8 +47,6 @@ public:
     MCAPI void _checkShape(class BlockSource &);
     MCAPI void _updateTarget(class BlockSource &);
 
-
 private:
-
 
 };

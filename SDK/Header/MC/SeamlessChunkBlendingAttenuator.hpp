@@ -13,14 +13,12 @@ class SeamlessChunkBlendingAttenuator {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAMLESSCHUNKBLENDINGATTENUATOR
 public:
     class SeamlessChunkBlendingAttenuator& operator=(class SeamlessChunkBlendingAttenuator const &) = delete;
     SeamlessChunkBlendingAttenuator(class SeamlessChunkBlendingAttenuator const &) = delete;
     SeamlessChunkBlendingAttenuator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
@@ -31,7 +29,5 @@ public:
     MCAPI class Biome const * tryGetAttenuatedBiome(class DividedPos<4> const &, class BiomeRegistry const &, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const &) const;
     MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const tryMoveWaterEdges(class BlockPos const &, struct OverworldGeneratorMultinoise::BlockGenerationResult) const;
     MCAPI ~SeamlessChunkBlendingAttenuator();
-
-
 
 };

@@ -20,13 +20,11 @@ struct BatchEntry {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEWRITEBATCH
 public:
     class LevelStorageWriteBatch& operator=(class LevelStorageWriteBatch const &) = delete;
     LevelStorageWriteBatch(class LevelStorageWriteBatch const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelStorageWriteBatch();
@@ -44,7 +42,5 @@ public:
     MCAPI void erase(class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const &);
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &) const;
     MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &);
-
-
 
 };

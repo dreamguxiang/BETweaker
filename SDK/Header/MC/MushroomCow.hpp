@@ -16,14 +16,12 @@ class MushroomCow : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSHROOMCOW
 public:
     class MushroomCow& operator=(class MushroomCow const &) = delete;
     MushroomCow(class MushroomCow const &) = delete;
     MushroomCow() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~MushroomCow();
@@ -56,7 +54,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSHROOMCOW
 #endif
     MCAPI MushroomCow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

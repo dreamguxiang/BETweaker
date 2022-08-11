@@ -14,14 +14,12 @@ class FurnaceBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACEBLOCKACTOR
 public:
     class FurnaceBlockActor& operator=(class FurnaceBlockActor const &) = delete;
     FurnaceBlockActor(class FurnaceBlockActor const &) = delete;
     FurnaceBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEBLOCKACTOR
@@ -80,7 +78,6 @@ public:
     MCAPI static float _getXPRewardMultiplier(class ItemStackBase const &);
     MCAPI static int _roundXPReward(float);
 
-
 protected:
 
 private:
@@ -93,6 +90,5 @@ private:
     MCAPI static std::string const SLOT_KEY;
     MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
     MCAPI static std::string const STORED_XP_KEY;
-
 
 };

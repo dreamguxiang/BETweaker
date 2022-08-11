@@ -14,13 +14,11 @@ class AgentActionEventPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTACTIONEVENTPACKET
 public:
     class AgentActionEventPacket& operator=(class AgentActionEventPacket const &) = delete;
     AgentActionEventPacket(class AgentActionEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AgentActionEventPacket();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
     MCAPI AgentActionEventPacket();
-
-
 
 };

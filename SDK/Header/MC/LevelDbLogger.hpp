@@ -14,7 +14,6 @@ class LevelDbLogger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBLOGGER
 public:
     class LevelDbLogger& operator=(class LevelDbLogger const &) = delete;
@@ -22,13 +21,10 @@ public:
     LevelDbLogger() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelDbLogger();
     /*1*/ virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
 #endif
-
-
 
 };

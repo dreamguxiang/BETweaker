@@ -15,7 +15,6 @@ class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBRIGHTNESSRAMP
 public:
     class OverworldBrightnessRamp& operator=(class OverworldBrightnessRamp const &) = delete;
@@ -23,12 +22,9 @@ public:
     OverworldBrightnessRamp() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OverworldBrightnessRamp();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBRIGHTNESSRAMP
 #endif
-
-
 
 };

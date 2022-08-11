@@ -14,13 +14,11 @@ class ItemStackRequestActionDrop {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONDROP
 public:
     class ItemStackRequestActionDrop& operator=(class ItemStackRequestActionDrop const &) = delete;
     ItemStackRequestActionDrop(class ItemStackRequestActionDrop const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionDrop();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestActionDrop();
     MCAPI bool getRandomly() const;
-
-
 
 };

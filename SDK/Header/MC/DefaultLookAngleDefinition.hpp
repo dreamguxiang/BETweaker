@@ -15,18 +15,15 @@ struct DefaultLookAngleDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTLOOKANGLEDEFINITION
 public:
     struct DefaultLookAngleDefinition& operator=(struct DefaultLookAngleDefinition const &) = delete;
     DefaultLookAngleDefinition(struct DefaultLookAngleDefinition const &) = delete;
     DefaultLookAngleDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTLOOKANGLEDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DefaultLookAngleDefinition>> &);
 
 };

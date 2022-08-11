@@ -14,7 +14,6 @@ class WeaponRecipes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAPONRECIPES
 public:
     class WeaponRecipes& operator=(class WeaponRecipes const &) = delete;
@@ -22,12 +21,9 @@ public:
     WeaponRecipes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONRECIPES
 #endif
     MCAPI static void addRecipes(class Recipes &);
-
-
 
 };

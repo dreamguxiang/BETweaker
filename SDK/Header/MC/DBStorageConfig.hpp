@@ -12,19 +12,15 @@ struct DBStorageConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGECONFIG
 public:
     struct DBStorageConfig& operator=(struct DBStorageConfig const &) = delete;
     DBStorageConfig(struct DBStorageConfig const &) = delete;
     DBStorageConfig() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGECONFIG
+#endif
     MCAPI ~DBStorageConfig();
-
-protected:
-
-private:
 
 };

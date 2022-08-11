@@ -14,14 +14,12 @@ class SubChunkPos {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
 public:
     class SubChunkPos& operator=(class SubChunkPos const &) = delete;
     SubChunkPos(class SubChunkPos const &) = delete;
     SubChunkPos() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKPOS
@@ -32,7 +30,5 @@ public:
     MCAPI static class SubChunkPos const MIN;
     MCAPI static class SubChunkPos const ONE;
     MCAPI static class SubChunkPos const ZERO;
-
-
 
 };

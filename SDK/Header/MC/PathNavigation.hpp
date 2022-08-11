@@ -14,14 +14,12 @@ class PathNavigation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHNAVIGATION
 public:
     class PathNavigation& operator=(class PathNavigation const &) = delete;
     PathNavigation(class PathNavigation const &) = delete;
     PathNavigation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PathNavigation();
@@ -45,8 +43,6 @@ public:
     MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
     MCAPI enum NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
 
-
 protected:
-
 
 };

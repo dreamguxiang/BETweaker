@@ -12,19 +12,15 @@ struct PlayerFormResponseEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERFORMRESPONSEEVENT
 public:
     struct PlayerFormResponseEvent& operator=(struct PlayerFormResponseEvent const &) = delete;
     PlayerFormResponseEvent(struct PlayerFormResponseEvent const &) = delete;
     PlayerFormResponseEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERFORMRESPONSEEVENT
+#endif
     MCAPI ~PlayerFormResponseEvent();
-
-protected:
-
-private:
 
 };

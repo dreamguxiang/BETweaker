@@ -14,13 +14,11 @@ class BehaviorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORNODE
 public:
     class BehaviorNode& operator=(class BehaviorNode const &) = delete;
     BehaviorNode(class BehaviorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BehaviorNode();
@@ -30,7 +28,5 @@ public:
 #endif
     MCAPI BehaviorNode();
     MCAPI class BehaviorData & getBehaviorData();
-
-
 
 };

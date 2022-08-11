@@ -14,14 +14,12 @@ class FollowFlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWFLOCKGOAL
 public:
     class FollowFlockGoal& operator=(class FollowFlockGoal const &) = delete;
     FollowFlockGoal(class FollowFlockGoal const &) = delete;
     FollowFlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowFlockGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWFLOCKGOAL
 #endif
     MCAPI FollowFlockGoal(class Mob &, float);
-
-
 
 };

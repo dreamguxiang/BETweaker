@@ -14,14 +14,12 @@ class POIInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIINSTANCE
 public:
     class POIInstance& operator=(class POIInstance const &) = delete;
     POIInstance(class POIInstance const &) = delete;
     POIInstance() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POIINSTANCE
@@ -48,7 +46,5 @@ public:
     MCAPI void setVillage(class Village *);
     MCAPI void trySpawnParticles(class BlockSource &, class Random &, int) const;
     MCAPI bool useBoundingBox() const;
-
-
 
 };

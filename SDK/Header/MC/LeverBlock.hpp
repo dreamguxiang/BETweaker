@@ -15,14 +15,12 @@ class LeverBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVERBLOCK
 public:
     class LeverBlock& operator=(class LeverBlock const &) = delete;
     LeverBlock(class LeverBlock const &) = delete;
     LeverBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LeverBlock();
@@ -46,11 +44,11 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*57*/ virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -91,8 +89,6 @@ public:
     MCAPI bool _checkCanSurvive(class BlockSource &, class BlockPos const &) const;
     MCAPI void _getShape(class Block const &, class AABB &) const;
 
-
 private:
-
 
 };

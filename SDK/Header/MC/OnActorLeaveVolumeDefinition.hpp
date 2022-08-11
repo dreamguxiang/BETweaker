@@ -14,19 +14,17 @@ struct OnActorLeaveVolumeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORLEAVEVOLUMEDEFINITION
 public:
     struct OnActorLeaveVolumeDefinition& operator=(struct OnActorLeaveVolumeDefinition const &) = delete;
     OnActorLeaveVolumeDefinition(struct OnActorLeaveVolumeDefinition const &) = delete;
     OnActorLeaveVolumeDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMEDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &, class OnActorLeaveVolumeComponent &) const;
-
-protected:
-
-private:
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
 
 };

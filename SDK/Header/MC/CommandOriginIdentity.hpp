@@ -12,19 +12,15 @@ struct CommandOriginIdentity {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGINIDENTITY
 public:
     struct CommandOriginIdentity& operator=(struct CommandOriginIdentity const &) = delete;
     CommandOriginIdentity(struct CommandOriginIdentity const &) = delete;
     CommandOriginIdentity() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINIDENTITY
+#endif
     MCAPI ~CommandOriginIdentity();
-
-protected:
-
-private:
 
 };

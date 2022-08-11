@@ -16,14 +16,12 @@ class Minecraft {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFT
 public:
     class Minecraft& operator=(class Minecraft const &) = delete;
     Minecraft(class Minecraft const &) = delete;
     Minecraft() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Minecraft();
@@ -63,8 +61,6 @@ public:
 //private:
     MCAPI void _tryCatchupMovementTicks();
 
-
 private:
-
 
 };

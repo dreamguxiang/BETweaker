@@ -12,19 +12,15 @@ struct MolangMemberVariable {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERVARIABLE
 public:
     struct MolangMemberVariable& operator=(struct MolangMemberVariable const &) = delete;
     MolangMemberVariable(struct MolangMemberVariable const &) = delete;
     MolangMemberVariable() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERVARIABLE
+#endif
     MCAPI ~MolangMemberVariable();
-
-protected:
-
-private:
 
 };

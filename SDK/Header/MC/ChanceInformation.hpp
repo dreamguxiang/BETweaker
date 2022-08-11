@@ -14,14 +14,12 @@ class ChanceInformation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANCEINFORMATION
 public:
     class ChanceInformation& operator=(class ChanceInformation const &) = delete;
     ChanceInformation(class ChanceInformation const &) = delete;
     ChanceInformation() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANCEINFORMATION
@@ -30,7 +28,5 @@ public:
     MCAPI bool roll(class Random &) const;
     MCAPI void set(unsigned int, unsigned int);
     MCAPI void set(float);
-
-
 
 };

@@ -15,13 +15,11 @@ class ResourcePackChunkDataPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKCHUNKDATAPACKET
 public:
     class ResourcePackChunkDataPacket& operator=(class ResourcePackChunkDataPacket const &) = delete;
     ResourcePackChunkDataPacket(class ResourcePackChunkDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackChunkDataPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ResourcePackChunkDataPacket(std::string const &, int, unsigned __int64, std::vector<unsigned char> const &);
     MCAPI ResourcePackChunkDataPacket();
-
-
 
 };

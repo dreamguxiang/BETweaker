@@ -14,13 +14,11 @@ class InteractActionNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTACTIONNODE
 public:
     class InteractActionNode& operator=(class InteractActionNode const &) = delete;
     InteractActionNode(class InteractActionNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InteractActionNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTACTIONNODE
 #endif
     MCAPI InteractActionNode();
-
-
 
 };

@@ -14,14 +14,12 @@ class SleepState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLEEPSTATE
 public:
     class SleepState& operator=(class SleepState const &) = delete;
     SleepState(class SleepState const &) = delete;
     SleepState() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SleepState();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
 #endif
-
-
 
 };

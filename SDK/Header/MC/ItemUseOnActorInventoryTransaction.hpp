@@ -14,14 +14,12 @@ class ItemUseOnActorInventoryTransaction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEONACTORINVENTORYTRANSACTION
 public:
     class ItemUseOnActorInventoryTransaction& operator=(class ItemUseOnActorInventoryTransaction const &) = delete;
     ItemUseOnActorInventoryTransaction(class ItemUseOnActorInventoryTransaction const &) = delete;
     ItemUseOnActorInventoryTransaction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemUseOnActorInventoryTransaction();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEONACTORINVENTORYTRANSACTION
 #endif
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
-
-
 
 };

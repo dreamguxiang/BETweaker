@@ -16,14 +16,12 @@ class IronGolem : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRONGOLEM
 public:
     class IronGolem& operator=(class IronGolem const &) = delete;
     IronGolem(class IronGolem const &) = delete;
     IronGolem() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~IronGolem();
@@ -66,7 +64,5 @@ public:
     MCAPI IronGolem(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI int getOfferFlowerTick() const;
     MCAPI void offerFlower(bool);
-
-
 
 };

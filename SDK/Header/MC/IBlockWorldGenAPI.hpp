@@ -14,7 +14,6 @@ class IBlockWorldGenAPI {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IBLOCKWORLDGENAPI
 public:
     class IBlockWorldGenAPI& operator=(class IBlockWorldGenAPI const &) = delete;
@@ -22,13 +21,10 @@ public:
     IBlockWorldGenAPI() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IBLOCKWORLDGENAPI
     MCVAPI bool canGetChunk() const;
     MCVAPI class LevelChunk * getChunk(class ChunkPos const &);
 #endif
-
-
 
 };

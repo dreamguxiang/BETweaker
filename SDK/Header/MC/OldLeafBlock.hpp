@@ -15,14 +15,12 @@ class OldLeafBlock : public LeafBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OLDLEAFBLOCK
 public:
     class OldLeafBlock& operator=(class OldLeafBlock const &) = delete;
     OldLeafBlock(class OldLeafBlock const &) = delete;
     OldLeafBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OldLeafBlock();
@@ -57,7 +55,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
@@ -74,7 +72,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OLDLEAFBLOCK
 #endif
     MCAPI OldLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
-
 
 };

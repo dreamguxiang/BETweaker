@@ -14,14 +14,12 @@ class RandomStrollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSTROLLGOAL
 public:
     class RandomStrollGoal& operator=(class RandomStrollGoal const &) = delete;
     RandomStrollGoal(class RandomStrollGoal const &) = delete;
     RandomStrollGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomStrollGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSTROLLGOAL
 #endif
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
-
-
 
 };

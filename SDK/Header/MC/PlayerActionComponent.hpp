@@ -14,14 +14,14 @@ struct PlayerActionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERACTIONCOMPONENT
 public:
     struct PlayerActionComponent& operator=(struct PlayerActionComponent const &) = delete;
     PlayerActionComponent(struct PlayerActionComponent const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONCOMPONENT
+#endif
     MCAPI PlayerActionComponent(struct PlayerActionComponent &&);
     MCAPI PlayerActionComponent();
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
@@ -30,9 +30,5 @@ public:
     MCAPI void addStopDestroyBlock();
     MCAPI struct PlayerActionComponent & operator=(struct PlayerActionComponent &&);
     MCAPI ~PlayerActionComponent();
-
-protected:
-
-private:
 
 };

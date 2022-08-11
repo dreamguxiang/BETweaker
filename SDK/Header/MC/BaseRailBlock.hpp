@@ -15,14 +15,12 @@ class BaseRailBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASERAILBLOCK
 public:
     class BaseRailBlock& operator=(class BaseRailBlock const &) = delete;
     BaseRailBlock(class BaseRailBlock const &) = delete;
     BaseRailBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BaseRailBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,7 +47,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
@@ -93,8 +91,6 @@ public:
     MCAPI void _updatePlacement(class BlockSource &, class BlockPos const &) const;
     MCAPI static void _createCircuitComponent(class BlockSource &, class BlockPos const &);
 
-
 private:
-
 
 };

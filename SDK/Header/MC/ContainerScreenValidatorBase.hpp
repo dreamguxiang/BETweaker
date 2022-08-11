@@ -14,14 +14,12 @@ class ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATORBASE
 public:
     class ContainerScreenValidatorBase& operator=(class ContainerScreenValidatorBase const &) = delete;
     ContainerScreenValidatorBase(class ContainerScreenValidatorBase const &) = delete;
     ContainerScreenValidatorBase() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerScreenValidatorBase();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATORBASE
 #endif
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
-
-
 
 };

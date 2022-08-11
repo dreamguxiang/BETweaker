@@ -15,14 +15,12 @@ class ActorFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORY
 public:
     class ActorFactory& operator=(class ActorFactory const &) = delete;
     ActorFactory(class ActorFactory const &) = delete;
     ActorFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
@@ -54,9 +52,7 @@ public:
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
 
-
 private:
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
-
 
 };

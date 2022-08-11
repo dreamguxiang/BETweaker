@@ -14,7 +14,6 @@ class MockUnknownBlockTypeRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOCKUNKNOWNBLOCKTYPEREGISTRY
 public:
     class MockUnknownBlockTypeRegistry& operator=(class MockUnknownBlockTypeRegistry const &) = delete;
@@ -22,13 +21,10 @@ public:
     MockUnknownBlockTypeRegistry() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MockUnknownBlockTypeRegistry();
     /*1*/ virtual class Block const & getUnknownBlock(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOCKUNKNOWNBLOCKTYPEREGISTRY
 #endif
-
-
 
 };

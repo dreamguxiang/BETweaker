@@ -14,14 +14,12 @@ class SetStewEffectFunction : public LootItemFunction {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSTEWEFFECTFUNCTION
 public:
     class SetStewEffectFunction& operator=(class SetStewEffectFunction const &) = delete;
     SetStewEffectFunction(class SetStewEffectFunction const &) = delete;
     SetStewEffectFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetStewEffectFunction();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSTEWEFFECTFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

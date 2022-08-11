@@ -21,14 +21,12 @@ struct StrongholdResult {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDFEATURE
 public:
     class StrongholdFeature& operator=(class StrongholdFeature const &) = delete;
     StrongholdFeature(class StrongholdFeature const &) = delete;
     StrongholdFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StrongholdFeature();
@@ -47,10 +45,8 @@ public:
     MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(unsigned int, class ChunkPos const &);
     MCAPI bool _getNearestStronghold(class Dimension const &, unsigned int, class BlockPos const &, class BlockPos &, bool);
 
-
 protected:
 
 private:
-
 
 };

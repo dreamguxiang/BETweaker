@@ -14,14 +14,12 @@ class SwoopAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWOOPATTACKGOAL
 public:
     class SwoopAttackGoal& operator=(class SwoopAttackGoal const &) = delete;
     SwoopAttackGoal(class SwoopAttackGoal const &) = delete;
     SwoopAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwoopAttackGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWOOPATTACKGOAL
 #endif
     MCAPI SwoopAttackGoal(class Mob &);
-
-
 
 };

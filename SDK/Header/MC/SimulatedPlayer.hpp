@@ -22,14 +22,12 @@ public:
     LIAPI bool simulateUseItem();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATEDPLAYER
 public:
     class SimulatedPlayer& operator=(class SimulatedPlayer const &) = delete;
     SimulatedPlayer(class SimulatedPlayer const &) = delete;
     SimulatedPlayer() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -73,7 +71,7 @@ public:
     /*399*/ virtual void __unk_vfn_399();
     /*409*/ virtual void __unk_vfn_409();
     /*410*/ virtual void __unk_vfn_410();
-    /*411*/ virtual bool isHostingPlayer() const;
+    /*411*/ virtual bool isHostingPlayer();
     /*414*/ virtual void __unk_vfn_414();
     /*421*/ virtual void __unk_vfn_421();
     /*448*/ virtual void __unk_vfn_448();
@@ -130,8 +128,6 @@ public:
     MCAPI bool _trySwing();
     MCAPI void _updateMovement();
 
-
 private:
-
 
 };

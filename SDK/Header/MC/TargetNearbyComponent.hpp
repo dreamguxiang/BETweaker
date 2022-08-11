@@ -14,14 +14,12 @@ class TargetNearbyComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETNEARBYCOMPONENT
 public:
     class TargetNearbyComponent& operator=(class TargetNearbyComponent const &) = delete;
     TargetNearbyComponent(class TargetNearbyComponent const &) = delete;
     TargetNearbyComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYCOMPONENT
@@ -33,7 +31,5 @@ public:
     MCAPI void setWasInsideRange(bool);
     MCAPI void setWasOutsideRange(bool);
     MCAPI void setWasSeenLastTick(bool);
-
-
 
 };

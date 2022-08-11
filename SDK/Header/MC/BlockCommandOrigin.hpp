@@ -16,14 +16,12 @@ class BlockCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMMANDORIGIN
 public:
     class BlockCommandOrigin& operator=(class BlockCommandOrigin const &) = delete;
     BlockCommandOrigin(class BlockCommandOrigin const &) = delete;
     BlockCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockCommandOrigin();
@@ -35,13 +33,13 @@ public:
     /*6*/ virtual class Level * getLevel() const;
     /*7*/ virtual class Dimension * getDimension() const;
     /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*23*/ virtual enum CommandOriginType getOriginType() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*18*/ virtual bool isSelectorExpansionAllowed();
+    /*23*/ virtual enum CommandOriginType getOriginType();
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual bool isValid() const;
+    /*30*/ virtual bool isValid();
     /*32*/ virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
@@ -53,8 +51,6 @@ public:
 //protected:
     MCAPI std::string _getName(class BlockSource &) const;
 
-
 protected:
-
 
 };

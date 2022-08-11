@@ -14,14 +14,12 @@ class StructurePoolBlockPredicateBlockMatchRandom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
 public:
     class StructurePoolBlockPredicateBlockMatchRandom& operator=(class StructurePoolBlockPredicateBlockMatchRandom const &) = delete;
     StructurePoolBlockPredicateBlockMatchRandom(class StructurePoolBlockPredicateBlockMatchRandom const &) = delete;
     StructurePoolBlockPredicateBlockMatchRandom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatchRandom();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
 #endif
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const &, float);
-
-
 
 };

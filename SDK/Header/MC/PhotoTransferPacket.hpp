@@ -15,13 +15,11 @@ class PhotoTransferPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOTRANSFERPACKET
 public:
     class PhotoTransferPacket& operator=(class PhotoTransferPacket const &) = delete;
     PhotoTransferPacket(class PhotoTransferPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PhotoTransferPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOTRANSFERPACKET
 #endif
     MCAPI PhotoTransferPacket();
-
-
 
 };

@@ -16,14 +16,12 @@ class DirectoryPackAccessStrategy : public PackAccessStrategy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKACCESSSTRATEGY
 public:
     class DirectoryPackAccessStrategy& operator=(class DirectoryPackAccessStrategy const &) = delete;
     DirectoryPackAccessStrategy(class DirectoryPackAccessStrategy const &) = delete;
     DirectoryPackAccessStrategy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DirectoryPackAccessStrategy();
@@ -47,7 +45,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKACCESSSTRATEGY
 #endif
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const &, bool);
-
-
 
 };

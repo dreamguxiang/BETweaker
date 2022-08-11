@@ -15,13 +15,11 @@ class FillingContainer : public Container {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILLINGCONTAINER
 public:
     FillingContainer(class FillingContainer const &) = delete;
     FillingContainer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FillingContainer();
@@ -65,8 +63,6 @@ public:
     MCAPI bool _isCreative() const;
     MCAPI void _release(int);
 
-
 protected:
-
 
 };

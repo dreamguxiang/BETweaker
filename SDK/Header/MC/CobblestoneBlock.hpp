@@ -15,14 +15,12 @@ class CobblestoneBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COBBLESTONEBLOCK
 public:
     class CobblestoneBlock& operator=(class CobblestoneBlock const &) = delete;
     CobblestoneBlock(class CobblestoneBlock const &) = delete;
     CobblestoneBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CobblestoneBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COBBLESTONEBLOCK
 #endif
     MCAPI CobblestoneBlock(std::string const &, int, class Material const &);
-
-
 
 };

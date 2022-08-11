@@ -12,7 +12,6 @@ class SystemTiming {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMTIMING
 public:
     class SystemTiming& operator=(class SystemTiming const &) = delete;
@@ -20,12 +19,9 @@ public:
     SystemTiming() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMTIMING
 #endif
     MCAPI ~SystemTiming();
-
-
 
 };

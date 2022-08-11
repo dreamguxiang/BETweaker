@@ -12,7 +12,6 @@ class MoveHitboxSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEHITBOXSYSTEM
 public:
     class MoveHitboxSystem& operator=(class MoveHitboxSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     MoveHitboxSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEHITBOXSYSTEM
 #endif
     MCAPI static void moveHitboxTo(class Vec3 const &, std::vector<struct Hitbox> &);
-
-
 
 };

@@ -15,14 +15,12 @@ class DaylightDetectorBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAYLIGHTDETECTORBLOCK
 public:
     class DaylightDetectorBlock& operator=(class DaylightDetectorBlock const &) = delete;
     DaylightDetectorBlock(class DaylightDetectorBlock const &) = delete;
     DaylightDetectorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DaylightDetectorBlock();
@@ -45,16 +43,16 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -63,7 +61,7 @@ public:
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
@@ -78,7 +76,5 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI DaylightDetectorBlock(std::string const &, int, bool);
-
-
 
 };

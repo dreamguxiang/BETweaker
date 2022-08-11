@@ -12,7 +12,6 @@ class ServerAnimationSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERANIMATIONSYSTEM
 public:
     class ServerAnimationSystem& operator=(class ServerAnimationSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     ServerAnimationSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERANIMATIONSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createServerAnimationSystem();
-
-
 
 };

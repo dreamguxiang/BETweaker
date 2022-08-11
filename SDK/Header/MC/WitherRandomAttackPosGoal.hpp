@@ -15,14 +15,12 @@ class WitherRandomAttackPosGoal : public RandomStrollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERRANDOMATTACKPOSGOAL
 public:
     class WitherRandomAttackPosGoal& operator=(class WitherRandomAttackPosGoal const &) = delete;
     WitherRandomAttackPosGoal(class WitherRandomAttackPosGoal const &) = delete;
     WitherRandomAttackPosGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WitherRandomAttackPosGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERRANDOMATTACKPOSGOAL
 #endif
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
-
-
 
 };

@@ -14,7 +14,6 @@ class EntityComponentFactoryJson {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCOMPONENTFACTORYJSON
 public:
     class EntityComponentFactoryJson& operator=(class EntityComponentFactoryJson const &) = delete;
@@ -22,12 +21,9 @@ public:
     EntityComponentFactoryJson() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYJSON
 #endif
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
-
-
 
 };

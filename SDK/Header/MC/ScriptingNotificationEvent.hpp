@@ -12,19 +12,15 @@ struct ScriptingNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGNOTIFICATIONEVENT
 public:
     struct ScriptingNotificationEvent& operator=(struct ScriptingNotificationEvent const &) = delete;
     ScriptingNotificationEvent(struct ScriptingNotificationEvent const &) = delete;
     ScriptingNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGNOTIFICATIONEVENT
+#endif
     MCAPI ~ScriptingNotificationEvent();
-
-protected:
-
-private:
 
 };

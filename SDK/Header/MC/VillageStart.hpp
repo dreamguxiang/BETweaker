@@ -15,7 +15,6 @@ class VillageStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGESTART
 public:
     class VillageStart& operator=(class VillageStart const &) = delete;
@@ -23,14 +22,11 @@ public:
     VillageStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VillageStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGESTART
 #endif
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
-
-
 
 };

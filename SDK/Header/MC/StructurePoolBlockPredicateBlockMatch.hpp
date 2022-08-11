@@ -14,14 +14,12 @@ class StructurePoolBlockPredicateBlockMatch {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCH
 public:
     class StructurePoolBlockPredicateBlockMatch& operator=(class StructurePoolBlockPredicateBlockMatch const &) = delete;
     StructurePoolBlockPredicateBlockMatch(class StructurePoolBlockPredicateBlockMatch const &) = delete;
     StructurePoolBlockPredicateBlockMatch() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatch();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCH
 #endif
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);
-
-
 
 };

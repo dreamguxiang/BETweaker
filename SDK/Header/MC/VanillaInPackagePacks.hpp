@@ -14,7 +14,6 @@ class VanillaInPackagePacks {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAINPACKAGEPACKS
 public:
     class VanillaInPackagePacks& operator=(class VanillaInPackagePacks const &) = delete;
@@ -22,13 +21,10 @@ public:
     VanillaInPackagePacks() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VanillaInPackagePacks();
     /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum PackType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAINPACKAGEPACKS
 #endif
-
-
 
 };

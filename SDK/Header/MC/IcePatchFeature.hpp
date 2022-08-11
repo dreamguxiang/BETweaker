@@ -15,7 +15,6 @@ class IcePatchFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEPATCHFEATURE
 public:
     class IcePatchFeature& operator=(class IcePatchFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     IcePatchFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IcePatchFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEPATCHFEATURE
 #endif
     MCAPI IcePatchFeature(int);
-
-
 
 };

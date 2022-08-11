@@ -14,20 +14,16 @@ struct RopeParams {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEPARAMS
 public:
     struct RopeParams& operator=(struct RopeParams const &) = delete;
     RopeParams(struct RopeParams const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPARAMS
+#endif
     MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     MCAPI RopeParams();
     MCAPI void leadInit();
-
-protected:
-
-private:
 
 };

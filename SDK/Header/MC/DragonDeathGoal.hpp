@@ -14,14 +14,12 @@ class DragonDeathGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONDEATHGOAL
 public:
     class DragonDeathGoal& operator=(class DragonDeathGoal const &) = delete;
     DragonDeathGoal(class DragonDeathGoal const &) = delete;
     DragonDeathGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonDeathGoal();
@@ -37,7 +35,5 @@ public:
     MCVAPI bool canUse();
 #endif
     MCAPI DragonDeathGoal(class EnderDragon &);
-
-
 
 };

@@ -15,20 +15,16 @@ class SmithingTableContainerScreenValidator : public ContainerScreenValidatorBas
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLECONTAINERSCREENVALIDATOR
 public:
     class SmithingTableContainerScreenValidator& operator=(class SmithingTableContainerScreenValidator const &) = delete;
     SmithingTableContainerScreenValidator(class SmithingTableContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmithingTableContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERSCREENVALIDATOR
 #endif
     MCAPI SmithingTableContainerScreenValidator();
-
-
 
 };

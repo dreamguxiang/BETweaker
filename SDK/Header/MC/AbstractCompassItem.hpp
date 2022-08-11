@@ -14,14 +14,12 @@ class AbstractCompassItem : public Item {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSTRACTCOMPASSITEM
 public:
     class AbstractCompassItem& operator=(class AbstractCompassItem const &) = delete;
     AbstractCompassItem(class AbstractCompassItem const &) = delete;
     AbstractCompassItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AbstractCompassItem();
@@ -41,10 +39,9 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCOMPASSITEM
 #endif
     MCAPI AbstractCompassItem(std::string const &, int, class std::function<class CompassSpriteCalculator (class Mob *)>);
-
-
 
 };

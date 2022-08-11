@@ -15,14 +15,12 @@ class SculkBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKBLOCK
 public:
     class SculkBlock& operator=(class SculkBlock const &) = delete;
     SculkBlock(class SculkBlock const &) = delete;
     SculkBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkBlock();
@@ -49,7 +47,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*104*/ virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
@@ -70,7 +68,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SculkBlock(std::string const &, int, class Material const &);
-
-
 
 };

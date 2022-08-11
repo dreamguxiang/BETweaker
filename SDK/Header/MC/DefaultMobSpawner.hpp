@@ -15,7 +15,6 @@ class DefaultMobSpawner : public BaseMobSpawner {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTMOBSPAWNER
 public:
     class DefaultMobSpawner& operator=(class DefaultMobSpawner const &) = delete;
@@ -23,13 +22,10 @@ public:
     DefaultMobSpawner() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DefaultMobSpawner();
     /*4*/ virtual class BlockPos const & getPos();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTMOBSPAWNER
 #endif
-
-
 
 };

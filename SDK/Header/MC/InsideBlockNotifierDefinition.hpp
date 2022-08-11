@@ -15,7 +15,6 @@ class InsideBlockNotifierDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERDEFINITION
 public:
     class InsideBlockNotifierDefinition& operator=(class InsideBlockNotifierDefinition const &) = delete;
@@ -23,13 +22,10 @@ public:
     InsideBlockNotifierDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKNOTIFIERDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class InsideBlockNotifierComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsideBlockNotifierDefinition>> &);
-
-
 
 };

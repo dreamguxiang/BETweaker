@@ -14,18 +14,15 @@ struct FogDistanceSetting {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGDISTANCESETTING
 public:
     struct FogDistanceSetting& operator=(struct FogDistanceSetting const &) = delete;
     FogDistanceSetting(struct FogDistanceSetting const &) = delete;
     FogDistanceSetting() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGDISTANCESETTING
+#endif
+    MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 
 };

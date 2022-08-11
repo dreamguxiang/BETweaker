@@ -16,14 +16,12 @@ class MedicineItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEDICINEITEM
 public:
     class MedicineItem& operator=(class MedicineItem const &) = delete;
     MedicineItem(class MedicineItem const &) = delete;
     MedicineItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MedicineItem();
@@ -45,11 +43,10 @@ public:
     /*87*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEDICINEITEM
 #endif
     MCAPI MedicineItem(std::string const &, int);
     MCAPI static class MobEffect const * getMobEffect(class ItemStack const &);
-
-
 
 };

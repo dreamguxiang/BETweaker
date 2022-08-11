@@ -14,7 +14,6 @@ class BoneAnimationChannel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEANIMATIONCHANNEL
 public:
     class BoneAnimationChannel& operator=(class BoneAnimationChannel const &) = delete;
@@ -22,13 +21,10 @@ public:
     BoneAnimationChannel() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATIONCHANNEL
 #endif
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     MCAPI void sortKeyFrames();
-
-
 
 };

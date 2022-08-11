@@ -14,7 +14,6 @@ class VanillaFeatures {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAFEATURES
 public:
     class VanillaFeatures& operator=(class VanillaFeatures const &) = delete;
@@ -22,13 +21,10 @@ public:
     VanillaFeatures() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAFEATURES
 #endif
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory &);
     MCAPI static void registerFeatures(class FeatureRegistry &, class BaseGameVersion const &, class Experiments const &);
-
-
 
 };

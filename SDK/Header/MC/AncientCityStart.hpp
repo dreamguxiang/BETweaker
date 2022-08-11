@@ -13,7 +13,6 @@ class AncientCityStart : public StructureStart {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANCIENTCITYSTART
 public:
     class AncientCityStart& operator=(class AncientCityStart const &) = delete;
@@ -21,13 +20,10 @@ public:
     AncientCityStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AncientCityStart();
     /*2*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANCIENTCITYSTART
 #endif
-
-
 
 };

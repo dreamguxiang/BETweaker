@@ -15,14 +15,12 @@ class ServerCommunicationInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCOMMUNICATIONINTERFACE
 public:
     class ServerCommunicationInterface& operator=(class ServerCommunicationInterface const &) = delete;
     ServerCommunicationInterface(class ServerCommunicationInterface const &) = delete;
     ServerCommunicationInterface() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMUNICATIONINTERFACE
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI void communicate(std::string const &, class Json::Value const &);
 
-
 private:
-
 
 };

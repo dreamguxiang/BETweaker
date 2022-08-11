@@ -15,7 +15,6 @@ class VanillaBastionJigsawStructureElements {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABASTIONJIGSAWSTRUCTUREELEMENTS
 public:
     class VanillaBastionJigsawStructureElements& operator=(class VanillaBastionJigsawStructureElements const &) = delete;
@@ -23,12 +22,9 @@ public:
     VanillaBastionJigsawStructureElements() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABASTIONJIGSAWSTRUCTUREELEMENTS
 #endif
     MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry &, class JigsawStructureRegistry &);
-
-
 
 };

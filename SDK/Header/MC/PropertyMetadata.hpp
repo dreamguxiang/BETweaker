@@ -12,7 +12,6 @@ class PropertyMetadata {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYMETADATA
 public:
     class PropertyMetadata& operator=(class PropertyMetadata const &) = delete;
@@ -20,12 +19,9 @@ public:
     PropertyMetadata() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYMETADATA
 #endif
     MCAPI ~PropertyMetadata();
-
-
 
 };

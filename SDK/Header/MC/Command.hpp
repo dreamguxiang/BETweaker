@@ -70,17 +70,15 @@ public:
         return sym(a, b);
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMAND
 public:
     class Command& operator=(class Command const &) = delete;
     Command(class Command const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Command();
-    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+    /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
 #endif
     MCAPI Command();
@@ -100,8 +98,6 @@ public:
     MCAPI static bool isWildcard(class CommandSelectorBase const &);
     MCAPI static bool validData(int, unsigned short &, class CommandOutput &);
 
-
 protected:
-
 
 };

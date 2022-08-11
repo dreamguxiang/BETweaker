@@ -12,7 +12,6 @@ class AddActorBasePacket {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDACTORBASEPACKET
 public:
     class AddActorBasePacket& operator=(class AddActorBasePacket const &) = delete;
@@ -20,12 +19,9 @@ public:
     AddActorBasePacket() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
     MCVAPI ~AddActorBasePacket();
 #endif
-
-
 
 };

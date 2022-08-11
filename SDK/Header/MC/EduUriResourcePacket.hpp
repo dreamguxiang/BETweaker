@@ -15,13 +15,11 @@ class EduUriResourcePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUURIRESOURCEPACKET
 public:
     class EduUriResourcePacket& operator=(class EduUriResourcePacket const &) = delete;
     EduUriResourcePacket(class EduUriResourcePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EduUriResourcePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
     MCAPI EduUriResourcePacket();
-
-
 
 };

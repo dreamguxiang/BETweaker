@@ -14,13 +14,11 @@ class BucketableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETABLECOMPONENT
 public:
     class BucketableComponent& operator=(class BucketableComponent const &) = delete;
     BucketableComponent(class BucketableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLECOMPONENT
@@ -32,9 +30,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
-
 
 };

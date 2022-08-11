@@ -15,14 +15,12 @@ class EndPodiumFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPODIUMFEATURE
 public:
     class EndPodiumFeature& operator=(class EndPodiumFeature const &) = delete;
     EndPodiumFeature(class EndPodiumFeature const &) = delete;
     EndPodiumFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndPodiumFeature();
@@ -36,7 +34,5 @@ public:
     MCAPI static int const PODIUM_PILLAR_HEIGHT;
     MCAPI static int const PODIUM_RADIUS;
     MCAPI static int const RIM_RADIUS;
-
-
 
 };

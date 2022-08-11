@@ -17,14 +17,12 @@ class ScriptGameTestModuleFactory : public TextObjectText {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTMODULEFACTORY
 public:
     class ScriptGameTestModuleFactory& operator=(class ScriptGameTestModuleFactory const &) = delete;
     ScriptGameTestModuleFactory(class ScriptGameTestModuleFactory const &) = delete;
     ScriptGameTestModuleFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
@@ -37,10 +35,8 @@ public:
     MCAPI void _addVersions();
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
-
 private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID ModuleUUID;
-
 
 };

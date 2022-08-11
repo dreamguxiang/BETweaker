@@ -14,14 +14,12 @@ class GuardianAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANATTACKGOAL
 public:
     class GuardianAttackGoal& operator=(class GuardianAttackGoal const &) = delete;
     GuardianAttackGoal(class GuardianAttackGoal const &) = delete;
     GuardianAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GuardianAttackGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIANATTACKGOAL
 #endif
     MCAPI GuardianAttackGoal(class Mob &);
-
-
 
 };

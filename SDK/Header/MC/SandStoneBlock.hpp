@@ -15,14 +15,12 @@ class SandStoneBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SANDSTONEBLOCK
 public:
     class SandStoneBlock& operator=(class SandStoneBlock const &) = delete;
     SandStoneBlock(class SandStoneBlock const &) = delete;
     SandStoneBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SandStoneBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -57,7 +55,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -69,7 +67,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDSTONEBLOCK
 #endif
     MCAPI SandStoneBlock(std::string const &, int, class Material const &);
-
-
 
 };

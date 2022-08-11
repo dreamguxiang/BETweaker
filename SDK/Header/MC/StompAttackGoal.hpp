@@ -15,14 +15,12 @@ class StompAttackGoal : public MeleeAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPATTACKGOAL
 public:
     class StompAttackGoal& operator=(class StompAttackGoal const &) = delete;
     StompAttackGoal(class StompAttackGoal const &) = delete;
     StompAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StompAttackGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPATTACKGOAL
 #endif
     MCAPI StompAttackGoal(class Mob &);
-
-
 
 };

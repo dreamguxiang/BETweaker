@@ -15,13 +15,11 @@ class SwimMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMMOVECONTROL
 public:
     class SwimMoveControl& operator=(class SwimMoveControl const &) = delete;
     SwimMoveControl(class SwimMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwimMoveControl();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMMOVECONTROL
 #endif
     MCAPI SwimMoveControl();
-
-
 
 };

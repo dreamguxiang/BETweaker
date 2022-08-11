@@ -15,14 +15,12 @@ class TheEndGenerator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THEENDGENERATOR
 public:
     class TheEndGenerator& operator=(class TheEndGenerator const &) = delete;
     TheEndGenerator(class TheEndGenerator const &) = delete;
     TheEndGenerator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDGENERATOR
@@ -48,8 +46,6 @@ public:
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     MCAPI float getIslandHeightValue(int, int, int, int) const;
 
-
 private:
-
 
 };

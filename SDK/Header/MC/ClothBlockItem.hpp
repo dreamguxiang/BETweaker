@@ -16,14 +16,12 @@ class ClothBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLOTHBLOCKITEM
 public:
     class ClothBlockItem& operator=(class ClothBlockItem const &) = delete;
     ClothBlockItem(class ClothBlockItem const &) = delete;
     ClothBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClothBlockItem();
@@ -42,9 +40,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOTHBLOCKITEM
 #endif
-
-
 
 };

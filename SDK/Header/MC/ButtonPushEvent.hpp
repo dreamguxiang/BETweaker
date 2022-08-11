@@ -12,7 +12,6 @@ class ButtonPushEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUTTONPUSHEVENT
 public:
     class ButtonPushEvent& operator=(class ButtonPushEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ButtonPushEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONPUSHEVENT
 #endif
     MCAPI ~ButtonPushEvent();
-
-
 
 };

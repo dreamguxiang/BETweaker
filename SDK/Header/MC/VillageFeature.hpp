@@ -15,14 +15,12 @@ class VillageFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEFEATURE
 public:
     class VillageFeature& operator=(class VillageFeature const &) = delete;
     VillageFeature(class VillageFeature const &) = delete;
     VillageFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VillageFeature();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEFEATURE
 #endif
     MCAPI VillageFeature(unsigned int, int, int);
-
-
 
 };

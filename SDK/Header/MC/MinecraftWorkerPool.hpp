@@ -15,14 +15,12 @@ class MinecraftWorkerPool {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTWORKERPOOL
 public:
     class MinecraftWorkerPool& operator=(class MinecraftWorkerPool const &) = delete;
     MinecraftWorkerPool(class MinecraftWorkerPool const &) = delete;
     MinecraftWorkerPool() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTWORKERPOOL
@@ -44,7 +42,5 @@ public:
     MCAPI static void destroySingletons();
     MCAPI static void initializeDefaults();
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
-
-
 
 };

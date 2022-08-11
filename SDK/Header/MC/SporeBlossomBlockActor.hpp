@@ -15,14 +15,12 @@ class SporeBlossomBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPOREBLOSSOMBLOCKACTOR
 public:
     class SporeBlossomBlockActor& operator=(class SporeBlossomBlockActor const &) = delete;
     SporeBlossomBlockActor(class SporeBlossomBlockActor const &) = delete;
     SporeBlossomBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SporeBlossomBlockActor();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPOREBLOSSOMBLOCKACTOR
 #endif
     MCAPI SporeBlossomBlockActor(class BlockPos const &);
-
-
 
 };

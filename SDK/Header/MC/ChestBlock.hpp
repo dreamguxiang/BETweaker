@@ -15,14 +15,12 @@ class ChestBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCK
 public:
     class ChestBlock& operator=(class ChestBlock const &) = delete;
     ChestBlock(class ChestBlock const &) = delete;
     ChestBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChestBlock();
@@ -48,7 +46,7 @@ public:
     /*51*/ virtual bool isSignalSource() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
     /*72*/ virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
@@ -82,7 +80,5 @@ public:
 #endif
     MCAPI ChestBlock(std::string const &, int, enum ChestBlock::ChestType, enum MaterialType);
     MCAPI void updateSignalStrength(class BlockSource &, class BlockPos const &, int) const;
-
-
 
 };

@@ -14,14 +14,12 @@ class ScriptScriptingEventHandler {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSCRIPTINGEVENTHANDLER
 public:
     class ScriptScriptingEventHandler& operator=(class ScriptScriptingEventHandler const &) = delete;
     ScriptScriptingEventHandler(class ScriptScriptingEventHandler const &) = delete;
     ScriptScriptingEventHandler() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptScriptingEventHandler();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemEvents>) const;
 
-
 private:
-
 
 };

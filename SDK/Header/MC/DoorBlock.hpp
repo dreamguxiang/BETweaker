@@ -16,7 +16,6 @@ class DoorBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOORBLOCK
 public:
     class DoorBlock& operator=(class DoorBlock const &) = delete;
@@ -24,10 +23,9 @@ public:
     DoorBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoorBlock();
-    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
+    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &);
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
@@ -96,7 +94,5 @@ public:
     MCAPI bool isToggled(class IConstBlockSource const &, class BlockPos const &) const;
     MCAPI void setToggled(class BlockSource &, class BlockPos const &, class Actor *, bool) const;
     MCAPI static unsigned char getDoorFacing(int);
-
-
 
 };

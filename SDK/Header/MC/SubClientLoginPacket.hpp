@@ -15,13 +15,11 @@ class SubClientLoginPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCLIENTLOGINPACKET
 public:
     class SubClientLoginPacket& operator=(class SubClientLoginPacket const &) = delete;
     SubClientLoginPacket(class SubClientLoginPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SubClientLoginPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTLOGINPACKET
 #endif
     MCAPI SubClientLoginPacket();
-
-
 
 };

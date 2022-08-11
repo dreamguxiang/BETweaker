@@ -12,19 +12,15 @@ struct BlockCreativeGroupComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCREATIVEGROUPCOMPONENT
 public:
     struct BlockCreativeGroupComponent& operator=(struct BlockCreativeGroupComponent const &) = delete;
     BlockCreativeGroupComponent(struct BlockCreativeGroupComponent const &) = delete;
     BlockCreativeGroupComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCREATIVEGROUPCOMPONENT
+#endif
     MCAPI ~BlockCreativeGroupComponent();
-
-protected:
-
-private:
 
 };

@@ -15,20 +15,16 @@ class ShulkerBoxContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXCONTAINERSCREENVALIDATOR
 public:
     class ShulkerBoxContainerScreenValidator& operator=(class ShulkerBoxContainerScreenValidator const &) = delete;
     ShulkerBoxContainerScreenValidator(class ShulkerBoxContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShulkerBoxContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXCONTAINERSCREENVALIDATOR
 #endif
     MCAPI ShulkerBoxContainerScreenValidator();
-
-
 
 };

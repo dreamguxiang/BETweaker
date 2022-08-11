@@ -14,14 +14,12 @@ class SharedBuffs {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDBUFFS
 public:
     class SharedBuffs& operator=(class SharedBuffs const &) = delete;
     SharedBuffs(class SharedBuffs const &) = delete;
     SharedBuffs() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDBUFFS
@@ -36,7 +34,5 @@ public:
     MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
     MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
     MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
-
-
 
 };

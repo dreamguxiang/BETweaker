@@ -15,7 +15,6 @@ class WSServerCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WSSERVERCOMMAND
 public:
     class WSServerCommand& operator=(class WSServerCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     WSServerCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WSServerCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSSERVERCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

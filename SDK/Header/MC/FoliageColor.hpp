@@ -16,14 +16,12 @@ public:
 enum PaletteName;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLIAGECOLOR
 public:
     class FoliageColor& operator=(class FoliageColor const &) = delete;
     FoliageColor(class FoliageColor const &) = delete;
     FoliageColor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLIAGECOLOR
@@ -41,7 +39,6 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
@@ -53,6 +50,5 @@ private:
     MCAPI static class mce::Color const GRASS_TOP_RIGHT;
     MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mFoliagePalettes;
     MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mGrassPalettes;
-
 
 };

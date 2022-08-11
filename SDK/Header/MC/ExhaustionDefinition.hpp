@@ -13,7 +13,6 @@ class ExhaustionDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXHAUSTIONDEFINITION
 public:
     class ExhaustionDefinition& operator=(class ExhaustionDefinition const &) = delete;
@@ -21,13 +20,10 @@ public:
     ExhaustionDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class ExhaustionComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExhaustionDefinition>> &);
-
-
 
 };

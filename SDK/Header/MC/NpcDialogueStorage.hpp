@@ -14,14 +14,12 @@ class NpcDialogueStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUESTORAGE
 public:
     class NpcDialogueStorage& operator=(class NpcDialogueStorage const &) = delete;
     NpcDialogueStorage(class NpcDialogueStorage const &) = delete;
     NpcDialogueStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESTORAGE
@@ -30,7 +28,5 @@ public:
     MCAPI struct NpcDialogueScene * getScene(std::string const &);
     MCAPI void init(class ResourcePackManager &);
     MCAPI bool parseFile(std::string const &, std::string const &, enum CurrentCmdVersion);
-
-
 
 };

@@ -15,18 +15,15 @@ struct OnIgniteDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONIGNITEDEFINITION
 public:
     struct OnIgniteDefinition& operator=(struct OnIgniteDefinition const &) = delete;
     OnIgniteDefinition(struct OnIgniteDefinition const &) = delete;
     OnIgniteDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONIGNITEDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnIgniteDefinition>> &);
 
 };

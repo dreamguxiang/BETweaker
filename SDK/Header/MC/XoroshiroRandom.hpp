@@ -14,14 +14,12 @@ class XoroshiroRandom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_XOROSHIRORANDOM
 public:
     class XoroshiroRandom& operator=(class XoroshiroRandom const &) = delete;
     XoroshiroRandom(class XoroshiroRandom const &) = delete;
     XoroshiroRandom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~XoroshiroRandom();
@@ -37,7 +35,5 @@ public:
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
 #endif
-
-
 
 };

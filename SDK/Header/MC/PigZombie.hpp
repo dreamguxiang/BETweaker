@@ -16,14 +16,12 @@ class PigZombie : public Zombie {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIGZOMBIE
 public:
     class PigZombie& operator=(class PigZombie const &) = delete;
     PigZombie(class PigZombie const &) = delete;
     PigZombie() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~PigZombie();
@@ -64,9 +62,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
-
 
 };

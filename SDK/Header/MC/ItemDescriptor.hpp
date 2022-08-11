@@ -17,12 +17,10 @@ class ItemDescriptor {
 
 #define DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTOR
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTOR
 public:
     class ItemDescriptor& operator=(class ItemDescriptor const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
@@ -63,8 +61,6 @@ public:
     MCAPI static void fromMap(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
     MCAPI static class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap(class ItemDescriptor const &);
 
-
 private:
-
 
 };

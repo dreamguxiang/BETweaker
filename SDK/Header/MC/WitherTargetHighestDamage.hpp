@@ -15,14 +15,12 @@ class WitherTargetHighestDamage : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERTARGETHIGHESTDAMAGE
 public:
     class WitherTargetHighestDamage& operator=(class WitherTargetHighestDamage const &) = delete;
     WitherTargetHighestDamage(class WitherTargetHighestDamage const &) = delete;
     WitherTargetHighestDamage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WitherTargetHighestDamage();
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI class Player * getHighestDamageTarget();
 
-
 private:
-
 
 };

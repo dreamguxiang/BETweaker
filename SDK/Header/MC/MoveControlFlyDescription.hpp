@@ -15,7 +15,6 @@ class MoveControlFlyDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLFLYDESCRIPTION
 public:
     class MoveControlFlyDescription& operator=(class MoveControlFlyDescription const &) = delete;
@@ -23,15 +22,12 @@ public:
     MoveControlFlyDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlFlyDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*3*/ virtual void serializeData(class Json::Value &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLFLYDESCRIPTION
 #endif
-
-
 
 };

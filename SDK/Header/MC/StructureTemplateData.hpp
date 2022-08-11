@@ -14,13 +14,11 @@ class StructureTemplateData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATA
 public:
     class StructureTemplateData& operator=(class StructureTemplateData const &) = delete;
     StructureTemplateData(class StructureTemplateData const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATA
@@ -56,10 +54,8 @@ public:
 //private:
     MCAPI void _contentErrorMissingField(std::string const &) const;
 
-
 protected:
 
 private:
-
 
 };

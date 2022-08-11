@@ -15,13 +15,11 @@ class CreatePhotoPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATEPHOTOPACKET
 public:
     class CreatePhotoPacket& operator=(class CreatePhotoPacket const &) = delete;
     CreatePhotoPacket(class CreatePhotoPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CreatePhotoPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATEPHOTOPACKET
 #endif
     MCAPI CreatePhotoPacket();
-
-
 
 };

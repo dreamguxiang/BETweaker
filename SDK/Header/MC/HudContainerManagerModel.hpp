@@ -15,14 +15,12 @@ class HudContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERMANAGERMODEL
 public:
     class HudContainerManagerModel& operator=(class HudContainerManagerModel const &) = delete;
     HudContainerManagerModel(class HudContainerManagerModel const &) = delete;
     HudContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HudContainerManagerModel();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMANAGERMODEL
 #endif
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
-
-
 
 };

@@ -12,20 +12,16 @@ class MobSpawnerData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNERDATA
 public:
     class MobSpawnerData& operator=(class MobSpawnerData const &) = delete;
     MobSpawnerData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERDATA
 #endif
     MCAPI MobSpawnerData(class MobSpawnerData const &);
     MCAPI ~MobSpawnerData();
-
-
 
 };

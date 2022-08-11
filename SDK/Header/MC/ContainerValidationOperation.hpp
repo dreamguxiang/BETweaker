@@ -12,19 +12,15 @@ struct ContainerValidationOperation {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONOPERATION
 public:
     struct ContainerValidationOperation& operator=(struct ContainerValidationOperation const &) = delete;
     ContainerValidationOperation(struct ContainerValidationOperation const &) = delete;
     ContainerValidationOperation() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONOPERATION
+#endif
     MCAPI ContainerValidationOperation(enum ContainerValidationOperationType, struct ContainerValidationSlotData const &, int, class ItemStack const &);
-
-protected:
-
-private:
 
 };

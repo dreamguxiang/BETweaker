@@ -15,14 +15,12 @@ class FlatWorldGenerator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLATWORLDGENERATOR
 public:
     class FlatWorldGenerator& operator=(class FlatWorldGenerator const &) = delete;
     FlatWorldGenerator(class FlatWorldGenerator const &) = delete;
     FlatWorldGenerator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
@@ -46,8 +44,6 @@ public:
 //private:
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const &, short);
 
-
 private:
-
 
 };

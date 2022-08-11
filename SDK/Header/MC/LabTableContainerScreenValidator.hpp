@@ -15,20 +15,16 @@ class LabTableContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLECONTAINERSCREENVALIDATOR
 public:
     class LabTableContainerScreenValidator& operator=(class LabTableContainerScreenValidator const &) = delete;
     LabTableContainerScreenValidator(class LabTableContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LabTableContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLECONTAINERSCREENVALIDATOR
 #endif
     MCAPI LabTableContainerScreenValidator();
-
-
 
 };

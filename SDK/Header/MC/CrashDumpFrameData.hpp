@@ -14,19 +14,16 @@ struct CrashDumpFrameData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPFRAMEDATA
 public:
     struct CrashDumpFrameData& operator=(struct CrashDumpFrameData const &) = delete;
     CrashDumpFrameData(struct CrashDumpFrameData const &) = delete;
     CrashDumpFrameData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPFRAMEDATA
+#endif
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
-
-protected:
-
-private:
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

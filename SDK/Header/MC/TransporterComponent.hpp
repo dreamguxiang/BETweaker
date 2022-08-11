@@ -15,13 +15,11 @@ class TransporterComponent : public BaseCircuitComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTERCOMPONENT
 public:
     class TransporterComponent& operator=(class TransporterComponent const &) = delete;
     TransporterComponent(class TransporterComponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TransporterComponent();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTERCOMPONENT
 #endif
     MCAPI TransporterComponent();
-
-
 
 };

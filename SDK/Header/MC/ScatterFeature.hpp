@@ -14,13 +14,11 @@ class ScatterFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERFEATURE
 public:
     class ScatterFeature& operator=(class ScatterFeature const &) = delete;
     ScatterFeature(class ScatterFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScatterFeature();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERFEATURE
 #endif
     MCAPI ScatterFeature();
-
-
 
 };

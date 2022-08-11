@@ -28,14 +28,12 @@ struct HardcodedSpawningArea {
     HardcodedSpawningArea(HardcodedSpawningArea const&&) = delete;
 };
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNK
 public:
     class LevelChunk& operator=(class LevelChunk const &) = delete;
     LevelChunk(class LevelChunk const &) = delete;
     LevelChunk() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNK
@@ -238,11 +236,9 @@ public:
     MCAPI void _setBiome(class Biome const &, class ChunkBlockPos const &, bool);
     MCAPI void _setBiome(class Biome const &, unsigned short, unsigned short, class Bedrock::Threading::UniqueLock<class std::shared_mutex> const &);
 
-
 protected:
     MCAPI static int const UPDATE_MAP_BIT_SHIFT;
 
 private:
-
 
 };

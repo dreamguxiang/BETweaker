@@ -15,7 +15,6 @@ class HellFireFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELLFIREFEATURE
 public:
     class HellFireFeature& operator=(class HellFireFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     HellFireFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HellFireFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLFIREFEATURE
 #endif
-
-
 
 };

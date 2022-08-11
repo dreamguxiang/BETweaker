@@ -15,7 +15,6 @@ class CompactionListenerEnv : public TransactionalWorldBlockTarget {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPACTIONLISTENERENV
 public:
     class CompactionListenerEnv& operator=(class CompactionListenerEnv const &) = delete;
@@ -23,15 +22,12 @@ public:
     CompactionListenerEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompactionListenerEnv();
+    /*14*/ virtual void Schedule(void ( *)(void *), void *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
-    MCVAPI void Schedule(void ( *)(void *), void *);
 #endif
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
-
-
 
 };

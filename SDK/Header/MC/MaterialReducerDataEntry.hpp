@@ -12,7 +12,6 @@ class MaterialReducerDataEntry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERDATAENTRY
 public:
     class MaterialReducerDataEntry& operator=(class MaterialReducerDataEntry const &) = delete;
@@ -20,12 +19,9 @@ public:
     MaterialReducerDataEntry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERDATAENTRY
 #endif
     MCAPI ~MaterialReducerDataEntry();
-
-
 
 };

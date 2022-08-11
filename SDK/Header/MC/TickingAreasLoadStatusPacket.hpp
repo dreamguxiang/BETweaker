@@ -13,13 +13,11 @@ class TickingAreasLoadStatusPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREASLOADSTATUSPACKET
 public:
     class TickingAreasLoadStatusPacket& operator=(class TickingAreasLoadStatusPacket const &) = delete;
     TickingAreasLoadStatusPacket(class TickingAreasLoadStatusPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TickingAreasLoadStatusPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI TickingAreasLoadStatusPacket();
     MCAPI TickingAreasLoadStatusPacket(bool);
-
-
 
 };

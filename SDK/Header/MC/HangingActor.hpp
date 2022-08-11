@@ -15,14 +15,12 @@ class HangingActor : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HANGINGACTOR
 public:
     class HangingActor& operator=(class HangingActor const &) = delete;
     HangingActor(class HangingActor const &) = delete;
     HangingActor() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -59,9 +57,9 @@ public:
     /*277*/ virtual void __unk_vfn_277();
     /*285*/ virtual void __unk_vfn_285();
     /*286*/ virtual void setDir(int);
-    /*287*/ virtual int getWidth() const = 0;
-    /*288*/ virtual int getHeight() const = 0;
-    /*289*/ virtual void dropItem() = 0;
+    /*287*/ virtual int getWidth();
+    /*288*/ virtual int getHeight();
+    /*289*/ virtual void dropItem();
     /*290*/ virtual bool placeHangingEntity(class BlockSource &, int);
     /*291*/ virtual bool wouldSurvive(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR
@@ -78,11 +76,9 @@ public:
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
 
-
 protected:
 
 private:
     MCAPI static float const HANGING_OFFSET;
-
 
 };

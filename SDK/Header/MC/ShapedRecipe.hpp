@@ -15,7 +15,6 @@ class ShapedRecipe : public Recipe {
 // Add Member There
     void* filler[256 / 8 + 1 - sizeof(Recipe) / 8];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDRECIPE
 public:
     class ShapedRecipe& operator=(class ShapedRecipe const &) = delete;
@@ -23,14 +22,13 @@ public:
     ShapedRecipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShapedRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &);
     /*2*/ virtual int getCraftingSize() const;
     /*3*/ virtual class RecipeIngredient const & getIngredient(int, int) const;
-    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const;
-    /*5*/ virtual bool isShapeless() const;
+    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem();
+    /*5*/ virtual bool isShapeless();
     /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const;
     /*7*/ virtual int size() const;
     /*15*/ virtual void loadResultList(class BlockPalette const &) const;
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
 
-
 private:
-
 
 };

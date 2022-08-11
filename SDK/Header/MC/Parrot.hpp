@@ -16,14 +16,12 @@ class Parrot : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARROT
 public:
     class Parrot& operator=(class Parrot const &) = delete;
     Parrot(class Parrot const &) = delete;
     Parrot() = delete;
 #endif
-
 
 public:
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -72,7 +70,5 @@ public:
     MCAPI float getFlap() const;
     MCAPI float getFlapSpeed() const;
     MCAPI void postAiStep();
-
-
 
 };

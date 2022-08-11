@@ -15,14 +15,12 @@ class OnInteractTriggerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONINTERACTTRIGGERDESCRIPTION
 public:
     class OnInteractTriggerDescription& operator=(class OnInteractTriggerDescription const &) = delete;
     OnInteractTriggerDescription(class OnInteractTriggerDescription const &) = delete;
     OnInteractTriggerDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnInteractTriggerDescription();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGERDESCRIPTION
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

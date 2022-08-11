@@ -16,13 +16,11 @@ class TransferPacket : public Packet {
     char filler[40];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFERPACKET
 public:
     class TransferPacket& operator=(class TransferPacket const &) = delete;
     TransferPacket(class TransferPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TransferPacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI TransferPacket(std::string const &, int);
     MCAPI TransferPacket();
-
-
 
 };

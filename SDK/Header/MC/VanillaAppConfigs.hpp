@@ -16,14 +16,12 @@ class VanillaAppConfigs : public AppConfigs {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAAPPCONFIGS
 public:
     class VanillaAppConfigs& operator=(class VanillaAppConfigs const &) = delete;
     VanillaAppConfigs(class VanillaAppConfigs const &) = delete;
     VanillaAppConfigs() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VanillaAppConfigs();
@@ -57,7 +55,5 @@ public:
     /*31*/ virtual void __unk_vfn_31();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAAPPCONFIGS
 #endif
-
-
 
 };

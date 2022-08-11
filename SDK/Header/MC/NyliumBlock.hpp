@@ -15,14 +15,12 @@ class NyliumBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NYLIUMBLOCK
 public:
     class NyliumBlock& operator=(class NyliumBlock const &) = delete;
     NyliumBlock(class NyliumBlock const &) = delete;
     NyliumBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NyliumBlock();
@@ -77,8 +75,6 @@ public:
 //private:
     MCAPI bool _scatterVegetation(class BlockSource &, class BlockPos const &, class Random &, class std::function<class Block const & (class Randomize const &)>) const;
 
-
 private:
-
 
 };

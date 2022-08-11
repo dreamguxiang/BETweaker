@@ -15,14 +15,12 @@ class StoneButtonBlock : public ButtonBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONEBUTTONBLOCK
 public:
     class StoneButtonBlock& operator=(class StoneButtonBlock const &) = delete;
     StoneButtonBlock(class StoneButtonBlock const &) = delete;
     StoneButtonBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneButtonBlock();
@@ -64,7 +62,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONEBUTTONBLOCK
 #endif
     MCAPI StoneButtonBlock(std::string const &, int);
-
-
 
 };

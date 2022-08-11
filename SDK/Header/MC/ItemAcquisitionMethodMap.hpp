@@ -14,7 +14,6 @@ class ItemAcquisitionMethodMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACQUISITIONMETHODMAP
 public:
     class ItemAcquisitionMethodMap& operator=(class ItemAcquisitionMethodMap const &) = delete;
@@ -22,16 +21,13 @@ public:
     ItemAcquisitionMethodMap() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACQUISITIONMETHODMAP
 #endif
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string> const mMap;
-
 
 };

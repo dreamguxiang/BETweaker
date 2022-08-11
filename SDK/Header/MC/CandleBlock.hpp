@@ -15,14 +15,12 @@ class CandleBlock : public AbstractCandleBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANDLEBLOCK
 public:
     class CandleBlock& operator=(class CandleBlock const &) = delete;
     CandleBlock(class CandleBlock const &) = delete;
     CandleBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CandleBlock();
@@ -84,8 +82,6 @@ public:
 //private:
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 
-
 private:
-
 
 };

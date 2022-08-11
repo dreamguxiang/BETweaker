@@ -15,7 +15,6 @@ class EventCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTCOMMAND
 public:
     class EventCommand& operator=(class EventCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     EventCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EventCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

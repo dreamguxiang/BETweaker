@@ -15,13 +15,11 @@ class SetCommandsEnabledPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETCOMMANDSENABLEDPACKET
 public:
     class SetCommandsEnabledPacket& operator=(class SetCommandsEnabledPacket const &) = delete;
     SetCommandsEnabledPacket(class SetCommandsEnabledPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetCommandsEnabledPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetCommandsEnabledPacket();
     MCAPI SetCommandsEnabledPacket(bool);
-
-
 
 };

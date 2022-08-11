@@ -15,13 +15,11 @@ class PlayerInputPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINPUTPACKET
 public:
     class PlayerInputPacket& operator=(class PlayerInputPacket const &) = delete;
     PlayerInputPacket(class PlayerInputPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerInputPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINPUTPACKET
 #endif
     MCAPI PlayerInputPacket();
-
-
 
 };

@@ -12,20 +12,16 @@ struct ItemUseEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEEVENT
 public:
     struct ItemUseEvent& operator=(struct ItemUseEvent const &) = delete;
     ItemUseEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEEVENT
+#endif
     MCAPI ItemUseEvent(struct ItemUseEvent &&);
     MCAPI ItemUseEvent(struct ItemUseEvent const &);
     MCAPI ~ItemUseEvent();
-
-protected:
-
-private:
 
 };

@@ -12,7 +12,6 @@ class ActorUseItemEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUSEITEMEVENT
 public:
     class ActorUseItemEvent& operator=(class ActorUseItemEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorUseItemEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUSEITEMEVENT
 #endif
     MCAPI ~ActorUseItemEvent();
-
-
 
 };

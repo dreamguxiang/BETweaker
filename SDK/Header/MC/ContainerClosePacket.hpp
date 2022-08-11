@@ -15,13 +15,11 @@ class ContainerClosePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCLOSEPACKET
 public:
     class ContainerClosePacket& operator=(class ContainerClosePacket const &) = delete;
     ContainerClosePacket(class ContainerClosePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerClosePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ContainerClosePacket(enum ContainerID, bool);
     MCAPI ContainerClosePacket();
-
-
 
 };

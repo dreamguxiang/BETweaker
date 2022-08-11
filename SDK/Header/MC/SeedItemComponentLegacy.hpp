@@ -15,14 +15,12 @@ class SeedItemComponentLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEEDITEMCOMPONENTLEGACY
 public:
     class SeedItemComponentLegacy& operator=(class SeedItemComponentLegacy const &) = delete;
     SeedItemComponentLegacy(class SeedItemComponentLegacy const &) = delete;
     SeedItemComponentLegacy() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEEDITEMCOMPONENTLEGACY
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI bool _canPlant(class Block const &) const;
 
-
 private:
-
 
 };

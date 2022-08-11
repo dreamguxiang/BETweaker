@@ -14,14 +14,12 @@ class ServerContentKeyProvider {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCONTENTKEYPROVIDER
 public:
     class ServerContentKeyProvider& operator=(class ServerContentKeyProvider const &) = delete;
     ServerContentKeyProvider(class ServerContentKeyProvider const &) = delete;
     ServerContentKeyProvider() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerContentKeyProvider();
@@ -35,7 +33,5 @@ public:
     MCVAPI void clearTempContentKeys();
     MCVAPI void setTempContentKeys(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string>>> const &);
 #endif
-
-
 
 };

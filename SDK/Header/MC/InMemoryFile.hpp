@@ -15,14 +15,12 @@ class InMemoryFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYFILE
 public:
     class InMemoryFile& operator=(class InMemoryFile const &) = delete;
     InMemoryFile(class InMemoryFile const &) = delete;
     InMemoryFile() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILE
@@ -39,7 +37,5 @@ public:
     MCAPI class leveldb::Status read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *, unsigned __int64 &) const;
     MCAPI void rename(class Core::Path const &);
     MCAPI ~InMemoryFile();
-
-
 
 };

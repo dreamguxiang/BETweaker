@@ -15,13 +15,11 @@ class CreativeContentPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVECONTENTPACKET
 public:
     class CreativeContentPacket& operator=(class CreativeContentPacket const &) = delete;
     CreativeContentPacket(class CreativeContentPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CreativeContentPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
     MCAPI CreativeContentPacket();
-
-
 
 };

@@ -15,14 +15,12 @@ class OnFallOnTriggerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFALLONTRIGGERDESCRIPTION
 public:
     class OnFallOnTriggerDescription& operator=(class OnFallOnTriggerDescription const &) = delete;
     OnFallOnTriggerDescription(class OnFallOnTriggerDescription const &) = delete;
     OnFallOnTriggerDescription() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnFallOnTriggerDescription();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGERDESCRIPTION
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

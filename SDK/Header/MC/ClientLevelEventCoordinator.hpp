@@ -14,7 +14,6 @@ class ClientLevelEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTLEVELEVENTCOORDINATOR
 public:
     class ClientLevelEventCoordinator& operator=(class ClientLevelEventCoordinator const &) = delete;
@@ -22,11 +21,8 @@ public:
     ClientLevelEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTLEVELEVENTCOORDINATOR
 #endif
-
-
 
 };

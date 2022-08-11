@@ -16,14 +16,12 @@ class Animal : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMAL
 public:
     class Animal& operator=(class Animal const &) = delete;
     Animal(class Animal const &) = delete;
     Animal() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMAL
 #endif
     MCAPI Animal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

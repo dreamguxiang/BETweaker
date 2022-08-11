@@ -14,14 +14,12 @@ class ServerMetricsImpl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMETRICSIMPL
 public:
     class ServerMetricsImpl& operator=(class ServerMetricsImpl const &) = delete;
     ServerMetricsImpl(class ServerMetricsImpl const &) = delete;
     ServerMetricsImpl() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerMetricsImpl();
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance &);
 
-
 private:
-
 
 };

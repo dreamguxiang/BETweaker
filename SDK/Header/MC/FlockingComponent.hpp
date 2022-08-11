@@ -14,13 +14,11 @@ class FlockingComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGCOMPONENT
 public:
     class FlockingComponent& operator=(class FlockingComponent const &) = delete;
     FlockingComponent(class FlockingComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGCOMPONENT
@@ -38,7 +36,5 @@ public:
     MCAPI class FlockingComponent & operator=(class FlockingComponent &&);
     MCAPI void updateNeighborhoodData(class Actor const &);
     MCAPI bool validateVariantEntityTypes(class Actor const &, class Actor const &) const;
-
-
 
 };

@@ -15,14 +15,12 @@ class ServerLevel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVEL
 public:
     class ServerLevel& operator=(class ServerLevel const &) = delete;
     ServerLevel(class ServerLevel const &) = delete;
     ServerLevel() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
@@ -62,7 +60,5 @@ public:
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
-
-
 
 };

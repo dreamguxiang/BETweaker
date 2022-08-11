@@ -15,13 +15,11 @@ class LevelSoundEventPacketV2 : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTPACKETV2
 public:
     class LevelSoundEventPacketV2& operator=(class LevelSoundEventPacketV2 const &) = delete;
     LevelSoundEventPacketV2(class LevelSoundEventPacketV2 const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelSoundEventPacketV2();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTPACKETV2
 #endif
     MCAPI LevelSoundEventPacketV2();
-
-
 
 };

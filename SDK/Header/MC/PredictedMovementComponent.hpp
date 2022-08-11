@@ -30,14 +30,12 @@ struct HistoryItem {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREDICTEDMOVEMENTCOMPONENT
 public:
     class PredictedMovementComponent& operator=(class PredictedMovementComponent const &) = delete;
     PredictedMovementComponent(class PredictedMovementComponent const &) = delete;
     PredictedMovementComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
@@ -54,10 +52,8 @@ public:
     MCAPI void _tickNextPosition(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
 
-
 private:
     MCAPI static unsigned int const LERP_STEP_SIZE;
     MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
-
 
 };

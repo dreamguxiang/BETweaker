@@ -16,14 +16,12 @@ class Witch : public HumanoidMonster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITCH
 public:
     class Witch& operator=(class Witch const &) = delete;
     Witch(class Witch const &) = delete;
     Witch() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Witch();
@@ -39,7 +37,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*113*/ virtual bool canAttack(class Actor *, bool) const;
+    /*113*/ virtual bool canAttack(class Actor *, bool);
     /*117*/ virtual void performRangedAttack(class Actor &, float);
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*182*/ virtual void __unk_vfn_182();
@@ -66,10 +64,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
-
 
 };

@@ -12,7 +12,6 @@ class SetEntityInsideSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETENTITYINSIDESYSTEM
 public:
     class SetEntityInsideSystem& operator=(class SetEntityInsideSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     SetEntityInsideSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETENTITYINSIDESYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     MCAPI static struct TickingSystemWithInfo createSystem();
-
-
 
 };

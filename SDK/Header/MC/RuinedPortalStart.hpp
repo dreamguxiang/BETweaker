@@ -15,7 +15,6 @@ class RuinedPortalStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUINEDPORTALSTART
 public:
     class RuinedPortalStart& operator=(class RuinedPortalStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     RuinedPortalStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RuinedPortalStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALSTART
 #endif
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
-
-
 
 };

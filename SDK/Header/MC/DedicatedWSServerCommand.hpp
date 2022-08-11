@@ -15,14 +15,12 @@ class DedicatedWSServerCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDWSSERVERCOMMAND
 public:
     class DedicatedWSServerCommand& operator=(class DedicatedWSServerCommand const &) = delete;
     DedicatedWSServerCommand(class DedicatedWSServerCommand const &) = delete;
     DedicatedWSServerCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DedicatedWSServerCommand();
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class IMinecraftApp * mApp;
-
 
 };

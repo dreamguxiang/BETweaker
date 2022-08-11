@@ -14,14 +14,12 @@ class TestSummaryDisplayer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTSUMMARYDISPLAYER
 public:
     class TestSummaryDisplayer& operator=(class TestSummaryDisplayer const &) = delete;
     TestSummaryDisplayer(class TestSummaryDisplayer const &) = delete;
     TestSummaryDisplayer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTSUMMARYDISPLAYER
@@ -34,8 +32,6 @@ public:
     MCAPI void _say(std::string const &, std::string const &) const;
     MCAPI void _showTestSummaryIfAllDone() const;
 
-
 private:
-
 
 };

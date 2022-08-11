@@ -15,18 +15,15 @@ struct OnHurtDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONHURTDEFINITION
 public:
     struct OnHurtDefinition& operator=(struct OnHurtDefinition const &) = delete;
     OnHurtDefinition(struct OnHurtDefinition const &) = delete;
     OnHurtDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHURTDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnHurtDefinition>> &);
 
 };

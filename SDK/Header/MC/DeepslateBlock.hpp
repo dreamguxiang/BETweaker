@@ -15,14 +15,12 @@ class DeepslateBlock : public RotatedPillarBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEEPSLATEBLOCK
 public:
     class DeepslateBlock& operator=(class DeepslateBlock const &) = delete;
     DeepslateBlock(class DeepslateBlock const &) = delete;
     DeepslateBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeepslateBlock();
@@ -45,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -68,7 +66,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEEPSLATEBLOCK
 #endif
     MCAPI DeepslateBlock(std::string const &, int);
-
-
 
 };

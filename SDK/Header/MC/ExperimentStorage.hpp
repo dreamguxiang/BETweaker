@@ -14,13 +14,11 @@ class ExperimentStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTSTORAGE
 public:
     ExperimentStorage(class ExperimentStorage const &) = delete;
     ExperimentStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
@@ -29,7 +27,5 @@ public:
     MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     MCAPI bool wereAnyExperimentsEverToggled() const;
     MCAPI ~ExperimentStorage();
-
-
 
 };

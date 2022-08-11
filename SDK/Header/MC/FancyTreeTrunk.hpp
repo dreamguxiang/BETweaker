@@ -22,14 +22,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FANCYTREETRUNK
 public:
     class FancyTreeTrunk& operator=(class FancyTreeTrunk const &) = delete;
     FancyTreeTrunk(class FancyTreeTrunk const &) = delete;
     FancyTreeTrunk() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FancyTreeTrunk();
@@ -43,8 +41,6 @@ public:
     MCAPI void _placeBranches(class IBlockWorldGenAPI &, class BlockPos const &, int, std::vector<class FancyTreeTrunk::FoliageCoords> const &) const;
     MCAPI void _placeLimb(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &) const;
 
-
 private:
-
 
 };

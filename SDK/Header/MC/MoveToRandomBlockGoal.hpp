@@ -14,14 +14,12 @@ class MoveToRandomBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETORANDOMBLOCKGOAL
 public:
     class MoveToRandomBlockGoal& operator=(class MoveToRandomBlockGoal const &) = delete;
     MoveToRandomBlockGoal(class MoveToRandomBlockGoal const &) = delete;
     MoveToRandomBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToRandomBlockGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
 
-
 private:
-
 
 };

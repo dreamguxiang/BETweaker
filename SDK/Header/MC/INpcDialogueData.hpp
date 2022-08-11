@@ -14,18 +14,16 @@ struct INpcDialogueData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INPCDIALOGUEDATA
 public:
     struct INpcDialogueData& operator=(struct INpcDialogueData const &) = delete;
     INpcDialogueData(struct INpcDialogueData const &) = delete;
     INpcDialogueData() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPCDIALOGUEDATA
+    MCVAPI std::string const & getRawDialogueText() const;
+    MCVAPI bool isRemoteFire();
+#endif
 
 };

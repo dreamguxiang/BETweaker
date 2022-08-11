@@ -14,14 +14,12 @@ class DirectPlayerMovementProxy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTPLAYERMOVEMENTPROXY
 public:
     class DirectPlayerMovementProxy& operator=(class DirectPlayerMovementProxy const &) = delete;
     DirectPlayerMovementProxy(class DirectPlayerMovementProxy const &) = delete;
     DirectPlayerMovementProxy() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
@@ -99,7 +97,5 @@ public:
     MCVAPI void updateTouch();
     MCVAPI bool wasAutoJumping() const;
 #endif
-
-
 
 };

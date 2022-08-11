@@ -14,7 +14,6 @@ class LodestoneCompassComponentCalculator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONECOMPASSCOMPONENTCALCULATOR
 public:
     class LodestoneCompassComponentCalculator& operator=(class LodestoneCompassComponentCalculator const &) = delete;
@@ -22,16 +21,13 @@ public:
     LodestoneCompassComponentCalculator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENTCALCULATOR
 #endif
 
 //private:
 
-
 private:
     MCAPI static float COOLDOWN_TIME_SECONDS;
-
 
 };

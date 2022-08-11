@@ -14,14 +14,12 @@ class ItemStackRequestData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTDATA
 public:
     class ItemStackRequestData& operator=(class ItemStackRequestData const &) = delete;
     ItemStackRequestData(class ItemStackRequestData const &) = delete;
     ItemStackRequestData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
@@ -34,7 +32,5 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestData();
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
-
-
 
 };

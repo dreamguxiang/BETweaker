@@ -15,14 +15,12 @@ class DetectorRailBlock : public BaseRailBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DETECTORRAILBLOCK
 public:
     class DetectorRailBlock& operator=(class DetectorRailBlock const &) = delete;
     DetectorRailBlock(class DetectorRailBlock const &) = delete;
     DetectorRailBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DetectorRailBlock();
@@ -45,11 +43,11 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource() const;
+    /*51*/ virtual bool isSignalSource();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
+    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool);
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -77,8 +75,6 @@ public:
 //private:
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

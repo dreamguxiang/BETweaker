@@ -13,14 +13,12 @@ class WorkComposterGoal : public WorkGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKCOMPOSTERGOAL
 public:
     class WorkComposterGoal& operator=(class WorkComposterGoal const &) = delete;
     WorkComposterGoal(class WorkComposterGoal const &) = delete;
     WorkComposterGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorkComposterGoal();
@@ -37,8 +35,6 @@ public:
     MCAPI bool _tryCompostItems();
     MCAPI bool _tryEmptyComposter();
 
-
 private:
-
 
 };

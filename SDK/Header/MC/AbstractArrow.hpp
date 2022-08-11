@@ -16,14 +16,12 @@ class AbstractArrow : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSTRACTARROW
 public:
     class AbstractArrow& operator=(class AbstractArrow const &) = delete;
     AbstractArrow(class AbstractArrow const &) = delete;
     AbstractArrow() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -46,7 +44,7 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*181*/ virtual bool canChangeDimensionsUsingPortal() const;
+    /*181*/ virtual bool canChangeDimensionsUsingPortal();
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
@@ -60,7 +58,7 @@ public:
     /*285*/ virtual void __unk_vfn_285();
     /*286*/ virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /*287*/ virtual void _playPickupSound();
-    /*288*/ virtual class ItemStack _getPickupItem() const = 0;
+    /*288*/ virtual class ItemStack _getPickupItem();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTARROW
 #endif
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
@@ -71,8 +69,6 @@ public:
 //protected:
     MCAPI bool _canPickup(class Player const &) const;
 
-
 protected:
-
 
 };

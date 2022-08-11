@@ -15,14 +15,12 @@ class AzaleaBlock : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEABLOCK
 public:
     class AzaleaBlock& operator=(class AzaleaBlock const &) = delete;
     AzaleaBlock(class AzaleaBlock const &) = delete;
     AzaleaBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AzaleaBlock();
@@ -34,7 +32,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -53,7 +51,7 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -74,8 +72,6 @@ public:
 //private:
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &) const;
 
-
 private:
-
 
 };

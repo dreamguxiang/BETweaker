@@ -15,14 +15,12 @@ class TagCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGCOMMAND
 public:
     class TagCommand& operator=(class TagCommand const &) = delete;
     TagCommand(class TagCommand const &) = delete;
     TagCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TagCommand();
@@ -37,8 +35,6 @@ public:
     MCAPI void _listTags(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
     MCAPI void _removeTag(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
 
-
 private:
-
 
 };

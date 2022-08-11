@@ -13,7 +13,6 @@ class VibrationListenerDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENERDEFINITION
 public:
     class VibrationListenerDefinition& operator=(class VibrationListenerDefinition const &) = delete;
@@ -21,13 +20,10 @@ public:
     VibrationListenerDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VibrationListenerDefinition>> &);
-
-
 
 };

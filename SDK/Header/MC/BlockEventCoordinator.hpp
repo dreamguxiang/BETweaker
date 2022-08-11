@@ -14,14 +14,12 @@ class BlockEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTCOORDINATOR
 public:
     class BlockEventCoordinator& operator=(class BlockEventCoordinator const &) = delete;
     BlockEventCoordinator(class BlockEventCoordinator const &) = delete;
     BlockEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTCOORDINATOR
@@ -39,7 +37,5 @@ public:
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableBlockGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const &);
     MCAPI void sendUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
-
-
 
 };

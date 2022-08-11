@@ -15,14 +15,12 @@ class UPNPInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPNPINTERFACE
 public:
     class UPNPInterface& operator=(class UPNPInterface const &) = delete;
     UPNPInterface(class UPNPInterface const &) = delete;
     UPNPInterface() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
@@ -32,7 +30,5 @@ public:
     MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     MCAPI void reset();
     MCAPI void tick();
-
-
 
 };

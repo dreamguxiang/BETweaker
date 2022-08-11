@@ -15,13 +15,11 @@ class ShowStoreOfferPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWSTOREOFFERPACKET
 public:
     class ShowStoreOfferPacket& operator=(class ShowStoreOfferPacket const &) = delete;
     ShowStoreOfferPacket(class ShowStoreOfferPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShowStoreOfferPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOWSTOREOFFERPACKET
 #endif
     MCAPI ShowStoreOfferPacket();
-
-
 
 };

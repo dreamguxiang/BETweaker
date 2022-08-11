@@ -15,7 +15,6 @@ class EnvironmentSensorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENVIRONMENTSENSORDEFINITION
 public:
     class EnvironmentSensorDefinition& operator=(class EnvironmentSensorDefinition const &) = delete;
@@ -23,13 +22,10 @@ public:
     EnvironmentSensorDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENVIRONMENTSENSORDEFINITION
 #endif
     MCAPI void addEnvironmentTrigger(class ActorDefinitionTrigger const &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EnvironmentSensorDefinition>> &);
-
-
 
 };

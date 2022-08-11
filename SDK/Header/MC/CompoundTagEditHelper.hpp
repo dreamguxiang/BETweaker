@@ -14,14 +14,12 @@ class CompoundTagEditHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGEDITHELPER
 public:
     class CompoundTagEditHelper& operator=(class CompoundTagEditHelper const &) = delete;
     CompoundTagEditHelper(class CompoundTagEditHelper const &) = delete;
     CompoundTagEditHelper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGEDITHELPER
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void pushChild(std::string const &);
 
-
 private:
-
 
 };

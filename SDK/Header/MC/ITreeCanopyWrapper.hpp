@@ -12,7 +12,6 @@ class ITreeCanopyWrapper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREECANOPYWRAPPER
 public:
     class ITreeCanopyWrapper& operator=(class ITreeCanopyWrapper const &) = delete;
@@ -20,12 +19,9 @@ public:
     ITreeCanopyWrapper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREECANOPYWRAPPER
 #endif
     MCAPI ~ITreeCanopyWrapper();
-
-
 
 };

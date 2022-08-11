@@ -14,14 +14,12 @@ class ImprovedNoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPROVEDNOISE
 public:
     class ImprovedNoise& operator=(class ImprovedNoise const &) = delete;
     ImprovedNoise(class ImprovedNoise const &) = delete;
     ImprovedNoise() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPROVEDNOISE
@@ -34,8 +32,6 @@ public:
     MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
     MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
 
-
 private:
-
 
 };

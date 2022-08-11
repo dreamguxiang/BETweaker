@@ -16,14 +16,12 @@ class Wolf : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOLF
 public:
     class Wolf& operator=(class Wolf const &) = delete;
     Wolf(class Wolf const &) = delete;
     Wolf() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Wolf();
@@ -75,8 +73,6 @@ public:
 //private:
     MCAPI void _avoidSnowBury();
 
-
 private:
-
 
 };

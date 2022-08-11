@@ -16,14 +16,12 @@ public:
 enum SmallDoorType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDPIECE
 public:
     class StrongholdPiece& operator=(class StrongholdPiece const &) = delete;
     StrongholdPiece(class StrongholdPiece const &) = delete;
     StrongholdPiece() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
@@ -36,7 +34,5 @@ public:
     MCAPI class StructurePiece * generateSmallDoorChildForward(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int);
     MCAPI class StructurePiece * generateSmallDoorChildLeft(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int);
     MCAPI class StructurePiece * generateSmallDoorChildRight(class SHStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int);
-
-
 
 };

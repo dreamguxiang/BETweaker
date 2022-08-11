@@ -14,14 +14,12 @@ class AttributeCollection {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTECOLLECTION
 public:
     class AttributeCollection& operator=(class AttributeCollection const &) = delete;
     AttributeCollection(class AttributeCollection const &) = delete;
     AttributeCollection() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTECOLLECTION
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI static class AttributeCollection & instance();
 
-
 private:
-
 
 };

@@ -15,13 +15,11 @@ class DragonStrafePlayerDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSTRAFEPLAYERDEFINITION
 public:
     class DragonStrafePlayerDefinition& operator=(class DragonStrafePlayerDefinition const &) = delete;
     DragonStrafePlayerDefinition(class DragonStrafePlayerDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI DragonStrafePlayerDefinition();
     MCAPI void initialize(class EntityContext &, class DragonStrafePlayerGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonStrafePlayerDefinition>> &);
-
-
 
 };

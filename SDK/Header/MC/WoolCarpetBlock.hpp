@@ -15,14 +15,12 @@ class WoolCarpetBlock : public CarpetBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOOLCARPETBLOCK
 public:
     class WoolCarpetBlock& operator=(class WoolCarpetBlock const &) = delete;
     WoolCarpetBlock(class WoolCarpetBlock const &) = delete;
     WoolCarpetBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WoolCarpetBlock();
@@ -69,7 +67,5 @@ public:
     MCVAPI bool canDamperVibrations() const;
 #endif
     MCAPI WoolCarpetBlock(std::string const &, int);
-
-
 
 };

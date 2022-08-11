@@ -15,7 +15,6 @@ class KillCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KILLCOMMAND
 public:
     class KillCommand& operator=(class KillCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     KillCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~KillCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KILLCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

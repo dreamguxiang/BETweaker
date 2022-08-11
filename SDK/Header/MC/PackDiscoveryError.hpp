@@ -15,14 +15,12 @@ class PackDiscoveryError : public PackError {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKDISCOVERYERROR
 public:
     class PackDiscoveryError& operator=(class PackDiscoveryError const &) = delete;
     PackDiscoveryError(class PackDiscoveryError const &) = delete;
     PackDiscoveryError() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackDiscoveryError();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKDISCOVERYERROR
 #endif
     MCAPI PackDiscoveryError(enum PackParseErrorType, std::vector<std::string> const &);
-
-
 
 };

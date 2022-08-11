@@ -15,18 +15,18 @@ struct PushableDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLEDESCRIPTION
 public:
     struct PushableDescription& operator=(struct PushableDescription const &) = delete;
     PushableDescription(struct PushableDescription const &) = delete;
 #endif
-
 public:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~PushableDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
+#endif
     MCAPI PushableDescription();
-
-protected:
-
-private:
 
 };

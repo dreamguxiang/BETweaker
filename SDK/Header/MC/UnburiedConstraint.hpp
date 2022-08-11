@@ -14,7 +14,6 @@ class UnburiedConstraint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNBURIEDCONSTRAINT
 public:
     class UnburiedConstraint& operator=(class UnburiedConstraint const &) = delete;
@@ -22,14 +21,11 @@ public:
     UnburiedConstraint() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UnburiedConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNBURIEDCONSTRAINT
 #endif
     MCAPI UnburiedConstraint(class StructureTemplate &);
-
-
 
 };

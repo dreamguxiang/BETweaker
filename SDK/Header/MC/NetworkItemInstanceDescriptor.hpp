@@ -14,14 +14,12 @@ class NetworkItemInstanceDescriptor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMINSTANCEDESCRIPTOR
 public:
     class NetworkItemInstanceDescriptor& operator=(class NetworkItemInstanceDescriptor const &) = delete;
     NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor const &) = delete;
     NetworkItemInstanceDescriptor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
@@ -32,7 +30,5 @@ public:
     MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~NetworkItemInstanceDescriptor();
-
-
 
 };

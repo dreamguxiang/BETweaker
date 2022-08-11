@@ -14,13 +14,11 @@ class BossComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSCOMPONENT
 public:
     class BossComponent& operator=(class BossComponent const &) = delete;
     BossComponent(class BossComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSCOMPONENT
@@ -56,8 +54,6 @@ public:
 //private:
     MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
 
-
 private:
-
 
 };

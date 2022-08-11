@@ -14,14 +14,12 @@ class RamAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAMATTACKGOAL
 public:
     class RamAttackGoal& operator=(class RamAttackGoal const &) = delete;
     RamAttackGoal(class RamAttackGoal const &) = delete;
     RamAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RamAttackGoal();
@@ -45,10 +43,8 @@ public:
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
 
-
 protected:
 
 private:
-
 
 };

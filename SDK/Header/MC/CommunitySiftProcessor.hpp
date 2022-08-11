@@ -13,14 +13,12 @@ class CommunitySiftProcessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMUNITYSIFTPROCESSOR
 public:
     class CommunitySiftProcessor& operator=(class CommunitySiftProcessor const &) = delete;
     CommunitySiftProcessor(class CommunitySiftProcessor const &) = delete;
     CommunitySiftProcessor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommunitySiftProcessor();
@@ -40,8 +38,6 @@ public:
     MCAPI bool _validateCommunitySiftConfiguration();
     MCAPI static struct CommunitySiftConfig _createConfigFromJson(std::string const &);
 
-
 private:
-
 
 };

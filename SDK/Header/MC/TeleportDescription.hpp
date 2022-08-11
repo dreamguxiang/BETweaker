@@ -15,13 +15,11 @@ class TeleportDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTDESCRIPTION
 public:
     class TeleportDescription& operator=(class TeleportDescription const &) = delete;
     TeleportDescription(class TeleportDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTDESCRIPTION
 #endif
     MCAPI TeleportDescription();
-
-
 
 };

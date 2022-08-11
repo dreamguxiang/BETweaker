@@ -12,19 +12,15 @@ struct LeverActionEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVERACTIONEVENT
 public:
     struct LeverActionEvent& operator=(struct LeverActionEvent const &) = delete;
     LeverActionEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERACTIONEVENT
+#endif
     MCAPI LeverActionEvent(struct LeverActionEvent const &);
     MCAPI ~LeverActionEvent();
-
-protected:
-
-private:
 
 };

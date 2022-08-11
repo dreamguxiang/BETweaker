@@ -14,7 +14,6 @@ class ZipPackAccessStrategyOwningFileAccess : public ZipPackAccessStrategy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
 public:
     class ZipPackAccessStrategyOwningFileAccess& operator=(class ZipPackAccessStrategyOwningFileAccess const &) = delete;
@@ -22,13 +21,10 @@ public:
     ZipPackAccessStrategyOwningFileAccess() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ZipPackAccessStrategyOwningFileAccess();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
 #endif
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
-
-
 
 };

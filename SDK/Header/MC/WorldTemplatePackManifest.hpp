@@ -14,13 +14,11 @@ class WorldTemplatePackManifest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEPACKMANIFEST
 public:
     class WorldTemplatePackManifest& operator=(class WorldTemplatePackManifest const &) = delete;
     WorldTemplatePackManifest(class WorldTemplatePackManifest const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorldTemplatePackManifest();
@@ -31,7 +29,5 @@ public:
     MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
     MCAPI void setGameType(enum GameType);
-
-
 
 };

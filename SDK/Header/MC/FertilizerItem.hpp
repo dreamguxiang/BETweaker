@@ -16,14 +16,12 @@ class FertilizerItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FERTILIZERITEM
 public:
     class FertilizerItem& operator=(class FertilizerItem const &) = delete;
     FertilizerItem(class FertilizerItem const &) = delete;
     FertilizerItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FertilizerItem();
@@ -32,7 +30,7 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*21*/ virtual bool isFertilizer() const;
+    /*21*/ virtual bool isFertilizer();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -43,12 +41,11 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZERITEM
 #endif
     MCAPI FertilizerItem(std::string const &, int, enum FertilizerType);
     MCAPI enum FertilizerType getFertilizerType() const;
-
-
 
 };

@@ -15,12 +15,10 @@ class PackReport {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKREPORT
 public:
     class PackReport& operator=(class PackReport const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKREPORT
@@ -44,7 +42,5 @@ public:
     MCAPI void setUpgradeSuccess();
     MCAPI bool wasUpgraded() const;
     MCAPI ~PackReport();
-
-
 
 };

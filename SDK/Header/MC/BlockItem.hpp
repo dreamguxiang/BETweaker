@@ -16,14 +16,12 @@ class BlockItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKITEM
 public:
     class BlockItem& operator=(class BlockItem const &) = delete;
     BlockItem(class BlockItem const &) = delete;
     BlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockItem();
@@ -46,12 +44,11 @@ public:
     /*122*/ virtual struct Brightness getLightEmission(int) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*124*/ virtual int getIconYOffset() const;
+    /*130*/ virtual void __unk_vfn_130();
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKITEM
 #endif
     MCAPI BlockItem(std::string const &, int);
-
-
 
 };

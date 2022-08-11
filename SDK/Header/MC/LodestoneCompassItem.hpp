@@ -16,14 +16,12 @@ class LodestoneCompassItem : public AbstractCompassItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONECOMPASSITEM
 public:
     class LodestoneCompassItem& operator=(class LodestoneCompassItem const &) = delete;
     LodestoneCompassItem(class LodestoneCompassItem const &) = delete;
     LodestoneCompassItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LodestoneCompassItem();
@@ -41,13 +39,12 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSITEM
 #endif
     MCAPI LodestoneCompassItem(std::string const &, int);
     MCAPI static class PositionTrackingId getPositionTrackingId(class ItemStackBase const &);
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
-
-
 
 };

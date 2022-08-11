@@ -14,13 +14,11 @@ class BoostableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLECOMPONENT
 public:
     class BoostableComponent& operator=(class BoostableComponent const &) = delete;
     BoostableComponent(class BoostableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLECOMPONENT
@@ -38,10 +36,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
-
 
 };

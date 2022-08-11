@@ -15,14 +15,12 @@ class SwingEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWINGEVENTRESPONSE
 public:
     class SwingEventResponse& operator=(class SwingEventResponse const &) = delete;
     SwingEventResponse(class SwingEventResponse const &) = delete;
     SwingEventResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwingEventResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWINGEVENTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

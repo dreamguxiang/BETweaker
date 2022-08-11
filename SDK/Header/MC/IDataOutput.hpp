@@ -14,7 +14,6 @@ class IDataOutput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDATAOUTPUT
 public:
     class IDataOutput& operator=(class IDataOutput const &) = delete;
@@ -22,11 +21,8 @@ public:
     IDataOutput() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDATAOUTPUT
 #endif
-
-
 
 };

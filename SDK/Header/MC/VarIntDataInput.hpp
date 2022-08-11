@@ -14,14 +14,12 @@ class VarIntDataInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAINPUT
 public:
     class VarIntDataInput& operator=(class VarIntDataInput const &) = delete;
     VarIntDataInput(class VarIntDataInput const &) = delete;
     VarIntDataInput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VarIntDataInput();
@@ -39,7 +37,5 @@ public:
     MCVAPI std::string readLongString();
     MCVAPI std::string readString();
 #endif
-
-
 
 };

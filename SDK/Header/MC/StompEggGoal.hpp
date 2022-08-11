@@ -15,14 +15,12 @@ class StompEggGoal : public StompBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPEGGGOAL
 public:
     class StompEggGoal& operator=(class StompEggGoal const &) = delete;
     StompEggGoal(class StompEggGoal const &) = delete;
     StompEggGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StompEggGoal();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPEGGGOAL
 #endif
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
-
-
 
 };

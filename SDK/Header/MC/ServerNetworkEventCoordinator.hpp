@@ -14,14 +14,12 @@ class ServerNetworkEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTCOORDINATOR
 public:
     class ServerNetworkEventCoordinator& operator=(class ServerNetworkEventCoordinator const &) = delete;
     ServerNetworkEventCoordinator(class ServerNetworkEventCoordinator const &) = delete;
     ServerNetworkEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTCOORDINATOR
@@ -30,7 +28,5 @@ public:
     MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler> &&);
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum CoordinatorResult>>);
     MCAPI void sendMessage(struct MessageEvent &);
-
-
 
 };

@@ -15,14 +15,12 @@ class SmallDripleafBlock : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMALLDRIPLEAFBLOCK
 public:
     class SmallDripleafBlock& operator=(class SmallDripleafBlock const &) = delete;
     SmallDripleafBlock(class SmallDripleafBlock const &) = delete;
     SmallDripleafBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SmallDripleafBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,11 +47,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -87,8 +85,6 @@ public:
     MCAPI bool _isViablePlacePos(class BlockSource &, class BlockPos const &) const;
     MCAPI static void placeUpperBlock(class BlockSource &, class BlockPos const &, int);
 
-
 private:
-
 
 };

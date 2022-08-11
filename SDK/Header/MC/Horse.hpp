@@ -16,14 +16,12 @@ class Horse : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSE
 public:
     class Horse& operator=(class Horse const &) = delete;
     Horse(class Horse const &) = delete;
     Horse() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -99,9 +97,7 @@ public:
     MCAPI void setHorseFlag(enum HorseFlags, bool);
     MCAPI bool setHorseType(enum ActorType &);
 
-
 private:
     MCAPI static int const DATA_AGE;
-
 
 };

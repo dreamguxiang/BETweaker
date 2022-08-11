@@ -14,14 +14,12 @@ class DyeableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYEABLECOMPONENT
 public:
     class DyeableComponent& operator=(class DyeableComponent const &) = delete;
     DyeableComponent(class DyeableComponent const &) = delete;
     DyeableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEABLECOMPONENT
@@ -35,7 +33,5 @@ public:
     MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
     MCAPI static void ResetDefaultLeatherColor();
     MCAPI static class HashedString const & getIdentifier();
-
-
 
 };

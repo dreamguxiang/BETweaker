@@ -14,7 +14,6 @@ class DimensionConversionData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONCONVERSIONDATA
 public:
     class DimensionConversionData& operator=(class DimensionConversionData const &) = delete;
@@ -22,14 +21,11 @@ public:
     DimensionConversionData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONCONVERSIONDATA
 #endif
     MCAPI DimensionConversionData(class Vec3 const &, int);
     MCAPI int getNetherScale() const;
     MCAPI class Vec3 const & getOverworldSpawnPoint() const;
-
-
 
 };

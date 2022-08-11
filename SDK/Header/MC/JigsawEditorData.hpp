@@ -14,13 +14,11 @@ class JigsawEditorData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWEDITORDATA
 public:
     class JigsawEditorData& operator=(class JigsawEditorData const &) = delete;
     JigsawEditorData(class JigsawEditorData const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWEDITORDATA
@@ -44,9 +42,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME;
-
 
 };

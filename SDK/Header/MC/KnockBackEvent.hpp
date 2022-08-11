@@ -12,7 +12,6 @@ class KnockBackEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKEVENT
 public:
     class KnockBackEvent& operator=(class KnockBackEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     KnockBackEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKEVENT
 #endif
     MCAPI ~KnockBackEvent();
-
-
 
 };

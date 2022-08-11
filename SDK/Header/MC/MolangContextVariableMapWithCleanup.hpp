@@ -12,7 +12,6 @@ class MolangContextVariableMapWithCleanup {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLEMAPWITHCLEANUP
 public:
     class MolangContextVariableMapWithCleanup& operator=(class MolangContextVariableMapWithCleanup const &) = delete;
@@ -20,12 +19,9 @@ public:
     MolangContextVariableMapWithCleanup() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLEMAPWITHCLEANUP
 #endif
     MCAPI ~MolangContextVariableMapWithCleanup();
-
-
 
 };

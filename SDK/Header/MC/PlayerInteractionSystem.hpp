@@ -14,7 +14,6 @@ class PlayerInteractionSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINTERACTIONSYSTEM
 public:
     class PlayerInteractionSystem& operator=(class PlayerInteractionSystem const &) = delete;
@@ -22,12 +21,9 @@ public:
     PlayerInteractionSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTIONSYSTEM
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
-
-
 
 };

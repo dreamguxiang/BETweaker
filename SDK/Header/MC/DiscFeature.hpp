@@ -13,7 +13,6 @@ class DiscFeature : public Feature {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISCFEATURE
 public:
     class DiscFeature& operator=(class DiscFeature const &) = delete;
@@ -21,14 +20,11 @@ public:
     DiscFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DiscFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCFEATURE
 #endif
     MCAPI DiscFeature(class Block const &, int);
-
-
 
 };

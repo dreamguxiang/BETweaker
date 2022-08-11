@@ -14,13 +14,11 @@ class MobEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENT
 public:
     class MobEvent& operator=(class MobEvent const &) = delete;
     MobEvent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENT
@@ -31,7 +29,5 @@ public:
     MCAPI std::string const & getName() const;
     MCAPI bool isEnabled() const;
     MCAPI ~MobEvent();
-
-
 
 };

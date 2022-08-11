@@ -15,13 +15,11 @@ class ChargeAttackDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEATTACKDEFINITION
 public:
     class ChargeAttackDefinition& operator=(class ChargeAttackDefinition const &) = delete;
     ChargeAttackDefinition(class ChargeAttackDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEATTACKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI ChargeAttackDefinition();
     MCAPI void initialize(class EntityContext &, class ChargeAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>> &);
-
-
 
 };

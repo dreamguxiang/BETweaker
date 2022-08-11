@@ -15,13 +15,11 @@ class MapInfoRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPINFOREQUESTPACKET
 public:
     class MapInfoRequestPacket& operator=(class MapInfoRequestPacket const &) = delete;
     MapInfoRequestPacket(class MapInfoRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapInfoRequestPacket();
@@ -36,7 +34,5 @@ public:
     MCAPI MapInfoRequestPacket();
     MCAPI struct ActorUniqueID getMapId() const;
     MCAPI bool replaceServerPixels(class MapItemSavedData &) const;
-
-
 
 };

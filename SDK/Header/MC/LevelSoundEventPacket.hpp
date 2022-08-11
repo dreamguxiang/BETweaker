@@ -15,13 +15,11 @@ class LevelSoundEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTPACKET
 public:
     class LevelSoundEventPacket& operator=(class LevelSoundEventPacket const &) = delete;
     LevelSoundEventPacket(class LevelSoundEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelSoundEventPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI LevelSoundEventPacket(enum LevelSoundEvent, class Vec3 const &, int, std::string const &, bool, bool);
     MCAPI LevelSoundEventPacket();
-
-
 
 };

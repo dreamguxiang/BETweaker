@@ -20,14 +20,12 @@ struct BlockVolumeIter {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKVOLUME
 public:
     class BlockVolume& operator=(class BlockVolume const &) = delete;
     BlockVolume(class BlockVolume const &) = delete;
     BlockVolume() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUME
@@ -46,7 +44,5 @@ public:
     MCAPI unsigned int indexNoBoundsCheck(class Pos const &) const;
     MCAPI bool isInBounds(class Pos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
-
-
 
 };

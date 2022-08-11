@@ -14,14 +14,12 @@ class StringByteOutput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGBYTEOUTPUT
 public:
     class StringByteOutput& operator=(class StringByteOutput const &) = delete;
     StringByteOutput(class StringByteOutput const &) = delete;
     StringByteOutput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StringByteOutput();
@@ -36,7 +34,5 @@ public:
     /*9*/ virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
 #endif
-
-
 
 };

@@ -16,13 +16,11 @@ class ResourceLocation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOCATION
 public:
     class ResourceLocation& operator=(class ResourceLocation const &) = delete;
     ResourceLocation(class ResourceLocation const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOCATION
@@ -37,7 +35,5 @@ public:
     MCAPI void setRelativePath(class Core::PathBuffer<std::string> const &);
     MCAPI ~ResourceLocation();
     MCAPI static class ResourceLocation const & getEmptyLocation();
-
-
 
 };

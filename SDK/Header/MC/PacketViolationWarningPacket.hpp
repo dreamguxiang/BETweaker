@@ -15,13 +15,11 @@ class PacketViolationWarningPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONWARNINGPACKET
 public:
     class PacketViolationWarningPacket& operator=(class PacketViolationWarningPacket const &) = delete;
     PacketViolationWarningPacket(class PacketViolationWarningPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PacketViolationWarningPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI PacketViolationWarningPacket(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, std::string const &);
     MCAPI PacketViolationWarningPacket();
-
-
 
 };

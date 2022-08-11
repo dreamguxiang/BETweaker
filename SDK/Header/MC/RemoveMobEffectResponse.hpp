@@ -15,14 +15,12 @@ class RemoveMobEffectResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEMOBEFFECTRESPONSE
 public:
     class RemoveMobEffectResponse& operator=(class RemoveMobEffectResponse const &) = delete;
     RemoveMobEffectResponse(class RemoveMobEffectResponse const &) = delete;
     RemoveMobEffectResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveMobEffectResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEMOBEFFECTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

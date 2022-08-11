@@ -14,7 +14,6 @@ class AtlasItemManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATLASITEMMANAGER
 public:
     class AtlasItemManager& operator=(class AtlasItemManager const &) = delete;
@@ -22,12 +21,9 @@ public:
     AtlasItemManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATLASITEMMANAGER
 #endif
     MCAPI class TextureAtlasItem const & getTextureItem(std::string const &) const;
-
-
 
 };

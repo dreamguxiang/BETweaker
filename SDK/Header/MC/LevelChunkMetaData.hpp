@@ -12,13 +12,11 @@ class LevelChunkMetaData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKMETADATA
 public:
     class LevelChunkMetaData& operator=(class LevelChunkMetaData const &) = delete;
     LevelChunkMetaData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATA
@@ -34,8 +32,6 @@ public:
     MCAPI void _deserialize(class IDataInput &);
     MCAPI void _recomputeHash() const;
 
-
 protected:
-
 
 };

@@ -14,7 +14,6 @@ class WorldGenClimateMappingAttributes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCLIMATEMAPPINGATTRIBUTES
 public:
     class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes const &) = delete;
@@ -22,13 +21,10 @@ public:
     WorldGenClimateMappingAttributes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCLIMATEMAPPINGATTRIBUTES
 #endif
     MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
     MCAPI ~WorldGenClimateMappingAttributes();
-
-
 
 };

@@ -14,14 +14,12 @@ class CombatRegenerationListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONLISTENER
 public:
     class CombatRegenerationListener& operator=(class CombatRegenerationListener const &) = delete;
     CombatRegenerationListener(class CombatRegenerationListener const &) = delete;
     CombatRegenerationListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CombatRegenerationListener();
@@ -36,7 +34,5 @@ public:
     /*9*/ virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONLISTENER
 #endif
-
-
 
 };

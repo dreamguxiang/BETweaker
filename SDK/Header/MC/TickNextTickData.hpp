@@ -14,7 +14,6 @@ class TickNextTickData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKNEXTTICKDATA
 public:
     class TickNextTickData& operator=(class TickNextTickData const &) = delete;
@@ -22,14 +21,11 @@ public:
     TickNextTickData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKNEXTTICKDATA
 #endif
     MCAPI TickNextTickData(class BlockPos const &, class Block const &, struct Tick const &, int);
     MCAPI bool operator==(class TickNextTickData const &) const;
     MCAPI bool operator>(class TickNextTickData const &) const;
-
-
 
 };

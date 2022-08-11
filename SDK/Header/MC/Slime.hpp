@@ -16,14 +16,12 @@ class Slime : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIME
 public:
     class Slime& operator=(class Slime const &) = delete;
     Slime(class Slime const &) = delete;
     Slime() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -85,8 +83,6 @@ public:
     MCAPI void justJumped();
     MCAPI void justLanded();
 
-
 protected:
-
 
 };

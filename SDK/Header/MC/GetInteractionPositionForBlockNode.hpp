@@ -15,13 +15,11 @@ class GetInteractionPositionForBlockNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETINTERACTIONPOSITIONFORBLOCKNODE
 public:
     class GetInteractionPositionForBlockNode& operator=(class GetInteractionPositionForBlockNode const &) = delete;
     GetInteractionPositionForBlockNode(class GetInteractionPositionForBlockNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockNode();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI enum Facing::Name parseFacingNameFromString(std::string);
 
-
 private:
-
 
 };

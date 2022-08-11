@@ -15,14 +15,12 @@ class ChunkLoadedRequest {
     char filler[128];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADEDREQUEST
 public:
     class ChunkLoadedRequest& operator=(class ChunkLoadedRequest const &) = delete;
     ChunkLoadedRequest(class ChunkLoadedRequest const &) = delete;
     ChunkLoadedRequest() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADEDREQUEST
@@ -45,8 +43,6 @@ public:
 //private:
     MCAPI class ITickingAreaView const * _getTickingArea(class Dimension const &) const;
 
-
 private:
-
 
 };

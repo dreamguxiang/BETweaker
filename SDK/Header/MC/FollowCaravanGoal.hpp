@@ -14,14 +14,12 @@ class FollowCaravanGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWCARAVANGOAL
 public:
     class FollowCaravanGoal& operator=(class FollowCaravanGoal const &) = delete;
     FollowCaravanGoal(class FollowCaravanGoal const &) = delete;
     FollowCaravanGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FollowCaravanGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI bool checkCaravanType(class Mob *);
     MCAPI bool firstIsLeashed(class Mob *, int);
 
-
 private:
-
 
 };

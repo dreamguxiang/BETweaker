@@ -15,7 +15,6 @@ class PillagerOutpostFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PILLAGEROUTPOSTFEATURE
 public:
     class PillagerOutpostFeature& operator=(class PillagerOutpostFeature const &) = delete;
@@ -23,11 +22,10 @@ public:
     PillagerOutpostFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PillagerOutpostFeature();
-    /*1*/ virtual bool shouldAddHardcodedSpawnAreas() const;
-    /*2*/ virtual bool shouldPostProcessMobs() const;
+    /*1*/ virtual bool shouldAddHardcodedSpawnAreas();
+    /*2*/ virtual bool shouldPostProcessMobs();
     /*3*/ virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /*4*/ virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /*5*/ virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PILLAGEROUTPOSTFEATURE
 #endif
     MCAPI PillagerOutpostFeature(unsigned int);
-
-
 
 };

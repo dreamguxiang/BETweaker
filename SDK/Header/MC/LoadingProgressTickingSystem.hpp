@@ -12,7 +12,6 @@ class LoadingProgressTickingSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOADINGPROGRESSTICKINGSYSTEM
 public:
     class LoadingProgressTickingSystem& operator=(class LoadingProgressTickingSystem const &) = delete;
@@ -20,16 +19,13 @@ public:
     LoadingProgressTickingSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADINGPROGRESSTICKINGSYSTEM
 #endif
 
 //private:
 
-
 private:
     MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
-
 
 };

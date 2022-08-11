@@ -14,13 +14,11 @@ class ContentTierManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERMANAGER
 public:
     class ContentTierManager& operator=(class ContentTierManager const &) = delete;
     ContentTierManager(class ContentTierManager const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContentTierManager();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
 #endif
     MCAPI ContentTierManager();
-
-
 
 };

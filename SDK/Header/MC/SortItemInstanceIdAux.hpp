@@ -14,7 +14,6 @@ class SortItemInstanceIdAux {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SORTITEMINSTANCEIDAUX
 public:
     class SortItemInstanceIdAux& operator=(class SortItemInstanceIdAux const &) = delete;
@@ -22,12 +21,9 @@ public:
     SortItemInstanceIdAux() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SORTITEMINSTANCEIDAUX
 #endif
     MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
-
-
 
 };

@@ -15,14 +15,12 @@ class PortalBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PORTALBLOCK
 public:
     class PortalBlock& operator=(class PortalBlock const &) = delete;
     PortalBlock(class PortalBlock const &) = delete;
     PortalBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PortalBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,12 +47,12 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*88*/ virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
@@ -80,7 +78,5 @@ public:
     MCAPI PortalBlock(std::string const &, int);
     MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource &, class BlockPos const &) const;
     MCAPI static bool trySpawnPortal(class BlockSource &, class BlockPos const &);
-
-
 
 };

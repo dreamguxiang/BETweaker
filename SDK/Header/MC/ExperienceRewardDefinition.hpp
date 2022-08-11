@@ -15,14 +15,12 @@ class ExperienceRewardDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDDEFINITION
 public:
     class ExperienceRewardDefinition& operator=(class ExperienceRewardDefinition const &) = delete;
     ExperienceRewardDefinition(class ExperienceRewardDefinition const &) = delete;
     ExperienceRewardDefinition() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDDEFINITION
@@ -31,7 +29,5 @@ public:
     MCAPI void addDeathExpressionNode(class ExpressionNode const &);
     MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>> &);
-
-
 
 };

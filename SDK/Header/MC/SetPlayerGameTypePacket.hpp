@@ -15,13 +15,11 @@ class SetPlayerGameTypePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETPLAYERGAMETYPEPACKET
 public:
     class SetPlayerGameTypePacket& operator=(class SetPlayerGameTypePacket const &) = delete;
     SetPlayerGameTypePacket(class SetPlayerGameTypePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetPlayerGameTypePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETPLAYERGAMETYPEPACKET
 #endif
     MCAPI SetPlayerGameTypePacket();
-
-
 
 };

@@ -12,7 +12,6 @@ class ActionEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIONEVENT
 public:
     class ActionEvent& operator=(class ActionEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActionEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONEVENT
 #endif
     MCAPI ActionEvent(int, enum ActionEvent::ActionState, bool, enum FocusImpact);
-
-
 
 };

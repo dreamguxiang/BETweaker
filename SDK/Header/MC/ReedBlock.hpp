@@ -15,14 +15,12 @@ class ReedBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REEDBLOCK
 public:
     class ReedBlock& operator=(class ReedBlock const &) = delete;
     ReedBlock(class ReedBlock const &) = delete;
     ReedBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ReedBlock();
@@ -48,15 +46,15 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -74,14 +72,12 @@ public:
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI ReedBlock(std::string const &, int);
-
-
 
 };

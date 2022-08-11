@@ -14,14 +14,12 @@ class ShareItemsGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREITEMSGOAL
 public:
     class ShareItemsGoal& operator=(class ShareItemsGoal const &) = delete;
     ShareItemsGoal(class ShareItemsGoal const &) = delete;
     ShareItemsGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShareItemsGoal();
@@ -39,8 +37,6 @@ public:
 //protected:
     MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
 
-
 protected:
-
 
 };

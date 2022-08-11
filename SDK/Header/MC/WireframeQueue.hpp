@@ -12,7 +12,6 @@ class WireframeQueue {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WIREFRAMEQUEUE
 public:
     class WireframeQueue& operator=(class WireframeQueue const &) = delete;
@@ -20,12 +19,9 @@ public:
     WireframeQueue() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WIREFRAMEQUEUE
 #endif
     MCAPI ~WireframeQueue();
-
-
 
 };

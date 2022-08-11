@@ -12,14 +12,12 @@ class StructurePoolBlockPredicateAlwaysTrueExcept {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUEEXCEPT
 public:
     class StructurePoolBlockPredicateAlwaysTrueExcept& operator=(class StructurePoolBlockPredicateAlwaysTrueExcept const &) = delete;
     StructurePoolBlockPredicateAlwaysTrueExcept(class StructurePoolBlockPredicateAlwaysTrueExcept const &) = delete;
     StructurePoolBlockPredicateAlwaysTrueExcept() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrueExcept();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUEEXCEPT
 #endif
     MCAPI StructurePoolBlockPredicateAlwaysTrueExcept(class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &, float);
-
-
 
 };

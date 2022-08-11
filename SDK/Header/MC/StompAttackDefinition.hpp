@@ -15,13 +15,11 @@ class StompAttackDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPATTACKDEFINITION
 public:
     class StompAttackDefinition& operator=(class StompAttackDefinition const &) = delete;
     StompAttackDefinition(class StompAttackDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPATTACKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI StompAttackDefinition();
     MCAPI void initialize(class EntityContext &, class StompAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);
-
-
 
 };

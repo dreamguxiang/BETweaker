@@ -13,7 +13,6 @@ class TeleportRotationData {
 public:
     char filler[32];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTROTATIONDATA
 public:
     class TeleportRotationData& operator=(class TeleportRotationData const &) = delete;
@@ -21,12 +20,9 @@ public:
     TeleportRotationData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTROTATIONDATA
 #endif
     MCAPI TeleportRotationData(class RelativeFloat const &, class RelativeFloat const &, class std::optional<class Vec2> const &);
-
-
 
 };

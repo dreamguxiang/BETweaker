@@ -15,14 +15,12 @@ class BasaltColumnsFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASALTCOLUMNSFEATURE
 public:
     class BasaltColumnsFeature& operator=(class BasaltColumnsFeature const &) = delete;
     BasaltColumnsFeature(class BasaltColumnsFeature const &) = delete;
     BasaltColumnsFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BasaltColumnsFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
 
-
 private:
-
 
 };

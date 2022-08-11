@@ -13,17 +13,13 @@ struct RepairItemEntry {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRITEMENTRY
+#endif
     MCAPI RepairItemEntry(struct RepairItemEntry const &);
     MCAPI RepairItemEntry();
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry &&);
     MCAPI ~RepairItemEntry();
-
-protected:
-
-private:
 
 };

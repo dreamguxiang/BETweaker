@@ -14,14 +14,12 @@ class ProjectileSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILESYSTEM
 public:
     class ProjectileSystem& operator=(class ProjectileSystem const &) = delete;
     ProjectileSystem(class ProjectileSystem const &) = delete;
     ProjectileSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ProjectileSystem();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILESYSTEM
 #endif
     MCAPI static void _tickProjectileComponent(class Actor *, class ProjectileComponent &);
-
-
 
 };

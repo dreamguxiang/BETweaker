@@ -15,13 +15,11 @@ class ItemStackRequestActionConsume : public ItemStackRequestActionTransferBase 
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCONSUME
 public:
     class ItemStackRequestActionConsume& operator=(class ItemStackRequestActionConsume const &) = delete;
     ItemStackRequestActionConsume(class ItemStackRequestActionConsume const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionConsume();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCONSUME
 #endif
     MCAPI ItemStackRequestActionConsume();
-
-
 
 };

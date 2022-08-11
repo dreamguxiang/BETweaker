@@ -15,14 +15,12 @@ class ItemFrameBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMFRAMEBLOCK
 public:
     class ItemFrameBlock& operator=(class ItemFrameBlock const &) = delete;
     ItemFrameBlock(class ItemFrameBlock const &) = delete;
     ItemFrameBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemFrameBlock();
@@ -33,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking() const;
+    /*35*/ virtual bool isWaterBlocking();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,14 +47,14 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*97*/ virtual bool getIgnoresDestroyPermissions(class Actor &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -80,14 +78,14 @@ public:
     /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    /*192*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int);
     /*193*/ virtual class HashedString getSpawnedItemName() const;
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
     /*197*/ virtual void __unk_vfn_197();
     /*198*/ virtual void __unk_vfn_198();
-    /*199*/ MCAPI std::string const & getDescriptionId() const;
+    /*199*/ MCAPI static std::string const & getDescriptionId();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEBLOCK
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;
@@ -100,8 +98,6 @@ public:
     MCAPI class ItemFrameBlockActor * _getItemFrame(class BlockSource &, class BlockPos const &) const;
     MCAPI void getShape(int, class AABB &, bool) const;
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class PistonBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONBLOCKACTOR
 public:
     class PistonBlockActor& operator=(class PistonBlockActor const &) = delete;
     PistonBlockActor(class PistonBlockActor const &) = delete;
     PistonBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PistonBlockActor();
@@ -69,9 +67,7 @@ public:
     MCAPI void _spawnBlocks(class BlockSource &);
     MCAPI void _spawnMovingBlocks(class BlockSource &);
 
-
 private:
     MCAPI static float const ARM_ANIMATION_SPEED;
-
 
 };

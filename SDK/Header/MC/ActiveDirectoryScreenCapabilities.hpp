@@ -14,18 +14,16 @@ struct ActiveDirectoryScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVEDIRECTORYSCREENCAPABILITIES
 public:
     struct ActiveDirectoryScreenCapabilities& operator=(struct ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~ActiveDirectoryScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYSCREENCAPABILITIES
+#endif
 
 };

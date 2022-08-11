@@ -12,7 +12,6 @@ class LegacyActorExtractApplySystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYACTOREXTRACTAPPLYSYSTEM
 public:
     class LegacyActorExtractApplySystem& operator=(class LegacyActorExtractApplySystem const &) = delete;
@@ -20,14 +19,11 @@ public:
     LegacyActorExtractApplySystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYACTOREXTRACTAPPLYSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createApplySystem(std::vector<unsigned int> const &);
     MCAPI static struct TickingSystemWithInfo createCleanupSystem(std::vector<unsigned int> const &);
     MCAPI static struct TickingSystemWithInfo createExtractSystem(std::vector<unsigned int> const &);
-
-
 
 };

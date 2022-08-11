@@ -12,19 +12,15 @@ struct AABBShapeComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBSHAPECOMPONENT
 public:
     struct AABBShapeComponent& operator=(struct AABBShapeComponent const &) = delete;
     AABBShapeComponent(struct AABBShapeComponent const &) = delete;
     AABBShapeComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBSHAPECOMPONENT
+#endif
     MCAPI std::string toString() const;
-
-protected:
-
-private:
 
 };

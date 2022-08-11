@@ -26,13 +26,11 @@ public:
     LIAPI TagMemoryChunk get();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTARRAYTAG
 public:
     class IntArrayTag& operator=(class IntArrayTag const &) = delete;
     IntArrayTag(class IntArrayTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IntArrayTag();
@@ -46,7 +44,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTARRAYTAG
 #endif
     MCAPI IntArrayTag();
-
-
 
 };

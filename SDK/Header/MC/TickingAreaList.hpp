@@ -14,7 +14,6 @@ class TickingAreaList {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREALIST
 public:
     class TickingAreaList& operator=(class TickingAreaList const &) = delete;
@@ -22,13 +21,10 @@ public:
     TickingAreaList() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~TickingAreaList();
     /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREALIST
 #endif
-
-
 
 };

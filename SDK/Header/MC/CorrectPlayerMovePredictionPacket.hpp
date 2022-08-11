@@ -15,14 +15,12 @@ class CorrectPlayerMovePredictionPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORRECTPLAYERMOVEPREDICTIONPACKET
 public:
     class CorrectPlayerMovePredictionPacket& operator=(class CorrectPlayerMovePredictionPacket const &) = delete;
     CorrectPlayerMovePredictionPacket(class CorrectPlayerMovePredictionPacket const &) = delete;
     CorrectPlayerMovePredictionPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CorrectPlayerMovePredictionPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORRECTPLAYERMOVEPREDICTIONPACKET
 #endif
-
-
 
 };

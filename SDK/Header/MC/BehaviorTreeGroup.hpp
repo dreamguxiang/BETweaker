@@ -14,14 +14,12 @@ class BehaviorTreeGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEGROUP
 public:
     class BehaviorTreeGroup& operator=(class BehaviorTreeGroup const &) = delete;
     BehaviorTreeGroup(class BehaviorTreeGroup const &) = delete;
     BehaviorTreeGroup() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEGROUP
@@ -34,8 +32,6 @@ public:
     MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
 
-
 private:
-
 
 };

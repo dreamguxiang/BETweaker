@@ -15,14 +15,12 @@ class MapCloningRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPCLONINGRECIPE
 public:
     class MapCloningRecipe& operator=(class MapCloningRecipe const &) = delete;
     MapCloningRecipe(class MapCloningRecipe const &) = delete;
     MapCloningRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapCloningRecipe();
@@ -37,7 +35,5 @@ public:
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const CartographyTableID;
     MCAPI static class mce::UUID const CraftingTableID;
-
-
 
 };

@@ -15,13 +15,11 @@ class CompositePackSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSITEPACKSOURCE
 public:
     class CompositePackSource& operator=(class CompositePackSource const &) = delete;
     CompositePackSource(class CompositePackSource const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompositePackSource();
@@ -36,7 +34,5 @@ public:
     MCAPI CompositePackSource();
     MCAPI void addPackSource(class PackSource *);
     MCAPI void clear();
-
-
 
 };

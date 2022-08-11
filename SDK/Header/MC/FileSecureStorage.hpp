@@ -15,14 +15,12 @@ class FileSecureStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILESECURESTORAGE
 public:
     class FileSecureStorage& operator=(class FileSecureStorage const &) = delete;
     FileSecureStorage(class FileSecureStorage const &) = delete;
     FileSecureStorage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FileSecureStorage();
@@ -43,10 +41,8 @@ public:
     MCAPI void _initalizeSymmetricEncyrption(std::string &, bool);
     MCAPI void _rebuildSecureStorageFile();
 
-
 protected:
 
 private:
-
 
 };

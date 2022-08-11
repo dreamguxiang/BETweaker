@@ -16,14 +16,12 @@ class BucketItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETITEM
 public:
     class BucketItem& operator=(class BucketItem const &) = delete;
     BucketItem(class BucketItem const &) = delete;
     BucketItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BucketItem();
@@ -54,6 +52,7 @@ public:
     /*122*/ virtual struct Brightness getLightEmission(int) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*133*/ virtual std::string getAuxValuesDescription() const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETITEM
@@ -75,11 +74,9 @@ public:
     MCAPI bool _takePowderSnow(class ItemStack &, class Actor &, class BlockPos const &) const;
     MCAPI class BlockLegacy const * _tryGetBlock(enum BucketFillType) const;
 
-
 protected:
 
 private:
     MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
-
 
 };

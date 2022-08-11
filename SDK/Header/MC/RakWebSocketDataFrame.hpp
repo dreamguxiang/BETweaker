@@ -15,13 +15,11 @@ class RakWebSocketDataFrame {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAME
 public:
     class RakWebSocketDataFrame& operator=(class RakWebSocketDataFrame const &) = delete;
     RakWebSocketDataFrame(class RakWebSocketDataFrame const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAME
@@ -43,8 +41,6 @@ public:
     MCAPI static bool _isUnsupported(unsigned char);
     MCAPI static void _maskUnmaskData(unsigned char *, unsigned int, unsigned int, unsigned int);
 
-
 private:
-
 
 };

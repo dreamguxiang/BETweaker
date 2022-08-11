@@ -15,13 +15,11 @@ class SubClientConnectionRequest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCLIENTCONNECTIONREQUEST
 public:
     class SubClientConnectionRequest& operator=(class SubClientConnectionRequest const &) = delete;
     SubClientConnectionRequest() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTCONNECTIONREQUEST
@@ -70,8 +68,6 @@ public:
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 
-
 private:
-
 
 };

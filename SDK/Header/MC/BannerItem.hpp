@@ -16,14 +16,12 @@ class BannerItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERITEM
 public:
     class BannerItem& operator=(class BannerItem const &) = delete;
     BannerItem(class BannerItem const &) = delete;
     BannerItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BannerItem();
@@ -44,12 +42,11 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
 #endif
     MCAPI BannerItem(std::string const &, int);
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
-
-
 
 };

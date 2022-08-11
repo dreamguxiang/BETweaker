@@ -15,14 +15,12 @@ class SoulSandBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOULSANDBLOCK
 public:
     class SoulSandBlock& operator=(class SoulSandBlock const &) = delete;
     SoulSandBlock(class SoulSandBlock const &) = delete;
     SoulSandBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SoulSandBlock();
@@ -62,9 +60,9 @@ public:
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
-    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &);
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &);
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &);
     /*177*/ virtual void __unk_vfn_177();
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSANDBLOCK
@@ -73,9 +71,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
-
 
 };

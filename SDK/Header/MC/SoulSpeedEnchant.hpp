@@ -15,14 +15,12 @@ class SoulSpeedEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOULSPEEDENCHANT
 public:
     class SoulSpeedEnchant& operator=(class SoulSpeedEnchant const &) = delete;
     SoulSpeedEnchant(class SoulSpeedEnchant const &) = delete;
     SoulSpeedEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SoulSpeedEnchant();
@@ -43,7 +41,5 @@ public:
     MCAPI static float getSpeedBoost(int);
     MCAPI static bool isActive(class Actor const &);
     MCAPI static bool shouldSpawnParticles(class Actor const &);
-
-
 
 };

@@ -14,18 +14,23 @@ struct BlockPlacementFilterDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTFILTERDESCRIPTION
 public:
     struct BlockPlacementFilterDescription& operator=(struct BlockPlacementFilterDescription const &) = delete;
     BlockPlacementFilterDescription(struct BlockPlacementFilterDescription const &) = delete;
     BlockPlacementFilterDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockPlacementFilterDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTFILTERDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
 
 };

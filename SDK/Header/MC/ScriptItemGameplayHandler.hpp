@@ -14,14 +14,12 @@ class ScriptItemGameplayHandler {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMGAMEPLAYHANDLER
 public:
     class ScriptItemGameplayHandler& operator=(class ScriptItemGameplayHandler const &) = delete;
     ScriptItemGameplayHandler(class ScriptItemGameplayHandler const &) = delete;
     ScriptItemGameplayHandler() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptItemGameplayHandler();
@@ -44,8 +42,6 @@ public:
     MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
     MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
 
-
 private:
-
 
 };

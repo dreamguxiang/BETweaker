@@ -15,13 +15,11 @@ class ItemStackRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTPACKET
 public:
     class ItemStackRequestPacket& operator=(class ItemStackRequestPacket const &) = delete;
     ItemStackRequestPacket(class ItemStackRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestPacket();
     MCAPI class ItemStackRequestBatch const & getRequestBatch() const;
-
-
 
 };

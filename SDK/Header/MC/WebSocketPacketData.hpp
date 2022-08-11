@@ -12,19 +12,15 @@ struct WebSocketPacketData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBSOCKETPACKETDATA
 public:
     struct WebSocketPacketData& operator=(struct WebSocketPacketData const &) = delete;
     WebSocketPacketData(struct WebSocketPacketData const &) = delete;
     WebSocketPacketData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBSOCKETPACKETDATA
+#endif
     MCAPI WebSocketPacketData(std::string const &);
-
-protected:
-
-private:
 
 };

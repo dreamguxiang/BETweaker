@@ -14,13 +14,11 @@ class AngryComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGRYCOMPONENT
 public:
     class AngryComponent& operator=(class AngryComponent const &) = delete;
     AngryComponent(class AngryComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGRYCOMPONENT
@@ -42,7 +40,5 @@ public:
     MCAPI void setHasTicked(bool);
     MCAPI void setNextSoundEventTick(class Mob const &);
     MCAPI ~AngryComponent();
-
-
 
 };

@@ -14,7 +14,6 @@ class SmokerBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERBLOCKACTOR
 public:
     class SmokerBlockActor& operator=(class SmokerBlockActor const &) = delete;
@@ -22,13 +21,10 @@ public:
     SmokerBlockActor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERBLOCKACTOR
     MCVAPI std::string getName() const;
 #endif
     MCAPI SmokerBlockActor(class BlockPos const &);
-
-
 
 };

@@ -14,7 +14,6 @@ class BehaviorTreeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEDEFINITION
 public:
     class BehaviorTreeDefinition& operator=(class BehaviorTreeDefinition const &) = delete;
@@ -22,12 +21,9 @@ public:
     BehaviorTreeDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITION
 #endif
     MCAPI class BehaviorDefinition const * getRoot() const;
-
-
 
 };

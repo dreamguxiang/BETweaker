@@ -14,13 +14,11 @@ class PlaceBlockNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLACEBLOCKNODE
 public:
     class PlaceBlockNode& operator=(class PlaceBlockNode const &) = delete;
     PlaceBlockNode(class PlaceBlockNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlaceBlockNode();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKNODE
 #endif
     MCAPI PlaceBlockNode();
-
-
 
 };

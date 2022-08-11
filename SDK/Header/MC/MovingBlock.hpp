@@ -15,14 +15,12 @@ class MovingBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVINGBLOCK
 public:
     class MovingBlock& operator=(class MovingBlock const &) = delete;
     MovingBlock(class MovingBlock const &) = delete;
     MovingBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MovingBlock();
@@ -53,7 +51,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
+    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -72,7 +70,5 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
     MCAPI MovingBlock(std::string const &, int);
-
-
 
 };

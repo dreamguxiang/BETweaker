@@ -18,13 +18,11 @@ public:
         return regptr->get();
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMREGISTRY
 public:
     class CreativeItemRegistry& operator=(class CreativeItemRegistry const &) = delete;
     CreativeItemRegistry(class CreativeItemRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMREGISTRY
@@ -51,9 +49,7 @@ public:
 //private:
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
 
-
 private:
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
-
 
 };

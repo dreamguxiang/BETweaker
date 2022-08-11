@@ -16,14 +16,12 @@ class SmeltItemFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMELTITEMFUNCTION
 public:
     class SmeltItemFunction& operator=(class SmeltItemFunction const &) = delete;
     SmeltItemFunction(class SmeltItemFunction const &) = delete;
     SmeltItemFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SmeltItemFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMELTITEMFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

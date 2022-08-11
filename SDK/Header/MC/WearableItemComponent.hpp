@@ -14,7 +14,6 @@ class WearableItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEARABLEITEMCOMPONENT
 public:
     class WearableItemComponent& operator=(class WearableItemComponent const &) = delete;
@@ -22,14 +21,13 @@ public:
     WearableItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WearableItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual bool isNetworkComponent();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEARABLEITEMCOMPONENT
 #endif
@@ -37,7 +35,5 @@ public:
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
-
-
 
 };

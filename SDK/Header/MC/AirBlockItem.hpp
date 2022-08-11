@@ -16,14 +16,12 @@ class AirBlockItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AIRBLOCKITEM
 public:
     class AirBlockItem& operator=(class AirBlockItem const &) = delete;
     AirBlockItem(class AirBlockItem const &) = delete;
     AirBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AirBlockItem();
@@ -40,9 +38,8 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCKITEM
 #endif
-
-
 
 };

@@ -15,14 +15,12 @@ class WorldTemplatePackSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEPACKSOURCE
 public:
     class WorldTemplatePackSource& operator=(class WorldTemplatePackSource const &) = delete;
     WorldTemplatePackSource(class WorldTemplatePackSource const &) = delete;
     WorldTemplatePackSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WorldTemplatePackSource();
@@ -35,7 +33,5 @@ public:
 #endif
     MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
     MCAPI class mce::UUID const & getWorldTemplateId() const;
-
-
 
 };

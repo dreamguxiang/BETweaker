@@ -16,14 +16,12 @@ class Arrow : public AbstractArrow {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARROW
 public:
     class Arrow& operator=(class Arrow const &) = delete;
     Arrow(class Arrow const &) = delete;
     Arrow() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -69,7 +67,5 @@ public:
     MCAPI void setEnchantInfinity(int);
     MCAPI void setEnchantPower(int);
     MCAPI void setEnchantPunch(int);
-
-
 
 };

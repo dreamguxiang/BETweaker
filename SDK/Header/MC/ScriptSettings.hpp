@@ -12,20 +12,16 @@ struct ScriptSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSETTINGS
 public:
     struct ScriptSettings& operator=(struct ScriptSettings const &) = delete;
     ScriptSettings(struct ScriptSettings const &) = delete;
     ScriptSettings() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSETTINGS
+#endif
     MCAPI ScriptSettings(struct ScriptSettings &&);
     MCAPI ~ScriptSettings();
-
-protected:
-
-private:
 
 };

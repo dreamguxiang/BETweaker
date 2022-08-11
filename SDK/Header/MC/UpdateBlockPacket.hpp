@@ -15,13 +15,11 @@ class UpdateBlockPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEBLOCKPACKET
 public:
     class UpdateBlockPacket& operator=(class UpdateBlockPacket const &) = delete;
     UpdateBlockPacket(class UpdateBlockPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateBlockPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
     MCAPI UpdateBlockPacket();
-
-
 
 };

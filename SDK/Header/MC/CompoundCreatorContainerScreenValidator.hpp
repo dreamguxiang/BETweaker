@@ -15,20 +15,16 @@ class CompoundCreatorContainerScreenValidator : public ContainerScreenValidatorB
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
 public:
     class CompoundCreatorContainerScreenValidator& operator=(class CompoundCreatorContainerScreenValidator const &) = delete;
     CompoundCreatorContainerScreenValidator(class CompoundCreatorContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CompoundCreatorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
 #endif
     MCAPI CompoundCreatorContainerScreenValidator();
-
-
 
 };

@@ -15,14 +15,12 @@ class SculkSensorBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSENSORBLOCKACTOR
 public:
     class SculkSensorBlockActor& operator=(class SculkSensorBlockActor const &) = delete;
     SculkSensorBlockActor(class SculkSensorBlockActor const &) = delete;
     SculkSensorBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkSensorBlockActor();
@@ -46,7 +44,5 @@ public:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
     MCAPI static class SculkSensorBlockActor * tryGet(class BlockSource &, class BlockPos const &);
-
-
 
 };

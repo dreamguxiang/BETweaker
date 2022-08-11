@@ -14,7 +14,6 @@ class BeardDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDDESCRIPTION
 public:
     class BeardDescription& operator=(class BeardDescription const &) = delete;
@@ -22,13 +21,10 @@ public:
     BeardDescription() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDDESCRIPTION
 #endif
     MCAPI BeardDescription(class BeardingDescriptionCache, struct BeardKernel const &);
     MCAPI float calculateContribution(class BlockPos const &) const;
-
-
 
 };

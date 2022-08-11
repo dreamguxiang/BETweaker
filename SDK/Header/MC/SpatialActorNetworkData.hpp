@@ -25,14 +25,12 @@ struct DebugSendRateModifiers {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPATIALACTORNETWORKDATA
 public:
     class SpatialActorNetworkData& operator=(class SpatialActorNetworkData const &) = delete;
     SpatialActorNetworkData(class SpatialActorNetworkData const &) = delete;
     SpatialActorNetworkData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALACTORNETWORKDATA
@@ -57,10 +55,8 @@ public:
     MCAPI void _initializeLastSentValues();
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
 
-
 private:
     MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
-
 
 };

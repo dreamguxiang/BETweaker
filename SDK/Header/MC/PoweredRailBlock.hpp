@@ -15,14 +15,12 @@ class PoweredRailBlock : public BaseRailBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POWEREDRAILBLOCK
 public:
     class PoweredRailBlock& operator=(class PoweredRailBlock const &) = delete;
     PoweredRailBlock(class PoweredRailBlock const &) = delete;
     PoweredRailBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PoweredRailBlock();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDRAILBLOCK
 #endif
     MCAPI PoweredRailBlock(std::string const &, int);
-
-
 
 };

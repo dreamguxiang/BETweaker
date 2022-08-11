@@ -15,13 +15,11 @@ class AnimationsDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONSDESCRIPTION
 public:
     class AnimationsDescription& operator=(class AnimationsDescription const &) = delete;
     AnimationsDescription(class AnimationsDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONSDESCRIPTION
 #endif
     MCAPI AnimationsDescription();
-
-
 
 };

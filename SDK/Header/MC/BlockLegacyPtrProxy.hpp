@@ -12,19 +12,17 @@ struct BlockLegacyPtrProxy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACYPTRPROXY
 public:
     struct BlockLegacyPtrProxy& operator=(struct BlockLegacyPtrProxy const &) = delete;
     BlockLegacyPtrProxy(struct BlockLegacyPtrProxy const &) = delete;
     BlockLegacyPtrProxy() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACYPTRPROXY
+#endif
     MCAPI void setter(std::string const &);
-
-protected:
-
-private:
+    MCAPI static void toBlockLegacyPtr(class BlockLegacyPtr &, struct BlockLegacyPtrProxy const &);
+    MCAPI static std::string toString(struct BlockLegacyPtrProxy const &);
 
 };

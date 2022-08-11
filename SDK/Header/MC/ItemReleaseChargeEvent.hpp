@@ -12,7 +12,6 @@ class ItemReleaseChargeEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMRELEASECHARGEEVENT
 public:
     class ItemReleaseChargeEvent& operator=(class ItemReleaseChargeEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ItemReleaseChargeEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASECHARGEEVENT
 #endif
     MCAPI ~ItemReleaseChargeEvent();
-
-
 
 };

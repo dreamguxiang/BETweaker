@@ -15,14 +15,12 @@ class GlowLichenBlock : public MultifaceBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWLICHENBLOCK
 public:
     class GlowLichenBlock& operator=(class GlowLichenBlock const &) = delete;
     GlowLichenBlock(class GlowLichenBlock const &) = delete;
     GlowLichenBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlowLichenBlock();
@@ -51,7 +49,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -72,7 +70,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI GlowLichenBlock(std::string const &, int, class Material const &);
-
-
 
 };

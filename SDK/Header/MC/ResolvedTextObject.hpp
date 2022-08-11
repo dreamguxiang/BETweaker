@@ -14,7 +14,6 @@ class ResolvedTextObject {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOLVEDTEXTOBJECT
 public:
     class ResolvedTextObject& operator=(class ResolvedTextObject const &) = delete;
@@ -22,13 +21,10 @@ public:
     ResolvedTextObject() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOLVEDTEXTOBJECT
 #endif
     MCAPI std::string getAsJsonString() const;
     MCAPI ~ResolvedTextObject();
-
-
 
 };

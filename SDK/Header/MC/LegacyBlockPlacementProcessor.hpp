@@ -14,14 +14,12 @@ class LegacyBlockPlacementProcessor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBLOCKPLACEMENTPROCESSOR
 public:
     class LegacyBlockPlacementProcessor& operator=(class LegacyBlockPlacementProcessor const &) = delete;
     LegacyBlockPlacementProcessor(class LegacyBlockPlacementProcessor const &) = delete;
     LegacyBlockPlacementProcessor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLOCKPLACEMENTPROCESSOR
@@ -31,7 +29,5 @@ public:
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     MCAPI bool canPlace();
     MCAPI ~LegacyBlockPlacementProcessor();
-
-
 
 };

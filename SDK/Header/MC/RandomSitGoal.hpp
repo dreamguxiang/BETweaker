@@ -14,14 +14,12 @@ class RandomSitGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSITGOAL
 public:
     class RandomSitGoal& operator=(class RandomSitGoal const &) = delete;
     RandomSitGoal(class RandomSitGoal const &) = delete;
     RandomSitGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomSitGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSITGOAL
 #endif
     MCAPI RandomSitGoal(class Mob &, float, float, float, float);
-
-
 
 };

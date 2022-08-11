@@ -14,14 +14,12 @@ class EndermanTakeBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMANTAKEBLOCKGOAL
 public:
     class EndermanTakeBlockGoal& operator=(class EndermanTakeBlockGoal const &) = delete;
     EndermanTakeBlockGoal(class EndermanTakeBlockGoal const &) = delete;
     EndermanTakeBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndermanTakeBlockGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMANTAKEBLOCKGOAL
 #endif
     MCAPI EndermanTakeBlockGoal(class EnderMan &);
-
-
 
 };

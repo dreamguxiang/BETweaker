@@ -15,14 +15,12 @@ class AzaleaLeafBlock : public LeafBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEALEAFBLOCK
 public:
     class AzaleaLeafBlock& operator=(class AzaleaLeafBlock const &) = delete;
     AzaleaLeafBlock(class AzaleaLeafBlock const &) = delete;
     AzaleaLeafBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AzaleaLeafBlock();
@@ -56,7 +54,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &);
     /*141*/ virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
@@ -72,7 +70,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AZALEALEAFBLOCK
 #endif
     MCAPI AzaleaLeafBlock(std::string const &, int, class WeakPtr<class BlockLegacy>);
-
-
 
 };

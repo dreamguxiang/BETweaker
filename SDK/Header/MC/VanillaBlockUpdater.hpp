@@ -14,14 +14,12 @@ class VanillaBlockUpdater {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKUPDATER
 public:
     class VanillaBlockUpdater& operator=(class VanillaBlockUpdater const &) = delete;
     VanillaBlockUpdater(class VanillaBlockUpdater const &) = delete;
     VanillaBlockUpdater() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKUPDATER
@@ -42,9 +40,7 @@ public:
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext &);
     MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
 
-
 private:
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
-
 
 };

@@ -22,14 +22,12 @@ enum Rotation;
 enum Name;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACING
 public:
     class Facing& operator=(class Facing const &) = delete;
     Facing(class Facing const &) = delete;
     Facing() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACING
@@ -71,7 +69,5 @@ public:
     MCAPI static unsigned char rotateFace(unsigned char, enum Facing::Rotation);
     MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
-
-
 
 };

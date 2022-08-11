@@ -15,7 +15,6 @@ class LegacyForestRockFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYFORESTROCKFEATURE
 public:
     class LegacyForestRockFeature& operator=(class LegacyForestRockFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     LegacyForestRockFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LegacyForestRockFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFORESTROCKFEATURE
 #endif
     MCAPI LegacyForestRockFeature(class FeatureRegistry const &);
-
-
 
 };

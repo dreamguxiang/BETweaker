@@ -15,7 +15,6 @@ class InteractDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTDEFINITION
 public:
     class InteractDefinition& operator=(class InteractDefinition const &) = delete;
@@ -23,14 +22,11 @@ public:
     InteractDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTDEFINITION
 #endif
     MCAPI void addInteraction(struct Interaction const &);
     MCAPI void initialize(class EntityContext &, class InteractComponent &) const;
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>> &);
-
-
 
 };

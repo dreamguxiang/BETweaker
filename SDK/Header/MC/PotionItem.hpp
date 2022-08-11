@@ -17,14 +17,12 @@ class PotionItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONITEM
 public:
     class PotionItem& operator=(class PotionItem const &) = delete;
     PotionItem(class PotionItem const &) = delete;
     PotionItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PotionItem();
@@ -52,15 +50,14 @@ public:
     /*97*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /*137*/ virtual enum Potion::PotionType getPotionType() const;
+    /*137*/ virtual enum Potion::PotionType getPotionType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONITEM
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI PotionItem(std::string const &, int);
     MCAPI static void applyEffect(class ThrownPotion *, class ItemStack const &);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
-
-
 
 };

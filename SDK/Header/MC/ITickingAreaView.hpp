@@ -14,7 +14,6 @@ class ITickingAreaView {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREAVIEW
 public:
     class ITickingAreaView& operator=(class ITickingAreaView const &) = delete;
@@ -22,11 +21,8 @@ public:
     ITickingAreaView() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREAVIEW
 #endif
-
-
 
 };

@@ -14,13 +14,11 @@ class ItemStackRequestActionCraftLoom {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTLOOM
 public:
     class ItemStackRequestActionCraftLoom& operator=(class ItemStackRequestActionCraftLoom const &) = delete;
     ItemStackRequestActionCraftLoom(class ItemStackRequestActionCraftLoom const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftLoom();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestActionCraftLoom();
     MCAPI std::string const & getPatternNameId() const;
-
-
 
 };

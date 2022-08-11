@@ -17,13 +17,11 @@ enum Options;
 enum Type;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITY
 public:
     class Ability& operator=(class Ability const &) = delete;
     Ability(class Ability const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITY
@@ -39,7 +37,5 @@ public:
     MCAPI void setBool(bool);
     MCAPI void setFloat(float);
     MCAPI void unSet();
-
-
 
 };

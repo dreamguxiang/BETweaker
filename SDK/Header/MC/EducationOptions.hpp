@@ -14,14 +14,12 @@ class EducationOptions {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONOPTIONS
 public:
     class EducationOptions& operator=(class EducationOptions const &) = delete;
     EducationOptions(class EducationOptions const &) = delete;
     EducationOptions() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
@@ -39,9 +37,7 @@ public:
 //private:
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
-
 private:
     MCAPI static class EducationOptions DEFAULT_OPTION;
-
 
 };

@@ -15,14 +15,12 @@ class PackLoadError : public PackError {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKLOADERROR
 public:
     class PackLoadError& operator=(class PackLoadError const &) = delete;
     PackLoadError(class PackLoadError const &) = delete;
     PackLoadError() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PackLoadError();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKLOADERROR
 #endif
     MCAPI PackLoadError(enum PackParseErrorType, std::vector<std::string> const &);
-
-
 
 };

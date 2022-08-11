@@ -14,13 +14,11 @@ class PropertyGroupManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYGROUPMANAGER
 public:
     class PropertyGroupManager& operator=(class PropertyGroupManager const &) = delete;
     PropertyGroupManager(class PropertyGroupManager const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUPMANAGER
@@ -30,7 +28,5 @@ public:
     MCAPI void registerGroup(class HashedString const &, class std::shared_ptr<class PropertyGroup const>);
     MCAPI void tryInitPropertiesOnActor(class Actor &) const;
     MCAPI ~PropertyGroupManager();
-
-
 
 };

@@ -14,14 +14,12 @@ class RandomThreadCheckManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMTHREADCHECKMANAGER
 public:
     class RandomThreadCheckManager& operator=(class RandomThreadCheckManager const &) = delete;
     RandomThreadCheckManager(class RandomThreadCheckManager const &) = delete;
     RandomThreadCheckManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomThreadCheckManager();
@@ -36,10 +34,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;
-
 
 };

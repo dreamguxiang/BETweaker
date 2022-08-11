@@ -15,13 +15,11 @@ class ScriptDebugCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGCOMMAND
 public:
     class ScriptDebugCommand& operator=(class ScriptDebugCommand const &) = delete;
     ScriptDebugCommand(class ScriptDebugCommand const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptDebugCommand();
@@ -33,8 +31,6 @@ public:
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
     MCAPI void _handleProfilerAction(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::ProfilerAction, class CommandOutput &) const;
 
-
 protected:
-
 
 };

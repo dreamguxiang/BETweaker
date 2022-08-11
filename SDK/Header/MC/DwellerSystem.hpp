@@ -14,7 +14,6 @@ class DwellerSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERSYSTEM
 public:
     class DwellerSystem& operator=(class DwellerSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     DwellerSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DwellerSystem();
     /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERSYSTEM
 #endif
-
-
 
 };

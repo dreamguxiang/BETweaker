@@ -12,14 +12,12 @@ class MinecraftScriptTelemetryLogger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTSCRIPTTELEMETRYLOGGER
 public:
     class MinecraftScriptTelemetryLogger& operator=(class MinecraftScriptTelemetryLogger const &) = delete;
     MinecraftScriptTelemetryLogger(class MinecraftScriptTelemetryLogger const &) = delete;
     MinecraftScriptTelemetryLogger() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftScriptTelemetryLogger();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCRIPTTELEMETRYLOGGER
 #endif
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing &, bool);
-
-
 
 };

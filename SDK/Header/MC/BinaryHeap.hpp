@@ -14,13 +14,11 @@ class BinaryHeap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BINARYHEAP
 public:
     class BinaryHeap& operator=(class BinaryHeap const &) = delete;
     BinaryHeap(class BinaryHeap const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYHEAP
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void downHeap(int);
 
-
 private:
-
 
 };

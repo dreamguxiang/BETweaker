@@ -14,14 +14,12 @@ class IWebviewTelemetry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IWEBVIEWTELEMETRY
 public:
     class IWebviewTelemetry& operator=(class IWebviewTelemetry const &) = delete;
     IWebviewTelemetry(class IWebviewTelemetry const &) = delete;
     IWebviewTelemetry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IWebviewTelemetry();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
 #endif
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
-
-
 
 };

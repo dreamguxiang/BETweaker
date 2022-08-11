@@ -16,14 +16,12 @@ class RecordItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECORDITEM
 public:
     class RecordItem& operator=(class RecordItem const &) = delete;
     RecordItem(class RecordItem const &) = delete;
     RecordItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RecordItem();
@@ -42,13 +40,12 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
     MCVAPI bool isMusicDisk() const;
 #endif
     MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
     MCAPI float getDuration() const;
     MCAPI enum LevelSoundEvent getSound() const;
-
-
 
 };

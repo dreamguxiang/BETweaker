@@ -14,14 +14,12 @@ class WeakEntityRef {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
     class WeakEntityRef& operator=(class WeakEntityRef const &) = delete;
     WeakEntityRef(class WeakEntityRef const &) = delete;
     WeakEntityRef() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKENTITYREF
@@ -32,7 +30,5 @@ public:
     MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     MCAPI ~WeakEntityRef();
-
-
 
 };

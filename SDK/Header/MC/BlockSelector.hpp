@@ -14,7 +14,6 @@ class BlockSelector {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTOR
 public:
     class BlockSelector& operator=(class BlockSelector const &) = delete;
@@ -22,11 +21,8 @@ public:
     BlockSelector() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTOR
 #endif
-
-
 
 };

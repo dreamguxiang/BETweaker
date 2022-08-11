@@ -14,14 +14,12 @@ class GoalSelectorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOALSELECTORCOMPONENT
 public:
     class GoalSelectorComponent& operator=(class GoalSelectorComponent const &) = delete;
     GoalSelectorComponent(class GoalSelectorComponent const &) = delete;
     GoalSelectorComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOALSELECTORCOMPONENT
@@ -40,8 +38,6 @@ public:
     MCAPI void _eraseGoals(bool ( *)(struct std::pair<unsigned short, class PrioritizedGoal> &));
     MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal>>>> _findGoalByKey(unsigned short) const;
 
-
 private:
-
 
 };

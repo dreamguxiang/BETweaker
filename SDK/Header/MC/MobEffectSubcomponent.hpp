@@ -15,13 +15,11 @@ class MobEffectSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTSUBCOMPONENT
 public:
     class MobEffectSubcomponent& operator=(class MobEffectSubcomponent const &) = delete;
     MobEffectSubcomponent(class MobEffectSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MobEffectSubcomponent();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void _addEffectFromJSON(class Json::Value &);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class GlazedTerracottaBlock : public FaceDirectionalBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLAZEDTERRACOTTABLOCK
 public:
     class GlazedTerracottaBlock& operator=(class GlazedTerracottaBlock const &) = delete;
     GlazedTerracottaBlock(class GlazedTerracottaBlock const &) = delete;
     GlazedTerracottaBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlazedTerracottaBlock();
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLAZEDTERRACOTTABLOCK
 #endif
     MCAPI GlazedTerracottaBlock(std::string const &, int);
-
-
 
 };

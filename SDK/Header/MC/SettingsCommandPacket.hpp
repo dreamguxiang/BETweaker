@@ -15,13 +15,11 @@ class SettingsCommandPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTINGSCOMMANDPACKET
 public:
     class SettingsCommandPacket& operator=(class SettingsCommandPacket const &) = delete;
     SettingsCommandPacket(class SettingsCommandPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SettingsCommandPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI SettingsCommandPacket();
     MCAPI std::string const & getCommandString() const;
     MCAPI bool getSupressOutput() const;
-
-
 
 };

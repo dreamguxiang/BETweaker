@@ -14,13 +14,11 @@ class ActivateToolNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVATETOOLNODE
 public:
     class ActivateToolNode& operator=(class ActivateToolNode const &) = delete;
     ActivateToolNode(class ActivateToolNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActivateToolNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATETOOLNODE
 #endif
     MCAPI ActivateToolNode();
-
-
 
 };

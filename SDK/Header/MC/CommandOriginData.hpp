@@ -13,16 +13,12 @@ struct CommandOriginData {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINDATA
+#endif
     MCAPI CommandOriginData(struct CommandOriginData const &);
     MCAPI CommandOriginData();
     MCAPI struct CommandOriginData & operator=(struct CommandOriginData const &);
     MCAPI ~CommandOriginData();
-
-protected:
-
-private:
 
 };

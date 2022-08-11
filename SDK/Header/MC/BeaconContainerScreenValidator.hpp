@@ -15,20 +15,16 @@ class BeaconContainerScreenValidator : public ContainerScreenValidatorBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONCONTAINERSCREENVALIDATOR
 public:
     class BeaconContainerScreenValidator& operator=(class BeaconContainerScreenValidator const &) = delete;
     BeaconContainerScreenValidator(class BeaconContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BeaconContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERSCREENVALIDATOR
 #endif
     MCAPI BeaconContainerScreenValidator();
-
-
 
 };

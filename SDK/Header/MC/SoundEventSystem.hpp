@@ -12,7 +12,6 @@ class SoundEventSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTSYSTEM
 public:
     class SoundEventSystem& operator=(class SoundEventSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     SoundEventSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTSYSTEM
 #endif
     MCAPI static void _tick(class StrictEntityContext const &, class LevelComponent &, struct SoundEventRequestQueueComponent &);
     MCAPI static struct TickingSystemWithInfo create();
-
-
 
 };

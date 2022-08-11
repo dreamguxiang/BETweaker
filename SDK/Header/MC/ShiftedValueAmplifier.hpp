@@ -14,7 +14,6 @@ class ShiftedValueAmplifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIFTEDVALUEAMPLIFIER
 public:
     class ShiftedValueAmplifier& operator=(class ShiftedValueAmplifier const &) = delete;
@@ -22,14 +21,11 @@ public:
     ShiftedValueAmplifier() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShiftedValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDVALUEAMPLIFIER
 #endif
     MCAPI ShiftedValueAmplifier(int, float);
-
-
 
 };

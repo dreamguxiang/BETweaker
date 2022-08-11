@@ -18,13 +18,11 @@ class NpcDialoguePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUEPACKET
 public:
     class NpcDialoguePacket& operator=(class NpcDialoguePacket const &) = delete;
     NpcDialoguePacket(class NpcDialoguePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcDialoguePacket();
@@ -37,7 +35,5 @@ public:
     MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI NpcDialoguePacket();
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
-
-
 
 };

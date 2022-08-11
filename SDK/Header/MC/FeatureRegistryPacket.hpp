@@ -14,14 +14,12 @@ class FeatureRegistryPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREREGISTRYPACKET
 public:
     class FeatureRegistryPacket& operator=(class FeatureRegistryPacket const &) = delete;
     FeatureRegistryPacket(class FeatureRegistryPacket const &) = delete;
     FeatureRegistryPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FeatureRegistryPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRYPACKET
 #endif
     MCAPI FeatureRegistryPacket(std::vector<struct FeatureRegistry::FeatureBinaryJsonFormat> const &);
-
-
 
 };

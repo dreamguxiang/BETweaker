@@ -15,7 +15,6 @@ class StructureVoid : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREVOID
 public:
     class StructureVoid& operator=(class StructureVoid const &) = delete;
@@ -23,13 +22,12 @@ public:
     StructureVoid() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~StructureVoid();
-    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>);
+    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &);
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>);
     /*19*/ virtual void __unk_vfn_19();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -51,11 +49,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
-    /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &);
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
@@ -72,7 +70,5 @@ public:
     MCVAPI bool canHaveExtraData() const;
 #endif
     MCAPI StructureVoid(std::string const &, int);
-
-
 
 };

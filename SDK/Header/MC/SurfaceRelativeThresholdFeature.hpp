@@ -14,13 +14,11 @@ class SurfaceRelativeThresholdFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACERELATIVETHRESHOLDFEATURE
 public:
     class SurfaceRelativeThresholdFeature& operator=(class SurfaceRelativeThresholdFeature const &) = delete;
     SurfaceRelativeThresholdFeature(class SurfaceRelativeThresholdFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SurfaceRelativeThresholdFeature();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACERELATIVETHRESHOLDFEATURE
 #endif
     MCAPI SurfaceRelativeThresholdFeature();
-
-
 
 };

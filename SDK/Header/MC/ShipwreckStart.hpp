@@ -15,7 +15,6 @@ class ShipwreckStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKSTART
 public:
     class ShipwreckStart& operator=(class ShipwreckStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     ShipwreckStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ShipwreckStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKSTART
 #endif
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
-
-
 
 };

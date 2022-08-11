@@ -12,19 +12,15 @@ struct OnewayPhysicsBlocksComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONEWAYPHYSICSBLOCKSCOMPONENT
 public:
     struct OnewayPhysicsBlocksComponent& operator=(struct OnewayPhysicsBlocksComponent const &) = delete;
     OnewayPhysicsBlocksComponent(struct OnewayPhysicsBlocksComponent const &) = delete;
     OnewayPhysicsBlocksComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONEWAYPHYSICSBLOCKSCOMPONENT
+#endif
     MCAPI ~OnewayPhysicsBlocksComponent();
-
-protected:
-
-private:
 
 };

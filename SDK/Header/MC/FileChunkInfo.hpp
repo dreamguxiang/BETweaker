@@ -14,21 +14,17 @@ struct FileChunkInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILECHUNKINFO
 public:
     struct FileChunkInfo& operator=(struct FileChunkInfo const &) = delete;
     FileChunkInfo(struct FileChunkInfo const &) = delete;
     FileChunkInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKINFO
+#endif
     MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     MCAPI bool isValid() const;
     MCAPI int size() const;
-
-protected:
-
-private:
 
 };

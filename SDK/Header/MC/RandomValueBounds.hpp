@@ -15,14 +15,12 @@ class RandomValueBounds {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMVALUEBOUNDS
 public:
     class RandomValueBounds& operator=(class RandomValueBounds const &) = delete;
     RandomValueBounds(class RandomValueBounds const &) = delete;
     RandomValueBounds() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMVALUEBOUNDS
@@ -32,7 +30,5 @@ public:
     MCAPI int getInt(class Random &) const;
     MCAPI float getMax() const;
     MCAPI float getMin() const;
-
-
 
 };

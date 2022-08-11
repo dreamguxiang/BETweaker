@@ -14,14 +14,12 @@ class NpcSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSYSTEM
 public:
     class NpcSystem& operator=(class NpcSystem const &) = delete;
     NpcSystem(class NpcSystem const &) = delete;
     NpcSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcSystem();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSYSTEM
 #endif
     MCAPI static void tickCountdown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct NpcComponents::LeaveMenuCountdown> &);
-
-
 
 };

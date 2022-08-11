@@ -15,13 +15,11 @@ class FilterTextPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEXTPACKET
 public:
     class FilterTextPacket& operator=(class FilterTextPacket const &) = delete;
     FilterTextPacket(class FilterTextPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FilterTextPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI FilterTextPacket(std::string const &, bool);
     MCAPI FilterTextPacket();
-
-
 
 };

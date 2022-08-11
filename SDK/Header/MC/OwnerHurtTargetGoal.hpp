@@ -15,14 +15,12 @@ class OwnerHurtTargetGoal : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERHURTTARGETGOAL
 public:
     class OwnerHurtTargetGoal& operator=(class OwnerHurtTargetGoal const &) = delete;
     OwnerHurtTargetGoal(class OwnerHurtTargetGoal const &) = delete;
     OwnerHurtTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OwnerHurtTargetGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERHURTTARGETGOAL
 #endif
     MCAPI OwnerHurtTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
-
-
 
 };

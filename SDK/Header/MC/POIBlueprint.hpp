@@ -12,7 +12,6 @@ class POIBlueprint {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIBLUEPRINT
 public:
     class POIBlueprint& operator=(class POIBlueprint const &) = delete;
@@ -20,12 +19,9 @@ public:
     POIBlueprint() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POIBLUEPRINT
 #endif
     MCAPI POIBlueprint(std::string, enum POIType, float, bool, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
-
-
 
 };

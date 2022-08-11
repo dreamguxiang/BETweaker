@@ -15,14 +15,12 @@ class PacketViolationDetectedTelemetryData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONDETECTEDTELEMETRYDATA
 public:
     class PacketViolationDetectedTelemetryData& operator=(class PacketViolationDetectedTelemetryData const &) = delete;
     PacketViolationDetectedTelemetryData(class PacketViolationDetectedTelemetryData const &) = delete;
     PacketViolationDetectedTelemetryData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONDETECTEDTELEMETRYDATA
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const mEventName;
-
 
 };

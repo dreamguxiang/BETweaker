@@ -12,7 +12,6 @@ class SideBySideLevelSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDELEVELSYSTEM
 public:
     class SideBySideLevelSystem& operator=(class SideBySideLevelSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     SideBySideLevelSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDELEVELSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo emptyEventingRequests();
     MCAPI static struct TickingSystemWithInfo emptySoundRequests();
-
-
 
 };

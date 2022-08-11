@@ -12,14 +12,12 @@ class GameEventMapping {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMAPPING
 public:
     class GameEventMapping& operator=(class GameEventMapping const &) = delete;
     GameEventMapping(class GameEventMapping const &) = delete;
     GameEventMapping() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMAPPING
@@ -29,9 +27,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
-
 
 };

@@ -14,14 +14,12 @@ class JukeboxBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUKEBOXBLOCKACTOR
 public:
     class JukeboxBlockActor& operator=(class JukeboxBlockActor const &) = delete;
     JukeboxBlockActor(class JukeboxBlockActor const &) = delete;
     JukeboxBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCKACTOR
@@ -53,8 +51,6 @@ public:
     MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
     MCAPI void _spawnMusicParticles(class Level &, float);
 
-
 private:
-
 
 };

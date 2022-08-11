@@ -19,14 +19,12 @@ inline class EntityContext& getStackRef() {
 }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEENTITY
 public:
     class StackResultStorageEntity& operator=(class StackResultStorageEntity const &) = delete;
     StackResultStorageEntity(class StackResultStorageEntity const &) = delete;
     StackResultStorageEntity() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEENTITY
@@ -39,8 +37,6 @@ public:
     MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
 
-
 protected:
-
 
 };

@@ -12,7 +12,6 @@ class ServerPlayerMovementCorrectionSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTCORRECTIONSYSTEM
 public:
     class ServerPlayerMovementCorrectionSystem& operator=(class ServerPlayerMovementCorrectionSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     ServerPlayerMovementCorrectionSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTCORRECTIONSYSTEM
 #endif
     MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     MCAPI static struct TickingSystemWithInfo create();
-
-
 
 };

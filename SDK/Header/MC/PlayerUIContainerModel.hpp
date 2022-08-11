@@ -15,14 +15,12 @@ class PlayerUIContainerModel : public PlayerUIContainerModelBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODEL
 public:
     class PlayerUIContainerModel& operator=(class PlayerUIContainerModel const &) = delete;
     PlayerUIContainerModel(class PlayerUIContainerModel const &) = delete;
     PlayerUIContainerModel() = delete;
 #endif
-
 
 public:
     /*1*/ virtual ~PlayerUIContainerModel();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODEL
 #endif
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
-
-
 
 };

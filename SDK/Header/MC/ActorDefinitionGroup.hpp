@@ -22,14 +22,12 @@ struct LoadActorResult {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONGROUP
 public:
     class ActorDefinitionGroup& operator=(class ActorDefinitionGroup const &) = delete;
     ActorDefinitionGroup(class ActorDefinitionGroup const &) = delete;
     ActorDefinitionGroup() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONGROUP
@@ -56,10 +54,8 @@ public:
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition &, class Level &);
     MCAPI void _setupPropertyGroups(class Level &, class ActorDefinition const &);
 
-
 protected:
 
 private:
-
 
 };

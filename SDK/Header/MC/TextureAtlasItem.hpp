@@ -12,7 +12,6 @@ class TextureAtlasItem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTUREATLASITEM
 public:
     class TextureAtlasItem& operator=(class TextureAtlasItem const &) = delete;
@@ -20,12 +19,9 @@ public:
     TextureAtlasItem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREATLASITEM
 #endif
     MCAPI ~TextureAtlasItem();
-
-
 
 };

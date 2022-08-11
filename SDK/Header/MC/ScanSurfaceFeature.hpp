@@ -14,7 +14,6 @@ class ScanSurfaceFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCANSURFACEFEATURE
 public:
     class ScanSurfaceFeature& operator=(class ScanSurfaceFeature const &) = delete;
@@ -22,13 +21,10 @@ public:
     ScanSurfaceFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ScanSurfaceFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCANSURFACEFEATURE
 #endif
-
-
 
 };

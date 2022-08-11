@@ -15,14 +15,12 @@ class HelpCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HELPCOMMAND
 public:
     class HelpCommand& operator=(class HelpCommand const &) = delete;
     HelpCommand(class HelpCommand const &) = delete;
     HelpCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HelpCommand();
@@ -35,8 +33,6 @@ public:
     MCAPI void getCommandHelp(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void getHelpPage(class CommandRegistry const &, class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

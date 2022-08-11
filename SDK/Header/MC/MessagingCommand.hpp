@@ -15,14 +15,12 @@ class MessagingCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESSAGINGCOMMAND
 public:
     class MessagingCommand& operator=(class MessagingCommand const &) = delete;
     MessagingCommand(class MessagingCommand const &) = delete;
     MessagingCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MessagingCommand();
@@ -36,8 +34,6 @@ public:
     MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;
     MCAPI bool tryToSIFTText(class CommandOrigin const &, class CommandOutput &, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>) const;
 
-
 protected:
-
 
 };

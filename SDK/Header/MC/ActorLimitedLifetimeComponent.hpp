@@ -14,13 +14,11 @@ class ActorLimitedLifetimeComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLIMITEDLIFETIMECOMPONENT
 public:
     class ActorLimitedLifetimeComponent& operator=(class ActorLimitedLifetimeComponent const &) = delete;
     ActorLimitedLifetimeComponent(class ActorLimitedLifetimeComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLIMITEDLIFETIMECOMPONENT
@@ -30,7 +28,5 @@ public:
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
-
-
 
 };

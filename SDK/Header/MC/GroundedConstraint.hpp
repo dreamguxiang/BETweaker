@@ -14,7 +14,6 @@ class GroundedConstraint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDEDCONSTRAINT
 public:
     class GroundedConstraint& operator=(class GroundedConstraint const &) = delete;
@@ -22,14 +21,11 @@ public:
     GroundedConstraint() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GroundedConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUNDEDCONSTRAINT
 #endif
     MCAPI GroundedConstraint(class StructureTemplate &);
-
-
 
 };

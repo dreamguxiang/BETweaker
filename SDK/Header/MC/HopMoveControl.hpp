@@ -15,13 +15,11 @@ class HopMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPMOVECONTROL
 public:
     class HopMoveControl& operator=(class HopMoveControl const &) = delete;
     HopMoveControl(class HopMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HopMoveControl();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPMOVECONTROL
 #endif
     MCAPI HopMoveControl();
-
-
 
 };

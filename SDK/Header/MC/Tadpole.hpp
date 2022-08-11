@@ -14,14 +14,12 @@ class Tadpole : public WaterAnimal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TADPOLE
 public:
     class Tadpole& operator=(class Tadpole const &) = delete;
     Tadpole(class Tadpole const &) = delete;
     Tadpole() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -52,11 +50,9 @@ public:
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
     /*367*/ virtual float getFlopVerticalVelocityFactor() const;
-    /*368*/ virtual float getFlopHorizontalVelocityFactor() const;
+    /*368*/ virtual float getFlopHorizontalVelocityFactor();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TADPOLE
 #endif
     MCAPI Tadpole(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

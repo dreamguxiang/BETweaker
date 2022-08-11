@@ -15,14 +15,12 @@ class LiquidBlockDynamic : public LiquidBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDBLOCKDYNAMIC
 public:
     class LiquidBlockDynamic& operator=(class LiquidBlockDynamic const &) = delete;
     LiquidBlockDynamic(class LiquidBlockDynamic const &) = delete;
     LiquidBlockDynamic() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LiquidBlockDynamic();
@@ -78,8 +76,6 @@ public:
     MCAPI bool _tick(class BlockSource &, class BlockPos const &, class Random &, bool) const;
     MCAPI void _trySpreadTo(class BlockSource &, class BlockPos const &, int, class BlockPos const &, unsigned char) const;
 
-
 private:
-
 
 };

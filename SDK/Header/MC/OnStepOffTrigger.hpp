@@ -12,7 +12,6 @@ class OnStepOffTrigger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPOFFTRIGGER
 public:
     class OnStepOffTrigger& operator=(class OnStepOffTrigger const &) = delete;
@@ -20,12 +19,9 @@ public:
     OnStepOffTrigger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPOFFTRIGGER
 #endif
     MCAPI ~OnStepOffTrigger();
-
-
 
 };

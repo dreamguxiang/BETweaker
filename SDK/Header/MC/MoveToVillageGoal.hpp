@@ -15,14 +15,12 @@ class MoveToVillageGoal : public BaseMoveToGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOVILLAGEGOAL
 public:
     class MoveToVillageGoal& operator=(class MoveToVillageGoal const &) = delete;
     MoveToVillageGoal(class MoveToVillageGoal const &) = delete;
     MoveToVillageGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToVillageGoal();
@@ -44,8 +42,6 @@ public:
 //protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();
 
-
 protected:
-
 
 };

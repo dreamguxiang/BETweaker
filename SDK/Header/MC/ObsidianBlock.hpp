@@ -15,14 +15,12 @@ class ObsidianBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBSIDIANBLOCK
 public:
     class ObsidianBlock& operator=(class ObsidianBlock const &) = delete;
     ObsidianBlock(class ObsidianBlock const &) = delete;
     ObsidianBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ObsidianBlock();
@@ -66,7 +64,5 @@ public:
 #endif
     MCAPI ObsidianBlock(std::string const &, int, bool);
     MCAPI void poofParticles(class BlockSource &, class BlockPos const &) const;
-
-
 
 };

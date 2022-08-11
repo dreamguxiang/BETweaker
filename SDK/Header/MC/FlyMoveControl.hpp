@@ -15,13 +15,11 @@ class FlyMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYMOVECONTROL
 public:
     class FlyMoveControl& operator=(class FlyMoveControl const &) = delete;
     FlyMoveControl(class FlyMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FlyMoveControl();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYMOVECONTROL
 #endif
     MCAPI FlyMoveControl();
-
-
 
 };

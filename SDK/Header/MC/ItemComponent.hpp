@@ -14,14 +14,12 @@ class ItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPONENT
 public:
     class ItemComponent& operator=(class ItemComponent const &) = delete;
     ItemComponent(class ItemComponent const &) = delete;
     ItemComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemComponent();
@@ -39,7 +37,5 @@ public:
     MCAPI ItemComponent(class ComponentItem *);
     MCAPI static void bindItemComponentType();
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
-
-
 
 };

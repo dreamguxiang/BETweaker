@@ -15,14 +15,12 @@ class StonecutterContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONECUTTERCONTAINERMANAGERMODEL
 public:
     class StonecutterContainerManagerModel& operator=(class StonecutterContainerManagerModel const &) = delete;
     StonecutterContainerManagerModel(class StonecutterContainerManagerModel const &) = delete;
     StonecutterContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StonecutterContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERCONTAINERMANAGERMODEL
 #endif
     MCAPI StonecutterContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

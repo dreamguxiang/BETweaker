@@ -14,13 +14,11 @@ class BreedableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLECOMPONENT
 public:
     class BreedableComponent& operator=(class BreedableComponent const &) = delete;
     BreedableComponent(class BreedableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLECOMPONENT
@@ -47,8 +45,6 @@ public:
     MCAPI bool _meetsEnvironmentRequirements(class Actor &) const;
     MCAPI void _useBreedItem(class Actor &, class Player &, class ItemStack const &);
 
-
 private:
-
 
 };

@@ -14,20 +14,16 @@ class GrowsCropComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWSCROPCOMPONENT
 public:
     class GrowsCropComponent& operator=(class GrowsCropComponent const &) = delete;
     GrowsCropComponent(class GrowsCropComponent const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPCOMPONENT
 #endif
     MCAPI GrowsCropComponent();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-
-
 
 };

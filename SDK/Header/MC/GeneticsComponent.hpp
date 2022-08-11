@@ -20,13 +20,11 @@ struct Gene {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICSCOMPONENT
 public:
     class GeneticsComponent& operator=(class GeneticsComponent const &) = delete;
     GeneticsComponent(class GeneticsComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSCOMPONENT
@@ -44,11 +42,9 @@ public:
 //private:
     MCAPI struct GeneticsComponent::Gene _crossParentGenes(struct GeneDefinition const &, struct GeneticsComponent::Gene &, struct GeneticsComponent::Gene &);
 
-
 private:
     MCAPI static std::string const GENE_ARRAY;
     MCAPI static std::string const HIDDEN_ALLELE;
     MCAPI static std::string const MAIN_ALLELE;
-
 
 };

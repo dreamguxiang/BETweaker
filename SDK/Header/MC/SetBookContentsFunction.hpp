@@ -16,14 +16,12 @@ class SetBookContentsFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETBOOKCONTENTSFUNCTION
 public:
     class SetBookContentsFunction& operator=(class SetBookContentsFunction const &) = delete;
     SetBookContentsFunction(class SetBookContentsFunction const &) = delete;
     SetBookContentsFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetBookContentsFunction();
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI void _fillUserData(class CompoundTag &);
 
-
 private:
-
 
 };

@@ -16,14 +16,12 @@ class Pufferfish : public Fish {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUFFERFISH
 public:
     class Pufferfish& operator=(class Pufferfish const &) = delete;
     Pufferfish(class Pufferfish const &) = delete;
     Pufferfish() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Pufferfish();
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUFFERFISH
 #endif
     MCAPI Pufferfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

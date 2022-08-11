@@ -15,7 +15,6 @@ class LevelDbRandomAccessFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBRANDOMACCESSFILE
 public:
     class LevelDbRandomAccessFile& operator=(class LevelDbRandomAccessFile const &) = delete;
@@ -23,14 +22,11 @@ public:
     LevelDbRandomAccessFile() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LevelDbRandomAccessFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBRANDOMACCESSFILE
 #endif
     MCAPI LevelDbRandomAccessFile(class Core::File &&);
-
-
 
 };

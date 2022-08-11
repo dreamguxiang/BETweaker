@@ -40,7 +40,6 @@ public:
 
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCONTEXT
 public:
     class CommandContext& operator=(class CommandContext const &) = delete;
@@ -48,13 +47,10 @@ public:
     CommandContext() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDCONTEXT
 #endif
     MCAPI CommandContext(std::string const &, std::unique_ptr<class CommandOrigin>, int);
     MCAPI class CommandOrigin const & getCommandOrigin() const;
-
-
 
 };

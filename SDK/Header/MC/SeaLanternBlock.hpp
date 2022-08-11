@@ -15,14 +15,12 @@ class SeaLanternBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEALANTERNBLOCK
 public:
     class SeaLanternBlock& operator=(class SeaLanternBlock const &) = delete;
     SeaLanternBlock(class SeaLanternBlock const &) = delete;
     SeaLanternBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SeaLanternBlock();
@@ -67,7 +65,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SeaLanternBlock(std::string const &, int);
-
-
 
 };

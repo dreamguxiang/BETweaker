@@ -15,14 +15,12 @@ class FireBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREBLOCK
 public:
     class FireBlock& operator=(class FireBlock const &) = delete;
     FireBlock(class FireBlock const &) = delete;
     FireBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FireBlock();
@@ -48,14 +46,14 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*87*/ virtual bool mayPick() const;
+    /*87*/ virtual bool mayPick();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*105*/ virtual void __unk_vfn_105();
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -86,8 +84,6 @@ public:
     MCAPI float getFireOdds(class BlockSource &, class BlockPos const &) const;
     MCAPI bool isValidFireLocation(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

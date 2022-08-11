@@ -14,13 +14,11 @@ class EntitySensorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSENSORCOMPONENT
 public:
     class EntitySensorComponent& operator=(class EntitySensorComponent const &) = delete;
     EntitySensorComponent(class EntitySensorComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORCOMPONENT
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const NO_MAX_COUNT;
-
 
 };

@@ -12,7 +12,6 @@ class InsidePowderSnowBlockSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEPOWDERSNOWBLOCKSYSTEMIMPL
 public:
     class InsidePowderSnowBlockSystemImpl& operator=(class InsidePowderSnowBlockSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     InsidePowderSnowBlockSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEPOWDERSNOWBLOCKSYSTEMIMPL
 #endif
     MCAPI static class Vec3 const SLOWDOWN_MODIFIER;
-
-
 
 };

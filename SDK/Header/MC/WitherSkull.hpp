@@ -16,14 +16,12 @@ class WitherSkull : public Fireball {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERSKULL
 public:
     class WitherSkull& operator=(class WitherSkull const &) = delete;
     WitherSkull(class WitherSkull const &) = delete;
     WitherSkull() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -37,7 +35,7 @@ public:
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();
     /*99*/ virtual void __unk_vfn_99();
-    /*104*/ virtual bool isOnFire() const;
+    /*104*/ virtual bool isOnFire();
     /*106*/ virtual void __unk_vfn_106();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
@@ -59,7 +57,5 @@ public:
     MCVAPI bool shouldBurn();
 #endif
     MCAPI WitherSkull(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

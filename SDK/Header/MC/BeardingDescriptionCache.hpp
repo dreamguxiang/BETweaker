@@ -12,7 +12,6 @@ class BeardingDescriptionCache {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDINGDESCRIPTIONCACHE
 public:
     class BeardingDescriptionCache& operator=(class BeardingDescriptionCache const &) = delete;
@@ -20,12 +19,9 @@ public:
     BeardingDescriptionCache() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDINGDESCRIPTIONCACHE
 #endif
     MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
-
-
 
 };

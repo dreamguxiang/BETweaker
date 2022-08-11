@@ -39,12 +39,10 @@ inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreB
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURESETTINGS
 public:
     StructureSettings(class StructureSettings const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESETTINGS
@@ -93,7 +91,5 @@ public:
     MCAPI ~StructureSettings();
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
-
-
 
 };

@@ -15,14 +15,12 @@ class CameraBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERABLOCK
 public:
     class CameraBlock& operator=(class CameraBlock const &) = delete;
     CameraBlock(class CameraBlock const &) = delete;
     CameraBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CameraBlock();
@@ -47,7 +45,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
+    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERABLOCK
 #endif
     MCAPI CameraBlock(std::string const &, int);
-
-
 
 };

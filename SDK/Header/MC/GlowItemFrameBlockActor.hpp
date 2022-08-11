@@ -15,14 +15,12 @@ class GlowItemFrameBlockActor : public ItemFrameBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWITEMFRAMEBLOCKACTOR
 public:
     class GlowItemFrameBlockActor& operator=(class GlowItemFrameBlockActor const &) = delete;
     GlowItemFrameBlockActor(class GlowItemFrameBlockActor const &) = delete;
     GlowItemFrameBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWITEMFRAMEBLOCKACTOR
 #endif
     MCAPI GlowItemFrameBlockActor(class BlockPos);
-
-
 
 };

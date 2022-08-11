@@ -12,7 +12,6 @@ class VanillaAncientCityJigsawStructureBlockRules {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAANCIENTCITYJIGSAWSTRUCTUREBLOCKRULES
 public:
     class VanillaAncientCityJigsawStructureBlockRules& operator=(class VanillaAncientCityJigsawStructureBlockRules const &) = delete;
@@ -20,12 +19,9 @@ public:
     VanillaAncientCityJigsawStructureBlockRules() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAANCIENTCITYJIGSAWSTRUCTUREBLOCKRULES
 #endif
     MCAPI static void initialize(class JigsawStructureRegistry &);
-
-
 
 };

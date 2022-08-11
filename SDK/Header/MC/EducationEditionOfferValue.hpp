@@ -14,7 +14,6 @@ class EducationEditionOfferValue {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONEDITIONOFFERVALUE
 public:
     class EducationEditionOfferValue& operator=(class EducationEditionOfferValue const &) = delete;
@@ -22,12 +21,9 @@ public:
     EducationEditionOfferValue() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONEDITIONOFFERVALUE
 #endif
     MCAPI class EducationEditionOfferValue & operator=(enum EducationEditionOffer);
-
-
 
 };

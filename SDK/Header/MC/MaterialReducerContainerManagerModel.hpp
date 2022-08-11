@@ -15,14 +15,12 @@ class MaterialReducerContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERCONTAINERMANAGERMODEL
 public:
     class MaterialReducerContainerManagerModel& operator=(class MaterialReducerContainerManagerModel const &) = delete;
     MaterialReducerContainerManagerModel(class MaterialReducerContainerManagerModel const &) = delete;
     MaterialReducerContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MaterialReducerContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERCONTAINERMANAGERMODEL
 #endif
     MCAPI MaterialReducerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

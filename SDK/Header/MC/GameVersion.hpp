@@ -14,13 +14,11 @@ class GameVersion {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEVERSION
 public:
     class GameVersion& operator=(class GameVersion const &) = delete;
     GameVersion(class GameVersion const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEVERSION
@@ -35,7 +33,5 @@ public:
     MCAPI std::unique_ptr<class ListTag> serialize() const;
     MCAPI ~GameVersion();
     MCAPI static class GameVersion current();
-
-
 
 };

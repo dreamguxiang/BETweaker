@@ -16,14 +16,12 @@ class Silverfish : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SILVERFISH
 public:
     class Silverfish& operator=(class Silverfish const &) = delete;
     Silverfish(class Silverfish const &) = delete;
     Silverfish() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Silverfish();
@@ -59,12 +57,10 @@ public:
     /*349*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn() const;
+    /*367*/ virtual bool isDarkEnoughToSpawn();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISH
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Silverfish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

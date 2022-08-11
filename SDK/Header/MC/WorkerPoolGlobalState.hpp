@@ -12,7 +12,6 @@ class WorkerPoolGlobalState {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKERPOOLGLOBALSTATE
 public:
     class WorkerPoolGlobalState& operator=(class WorkerPoolGlobalState const &) = delete;
@@ -20,12 +19,9 @@ public:
     WorkerPoolGlobalState() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOLGLOBALSTATE
 #endif
     MCAPI ~WorkerPoolGlobalState();
-
-
 
 };

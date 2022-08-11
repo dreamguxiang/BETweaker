@@ -14,14 +14,12 @@ class SquidIdleGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDIDLEGOAL
 public:
     class SquidIdleGoal& operator=(class SquidIdleGoal const &) = delete;
     SquidIdleGoal(class SquidIdleGoal const &) = delete;
     SquidIdleGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SquidIdleGoal();
@@ -34,7 +32,5 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDIDLEGOAL
 #endif
-
-
 
 };

@@ -14,14 +14,12 @@ class BreakDoorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORGOAL
 public:
     class BreakDoorGoal& operator=(class BreakDoorGoal const &) = delete;
     BreakDoorGoal(class BreakDoorGoal const &) = delete;
     BreakDoorGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BreakDoorGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORGOAL
 #endif
     MCAPI BreakDoorGoal(class Mob &);
-
-
 
 };

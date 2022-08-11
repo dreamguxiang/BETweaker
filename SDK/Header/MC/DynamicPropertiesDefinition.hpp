@@ -12,14 +12,12 @@ class DynamicPropertiesDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICPROPERTIESDEFINITION
 public:
     class DynamicPropertiesDefinition& operator=(class DynamicPropertiesDefinition const &) = delete;
     DynamicPropertiesDefinition(class DynamicPropertiesDefinition const &) = delete;
     DynamicPropertiesDefinition() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIESDEFINITION
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool _canMergeDefinitions(class DynamicPropertiesDefinition const &, std::string const &, unsigned __int64, std::string &) const;
 
-
 private:
-
 
 };

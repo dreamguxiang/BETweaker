@@ -12,14 +12,12 @@ class CommandResponseBase {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRESPONSEBASE
 public:
     class CommandResponseBase& operator=(class CommandResponseBase const &) = delete;
     CommandResponseBase(class CommandResponseBase const &) = delete;
     CommandResponseBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRESPONSEBASE
@@ -34,10 +32,8 @@ public:
 //private:
     MCAPI void _compileCommands(class Level &) const;
 
-
 protected:
 
 private:
-
 
 };

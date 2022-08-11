@@ -14,14 +14,12 @@ class BarrelBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELBLOCKACTOR
 public:
     class BarrelBlockActor& operator=(class BarrelBlockActor const &) = delete;
     BarrelBlockActor(class BarrelBlockActor const &) = delete;
     BarrelBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
@@ -33,7 +31,5 @@ public:
     MCVAPI void stopOpen(class Player &);
 #endif
     MCAPI BarrelBlockActor(class BlockPos const &);
-
-
 
 };

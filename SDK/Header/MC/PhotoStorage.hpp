@@ -15,14 +15,12 @@ class PhotoStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOSTORAGE
 public:
     class PhotoStorage& operator=(class PhotoStorage const &) = delete;
     PhotoStorage(class PhotoStorage const &) = delete;
     PhotoStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOSTORAGE
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI void _readManifest();
 
-
 private:
-
 
 };

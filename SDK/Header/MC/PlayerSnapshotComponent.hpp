@@ -14,20 +14,16 @@ struct PlayerSnapshotComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSNAPSHOTCOMPONENT
 public:
     struct PlayerSnapshotComponent& operator=(struct PlayerSnapshotComponent const &) = delete;
     PlayerSnapshotComponent(struct PlayerSnapshotComponent const &) = delete;
     PlayerSnapshotComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSNAPSHOTCOMPONENT
+#endif
     MCAPI bool hasStateFlag(enum PlayerSnapshotStateFlag) const;
     MCAPI void setStateFlag(enum PlayerSnapshotStateFlag, bool);
-
-protected:
-
-private:
 
 };

@@ -13,7 +13,6 @@ class SuspectTrackingDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUSPECTTRACKINGDEFINITION
 public:
     class SuspectTrackingDefinition& operator=(class SuspectTrackingDefinition const &) = delete;
@@ -21,13 +20,10 @@ public:
     SuspectTrackingDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGDEFINITION
 #endif
     MCAPI void initialize(class EntityContext &, class SuspectTrackingComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SuspectTrackingDefinition>> &);
-
-
 
 };

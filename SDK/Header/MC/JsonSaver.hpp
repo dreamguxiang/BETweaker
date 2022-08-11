@@ -14,7 +14,6 @@ class JsonSaver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONSAVER
 public:
     class JsonSaver& operator=(class JsonSaver const &) = delete;
@@ -22,12 +21,9 @@ public:
     JsonSaver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONSAVER
 #endif
     MCAPI std::string toString();
-
-
 
 };

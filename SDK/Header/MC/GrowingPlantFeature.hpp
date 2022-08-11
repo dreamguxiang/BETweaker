@@ -14,13 +14,11 @@ class GrowingPlantFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE
 public:
     class GrowingPlantFeature& operator=(class GrowingPlantFeature const &) = delete;
     GrowingPlantFeature(class GrowingPlantFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrowingPlantFeature();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWINGPLANTFEATURE
 #endif
     MCAPI GrowingPlantFeature();
-
-
 
 };

@@ -13,7 +13,6 @@ class LevelSeed64 {
 public:
     uint64_t mSeed;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSEED64
 public:
     class LevelSeed64& operator=(class LevelSeed64 const &) = delete;
@@ -21,13 +20,10 @@ public:
     LevelSeed64() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSEED64
 #endif
     MCAPI unsigned int to32BitRandomSeed() const;
     MCAPI static class LevelSeed64 fromUnsigned32(unsigned int);
-
-
 
 };

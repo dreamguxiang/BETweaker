@@ -14,20 +14,18 @@ struct BeardKernel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDKERNEL
 public:
     struct BeardKernel& operator=(struct BeardKernel const &) = delete;
     BeardKernel(struct BeardKernel const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDKERNEL
+#endif
     MCAPI BeardKernel();
     MCAPI float getContribution(int, int, int) const;
 
-protected:
-
-private:
+//private:
     MCAPI class std::array<float, 13824> const createBeardKernel();
 
 };

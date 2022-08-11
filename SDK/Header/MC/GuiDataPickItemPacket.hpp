@@ -15,13 +15,11 @@ class GuiDataPickItemPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUIDATAPICKITEMPACKET
 public:
     class GuiDataPickItemPacket& operator=(class GuiDataPickItemPacket const &) = delete;
     GuiDataPickItemPacket(class GuiDataPickItemPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GuiDataPickItemPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
     MCAPI GuiDataPickItemPacket();
-
-
 
 };

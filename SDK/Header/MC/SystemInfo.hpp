@@ -11,17 +11,14 @@ struct SystemInfo {
 
 #define AFTER_EXTRA
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMINFO
+#endif
     MCAPI SystemInfo(struct SystemInfo const &);
     MCAPI SystemInfo();
     MCAPI struct SystemInfo & operator=(struct SystemInfo &&);
     MCAPI struct SystemInfo & operator=(struct SystemInfo const &);
     MCAPI ~SystemInfo();
-
-protected:
-
-private:
+    MCAPI static void bindType();
 
 };

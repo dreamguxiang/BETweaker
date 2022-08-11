@@ -15,7 +15,6 @@ class ChangeSettingCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGESETTINGCOMMAND
 public:
     class ChangeSettingCommand& operator=(class ChangeSettingCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     ChangeSettingCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ChangeSettingCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGESETTINGCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

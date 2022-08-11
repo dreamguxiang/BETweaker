@@ -14,13 +14,11 @@ class CircuitSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
 public:
     class CircuitSystem& operator=(class CircuitSystem const &) = delete;
     CircuitSystem(class CircuitSystem const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITSYSTEM
@@ -41,8 +39,6 @@ public:
     MCAPI void evaluateComponents(bool);
     MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent *>, class BlockPos const &, class BlockPos const &, class BlockSource &);
 
-
 private:
-
 
 };

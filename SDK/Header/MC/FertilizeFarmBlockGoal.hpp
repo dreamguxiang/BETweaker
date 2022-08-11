@@ -13,14 +13,12 @@ class FertilizeFarmBlockGoal : public BaseMoveToBlockGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FERTILIZEFARMBLOCKGOAL
 public:
     class FertilizeFarmBlockGoal& operator=(class FertilizeFarmBlockGoal const &) = delete;
     FertilizeFarmBlockGoal(class FertilizeFarmBlockGoal const &) = delete;
     FertilizeFarmBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FertilizeFarmBlockGoal();
@@ -44,10 +42,8 @@ public:
 //private:
     MCAPI bool _findFertilizer();
 
-
 protected:
 
 private:
-
 
 };

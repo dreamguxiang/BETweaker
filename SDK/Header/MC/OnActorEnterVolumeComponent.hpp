@@ -12,7 +12,6 @@ class OnActorEnterVolumeComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORENTERVOLUMECOMPONENT
 public:
     class OnActorEnterVolumeComponent& operator=(class OnActorEnterVolumeComponent const &) = delete;
@@ -20,12 +19,9 @@ public:
     OnActorEnterVolumeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMECOMPONENT
 #endif
     MCAPI ~OnActorEnterVolumeComponent();
-
-
 
 };

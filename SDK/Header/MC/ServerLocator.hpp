@@ -14,7 +14,6 @@ class ServerLocator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLOCATOR
 public:
     class ServerLocator& operator=(class ServerLocator const &) = delete;
@@ -22,13 +21,10 @@ public:
     ServerLocator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
     MCVAPI void _onDisable();
     MCVAPI void _onEnable();
 #endif
-
-
 
 };

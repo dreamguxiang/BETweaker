@@ -15,14 +15,12 @@ class MoveToLiquidGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOLIQUIDGOAL
 public:
     class MoveToLiquidGoal& operator=(class MoveToLiquidGoal const &) = delete;
     MoveToLiquidGoal(class MoveToLiquidGoal const &) = delete;
     MoveToLiquidGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToLiquidGoal();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLIQUIDGOAL
 #endif
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
-
-
 
 };

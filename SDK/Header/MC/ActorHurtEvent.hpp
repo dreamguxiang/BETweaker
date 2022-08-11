@@ -12,19 +12,15 @@ struct ActorHurtEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHURTEVENT
 public:
     struct ActorHurtEvent& operator=(struct ActorHurtEvent const &) = delete;
     ActorHurtEvent(struct ActorHurtEvent const &) = delete;
     ActorHurtEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHURTEVENT
+#endif
     MCAPI ~ActorHurtEvent();
-
-protected:
-
-private:
 
 };

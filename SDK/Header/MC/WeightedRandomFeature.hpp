@@ -14,13 +14,11 @@ class WeightedRandomFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEIGHTEDRANDOMFEATURE
 public:
     class WeightedRandomFeature& operator=(class WeightedRandomFeature const &) = delete;
     WeightedRandomFeature(class WeightedRandomFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WeightedRandomFeature();
@@ -28,7 +26,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEIGHTEDRANDOMFEATURE
 #endif
     MCAPI WeightedRandomFeature();
-
-
 
 };

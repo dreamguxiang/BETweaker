@@ -14,14 +14,12 @@ class SnackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNACKGOAL
 public:
     class SnackGoal& operator=(class SnackGoal const &) = delete;
     SnackGoal(class SnackGoal const &) = delete;
     SnackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SnackGoal();
@@ -44,7 +42,6 @@ public:
     MCAPI bool _isSnackableItem(class ItemStack const &) const;
     MCAPI void _updateHand(class ItemStack const &);
 
-
 private:
     MCAPI static int const CHEW_CHANCE;
     MCAPI static int const EATING_TIME;
@@ -53,6 +50,5 @@ private:
     MCAPI static int const RANDOM_EATING_START;
     MCAPI static float const SEARCH_SIZE;
     MCAPI static float const STOP_DIST_SQRD;
-
 
 };

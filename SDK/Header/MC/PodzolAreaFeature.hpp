@@ -15,7 +15,6 @@ class PodzolAreaFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PODZOLAREAFEATURE
 public:
     class PodzolAreaFeature& operator=(class PodzolAreaFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     PodzolAreaFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PodzolAreaFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PODZOLAREAFEATURE
 #endif
-
-
 
 };

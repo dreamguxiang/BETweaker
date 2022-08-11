@@ -14,7 +14,6 @@ class ItemEventResponseFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMEVENTRESPONSEFACTORY
 public:
     class ItemEventResponseFactory& operator=(class ItemEventResponseFactory const &) = delete;
@@ -22,14 +21,11 @@ public:
     ItemEventResponseFactory() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ItemEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const &);
     /*2*/ virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTRESPONSEFACTORY
 #endif
-
-
 
 };

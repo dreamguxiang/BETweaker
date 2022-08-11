@@ -24,13 +24,11 @@ public:
     LIAPI operator double() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUBLETAG
 public:
     class DoubleTag& operator=(class DoubleTag const &) = delete;
     DoubleTag(class DoubleTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DoubleTag();
@@ -44,7 +42,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLETAG
 #endif
     MCAPI DoubleTag();
-
-
 
 };

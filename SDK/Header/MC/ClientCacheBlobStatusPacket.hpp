@@ -15,14 +15,12 @@ class ClientCacheBlobStatusPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTCACHEBLOBSTATUSPACKET
 public:
     class ClientCacheBlobStatusPacket& operator=(class ClientCacheBlobStatusPacket const &) = delete;
     ClientCacheBlobStatusPacket(class ClientCacheBlobStatusPacket const &) = delete;
     ClientCacheBlobStatusPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClientCacheBlobStatusPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTCACHEBLOBSTATUSPACKET
 #endif
-
-
 
 };

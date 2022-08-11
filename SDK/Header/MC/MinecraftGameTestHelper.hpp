@@ -16,14 +16,12 @@ class MinecraftGameTestHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTHELPER
 public:
     class MinecraftGameTestHelper& operator=(class MinecraftGameTestHelper const &) = delete;
     MinecraftGameTestHelper(class MinecraftGameTestHelper const &) = delete;
     MinecraftGameTestHelper() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MinecraftGameTestHelper();
@@ -99,8 +97,6 @@ public:
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const &, class AABB const &) const;
 
-
 private:
-
 
 };

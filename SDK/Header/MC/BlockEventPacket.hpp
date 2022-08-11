@@ -15,13 +15,11 @@ class BlockEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTPACKET
 public:
     class BlockEventPacket& operator=(class BlockEventPacket const &) = delete;
     BlockEventPacket(class BlockEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockEventPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI BlockEventPacket(class BlockPos, int, int);
     MCAPI BlockEventPacket();
-
-
 
 };

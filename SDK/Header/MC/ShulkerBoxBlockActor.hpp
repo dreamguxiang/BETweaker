@@ -14,14 +14,12 @@ class ShulkerBoxBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXBLOCKACTOR
 public:
     class ShulkerBoxBlockActor& operator=(class ShulkerBoxBlockActor const &) = delete;
     ShulkerBoxBlockActor(class ShulkerBoxBlockActor const &) = delete;
     ShulkerBoxBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
@@ -49,9 +47,7 @@ public:
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
-
 private:
     MCAPI static int const ITEMS_SIZE;
-
 
 };

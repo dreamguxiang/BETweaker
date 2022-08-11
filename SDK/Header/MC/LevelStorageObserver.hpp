@@ -14,7 +14,6 @@ class LevelStorageObserver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEOBSERVER
 public:
     class LevelStorageObserver& operator=(class LevelStorageObserver const &) = delete;
@@ -22,12 +21,9 @@ public:
     LevelStorageObserver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEOBSERVER
 #endif
     MCAPI void onSave(std::string const &);
-
-
 
 };

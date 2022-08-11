@@ -15,13 +15,11 @@ class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONSWAP
 public:
     class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const &) = delete;
     ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionSwap();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONSWAP
 #endif
     MCAPI ItemStackRequestActionSwap();
-
-
 
 };

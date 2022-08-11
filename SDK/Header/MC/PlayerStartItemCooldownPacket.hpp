@@ -13,13 +13,11 @@ class PlayerStartItemCooldownPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSTARTITEMCOOLDOWNPACKET
 public:
     class PlayerStartItemCooldownPacket& operator=(class PlayerStartItemCooldownPacket const &) = delete;
     PlayerStartItemCooldownPacket(class PlayerStartItemCooldownPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerStartItemCooldownPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI PlayerStartItemCooldownPacket(std::string const &, int);
     MCAPI PlayerStartItemCooldownPacket();
-
-
 
 };

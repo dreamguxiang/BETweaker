@@ -15,14 +15,12 @@ class WoodSlabBlock : public SlabBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODSLABBLOCK
 public:
     class WoodSlabBlock& operator=(class WoodSlabBlock const &) = delete;
     WoodSlabBlock(class WoodSlabBlock const &) = delete;
     WoodSlabBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WoodSlabBlock();
@@ -71,7 +69,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODSLABBLOCK
 #endif
     MCAPI WoodSlabBlock(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
-
-
 
 };

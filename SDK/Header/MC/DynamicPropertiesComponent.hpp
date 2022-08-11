@@ -12,14 +12,12 @@ class DynamicPropertiesComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICPROPERTIESCOMPONENT
 public:
     class DynamicPropertiesComponent& operator=(class DynamicPropertiesComponent const &) = delete;
     DynamicPropertiesComponent(class DynamicPropertiesComponent const &) = delete;
     DynamicPropertiesComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIESCOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI class DynamicProperties & getProperties();
     MCAPI class DynamicPropertiesComponent & operator=(class DynamicPropertiesComponent &&);
-
-
 
 };

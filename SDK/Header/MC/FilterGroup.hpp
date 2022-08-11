@@ -18,17 +18,15 @@ public:
 enum CollectionType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERGROUP
 public:
     class FilterGroup& operator=(class FilterGroup const &) = delete;
     FilterGroup() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FilterGroup();
-    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
+    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType);
     /*2*/ virtual bool _setupContext(class FilterTest const &, struct FilterContext &) const;
     /*3*/ virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERGROUP
@@ -50,8 +48,6 @@ public:
     MCAPI bool _parseObject(std::string const &, class Json::Value const &);
     MCAPI bool _parseTest(class Json::Value const &);
 
-
 protected:
-
 
 };

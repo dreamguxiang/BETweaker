@@ -14,7 +14,6 @@ class EntityGoalFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYGOALFACTORY
 public:
     class EntityGoalFactory& operator=(class EntityGoalFactory const &) = delete;
@@ -22,14 +21,11 @@ public:
     EntityGoalFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYGOALFACTORY
 #endif
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
     MCAPI ~EntityGoalFactory();
     MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
-
-
 
 };

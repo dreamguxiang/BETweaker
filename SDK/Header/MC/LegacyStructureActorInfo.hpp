@@ -12,7 +12,6 @@ class LegacyStructureActorInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREACTORINFO
 public:
     class LegacyStructureActorInfo& operator=(class LegacyStructureActorInfo const &) = delete;
@@ -20,12 +19,9 @@ public:
     LegacyStructureActorInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREACTORINFO
 #endif
     MCAPI LegacyStructureActorInfo(class Vec3 const &, class BlockPos const &, class CompoundTag);
-
-
 
 };

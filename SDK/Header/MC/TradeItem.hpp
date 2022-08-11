@@ -12,20 +12,16 @@ struct TradeItem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEITEM
 public:
     struct TradeItem& operator=(struct TradeItem const &) = delete;
     TradeItem(struct TradeItem const &) = delete;
     TradeItem() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEITEM
+#endif
     MCAPI struct TradeItem & operator=(struct TradeItem &&);
     MCAPI ~TradeItem();
-
-protected:
-
-private:
 
 };

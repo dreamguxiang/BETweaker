@@ -14,7 +14,6 @@ class BlockPosTrackerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSTRACKERCOMPONENT
 public:
     class BlockPosTrackerComponent& operator=(class BlockPosTrackerComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     BlockPosTrackerComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERCOMPONENT
 #endif
     MCAPI BlockPosTrackerComponent(bool, class BlockPos const &);
     MCAPI void onRemove(class Actor &);
-
-
 
 };

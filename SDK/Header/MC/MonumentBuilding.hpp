@@ -15,14 +15,12 @@ class MonumentBuilding : public OceanMonumentPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONUMENTBUILDING
 public:
     class MonumentBuilding& operator=(class MonumentBuilding const &) = delete;
     MonumentBuilding(class MonumentBuilding const &) = delete;
     MonumentBuilding() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MonumentBuilding();
@@ -43,8 +41,6 @@ public:
     MCAPI void generateUpperWall(class BlockSource &, class Random &, class BoundingBox const &);
     MCAPI void generateWing(bool, int, class BlockSource &, class Random &, class BoundingBox const &);
 
-
 private:
-
 
 };

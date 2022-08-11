@@ -12,19 +12,15 @@ struct MolangActorArrayPtr {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGACTORARRAYPTR
 public:
     struct MolangActorArrayPtr& operator=(struct MolangActorArrayPtr const &) = delete;
     MolangActorArrayPtr(struct MolangActorArrayPtr const &) = delete;
     MolangActorArrayPtr() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORARRAYPTR
+#endif
     MCAPI ~MolangActorArrayPtr();
-
-protected:
-
-private:
 
 };

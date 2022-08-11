@@ -15,14 +15,12 @@ class HeavyBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEAVYBLOCK
 public:
     class HeavyBlock& operator=(class HeavyBlock const &) = delete;
     HeavyBlock(class HeavyBlock const &) = delete;
     HeavyBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HeavyBlock();
@@ -65,10 +63,10 @@ public:
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual class mce::Color getDustColor(class Block const &) const = 0;
-    /*193*/ virtual std::string getDustParticleName(class Block const &) const = 0;
+    /*192*/ virtual class mce::Color getDustColor(class Block const &);
+    /*193*/ virtual std::string getDustParticleName(class Block const &);
     /*194*/ virtual void __unk_vfn_194();
-    /*195*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
+    /*195*/ virtual void onLand(class BlockSource &, class BlockPos const &);
     /*196*/ virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /*197*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEAVYBLOCK
@@ -81,8 +79,6 @@ public:
     MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
 
-
 protected:
-
 
 };

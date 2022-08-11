@@ -16,14 +16,12 @@ class Guardian : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIAN
 public:
     class Guardian& operator=(class Guardian const &) = delete;
     Guardian(class Guardian const &) = delete;
     Guardian() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -62,7 +60,7 @@ public:
     /*317*/ virtual void __unk_vfn_317();
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn() const;
+    /*367*/ virtual bool isDarkEnoughToSpawn();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
     MCVAPI bool canSeeInvisible() const;
 #endif
@@ -80,12 +78,10 @@ public:
 
 //private:
 
-
 protected:
 
 private:
     MCAPI static int const ATTACK_TIME;
     MCAPI static int const FIRST_DAMAGE_TIME;
-
 
 };

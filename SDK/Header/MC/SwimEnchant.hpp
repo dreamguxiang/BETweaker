@@ -15,14 +15,12 @@ class SwimEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMENCHANT
 public:
     class SwimEnchant& operator=(class SwimEnchant const &) = delete;
     SwimEnchant(class SwimEnchant const &) = delete;
     SwimEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwimEnchant();
@@ -40,9 +38,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
-
 
 };

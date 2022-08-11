@@ -14,14 +14,12 @@ class FunctionAction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNCTIONACTION
 public:
     class FunctionAction& operator=(class FunctionAction const &) = delete;
     FunctionAction(class FunctionAction const &) = delete;
     FunctionAction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FunctionAction();
@@ -38,8 +36,6 @@ public:
     MCAPI void _printOriginInvalidError(class ServerLevel &);
     MCAPI void _printOutput(class ServerLevel &, int);
 
-
 private:
-
 
 };

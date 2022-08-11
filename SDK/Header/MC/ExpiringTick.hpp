@@ -12,14 +12,12 @@ class ExpiringTick {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPIRINGTICK
 public:
     class ExpiringTick& operator=(class ExpiringTick const &) = delete;
     ExpiringTick(class ExpiringTick const &) = delete;
     ExpiringTick() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPIRINGTICK
@@ -28,7 +26,5 @@ public:
     MCAPI struct Tick getExpireAtTick() const;
     MCAPI bool isActive(struct Tick) const;
     MCAPI bool isExpired(struct Tick) const;
-
-
 
 };

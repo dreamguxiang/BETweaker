@@ -14,14 +14,12 @@ class MoveInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEINPUT
 public:
     class MoveInput& operator=(class MoveInput const &) = delete;
     MoveInput(class MoveInput const &) = delete;
     MoveInput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveInput();
@@ -33,9 +31,9 @@ public:
     /*6*/ virtual bool allowPicking(float, float);
     /*7*/ virtual void setJumping(bool);
     /*8*/ virtual void setAutoJumpingInWater(bool);
-    /*9*/ virtual bool isChangeHeight() const;
+    /*9*/ virtual bool isChangeHeight();
     /*10*/ virtual void setSneakDown(bool);
-    /*11*/ virtual bool isPlayerMoving() const;
+    /*11*/ virtual bool isPlayerMoving();
     /*12*/ virtual class Vec3 const & getGazeDirection() const;
     /*13*/ virtual struct MoveInputComponent extractInputComponent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
@@ -43,7 +41,5 @@ public:
     MCVAPI void render(float);
     MCVAPI void setKey(int, bool);
 #endif
-
-
 
 };

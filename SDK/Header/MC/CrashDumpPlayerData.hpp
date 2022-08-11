@@ -14,7 +14,6 @@ class CrashDumpPlayerData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPPLAYERDATA
 public:
     class CrashDumpPlayerData& operator=(class CrashDumpPlayerData const &) = delete;
@@ -22,12 +21,9 @@ public:
     CrashDumpPlayerData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPPLAYERDATA
 #endif
     MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
-
-
 
 };

@@ -13,14 +13,12 @@ class ScriptCommand {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMAND
 public:
     class ScriptCommand& operator=(class ScriptCommand const &) = delete;
     ScriptCommand(class ScriptCommand const &) = delete;
     ScriptCommand() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMAND
@@ -31,7 +29,5 @@ public:
     MCAPI std::string serializeJsonOutput() const;
     MCAPI void setJsonOutput(class Json::Value &&);
     MCAPI void setOutput(int, std::string &&);
-
-
 
 };

@@ -15,14 +15,12 @@ class MegaTreeTrunk {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEGATREETRUNK
 public:
     class MegaTreeTrunk& operator=(class MegaTreeTrunk const &) = delete;
     MegaTreeTrunk(class MegaTreeTrunk const &) = delete;
     MegaTreeTrunk() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MegaTreeTrunk();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
 
-
 private:
-
 
 };

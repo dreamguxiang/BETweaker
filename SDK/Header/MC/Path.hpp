@@ -21,13 +21,11 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATH
 public:
     class Path& operator=(class Path const &) = delete;
     Path(class Path const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATH
@@ -56,8 +54,6 @@ public:
 //private:
     MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
 
-
 private:
-
 
 };

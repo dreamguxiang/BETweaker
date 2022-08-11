@@ -16,13 +16,11 @@ class PackInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCE
 public:
     class PackInstance& operator=(class PackInstance const &) = delete;
     PackInstance() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
@@ -56,8 +54,6 @@ public:
 //private:
     MCAPI bool _isPackPointerValid() const;
 
-
 private:
-
 
 };

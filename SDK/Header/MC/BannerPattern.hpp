@@ -14,14 +14,12 @@ class BannerPattern {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERPATTERN
 public:
     class BannerPattern& operator=(class BannerPattern const &) = delete;
     BannerPattern(class BannerPattern const &) = delete;
     BannerPattern() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERN
@@ -81,7 +79,5 @@ public:
     MCAPI static class BannerPattern * mTriangleTop;
     MCAPI static class BannerPattern * mTrianglesBottom;
     MCAPI static class BannerPattern * mTrianglesTop;
-
-
 
 };

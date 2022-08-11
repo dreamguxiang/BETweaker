@@ -15,14 +15,12 @@ class FoodItemComponentLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODITEMCOMPONENTLEGACY
 public:
     class FoodItemComponentLegacy& operator=(class FoodItemComponentLegacy const &) = delete;
     FoodItemComponentLegacy(class FoodItemComponentLegacy const &) = delete;
     FoodItemComponentLegacy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FoodItemComponentLegacy();
@@ -44,8 +42,6 @@ public:
     MCAPI void _loadEffects(class Json::Value &);
     MCAPI void _loadRemoveEffects(class Json::Value &);
 
-
 private:
-
 
 };

@@ -44,8 +44,6 @@ public:
     LIAPI string getStandardName(const Localization& language);
 
 #undef AFTER_EXTRA
-
-
 public:
     /*0*/ virtual ~ItemStack();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -67,7 +65,6 @@ public:
     MCAPI ItemStack(class RecipeIngredient const &);
     MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemStack();
-    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI void _assignNetIdVariant(class ItemStack const &) const;
     MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI class ItemStack clone() const;
@@ -94,7 +91,5 @@ public:
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const &, class BlockPalette &, bool);
     MCAPI static class ItemStack fromTag(class CompoundTag const &);
     MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
-
-
 
 };

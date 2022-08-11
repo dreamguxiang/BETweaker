@@ -14,14 +14,12 @@ class MinecraftScheduler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTSCHEDULER
 public:
     class MinecraftScheduler& operator=(class MinecraftScheduler const &) = delete;
     MinecraftScheduler(class MinecraftScheduler const &) = delete;
     MinecraftScheduler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCHEDULER
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::unique_ptr<class Scheduler> mInstance;
-
 
 };

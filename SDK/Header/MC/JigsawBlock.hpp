@@ -15,14 +15,12 @@ class JigsawBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWBLOCK
 public:
     class JigsawBlock& operator=(class JigsawBlock const &) = delete;
     JigsawBlock(class JigsawBlock const &) = delete;
     JigsawBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JigsawBlock();
@@ -47,10 +45,10 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
+    /*64*/ virtual bool canBeUsedInCommands(class BaseGameVersion const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
@@ -67,14 +65,12 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCK
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI JigsawBlock(std::string const &, int);
     MCAPI static bool canAttach(class JigsawBlockInfo const &, class JigsawBlockInfo const &);
-
-
 
 };

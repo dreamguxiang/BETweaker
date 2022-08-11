@@ -14,14 +14,12 @@ class ActorAnimationPlayer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONPLAYER
 public:
     class ActorAnimationPlayer& operator=(class ActorAnimationPlayer const &) = delete;
     ActorAnimationPlayer(class ActorAnimationPlayer const &) = delete;
     ActorAnimationPlayer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONPLAYER
@@ -30,7 +28,5 @@ public:
     MCVAPI void buildBoneToPartMapping(class AnimationComponent &);
 #endif
     MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
-
-
 
 };

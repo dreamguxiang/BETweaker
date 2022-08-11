@@ -15,7 +15,6 @@ class IsSummonableDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSUMMONABLEDESCRIPTION
 public:
     class IsSummonableDescription& operator=(class IsSummonableDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     IsSummonableDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IsSummonableDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSUMMONABLEDESCRIPTION
 #endif
     MCAPI void parse(class Json::Value const &);
-
-
 
 };

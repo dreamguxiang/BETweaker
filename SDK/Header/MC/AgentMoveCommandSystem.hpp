@@ -12,14 +12,12 @@ class AgentMoveCommandSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTMOVECOMMANDSYSTEM
 public:
     class AgentMoveCommandSystem& operator=(class AgentMoveCommandSystem const &) = delete;
     AgentMoveCommandSystem(class AgentMoveCommandSystem const &) = delete;
     AgentMoveCommandSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AgentMoveCommandSystem();
@@ -30,7 +28,5 @@ public:
     MCAPI static void cleanUp(class EntityContext &, float);
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move> &);
     MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move> &);
-
-
 
 };

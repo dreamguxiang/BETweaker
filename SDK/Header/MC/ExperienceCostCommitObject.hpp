@@ -12,14 +12,12 @@ class ExperienceCostCommitObject {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCECOSTCOMMITOBJECT
 public:
     class ExperienceCostCommitObject& operator=(class ExperienceCostCommitObject const &) = delete;
     ExperienceCostCommitObject(class ExperienceCostCommitObject const &) = delete;
     ExperienceCostCommitObject() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExperienceCostCommitObject();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCECOSTCOMMITOBJECT
 #endif
     MCAPI ExperienceCostCommitObject(int);
-
-
 
 };

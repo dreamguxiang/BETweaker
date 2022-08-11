@@ -15,14 +15,12 @@ class CopperBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COPPERBLOCK
 public:
     class CopperBlock& operator=(class CopperBlock const &) = delete;
     CopperBlock(class CopperBlock const &) = delete;
     CopperBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CopperBlock();
@@ -70,12 +68,10 @@ public:
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
-    /*197*/ MCAPI std::string const & getDescriptionId() const;
+    /*197*/ MCAPI static std::string const & getDescriptionId();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBLOCK
 #endif
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &);
-
-
 
 };

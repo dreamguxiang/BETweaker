@@ -12,18 +12,15 @@ struct EntitySystemsInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSYSTEMSINFO
 public:
     struct EntitySystemsInfo& operator=(struct EntitySystemsInfo const &) = delete;
     EntitySystemsInfo(struct EntitySystemsInfo const &) = delete;
     EntitySystemsInfo() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMSINFO
+#endif
+    MCAPI static void bindType();
 
 };

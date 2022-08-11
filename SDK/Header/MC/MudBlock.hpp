@@ -13,14 +13,12 @@ class MudBlock : public BlockLegacy {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUDBLOCK
 public:
     class MudBlock& operator=(class MudBlock const &) = delete;
     MudBlock(class MudBlock const &) = delete;
     MudBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MudBlock();
@@ -43,7 +41,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUDBLOCK
 #endif
     MCAPI MudBlock(std::string const &, int);
-
-
 
 };

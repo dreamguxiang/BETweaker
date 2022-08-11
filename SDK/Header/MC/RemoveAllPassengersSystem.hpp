@@ -12,7 +12,6 @@ class RemoveAllPassengersSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEALLPASSENGERSSYSTEM
 public:
     class RemoveAllPassengersSystem& operator=(class RemoveAllPassengersSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     RemoveAllPassengersSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEALLPASSENGERSSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
     MCAPI static void removeAllPassengers(class StrictEntityContext &, struct VehicleComponent &, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorIsBeingDestroyedFlag>, class FlagComponent<struct StopRidingRequestFlag>> &);
-
-
 
 };

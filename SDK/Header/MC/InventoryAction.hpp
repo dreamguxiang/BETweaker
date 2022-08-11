@@ -34,13 +34,11 @@ private:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTION
 public:
     class InventoryAction& operator=(class InventoryAction const &) = delete;
     InventoryAction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYACTION
@@ -48,7 +46,5 @@ public:
     MCAPI InventoryAction(class InventoryAction const &);
     MCAPI void postLoadItems(class BlockPalette &, bool);
     MCAPI ~InventoryAction();
-
-
 
 };

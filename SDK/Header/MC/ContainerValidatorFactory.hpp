@@ -14,7 +14,6 @@ class ContainerValidatorFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATORFACTORY
 public:
     class ContainerValidatorFactory& operator=(class ContainerValidatorFactory const &) = delete;
@@ -22,14 +21,11 @@ public:
     ContainerValidatorFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATORFACTORY
 #endif
     MCAPI static std::unique_ptr<class ContainerScreenValidatorBase> createContainerScreenValidator(class ContainerScreenContext const &);
     MCAPI static class std::shared_ptr<class ContainerValidationBase const> createContainerValidator(enum ContainerEnumName, class ContainerScreenContext const &, enum ContainerValidationCaller);
     MCAPI static class Container * getBackingContainer(enum ContainerEnumName, class ContainerScreenContext const &);
-
-
 
 };

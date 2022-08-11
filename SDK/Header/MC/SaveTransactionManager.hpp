@@ -14,14 +14,12 @@ class SaveTransactionManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVETRANSACTIONMANAGER
 public:
     class SaveTransactionManager& operator=(class SaveTransactionManager const &) = delete;
     SaveTransactionManager(class SaveTransactionManager const &) = delete;
     SaveTransactionManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVETRANSACTIONMANAGER
@@ -34,8 +32,6 @@ public:
     MCAPI void _hideGlobalSaveIcon();
     MCAPI void _showGlobalSaveIcon();
 
-
 private:
-
 
 };

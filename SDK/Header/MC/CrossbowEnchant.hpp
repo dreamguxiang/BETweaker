@@ -15,14 +15,12 @@ class CrossbowEnchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CROSSBOWENCHANT
 public:
     class CrossbowEnchant& operator=(class CrossbowEnchant const &) = delete;
     CrossbowEnchant(class CrossbowEnchant const &) = delete;
     CrossbowEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CrossbowEnchant();
@@ -46,9 +44,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
-
 
 };

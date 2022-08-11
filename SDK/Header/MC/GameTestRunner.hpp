@@ -14,14 +14,12 @@ class GameTestRunner {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTRUNNER
 public:
     class GameTestRunner& operator=(class GameTestRunner const &) = delete;
     GameTestRunner(class GameTestRunner const &) = delete;
     GameTestRunner() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRUNNER
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI static std::vector<class std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>, class std::allocator<class std::shared_ptr<class gametest::BaseGameTestFunction>>>> _subdivideBatch(std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> &, int);
 
-
 private:
-
 
 };

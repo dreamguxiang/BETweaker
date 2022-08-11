@@ -12,19 +12,15 @@ struct BlockNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKNOTIFICATIONEVENT
 public:
     struct BlockNotificationEvent& operator=(struct BlockNotificationEvent const &) = delete;
     BlockNotificationEvent(struct BlockNotificationEvent const &) = delete;
     BlockNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKNOTIFICATIONEVENT
+#endif
     MCAPI ~BlockNotificationEvent();
-
-protected:
-
-private:
 
 };

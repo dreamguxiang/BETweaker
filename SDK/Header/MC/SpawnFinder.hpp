@@ -14,7 +14,6 @@ class SpawnFinder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNFINDER
 public:
     class SpawnFinder& operator=(class SpawnFinder const &) = delete;
@@ -22,13 +21,10 @@ public:
     SpawnFinder() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNFINDER
 #endif
     MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const &, class BlockSource const &);
     MCAPI static bool isStandupPosition(class BlockPos const &, class BlockSource const &);
-
-
 
 };

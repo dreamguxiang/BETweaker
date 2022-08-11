@@ -14,18 +14,16 @@ struct CodeScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODESCREENCAPABILITIES
 public:
     struct CodeScreenCapabilities& operator=(struct CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities(struct CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~CodeScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODESCREENCAPABILITIES
+#endif
 
 };

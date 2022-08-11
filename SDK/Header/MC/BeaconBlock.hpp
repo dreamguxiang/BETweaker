@@ -15,14 +15,12 @@ class BeaconBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONBLOCK
 public:
     class BeaconBlock& operator=(class BeaconBlock const &) = delete;
     BeaconBlock(class BeaconBlock const &) = delete;
     BeaconBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BeaconBlock();
@@ -47,7 +45,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
@@ -61,13 +59,11 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONBLOCK
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI BeaconBlock(std::string const &, int);
-
-
 
 };

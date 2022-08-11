@@ -14,7 +14,6 @@ class WardenSpawnTrackerSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WARDENSPAWNTRACKERSYSTEM
 public:
     class WardenSpawnTrackerSystem& operator=(class WardenSpawnTrackerSystem const &) = delete;
@@ -22,13 +21,10 @@ public:
     WardenSpawnTrackerSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERSYSTEM
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     MCVAPI void tick(class EntityRegistry &);
 #endif
-
-
 
 };

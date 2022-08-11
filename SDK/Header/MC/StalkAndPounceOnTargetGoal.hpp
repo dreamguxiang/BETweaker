@@ -14,14 +14,12 @@ class StalkAndPounceOnTargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STALKANDPOUNCEONTARGETGOAL
 public:
     class StalkAndPounceOnTargetGoal& operator=(class StalkAndPounceOnTargetGoal const &) = delete;
     StalkAndPounceOnTargetGoal(class StalkAndPounceOnTargetGoal const &) = delete;
     StalkAndPounceOnTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StalkAndPounceOnTargetGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI bool _isStuckBlock(class BlockPos) const;
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
 
-
 private:
-
 
 };

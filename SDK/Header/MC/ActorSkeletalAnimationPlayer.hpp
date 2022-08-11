@@ -14,14 +14,12 @@ class ActorSkeletalAnimationPlayer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATIONPLAYER
 public:
     class ActorSkeletalAnimationPlayer& operator=(class ActorSkeletalAnimationPlayer const &) = delete;
     ActorSkeletalAnimationPlayer(class ActorSkeletalAnimationPlayer const &) = delete;
     ActorSkeletalAnimationPlayer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorSkeletalAnimationPlayer();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPLAYER
 #endif
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
-
-
 
 };

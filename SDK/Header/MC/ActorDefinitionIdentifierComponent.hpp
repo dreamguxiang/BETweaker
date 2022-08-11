@@ -12,19 +12,15 @@ struct ActorDefinitionIdentifierComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONIDENTIFIERCOMPONENT
 public:
     struct ActorDefinitionIdentifierComponent& operator=(struct ActorDefinitionIdentifierComponent const &) = delete;
     ActorDefinitionIdentifierComponent(struct ActorDefinitionIdentifierComponent const &) = delete;
     ActorDefinitionIdentifierComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIERCOMPONENT
+#endif
     MCAPI ~ActorDefinitionIdentifierComponent();
-
-protected:
-
-private:
 
 };

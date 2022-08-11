@@ -14,13 +14,11 @@ class BackgroundTaskQueue {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDTASKQUEUE
 public:
     class BackgroundTaskQueue& operator=(class BackgroundTaskQueue const &) = delete;
     BackgroundTaskQueue(class BackgroundTaskQueue const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI bool _fetchAllAvailableTasks();
 
-
 private:
-
 
 };

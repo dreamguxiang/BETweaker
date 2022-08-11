@@ -15,14 +15,12 @@ class SculkShriekerBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSHRIEKERBLOCK
 public:
     class SculkShriekerBlock& operator=(class SculkShriekerBlock const &) = delete;
     SculkShriekerBlock(class SculkShriekerBlock const &) = delete;
     SculkShriekerBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkShriekerBlock();
@@ -51,9 +49,9 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*104*/ virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*114*/ virtual int getExperienceDrop(class Random &) const;
@@ -65,7 +63,7 @@ public:
     /*148*/ virtual void __unk_vfn_148();
     /*153*/ virtual class BlockLegacy & init();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /*167*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
     /*168*/ virtual void __unk_vfn_168();
@@ -79,7 +77,5 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI SculkShriekerBlock(std::string const &, int, class Material const &);
-
-
 
 };

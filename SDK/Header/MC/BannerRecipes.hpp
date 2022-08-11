@@ -12,7 +12,6 @@ class BannerRecipes {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERRECIPES
 public:
     class BannerRecipes& operator=(class BannerRecipes const &) = delete;
@@ -20,12 +19,9 @@ public:
     BannerRecipes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERRECIPES
 #endif
     MCAPI static void addRecipes(class Recipes &);
-
-
 
 };

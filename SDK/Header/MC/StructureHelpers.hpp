@@ -14,14 +14,12 @@ class StructureHelpers {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREHELPERS
 public:
     class StructureHelpers& operator=(class StructureHelpers const &) = delete;
     StructureHelpers(class StructureHelpers const &) = delete;
     StructureHelpers() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREHELPERS
@@ -36,7 +34,5 @@ public:
     MCAPI static int getRailRotation(int, unsigned short);
     MCAPI static int getTorchRotation(int, unsigned short);
     MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
-
-
 
 };

@@ -16,14 +16,12 @@ class StoneSlabBlockItem : public DeprecatedSlabBlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONESLABBLOCKITEM
 public:
     class StoneSlabBlockItem& operator=(class StoneSlabBlockItem const &) = delete;
     StoneSlabBlockItem(class StoneSlabBlockItem const &) = delete;
     StoneSlabBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StoneSlabBlockItem();
@@ -41,9 +39,8 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONESLABBLOCKITEM
 #endif
-
-
 
 };

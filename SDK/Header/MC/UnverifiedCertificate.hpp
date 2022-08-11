@@ -15,13 +15,11 @@ class UnverifiedCertificate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNVERIFIEDCERTIFICATE
 public:
     class UnverifiedCertificate& operator=(class UnverifiedCertificate const &) = delete;
     UnverifiedCertificate() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNVERIFIEDCERTIFICATE
@@ -38,8 +36,6 @@ public:
     MCAPI UnverifiedCertificate(class WebToken const &, std::unique_ptr<class UnverifiedCertificate>);
     MCAPI void addToChain(class Json::Value &) const;
 
-
 private:
-
 
 };

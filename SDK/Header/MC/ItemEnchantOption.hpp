@@ -12,7 +12,6 @@ class ItemEnchantOption {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTOPTION
 public:
     class ItemEnchantOption& operator=(class ItemEnchantOption const &) = delete;
@@ -20,13 +19,10 @@ public:
     ItemEnchantOption() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTOPTION
 #endif
     MCAPI ItemEnchantOption(class ItemEnchantOption &&);
     MCAPI ~ItemEnchantOption();
-
-
 
 };

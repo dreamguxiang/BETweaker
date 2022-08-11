@@ -12,19 +12,15 @@ struct SendEventData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTDATA
 public:
     struct SendEventData& operator=(struct SendEventData const &) = delete;
     SendEventData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTDATA
+#endif
     MCAPI SendEventData(struct SendEventData const &);
     MCAPI ~SendEventData();
-
-protected:
-
-private:
 
 };

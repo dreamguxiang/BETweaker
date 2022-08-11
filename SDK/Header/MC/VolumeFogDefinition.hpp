@@ -14,19 +14,17 @@ struct VolumeFogDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEFOGDEFINITION
 public:
     struct VolumeFogDefinition& operator=(struct VolumeFogDefinition const &) = delete;
     VolumeFogDefinition(struct VolumeFogDefinition const &) = delete;
     VolumeFogDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEFOGDEFINITION
+#endif
     MCAPI void initialize(class EntityContext &, class VolumeFogComponent &) const;
-
-protected:
-
-private:
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
 
 };

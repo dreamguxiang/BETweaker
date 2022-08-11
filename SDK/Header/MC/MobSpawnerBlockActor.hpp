@@ -15,14 +15,12 @@ class MobSpawnerBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNERBLOCKACTOR
 public:
     class MobSpawnerBlockActor& operator=(class MobSpawnerBlockActor const &) = delete;
     MobSpawnerBlockActor(class MobSpawnerBlockActor const &) = delete;
     MobSpawnerBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MobSpawnerBlockActor();
@@ -44,7 +42,5 @@ public:
 #endif
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     MCAPI class BaseMobSpawner & getSpawner();
-
-
 
 };

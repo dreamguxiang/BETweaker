@@ -15,14 +15,12 @@ class SpringFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPRINGFEATURE
 public:
     class SpringFeature& operator=(class SpringFeature const &) = delete;
     SpringFeature(class SpringFeature const &) = delete;
     SpringFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpringFeature();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
 
-
 private:
-
 
 };

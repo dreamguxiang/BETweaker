@@ -12,21 +12,17 @@ struct PropertyValues {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYVALUES
 public:
     struct PropertyValues& operator=(struct PropertyValues const &) = delete;
     PropertyValues() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYVALUES
+#endif
     MCAPI PropertyValues(struct PropertyValues const &);
     MCAPI struct PropertyValues & operator=(struct PropertyValues &&);
     MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     MCAPI ~PropertyValues();
-
-protected:
-
-private:
 
 };

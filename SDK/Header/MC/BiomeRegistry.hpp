@@ -21,13 +21,11 @@ struct BiomeParent {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEREGISTRY
 public:
     class BiomeRegistry& operator=(class BiomeRegistry const &) = delete;
     BiomeRegistry(class BiomeRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRY
@@ -52,8 +50,6 @@ public:
     MCAPI bool _loadSingleBiome(class ResourcePackManager &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, std::string const &);
     MCAPI void _mergeDataInheritance(class Json::Value &, class SemVersion &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, struct BiomeRegistry::BiomeParent const &);
 
-
 private:
-
 
 };

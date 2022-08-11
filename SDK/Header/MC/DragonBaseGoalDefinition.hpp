@@ -14,13 +14,11 @@ class DragonBaseGoalDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONBASEGOALDEFINITION
 public:
     class DragonBaseGoalDefinition& operator=(class DragonBaseGoalDefinition const &) = delete;
     DragonBaseGoalDefinition(class DragonBaseGoalDefinition const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
@@ -29,7 +27,5 @@ public:
 #endif
     MCAPI DragonBaseGoalDefinition();
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
-
-
 
 };

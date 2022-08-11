@@ -14,7 +14,6 @@ class ParticlesBlockExplosionEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLESBLOCKEXPLOSIONEVENT
 public:
     class ParticlesBlockExplosionEvent& operator=(class ParticlesBlockExplosionEvent const &) = delete;
@@ -22,14 +21,11 @@ public:
     ParticlesBlockExplosionEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESBLOCKEXPLOSIONEVENT
 #endif
     MCAPI void addExplodePosition(class Vec3 const &);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI ~ParticlesBlockExplosionEvent();
-
-
 
 };

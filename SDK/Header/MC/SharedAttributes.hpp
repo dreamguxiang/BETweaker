@@ -14,14 +14,12 @@ class SharedAttributes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDATTRIBUTES
 public:
     class SharedAttributes& operator=(class SharedAttributes const &) = delete;
     SharedAttributes(class SharedAttributes const &) = delete;
     SharedAttributes() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDATTRIBUTES
@@ -49,8 +47,6 @@ public:
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const &);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const &);
 
-
 private:
-
 
 };

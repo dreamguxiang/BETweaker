@@ -12,7 +12,6 @@ class FlyTravelSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYTRAVELSYSTEM
 public:
     class FlyTravelSystem& operator=(class FlyTravelSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     FlyTravelSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYTRAVELSYSTEM
 #endif
     MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorData const &);
-
-
 
 };

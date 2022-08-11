@@ -15,13 +15,11 @@ class SpawnExperienceOrbPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNEXPERIENCEORBPACKET
 public:
     class SpawnExperienceOrbPacket& operator=(class SpawnExperienceOrbPacket const &) = delete;
     SpawnExperienceOrbPacket(class SpawnExperienceOrbPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnExperienceOrbPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
     MCAPI SpawnExperienceOrbPacket();
-
-
 
 };

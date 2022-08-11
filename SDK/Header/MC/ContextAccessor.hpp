@@ -12,7 +12,6 @@ class ContextAccessor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTEXTACCESSOR
 public:
     class ContextAccessor& operator=(class ContextAccessor const &) = delete;
@@ -20,12 +19,9 @@ public:
     ContextAccessor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTEXTACCESSOR
 #endif
     MCAPI ~ContextAccessor();
-
-
 
 };

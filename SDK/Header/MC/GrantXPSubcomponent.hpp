@@ -15,13 +15,11 @@ class GrantXPSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRANTXPSUBCOMPONENT
 public:
     class GrantXPSubcomponent& operator=(class GrantXPSubcomponent const &) = delete;
     GrantXPSubcomponent(class GrantXPSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GrantXPSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRANTXPSUBCOMPONENT
 #endif
     MCAPI GrantXPSubcomponent();
-
-
 
 };

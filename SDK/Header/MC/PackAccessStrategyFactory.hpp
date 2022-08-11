@@ -15,14 +15,12 @@ class PackAccessStrategyFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKACCESSSTRATEGYFACTORY
 public:
     class PackAccessStrategyFactory& operator=(class PackAccessStrategyFactory const &) = delete;
     PackAccessStrategyFactory(class PackAccessStrategyFactory const &) = delete;
     PackAccessStrategyFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKACCESSSTRATEGYFACTORY
@@ -32,7 +30,5 @@ public:
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(class ResourceLocation const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, bool);
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const &, bool);
-
-
 
 };

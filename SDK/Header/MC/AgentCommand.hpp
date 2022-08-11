@@ -15,14 +15,12 @@ class AgentCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMAND
 public:
     class AgentCommand& operator=(class AgentCommand const &) = delete;
     AgentCommand(class AgentCommand const &) = delete;
     AgentCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AgentCommand();
@@ -44,8 +42,6 @@ public:
     MCAPI void setItem(class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void tpAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

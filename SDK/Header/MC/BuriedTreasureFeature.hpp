@@ -15,14 +15,12 @@ class BuriedTreasureFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASUREFEATURE
 public:
     class BuriedTreasureFeature& operator=(class BuriedTreasureFeature const &) = delete;
     BuriedTreasureFeature(class BuriedTreasureFeature const &) = delete;
     BuriedTreasureFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BuriedTreasureFeature();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASUREFEATURE
 #endif
     MCAPI BuriedTreasureFeature(unsigned int);
-
-
 
 };

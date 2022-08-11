@@ -14,7 +14,6 @@ class ExternalRecipeStore {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALRECIPESTORE
 public:
     class ExternalRecipeStore& operator=(class ExternalRecipeStore const &) = delete;
@@ -22,13 +21,10 @@ public:
     ExternalRecipeStore() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALRECIPESTORE
 #endif
     MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
     MCAPI void setBlockReducer(class BlockReducer *);
-
-
 
 };

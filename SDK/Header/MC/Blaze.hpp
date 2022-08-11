@@ -16,14 +16,12 @@ class Blaze : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLAZE
 public:
     class Blaze& operator=(class Blaze const &) = delete;
     Blaze(class Blaze const &) = delete;
     Blaze() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Blaze();
@@ -57,12 +55,10 @@ public:
     /*317*/ virtual void __unk_vfn_317();
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn() const;
+    /*367*/ virtual bool isDarkEnoughToSpawn();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLAZE
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI Blaze(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

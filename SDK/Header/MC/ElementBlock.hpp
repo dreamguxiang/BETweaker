@@ -15,14 +15,12 @@ class ElementBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTBLOCK
 public:
     class ElementBlock& operator=(class ElementBlock const &) = delete;
     ElementBlock(class ElementBlock const &) = delete;
     ElementBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ElementBlock();
@@ -78,9 +76,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::vector<class BlockLegacy const *> mElements;
-
 
 };

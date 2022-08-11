@@ -19,13 +19,11 @@ public:
     std::string mLocalizedNewSkinName, mLocalizedOldSkinName;
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSKINPACKET
 public:
     class PlayerSkinPacket& operator=(class PlayerSkinPacket const &) = delete;
     PlayerSkinPacket(class PlayerSkinPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerSkinPacket();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSKINPACKET
 #endif
     MCAPI PlayerSkinPacket();
-
-
 
 };

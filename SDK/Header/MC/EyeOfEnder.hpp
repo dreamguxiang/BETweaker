@@ -15,14 +15,12 @@ class EyeOfEnder : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EYEOFENDER
 public:
     class EyeOfEnder& operator=(class EyeOfEnder const &) = delete;
     EyeOfEnder(class EyeOfEnder const &) = delete;
     EyeOfEnder() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -32,7 +30,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -55,7 +53,5 @@ public:
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     MCAPI void preNormalTick();
     MCAPI void signalTo(class Player const &, class BlockPos &);
-
-
 
 };

@@ -15,14 +15,12 @@ class ConditionalBandwidthOptimizationDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
 public:
     class ConditionalBandwidthOptimizationDefinition& operator=(class ConditionalBandwidthOptimizationDefinition const &) = delete;
     ConditionalBandwidthOptimizationDefinition(class ConditionalBandwidthOptimizationDefinition const &) = delete;
     ConditionalBandwidthOptimizationDefinition() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
@@ -32,7 +30,5 @@ public:
     MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition>> &);
-
-
 
 };

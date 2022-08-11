@@ -14,13 +14,11 @@ class NameableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAMEABLECOMPONENT
 public:
     class NameableComponent& operator=(class NameableComponent const &) = delete;
     NameableComponent(class NameableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLECOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI NameableComponent();
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI void nameEntity(class Actor &, std::string const &);
-
-
 
 };

@@ -14,14 +14,12 @@ class SnapshotWritableFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPSHOTWRITABLEFILE
 public:
     class SnapshotWritableFile& operator=(class SnapshotWritableFile const &) = delete;
     SnapshotWritableFile(class SnapshotWritableFile const &) = delete;
     SnapshotWritableFile() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SnapshotWritableFile();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTWRITABLEFILE
 #endif
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
-
-
 
 };

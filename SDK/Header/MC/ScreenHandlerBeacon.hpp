@@ -14,14 +14,12 @@ class ScreenHandlerBeacon {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBEACON
 public:
     class ScreenHandlerBeacon& operator=(class ScreenHandlerBeacon const &) = delete;
     ScreenHandlerBeacon(class ScreenHandlerBeacon const &) = delete;
     ScreenHandlerBeacon() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScreenHandlerBeacon();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 
-
 private:
-
 
 };

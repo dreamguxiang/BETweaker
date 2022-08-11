@@ -14,13 +14,11 @@ class FeatureRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREREGISTRY
 public:
     class FeatureRegistry& operator=(class FeatureRegistry const &) = delete;
     FeatureRegistry(class FeatureRegistry const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREREGISTRY
@@ -55,8 +53,6 @@ public:
     MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
     MCAPI std::string _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
 
-
 private:
-
 
 };

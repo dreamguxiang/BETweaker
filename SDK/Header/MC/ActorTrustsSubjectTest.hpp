@@ -16,7 +16,6 @@ class ActorTrustsSubjectTest : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTRUSTSSUBJECTTEST
 public:
     class ActorTrustsSubjectTest& operator=(class ActorTrustsSubjectTest const &) = delete;
@@ -24,14 +23,11 @@ public:
     ActorTrustsSubjectTest() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorTrustsSubjectTest();
     /*2*/ virtual bool evaluate(struct FilterContext const &) const;
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTRUSTSSUBJECTTEST
 #endif
-
-
 
 };

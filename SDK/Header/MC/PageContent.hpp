@@ -14,20 +14,19 @@ struct PageContent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAGECONTENT
 public:
     PageContent(struct PageContent const &) = delete;
     PageContent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAGECONTENT
+#endif
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI struct PageContent & operator=(struct PageContent const &);
     MCAPI ~PageContent();
-
-protected:
-
-private:
+    MCAPI static struct PageContent const BLANK_PAGE;
+    MCAPI static struct PageContent read(class CompoundTag const &);
+    MCAPI static void write(struct PageContent const &, class CompoundTag &);
 
 };

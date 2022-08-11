@@ -14,7 +14,6 @@ class TestConfig {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTCONFIG
 public:
     class TestConfig& operator=(class TestConfig const &) = delete;
@@ -22,12 +21,9 @@ public:
     TestConfig() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTCONFIG
 #endif
     MCAPI static void bindType();
-
-
 
 };

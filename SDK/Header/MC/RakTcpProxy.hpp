@@ -15,13 +15,11 @@ class RakTcpProxy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKTCPPROXY
 public:
     class RakTcpProxy& operator=(class RakTcpProxy const &) = delete;
     RakTcpProxy(class RakTcpProxy const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RakTcpProxy();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKTCPPROXY
 #endif
     MCAPI RakTcpProxy();
-
-
 
 };

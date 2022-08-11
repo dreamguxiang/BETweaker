@@ -15,13 +15,11 @@ class MoveActorDeltaPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORDELTAPACKET
 public:
     class MoveActorDeltaPacket& operator=(class MoveActorDeltaPacket const &) = delete;
     MoveActorDeltaPacket(class MoveActorDeltaPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveActorDeltaPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const &);
     MCAPI MoveActorDeltaPacket();
-
-
 
 };

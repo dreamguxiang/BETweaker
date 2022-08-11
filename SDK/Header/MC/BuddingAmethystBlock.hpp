@@ -15,14 +15,12 @@ class BuddingAmethystBlock : public AmethystBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUDDINGAMETHYSTBLOCK
 public:
     class BuddingAmethystBlock& operator=(class BuddingAmethystBlock const &) = delete;
     BuddingAmethystBlock(class BuddingAmethystBlock const &) = delete;
     BuddingAmethystBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BuddingAmethystBlock();
@@ -73,8 +71,6 @@ public:
 //private:
     MCAPI bool _canGrowInDirection(class Block const &, unsigned char) const;
 
-
 private:
-
 
 };

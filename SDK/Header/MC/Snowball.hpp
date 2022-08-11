@@ -16,14 +16,12 @@ class Snowball : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNOWBALL
 public:
     class Snowball& operator=(class Snowball const &) = delete;
     Snowball(class Snowball const &) = delete;
     Snowball() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -53,7 +51,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNOWBALL
 #endif
     MCAPI Snowball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

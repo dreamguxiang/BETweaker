@@ -14,14 +14,12 @@ class FlameOdds {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLAMEODDS
 public:
     class FlameOdds& operator=(class FlameOdds const &) = delete;
     FlameOdds(class FlameOdds const &) = delete;
     FlameOdds() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLAMEODDS
@@ -30,7 +28,5 @@ public:
     MCAPI static class FlameOdds const HARD;
     MCAPI static class FlameOdds const INSTANT;
     MCAPI static class FlameOdds const MEDIUM;
-
-
 
 };

@@ -15,14 +15,12 @@ class MineshaftCrossing : public MineshaftPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTCROSSING
 public:
     class MineshaftCrossing& operator=(class MineshaftCrossing const &) = delete;
     MineshaftCrossing(class MineshaftCrossing const &) = delete;
     MineshaftCrossing() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MineshaftCrossing();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTCROSSING
 #endif
     MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
-
-
 
 };

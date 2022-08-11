@@ -12,14 +12,12 @@ class StrictEntityContextOwner {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRICTENTITYCONTEXTOWNER
 public:
     class StrictEntityContextOwner& operator=(class StrictEntityContextOwner const &) = delete;
     StrictEntityContextOwner(class StrictEntityContextOwner const &) = delete;
     StrictEntityContextOwner() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXTOWNER
@@ -29,7 +27,5 @@ public:
     MCAPI class StrictEntityContext getStrictContext() const;
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     MCAPI ~StrictEntityContextOwner();
-
-
 
 };

@@ -14,7 +14,6 @@ class JigsawBlockInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWBLOCKINFO
 public:
     class JigsawBlockInfo& operator=(class JigsawBlockInfo const &) = delete;
@@ -22,13 +21,10 @@ public:
     JigsawBlockInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKINFO
 #endif
     MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
     MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
-
-
 
 };

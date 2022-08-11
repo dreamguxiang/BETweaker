@@ -14,14 +14,12 @@ class RiseToLiquidLevelGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RISETOLIQUIDLEVELGOAL
 public:
     class RiseToLiquidLevelGoal& operator=(class RiseToLiquidLevelGoal const &) = delete;
     RiseToLiquidLevelGoal(class RiseToLiquidLevelGoal const &) = delete;
     RiseToLiquidLevelGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RiseToLiquidLevelGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI float findLiquidLevel();
 
-
 private:
-
 
 };

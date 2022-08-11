@@ -15,14 +15,12 @@ class KickCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KICKCOMMAND
 public:
     class KickCommand& operator=(class KickCommand const &) = delete;
     KickCommand(class KickCommand const &) = delete;
     KickCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~KickCommand();
@@ -36,8 +34,6 @@ public:
     MCAPI void _kickPlayer(class CommandOrigin const &, class CommandOutput &, class Player const &, class Level *, std::string const &, std::string const &) const;
     MCAPI class Player const * _loopPlayers(class CommandOrigin const &, class CommandOutput &, class Level *, std::string const &, std::string const &, class std::function<bool (class Player const *)>) const;
 
-
 private:
-
 
 };

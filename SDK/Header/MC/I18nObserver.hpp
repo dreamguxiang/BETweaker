@@ -14,7 +14,6 @@ class I18nObserver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18NOBSERVER
 public:
     class I18nObserver& operator=(class I18nObserver const &) = delete;
@@ -22,11 +21,8 @@ public:
     I18nObserver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_I18NOBSERVER
 #endif
-
-
 
 };

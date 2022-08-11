@@ -15,14 +15,12 @@ class ClientRequestPlaceholderBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTREQUESTPLACEHOLDERBLOCK
 public:
     class ClientRequestPlaceholderBlock& operator=(class ClientRequestPlaceholderBlock const &) = delete;
     ClientRequestPlaceholderBlock(class ClientRequestPlaceholderBlock const &) = delete;
     ClientRequestPlaceholderBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClientRequestPlaceholderBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREQUESTPLACEHOLDERBLOCK
 #endif
     MCAPI ClientRequestPlaceholderBlock(std::string const &, int, class Material const &);
-
-
 
 };

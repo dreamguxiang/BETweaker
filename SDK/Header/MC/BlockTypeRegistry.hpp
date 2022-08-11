@@ -14,14 +14,12 @@ class BlockTypeRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRY
 public:
     class BlockTypeRegistry& operator=(class BlockTypeRegistry const &) = delete;
     BlockTypeRegistry(class BlockTypeRegistry const &) = delete;
     BlockTypeRegistry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
@@ -43,13 +41,11 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
     MCAPI static class std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
     MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
     MCAPI static class std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
-
 
 };

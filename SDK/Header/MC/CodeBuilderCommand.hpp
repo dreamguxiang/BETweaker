@@ -15,7 +15,6 @@ class CodeBuilderCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERCOMMAND
 public:
     class CodeBuilderCommand& operator=(class CodeBuilderCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     CodeBuilderCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CodeBuilderCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

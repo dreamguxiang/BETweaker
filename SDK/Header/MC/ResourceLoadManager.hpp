@@ -12,7 +12,6 @@ class ResourceLoadManager {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOADMANAGER
 public:
     class ResourceLoadManager& operator=(class ResourceLoadManager const &) = delete;
@@ -20,12 +19,9 @@ public:
     ResourceLoadManager() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADMANAGER
 #endif
     MCAPI void cancel(enum ResourceLoadType);
-
-
 
 };

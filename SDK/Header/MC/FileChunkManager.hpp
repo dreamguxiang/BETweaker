@@ -14,13 +14,11 @@ class FileChunkManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILECHUNKMANAGER
 public:
     class FileChunkManager& operator=(class FileChunkManager const &) = delete;
     FileChunkManager(class FileChunkManager const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void _generateChunkInfo();
 
-
 private:
-
 
 };

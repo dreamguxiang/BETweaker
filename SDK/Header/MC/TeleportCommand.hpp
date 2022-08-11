@@ -18,14 +18,12 @@ enum FacingResult;
 enum TeleportAnalysis;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTCOMMAND
 public:
     class TeleportCommand& operator=(class TeleportCommand const &) = delete;
     TeleportCommand(class TeleportCommand const &) = delete;
     TeleportCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TeleportCommand();
@@ -42,8 +40,6 @@ public:
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int, bool);
     MCAPI static class AABB getSafetyAABB(class Actor const &, class Vec3);
 
-
 private:
-
 
 };

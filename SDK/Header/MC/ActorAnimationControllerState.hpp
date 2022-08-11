@@ -14,14 +14,12 @@ class ActorAnimationControllerState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERSTATE
 public:
     class ActorAnimationControllerState& operator=(class ActorAnimationControllerState const &) = delete;
     ActorAnimationControllerState(class ActorAnimationControllerState const &) = delete;
     ActorAnimationControllerState() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATE
@@ -36,7 +34,5 @@ public:
     MCAPI void addTransition(std::string const &, std::string const &, enum MolangVersion, bool);
     MCAPI class StateAnimationVariable & addVariable(std::string const &);
     MCAPI void setBlendTransitionTime(float);
-
-
 
 };

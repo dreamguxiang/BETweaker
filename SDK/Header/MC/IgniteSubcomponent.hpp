@@ -14,13 +14,11 @@ class IgniteSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IGNITESUBCOMPONENT
 public:
     class IgniteSubcomponent& operator=(class IgniteSubcomponent const &) = delete;
     IgniteSubcomponent(class IgniteSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IgniteSubcomponent();
@@ -33,7 +31,5 @@ public:
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI IgniteSubcomponent();
-
-
 
 };

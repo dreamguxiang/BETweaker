@@ -15,14 +15,12 @@ class SpreadPlayersCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPREADPLAYERSCOMMAND
 public:
     class SpreadPlayersCommand& operator=(class SpreadPlayersCommand const &) = delete;
     SpreadPlayersCommand(class SpreadPlayersCommand const &) = delete;
     SpreadPlayersCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpreadPlayersCommand();
@@ -39,8 +37,6 @@ public:
     MCAPI static float _setPlayerPositions(class CommandSelectorResults<class Actor> &, std::vector<class Vec2> &, class std::map<class ChunkPos, std::unique_ptr<class CommandArea>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<class CommandArea>>>> &);
     MCAPI static bool _spreadEntities(class CommandOutput &, class CommandSelectorResults<class Actor> &, class CommandOrigin const &, class Vec2 const &, float, float, int);
 
-
 private:
-
 
 };

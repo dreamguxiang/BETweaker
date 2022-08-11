@@ -16,12 +16,10 @@ public:
 enum ActionType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEINVENTORYTRANSACTION
 public:
     ItemUseInventoryTransaction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemUseInventoryTransaction();
@@ -40,9 +38,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
-
 
 };

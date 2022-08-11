@@ -15,7 +15,6 @@ class LootTableReference {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEREFERENCE
 public:
     class LootTableReference& operator=(class LootTableReference const &) = delete;
@@ -23,13 +22,10 @@ public:
     LootTableReference() = delete;
 #endif
 
-
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLEREFERENCE
 #endif
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

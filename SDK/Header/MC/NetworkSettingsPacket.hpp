@@ -15,14 +15,12 @@ class NetworkSettingsPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSETTINGSPACKET
 public:
     class NetworkSettingsPacket& operator=(class NetworkSettingsPacket const &) = delete;
     NetworkSettingsPacket(class NetworkSettingsPacket const &) = delete;
     NetworkSettingsPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetworkSettingsPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSETTINGSPACKET
 #endif
-
-
 
 };

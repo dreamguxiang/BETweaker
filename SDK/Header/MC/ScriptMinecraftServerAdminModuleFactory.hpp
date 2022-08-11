@@ -16,14 +16,12 @@ class ScriptMinecraftServerAdminModuleFactory : public TextObjectText {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMINECRAFTSERVERADMINMODULEFACTORY
 public:
     class ScriptMinecraftServerAdminModuleFactory& operator=(class ScriptMinecraftServerAdminModuleFactory const &) = delete;
     ScriptMinecraftServerAdminModuleFactory(class ScriptMinecraftServerAdminModuleFactory const &) = delete;
     ScriptMinecraftServerAdminModuleFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptMinecraftServerAdminModuleFactory();
@@ -35,10 +33,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
-
 
 };

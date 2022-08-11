@@ -12,7 +12,6 @@ class PlayerGetExperienceOrbEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERGETEXPERIENCEORBEVENT
 public:
     class PlayerGetExperienceOrbEvent& operator=(class PlayerGetExperienceOrbEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     PlayerGetExperienceOrbEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERGETEXPERIENCEORBEVENT
 #endif
     MCAPI ~PlayerGetExperienceOrbEvent();
-
-
 
 };

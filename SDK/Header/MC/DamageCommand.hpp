@@ -13,14 +13,12 @@ class DamageCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGECOMMAND
 public:
     class DamageCommand& operator=(class DamageCommand const &) = delete;
     DamageCommand(class DamageCommand const &) = delete;
     DamageCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DamageCommand();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI void _applyDamage(class CommandSelectorResults<class Actor> &, class ActorDamageSource const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

@@ -19,23 +19,20 @@ struct MaterialLayer {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAPPEDSURFACEATTRIBUTES
 public:
     struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes const &) = delete;
     CappedSurfaceAttributes(struct CappedSurfaceAttributes const &) = delete;
     CappedSurfaceAttributes() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAPPEDSURFACEATTRIBUTES
+#endif
     MCAPI class Block const * getCeilingMaterial(class Vec3 const &) const;
     MCAPI class Block const * getFloorMaterial(class Vec3 const &) const;
     MCAPI void initializeNoise(unsigned int);
     MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
     MCAPI ~CappedSurfaceAttributes();
-
-protected:
-
-private:
+    MCAPI static class Block const * getRandomBlock(std::vector<struct CappedSurfaceAttributes::MaterialLayer> const &, class Vec3 const &);
 
 };

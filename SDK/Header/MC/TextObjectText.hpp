@@ -15,14 +15,12 @@ class TextObjectText {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTTEXT
 public:
     class TextObjectText& operator=(class TextObjectText const &) = delete;
     TextObjectText(class TextObjectText const &) = delete;
     TextObjectText() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TextObjectText();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI TextObjectText(std::string);
     MCAPI static class Json::Value asJsonValue(std::string const &);
-
-
 
 };

@@ -14,18 +14,17 @@ struct PredictedMovementValues {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREDICTEDMOVEMENTVALUES
 public:
     struct PredictedMovementValues& operator=(struct PredictedMovementValues const &) = delete;
     PredictedMovementValues(struct PredictedMovementValues const &) = delete;
     PredictedMovementValues() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTVALUES
+#endif
+    MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
+    MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
 
 };

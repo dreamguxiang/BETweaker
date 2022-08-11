@@ -13,14 +13,12 @@ class ScriptTickListener {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTICKLISTENER
 public:
     class ScriptTickListener& operator=(class ScriptTickListener const &) = delete;
     ScriptTickListener(class ScriptTickListener const &) = delete;
     ScriptTickListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptTickListener();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
 #endif
     MCAPI ScriptTickListener(class ServerLevel &, class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptCommandProcessor &);
-
-
 
 };

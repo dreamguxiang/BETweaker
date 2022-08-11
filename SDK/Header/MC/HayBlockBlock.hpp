@@ -15,14 +15,12 @@ class HayBlockBlock : public RotatedPillarBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HAYBLOCKBLOCK
 public:
     class HayBlockBlock& operator=(class HayBlockBlock const &) = delete;
     HayBlockBlock(class HayBlockBlock const &) = delete;
     HayBlockBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HayBlockBlock();
@@ -55,7 +53,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*147*/ virtual int getVariant(class Block const &) const;
+    /*147*/ virtual int getVariant(class Block const &);
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HAYBLOCKBLOCK
 #endif
     MCAPI HayBlockBlock(std::string const &, int);
-
-
 
 };

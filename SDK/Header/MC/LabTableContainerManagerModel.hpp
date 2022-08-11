@@ -15,14 +15,12 @@ class LabTableContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLECONTAINERMANAGERMODEL
 public:
     class LabTableContainerManagerModel& operator=(class LabTableContainerManagerModel const &) = delete;
     LabTableContainerManagerModel(class LabTableContainerManagerModel const &) = delete;
     LabTableContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LabTableContainerManagerModel();
@@ -37,7 +35,5 @@ public:
 #endif
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     MCAPI static int const INPUT_SLOTS;
-
-
 
 };

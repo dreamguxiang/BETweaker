@@ -15,14 +15,12 @@ class WallClimberPathNavigation : public PathNavigation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALLCLIMBERPATHNAVIGATION
 public:
     class WallClimberPathNavigation& operator=(class WallClimberPathNavigation const &) = delete;
     WallClimberPathNavigation(class WallClimberPathNavigation const &) = delete;
     WallClimberPathNavigation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WallClimberPathNavigation();
@@ -33,7 +31,5 @@ public:
     /*11*/ virtual bool canUpdatePath(class Mob const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLCLIMBERPATHNAVIGATION
 #endif
-
-
 
 };

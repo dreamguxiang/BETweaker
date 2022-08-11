@@ -12,14 +12,12 @@ class SculkShriekerVibrationConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSHRIEKERVIBRATIONCONFIG
 public:
     class SculkShriekerVibrationConfig& operator=(class SculkShriekerVibrationConfig const &) = delete;
     SculkShriekerVibrationConfig(class SculkShriekerVibrationConfig const &) = delete;
     SculkShriekerVibrationConfig() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SculkShriekerVibrationConfig();
@@ -28,7 +26,5 @@ public:
     /*3*/ virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERVIBRATIONCONFIG
 #endif
-
-
 
 };

@@ -12,7 +12,6 @@ class InsideHoneyBlockSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEHONEYBLOCKSYSTEM
 public:
     class InsideHoneyBlockSystem& operator=(class InsideHoneyBlockSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     InsideHoneyBlockSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createEventsSystem();
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
-
-
 
 };

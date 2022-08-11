@@ -18,7 +18,6 @@ public:
 	  bool flag;
 	  std::string data;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDPERSONAPIECEHANDLE
 public:
     class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const &) = delete;
@@ -26,12 +25,9 @@ public:
     SerializedPersonaPieceHandle() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDPERSONAPIECEHANDLE
 #endif
     MCAPI SerializedPersonaPieceHandle(std::string const &, enum persona::PieceType, class mce::UUID, bool, std::string const &);
-
-
 
 };

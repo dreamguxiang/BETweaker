@@ -14,14 +14,12 @@ class ChestBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCKACTOR
 public:
     class ChestBlockActor& operator=(class ChestBlockActor const &) = delete;
     ChestBlockActor(class ChestBlockActor const &) = delete;
     ChestBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKACTOR
@@ -92,10 +90,8 @@ public:
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);
     MCAPI void _unpair();
 
-
 protected:
 
 private:
-
 
 };

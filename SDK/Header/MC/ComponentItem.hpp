@@ -19,14 +19,12 @@ class ComponentItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTITEM
 public:
     class ComponentItem& operator=(class ComponentItem const &) = delete;
     ComponentItem(class ComponentItem const &) = delete;
     ComponentItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ComponentItem();
@@ -36,7 +34,7 @@ public:
     /*4*/ virtual std::string const & getDescriptionId() const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool hasTag(class HashedString const &) const;
-    /*9*/ virtual bool hasTag(struct ItemTag const &) const;
+    /*9*/ virtual bool hasTag(struct ItemTag const &);
     /*10*/ virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual bool isArmor() const;
@@ -59,14 +57,14 @@ public:
     /*43*/ virtual enum BlockShape getBlockShape() const;
     /*44*/ virtual bool canBeDepleted() const;
     /*45*/ virtual bool canDestroySpecial(class Block const &) const;
-    /*46*/ virtual int getLevelDataForAuxValue(int) const;
+    /*46*/ virtual int getLevelDataForAuxValue(int);
     /*48*/ virtual short getMaxDamage() const;
     /*49*/ virtual int getAttackDamage() const;
     /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*56*/ virtual bool canDestroyInCreative() const;
-    /*57*/ virtual bool isDestructive(int) const;
+    /*57*/ virtual bool isDestructive(int);
     /*58*/ virtual bool isLiquidClipItem(int) const;
     /*60*/ virtual bool requiresInteract() const;
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
@@ -82,8 +80,8 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*74*/ virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
     /*76*/ virtual void __unk_vfn_76();
-    /*77*/ virtual void clearColor(class ItemStackBase &) const;
-    /*79*/ virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /*77*/ virtual void clearColor(class ItemStackBase &);
+    /*79*/ virtual void setColor(class ItemStackBase &, class mce::Color const &);
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
@@ -104,11 +102,12 @@ public:
     /*105*/ virtual int getCooldownTime() const;
     /*118*/ virtual void initClient(class Json::Value &, class SemVersion const &);
     /*119*/ virtual std::string getInteractText(class Player const &) const;
-    /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /*121*/ virtual bool isEmissive(int) const;
+    /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool);
+    /*121*/ virtual bool isEmissive(int);
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
     /*128*/ virtual bool canBeCharged() const;
+    /*130*/ virtual void __unk_vfn_130();
     /*133*/ virtual std::string getAuxValuesDescription() const;
     /*134*/ virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
@@ -150,9 +149,7 @@ public:
     MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &);
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
 
-
 private:
     MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
-
 
 };

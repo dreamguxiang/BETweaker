@@ -15,14 +15,12 @@ class DeltaFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELTAFEATURE
 public:
     class DeltaFeature& operator=(class DeltaFeature const &) = delete;
     DeltaFeature(class DeltaFeature const &) = delete;
     DeltaFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeltaFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
 
-
 private:
-
 
 };

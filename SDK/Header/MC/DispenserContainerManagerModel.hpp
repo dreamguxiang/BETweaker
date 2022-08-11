@@ -15,7 +15,6 @@ class DispenserContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERCONTAINERMANAGERMODEL
 public:
     class DispenserContainerManagerModel& operator=(class DispenserContainerManagerModel const &) = delete;
@@ -23,14 +22,11 @@ public:
     DispenserContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DispenserContainerManagerModel();
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERCONTAINERMANAGERMODEL
 #endif
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

@@ -16,14 +16,12 @@ class PrecompiledCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRECOMPILEDCOMMANDORIGIN
 public:
     class PrecompiledCommandOrigin& operator=(class PrecompiledCommandOrigin const &) = delete;
     PrecompiledCommandOrigin(class PrecompiledCommandOrigin const &) = delete;
     PrecompiledCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PrecompiledCommandOrigin();
@@ -32,23 +30,21 @@ public:
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const;
-    /*6*/ virtual class Level * getLevel() const;
-    /*7*/ virtual class Dimension * getDimension() const;
-    /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*6*/ virtual class Level * getLevel();
+    /*7*/ virtual class Dimension * getDimension();
+    /*8*/ virtual class Actor * getEntity();
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*13*/ virtual bool hasChatPerms() const;
-    /*14*/ virtual bool hasTellPerms() const;
-    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*16*/ virtual bool isWorldBuilder() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*13*/ virtual bool hasChatPerms();
+    /*14*/ virtual bool hasTellPerms();
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex);
+    /*16*/ virtual bool isWorldBuilder();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*18*/ virtual bool isSelectorExpansionAllowed();
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual bool isValid() const;
+    /*30*/ virtual bool isValid();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRECOMPILEDCOMMANDORIGIN
 #endif
-
-
 
 };

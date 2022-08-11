@@ -14,7 +14,6 @@ class LabTableReactionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEREACTIONCOMPONENT
 public:
     class LabTableReactionComponent& operator=(class LabTableReactionComponent const &) = delete;
@@ -22,14 +21,11 @@ public:
     LabTableReactionComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
     MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
 #endif
-
-
 
 };

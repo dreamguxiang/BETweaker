@@ -15,13 +15,11 @@ class ImpactDamageSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPACTDAMAGESUBCOMPONENT
 public:
     class ImpactDamageSubcomponent& operator=(class ImpactDamageSubcomponent const &) = delete;
     ImpactDamageSubcomponent(class ImpactDamageSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ImpactDamageSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPACTDAMAGESUBCOMPONENT
 #endif
     MCAPI ImpactDamageSubcomponent();
-
-
 
 };

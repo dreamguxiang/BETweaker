@@ -20,14 +20,12 @@ struct VolumeEntityDefinition {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEENTITYMANAGER
 public:
     class VolumeEntityManager& operator=(class VolumeEntityManager const &) = delete;
     VolumeEntityManager(class VolumeEntityManager const &) = delete;
     VolumeEntityManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGER
@@ -41,8 +39,6 @@ public:
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 
-
 protected:
-
 
 };

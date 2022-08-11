@@ -15,14 +15,12 @@ class DecoratorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DECORATORDEFINITION
 public:
     class DecoratorDefinition& operator=(class DecoratorDefinition const &) = delete;
     DecoratorDefinition(class DecoratorDefinition const &) = delete;
     DecoratorDefinition() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECORATORDEFINITION
@@ -32,8 +30,6 @@ public:
 //protected:
     MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 
-
 protected:
-
 
 };

@@ -14,14 +14,12 @@ class HealableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALABLECOMPONENT
 public:
     class HealableComponent& operator=(class HealableComponent const &) = delete;
     HealableComponent(class HealableComponent const &) = delete;
     HealableComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALABLECOMPONENT
@@ -32,8 +30,6 @@ public:
     MCAPI void _useFeedItem(class Actor &, class Player &, struct FeedItem const &);
     MCAPI static bool _canHeal(class Actor &, class ItemStack const &, class HealableDefinition const *);
 
-
 private:
-
 
 };

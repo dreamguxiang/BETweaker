@@ -14,14 +14,12 @@ class StringByteInput {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGBYTEINPUT
 public:
     class StringByteInput& operator=(class StringByteInput const &) = delete;
     StringByteInput(class StringByteInput const &) = delete;
     StringByteInput() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StringByteInput();
@@ -37,7 +35,5 @@ public:
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
 #endif
-
-
 
 };

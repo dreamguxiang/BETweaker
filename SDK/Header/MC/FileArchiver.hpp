@@ -22,14 +22,12 @@ struct Result {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEARCHIVER
 public:
     class FileArchiver& operator=(class FileArchiver const &) = delete;
     FileArchiver(class FileArchiver const &) = delete;
     FileArchiver() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEARCHIVER
@@ -44,8 +42,6 @@ public:
 //private:
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);
 
-
 private:
-
 
 };

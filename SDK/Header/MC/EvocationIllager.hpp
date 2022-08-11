@@ -16,14 +16,12 @@ class EvocationIllager : public HumanoidMonster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVOCATIONILLAGER
 public:
     class EvocationIllager& operator=(class EvocationIllager const &) = delete;
     EvocationIllager(class EvocationIllager const &) = delete;
     EvocationIllager() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -62,7 +60,5 @@ public:
     MCVAPI bool useNewAi() const;
 #endif
     MCAPI EvocationIllager(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

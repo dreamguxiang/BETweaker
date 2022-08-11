@@ -15,14 +15,12 @@ class WaterBoundPathNavigation : public PathNavigation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERBOUNDPATHNAVIGATION
 public:
     class WaterBoundPathNavigation& operator=(class WaterBoundPathNavigation const &) = delete;
     WaterBoundPathNavigation(class WaterBoundPathNavigation const &) = delete;
     WaterBoundPathNavigation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WaterBoundPathNavigation();
@@ -34,7 +32,5 @@ public:
     /*12*/ virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERBOUNDPATHNAVIGATION
 #endif
-
-
 
 };

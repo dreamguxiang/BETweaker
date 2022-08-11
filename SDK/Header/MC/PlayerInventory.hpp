@@ -20,14 +20,12 @@ struct SlotData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINVENTORY
 public:
     class PlayerInventory& operator=(class PlayerInventory const &) = delete;
     PlayerInventory(class PlayerInventory const &) = delete;
     PlayerInventory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINVENTORY
@@ -73,7 +71,5 @@ public:
     MCAPI void setupDefaultInventory();
     MCAPI void swapSlots(int, int);
     MCAPI void tick();
-
-
 
 };

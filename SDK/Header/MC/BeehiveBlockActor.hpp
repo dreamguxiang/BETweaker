@@ -21,14 +21,12 @@ struct Occupant {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCKACTOR
 public:
     class BeehiveBlockActor& operator=(class BeehiveBlockActor const &) = delete;
     BeehiveBlockActor(class BeehiveBlockActor const &) = delete;
     BeehiveBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BeehiveBlockActor();
@@ -59,8 +57,6 @@ public:
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     MCAPI void _trySpawnBees(class BlockSource &);
 
-
 private:
-
 
 };

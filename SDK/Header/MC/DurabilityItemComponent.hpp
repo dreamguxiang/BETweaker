@@ -12,7 +12,6 @@ class DurabilityItemComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DURABILITYITEMCOMPONENT
 public:
     class DurabilityItemComponent& operator=(class DurabilityItemComponent const &) = delete;
@@ -20,14 +19,13 @@ public:
     DurabilityItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DurabilityItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual bool isNetworkComponent();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DURABILITYITEMCOMPONENT
 #endif
@@ -38,7 +36,5 @@ public:
     MCAPI static void bindType();
     MCAPI static class HashedString const & getIdentifier();
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
-
-
 
 };

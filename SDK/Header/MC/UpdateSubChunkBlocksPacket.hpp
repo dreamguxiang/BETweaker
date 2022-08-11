@@ -15,13 +15,11 @@ class UpdateSubChunkBlocksPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATESUBCHUNKBLOCKSPACKET
 public:
     class UpdateSubChunkBlocksPacket& operator=(class UpdateSubChunkBlocksPacket const &) = delete;
     UpdateSubChunkBlocksPacket(class UpdateSubChunkBlocksPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateSubChunkBlocksPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
     MCAPI UpdateSubChunkBlocksPacket();
     MCAPI void setSubChunkPosition(class SubChunkPos const &);
-
-
 
 };

@@ -15,7 +15,6 @@ class RabbitPanicGoal : public PanicGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RABBITPANICGOAL
 public:
     class RabbitPanicGoal& operator=(class RabbitPanicGoal const &) = delete;
@@ -23,13 +22,10 @@ public:
     RabbitPanicGoal() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RabbitPanicGoal();
     /*3*/ virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RABBITPANICGOAL
 #endif
-
-
 
 };

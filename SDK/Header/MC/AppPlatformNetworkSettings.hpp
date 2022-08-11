@@ -12,13 +12,11 @@ class AppPlatformNetworkSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMNETWORKSETTINGS
 public:
     class AppPlatformNetworkSettings& operator=(class AppPlatformNetworkSettings const &) = delete;
     AppPlatformNetworkSettings(class AppPlatformNetworkSettings const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AppPlatformNetworkSettings();
@@ -26,7 +24,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMNETWORKSETTINGS
 #endif
     MCAPI AppPlatformNetworkSettings();
-
-
 
 };

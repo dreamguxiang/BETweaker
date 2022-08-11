@@ -14,21 +14,17 @@ struct PingedCompatibleServer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PINGEDCOMPATIBLESERVER
 public:
     struct PingedCompatibleServer& operator=(struct PingedCompatibleServer const &) = delete;
     PingedCompatibleServer() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINGEDCOMPATIBLESERVER
+#endif
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
     MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     MCAPI ~PingedCompatibleServer();
-
-protected:
-
-private:
 
 };

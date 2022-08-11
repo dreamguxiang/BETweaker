@@ -12,7 +12,6 @@ class MovementInterpolatorSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEMENTINTERPOLATORSYSTEM
 public:
     class MovementInterpolatorSystem& operator=(class MovementInterpolatorSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     MovementInterpolatorSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEM
 #endif
     MCAPI static void onGroundPostTick(struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
     MCAPI static void tick(class Actor &);
-
-
 
 };

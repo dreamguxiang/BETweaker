@@ -14,19 +14,15 @@ struct ScatterParamsMolangVariableIndices {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERPARAMSMOLANGVARIABLEINDICES
 public:
     struct ScatterParamsMolangVariableIndices& operator=(struct ScatterParamsMolangVariableIndices const &) = delete;
     ScatterParamsMolangVariableIndices(struct ScatterParamsMolangVariableIndices const &) = delete;
     ScatterParamsMolangVariableIndices() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMSMOLANGVARIABLEINDICES
+#endif
     MCAPI void initialize();
-
-protected:
-
-private:
 
 };

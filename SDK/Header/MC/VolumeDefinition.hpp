@@ -14,19 +14,19 @@ struct VolumeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEDEFINITION
 public:
     struct VolumeDefinition& operator=(struct VolumeDefinition const &) = delete;
     VolumeDefinition(struct VolumeDefinition const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITION
+#endif
     MCAPI VolumeDefinition();
     MCAPI ~VolumeDefinition();
-
-protected:
-
-private:
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
+    MCAPI static class SemVersion const & getMaxSupportedVersion();
+    MCAPI static class SemVersion const & getMinSupportedVersion();
 
 };

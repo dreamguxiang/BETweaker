@@ -15,14 +15,12 @@ class DanceComponentListener : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENTLISTENER
 public:
     class DanceComponentListener& operator=(class DanceComponentListener const &) = delete;
     DanceComponentListener(class DanceComponentListener const &) = delete;
     DanceComponentListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DanceComponentListener();
@@ -55,7 +53,5 @@ public:
     /*30*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENTLISTENER
 #endif
-
-
 
 };

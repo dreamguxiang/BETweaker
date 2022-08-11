@@ -16,14 +16,12 @@ class TitleRawCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TITLERAWCOMMAND
 public:
     class TitleRawCommand& operator=(class TitleRawCommand const &) = delete;
     TitleRawCommand(class TitleRawCommand const &) = delete;
     TitleRawCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TitleRawCommand();
@@ -35,8 +33,6 @@ public:
 //private:
     MCAPI bool _sendTitlePacketTextObject(enum SetTitlePacket::TitleType, class CommandOrigin const &, class CommandOutput &, class CommandSelectorResults<class Player> const &) const;
 
-
 private:
-
 
 };

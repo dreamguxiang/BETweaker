@@ -12,20 +12,16 @@ class SubChunkBrightnessStorage {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKBRIGHTNESSSTORAGE
 public:
     class SubChunkBrightnessStorage& operator=(class SubChunkBrightnessStorage const &) = delete;
     SubChunkBrightnessStorage(class SubChunkBrightnessStorage const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKBRIGHTNESSSTORAGE
 #endif
     MCAPI SubChunkBrightnessStorage();
     MCAPI void reset(bool);
-
-
 
 };

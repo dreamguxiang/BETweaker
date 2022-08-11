@@ -16,14 +16,12 @@ class BoolOption : public Option {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOLOPTION
 public:
     class BoolOption& operator=(class BoolOption const &) = delete;
     BoolOption(class BoolOption const &) = delete;
     BoolOption() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BoolOption();
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI void _set(bool, bool);
 
-
 private:
-
 
 };

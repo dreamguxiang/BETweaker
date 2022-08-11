@@ -14,7 +14,6 @@ class PrintStream {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRINTSTREAM
 public:
     class PrintStream& operator=(class PrintStream const &) = delete;
@@ -22,13 +21,10 @@ public:
     PrintStream() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PrintStream();
     /*1*/ virtual void print(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
 #endif
-
-
 
 };

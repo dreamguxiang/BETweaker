@@ -15,13 +15,11 @@ class SubChunkRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKREQUESTPACKET
 public:
     class SubChunkRequestPacket& operator=(class SubChunkRequestPacket const &) = delete;
     SubChunkRequestPacket(class SubChunkRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SubChunkRequestPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKREQUESTPACKET
 #endif
     MCAPI SubChunkRequestPacket();
-
-
 
 };

@@ -16,14 +16,12 @@ public:
 enum LoadMode;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSOURCE
 public:
     class ChunkSource& operator=(class ChunkSource const &) = delete;
     ChunkSource(class ChunkSource const &) = delete;
     ChunkSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChunkSource();
@@ -48,7 +46,7 @@ public:
     /*19*/ virtual void compact();
     /*20*/ virtual void flushPendingDiscardedChunkWrites();
     /*21*/ virtual void flushThreadBatch();
-    /*22*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
+    /*22*/ virtual bool isWithinWorldLimit(class ChunkPos const &);
     /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /*25*/ virtual void clearDeletedEntities();
@@ -88,8 +86,6 @@ public:
     MCAPI void _postProcessingTask(class LevelChunk &, class ChunkViewSource &);
     MCAPI void _spawnChunkGenerationTasks(int, bool);
 
-
 protected:
-
 
 };

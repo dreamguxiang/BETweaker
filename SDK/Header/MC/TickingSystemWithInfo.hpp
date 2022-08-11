@@ -12,20 +12,16 @@ struct TickingSystemWithInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGSYSTEMWITHINFO
 public:
     struct TickingSystemWithInfo& operator=(struct TickingSystemWithInfo const &) = delete;
     TickingSystemWithInfo(struct TickingSystemWithInfo const &) = delete;
     TickingSystemWithInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGSYSTEMWITHINFO
+#endif
     MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo &&);
     MCAPI ~TickingSystemWithInfo();
-
-protected:
-
-private:
 
 };

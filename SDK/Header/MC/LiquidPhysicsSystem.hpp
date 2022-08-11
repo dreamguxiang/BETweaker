@@ -12,7 +12,6 @@ class LiquidPhysicsSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDPHYSICSSYSTEM
 public:
     class LiquidPhysicsSystem& operator=(class LiquidPhysicsSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     LiquidPhysicsSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDPHYSICSSYSTEM
 #endif
     MCAPI static void applyPhysics(enum MaterialType, class IConstBlockSource const &, struct AABBShapeComponent const &, struct StateVectorComponent &);
-
-
 
 };

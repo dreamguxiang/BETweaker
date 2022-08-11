@@ -16,14 +16,12 @@ class Cat : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAT
 public:
     class Cat& operator=(class Cat const &) = delete;
     Cat(class Cat const &) = delete;
     Cat() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Cat();
@@ -66,8 +64,6 @@ public:
 //private:
     MCAPI float getLieOnPlayer();
 
-
 private:
-
 
 };

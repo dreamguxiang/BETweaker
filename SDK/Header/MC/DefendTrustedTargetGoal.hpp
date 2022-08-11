@@ -15,14 +15,12 @@ class DefendTrustedTargetGoal : public NearestAttackableTargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDTRUSTEDTARGETGOAL
 public:
     class DefendTrustedTargetGoal& operator=(class DefendTrustedTargetGoal const &) = delete;
     DefendTrustedTargetGoal(class DefendTrustedTargetGoal const &) = delete;
     DefendTrustedTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DefendTrustedTargetGoal();
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 
-
 private:
-
 
 };

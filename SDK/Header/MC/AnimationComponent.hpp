@@ -14,14 +14,12 @@ class AnimationComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENT
 public:
     class AnimationComponent& operator=(class AnimationComponent const &) = delete;
     AnimationComponent(class AnimationComponent const &) = delete;
     AnimationComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENT
@@ -51,11 +49,9 @@ public:
 
 //private:
 
-
 private:
     MCAPI static struct std::atomic<__int64> mClientFrameIndex;
     MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
     MCAPI static struct std::atomic<__int64> mServerFrameIndex;
-
 
 };

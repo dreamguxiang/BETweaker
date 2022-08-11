@@ -15,7 +15,6 @@ class NavigationFlyDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONFLYDESCRIPTION
 public:
     class NavigationFlyDescription& operator=(class NavigationFlyDescription const &) = delete;
@@ -23,13 +22,10 @@ public:
     NavigationFlyDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationFlyDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLYDESCRIPTION
 #endif
-
-
 
 };

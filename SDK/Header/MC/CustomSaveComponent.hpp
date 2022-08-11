@@ -14,7 +14,6 @@ class CustomSaveComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUSTOMSAVECOMPONENT
 public:
     class CustomSaveComponent& operator=(class CustomSaveComponent const &) = delete;
@@ -22,12 +21,9 @@ public:
     CustomSaveComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CUSTOMSAVECOMPONENT
 #endif
     MCAPI bool save(class LevelStorage &, class Actor &);
-
-
 
 };

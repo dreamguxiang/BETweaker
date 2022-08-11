@@ -12,7 +12,6 @@ class EntityFactory {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYFACTORY
 public:
     class EntityFactory& operator=(class EntityFactory const &) = delete;
@@ -20,14 +19,11 @@ public:
     EntityFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYFACTORY
 #endif
     MCAPI EntityFactory(class gsl::not_null<class EntityRegistryBase *>);
     MCAPI class StrictEntityContextOwner create();
     MCAPI void destroy(class StrictEntityContextOwner &&);
-
-
 
 };

@@ -14,18 +14,15 @@ struct ISystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISYSTEM
 public:
     struct ISystem& operator=(struct ISystem const &) = delete;
     ISystem(struct ISystem const &) = delete;
     ISystem() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISYSTEM
+    MCVAPI void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
+#endif
 
 };

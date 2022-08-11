@@ -16,14 +16,12 @@ class BambooBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BAMBOOBLOCKITEM
 public:
     class BambooBlockItem& operator=(class BambooBlockItem const &) = delete;
     BambooBlockItem(class BambooBlockItem const &) = delete;
     BambooBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BambooBlockItem();
@@ -41,11 +39,10 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BAMBOOBLOCKITEM
 #endif
     MCAPI BambooBlockItem(std::string const &, int);
-
-
 
 };

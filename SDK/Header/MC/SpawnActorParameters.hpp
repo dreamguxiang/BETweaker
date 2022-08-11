@@ -14,13 +14,13 @@ struct SpawnActorParameters {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORPARAMETERS
 public:
     struct SpawnActorParameters& operator=(struct SpawnActorParameters const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORPARAMETERS
+#endif
     MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
     MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     MCAPI SpawnActorParameters();
@@ -32,9 +32,5 @@ public:
     MCAPI void setSpawnTimeMin(int const &);
     MCAPI bool spawnsItemStack() const;
     MCAPI ~SpawnActorParameters();
-
-protected:
-
-private:
 
 };

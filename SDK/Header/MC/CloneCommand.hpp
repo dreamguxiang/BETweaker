@@ -15,7 +15,6 @@ class CloneCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLONECOMMAND
 public:
     class CloneCommand& operator=(class CloneCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     CloneCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CloneCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLONECOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

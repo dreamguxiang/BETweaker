@@ -16,14 +16,12 @@ class MemoryMappedFileAccess {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEMORYMAPPEDFILEACCESS
 public:
     class MemoryMappedFileAccess& operator=(class MemoryMappedFileAccess const &) = delete;
     MemoryMappedFileAccess(class MemoryMappedFileAccess const &) = delete;
     MemoryMappedFileAccess() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MemoryMappedFileAccess();
@@ -38,7 +36,5 @@ public:
 #endif
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
-
-
 
 };

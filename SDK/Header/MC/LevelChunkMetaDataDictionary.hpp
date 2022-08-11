@@ -12,14 +12,12 @@ class LevelChunkMetaDataDictionary {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKMETADATADICTIONARY
 public:
     class LevelChunkMetaDataDictionary& operator=(class LevelChunkMetaDataDictionary const &) = delete;
     LevelChunkMetaDataDictionary(class LevelChunkMetaDataDictionary const &) = delete;
     LevelChunkMetaDataDictionary() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATADICTIONARY
@@ -32,8 +30,6 @@ public:
 //protected:
     MCAPI class std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const &);
 
-
 protected:
-
 
 };

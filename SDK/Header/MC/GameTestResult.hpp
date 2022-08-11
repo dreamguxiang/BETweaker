@@ -14,21 +14,18 @@ struct GameTestResult {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTRESULT
 public:
     GameTestResult() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRESULT
+#endif
     MCAPI GameTestResult(struct GameTestResult const &);
     MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
     MCAPI struct GameTestResult & operator=(struct GameTestResult const &);
     MCAPI bool operator==(struct GameTestResult const &) const;
     MCAPI ~GameTestResult();
-
-protected:
-
-private:
+    MCAPI static void bindType();
 
 };

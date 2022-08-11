@@ -16,7 +16,6 @@ class BoatItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOATITEM
 public:
     class BoatItem& operator=(class BoatItem const &) = delete;
@@ -24,17 +23,16 @@ public:
     BoatItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BoatItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*47*/ virtual bool isStackedByData() const;
+    /*47*/ virtual bool isStackedByData();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*58*/ virtual bool isLiquidClipItem(int) const;
+    /*58*/ virtual bool isLiquidClipItem(int);
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual bool isValidAuxValue(int) const;
     /*71*/ virtual void __unk_vfn_71();
@@ -47,12 +45,11 @@ public:
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /*137*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOATITEM
 #endif
     MCAPI BoatItem(std::string const &, int, int);
-
-
 
 };

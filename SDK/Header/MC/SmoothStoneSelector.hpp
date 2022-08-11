@@ -14,7 +14,6 @@ class SmoothStoneSelector {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOOTHSTONESELECTOR
 public:
     class SmoothStoneSelector& operator=(class SmoothStoneSelector const &) = delete;
@@ -22,13 +21,10 @@ public:
     SmoothStoneSelector() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SmoothStoneSelector();
     /*1*/ virtual class Block const & next(class Random &, int, int, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOOTHSTONESELECTOR
 #endif
-
-
 
 };

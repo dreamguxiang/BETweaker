@@ -15,18 +15,15 @@ struct OnDeathDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONDEATHDEFINITION
 public:
     struct OnDeathDefinition& operator=(struct OnDeathDefinition const &) = delete;
     OnDeathDefinition(struct OnDeathDefinition const &) = delete;
     OnDeathDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONDEATHDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>> &);
 
 };

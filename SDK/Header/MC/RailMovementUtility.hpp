@@ -12,14 +12,12 @@ class RailMovementUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENTUTILITY
 public:
     class RailMovementUtility& operator=(class RailMovementUtility const &) = delete;
     RailMovementUtility(class RailMovementUtility const &) = delete;
     RailMovementUtility() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTUTILITY
@@ -33,9 +31,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
-
 
 };

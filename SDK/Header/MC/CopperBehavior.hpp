@@ -14,14 +14,12 @@ class CopperBehavior {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COPPERBEHAVIOR
 public:
     class CopperBehavior& operator=(class CopperBehavior const &) = delete;
     CopperBehavior(class CopperBehavior const &) = delete;
     CopperBehavior() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBEHAVIOR
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
 
-
 private:
-
 
 };

@@ -14,14 +14,12 @@ class OfferFlowerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFERFLOWERGOAL
 public:
     class OfferFlowerGoal& operator=(class OfferFlowerGoal const &) = delete;
     OfferFlowerGoal(class OfferFlowerGoal const &) = delete;
     OfferFlowerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OfferFlowerGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFERFLOWERGOAL
 #endif
     MCAPI OfferFlowerGoal(class IronGolem &);
-
-
 
 };

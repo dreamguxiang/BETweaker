@@ -14,13 +14,11 @@ class ItemStackRequestActionCreate {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCREATE
 public:
     class ItemStackRequestActionCreate& operator=(class ItemStackRequestActionCreate const &) = delete;
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCreate();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ItemStackRequestActionCreate();
     MCAPI unsigned char getResultsIndex() const;
-
-
 
 };

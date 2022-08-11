@@ -15,7 +15,6 @@ class IsSpawnableDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSPAWNABLEDESCRIPTION
 public:
     class IsSpawnableDescription& operator=(class IsSpawnableDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     IsSpawnableDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IsSpawnableDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSPAWNABLEDESCRIPTION
 #endif
     MCAPI void parse(class Json::Value const &);
-
-
 
 };

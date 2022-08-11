@@ -15,14 +15,12 @@ class AttackDamageMobEffect : public MobEffect {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKDAMAGEMOBEFFECT
 public:
     class AttackDamageMobEffect& operator=(class AttackDamageMobEffect const &) = delete;
     AttackDamageMobEffect(class AttackDamageMobEffect const &) = delete;
     AttackDamageMobEffect() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AttackDamageMobEffect();
@@ -32,7 +30,5 @@ public:
     MCAPI AttackDamageMobEffect(int, std::string const &, std::string const &, bool, int, int);
     MCAPI static float getDamageAfterDamageBoost(float, int);
     MCAPI static float getDamageAfterWeakness(float, int);
-
-
 
 };

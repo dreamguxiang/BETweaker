@@ -15,13 +15,11 @@ class NpcRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCREQUESTPACKET
 public:
     class NpcRequestPacket& operator=(class NpcRequestPacket const &) = delete;
     NpcRequestPacket(class NpcRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NpcRequestPacket();
@@ -43,8 +41,6 @@ public:
 //private:
     MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
 
-
 private:
-
 
 };

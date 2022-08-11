@@ -15,14 +15,12 @@ class BarrierBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRIERBLOCK
 public:
     class BarrierBlock& operator=(class BarrierBlock const &) = delete;
     BarrierBlock(class BarrierBlock const &) = delete;
     BarrierBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BarrierBlock();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*105*/ virtual void __unk_vfn_105();
@@ -67,7 +65,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRIERBLOCK
 #endif
     MCAPI BarrierBlock(std::string const &, int);
-
-
 
 };

@@ -15,14 +15,12 @@ class MapExtendingRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPEXTENDINGRECIPE
 public:
     class MapExtendingRecipe& operator=(class MapExtendingRecipe const &) = delete;
     MapExtendingRecipe(class MapExtendingRecipe const &) = delete;
     MapExtendingRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapExtendingRecipe();
@@ -41,8 +39,6 @@ public:
 //private:
     MCAPI void _updateMapInstance(class ItemInstance &) const;
 
-
 private:
-
 
 };

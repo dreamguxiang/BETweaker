@@ -15,7 +15,6 @@ class GlowStoneFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWSTONEFEATURE
 public:
     class GlowStoneFeature& operator=(class GlowStoneFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     GlowStoneFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GlowStoneFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTONEFEATURE
 #endif
-
-
 
 };

@@ -15,14 +15,12 @@ class HopperContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERCONTAINERMANAGERMODEL
 public:
     class HopperContainerManagerModel& operator=(class HopperContainerManagerModel const &) = delete;
     HopperContainerManagerModel(class HopperContainerManagerModel const &) = delete;
     HopperContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HopperContainerManagerModel();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

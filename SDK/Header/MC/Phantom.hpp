@@ -16,14 +16,12 @@ class Phantom : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHANTOM
 public:
     class Phantom& operator=(class Phantom const &) = delete;
     Phantom(class Phantom const &) = delete;
     Phantom() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Phantom();
@@ -40,7 +38,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender() const;
+    /*132*/ virtual bool shouldRender();
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
@@ -58,7 +56,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHANTOM
 #endif
     MCAPI Phantom(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

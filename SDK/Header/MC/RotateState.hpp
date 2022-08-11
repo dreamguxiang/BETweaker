@@ -15,14 +15,12 @@ class RotateState : public PetSleepWithOwnerState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROTATESTATE
 public:
     class RotateState& operator=(class RotateState const &) = delete;
     RotateState(class RotateState const &) = delete;
     RotateState() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RotateState();
@@ -31,7 +29,5 @@ public:
     /*3*/ virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATESTATE
 #endif
-
-
 
 };

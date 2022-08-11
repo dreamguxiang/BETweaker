@@ -15,13 +15,11 @@ class ScriptCustomEventPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCUSTOMEVENTPACKET
 public:
     class ScriptCustomEventPacket& operator=(class ScriptCustomEventPacket const &) = delete;
     ScriptCustomEventPacket(class ScriptCustomEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptCustomEventPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCUSTOMEVENTPACKET
 #endif
     MCAPI ScriptCustomEventPacket();
-
-
 
 };

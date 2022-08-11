@@ -15,14 +15,12 @@ class SmithingTableContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLECONTAINERMANAGERMODEL
 public:
     class SmithingTableContainerManagerModel& operator=(class SmithingTableContainerManagerModel const &) = delete;
     SmithingTableContainerManagerModel(class SmithingTableContainerManagerModel const &) = delete;
     SmithingTableContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SmithingTableContainerManagerModel();
@@ -39,7 +37,5 @@ public:
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
-
-
 
 };

@@ -12,7 +12,6 @@ class InsideWaterlilyBlockSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEWATERLILYBLOCKSYSTEMIMPL
 public:
     class InsideWaterlilyBlockSystemImpl& operator=(class InsideWaterlilyBlockSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     InsideWaterlilyBlockSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWATERLILYBLOCKSYSTEMIMPL
 #endif
     MCAPI static void _tickMovementSystem(class StrictEntityContext const &, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const &, struct StateVectorComponent &);
-
-
 
 };

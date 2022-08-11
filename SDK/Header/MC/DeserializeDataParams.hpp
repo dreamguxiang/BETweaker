@@ -12,19 +12,15 @@ struct DeserializeDataParams {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZEDATAPARAMS
 public:
     struct DeserializeDataParams& operator=(struct DeserializeDataParams const &) = delete;
     DeserializeDataParams(struct DeserializeDataParams const &) = delete;
     DeserializeDataParams() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERIALIZEDATAPARAMS
+#endif
     MCAPI ~DeserializeDataParams();
-
-protected:
-
-private:
 
 };

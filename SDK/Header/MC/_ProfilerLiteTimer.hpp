@@ -13,7 +13,6 @@ class _ProfilerLiteTimer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION__PROFILERLITETIMER
 public:
     class _ProfilerLiteTimer& operator=(class _ProfilerLiteTimer const &) = delete;
@@ -21,14 +20,10 @@ public:
     _ProfilerLiteTimer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__PROFILERLITETIMER
 #endif
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
-    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~_ProfilerLiteTimer();
-
-
 
 };

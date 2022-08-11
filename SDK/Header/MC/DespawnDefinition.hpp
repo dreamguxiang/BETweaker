@@ -15,7 +15,6 @@ class DespawnDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNDEFINITION
 public:
     class DespawnDefinition& operator=(class DespawnDefinition const &) = delete;
@@ -23,12 +22,9 @@ public:
     DespawnDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNDEFINITION
 #endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>> &);
-
-
 
 };

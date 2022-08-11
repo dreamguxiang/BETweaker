@@ -16,7 +16,6 @@ class PistonArmBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONARMBLOCK
 public:
     class PistonArmBlock& operator=(class PistonArmBlock const &) = delete;
@@ -24,10 +23,9 @@ public:
     PistonArmBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PistonArmBlock();
-    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>);
     /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*19*/ virtual void __unk_vfn_19();
     /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
@@ -51,7 +49,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
@@ -60,7 +58,7 @@ public:
     /*99*/ virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
+    /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -84,8 +82,6 @@ public:
 //private:
     MCAPI void _getCollisions(class AABB &, class AABB &, class AABB &, unsigned char) const;
 
-
 private:
-
 
 };

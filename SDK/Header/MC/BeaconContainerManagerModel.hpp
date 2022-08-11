@@ -15,14 +15,12 @@ class BeaconContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONCONTAINERMANAGERMODEL
 public:
     class BeaconContainerManagerModel& operator=(class BeaconContainerManagerModel const &) = delete;
     BeaconContainerManagerModel(class BeaconContainerManagerModel const &) = delete;
     BeaconContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BeaconContainerManagerModel();
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI void _resetSelectionState();
 
-
 private:
-
 
 };

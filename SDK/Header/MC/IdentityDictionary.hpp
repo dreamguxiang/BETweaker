@@ -14,13 +14,11 @@ class IdentityDictionary {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTITYDICTIONARY
 public:
     class IdentityDictionary& operator=(class IdentityDictionary const &) = delete;
     IdentityDictionary(class IdentityDictionary const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDICTIONARY
@@ -37,7 +35,5 @@ public:
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, std::string const &);
     MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const &, std::string const &);
     MCAPI ~IdentityDictionary();
-
-
 
 };

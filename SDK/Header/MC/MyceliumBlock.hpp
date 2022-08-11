@@ -15,14 +15,12 @@ class MyceliumBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MYCELIUMBLOCK
 public:
     class MyceliumBlock& operator=(class MyceliumBlock const &) = delete;
     MyceliumBlock(class MyceliumBlock const &) = delete;
     MyceliumBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MyceliumBlock();
@@ -73,8 +71,6 @@ public:
 //private:
     MCAPI bool _canSpreadToBlock(class BlockSource const &, class BlockPos const &) const;
 
-
 private:
-
 
 };

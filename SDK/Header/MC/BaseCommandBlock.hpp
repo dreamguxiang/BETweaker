@@ -14,13 +14,11 @@ class BaseCommandBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECOMMANDBLOCK
 public:
     class BaseCommandBlock& operator=(class BaseCommandBlock const &) = delete;
     BaseCommandBlock(class BaseCommandBlock const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECOMMANDBLOCK
@@ -53,9 +51,7 @@ public:
     MCAPI void _setCommand(class BlockSource &, class CommandOrigin const &, std::string const &);
     MCAPI void compile(class CommandOrigin const &, class Level &);
 
-
 private:
     MCAPI static std::string const DefaultCommandBlockName;
-
 
 };

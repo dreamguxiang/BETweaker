@@ -14,14 +14,12 @@ class Cavifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVIFIER
 public:
     class Cavifier& operator=(class Cavifier const &) = delete;
     Cavifier(class Cavifier const &) = delete;
     Cavifier() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVIFIER
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI float _getSpaghetti2d(class Vec3) const;
 
-
 private:
-
 
 };

@@ -15,13 +15,11 @@ class SetActorMotionPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORMOTIONPACKET
 public:
     class SetActorMotionPacket& operator=(class SetActorMotionPacket const &) = delete;
     SetActorMotionPacket(class SetActorMotionPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetActorMotionPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetActorMotionPacket(class Actor const &);
     MCAPI SetActorMotionPacket();
-
-
 
 };

@@ -16,14 +16,12 @@ class EnchantedBookItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTEDBOOKITEM
 public:
     class EnchantedBookItem& operator=(class EnchantedBookItem const &) = delete;
     EnchantedBookItem(class EnchantedBookItem const &) = delete;
     EnchantedBookItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EnchantedBookItem();
@@ -34,8 +32,8 @@ public:
     /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*63*/ virtual int getEnchantSlot() const;
-    /*64*/ virtual int getEnchantValue() const;
+    /*63*/ virtual int getEnchantSlot();
+    /*64*/ virtual int getEnchantValue();
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -43,10 +41,9 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTEDBOOKITEM
 #endif
     MCAPI EnchantedBookItem(std::string const &, int, bool);
-
-
 
 };

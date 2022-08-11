@@ -14,13 +14,11 @@ class ChunkBuildOrderPolicy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBUILDORDERPOLICY
 public:
     class ChunkBuildOrderPolicy& operator=(class ChunkBuildOrderPolicy const &) = delete;
     ChunkBuildOrderPolicy(class ChunkBuildOrderPolicy const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicy();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICY
 #endif
     MCAPI ChunkBuildOrderPolicy();
-
-
 
 };

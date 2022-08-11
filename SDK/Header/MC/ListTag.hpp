@@ -49,13 +49,11 @@ public:
     LIAPI std::vector<Tag*>::const_iterator end() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAG
 public:
     class ListTag& operator=(class ListTag const &) = delete;
     ListTag(class ListTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ListTag();
@@ -84,7 +82,5 @@ public:
     MCAPI std::string const & getString(int) const;
     MCAPI void popBack();
     MCAPI int size() const;
-
-
 
 };

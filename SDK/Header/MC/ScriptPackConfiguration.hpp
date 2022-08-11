@@ -13,12 +13,10 @@ class ScriptPackConfiguration {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKCONFIGURATION
 public:
     class ScriptPackConfiguration& operator=(class ScriptPackConfiguration const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATION
@@ -34,7 +32,5 @@ public:
     MCAPI class std::unordered_map<std::string, class Json::Value, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Json::Value>>> const & getVariables() const;
     MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration &&);
     MCAPI ~ScriptPackConfiguration();
-
-
 
 };

@@ -24,13 +24,11 @@ public:
     LIAPI operator std::string() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGTAG
 public:
     class StringTag& operator=(class StringTag const &) = delete;
     StringTag(class StringTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StringTag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI StringTag(std::string);
     MCAPI StringTag();
-
-
 
 };

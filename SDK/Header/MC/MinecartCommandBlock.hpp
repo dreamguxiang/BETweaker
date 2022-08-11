@@ -16,7 +16,6 @@ class MinecartCommandBlock : public Minecart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTCOMMANDBLOCK
 public:
     class MinecartCommandBlock& operator=(class MinecartCommandBlock const &) = delete;
@@ -24,12 +23,11 @@ public:
     MinecartCommandBlock() = delete;
 #endif
 
-
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~MinecartCommandBlock();
     /*41*/ virtual void __unk_vfn_41();
-    /*60*/ virtual bool canShowNameTag() const;
+    /*60*/ virtual bool canShowNameTag();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*82*/ virtual void __unk_vfn_82();
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCOMMANDBLOCK
 #endif
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

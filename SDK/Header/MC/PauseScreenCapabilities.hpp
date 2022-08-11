@@ -14,18 +14,16 @@ struct PauseScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAUSESCREENCAPABILITIES
 public:
     struct PauseScreenCapabilities& operator=(struct PauseScreenCapabilities const &) = delete;
     PauseScreenCapabilities(struct PauseScreenCapabilities const &) = delete;
     PauseScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~PauseScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAUSESCREENCAPABILITIES
+#endif
 
 };

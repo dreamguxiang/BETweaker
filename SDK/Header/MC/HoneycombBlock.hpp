@@ -15,14 +15,12 @@ class HoneycombBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HONEYCOMBBLOCK
 public:
     class HoneycombBlock& operator=(class HoneycombBlock const &) = delete;
     HoneycombBlock(class HoneycombBlock const &) = delete;
     HoneycombBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoneycombBlock();
@@ -64,7 +62,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HONEYCOMBBLOCK
 #endif
     MCAPI HoneycombBlock(std::string const &, int, class Material const &);
-
-
 
 };

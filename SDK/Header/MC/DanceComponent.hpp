@@ -14,13 +14,11 @@ class DanceComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENT
 public:
     class DanceComponent& operator=(class DanceComponent const &) = delete;
     DanceComponent(class DanceComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENT
@@ -29,7 +27,5 @@ public:
     MCAPI bool inListenDistance(class Vec3 const &) const;
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void initFromDefinition(class Actor &, float);
-
-
 
 };

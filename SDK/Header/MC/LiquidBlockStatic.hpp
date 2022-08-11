@@ -15,14 +15,12 @@ class LiquidBlockStatic : public LiquidBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDBLOCKSTATIC
 public:
     class LiquidBlockStatic& operator=(class LiquidBlockStatic const &) = delete;
     LiquidBlockStatic(class LiquidBlockStatic const &) = delete;
     LiquidBlockStatic() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LiquidBlockStatic();
@@ -71,8 +69,6 @@ public:
 //private:
     MCAPI void _setDynamic(class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

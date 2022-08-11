@@ -14,7 +14,6 @@ class GiveableComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GIVEABLECOMPONENT
 public:
     class GiveableComponent& operator=(class GiveableComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     GiveableComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GIVEABLECOMPONENT
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     MCAPI ~GiveableComponent();
-
-
 
 };

@@ -12,19 +12,15 @@ struct PlayerStorageIds {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSTORAGEIDS
 public:
     struct PlayerStorageIds& operator=(struct PlayerStorageIds const &) = delete;
     PlayerStorageIds(struct PlayerStorageIds const &) = delete;
     PlayerStorageIds() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSTORAGEIDS
+#endif
     MCAPI ~PlayerStorageIds();
-
-protected:
-
-private:
 
 };

@@ -15,7 +15,6 @@ class LootItemCondition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMCONDITION
 public:
     class LootItemCondition& operator=(class LootItemCondition const &) = delete;
@@ -23,12 +22,9 @@ public:
     LootItemCondition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITION
 #endif
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
-
-
 
 };

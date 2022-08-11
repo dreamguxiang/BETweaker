@@ -15,14 +15,12 @@ class IdleState : public PetSleepWithOwnerState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDLESTATE
 public:
     class IdleState& operator=(class IdleState const &) = delete;
     IdleState(class IdleState const &) = delete;
     IdleState() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IdleState();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDLESTATE
 #endif
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
-
-
 
 };

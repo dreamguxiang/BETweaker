@@ -24,13 +24,11 @@ public:
     LIAPI operator float() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATTAG
 public:
     class FloatTag& operator=(class FloatTag const &) = delete;
     FloatTag(class FloatTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FloatTag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI FloatTag(float);
     MCAPI FloatTag();
-
-
 
 };

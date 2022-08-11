@@ -15,14 +15,12 @@ class LegacyChunkStorage : public ChunkSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYCHUNKSTORAGE
 public:
     class LegacyChunkStorage& operator=(class LegacyChunkStorage const &) = delete;
     LegacyChunkStorage(class LegacyChunkStorage const &) = delete;
     LegacyChunkStorage() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
@@ -40,8 +38,6 @@ public:
     MCAPI void _markChunkAsImported(class ChunkPos const &);
     MCAPI bool _openRegionFile();
 
-
 private:
-
 
 };

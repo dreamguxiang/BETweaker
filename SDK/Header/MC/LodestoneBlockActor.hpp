@@ -15,14 +15,12 @@ class LodestoneBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONEBLOCKACTOR
 public:
     class LodestoneBlockActor& operator=(class LodestoneBlockActor const &) = delete;
     LodestoneBlockActor(class LodestoneBlockActor const &) = delete;
     LodestoneBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LodestoneBlockActor();
@@ -49,9 +47,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const sTagName_Handle;
-
 
 };

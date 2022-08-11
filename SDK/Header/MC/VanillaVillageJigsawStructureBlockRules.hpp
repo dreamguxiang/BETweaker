@@ -14,7 +14,6 @@ class VanillaVillageJigsawStructureBlockRules {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKRULES
 public:
     class VanillaVillageJigsawStructureBlockRules& operator=(class VanillaVillageJigsawStructureBlockRules const &) = delete;
@@ -22,12 +21,9 @@ public:
     VanillaVillageJigsawStructureBlockRules() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKRULES
 #endif
     MCAPI static void initialize(class JigsawStructureRegistry &);
-
-
 
 };

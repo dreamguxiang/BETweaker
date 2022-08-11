@@ -14,7 +14,6 @@ class _TickPtr {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION__TICKPTR
 public:
     class _TickPtr& operator=(class _TickPtr const &) = delete;
@@ -22,11 +21,8 @@ public:
     _TickPtr() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
 #endif
-
-
 
 };

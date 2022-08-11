@@ -17,14 +17,12 @@ public:
 enum SignType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIGNBLOCKACTOR
 public:
     class SignBlockActor& operator=(class SignBlockActor const &) = delete;
     SignBlockActor(class SignBlockActor const &) = delete;
     SignBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SignBlockActor();
@@ -54,7 +52,5 @@ public:
     MCAPI void setMessage(class TextObjectRoot, std::string);
     MCAPI void setSignTextColor(class mce::Color const &);
     MCAPI void setType(enum SignBlockActor::SignType);
-
-
 
 };

@@ -16,14 +16,12 @@ class Dolphin : public WaterAnimal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOLPHIN
 public:
     class Dolphin& operator=(class Dolphin const &) = delete;
     Dolphin(class Dolphin const &) = delete;
     Dolphin() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -41,7 +39,7 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle() const;
+    /*194*/ virtual bool canBePulledIntoVehicle();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOLPHIN
 #endif
     MCAPI Dolphin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

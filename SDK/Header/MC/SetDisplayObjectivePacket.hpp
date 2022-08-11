@@ -16,13 +16,11 @@ class SetDisplayObjectivePacket : public Packet {
     char filler[136];
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDISPLAYOBJECTIVEPACKET
 public:
     class SetDisplayObjectivePacket& operator=(class SetDisplayObjectivePacket const &) = delete;
     SetDisplayObjectivePacket(class SetDisplayObjectivePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetDisplayObjectivePacket();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI SetDisplayObjectivePacket(std::string const &, std::string const &, std::string const &, std::string const &, enum ObjectiveSortOrder);
     MCAPI SetDisplayObjectivePacket();
-
-
 
 };

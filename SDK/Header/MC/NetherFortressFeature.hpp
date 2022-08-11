@@ -15,14 +15,12 @@ class NetherFortressFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSFEATURE
 public:
     class NetherFortressFeature& operator=(class NetherFortressFeature const &) = delete;
     NetherFortressFeature(class NetherFortressFeature const &) = delete;
     NetherFortressFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherFortressFeature();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSFEATURE
 #endif
     MCAPI NetherFortressFeature(unsigned int &, class BaseGameVersion const &);
-
-
 
 };

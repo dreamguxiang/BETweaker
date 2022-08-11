@@ -26,7 +26,6 @@ public:
 	
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPE
 public:
     class Recipe& operator=(class Recipe const &) = delete;
@@ -34,16 +33,15 @@ public:
     Recipe() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Recipe();
-    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const = 0;
-    /*2*/ virtual int getCraftingSize() const = 0;
-    /*3*/ virtual class RecipeIngredient const & getIngredient(int, int) const = 0;
-    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem() const = 0;
-    /*5*/ virtual bool isShapeless() const = 0;
-    /*6*/ virtual bool matches(class CraftingContainer &, class Level &) const = 0;
-    /*7*/ virtual int size() const = 0;
+    /*1*/ virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &);
+    /*2*/ virtual int getCraftingSize();
+    /*3*/ virtual class RecipeIngredient const & getIngredient(int, int);
+    /*4*/ virtual std::vector<class ItemInstance> const & getResultItem();
+    /*5*/ virtual bool isShapeless();
+    /*6*/ virtual bool matches(class CraftingContainer &, class Level &);
+    /*7*/ virtual int size();
     /*8*/ virtual class mce::UUID const & getId() const;
     /*9*/ virtual class ItemPack const & getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
@@ -68,8 +66,6 @@ public:
 //protected:
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const &);
 
-
 protected:
-
 
 };

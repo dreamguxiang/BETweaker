@@ -14,7 +14,6 @@ class ActorEventResponseFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSEFACTORY
 public:
     class ActorEventResponseFactory& operator=(class ActorEventResponseFactory const &) = delete;
@@ -22,13 +21,10 @@ public:
     ActorEventResponseFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
 #endif
     MCAPI void initSchema();
     MCAPI void initializeFactory(class Experiments const &);
-
-
 
 };

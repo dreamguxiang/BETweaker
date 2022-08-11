@@ -15,14 +15,12 @@ class MusicBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSICBLOCKACTOR
 public:
     class MusicBlockActor& operator=(class MusicBlockActor const &) = delete;
     MusicBlockActor(class MusicBlockActor const &) = delete;
     MusicBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MusicBlockActor();
@@ -41,7 +39,5 @@ public:
     MCAPI MusicBlockActor(class BlockPos const &);
     MCAPI void playNote(class BlockSource &, class BlockPos const &);
     MCAPI void tune();
-
-
 
 };

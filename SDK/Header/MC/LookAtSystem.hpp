@@ -14,14 +14,12 @@ class LookAtSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATSYSTEM
 public:
     class LookAtSystem& operator=(class LookAtSystem const &) = delete;
     LookAtSystem(class LookAtSystem const &) = delete;
     LookAtSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookAtSystem();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATSYSTEM
 #endif
     MCAPI static void tickLookAtComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class LookAtComponent> &);
-
-
 
 };

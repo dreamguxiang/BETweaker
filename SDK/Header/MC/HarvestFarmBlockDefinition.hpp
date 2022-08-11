@@ -15,13 +15,11 @@ class HarvestFarmBlockDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARVESTFARMBLOCKDEFINITION
 public:
     class HarvestFarmBlockDefinition& operator=(class HarvestFarmBlockDefinition const &) = delete;
     HarvestFarmBlockDefinition(class HarvestFarmBlockDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI HarvestFarmBlockDefinition();
     MCAPI void initialize(class EntityContext &, class HarvestFarmBlockGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HarvestFarmBlockDefinition>> &);
-
-
 
 };

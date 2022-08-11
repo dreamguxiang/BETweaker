@@ -14,7 +14,6 @@ class ListTagFloatAdder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGFLOATADDER
 public:
     class ListTagFloatAdder& operator=(class ListTagFloatAdder const &) = delete;
@@ -22,13 +21,10 @@ public:
     ListTagFloatAdder() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGFLOATADDER
 #endif
     MCAPI class ListTagFloatAdder & operator()(float);
     MCAPI ~ListTagFloatAdder();
-
-
 
 };

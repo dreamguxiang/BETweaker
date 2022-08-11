@@ -16,14 +16,12 @@ class ThrownEnderpearl : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNENDERPEARL
 public:
     class ThrownEnderpearl& operator=(class ThrownEnderpearl const &) = delete;
     ThrownEnderpearl(class ThrownEnderpearl const &) = delete;
     ThrownEnderpearl() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -53,7 +51,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNENDERPEARL
 #endif
     MCAPI ThrownEnderpearl(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

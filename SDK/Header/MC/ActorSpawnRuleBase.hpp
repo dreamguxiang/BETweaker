@@ -15,14 +15,12 @@ class ActorSpawnRuleBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEBASE
 public:
     class ActorSpawnRuleBase& operator=(class ActorSpawnRuleBase const &) = delete;
     ActorSpawnRuleBase(class ActorSpawnRuleBase const &) = delete;
     ActorSpawnRuleBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEBASE
@@ -33,8 +31,6 @@ public:
     MCAPI void _getResources(class ResourcePackManager &, class MobSpawnRules const &, class std::function<void (std::string const &, int, class BiomeFilterGroup &, class MobSpawnRules &, class SemVersion const &)>);
     MCAPI bool _readJsonHeader(std::string &&, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
 
-
 protected:
-
 
 };

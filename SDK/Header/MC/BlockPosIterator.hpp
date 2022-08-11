@@ -14,14 +14,12 @@ class BlockPosIterator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSITERATOR
 public:
     class BlockPosIterator& operator=(class BlockPosIterator const &) = delete;
     BlockPosIterator(class BlockPosIterator const &) = delete;
     BlockPosIterator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSITERATOR
@@ -32,7 +30,5 @@ public:
     MCAPI bool operator!=(class BlockPosIterator const &) const;
     MCAPI class BlockPos const & operator*();
     MCAPI class BlockPosIterator & operator++();
-
-
 
 };

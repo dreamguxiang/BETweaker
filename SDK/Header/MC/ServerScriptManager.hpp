@@ -13,14 +13,12 @@ class ServerScriptManager {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSCRIPTMANAGER
 public:
     class ServerScriptManager& operator=(class ServerScriptManager const &) = delete;
     ServerScriptManager(class ServerScriptManager const &) = delete;
     ServerScriptManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerScriptManager();
@@ -48,8 +46,6 @@ public:
     MCAPI void _sendInitializeEvent(class ServerLevel &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;
 
-
 private:
-
 
 };

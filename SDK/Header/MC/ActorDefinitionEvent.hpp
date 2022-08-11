@@ -12,12 +12,10 @@ class ActorDefinitionEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONEVENT
 public:
     ActorDefinitionEvent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENT
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI void _evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
 
-
 private:
-
 
 };

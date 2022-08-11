@@ -15,14 +15,12 @@ class SHLeftTurn : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHLEFTTURN
 public:
     class SHLeftTurn& operator=(class SHLeftTurn const &) = delete;
     SHLeftTurn(class SHLeftTurn const &) = delete;
     SHLeftTurn() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHLeftTurn();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHLEFTTURN
 #endif
-
-
 
 };

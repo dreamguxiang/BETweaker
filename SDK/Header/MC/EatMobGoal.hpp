@@ -12,14 +12,12 @@ class EatMobGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EATMOBGOAL
 public:
     class EatMobGoal& operator=(class EatMobGoal const &) = delete;
     EatMobGoal(class EatMobGoal const &) = delete;
     EatMobGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EatMobGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATMOBGOAL
 #endif
     MCAPI EatMobGoal(class Mob &);
-
-
 
 };

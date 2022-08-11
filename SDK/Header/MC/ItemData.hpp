@@ -12,7 +12,6 @@ class ItemData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDATA
 public:
     class ItemData& operator=(class ItemData const &) = delete;
@@ -20,12 +19,9 @@ public:
     ItemData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDATA
 #endif
     MCAPI ~ItemData();
-
-
 
 };

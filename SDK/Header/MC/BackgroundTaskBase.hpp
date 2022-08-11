@@ -14,14 +14,12 @@ class BackgroundTaskBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDTASKBASE
 public:
     class BackgroundTaskBase& operator=(class BackgroundTaskBase const &) = delete;
     BackgroundTaskBase(class BackgroundTaskBase const &) = delete;
     BackgroundTaskBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKBASE
@@ -51,11 +49,9 @@ public:
 
 //private:
 
-
 protected:
 
 private:
     MCAPI static class BackgroundTaskBase * gCurrentTask;
-
 
 };

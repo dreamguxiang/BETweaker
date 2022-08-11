@@ -15,14 +15,12 @@ class HangingRoots : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HANGINGROOTS
 public:
     class HangingRoots& operator=(class HangingRoots const &) = delete;
     HangingRoots(class HangingRoots const &) = delete;
     HangingRoots() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HangingRoots();
@@ -49,7 +47,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
@@ -69,12 +67,10 @@ public:
     /*173*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGROOTS
 #endif
     MCAPI HangingRoots(std::string const &, int);
-
-
 
 };

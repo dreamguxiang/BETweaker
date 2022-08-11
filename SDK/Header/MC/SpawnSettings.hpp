@@ -12,19 +12,15 @@ struct SpawnSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNSETTINGS
 public:
     struct SpawnSettings& operator=(struct SpawnSettings const &) = delete;
     SpawnSettings(struct SpawnSettings const &) = delete;
     SpawnSettings() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNSETTINGS
+#endif
     MCAPI ~SpawnSettings();
-
-protected:
-
-private:
 
 };

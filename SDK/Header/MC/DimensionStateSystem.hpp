@@ -13,7 +13,6 @@ class DimensionStateSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONSTATESYSTEM
 public:
     class DimensionStateSystem& operator=(class DimensionStateSystem const &) = delete;
@@ -21,13 +20,10 @@ public:
     DimensionStateSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONSTATESYSTEM
 #endif
     MCAPI static bool isDimensionReady(class EntityContext const &);
     MCAPI static void setDimensionState(class EntityContext &, enum DimensionStateComponent::DimensionState);
-
-
 
 };

@@ -15,14 +15,12 @@ class EffectCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EFFECTCOMMAND
 public:
     class EffectCommand& operator=(class EffectCommand const &) = delete;
     EffectCommand(class EffectCommand const &) = delete;
     EffectCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EffectCommand();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

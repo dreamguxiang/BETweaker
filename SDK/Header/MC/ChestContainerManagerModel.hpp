@@ -15,14 +15,12 @@ class ChestContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTCONTAINERMANAGERMODEL
 public:
     class ChestContainerManagerModel& operator=(class ChestContainerManagerModel const &) = delete;
     ChestContainerManagerModel(class ChestContainerManagerModel const &) = delete;
     ChestContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChestContainerManagerModel();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
-
-
 
 };

@@ -12,7 +12,6 @@ class LoadedResourceData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOADEDRESOURCEDATA
 public:
     class LoadedResourceData& operator=(class LoadedResourceData const &) = delete;
@@ -20,12 +19,9 @@ public:
     LoadedResourceData() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADEDRESOURCEDATA
 #endif
     MCAPI ~LoadedResourceData();
-
-
 
 };

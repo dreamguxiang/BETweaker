@@ -14,14 +14,12 @@ class ActorInteraction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINTERACTION
 public:
     class ActorInteraction& operator=(class ActorInteraction const &) = delete;
     ActorInteraction(class ActorInteraction const &) = delete;
     ActorInteraction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINTERACTION
@@ -33,7 +31,5 @@ public:
     MCAPI void setInteractText(std::string const &);
     MCAPI bool shouldCapture() const;
     MCAPI ~ActorInteraction();
-
-
 
 };

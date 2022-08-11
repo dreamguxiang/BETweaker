@@ -15,14 +15,12 @@ class MapUpgradingRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPUPGRADINGRECIPE
 public:
     class MapUpgradingRecipe& operator=(class MapUpgradingRecipe const &) = delete;
     MapUpgradingRecipe(class MapUpgradingRecipe const &) = delete;
     MapUpgradingRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapUpgradingRecipe();
@@ -37,7 +35,5 @@ public:
     MCAPI MapUpgradingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const CartographyTableID;
     MCAPI static class mce::UUID const CraftingTableID;
-
-
 
 };

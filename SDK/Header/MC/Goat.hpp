@@ -16,14 +16,12 @@ class Goat : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOAT
 public:
     class Goat& operator=(class Goat const &) = delete;
     Goat(class Goat const &) = delete;
     Goat() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -69,10 +67,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int DEFAULT_HORN_COUNT;
     MCAPI static int SCREAMING_GOAT_VARIANT;
-
 
 };

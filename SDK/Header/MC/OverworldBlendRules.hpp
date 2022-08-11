@@ -12,19 +12,15 @@ struct OverworldBlendRules {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBLENDRULES
 public:
     struct OverworldBlendRules& operator=(struct OverworldBlendRules const &) = delete;
     OverworldBlendRules(struct OverworldBlendRules const &) = delete;
     OverworldBlendRules() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBLENDRULES
+#endif
     MCAPI ~OverworldBlendRules();
-
-protected:
-
-private:
 
 };

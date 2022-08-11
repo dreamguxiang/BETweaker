@@ -14,14 +14,12 @@ class SummonActorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONACTORGOAL
 public:
     class SummonActorGoal& operator=(class SummonActorGoal const &) = delete;
     SummonActorGoal(class SummonActorGoal const &) = delete;
     SummonActorGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SummonActorGoal();
@@ -40,8 +38,6 @@ public:
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     MCAPI int _selectBestSpell(class Actor &) const;
 
-
 private:
-
 
 };

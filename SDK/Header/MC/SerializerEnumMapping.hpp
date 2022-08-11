@@ -14,14 +14,12 @@ class SerializerEnumMapping {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERENUMMAPPING
 public:
     class SerializerEnumMapping& operator=(class SerializerEnumMapping const &) = delete;
     SerializerEnumMapping(class SerializerEnumMapping const &) = delete;
     SerializerEnumMapping() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERENUMMAPPING
@@ -30,7 +28,5 @@ public:
     MCAPI bool lookup(__int64, std::string &) const;
     MCAPI class SerializerEnumMapping & operator=(class SerializerEnumMapping &&);
     MCAPI std::string toString() const;
-
-
 
 };

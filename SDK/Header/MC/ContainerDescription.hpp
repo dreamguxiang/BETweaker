@@ -15,18 +15,18 @@ struct ContainerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERDESCRIPTION
 public:
     struct ContainerDescription& operator=(struct ContainerDescription const &) = delete;
     ContainerDescription(struct ContainerDescription const &) = delete;
     ContainerDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~ContainerDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERDESCRIPTION
+#endif
 
 };

@@ -13,14 +13,12 @@ class ItemRegistryManager {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRYMANAGER
 public:
     class ItemRegistryManager& operator=(class ItemRegistryManager const &) = delete;
     ItemRegistryManager(class ItemRegistryManager const &) = delete;
     ItemRegistryManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYMANAGER
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class std::weak_ptr<class ItemRegistry>, class std::allocator<class std::weak_ptr<class ItemRegistry>>> mThreadLocalRegistry;
-
 
 };

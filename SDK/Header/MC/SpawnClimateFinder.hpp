@@ -20,14 +20,12 @@ struct ResultDetails {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNCLIMATEFINDER
 public:
     class SpawnClimateFinder& operator=(class SpawnClimateFinder const &) = delete;
     SpawnClimateFinder(class SpawnClimateFinder const &) = delete;
     SpawnClimateFinder() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCLIMATEFINDER
@@ -40,8 +38,6 @@ public:
     MCAPI struct std::pair<class BlockPos, __int64> _getSpawnPositionAndFitness(class BlockPos) const;
     MCAPI struct SpawnClimateFinder::ResultDetails _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
 
-
 private:
-
 
 };

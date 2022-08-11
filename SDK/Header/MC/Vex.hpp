@@ -16,7 +16,6 @@ class Vex : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEX
 public:
     class Vex& operator=(class Vex const &) = delete;
@@ -24,13 +23,12 @@ public:
     Vex() = delete;
 #endif
 
-
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Vex();
     /*41*/ virtual void __unk_vfn_41();
-    /*58*/ virtual bool isInWall() const;
+    /*58*/ virtual bool isInWall();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*82*/ virtual void __unk_vfn_82();
@@ -61,7 +59,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEX
 #endif
     MCAPI Vex(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

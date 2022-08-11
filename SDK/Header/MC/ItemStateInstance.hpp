@@ -14,7 +14,6 @@ class ItemStateInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATEINSTANCE
 public:
     class ItemStateInstance& operator=(class ItemStateInstance const &) = delete;
@@ -22,13 +21,10 @@ public:
     ItemStateInstance() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTATEINSTANCE
 #endif
     MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
     MCAPI bool isValidData(unsigned int) const;
-
-
 
 };

@@ -14,14 +14,12 @@ class LevelSoundEventUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDEVENTUTILS
 public:
     class LevelSoundEventUtils& operator=(class LevelSoundEventUtils const &) = delete;
     LevelSoundEventUtils(class LevelSoundEventUtils const &) = delete;
     LevelSoundEventUtils() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTUTILS
@@ -30,9 +28,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
-
 
 };

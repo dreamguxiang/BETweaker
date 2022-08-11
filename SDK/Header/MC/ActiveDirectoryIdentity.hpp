@@ -14,14 +14,12 @@ class ActiveDirectoryIdentity {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVEDIRECTORYIDENTITY
 public:
     class ActiveDirectoryIdentity& operator=(class ActiveDirectoryIdentity const &) = delete;
     ActiveDirectoryIdentity(class ActiveDirectoryIdentity const &) = delete;
     ActiveDirectoryIdentity() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYIDENTITY
@@ -36,9 +34,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string mCachedServiceEndpoint;
-
 
 };

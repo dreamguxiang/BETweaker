@@ -14,14 +14,12 @@ class ActorDefinitionDiffList {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONDIFFLIST
 public:
     class ActorDefinitionDiffList& operator=(class ActorDefinitionDiffList const &) = delete;
     ActorDefinitionDiffList(class ActorDefinitionDiffList const &) = delete;
     ActorDefinitionDiffList() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDIFFLIST
@@ -52,8 +50,6 @@ public:
 //private:
     MCAPI void _updateStack();
 
-
 private:
-
 
 };

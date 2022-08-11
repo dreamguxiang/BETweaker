@@ -14,19 +14,15 @@ class IFileAccess {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEACCESS
 public:
     class IFileAccess& operator=(class IFileAccess const &) = delete;
     IFileAccess(class IFileAccess const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEACCESS
 #endif
     MCAPI IFileAccess();
-
-
 
 };

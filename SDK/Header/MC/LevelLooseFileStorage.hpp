@@ -16,7 +16,6 @@ class LevelLooseFileStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLOOSEFILESTORAGE
 public:
     class LevelLooseFileStorage& operator=(class LevelLooseFileStorage const &) = delete;
@@ -24,13 +23,10 @@ public:
     LevelLooseFileStorage() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLOOSEFILESTORAGE
 #endif
     MCAPI LevelLooseFileStorage(class Core::Path const &, class ContentIdentity const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy() const;
-
-
 
 };

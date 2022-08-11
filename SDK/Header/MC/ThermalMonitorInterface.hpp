@@ -14,7 +14,6 @@ class ThermalMonitorInterface {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THERMALMONITORINTERFACE
 public:
     class ThermalMonitorInterface& operator=(class ThermalMonitorInterface const &) = delete;
@@ -22,11 +21,8 @@ public:
     ThermalMonitorInterface() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THERMALMONITORINTERFACE
 #endif
-
-
 
 };

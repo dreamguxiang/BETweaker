@@ -14,14 +14,12 @@ class FreezingSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZINGSYSTEM
 public:
     class FreezingSystem& operator=(class FreezingSystem const &) = delete;
     FreezingSystem(class FreezingSystem const &) = delete;
     FreezingSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FreezingSystem();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
     MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
-
-
 
 };

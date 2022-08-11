@@ -15,14 +15,12 @@ class LootPool {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOL
 public:
     class LootPool& operator=(class LootPool const &) = delete;
     LootPool(class LootPool const &) = delete;
     LootPool() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOL
@@ -33,8 +31,6 @@ public:
 //protected:
     MCAPI void addRandomItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 
-
 protected:
-
 
 };

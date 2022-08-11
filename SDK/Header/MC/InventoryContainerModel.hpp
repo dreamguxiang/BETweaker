@@ -15,14 +15,12 @@ class InventoryContainerModel : public ContainerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYCONTAINERMODEL
 public:
     class InventoryContainerModel& operator=(class InventoryContainerModel const &) = delete;
     InventoryContainerModel(class InventoryContainerModel const &) = delete;
     InventoryContainerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -46,8 +44,6 @@ public:
 //private:
     MCAPI void _refreshSlot(int);
 
-
 private:
-
 
 };

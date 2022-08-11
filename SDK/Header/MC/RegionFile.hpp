@@ -16,7 +16,6 @@ class RegionFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGIONFILE
 public:
     class RegionFile& operator=(class RegionFile const &) = delete;
@@ -24,14 +23,11 @@ public:
     RegionFile() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGIONFILE
 #endif
     MCAPI RegionFile(class Core::Path const &);
     MCAPI bool open();
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);
-
-
 
 };

@@ -25,7 +25,6 @@ struct ItemTransforms {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDEROFFSETSITEMCOMPONENT
 public:
     class RenderOffsetsItemComponent& operator=(class RenderOffsetsItemComponent const &) = delete;
@@ -33,14 +32,13 @@ public:
     RenderOffsetsItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RenderOffsetsItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual bool isNetworkComponent();
     /*2*/ MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDEROFFSETSITEMCOMPONENT
 #endif
@@ -50,10 +48,8 @@ public:
 //private:
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
-
 private:
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
-
 
 };

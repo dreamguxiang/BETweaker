@@ -15,7 +15,6 @@ class Feature : public IFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURE
 public:
     class Feature& operator=(class Feature const &) = delete;
@@ -23,12 +22,11 @@ public:
     Feature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Feature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /*2*/ virtual bool isValidPlacement(std::string const &);
-    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
 #endif
     MCAPI Feature(class Actor *);
@@ -37,8 +35,6 @@ public:
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI void _setManuallyPlaced(class Actor *);
 
-
 protected:
-
 
 };

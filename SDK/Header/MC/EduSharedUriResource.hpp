@@ -14,20 +14,17 @@ struct EduSharedUriResource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUSHAREDURIRESOURCE
 public:
     struct EduSharedUriResource& operator=(struct EduSharedUriResource const &) = delete;
     EduSharedUriResource(struct EduSharedUriResource const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUSHAREDURIRESOURCE
+#endif
     MCAPI EduSharedUriResource(class CompoundTag const &);
     MCAPI EduSharedUriResource();
     MCAPI ~EduSharedUriResource();
-
-protected:
-
-private:
+    MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const &);
 
 };

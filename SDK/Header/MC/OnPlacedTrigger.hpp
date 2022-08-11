@@ -12,7 +12,6 @@ class OnPlacedTrigger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLACEDTRIGGER
 public:
     class OnPlacedTrigger& operator=(class OnPlacedTrigger const &) = delete;
@@ -20,12 +19,9 @@ public:
     OnPlacedTrigger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
 #endif
     MCAPI ~OnPlacedTrigger();
-
-
 
 };

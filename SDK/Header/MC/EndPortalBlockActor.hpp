@@ -15,14 +15,12 @@ class EndPortalBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPORTALBLOCKACTOR
 public:
     class EndPortalBlockActor& operator=(class EndPortalBlockActor const &) = delete;
     EndPortalBlockActor(class EndPortalBlockActor const &) = delete;
     EndPortalBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EndPortalBlockActor();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALBLOCKACTOR
 #endif
     MCAPI EndPortalBlockActor(class BlockPos const &);
-
-
 
 };

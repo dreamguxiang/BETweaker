@@ -16,14 +16,12 @@ class Piglin : public HumanoidMonster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIGLIN
 public:
     class Piglin& operator=(class Piglin const &) = delete;
     Piglin(class Piglin const &) = delete;
     Piglin() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Piglin();
@@ -58,7 +56,5 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 #endif
     MCAPI Piglin(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

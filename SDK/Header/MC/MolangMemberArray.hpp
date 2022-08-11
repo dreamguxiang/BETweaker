@@ -14,15 +14,15 @@ struct MolangMemberArray {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERARRAY
 public:
     struct MolangMemberArray& operator=(struct MolangMemberArray const &) = delete;
     MolangMemberArray(struct MolangMemberArray const &) = delete;
     MolangMemberArray() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERARRAY
+#endif
     MCAPI MolangMemberArray(enum MolangStruct_BaseAndPattern, int, int);
     MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     MCAPI MolangMemberArray(enum MolangStruct_PoseIndexAndHurtTime, int, int);
@@ -41,9 +41,5 @@ public:
     MCAPI struct MolangScriptArg & getOrAdd(class HashedString const &);
     MCAPI bool operator==(struct MolangMemberArray const &) const;
     MCAPI ~MolangMemberArray();
-
-protected:
-
-private:
 
 };

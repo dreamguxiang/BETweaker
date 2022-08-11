@@ -12,7 +12,6 @@ class RecipeOptionalCraftInputs {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEOPTIONALCRAFTINPUTS
 public:
     class RecipeOptionalCraftInputs& operator=(class RecipeOptionalCraftInputs const &) = delete;
@@ -20,12 +19,9 @@ public:
     RecipeOptionalCraftInputs() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEOPTIONALCRAFTINPUTS
 #endif
     MCAPI RecipeOptionalCraftInputs(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &, std::string const &, std::string const &);
-
-
 
 };

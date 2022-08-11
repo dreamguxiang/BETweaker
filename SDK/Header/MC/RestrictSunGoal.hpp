@@ -14,14 +14,12 @@ class RestrictSunGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESTRICTSUNGOAL
 public:
     class RestrictSunGoal& operator=(class RestrictSunGoal const &) = delete;
     RestrictSunGoal(class RestrictSunGoal const &) = delete;
     RestrictSunGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RestrictSunGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESTRICTSUNGOAL
 #endif
     MCAPI RestrictSunGoal(class Mob &);
-
-
 
 };

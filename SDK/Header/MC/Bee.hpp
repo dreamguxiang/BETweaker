@@ -16,14 +16,12 @@ class Bee : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEE
 public:
     class Bee& operator=(class Bee const &) = delete;
     Bee(class Bee const &) = delete;
     Bee() = delete;
 #endif
-
 
 public:
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -62,8 +60,6 @@ public:
 //protected:
     MCAPI void _registerLoopingSounds();
 
-
 protected:
-
 
 };

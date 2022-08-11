@@ -14,14 +14,12 @@ class PlaySoundReactionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDREACTIONCOMPONENT
 public:
     class PlaySoundReactionComponent& operator=(class PlaySoundReactionComponent const &) = delete;
     PlaySoundReactionComponent(class PlaySoundReactionComponent const &) = delete;
     PlaySoundReactionComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlaySoundReactionComponent();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDREACTIONCOMPONENT
 #endif
-
-
 
 };

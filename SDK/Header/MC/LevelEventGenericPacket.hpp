@@ -15,13 +15,11 @@ class LevelEventGenericPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELEVENTGENERICPACKET
 public:
     class LevelEventGenericPacket& operator=(class LevelEventGenericPacket const &) = delete;
     LevelEventGenericPacket(class LevelEventGenericPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelEventGenericPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI LevelEventGenericPacket(enum LevelEvent, class CompoundTag const &);
     MCAPI LevelEventGenericPacket();
-
-
 
 };

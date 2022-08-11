@@ -14,14 +14,12 @@ class WorldGenCache {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCACHE
 public:
     class WorldGenCache& operator=(class WorldGenCache const &) = delete;
     WorldGenCache(class WorldGenCache const &) = delete;
     WorldGenCache() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCACHE
@@ -30,7 +28,5 @@ public:
     MCAPI class ChunkLocalNoiseCache const & getChunkLocalNoiseCache() const;
     MCAPI class SurfaceLevelCache const & getSurfaceLevelCache() const;
     MCAPI ~WorldGenCache();
-
-
 
 };

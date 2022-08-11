@@ -12,14 +12,12 @@ class VillagerCelebrationGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERCELEBRATIONGOAL
 public:
     class VillagerCelebrationGoal& operator=(class VillagerCelebrationGoal const &) = delete;
     VillagerCelebrationGoal(class VillagerCelebrationGoal const &) = delete;
     VillagerCelebrationGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VillagerCelebrationGoal();
@@ -38,8 +36,6 @@ public:
     MCAPI void _launchFirework();
     MCAPI void _setNextFireworkTick();
 
-
 private:
-
 
 };

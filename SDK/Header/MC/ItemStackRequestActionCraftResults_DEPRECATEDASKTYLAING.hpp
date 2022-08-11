@@ -14,13 +14,11 @@ class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
 public:
     class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING& operator=(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &) = delete;
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
@@ -31,7 +29,5 @@ public:
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
     MCAPI unsigned char getNumCrafts() const;
     MCAPI std::vector<class ItemInstance> const & getResults() const;
-
-
 
 };

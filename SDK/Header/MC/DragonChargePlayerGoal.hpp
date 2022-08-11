@@ -14,14 +14,12 @@ class DragonChargePlayerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONCHARGEPLAYERGOAL
 public:
     class DragonChargePlayerGoal& operator=(class DragonChargePlayerGoal const &) = delete;
     DragonChargePlayerGoal(class DragonChargePlayerGoal const &) = delete;
     DragonChargePlayerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonChargePlayerGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONCHARGEPLAYERGOAL
 #endif
     MCAPI DragonChargePlayerGoal(class Mob &);
-
-
 
 };

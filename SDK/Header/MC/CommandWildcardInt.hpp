@@ -14,13 +14,11 @@ class CommandWildcardInt {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDWILDCARDINT
 public:
     class CommandWildcardInt& operator=(class CommandWildcardInt const &) = delete;
     CommandWildcardInt(class CommandWildcardInt const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDWILDCARDINT
@@ -28,7 +26,5 @@ public:
     MCAPI CommandWildcardInt();
     MCAPI int getValue() const;
     MCAPI bool isWildcard() const;
-
-
 
 };

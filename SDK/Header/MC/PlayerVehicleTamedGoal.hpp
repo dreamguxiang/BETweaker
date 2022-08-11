@@ -14,14 +14,12 @@ class PlayerVehicleTamedGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERVEHICLETAMEDGOAL
 public:
     class PlayerVehicleTamedGoal& operator=(class PlayerVehicleTamedGoal const &) = delete;
     PlayerVehicleTamedGoal(class PlayerVehicleTamedGoal const &) = delete;
     PlayerVehicleTamedGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerVehicleTamedGoal();
@@ -39,7 +37,5 @@ public:
     MCVAPI void tick();
 #endif
     MCAPI PlayerVehicleTamedGoal(class Mob &);
-
-
 
 };

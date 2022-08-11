@@ -14,14 +14,12 @@ class VanillaServerGameplayEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLASERVERGAMEPLAYEVENTLISTENER
 public:
     class VanillaServerGameplayEventListener& operator=(class VanillaServerGameplayEventListener const &) = delete;
     VanillaServerGameplayEventListener(class VanillaServerGameplayEventListener const &) = delete;
     VanillaServerGameplayEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
@@ -33,7 +31,5 @@ public:
     MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 #endif
-
-
 
 };

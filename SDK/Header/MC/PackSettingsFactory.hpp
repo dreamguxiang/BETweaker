@@ -14,7 +14,6 @@ class PackSettingsFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGSFACTORY
 public:
     class PackSettingsFactory& operator=(class PackSettingsFactory const &) = delete;
@@ -22,12 +21,9 @@ public:
     PackSettingsFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSFACTORY
 #endif
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
-
-
 
 };

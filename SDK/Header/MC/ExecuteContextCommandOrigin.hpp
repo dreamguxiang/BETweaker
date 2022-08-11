@@ -14,14 +14,12 @@ class ExecuteContextCommandOrigin : public CommandOrigin {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXECUTECONTEXTCOMMANDORIGIN
 public:
     class ExecuteContextCommandOrigin& operator=(class ExecuteContextCommandOrigin const &) = delete;
     ExecuteContextCommandOrigin(class ExecuteContextCommandOrigin const &) = delete;
     ExecuteContextCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExecuteContextCommandOrigin();
@@ -33,7 +31,7 @@ public:
     /*6*/ virtual class Level * getLevel() const;
     /*7*/ virtual class Dimension * getDimension() const;
     /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*27*/ virtual void updateValues();
@@ -49,7 +47,5 @@ public:
     MCAPI void setPositionEntity(class Actor const &);
     MCAPI void setRotationEntity(class Actor const &);
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
-
-
 
 };

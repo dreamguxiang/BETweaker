@@ -14,14 +14,12 @@ class StructureTelemetryClientData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETELEMETRYCLIENTDATA
 public:
     class StructureTelemetryClientData& operator=(class StructureTelemetryClientData const &) = delete;
     StructureTelemetryClientData(class StructureTelemetryClientData const &) = delete;
     StructureTelemetryClientData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYCLIENTDATA
@@ -30,7 +28,5 @@ public:
     MCAPI unsigned int getOffsetEditCount() const;
     MCAPI unsigned int getRotationEditCount() const;
     MCAPI unsigned int getSizeEditCount() const;
-
-
 
 };

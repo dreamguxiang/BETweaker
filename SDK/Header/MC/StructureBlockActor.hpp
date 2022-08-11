@@ -15,14 +15,12 @@ class StructureBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKACTOR
 public:
     class StructureBlockActor& operator=(class StructureBlockActor const &) = delete;
     StructureBlockActor(class StructureBlockActor const &) = delete;
     StructureBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureBlockActor();
@@ -55,8 +53,6 @@ public:
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
 
-
 private:
-
 
 };

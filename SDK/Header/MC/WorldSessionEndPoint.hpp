@@ -14,14 +14,12 @@ class WorldSessionEndPoint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDSESSIONENDPOINT
 public:
     class WorldSessionEndPoint& operator=(class WorldSessionEndPoint const &) = delete;
     WorldSessionEndPoint(class WorldSessionEndPoint const &) = delete;
     WorldSessionEndPoint() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
@@ -32,7 +30,5 @@ public:
     MCVAPI void setEnabled(bool);
 #endif
     MCAPI WorldSessionEndPoint(class IMinecraftEventing &);
-
-
 
 };

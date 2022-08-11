@@ -42,13 +42,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGEVENTPACKET
 public:
     class CraftingEventPacket& operator=(class CraftingEventPacket const &) = delete;
     CraftingEventPacket(class CraftingEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftingEventPacket();
@@ -59,7 +57,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGEVENTPACKET
 #endif
     MCAPI CraftingEventPacket();
-
-
 
 };

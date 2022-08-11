@@ -14,13 +14,11 @@ class SubtreeNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREENODE
 public:
     class SubtreeNode& operator=(class SubtreeNode const &) = delete;
     SubtreeNode(class SubtreeNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SubtreeNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREENODE
 #endif
     MCAPI SubtreeNode();
-
-
 
 };

@@ -14,14 +14,12 @@ class PlayerEventListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREVENTLISTENER
 public:
     class PlayerEventListener& operator=(class PlayerEventListener const &) = delete;
     PlayerEventListener(class PlayerEventListener const &) = delete;
     PlayerEventListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTLISTENER
@@ -67,7 +65,5 @@ public:
     MCVAPI enum EventResult onPlayerWaxOnWaxOff(class Player &, int);
     MCVAPI enum EventResult onStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 #endif
-
-
 
 };

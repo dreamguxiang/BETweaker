@@ -57,13 +57,11 @@ public:
     }
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERACTIONPACKET
 public:
     class PlayerActionPacket& operator=(class PlayerActionPacket const &) = delete;
     PlayerActionPacket(class PlayerActionPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlayerActionPacket();
@@ -79,7 +77,5 @@ public:
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
     MCAPI PlayerActionPacket();
-
-
 
 };

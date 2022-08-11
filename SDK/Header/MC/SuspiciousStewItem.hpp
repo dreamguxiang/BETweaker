@@ -16,14 +16,12 @@ class SuspiciousStewItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUSPICIOUSSTEWITEM
 public:
     class SuspiciousStewItem& operator=(class SuspiciousStewItem const &) = delete;
     SuspiciousStewItem(class SuspiciousStewItem const &) = delete;
     SuspiciousStewItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SuspiciousStewItem();
@@ -41,12 +39,11 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*87*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
     MCVAPI bool uniqueAuxValues() const;
 #endif
     MCAPI SuspiciousStewItem(std::string const &, short);
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
-
-
 
 };

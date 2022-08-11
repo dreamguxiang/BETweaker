@@ -14,7 +14,6 @@ class BehaviorSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORSYSTEM
 public:
     class BehaviorSystem& operator=(class BehaviorSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     BehaviorSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BehaviorSystem();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORSYSTEM
 #endif
-
-
 
 };

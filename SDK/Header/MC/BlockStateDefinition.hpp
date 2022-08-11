@@ -14,21 +14,19 @@ struct BlockStateDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEDEFINITION
 public:
     BlockStateDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEDEFINITION
+#endif
     MCAPI BlockStateDefinition(struct BlockStateDefinition const &);
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
     MCAPI ~BlockStateDefinition();
 
-protected:
-
-private:
+//private:
     MCAPI void _copy(struct BlockStateDefinition const &);
 
 };

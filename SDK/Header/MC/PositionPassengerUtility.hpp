@@ -12,7 +12,6 @@ class PositionPassengerUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONPASSENGERUTILITY
 public:
     class PositionPassengerUtility& operator=(class PositionPassengerUtility const &) = delete;
@@ -20,12 +19,9 @@ public:
     PositionPassengerUtility() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONPASSENGERUTILITY
 #endif
     MCAPI static class Vec3 getNewPassengerPosition(class SynchedActorData const &, class Vec3 const &, class Vec2 const &);
-
-
 
 };

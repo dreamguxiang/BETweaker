@@ -15,14 +15,12 @@ class JunglePyramidPiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUNGLEPYRAMIDPIECE
 public:
     class JunglePyramidPiece& operator=(class JunglePyramidPiece const &) = delete;
     JunglePyramidPiece(class JunglePyramidPiece const &) = delete;
     JunglePyramidPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JunglePyramidPiece();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUNGLEPYRAMIDPIECE
 #endif
     MCAPI JunglePyramidPiece(short, int, int);
-
-
 
 };

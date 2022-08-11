@@ -17,14 +17,12 @@ class ZipPackAccessStrategy : public PackAccessStrategy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZIPPACKACCESSSTRATEGY
 public:
     class ZipPackAccessStrategy& operator=(class ZipPackAccessStrategy const &) = delete;
     ZipPackAccessStrategy(class ZipPackAccessStrategy const &) = delete;
     ZipPackAccessStrategy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ZipPackAccessStrategy();
@@ -52,8 +50,6 @@ public:
 //private:
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
 
-
 private:
-
 
 };

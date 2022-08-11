@@ -16,7 +16,6 @@ class ConsumeItemDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMDEFINITION
 public:
     class ConsumeItemDefinition& operator=(class ConsumeItemDefinition const &) = delete;
@@ -24,12 +23,9 @@ public:
     ConsumeItemDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ConsumeItemDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMDEFINITION
 #endif
-
-
 
 };

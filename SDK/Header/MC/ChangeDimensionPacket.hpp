@@ -23,13 +23,11 @@ public:
             __super::toDebugString(), position.toString(), (int)dimensionId, respawn);
     }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGEDIMENSIONPACKET
 public:
     class ChangeDimensionPacket& operator=(class ChangeDimensionPacket const &) = delete;
     ChangeDimensionPacket(class ChangeDimensionPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChangeDimensionPacket();
@@ -41,7 +39,5 @@ public:
 #endif
     MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
     MCAPI ChangeDimensionPacket();
-
-
 
 };

@@ -15,14 +15,12 @@ class ResourceLoader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOADER
 public:
     class ResourceLoader& operator=(class ResourceLoader const &) = delete;
     ResourceLoader(class ResourceLoader const &) = delete;
     ResourceLoader() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourceLoader();
@@ -41,7 +39,5 @@ public:
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &) const;
 #endif
-
-
 
 };

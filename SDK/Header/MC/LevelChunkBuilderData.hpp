@@ -12,20 +12,16 @@ class LevelChunkBuilderData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKBUILDERDATA
 public:
     class LevelChunkBuilderData& operator=(class LevelChunkBuilderData const &) = delete;
     LevelChunkBuilderData(class LevelChunkBuilderData const &) = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKBUILDERDATA
 #endif
     MCAPI LevelChunkBuilderData();
     MCAPI ~LevelChunkBuilderData();
-
-
 
 };

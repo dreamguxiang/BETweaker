@@ -15,13 +15,11 @@ class PropertyBag {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYBAG
 public:
     class PropertyBag& operator=(class PropertyBag const &) = delete;
     PropertyBag(class PropertyBag const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYBAG
@@ -31,7 +29,5 @@ public:
     MCAPI class Json::Value const & toJsonValue() const;
     MCAPI std::string toString() const;
     MCAPI static class PropertyBag EMPTY;
-
-
 
 };

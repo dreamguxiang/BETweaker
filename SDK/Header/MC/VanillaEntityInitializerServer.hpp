@@ -13,7 +13,6 @@ class VanillaEntityInitializerServer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAENTITYINITIALIZERSERVER
 public:
     class VanillaEntityInitializerServer& operator=(class VanillaEntityInitializerServer const &) = delete;
@@ -21,14 +20,11 @@ public:
     VanillaEntityInitializerServer() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAENTITYINITIALIZERSERVER
 #endif
     MCAPI static void commonInitECSMovement(struct ActorDefinitionIdentifier const &, class EntityContext &, class EntityContext const &);
     MCAPI static void commonInitSideBySideComparison(struct ActorDefinitionIdentifier const &, class EntityContext &, class EntityContext const &);
     MCAPI static std::unique_ptr<class IEntityInitializer> create(struct VanillaSystemsRegistration::RegistrationOptions const &);
-
-
 
 };

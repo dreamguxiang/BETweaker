@@ -15,14 +15,12 @@ class SayCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAYCOMMAND
 public:
     class SayCommand& operator=(class SayCommand const &) = delete;
     SayCommand(class SayCommand const &) = delete;
     SayCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SayCommand();
@@ -35,8 +33,6 @@ public:
     MCAPI void _sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
     MCAPI bool _trySendSayCommandEvent(class Player const &, class Level &, std::string const &) const;
 
-
 private:
-
 
 };

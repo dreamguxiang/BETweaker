@@ -14,14 +14,12 @@ class DrinkPotionGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKPOTIONGOAL
 public:
     class DrinkPotionGoal& operator=(class DrinkPotionGoal const &) = delete;
     DrinkPotionGoal(class DrinkPotionGoal const &) = delete;
     DrinkPotionGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DrinkPotionGoal();
@@ -38,10 +36,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
     MCAPI static int const THROTTLE_COOLDOWN;
-
 
 };

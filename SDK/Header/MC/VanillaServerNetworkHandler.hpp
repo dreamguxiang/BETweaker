@@ -15,7 +15,6 @@ class VanillaServerNetworkHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLASERVERNETWORKHANDLER
 public:
     class VanillaServerNetworkHandler& operator=(class VanillaServerNetworkHandler const &) = delete;
@@ -23,14 +22,11 @@ public:
     VanillaServerNetworkHandler() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~VanillaServerNetworkHandler();
     /*1*/ virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERNETWORKHANDLER
 #endif
     MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);
-
-
 
 };

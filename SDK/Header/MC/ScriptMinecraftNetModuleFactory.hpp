@@ -15,14 +15,12 @@ class ScriptMinecraftNetModuleFactory : public TextObjectText {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMINECRAFTNETMODULEFACTORY
 public:
     class ScriptMinecraftNetModuleFactory& operator=(class ScriptMinecraftNetModuleFactory const &) = delete;
     ScriptMinecraftNetModuleFactory(class ScriptMinecraftNetModuleFactory const &) = delete;
     ScriptMinecraftNetModuleFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptMinecraftNetModuleFactory();
@@ -33,10 +31,8 @@ public:
 
 //private:
 
-
 private:
     MCAPI static char const * ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
-
 
 };

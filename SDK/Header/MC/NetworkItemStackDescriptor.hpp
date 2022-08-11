@@ -18,14 +18,12 @@ public:
     ItemDescriptor mDescriptor;//0
     char filler[80];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMSTACKDESCRIPTOR
 public:
     class NetworkItemStackDescriptor& operator=(class NetworkItemStackDescriptor const &) = delete;
     NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &) = delete;
     NetworkItemStackDescriptor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
@@ -42,8 +40,6 @@ public:
 //private:
     MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
 
-
 private:
-
 
 };

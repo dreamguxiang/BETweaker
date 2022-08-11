@@ -14,14 +14,12 @@ class BurnOdds {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURNODDS
 public:
     class BurnOdds& operator=(class BurnOdds const &) = delete;
     BurnOdds(class BurnOdds const &) = delete;
     BurnOdds() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURNODDS
@@ -31,7 +29,5 @@ public:
     MCAPI static class BurnOdds const INSTANT;
     MCAPI static class BurnOdds const MEDIUM;
     MCAPI static class BurnOdds const NEVER;
-
-
 
 };

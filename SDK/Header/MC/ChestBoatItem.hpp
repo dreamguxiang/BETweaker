@@ -14,14 +14,12 @@ class ChestBoatItem : public BoatItem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBOATITEM
 public:
     class ChestBoatItem& operator=(class ChestBoatItem const &) = delete;
     ChestBoatItem(class ChestBoatItem const &) = delete;
     ChestBoatItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ChestBoatItem();
@@ -39,11 +37,10 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual enum ActorType _getActorType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBOATITEM
 #endif
     MCAPI ChestBoatItem(std::string const &, int, int);
-
-
 
 };

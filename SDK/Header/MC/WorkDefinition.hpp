@@ -13,13 +13,11 @@ class WorkDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKDEFINITION
 public:
     class WorkDefinition& operator=(class WorkDefinition const &) = delete;
     WorkDefinition(class WorkDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKDEFINITION
@@ -27,7 +25,5 @@ public:
     MCAPI WorkDefinition();
     MCAPI void initialize(class EntityContext &, class WorkGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkDefinition>> &);
-
-
 
 };

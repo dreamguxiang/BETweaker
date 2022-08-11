@@ -15,13 +15,11 @@ class BreakBlocksDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSDESCRIPTION
 public:
     class BreakBlocksDescription& operator=(class BreakBlocksDescription const &) = delete;
     BreakBlocksDescription(class BreakBlocksDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
 #endif
     MCAPI BreakBlocksDescription();
-
-
 
 };

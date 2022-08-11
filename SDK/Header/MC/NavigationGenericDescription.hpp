@@ -15,7 +15,6 @@ class NavigationGenericDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONGENERICDESCRIPTION
 public:
     class NavigationGenericDescription& operator=(class NavigationGenericDescription const &) = delete;
@@ -23,13 +22,10 @@ public:
     NavigationGenericDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationGenericDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONGENERICDESCRIPTION
 #endif
-
-
 
 };

@@ -14,7 +14,6 @@ class LevelDbFileLock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBFILELOCK
 public:
     class LevelDbFileLock& operator=(class LevelDbFileLock const &) = delete;
@@ -22,11 +21,8 @@ public:
     LevelDbFileLock() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBFILELOCK
 #endif
-
-
 
 };

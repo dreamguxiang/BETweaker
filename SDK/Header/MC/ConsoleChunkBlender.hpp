@@ -17,13 +17,11 @@ enum ShiftBlockTypes;
 enum BlenderMode;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLECHUNKBLENDER
 public:
     class ConsoleChunkBlender& operator=(class ConsoleChunkBlender const &) = delete;
     ConsoleChunkBlender(class ConsoleChunkBlender const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLECHUNKBLENDER
@@ -43,8 +41,6 @@ public:
     MCAPI void _prepInterpTable();
     MCAPI void _shiftColumnBySetBlocks(class LevelChunk &, int, int, int, bool, class ChunkLocalHeight, enum ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const &);
 
-
 protected:
-
 
 };

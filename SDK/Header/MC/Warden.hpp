@@ -14,14 +14,12 @@ class Warden : public Monster {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WARDEN
 public:
     class Warden& operator=(class Warden const &) = delete;
     Warden(class Warden const &) = delete;
     Warden() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Warden();
@@ -63,7 +61,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDEN
 #endif
     MCAPI Warden(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

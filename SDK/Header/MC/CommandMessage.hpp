@@ -21,13 +21,11 @@ class CommandMessage {
     std::vector<MessageComponent> components;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDMESSAGE
 public:
     class CommandMessage& operator=(class CommandMessage const &) = delete;
     CommandMessage(class CommandMessage const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDMESSAGE
@@ -35,7 +33,5 @@ public:
     MCAPI CommandMessage();
     MCAPI std::string getMessage(class CommandOrigin const &) const;
     MCAPI ~CommandMessage();
-
-
 
 };

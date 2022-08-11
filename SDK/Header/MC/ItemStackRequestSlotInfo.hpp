@@ -12,20 +12,16 @@ struct ItemStackRequestSlotInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTSLOTINFO
 public:
     struct ItemStackRequestSlotInfo& operator=(struct ItemStackRequestSlotInfo const &) = delete;
     ItemStackRequestSlotInfo(struct ItemStackRequestSlotInfo const &) = delete;
     ItemStackRequestSlotInfo() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTSLOTINFO
+#endif
     MCAPI bool matchesContainerAndSlot(struct ItemStackRequestSlotInfo const &) const;
     MCAPI ~ItemStackRequestSlotInfo();
-
-protected:
-
-private:
 
 };

@@ -14,14 +14,12 @@ class BoneOrientation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEORIENTATION
 public:
     class BoneOrientation& operator=(class BoneOrientation const &) = delete;
     BoneOrientation(class BoneOrientation const &) = delete;
     BoneOrientation() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATION
@@ -31,7 +29,5 @@ public:
     MCAPI class Vec3 & getPivot();
     MCAPI class Vec3 const & getPivot() const;
     MCAPI void setDefaultPose();
-
-
 
 };

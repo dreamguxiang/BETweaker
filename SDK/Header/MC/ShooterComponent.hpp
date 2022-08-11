@@ -14,13 +14,11 @@ class ShooterComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERCOMPONENT
 public:
     class ShooterComponent& operator=(class ShooterComponent const &) = delete;
     ShooterComponent(class ShooterComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERCOMPONENT
@@ -29,7 +27,5 @@ public:
     MCAPI int getAuxValue();
     MCAPI void onShoot(class Actor &);
     MCAPI ~ShooterComponent();
-
-
 
 };

@@ -14,7 +14,6 @@ class EquipItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPITEMCOMPONENT
 public:
     class EquipItemComponent& operator=(class EquipItemComponent const &) = delete;
@@ -22,13 +21,10 @@ public:
     EquipItemComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMCOMPONENT
 #endif
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
     MCAPI ~EquipItemComponent();
-
-
 
 };

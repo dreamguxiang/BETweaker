@@ -15,14 +15,12 @@ class HoneyBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HONEYBLOCK
 public:
     class HoneyBlock& operator=(class HoneyBlock const &) = delete;
     HoneyBlock(class HoneyBlock const &) = delete;
     HoneyBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HoneyBlock();
@@ -71,7 +69,5 @@ public:
 #endif
     MCAPI HoneyBlock(std::string const &, int, class Material const &);
     MCAPI static void triggerSlidingDownEffects(class Actor &, class BlockPos const &, class Block const &);
-
-
 
 };

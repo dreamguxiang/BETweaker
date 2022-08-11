@@ -14,13 +14,11 @@ class OnHitSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONHITSUBCOMPONENT
 public:
     class OnHitSubcomponent& operator=(class OnHitSubcomponent const &) = delete;
     OnHitSubcomponent(class OnHitSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OnHitSubcomponent();
@@ -35,8 +33,6 @@ public:
 //protected:
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 
-
 protected:
-
 
 };

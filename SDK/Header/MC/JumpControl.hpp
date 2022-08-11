@@ -14,13 +14,11 @@ class JumpControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROL
 public:
     class JumpControl& operator=(class JumpControl const &) = delete;
     JumpControl(class JumpControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~JumpControl();
@@ -37,7 +35,5 @@ public:
     MCVAPI void setJumpType(class JumpControlComponent &, enum JumpType);
 #endif
     MCAPI JumpControl();
-
-
 
 };

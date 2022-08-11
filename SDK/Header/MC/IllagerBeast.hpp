@@ -16,14 +16,12 @@ class IllagerBeast : public Monster {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILLAGERBEAST
 public:
     class IllagerBeast& operator=(class IllagerBeast const &) = delete;
     IllagerBeast(class IllagerBeast const &) = delete;
     IllagerBeast() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~IllagerBeast();
@@ -57,7 +55,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILLAGERBEAST
 #endif
     MCAPI IllagerBeast(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

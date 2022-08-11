@@ -15,13 +15,11 @@ class DefendVillageTargetDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETDEFINITION
 public:
     class DefendVillageTargetDefinition& operator=(class DefendVillageTargetDefinition const &) = delete;
     DefendVillageTargetDefinition(class DefendVillageTargetDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDVILLAGETARGETDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI DefendVillageTargetDefinition();
     MCAPI void initialize(class EntityContext &, class DefendVillageTargetGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>> &);
-
-
 
 };

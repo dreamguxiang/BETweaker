@@ -12,7 +12,6 @@ class ReplayStateSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATESYSTEM
 public:
     class ReplayStateSystem& operator=(class ReplayStateSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     ReplayStateSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATESYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
     MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
-
-
 
 };

@@ -17,7 +17,6 @@ class SplashPotionItem : public PotionItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONITEM
 public:
     class SplashPotionItem& operator=(class SplashPotionItem const &) = delete;
@@ -25,14 +24,13 @@ public:
     SplashPotionItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SplashPotionItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable() const;
+    /*23*/ virtual bool isThrowable();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
@@ -48,11 +46,10 @@ public:
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*137*/ virtual enum Potion::PotionType getPotionType() const;
+    /*130*/ virtual void __unk_vfn_130();
+    /*137*/ virtual enum Potion::PotionType getPotionType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONITEM
 #endif
     MCAPI SplashPotionItem(std::string const &, int);
-
-
 
 };

@@ -15,13 +15,11 @@ class MapCreateLockedCopyPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPCREATELOCKEDCOPYPACKET
 public:
     class MapCreateLockedCopyPacket& operator=(class MapCreateLockedCopyPacket const &) = delete;
     MapCreateLockedCopyPacket(class MapCreateLockedCopyPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapCreateLockedCopyPacket();
@@ -35,7 +33,5 @@ public:
     MCAPI MapCreateLockedCopyPacket();
     MCAPI struct ActorUniqueID getNewMapId() const;
     MCAPI struct ActorUniqueID getOriginalMapId() const;
-
-
 
 };

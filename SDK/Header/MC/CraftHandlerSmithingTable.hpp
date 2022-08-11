@@ -13,14 +13,12 @@ class CraftHandlerSmithingTable : public CraftHandlerBase {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERSMITHINGTABLE
 public:
     class CraftHandlerSmithingTable& operator=(class CraftHandlerSmithingTable const &) = delete;
     CraftHandlerSmithingTable(class CraftHandlerSmithingTable const &) = delete;
     CraftHandlerSmithingTable() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftHandlerSmithingTable();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERSMITHINGTABLE
 #endif
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
-
-
 
 };

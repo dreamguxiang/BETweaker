@@ -14,14 +14,12 @@ class GameTestInstanceLedger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTINSTANCELEDGER
 public:
     class GameTestInstanceLedger& operator=(class GameTestInstanceLedger const &) = delete;
     GameTestInstanceLedger(class GameTestInstanceLedger const &) = delete;
     GameTestInstanceLedger() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameTestInstanceLedger();
@@ -34,9 +32,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
-
 
 };

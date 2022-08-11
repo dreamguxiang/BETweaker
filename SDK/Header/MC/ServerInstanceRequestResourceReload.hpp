@@ -12,19 +12,15 @@ struct ServerInstanceRequestResourceReload {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEREQUESTRESOURCERELOAD
 public:
     struct ServerInstanceRequestResourceReload& operator=(struct ServerInstanceRequestResourceReload const &) = delete;
     ServerInstanceRequestResourceReload(struct ServerInstanceRequestResourceReload const &) = delete;
     ServerInstanceRequestResourceReload() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEREQUESTRESOURCERELOAD
+#endif
     MCAPI ~ServerInstanceRequestResourceReload();
-
-protected:
-
-private:
 
 };

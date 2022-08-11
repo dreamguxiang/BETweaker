@@ -26,13 +26,11 @@ public:
     LIAPI TagMemoryChunk get();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTEARRAYTAG
 public:
     class ByteArrayTag& operator=(class ByteArrayTag const &) = delete;
     ByteArrayTag(class ByteArrayTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ByteArrayTag();
@@ -47,7 +45,5 @@ public:
 #endif
     MCAPI ByteArrayTag(struct TagMemoryChunk);
     MCAPI ByteArrayTag();
-
-
 
 };

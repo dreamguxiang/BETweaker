@@ -15,14 +15,12 @@ class SubChunkRelighter {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKRELIGHTER
 public:
     class SubChunkRelighter& operator=(class SubChunkRelighter const &) = delete;
     SubChunkRelighter(class SubChunkRelighter const &) = delete;
     SubChunkRelighter() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKRELIGHTER
@@ -61,7 +59,6 @@ public:
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
 
-
 private:
     MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
     MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
@@ -69,6 +66,5 @@ private:
     MCAPI static struct SubChunk sFullyDarkSubChunk;
     MCAPI static struct SubChunk sFullyLitSubChunk;
     MCAPI static class SpinLock sLitSpinLock;
-
 
 };

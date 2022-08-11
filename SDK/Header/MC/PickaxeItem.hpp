@@ -17,14 +17,12 @@ class PickaxeItem : public DiggerItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PICKAXEITEM
 public:
     class PickaxeItem& operator=(class PickaxeItem const &) = delete;
     PickaxeItem(class PickaxeItem const &) = delete;
     PickaxeItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PickaxeItem();
@@ -44,6 +42,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*89*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PICKAXEITEM
 #endif
     MCAPI PickaxeItem(std::string const &, int, class Item::Tier const &);
@@ -51,8 +50,6 @@ public:
 //private:
     MCAPI bool const _isTierOneBlock(class BlockLegacy const &) const;
 
-
 private:
-
 
 };

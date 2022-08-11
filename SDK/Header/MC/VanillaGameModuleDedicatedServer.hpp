@@ -14,14 +14,12 @@ class VanillaGameModuleDedicatedServer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAGAMEMODULEDEDICATEDSERVER
 public:
     class VanillaGameModuleDedicatedServer& operator=(class VanillaGameModuleDedicatedServer const &) = delete;
     VanillaGameModuleDedicatedServer(class VanillaGameModuleDedicatedServer const &) = delete;
     VanillaGameModuleDedicatedServer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~VanillaGameModuleDedicatedServer();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
 #endif
-
-
 
 };

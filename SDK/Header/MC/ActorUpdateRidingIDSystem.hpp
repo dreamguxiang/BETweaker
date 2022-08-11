@@ -12,14 +12,12 @@ class ActorUpdateRidingIDSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATERIDINGIDSYSTEM
 public:
     class ActorUpdateRidingIDSystem& operator=(class ActorUpdateRidingIDSystem const &) = delete;
     ActorUpdateRidingIDSystem(class ActorUpdateRidingIDSystem const &) = delete;
     ActorUpdateRidingIDSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATERIDINGIDSYSTEM
@@ -30,7 +28,5 @@ public:
     MCAPI static void tickClearRidingID(class StrictEntityContext &, struct PassengerComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PassengerComponent> &);
     MCAPI static void tickClearRidingPrevIDAfterRemovePassenger(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &);
     MCAPI static void tickUpdateRidingPrevID(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>);
-
-
 
 };

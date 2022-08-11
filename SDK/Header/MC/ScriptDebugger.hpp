@@ -15,14 +15,12 @@ class ScriptDebugger {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGER
 public:
     class ScriptDebugger& operator=(class ScriptDebugger const &) = delete;
     ScriptDebugger(class ScriptDebugger const &) = delete;
     ScriptDebugger() = delete;
 #endif
-
 
 public:
     /*0*/ virtual bool listen(unsigned short);
@@ -39,8 +37,6 @@ public:
     MCAPI class Scripting::IDebuggerController * _createController();
     MCAPI void _releaseController();
 
-
 private:
-
 
 };

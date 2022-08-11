@@ -15,14 +15,12 @@ class BrewingStandContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDCONTAINERMANAGERMODEL
 public:
     class BrewingStandContainerManagerModel& operator=(class BrewingStandContainerManagerModel const &) = delete;
     BrewingStandContainerManagerModel(class BrewingStandContainerManagerModel const &) = delete;
     BrewingStandContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BrewingStandContainerManagerModel();
@@ -36,7 +34,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERMANAGERMODEL
 #endif
     MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

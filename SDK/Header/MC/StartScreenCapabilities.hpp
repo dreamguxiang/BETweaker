@@ -14,18 +14,16 @@ struct StartScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STARTSCREENCAPABILITIES
 public:
     struct StartScreenCapabilities& operator=(struct StartScreenCapabilities const &) = delete;
     StartScreenCapabilities(struct StartScreenCapabilities const &) = delete;
     StartScreenCapabilities() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~StartScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STARTSCREENCAPABILITIES
+#endif
 
 };

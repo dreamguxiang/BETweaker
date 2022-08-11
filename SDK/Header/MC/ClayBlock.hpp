@@ -15,14 +15,12 @@ class ClayBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLAYBLOCK
 public:
     class ClayBlock& operator=(class ClayBlock const &) = delete;
     ClayBlock(class ClayBlock const &) = delete;
     ClayBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClayBlock();
@@ -45,13 +43,13 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface() const;
+    /*52*/ virtual bool canBeOriginalSurface();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
+    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &);
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
@@ -70,7 +68,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLAYBLOCK
 #endif
     MCAPI ClayBlock(std::string const &, int);
-
-
 
 };

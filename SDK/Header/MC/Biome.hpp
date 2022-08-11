@@ -16,14 +16,12 @@ public:
 enum BiomeTempCategory;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOME
 public:
     class Biome& operator=(class Biome const &) = delete;
     Biome(class Biome const &) = delete;
     Biome() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOME
@@ -70,7 +68,5 @@ public:
     MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
     MCAPI static float const RAIN_TEMP_THRESHOLD;
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk &);
-
-
 
 };

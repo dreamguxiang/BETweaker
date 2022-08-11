@@ -15,13 +15,11 @@ class SpawnChanceSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNCHANCESUBCOMPONENT
 public:
     class SpawnChanceSubcomponent& operator=(class SpawnChanceSubcomponent const &) = delete;
     SpawnChanceSubcomponent(class SpawnChanceSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnChanceSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCHANCESUBCOMPONENT
 #endif
     MCAPI SpawnChanceSubcomponent();
-
-
 
 };

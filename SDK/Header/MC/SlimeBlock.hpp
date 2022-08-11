@@ -15,14 +15,12 @@ class SlimeBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEBLOCK
 public:
     class SlimeBlock& operator=(class SlimeBlock const &) = delete;
     SlimeBlock(class SlimeBlock const &) = delete;
     SlimeBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlimeBlock();
@@ -69,7 +67,5 @@ public:
     MCVAPI bool isBounceBlock() const;
 #endif
     MCAPI SlimeBlock(std::string const &, int, class Material const &);
-
-
 
 };

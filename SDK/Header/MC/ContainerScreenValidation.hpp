@@ -14,14 +14,12 @@ class ContainerScreenValidation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATION
 public:
     class ContainerScreenValidation& operator=(class ContainerScreenValidation const &) = delete;
     ContainerScreenValidation(class ContainerScreenValidation const &) = delete;
     ContainerScreenValidation() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerScreenValidation();
@@ -55,10 +53,8 @@ public:
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum ContainerEnumName);
     MCAPI bool _propagateContainers();
 
-
 protected:
 
 private:
-
 
 };

@@ -17,13 +17,11 @@ public:
 enum Subtype;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEEVENTPACKET
 public:
     class SimpleEventPacket& operator=(class SimpleEventPacket const &) = delete;
     SimpleEventPacket(class SimpleEventPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SimpleEventPacket();
@@ -36,7 +34,5 @@ public:
     MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     MCAPI SimpleEventPacket();
     MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
-
-
 
 };

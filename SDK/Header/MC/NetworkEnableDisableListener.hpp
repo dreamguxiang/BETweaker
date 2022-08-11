@@ -15,14 +15,12 @@ class NetworkEnableDisableListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKENABLEDISABLELISTENER
 public:
     class NetworkEnableDisableListener& operator=(class NetworkEnableDisableListener const &) = delete;
     NetworkEnableDisableListener(class NetworkEnableDisableListener const &) = delete;
     NetworkEnableDisableListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
@@ -35,7 +33,5 @@ public:
     MCAPI bool isUninitialized() const;
     MCAPI void tryEnable();
     MCAPI void uninitialize();
-
-
 
 };

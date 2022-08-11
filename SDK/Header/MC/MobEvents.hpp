@@ -14,14 +14,12 @@ class MobEvents {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENTS
 public:
     class MobEvents& operator=(class MobEvents const &) = delete;
     MobEvents(class MobEvents const &) = delete;
     MobEvents() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTS
@@ -39,7 +37,5 @@ public:
     MCAPI void tick();
     MCAPI void writeToLevelStorage();
     MCAPI static std::string const EVENTS_ENABLED_STRING;
-
-
 
 };

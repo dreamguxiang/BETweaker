@@ -14,14 +14,12 @@ class SwimIdleGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMIDLEGOAL
 public:
     class SwimIdleGoal& operator=(class SwimIdleGoal const &) = delete;
     SwimIdleGoal(class SwimIdleGoal const &) = delete;
     SwimIdleGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SwimIdleGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMIDLEGOAL
 #endif
     MCAPI SwimIdleGoal(class Mob &);
-
-
 
 };

@@ -14,14 +14,12 @@ class BlockUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUTILS
 public:
     class BlockUtils& operator=(class BlockUtils const &) = delete;
     BlockUtils(class BlockUtils const &) = delete;
     BlockUtils() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUTILS
@@ -35,7 +33,5 @@ public:
     MCAPI static bool isLiquidSource(class Block const &);
     MCAPI static bool isThinFenceOrWallBlock(class Block const &);
     MCAPI static bool isWaterSource(class Block const &);
-
-
 
 };

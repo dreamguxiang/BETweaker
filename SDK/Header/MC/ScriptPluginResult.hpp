@@ -15,13 +15,11 @@ class ScriptPluginResult {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT
 public:
     class ScriptPluginResult& operator=(class ScriptPluginResult const &) = delete;
     ScriptPluginResult() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINRESULT
@@ -38,7 +36,5 @@ public:
     MCAPI std::vector<struct ScriptPluginResult::Warning> const & getWarnings() const;
     MCAPI bool hasErrors() const;
     MCAPI ~ScriptPluginResult();
-
-
 
 };

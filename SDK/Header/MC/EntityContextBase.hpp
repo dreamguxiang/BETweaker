@@ -14,14 +14,12 @@ class EntityContextBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 public:
     class EntityContextBase& operator=(class EntityContextBase const &) = delete;
     EntityContextBase(class EntityContextBase const &) = delete;
     EntityContextBase() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
@@ -37,8 +35,6 @@ public:
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
 
-
 protected:
-
 
 };

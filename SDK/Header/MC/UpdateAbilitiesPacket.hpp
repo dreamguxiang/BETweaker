@@ -13,13 +13,11 @@ class UpdateAbilitiesPacket : public Packet {
 #define AFTER_EXTRA
     char filler[40];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEABILITIESPACKET
 public:
     class UpdateAbilitiesPacket& operator=(class UpdateAbilitiesPacket const &) = delete;
     UpdateAbilitiesPacket(class UpdateAbilitiesPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdateAbilitiesPacket();
@@ -36,9 +34,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
-
 
 };

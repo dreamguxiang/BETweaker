@@ -12,14 +12,12 @@ class OverworldGeneratorVoid {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATORVOID
 public:
     class OverworldGeneratorVoid& operator=(class OverworldGeneratorVoid const &) = delete;
     OverworldGeneratorVoid(class OverworldGeneratorVoid const &) = delete;
     OverworldGeneratorVoid() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORVOID
@@ -35,7 +33,5 @@ public:
     MCVAPI void loadChunk(class LevelChunk &, bool);
 #endif
     MCAPI OverworldGeneratorVoid(class Dimension &, unsigned int);
-
-
 
 };

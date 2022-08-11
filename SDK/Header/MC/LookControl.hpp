@@ -14,13 +14,11 @@ class LookControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKCONTROL
 public:
     class LookControl& operator=(class LookControl const &) = delete;
     LookControl(class LookControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookControl();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
 #endif
     MCAPI LookControl();
-
-
 
 };

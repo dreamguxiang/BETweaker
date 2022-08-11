@@ -14,13 +14,11 @@ class PerfContextTracker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER
 public:
     class PerfContextTracker& operator=(class PerfContextTracker const &) = delete;
     PerfContextTracker(class PerfContextTracker const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER
@@ -29,7 +27,5 @@ public:
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     MCAPI void incrementPacketSentInfo(unsigned int);
     MCAPI static class PerfContextTracker & getInstance();
-
-
 
 };

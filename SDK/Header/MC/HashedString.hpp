@@ -24,12 +24,10 @@ public:
     //}
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASHEDSTRING
 public:
     HashedString() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASHEDSTRING
@@ -58,7 +56,5 @@ public:
     MCAPI static unsigned __int64 computeHash(char const *);
     MCAPI static class HashedString defaultErrorValue;
     MCAPI static class HashedString const & getEmptyString();
-
-
 
 };

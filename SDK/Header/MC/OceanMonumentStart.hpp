@@ -14,7 +14,6 @@ class OceanMonumentStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTSTART
 public:
     class OceanMonumentStart& operator=(class OceanMonumentStart const &) = delete;
@@ -22,14 +21,11 @@ public:
     OceanMonumentStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanMonumentStart();
     /*1*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTSTART
 #endif
     MCAPI void createMonument(class Dimension &, class Random &, int, int);
-
-
 
 };

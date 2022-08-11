@@ -14,14 +14,12 @@ class JumpInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPINFO
 public:
     class JumpInfo& operator=(class JumpInfo const &) = delete;
     JumpInfo(class JumpInfo const &) = delete;
     JumpInfo() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPINFO
@@ -31,7 +29,5 @@ public:
     MCAPI float getDistanceScale() const;
     MCAPI float getHeight() const;
     MCAPI int getJumpDelay() const;
-
-
 
 };

@@ -14,14 +14,12 @@ class VanillaDimensions {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLADIMENSIONS
 public:
     class VanillaDimensions& operator=(class VanillaDimensions const &) = delete;
     VanillaDimensions(class VanillaDimensions const &) = delete;
     VanillaDimensions() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLADIMENSIONS
@@ -39,9 +37,7 @@ public:
 
 //protected:
 
-
 protected:
     MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const DimensionMap;
-
 
 };

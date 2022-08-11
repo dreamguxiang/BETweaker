@@ -16,14 +16,12 @@ class ExternalFileLevelStorageSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALFILELEVELSTORAGESOURCE
 public:
     class ExternalFileLevelStorageSource& operator=(class ExternalFileLevelStorageSource const &) = delete;
     ExternalFileLevelStorageSource(class ExternalFileLevelStorageSource const &) = delete;
     ExternalFileLevelStorageSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ExternalFileLevelStorageSource();
@@ -55,7 +53,5 @@ public:
     MCVAPI bool requiresConversion(std::string const &);
 #endif
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class SaveTransactionManager>> const &);
-
-
 
 };

@@ -14,7 +14,6 @@ class RepairableItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRABLEITEMCOMPONENT
 public:
     class RepairableItemComponent& operator=(class RepairableItemComponent const &) = delete;
@@ -22,14 +21,13 @@ public:
     RepairableItemComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~RepairableItemComponent();
-    /*1*/ virtual bool isNetworkComponent() const;
+    /*1*/ virtual bool isNetworkComponent();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRABLEITEMCOMPONENT
 #endif
@@ -43,8 +41,6 @@ public:
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
 
-
 private:
-
 
 };

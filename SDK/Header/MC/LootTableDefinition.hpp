@@ -15,18 +15,15 @@ struct LootTableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEDEFINITION
 public:
     struct LootTableDefinition& operator=(struct LootTableDefinition const &) = delete;
     LootTableDefinition(struct LootTableDefinition const &) = delete;
     LootTableDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLEDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct LootTableDefinition>> &);
 
 };

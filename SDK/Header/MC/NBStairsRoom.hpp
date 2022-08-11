@@ -15,14 +15,12 @@ class NBStairsRoom : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBSTAIRSROOM
 public:
     class NBStairsRoom& operator=(class NBStairsRoom const &) = delete;
     NBStairsRoom(class NBStairsRoom const &) = delete;
     NBStairsRoom() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBStairsRoom();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBSTAIRSROOM
 #endif
-
-
 
 };

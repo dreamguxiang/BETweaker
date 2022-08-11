@@ -12,19 +12,15 @@ struct ServerNetworkGameplayNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKGAMEPLAYNOTIFICATIONEVENT
 public:
     struct ServerNetworkGameplayNotificationEvent& operator=(struct ServerNetworkGameplayNotificationEvent const &) = delete;
     ServerNetworkGameplayNotificationEvent(struct ServerNetworkGameplayNotificationEvent const &) = delete;
     ServerNetworkGameplayNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKGAMEPLAYNOTIFICATIONEVENT
+#endif
     MCAPI ~ServerNetworkGameplayNotificationEvent();
-
-protected:
-
-private:
 
 };

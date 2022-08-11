@@ -14,14 +14,12 @@ class SimplexNoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEXNOISE
 public:
     class SimplexNoise& operator=(class SimplexNoise const &) = delete;
     SimplexNoise(class SimplexNoise const &) = delete;
     SimplexNoise() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEXNOISE
@@ -30,7 +28,5 @@ public:
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     MCAPI float _getValue(class Vec2 const &) const;
     MCAPI float _getValue(class Vec3 const &) const;
-
-
 
 };

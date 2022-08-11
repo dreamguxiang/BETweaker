@@ -14,14 +14,12 @@ class CraftHandlerTrade {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERTRADE
 public:
     class CraftHandlerTrade& operator=(class CraftHandlerTrade const &) = delete;
     CraftHandlerTrade(class CraftHandlerTrade const &) = delete;
     CraftHandlerTrade() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftHandlerTrade();
@@ -41,8 +39,6 @@ public:
     MCAPI enum ItemStackNetResult _initTrade2Consumes();
     MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const &, class ItemStackBase const &) const;
 
-
 private:
-
 
 };

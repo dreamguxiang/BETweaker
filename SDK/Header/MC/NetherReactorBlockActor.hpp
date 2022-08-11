@@ -15,14 +15,12 @@ class NetherReactorBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERREACTORBLOCKACTOR
 public:
     class NetherReactorBlockActor& operator=(class NetherReactorBlockActor const &) = delete;
     NetherReactorBlockActor(class NetherReactorBlockActor const &) = delete;
     NetherReactorBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NetherReactorBlockActor();
@@ -39,7 +37,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERREACTORBLOCKACTOR
 #endif
     MCAPI NetherReactorBlockActor(class BlockPos const &);
-
-
 
 };

@@ -15,14 +15,12 @@ class NetherGenerator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERGENERATOR
 public:
     class NetherGenerator& operator=(class NetherGenerator const &) = delete;
     NetherGenerator(class NetherGenerator const &) = delete;
     NetherGenerator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
@@ -45,8 +43,6 @@ public:
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension &);
 
-
 private:
-
 
 };

@@ -12,7 +12,6 @@ class RemovePassengersSystemImpl {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEPASSENGERSSYSTEMIMPL
 public:
     class RemovePassengersSystemImpl& operator=(class RemovePassengersSystemImpl const &) = delete;
@@ -20,12 +19,9 @@ public:
     RemovePassengersSystemImpl() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSSYSTEMIMPL
 #endif
     MCAPI static void _removePassengersSystem(class ViewedEntityContextT<class StrictEntityContext, struct RemovePassengersComponent, struct VehicleComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct VehicleComponent, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>);
-
-
 
 };

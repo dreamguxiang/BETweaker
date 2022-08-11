@@ -14,7 +14,6 @@ class AttributeBuff {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEBUFF
 public:
     class AttributeBuff& operator=(class AttributeBuff const &) = delete;
@@ -22,11 +21,10 @@ public:
     AttributeBuff() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AttributeBuff();
-    /*1*/ virtual bool isInstantaneous() const = 0;
-    /*2*/ virtual bool isSerializable() const = 0;
+    /*1*/ virtual bool isInstantaneous();
+    /*2*/ virtual bool isSerializable();
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEBUFF
 #endif
@@ -47,8 +45,6 @@ public:
 //protected:
     MCAPI AttributeBuff(float, int, enum AttributeBuffType);
 
-
 protected:
-
 
 };

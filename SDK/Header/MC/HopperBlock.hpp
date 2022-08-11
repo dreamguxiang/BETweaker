@@ -15,14 +15,12 @@ class HopperBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERBLOCK
 public:
     class HopperBlock& operator=(class HopperBlock const &) = delete;
     HopperBlock(class HopperBlock const &) = delete;
     HopperBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HopperBlock();
@@ -56,8 +54,8 @@ public:
     /*78*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -74,7 +72,7 @@ public:
     /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*178*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCK
     MCVAPI bool hasComparatorSignal() const;
@@ -88,9 +86,7 @@ public:
     MCAPI class AABB _getSpoutAABB(class BlockSource const &, class BlockPos const &) const;
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
-
 private:
     MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
 
 };

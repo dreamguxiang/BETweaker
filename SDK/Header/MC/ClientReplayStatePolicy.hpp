@@ -14,14 +14,12 @@ class ClientReplayStatePolicy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTREPLAYSTATEPOLICY
 public:
     class ClientReplayStatePolicy& operator=(class ClientReplayStatePolicy const &) = delete;
     ClientReplayStatePolicy(class ClientReplayStatePolicy const &) = delete;
     ClientReplayStatePolicy() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
-
-
 
 };

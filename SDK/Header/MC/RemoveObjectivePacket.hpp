@@ -15,13 +15,11 @@ class RemoveObjectivePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEOBJECTIVEPACKET
 public:
     class RemoveObjectivePacket& operator=(class RemoveObjectivePacket const &) = delete;
     RemoveObjectivePacket(class RemoveObjectivePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveObjectivePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI RemoveObjectivePacket(class Objective const &);
     MCAPI RemoveObjectivePacket();
-
-
 
 };

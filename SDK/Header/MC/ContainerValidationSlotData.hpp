@@ -12,20 +12,17 @@ struct ContainerValidationSlotData {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONSLOTDATA
 public:
     struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTDATA
+#endif
     MCAPI ContainerValidationSlotData(enum ContainerEnumName, int);
     MCAPI ContainerValidationSlotData();
     MCAPI bool matches(struct ContainerValidationSlotData const &) const;
-
-protected:
-
-private:
+    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
 
 };

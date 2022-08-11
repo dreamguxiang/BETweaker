@@ -14,14 +14,12 @@ class Amplifier {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPLIFIER
 public:
     class Amplifier& operator=(class Amplifier const &) = delete;
     Amplifier(class Amplifier const &) = delete;
     Amplifier() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Amplifier();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual int getTickInterval(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
 #endif
-
-
 
 };

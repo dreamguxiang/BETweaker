@@ -14,13 +14,11 @@ class StructurePoolBlockPredicateAlwaysTrue {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
 public:
     class StructurePoolBlockPredicateAlwaysTrue& operator=(class StructurePoolBlockPredicateAlwaysTrue const &) = delete;
     StructurePoolBlockPredicateAlwaysTrue(class StructurePoolBlockPredicateAlwaysTrue const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEALWAYSTRUE
@@ -28,7 +26,5 @@ public:
     MCVAPI bool test(class Block const &, class Randomize &) const;
 #endif
     MCAPI StructurePoolBlockPredicateAlwaysTrue();
-
-
 
 };

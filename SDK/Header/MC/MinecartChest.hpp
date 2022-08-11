@@ -16,14 +16,12 @@ class MinecartChest : public Minecart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTCHEST
 public:
     class MinecartChest& operator=(class MinecartChest const &) = delete;
     MinecartChest(class MinecartChest const &) = delete;
     MinecartChest() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~MinecartChest();
@@ -59,9 +57,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const ITEMS_SIZE;
-
 
 };

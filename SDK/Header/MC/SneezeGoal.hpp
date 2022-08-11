@@ -14,14 +14,12 @@ class SneezeGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNEEZEGOAL
 public:
     class SneezeGoal& operator=(class SneezeGoal const &) = delete;
     SneezeGoal(class SneezeGoal const &) = delete;
     SneezeGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SneezeGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNEEZEGOAL
 #endif
     MCAPI SneezeGoal(class Mob &, float, float, float, std::string const &, std::string const &, std::string const &, float, std::vector<struct MobDescriptor> const &, float);
-
-
 
 };

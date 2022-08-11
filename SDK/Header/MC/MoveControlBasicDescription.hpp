@@ -15,7 +15,6 @@ class MoveControlBasicDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLBASICDESCRIPTION
 public:
     class MoveControlBasicDescription& operator=(class MoveControlBasicDescription const &) = delete;
@@ -23,15 +22,12 @@ public:
     MoveControlBasicDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~MoveControlBasicDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value &) const;
+    /*3*/ virtual void serializeData(class Json::Value &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLBASICDESCRIPTION
 #endif
-
-
 
 };

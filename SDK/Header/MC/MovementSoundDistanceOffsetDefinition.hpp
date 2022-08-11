@@ -13,18 +13,15 @@ struct MovementSoundDistanceOffsetDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEMENTSOUNDDISTANCEOFFSETDEFINITION
 public:
     struct MovementSoundDistanceOffsetDefinition& operator=(struct MovementSoundDistanceOffsetDefinition const &) = delete;
     MovementSoundDistanceOffsetDefinition(struct MovementSoundDistanceOffsetDefinition const &) = delete;
     MovementSoundDistanceOffsetDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTSOUNDDISTANCEOFFSETDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct MovementSoundDistanceOffsetDefinition>> &);
 
 };

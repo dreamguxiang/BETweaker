@@ -15,13 +15,11 @@ class DelayedAttackDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYEDATTACKDEFINITION
 public:
     class DelayedAttackDefinition& operator=(class DelayedAttackDefinition const &) = delete;
     DelayedAttackDefinition(class DelayedAttackDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI DelayedAttackDefinition();
     MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
-
-
 
 };

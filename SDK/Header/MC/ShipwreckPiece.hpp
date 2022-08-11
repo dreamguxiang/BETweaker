@@ -15,14 +15,12 @@ class ShipwreckPiece : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKPIECE
 public:
     class ShipwreckPiece& operator=(class ShipwreckPiece const &) = delete;
     ShipwreckPiece(class ShipwreckPiece const &) = delete;
     ShipwreckPiece() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShipwreckPiece();
@@ -35,9 +33,7 @@ public:
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
 
-
 private:
     MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
-
 
 };

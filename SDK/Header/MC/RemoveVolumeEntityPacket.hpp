@@ -15,14 +15,12 @@ class RemoveVolumeEntityPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEVOLUMEENTITYPACKET
 public:
     class RemoveVolumeEntityPacket& operator=(class RemoveVolumeEntityPacket const &) = delete;
     RemoveVolumeEntityPacket(class RemoveVolumeEntityPacket const &) = delete;
     RemoveVolumeEntityPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveVolumeEntityPacket();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEVOLUMEENTITYPACKET
 #endif
     MCAPI RemoveVolumeEntityPacket(class EntityContext &);
-
-
 
 };

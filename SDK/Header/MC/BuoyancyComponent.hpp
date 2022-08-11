@@ -14,12 +14,10 @@ class BuoyancyComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYCOMPONENT
 public:
     class BuoyancyComponent& operator=(class BuoyancyComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYCOMPONENT
@@ -37,7 +35,5 @@ public:
     MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     MCAPI bool shouldApplyGravity() const;
     MCAPI bool shouldSimulateWaves() const;
-
-
 
 };

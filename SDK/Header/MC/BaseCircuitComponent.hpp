@@ -14,13 +14,11 @@ class BaseCircuitComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECIRCUITCOMPONENT
 public:
     class BaseCircuitComponent& operator=(class BaseCircuitComponent const &) = delete;
     BaseCircuitComponent(class BaseCircuitComponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BaseCircuitComponent();
@@ -30,8 +28,8 @@ public:
     /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual void setConsumePowerAnyDirection(bool);
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual bool canConsumerPower() const;
-    /*8*/ virtual bool canStopPower() const;
+    /*7*/ virtual bool canConsumerPower();
+    /*8*/ virtual bool canStopPower();
     /*9*/ virtual void setStopPower(bool);
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
@@ -41,10 +39,10 @@ public:
     /*15*/ virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual bool isHalfPulse() const;
+    /*18*/ virtual bool isHalfPulse();
     /*19*/ virtual bool hasSource(class BaseCircuitComponent &);
     /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual bool isSecondaryPowered() const;
+    /*21*/ virtual bool isSecondaryPowered();
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
@@ -60,8 +58,6 @@ public:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const &, int, bool, int);
     MCAPI bool trackPowerSourceDuplicates(class CircuitTrackingInfo const &, int, bool);
 
-
 protected:
-
 
 };

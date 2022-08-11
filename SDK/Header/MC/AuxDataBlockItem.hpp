@@ -16,14 +16,12 @@ class AuxDataBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AUXDATABLOCKITEM
 public:
     class AuxDataBlockItem& operator=(class AuxDataBlockItem const &) = delete;
     AuxDataBlockItem(class AuxDataBlockItem const &) = delete;
     AuxDataBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AuxDataBlockItem();
@@ -42,10 +40,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUXDATABLOCKITEM
 #endif
     MCAPI AuxDataBlockItem(std::string const &, int, class Block const *);
-
-
 
 };

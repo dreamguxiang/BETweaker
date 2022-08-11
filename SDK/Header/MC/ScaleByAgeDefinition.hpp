@@ -15,13 +15,11 @@ class ScaleByAgeDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGEDEFINITION
 public:
     class ScaleByAgeDefinition& operator=(class ScaleByAgeDefinition const &) = delete;
     ScaleByAgeDefinition(class ScaleByAgeDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGEDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI ScaleByAgeDefinition();
     MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);
-
-
 
 };

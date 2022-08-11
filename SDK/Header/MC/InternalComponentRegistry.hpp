@@ -14,14 +14,12 @@ class InternalComponentRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALCOMPONENTREGISTRY
 public:
     class InternalComponentRegistry& operator=(class InternalComponentRegistry const &) = delete;
     InternalComponentRegistry(class InternalComponentRegistry const &) = delete;
     InternalComponentRegistry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InternalComponentRegistry();
@@ -37,8 +35,6 @@ public:
     MCAPI static class CompoundTag const * _getComponentScope(class CompoundTag const &, std::string const &);
     MCAPI static class CompoundTag & _getOrCreateComponentScope(class CompoundTag &, std::string const &);
 
-
 protected:
-
 
 };

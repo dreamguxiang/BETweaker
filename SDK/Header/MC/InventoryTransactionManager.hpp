@@ -14,14 +14,12 @@ class InventoryTransactionManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONMANAGER
 public:
     class InventoryTransactionManager& operator=(class InventoryTransactionManager const &) = delete;
     InventoryTransactionManager(class InventoryTransactionManager const &) = delete;
     InventoryTransactionManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONMANAGER
@@ -34,7 +32,5 @@ public:
     MCAPI void forceBalanceTransaction();
     MCAPI void resetExpectedActions();
     MCAPI ~InventoryTransactionManager();
-
-
 
 };

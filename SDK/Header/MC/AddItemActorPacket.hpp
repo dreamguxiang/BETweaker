@@ -15,13 +15,11 @@ class AddItemActorPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDITEMACTORPACKET
 public:
     class AddItemActorPacket& operator=(class AddItemActorPacket const &) = delete;
     AddItemActorPacket(class AddItemActorPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AddItemActorPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI AddItemActorPacket(class ItemActor &);
     MCAPI AddItemActorPacket();
-
-
 
 };

@@ -15,7 +15,6 @@ class AmethystClusterBlock : public AmethystBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMETHYSTCLUSTERBLOCK
 public:
     class AmethystClusterBlock& operator=(class AmethystClusterBlock const &) = delete;
@@ -23,11 +22,10 @@ public:
     AmethystClusterBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~AmethystClusterBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType);
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -48,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
@@ -84,8 +82,6 @@ public:
 //private:
     MCAPI class AABB _shapeFromDirection(int) const;
 
-
 private:
-
 
 };

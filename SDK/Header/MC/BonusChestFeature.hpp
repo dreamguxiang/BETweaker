@@ -15,14 +15,12 @@ class BonusChestFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONUSCHESTFEATURE
 public:
     class BonusChestFeature& operator=(class BonusChestFeature const &) = delete;
     BonusChestFeature(class BonusChestFeature const &) = delete;
     BonusChestFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BonusChestFeature();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 
-
 private:
-
 
 };

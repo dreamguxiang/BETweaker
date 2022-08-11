@@ -14,8 +14,6 @@ class JumpControlComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLCOMPONENT
 #endif
@@ -42,8 +40,6 @@ public:
     MCAPI float _getDelayInternal() const;
     MCAPI float _getHeightInternal() const;
 
-
 private:
-
 
 };

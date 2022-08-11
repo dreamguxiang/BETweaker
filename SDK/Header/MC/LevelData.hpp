@@ -17,14 +17,12 @@ class LevelData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATA
 public:
     class LevelData& operator=(class LevelData const &) = delete;
     LevelData(class LevelData const &) = delete;
     LevelData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
@@ -167,8 +165,6 @@ public:
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const &, struct LevelDataValue &&);
 
-
 private:
-
 
 };

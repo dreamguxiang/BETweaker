@@ -15,14 +15,12 @@ class SHLibrary : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHLIBRARY
 public:
     class SHLibrary& operator=(class SHLibrary const &) = delete;
     SHLibrary(class SHLibrary const &) = delete;
     SHLibrary() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHLibrary();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHLIBRARY
 #endif
     MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
-
-
 
 };

@@ -15,14 +15,12 @@ class OceanRuinFeature : public StructureFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINFEATURE
 public:
     class OceanRuinFeature& operator=(class OceanRuinFeature const &) = delete;
     OceanRuinFeature(class OceanRuinFeature const &) = delete;
     OceanRuinFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OceanRuinFeature();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINFEATURE
 #endif
     MCAPI OceanRuinFeature(class OceanMonumentFeature &, unsigned int, class BaseGameVersion const &);
-
-
 
 };

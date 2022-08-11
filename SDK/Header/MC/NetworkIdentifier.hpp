@@ -18,14 +18,12 @@ public:
 	LIAPI std::string getIP();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKIDENTIFIER
 public:
     class NetworkIdentifier& operator=(class NetworkIdentifier const &) = delete;
     NetworkIdentifier(class NetworkIdentifier const &) = delete;
     NetworkIdentifier() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
@@ -44,8 +42,6 @@ public:
 //private:
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 
-
 private:
-
 
 };

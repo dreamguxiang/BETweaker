@@ -15,13 +15,11 @@ class SpawnAoECloudSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNAOECLOUDSUBCOMPONENT
 public:
     class SpawnAoECloudSubcomponent& operator=(class SpawnAoECloudSubcomponent const &) = delete;
     SpawnAoECloudSubcomponent(class SpawnAoECloudSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpawnAoECloudSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNAOECLOUDSUBCOMPONENT
 #endif
     MCAPI SpawnAoECloudSubcomponent();
-
-
 
 };

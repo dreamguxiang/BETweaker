@@ -14,14 +14,12 @@ class EquipItemGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPITEMGOAL
 public:
     class EquipItemGoal& operator=(class EquipItemGoal const &) = delete;
     EquipItemGoal(class EquipItemGoal const &) = delete;
     EquipItemGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EquipItemGoal();
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI void _dropItem(class ItemStack const &) const;
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class SittableDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SITTABLEDEFINITION
 public:
     class SittableDefinition& operator=(class SittableDefinition const &) = delete;
@@ -23,13 +22,10 @@ public:
     SittableDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SITTABLEDEFINITION
 #endif
     MCAPI void uninitialize(class EntityContext &, class SitComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SittableDefinition>> &);
-
-
 
 };

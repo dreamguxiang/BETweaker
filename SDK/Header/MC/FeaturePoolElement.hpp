@@ -16,14 +16,12 @@ class FeaturePoolElement : public StructurePoolElement {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREPOOLELEMENT
 public:
     class FeaturePoolElement& operator=(class FeaturePoolElement const &) = delete;
     FeaturePoolElement(class FeaturePoolElement const &) = delete;
     FeaturePoolElement() = delete;
 #endif
-
 
 public:
     /*0*/ virtual class BlockPos getSize(enum Rotation) const;
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATUREPOOLELEMENT
 #endif
     MCAPI FeaturePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class WeakRefT<struct FeatureRefTraits>);
-
-
 
 };

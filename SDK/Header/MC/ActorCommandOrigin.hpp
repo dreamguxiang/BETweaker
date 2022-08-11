@@ -16,14 +16,12 @@ class ActorCommandOrigin : public CommandOrigin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMMANDORIGIN
 public:
     class ActorCommandOrigin& operator=(class ActorCommandOrigin const &) = delete;
     ActorCommandOrigin(class ActorCommandOrigin const &) = delete;
     ActorCommandOrigin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorCommandOrigin();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI ActorCommandOrigin(class Actor &);
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const &, class Level &);
-
-
 
 };

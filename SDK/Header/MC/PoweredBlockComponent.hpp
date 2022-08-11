@@ -15,7 +15,6 @@ class PoweredBlockComponent : public BaseCircuitComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POWEREDBLOCKCOMPONENT
 public:
     class PoweredBlockComponent& operator=(class PoweredBlockComponent const &) = delete;
@@ -23,11 +22,10 @@ public:
     PoweredBlockComponent() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PoweredBlockComponent();
     /*1*/ virtual int getStrength() const;
-    /*7*/ virtual bool canConsumerPower() const;
+    /*7*/ virtual bool canConsumerPower();
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
@@ -38,7 +36,5 @@ public:
     MCVAPI bool hasChildrenSource() const;
 #endif
     MCAPI PoweredBlockComponent(unsigned char);
-
-
 
 };

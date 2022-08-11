@@ -15,13 +15,11 @@ class CompletedUsingItemPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLETEDUSINGITEMPACKET
 public:
     class CompletedUsingItemPacket& operator=(class CompletedUsingItemPacket const &) = delete;
     CompletedUsingItemPacket(class CompletedUsingItemPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompletedUsingItemPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI CompletedUsingItemPacket(short, int);
     MCAPI CompletedUsingItemPacket();
-
-
 
 };

@@ -16,14 +16,12 @@ class TripodCamera : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERA
 public:
     class TripodCamera& operator=(class TripodCamera const &) = delete;
     TripodCamera(class TripodCamera const &) = delete;
     TripodCamera() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -57,7 +55,7 @@ public:
     /*285*/ virtual void __unk_vfn_285();
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
-    /*350*/ virtual bool canExistWhenDisallowMob() const;
+    /*350*/ virtual bool canExistWhenDisallowMob();
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERA
@@ -69,7 +67,5 @@ public:
     MCAPI bool interactWithPlayer(class Player &);
     MCAPI bool isActivated() const;
     MCAPI void startTakingPicture(class Player &);
-
-
 
 };

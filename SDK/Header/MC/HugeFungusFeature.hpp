@@ -15,7 +15,6 @@ class HugeFungusFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUGEFUNGUSFEATURE
 public:
     class HugeFungusFeature& operator=(class HugeFungusFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     HugeFungusFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~HugeFungusFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEFUNGUSFEATURE
 #endif
     MCAPI HugeFungusFeature(bool);
-
-
 
 };

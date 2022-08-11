@@ -14,14 +14,12 @@ class InsomniaComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSOMNIACOMPONENT
 public:
     class InsomniaComponent& operator=(class InsomniaComponent const &) = delete;
     InsomniaComponent(class InsomniaComponent const &) = delete;
     InsomniaComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIACOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI int incrementTimeSinceRest();
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void restartTimer();
-
-
 
 };

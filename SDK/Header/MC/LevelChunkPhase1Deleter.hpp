@@ -14,19 +14,15 @@ struct LevelChunkPhase1Deleter {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKPHASE1DELETER
 public:
     struct LevelChunkPhase1Deleter& operator=(struct LevelChunkPhase1Deleter const &) = delete;
     LevelChunkPhase1Deleter(struct LevelChunkPhase1Deleter const &) = delete;
     LevelChunkPhase1Deleter() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKPHASE1DELETER
+#endif
     MCAPI void operator()(class LevelChunk *);
-
-protected:
-
-private:
 
 };

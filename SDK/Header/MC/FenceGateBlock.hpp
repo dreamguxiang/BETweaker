@@ -15,7 +15,6 @@ class FenceGateBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FENCEGATEBLOCK
 public:
     class FenceGateBlock& operator=(class FenceGateBlock const &) = delete;
@@ -23,11 +22,10 @@ public:
     FenceGateBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FenceGateBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
+    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &);
     /*19*/ virtual void __unk_vfn_19();
     /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /*29*/ virtual void __unk_vfn_29();
@@ -50,7 +48,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
@@ -84,8 +82,6 @@ public:
     MCAPI void _onOpenChanged(class BlockSource &, class BlockPos const &) const;
     MCAPI void _setOpen(class BlockSource &, class gsl::not_null<class Block const *>, class BlockPos const &, class Player *, bool) const;
 
-
 private:
-
 
 };

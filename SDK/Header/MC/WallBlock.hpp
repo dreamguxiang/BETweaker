@@ -15,7 +15,6 @@ class WallBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALLBLOCK
 public:
     class WallBlock& operator=(class WallBlock const &) = delete;
@@ -23,11 +22,10 @@ public:
     WallBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~WallBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
+    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &);
     /*19*/ virtual void __unk_vfn_19();
     /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
     /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
@@ -51,13 +49,13 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*75*/ virtual void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*76*/ virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
-    /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -67,7 +65,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
@@ -75,7 +73,7 @@ public:
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
-    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &);
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*187*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
@@ -99,9 +97,7 @@ public:
     MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
 
-
 private:
     MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-
 
 };

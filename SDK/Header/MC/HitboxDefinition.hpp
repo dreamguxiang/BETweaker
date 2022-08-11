@@ -15,7 +15,6 @@ class HitboxDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXDEFINITION
 public:
     class HitboxDefinition& operator=(class HitboxDefinition const &) = delete;
@@ -23,14 +22,11 @@ public:
     HitboxDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXDEFINITION
 #endif
     MCAPI void addAABB(struct HitboxJson const &);
     MCAPI void initialize(class EntityContext &, class HitboxComponent &);
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>> &);
-
-
 
 };

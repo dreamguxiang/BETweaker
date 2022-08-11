@@ -12,7 +12,6 @@ class OnFallOnTrigger {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFALLONTRIGGER
 public:
     class OnFallOnTrigger& operator=(class OnFallOnTrigger const &) = delete;
@@ -20,13 +19,10 @@ public:
     OnFallOnTrigger() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGER
 #endif
     MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
     MCAPI ~OnFallOnTrigger();
-
-
 
 };

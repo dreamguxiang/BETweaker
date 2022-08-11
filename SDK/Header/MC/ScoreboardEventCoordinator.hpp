@@ -14,14 +14,12 @@ class ScoreboardEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDEVENTCOORDINATOR
 public:
     class ScoreboardEventCoordinator& operator=(class ScoreboardEventCoordinator const &) = delete;
     ScoreboardEventCoordinator(class ScoreboardEventCoordinator const &) = delete;
     ScoreboardEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
@@ -30,7 +28,5 @@ public:
     MCAPI void sendOnObjectiveRemoved(std::string const &);
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);
-
-
 
 };

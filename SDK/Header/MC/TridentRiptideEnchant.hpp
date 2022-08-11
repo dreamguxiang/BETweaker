@@ -15,14 +15,12 @@ class TridentRiptideEnchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTRIPTIDEENCHANT
 public:
     class TridentRiptideEnchant& operator=(class TridentRiptideEnchant const &) = delete;
     TridentRiptideEnchant(class TridentRiptideEnchant const &) = delete;
     TridentRiptideEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TridentRiptideEnchant();
@@ -34,7 +32,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTRIPTIDEENCHANT
 #endif
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
-
-
 
 };

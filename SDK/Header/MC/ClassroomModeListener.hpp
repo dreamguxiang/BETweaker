@@ -15,14 +15,12 @@ class ClassroomModeListener : public BlockSourceListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSROOMMODELISTENER
 public:
     class ClassroomModeListener& operator=(class ClassroomModeListener const &) = delete;
     ClassroomModeListener(class ClassroomModeListener const &) = delete;
     ClassroomModeListener() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ClassroomModeListener();
@@ -43,7 +41,5 @@ public:
     MCVAPI void onEntityRemoved(class Actor &);
 #endif
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
-
-
 
 };

@@ -15,13 +15,11 @@ class BehaviorFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORFACTORY
 public:
     class BehaviorFactory& operator=(class BehaviorFactory const &) = delete;
     BehaviorFactory(class BehaviorFactory const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORFACTORY
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _initNodes();
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class IcebergFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEBERGFEATURE
 public:
     class IcebergFeature& operator=(class IcebergFeature const &) = delete;
     IcebergFeature(class IcebergFeature const &) = delete;
     IcebergFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~IcebergFeature();
@@ -38,8 +36,6 @@ public:
     MCAPI void setIcebergBlock(class BlockPos const &, class BlockSource &, class Random &, int, int, bool, bool, class Block const &) const;
     MCAPI float signedDistanceEllipse(int, int, class BlockPos const &, int, int, float) const;
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class PointedDripstoneBlock : public HeavyBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POINTEDDRIPSTONEBLOCK
 public:
     class PointedDripstoneBlock& operator=(class PointedDripstoneBlock const &) = delete;
     PointedDripstoneBlock(class PointedDripstoneBlock const &) = delete;
     PointedDripstoneBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PointedDripstoneBlock();
@@ -54,8 +52,8 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -117,8 +115,6 @@ public:
     MCAPI static bool _mayPlaceHanging(class BlockSource &, class BlockPos const &);
     MCAPI static bool _mayPlaceStanding(class BlockSource &, class BlockPos const &);
 
-
 private:
-
 
 };

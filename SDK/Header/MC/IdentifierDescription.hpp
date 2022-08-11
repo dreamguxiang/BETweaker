@@ -14,7 +14,6 @@ class IdentifierDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTIFIERDESCRIPTION
 public:
     class IdentifierDescription& operator=(class IdentifierDescription const &) = delete;
@@ -22,13 +21,10 @@ public:
     IdentifierDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IdentifierDescription();
     /*1*/ virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTIFIERDESCRIPTION
 #endif
-
-
 
 };

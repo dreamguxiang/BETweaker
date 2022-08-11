@@ -12,7 +12,6 @@ class OnActorLeaveVolumeComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORLEAVEVOLUMECOMPONENT
 public:
     class OnActorLeaveVolumeComponent& operator=(class OnActorLeaveVolumeComponent const &) = delete;
@@ -20,12 +19,9 @@ public:
     OnActorLeaveVolumeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMECOMPONENT
 #endif
     MCAPI ~OnActorLeaveVolumeComponent();
-
-
 
 };

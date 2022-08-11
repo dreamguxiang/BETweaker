@@ -15,14 +15,12 @@ class StructureBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCK
 public:
     class StructureBlock& operator=(class StructureBlock const &) = delete;
     StructureBlock(class StructureBlock const &) = delete;
     StructureBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureBlock();
@@ -47,12 +45,12 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
@@ -66,13 +64,11 @@ public:
     /*170*/ virtual void __unk_vfn_170();
     /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCK
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI StructureBlock(std::string const &, int);
-
-
 
 };

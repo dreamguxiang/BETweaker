@@ -14,7 +14,6 @@ class BlockStateCommandParam {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATECOMMANDPARAM
 public:
     class BlockStateCommandParam& operator=(class BlockStateCommandParam const &) = delete;
@@ -22,14 +21,11 @@ public:
     BlockStateCommandParam() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATECOMMANDPARAM
 #endif
     MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     MCAPI ~BlockStateCommandParam();
-
-
 
 };

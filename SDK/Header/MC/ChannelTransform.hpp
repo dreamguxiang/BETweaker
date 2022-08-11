@@ -14,7 +14,6 @@ class ChannelTransform {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANNELTRANSFORM
 public:
     class ChannelTransform& operator=(class ChannelTransform const &) = delete;
@@ -22,12 +21,9 @@ public:
     ChannelTransform() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANNELTRANSFORM
 #endif
     MCAPI bool getDataValues(class Vec3 &, class Vec3 &) const;
-
-
 
 };

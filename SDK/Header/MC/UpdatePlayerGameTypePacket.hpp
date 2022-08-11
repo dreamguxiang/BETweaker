@@ -15,13 +15,11 @@ class UpdatePlayerGameTypePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEPLAYERGAMETYPEPACKET
 public:
     class UpdatePlayerGameTypePacket& operator=(class UpdatePlayerGameTypePacket const &) = delete;
     UpdatePlayerGameTypePacket(class UpdatePlayerGameTypePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~UpdatePlayerGameTypePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
-
-
 
 };

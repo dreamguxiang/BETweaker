@@ -15,7 +15,6 @@ class EnchantCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTCOMMAND
 public:
     class EnchantCommand& operator=(class EnchantCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     EnchantCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~EnchantCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

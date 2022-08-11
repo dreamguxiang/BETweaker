@@ -14,7 +14,6 @@ class ListTagIntAdder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGINTADDER
 public:
     class ListTagIntAdder& operator=(class ListTagIntAdder const &) = delete;
@@ -22,13 +21,10 @@ public:
     ListTagIntAdder() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGINTADDER
 #endif
     MCAPI class ListTagIntAdder & operator()(int);
     MCAPI ~ListTagIntAdder();
-
-
 
 };

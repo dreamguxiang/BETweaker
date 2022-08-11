@@ -15,14 +15,12 @@ class AllowListEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTENTRY
 public:
     class AllowListEntry& operator=(class AllowListEntry const &) = delete;
     AllowListEntry(class AllowListEntry const &) = delete;
     AllowListEntry() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AllowListEntry();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI AllowListEntry(class Json::Value &);
     MCAPI AllowListEntry(std::string);
-
-
 
 };

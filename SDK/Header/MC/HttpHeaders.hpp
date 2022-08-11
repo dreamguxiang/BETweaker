@@ -17,13 +17,11 @@ public:
 enum ParseState;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPHEADERS
 public:
     class HttpHeaders& operator=(class HttpHeaders const &) = delete;
     HttpHeaders(class HttpHeaders const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HTTPHEADERS
@@ -35,7 +33,5 @@ public:
     MCAPI std::string getStatusCode() const;
     MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
     MCAPI ~HttpHeaders();
-
-
 
 };

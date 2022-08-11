@@ -13,14 +13,12 @@ class AncientCityFeature : public StructureFeature {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANCIENTCITYFEATURE
 public:
     class AncientCityFeature& operator=(class AncientCityFeature const &) = delete;
     AncientCityFeature(class AncientCityFeature const &) = delete;
     AncientCityFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AncientCityFeature();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANCIENTCITYFEATURE
 #endif
     MCAPI AncientCityFeature(unsigned int, class BaseGameVersion const &);
-
-
 
 };

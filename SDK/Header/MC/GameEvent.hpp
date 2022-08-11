@@ -14,14 +14,12 @@ class GameEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENT
 public:
     class GameEvent& operator=(class GameEvent const &) = delete;
     GameEvent(class GameEvent const &) = delete;
     GameEvent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENT
@@ -30,7 +28,5 @@ public:
     MCAPI float getRadiusSqrd() const;
     MCAPI enum GameEventConfig::GameEventType const getType() const;
     MCAPI bool isCategory(enum GameEventConfig::GameEventCategory) const;
-
-
 
 };

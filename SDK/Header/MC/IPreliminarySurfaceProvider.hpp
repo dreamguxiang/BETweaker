@@ -14,7 +14,6 @@ class IPreliminarySurfaceProvider {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPRELIMINARYSURFACEPROVIDER
 public:
     class IPreliminarySurfaceProvider& operator=(class IPreliminarySurfaceProvider const &) = delete;
@@ -22,11 +21,8 @@ public:
     IPreliminarySurfaceProvider() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPRELIMINARYSURFACEPROVIDER
 #endif
-
-
 
 };

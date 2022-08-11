@@ -12,7 +12,6 @@ class ItemCompleteChargeEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPLETECHARGEEVENT
 public:
     class ItemCompleteChargeEvent& operator=(class ItemCompleteChargeEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ItemCompleteChargeEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPLETECHARGEEVENT
 #endif
     MCAPI ~ItemCompleteChargeEvent();
-
-
 
 };

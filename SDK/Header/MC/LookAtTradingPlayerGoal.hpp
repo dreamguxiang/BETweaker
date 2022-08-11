@@ -15,14 +15,12 @@ class LookAtTradingPlayerGoal : public LookAtActorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATTRADINGPLAYERGOAL
 public:
     class LookAtTradingPlayerGoal& operator=(class LookAtTradingPlayerGoal const &) = delete;
     LookAtTradingPlayerGoal(class LookAtTradingPlayerGoal const &) = delete;
     LookAtTradingPlayerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookAtTradingPlayerGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATTRADINGPLAYERGOAL
 #endif
     MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
-
-
 
 };

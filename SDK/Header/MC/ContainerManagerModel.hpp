@@ -14,14 +14,12 @@ class ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMANAGERMODEL
 public:
     class ContainerManagerModel& operator=(class ContainerManagerModel const &) = delete;
     ContainerManagerModel(class ContainerManagerModel const &) = delete;
     ContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ContainerManagerModel();
@@ -30,18 +28,18 @@ public:
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual void serverInitItemStackIds();
-    /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    /*7*/ virtual void setSlot(int, class ItemStack const &, bool) = 0;
-    /*8*/ virtual class ItemStack const & getSlot(int) const = 0;
-    /*9*/ virtual void setData(int, int) = 0;
-    /*10*/ virtual void broadcastChanges() = 0;
+    /*6*/ virtual std::vector<class ItemStack> getItemCopies();
+    /*7*/ virtual void setSlot(int, class ItemStack const &, bool);
+    /*8*/ virtual class ItemStack const & getSlot(int);
+    /*9*/ virtual void setData(int, int);
+    /*10*/ virtual void broadcastChanges();
     /*11*/ virtual bool tick();
     /*12*/ virtual void debitPlayerLevels(int);
     /*13*/ virtual bool isCreativeMode() const;
     /*14*/ virtual bool isClientSide() const;
     /*15*/ virtual bool isServerAuthoritative() const;
     /*16*/ virtual bool isValid(float);
-    /*17*/ virtual class ContainerScreenContext _postInit() = 0;
+    /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL
 #endif
     MCAPI ContainerManagerModel(enum ContainerID, class Player &);
@@ -56,8 +54,6 @@ public:
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const &, float) const;
     MCAPI static void _appendCopies(std::vector<class ItemStack> &, std::vector<class ItemStack> const &);
 
-
 protected:
-
 
 };

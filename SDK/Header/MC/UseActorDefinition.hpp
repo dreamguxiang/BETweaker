@@ -16,7 +16,6 @@ class UseActorDefinition : public BehaviorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_USEACTORDEFINITION
 public:
     class UseActorDefinition& operator=(class UseActorDefinition const &) = delete;
@@ -24,12 +23,9 @@ public:
     UseActorDefinition() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~UseActorDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
 #endif
-
-
 
 };

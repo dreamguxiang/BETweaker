@@ -14,7 +14,6 @@ class ISecureStorageKeySystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISECURESTORAGEKEYSYSTEM
 public:
     class ISecureStorageKeySystem& operator=(class ISecureStorageKeySystem const &) = delete;
@@ -22,11 +21,8 @@ public:
     ISecureStorageKeySystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISECURESTORAGEKEYSYSTEM
 #endif
-
-
 
 };

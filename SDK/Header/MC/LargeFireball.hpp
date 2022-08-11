@@ -16,14 +16,12 @@ class LargeFireball : public Fireball {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LARGEFIREBALL
 public:
     class LargeFireball& operator=(class LargeFireball const &) = delete;
     LargeFireball(class LargeFireball const &) = delete;
     LargeFireball() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~LargeFireball();
@@ -52,7 +50,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LARGEFIREBALL
 #endif
     MCAPI LargeFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

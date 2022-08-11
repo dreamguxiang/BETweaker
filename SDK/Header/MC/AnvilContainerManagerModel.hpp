@@ -15,14 +15,12 @@ class AnvilContainerManagerModel : public ContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILCONTAINERMANAGERMODEL
 public:
     class AnvilContainerManagerModel& operator=(class AnvilContainerManagerModel const &) = delete;
     AnvilContainerManagerModel(class AnvilContainerManagerModel const &) = delete;
     AnvilContainerManagerModel() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AnvilContainerManagerModel();
@@ -39,7 +37,5 @@ public:
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;
     MCAPI static int const RESULT_SLOT;
-
-
 
 };

@@ -16,14 +16,12 @@ class ResourcePackManager {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKMANAGER
 public:
     class ResourcePackManager& operator=(class ResourcePackManager const &) = delete;
     ResourcePackManager(class ResourcePackManager const &) = delete;
     ResourcePackManager() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackManager();
@@ -63,8 +61,6 @@ public:
     MCAPI void _getResourcesOfGroup(class PackInstance const &, std::string const &, std::vector<class Core::PathBuffer<std::string>> &) const;
     MCAPI void _updateLanguageSubpacks();
 
-
 private:
-
 
 };

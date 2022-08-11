@@ -16,7 +16,6 @@ public:
 enum RequestActionType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IREQUESTACTION
 public:
     class IRequestAction& operator=(class IRequestAction const &) = delete;
@@ -24,17 +23,14 @@ public:
     IRequestAction() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~IRequestAction();
-    /*1*/ virtual void execute(class ServerLevel &, class Dimension &) = 0;
+    /*1*/ virtual void execute(class ServerLevel &, class Dimension &);
     /*2*/ virtual void serialize(class CompoundTag &);
     /*3*/ virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
 #endif
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
     MCAPI static bool isValidTag(class CompoundTag const &);
-
-
 
 };

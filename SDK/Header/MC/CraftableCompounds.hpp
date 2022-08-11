@@ -14,13 +14,11 @@ class CraftableCompounds {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTABLECOMPOUNDS
 public:
     class CraftableCompounds& operator=(class CraftableCompounds const &) = delete;
     CraftableCompounds(class CraftableCompounds const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftableCompounds();
@@ -38,8 +36,6 @@ public:
     MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
     MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum CompoundType, enum LabTableReactionType, enum CompoundContainerType, int);
 
-
 protected:
-
 
 };

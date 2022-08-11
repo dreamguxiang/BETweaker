@@ -14,7 +14,6 @@ class NBTSaver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSAVER
 public:
     class NBTSaver& operator=(class NBTSaver const &) = delete;
@@ -22,12 +21,9 @@ public:
     NBTSaver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
 #endif
     MCAPI class CompoundTag getSavedCompoundTag();
-
-
 
 };

@@ -14,14 +14,12 @@ class MountPathingGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTPATHINGGOAL
 public:
     class MountPathingGoal& operator=(class MountPathingGoal const &) = delete;
     MountPathingGoal(class MountPathingGoal const &) = delete;
     MountPathingGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MountPathingGoal();
@@ -38,7 +36,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTPATHINGGOAL
 #endif
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
-
-
 
 };

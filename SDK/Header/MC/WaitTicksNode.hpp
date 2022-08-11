@@ -14,13 +14,11 @@ class WaitTicksNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITTICKSNODE
 public:
     class WaitTicksNode& operator=(class WaitTicksNode const &) = delete;
     WaitTicksNode(class WaitTicksNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WaitTicksNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITTICKSNODE
 #endif
     MCAPI WaitTicksNode();
-
-
 
 };

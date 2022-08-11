@@ -15,13 +15,11 @@ class CameraPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAPACKET
 public:
     class CameraPacket& operator=(class CameraPacket const &) = delete;
     CameraPacket(class CameraPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CameraPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);
     MCAPI CameraPacket();
-
-
 
 };

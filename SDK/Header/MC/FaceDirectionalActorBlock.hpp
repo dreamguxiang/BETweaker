@@ -15,14 +15,12 @@ class FaceDirectionalActorBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACEDIRECTIONALACTORBLOCK
 public:
     class FaceDirectionalActorBlock& operator=(class FaceDirectionalActorBlock const &) = delete;
     FaceDirectionalActorBlock(class FaceDirectionalActorBlock const &) = delete;
     FaceDirectionalActorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FaceDirectionalActorBlock();
@@ -68,7 +66,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FACEDIRECTIONALACTORBLOCK
 #endif
     MCAPI FaceDirectionalActorBlock(std::string const &, int, class Material const &, bool, float);
-
-
 
 };

@@ -12,7 +12,6 @@ class AsyncBlockInternalGuard {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCBLOCKINTERNALGUARD
 public:
     class AsyncBlockInternalGuard& operator=(class AsyncBlockInternalGuard const &) = delete;
@@ -20,12 +19,9 @@ public:
     AsyncBlockInternalGuard() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCBLOCKINTERNALGUARD
 #endif
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock *);
-
-
 
 };

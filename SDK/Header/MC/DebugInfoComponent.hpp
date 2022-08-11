@@ -14,13 +14,11 @@ class DebugInfoComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEBUGINFOCOMPONENT
 public:
     class DebugInfoComponent& operator=(class DebugInfoComponent const &) = delete;
     DebugInfoComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DebugInfoComponent();
@@ -62,7 +60,5 @@ public:
     MCAPI bool listenersEmpty() const;
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, enum SubClientId);
-
-
 
 };

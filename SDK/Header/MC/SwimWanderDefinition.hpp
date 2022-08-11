@@ -15,13 +15,11 @@ class SwimWanderDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWANDERDEFINITION
 public:
     class SwimWanderDefinition& operator=(class SwimWanderDefinition const &) = delete;
     SwimWanderDefinition(class SwimWanderDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERDEFINITION
@@ -29,7 +27,5 @@ public:
     MCAPI SwimWanderDefinition();
     MCAPI void initialize(class EntityContext &, class SwimWanderGoal &);
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>> &);
-
-
 
 };

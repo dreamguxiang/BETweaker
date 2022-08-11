@@ -14,7 +14,6 @@ class JigsawStructureBlockInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWSTRUCTUREBLOCKINFO
 public:
     class JigsawStructureBlockInfo& operator=(class JigsawStructureBlockInfo const &) = delete;
@@ -22,14 +21,11 @@ public:
     JigsawStructureBlockInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKINFO
 #endif
     MCAPI JigsawStructureBlockInfo(class JigsawStructureBlockInfo &&);
     MCAPI JigsawStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &);
     MCAPI class CompoundTag * getNonEmptyTag();
-
-
 
 };

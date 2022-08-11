@@ -87,13 +87,11 @@ public:
     LIAPI std::string toSNBT();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAG
 public:
     class CompoundTag& operator=(class CompoundTag const &) = delete;
     CompoundTag(class CompoundTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CompoundTag();
@@ -156,7 +154,5 @@ public:
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
     MCAPI unsigned __int64 size() const;
-
-
 
 };

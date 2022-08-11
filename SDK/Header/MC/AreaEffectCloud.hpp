@@ -15,14 +15,12 @@ class AreaEffectCloud : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAEFFECTCLOUD
 public:
     class AreaEffectCloud& operator=(class AreaEffectCloud const &) = delete;
     AreaEffectCloud(class AreaEffectCloud const &) = delete;
     AreaEffectCloud() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -31,7 +29,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -76,8 +74,6 @@ public:
     MCAPI void _setSpawnTick(__int64);
     MCAPI void _spawnParticles(class Random &, unsigned int, float);
 
-
 private:
-
 
 };

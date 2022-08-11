@@ -15,14 +15,12 @@ class GlassBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLASSBLOCK
 public:
     class GlassBlock& operator=(class GlassBlock const &) = delete;
     GlassBlock(class GlassBlock const &) = delete;
     GlassBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GlassBlock();
@@ -68,7 +66,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLASSBLOCK
 #endif
     MCAPI GlassBlock(std::string const &, int, class Material const &, bool, bool);
-
-
 
 };

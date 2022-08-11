@@ -15,14 +15,12 @@ class SilverfishMergeWithStoneGoal : public RandomStrollGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SILVERFISHMERGEWITHSTONEGOAL
 public:
     class SilverfishMergeWithStoneGoal& operator=(class SilverfishMergeWithStoneGoal const &) = delete;
     SilverfishMergeWithStoneGoal(class SilverfishMergeWithStoneGoal const &) = delete;
     SilverfishMergeWithStoneGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SilverfishMergeWithStoneGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISHMERGEWITHSTONEGOAL
 #endif
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
-
-
 
 };

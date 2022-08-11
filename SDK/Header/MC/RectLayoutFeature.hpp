@@ -20,14 +20,12 @@ struct FeatureArea {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECTLAYOUTFEATURE
 public:
     class RectLayoutFeature& operator=(class RectLayoutFeature const &) = delete;
     RectLayoutFeature(class RectLayoutFeature const &) = delete;
     RectLayoutFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RectLayoutFeature();
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const &, int, class std::array<class std::array<unsigned char, 16>, 16> const &) const;
 
-
 private:
-
 
 };

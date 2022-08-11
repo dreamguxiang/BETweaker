@@ -12,7 +12,6 @@ class EntitiesPendingEnterVolumeComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESPENDINGENTERVOLUMECOMPONENT
 public:
     class EntitiesPendingEnterVolumeComponent& operator=(class EntitiesPendingEnterVolumeComponent const &) = delete;
@@ -20,13 +19,10 @@ public:
     EntitiesPendingEnterVolumeComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESPENDINGENTERVOLUMECOMPONENT
 #endif
     MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
     MCAPI ~EntitiesPendingEnterVolumeComponent();
-
-
 
 };

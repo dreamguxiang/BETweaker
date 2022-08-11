@@ -15,14 +15,12 @@ class NBRoomCrossing : public NetherFortressPiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBROOMCROSSING
 public:
     class NBRoomCrossing& operator=(class NBRoomCrossing const &) = delete;
     NBRoomCrossing(class NBRoomCrossing const &) = delete;
     NBRoomCrossing() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NBRoomCrossing();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBROOMCROSSING
 #endif
-
-
 
 };

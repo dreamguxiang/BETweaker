@@ -15,14 +15,12 @@ class BaseRailTransporter : public BaseCircuitComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASERAILTRANSPORTER
 public:
     class BaseRailTransporter& operator=(class BaseRailTransporter const &) = delete;
     BaseRailTransporter(class BaseRailTransporter const &) = delete;
     BaseRailTransporter() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BaseRailTransporter();
@@ -34,7 +32,5 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILTRANSPORTER
 #endif
-
-
 
 };

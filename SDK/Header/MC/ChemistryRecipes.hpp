@@ -14,7 +14,6 @@ class ChemistryRecipes {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYRECIPES
 public:
     class ChemistryRecipes& operator=(class ChemistryRecipes const &) = delete;
@@ -22,12 +21,9 @@ public:
     ChemistryRecipes() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYRECIPES
 #endif
     MCAPI static void addRecipes(class Recipes &);
-
-
 
 };

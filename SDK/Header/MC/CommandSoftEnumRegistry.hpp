@@ -16,7 +16,6 @@ class CommandSoftEnumRegistry {
     class CommandRegistry* registry;
 #define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSOFTENUMREGISTRY
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSOFTENUMREGISTRY
 public:
     class CommandSoftEnumRegistry& operator=(class CommandSoftEnumRegistry const &) = delete;
@@ -24,14 +23,11 @@ public:
     CommandSoftEnumRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSOFTENUMREGISTRY
 #endif
     MCAPI CommandSoftEnumRegistry(class CommandRegistry *);
     MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const &, std::vector<std::string>);
     MCAPI ~CommandSoftEnumRegistry();
-
-
 
 };

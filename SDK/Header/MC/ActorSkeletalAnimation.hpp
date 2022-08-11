@@ -14,14 +14,12 @@ class ActorSkeletalAnimation {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATION
 public:
     class ActorSkeletalAnimation& operator=(class ActorSkeletalAnimation const &) = delete;
     ActorSkeletalAnimation(class ActorSkeletalAnimation const &) = delete;
     ActorSkeletalAnimation() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
@@ -46,7 +44,5 @@ public:
     MCAPI void sortParticleEffectEvents();
     MCAPI void sortSoundEffectEvents();
     MCAPI ~ActorSkeletalAnimation();
-
-
 
 };

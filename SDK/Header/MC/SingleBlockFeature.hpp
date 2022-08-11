@@ -14,14 +14,12 @@ class SingleBlockFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SINGLEBLOCKFEATURE
 public:
     class SingleBlockFeature& operator=(class SingleBlockFeature const &) = delete;
     SingleBlockFeature(class SingleBlockFeature const &) = delete;
     SingleBlockFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SingleBlockFeature();
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI class Block const * _mayAttach(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
-
 private:
-
 
 };

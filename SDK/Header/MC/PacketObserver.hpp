@@ -14,14 +14,12 @@ class PacketObserver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETOBSERVER
 public:
     class PacketObserver& operator=(class PacketObserver const &) = delete;
     PacketObserver(class PacketObserver const &) = delete;
     PacketObserver() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PacketObserver();
@@ -34,7 +32,5 @@ public:
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
 #endif
-
-
 
 };

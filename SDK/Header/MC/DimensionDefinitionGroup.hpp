@@ -12,14 +12,12 @@ class DimensionDefinitionGroup {
 #define AFTER_EXTRA
     struct DimensionDefinition;
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDEFINITIONGROUP
 public:
     class DimensionDefinitionGroup& operator=(class DimensionDefinitionGroup const &) = delete;
     DimensionDefinitionGroup(class DimensionDefinitionGroup const &) = delete;
     DimensionDefinitionGroup() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDEFINITIONGROUP
@@ -29,7 +27,5 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI bool tryAddDimensionDefinitionByString(std::string const &);
     MCAPI ~DimensionDefinitionGroup();
-
-
 
 };

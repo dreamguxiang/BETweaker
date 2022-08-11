@@ -12,7 +12,6 @@ class PerfContextTrackerReport {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKERREPORT
 public:
     class PerfContextTrackerReport& operator=(class PerfContextTrackerReport const &) = delete;
@@ -20,12 +19,9 @@ public:
     PerfContextTrackerReport() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKERREPORT
 #endif
     MCAPI ~PerfContextTrackerReport();
-
-
 
 };

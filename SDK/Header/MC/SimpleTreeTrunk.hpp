@@ -15,7 +15,6 @@ class SimpleTreeTrunk {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLETREETRUNK
 public:
     class SimpleTreeTrunk& operator=(class SimpleTreeTrunk const &) = delete;
@@ -23,14 +22,11 @@ public:
     SimpleTreeTrunk() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SimpleTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /*2*/ virtual int getTreeHeight(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLETREETRUNK
 #endif
-
-
 
 };

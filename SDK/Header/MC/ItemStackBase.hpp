@@ -22,8 +22,6 @@ public:
 LIAPI int getCount() const;
 
 #undef AFTER_EXTRA
-
-
 public:
     /*0*/ virtual ~ItemStackBase();
     /*1*/ virtual void reinit(class Item const &, int, int);
@@ -193,7 +191,6 @@ public:
     MCAPI void _setChargedItem(class ItemInstance const &);
     MCAPI void _updateCompareHashes();
 
-
 protected:
     MCAPI static std::string const TAG_CHARGED_ITEM;
     MCAPI static std::string const TAG_STORE_CAN_DESTROY;
@@ -201,6 +198,5 @@ protected:
 
 private:
     MCAPI static int const MAX_STACK_SIZE;
-
 
 };

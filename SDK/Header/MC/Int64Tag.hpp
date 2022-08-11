@@ -24,13 +24,11 @@ public:
     LIAPI operator int64_t() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INT64TAG
 public:
     class Int64Tag& operator=(class Int64Tag const &) = delete;
     Int64Tag(class Int64Tag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Int64Tag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI Int64Tag();
     MCAPI Int64Tag(__int64);
-
-
 
 };

@@ -14,14 +14,12 @@ class DragonScanningGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSCANNINGGOAL
 public:
     class DragonScanningGoal& operator=(class DragonScanningGoal const &) = delete;
     DragonScanningGoal(class DragonScanningGoal const &) = delete;
     DragonScanningGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DragonScanningGoal();
@@ -38,11 +36,9 @@ public:
 
 //private:
 
-
 private:
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
-
 
 };

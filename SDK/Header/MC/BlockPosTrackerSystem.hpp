@@ -14,14 +14,12 @@ class BlockPosTrackerSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOSTRACKERSYSTEM
 public:
     class BlockPosTrackerSystem& operator=(class BlockPosTrackerSystem const &) = delete;
     BlockPosTrackerSystem(class BlockPosTrackerSystem const &) = delete;
     BlockPosTrackerSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockPosTrackerSystem();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERSYSTEM
 #endif
     MCAPI static void _tickBlockPosTrackerComponent(class Actor *, class BlockPosTrackerComponent &);
-
-
 
 };

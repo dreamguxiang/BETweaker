@@ -23,7 +23,6 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORITEM
 public:
     class ArmorItem& operator=(class ArmorItem const &) = delete;
@@ -31,12 +30,11 @@ public:
     ArmorItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ArmorItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual bool isArmor() const;
+    /*12*/ virtual bool isArmor();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
     /*18*/ virtual bool isDyeable() const;
@@ -63,12 +61,13 @@ public:
     /*83*/ virtual int buildIdAux(short, class CompoundTag const *) const;
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /*115*/ virtual enum ActorLocation getEquipLocation() const;
     /*116*/ virtual enum LevelSoundEvent getEquipSound() const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual float getArmorKnockbackResistance() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEM
 #endif
@@ -89,8 +88,6 @@ public:
 //private:
     MCAPI class ItemInstance getTierItem() const;
 
-
 private:
-
 
 };

@@ -14,13 +14,11 @@ class BehaviorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORCOMPONENT
 public:
     class BehaviorComponent& operator=(class BehaviorComponent const &) = delete;
     BehaviorComponent(class BehaviorComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORCOMPONENT
@@ -29,7 +27,5 @@ public:
     MCAPI BehaviorComponent();
     MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     MCAPI ~BehaviorComponent();
-
-
 
 };

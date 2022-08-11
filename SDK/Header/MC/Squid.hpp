@@ -16,14 +16,12 @@ class Squid : public Mob {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUID
 public:
     class Squid& operator=(class Squid const &) = delete;
     Squid(class Squid const &) = delete;
     Squid() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -54,7 +52,7 @@ public:
     /*285*/ virtual void __unk_vfn_285();
     /*300*/ virtual void aiStep();
     /*305*/ virtual bool checkSpawnRules(bool);
-    /*306*/ virtual bool checkSpawnObstruction() const;
+    /*306*/ virtual bool checkSpawnObstruction();
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
     /*351*/ virtual void __unk_vfn_351();
@@ -69,8 +67,6 @@ public:
 //private:
     MCAPI class Vec3 _randomInkDir();
 
-
 private:
-
 
 };

@@ -15,7 +15,6 @@ class BlueIceFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLUEICEFEATURE
 public:
     class BlueIceFeature& operator=(class BlueIceFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     BlueIceFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlueIceFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLUEICEFEATURE
 #endif
-
-
 
 };

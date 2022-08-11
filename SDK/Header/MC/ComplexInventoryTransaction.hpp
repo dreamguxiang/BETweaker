@@ -24,14 +24,12 @@ enum class Type : unsigned
 InventoryTransaction data;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLEXINVENTORYTRANSACTION
 public:
     class ComplexInventoryTransaction& operator=(class ComplexInventoryTransaction const &) = delete;
     ComplexInventoryTransaction(class ComplexInventoryTransaction const &) = delete;
     ComplexInventoryTransaction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ComplexInventoryTransaction();
@@ -52,9 +50,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ComplexInventoryTransaction::Type, std::string> const transactionTypeMap;
-
 
 };

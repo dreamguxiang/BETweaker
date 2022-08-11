@@ -14,7 +14,6 @@ class DragonBaseGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONBASEGOAL
 public:
     class DragonBaseGoal& operator=(class DragonBaseGoal const &) = delete;
@@ -22,12 +21,9 @@ public:
     DragonBaseGoal() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
 #endif
     MCAPI DragonBaseGoal(class Mob &);
-
-
 
 };

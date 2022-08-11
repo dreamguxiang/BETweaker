@@ -15,13 +15,11 @@ class ServerToClientHandshakePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERTOCLIENTHANDSHAKEPACKET
 public:
     class ServerToClientHandshakePacket& operator=(class ServerToClientHandshakePacket const &) = delete;
     ServerToClientHandshakePacket(class ServerToClientHandshakePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerToClientHandshakePacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ServerToClientHandshakePacket(std::string const &);
     MCAPI ServerToClientHandshakePacket();
-
-
 
 };

@@ -15,14 +15,12 @@ class ActorBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORBLOCK
 public:
     class ActorBlock& operator=(class ActorBlock const &) = delete;
     ActorBlock(class ActorBlock const &) = delete;
     ActorBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorBlock();
@@ -73,8 +71,6 @@ public:
 //protected:
     MCAPI ActorBlock(std::string const &, int, class Material const &);
 
-
 protected:
-
 
 };

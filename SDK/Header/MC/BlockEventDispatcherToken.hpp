@@ -14,7 +14,6 @@ class BlockEventDispatcherToken {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHERTOKEN
 public:
     class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken const &) = delete;
@@ -22,13 +21,10 @@ public:
     BlockEventDispatcherToken() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHERTOKEN
 #endif
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     MCAPI ~BlockEventDispatcherToken();
-
-
 
 };

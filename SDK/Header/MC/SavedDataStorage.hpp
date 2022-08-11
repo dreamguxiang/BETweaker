@@ -14,14 +14,12 @@ class SavedDataStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATASTORAGE
 public:
     class SavedDataStorage& operator=(class SavedDataStorage const &) = delete;
     SavedDataStorage(class SavedDataStorage const &) = delete;
     SavedDataStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _save(class SavedData const &);
 
-
 private:
-
 
 };

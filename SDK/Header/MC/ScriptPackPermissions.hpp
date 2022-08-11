@@ -12,12 +12,10 @@ class ScriptPackPermissions {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKPERMISSIONS
 public:
     class ScriptPackPermissions& operator=(class ScriptPackPermissions const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKPERMISSIONS
@@ -29,9 +27,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const sWildCardModuleName;
-
 
 };

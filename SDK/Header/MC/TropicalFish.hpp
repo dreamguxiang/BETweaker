@@ -16,14 +16,12 @@ class TropicalFish : public WaterAnimal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISH
 public:
     class TropicalFish& operator=(class TropicalFish const &) = delete;
     TropicalFish(class TropicalFish const &) = delete;
     TropicalFish() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -61,7 +59,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TROPICALFISH
 #endif
     MCAPI TropicalFish(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

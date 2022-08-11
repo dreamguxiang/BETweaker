@@ -14,13 +14,11 @@ class ItemStackRequestActionBeaconPayment {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONBEACONPAYMENT
 public:
     class ItemStackRequestActionBeaconPayment& operator=(class ItemStackRequestActionBeaconPayment const &) = delete;
     ItemStackRequestActionBeaconPayment(class ItemStackRequestActionBeaconPayment const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackRequestActionBeaconPayment();
@@ -34,7 +32,5 @@ public:
     MCAPI ItemStackRequestActionBeaconPayment();
     MCAPI int getPrimaryEffectId() const;
     MCAPI int getSecondaryEffectId() const;
-
-
 
 };

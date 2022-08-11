@@ -12,7 +12,6 @@ class PendingRemovePassengersSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PENDINGREMOVEPASSENGERSSYSTEM
 public:
     class PendingRemovePassengersSystem& operator=(class PendingRemovePassengersSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     PendingRemovePassengersSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PENDINGREMOVEPASSENGERSSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createPendingRemovePassengersSystem();
-
-
 
 };

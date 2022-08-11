@@ -12,14 +12,12 @@ class EntityRegistry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRY
 public:
     class EntityRegistry& operator=(class EntityRegistry const &) = delete;
     EntityRegistry(class EntityRegistry const &) = delete;
     EntityRegistry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
@@ -34,10 +32,8 @@ public:
     MCAPI class EntityContext _createEntity();
     MCAPI void _destroyEntity(class EntityContext);
 
-
 protected:
 
 private:
-
 
 };

@@ -16,14 +16,12 @@ class SetItemDataFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETITEMDATAFUNCTION
 public:
     class SetItemDataFunction& operator=(class SetItemDataFunction const &) = delete;
     SetItemDataFunction(class SetItemDataFunction const &) = delete;
     SetItemDataFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetItemDataFunction();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETITEMDATAFUNCTION
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

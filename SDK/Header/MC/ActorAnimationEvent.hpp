@@ -14,14 +14,12 @@ class ActorAnimationEvent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONEVENT
 public:
     class ActorAnimationEvent& operator=(class ActorAnimationEvent const &) = delete;
     ActorAnimationEvent(class ActorAnimationEvent const &) = delete;
     ActorAnimationEvent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONEVENT
@@ -30,7 +28,5 @@ public:
     MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     MCAPI void fire(class RenderParams &, class Actor *) const;
     MCAPI ~ActorAnimationEvent();
-
-
 
 };

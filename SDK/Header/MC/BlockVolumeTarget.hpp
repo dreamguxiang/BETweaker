@@ -14,14 +14,12 @@ class BlockVolumeTarget {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKVOLUMETARGET
 public:
     class BlockVolumeTarget& operator=(class BlockVolumeTarget const &) = delete;
     BlockVolumeTarget(class BlockVolumeTarget const &) = delete;
     BlockVolumeTarget() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BlockVolumeTarget();
@@ -60,7 +58,5 @@ public:
     MCVAPI bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
 #endif
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);
-
-
 
 };

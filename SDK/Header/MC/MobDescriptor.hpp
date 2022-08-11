@@ -12,19 +12,15 @@ struct MobDescriptor {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBDESCRIPTOR
 public:
     struct MobDescriptor& operator=(struct MobDescriptor const &) = delete;
     MobDescriptor() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBDESCRIPTOR
+#endif
     MCAPI MobDescriptor(struct MobDescriptor const &);
     MCAPI ~MobDescriptor();
-
-protected:
-
-private:
 
 };

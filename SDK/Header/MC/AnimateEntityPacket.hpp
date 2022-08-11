@@ -15,13 +15,11 @@ class AnimateEntityPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEENTITYPACKET
 public:
     class AnimateEntityPacket& operator=(class AnimateEntityPacket const &) = delete;
     AnimateEntityPacket(class AnimateEntityPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AnimateEntityPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const &, std::string const &, std::string const &, float, std::string const &, enum MolangVersion, std::string const &);
     MCAPI AnimateEntityPacket();
-
-
 
 };

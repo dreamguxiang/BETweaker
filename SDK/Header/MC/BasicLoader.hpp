@@ -14,7 +14,6 @@ class BasicLoader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICLOADER
 public:
     class BasicLoader& operator=(class BasicLoader const &) = delete;
@@ -22,11 +21,8 @@ public:
     BasicLoader() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICLOADER
 #endif
-
-
 
 };

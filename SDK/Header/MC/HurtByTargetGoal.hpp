@@ -15,14 +15,12 @@ class HurtByTargetGoal : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTBYTARGETGOAL
 public:
     class HurtByTargetGoal& operator=(class HurtByTargetGoal const &) = delete;
     HurtByTargetGoal(class HurtByTargetGoal const &) = delete;
     HurtByTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HurtByTargetGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTBYTARGETGOAL
 #endif
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
-
-
 
 };

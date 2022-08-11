@@ -15,14 +15,12 @@ class CauldronBlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAULDRONBLOCKACTOR
 public:
     class CauldronBlockActor& operator=(class CauldronBlockActor const &) = delete;
     CauldronBlockActor(class CauldronBlockActor const &) = delete;
     CauldronBlockActor() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAULDRONBLOCKACTOR
@@ -53,7 +51,5 @@ public:
     MCAPI void setCustomColor(class mce::Color const &);
     MCAPI void setPotionType(enum Potion::PotionType);
     MCAPI static class mce::Color WATER_COLOR;
-
-
 
 };

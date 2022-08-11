@@ -14,13 +14,11 @@ class BreakDoorAnnotationComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKDOORANNOTATIONCOMPONENT
 public:
     class BreakDoorAnnotationComponent& operator=(class BreakDoorAnnotationComponent const &) = delete;
     BreakDoorAnnotationComponent(class BreakDoorAnnotationComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONCOMPONENT
@@ -36,8 +34,6 @@ public:
     MCAPI void _cleanUp(class Mob &);
     MCAPI bool _shouldBreakDoor(class Mob &);
 
-
 private:
-
 
 };

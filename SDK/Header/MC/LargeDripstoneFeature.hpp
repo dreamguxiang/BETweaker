@@ -14,7 +14,6 @@ class LargeDripstoneFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LARGEDRIPSTONEFEATURE
 public:
     class LargeDripstoneFeature& operator=(class LargeDripstoneFeature const &) = delete;
@@ -22,13 +21,10 @@ public:
     LargeDripstoneFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LargeDripstoneFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LARGEDRIPSTONEFEATURE
 #endif
-
-
 
 };

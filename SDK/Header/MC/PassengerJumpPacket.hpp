@@ -15,13 +15,11 @@ class PassengerJumpPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PASSENGERJUMPPACKET
 public:
     class PassengerJumpPacket& operator=(class PassengerJumpPacket const &) = delete;
     PassengerJumpPacket(class PassengerJumpPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PassengerJumpPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PASSENGERJUMPPACKET
 #endif
     MCAPI PassengerJumpPacket();
-
-
 
 };

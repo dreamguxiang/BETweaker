@@ -15,7 +15,6 @@ class NavigationWalkDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONWALKDESCRIPTION
 public:
     class NavigationWalkDescription& operator=(class NavigationWalkDescription const &) = delete;
@@ -23,13 +22,10 @@ public:
     NavigationWalkDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual char const * getJsonName() const;
     /*1*/ virtual ~NavigationWalkDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONWALKDESCRIPTION
 #endif
-
-
 
 };

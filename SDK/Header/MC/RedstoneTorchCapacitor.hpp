@@ -15,13 +15,11 @@ class RedstoneTorchCapacitor : public ProducerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REDSTONETORCHCAPACITOR
 public:
     class RedstoneTorchCapacitor& operator=(class RedstoneTorchCapacitor const &) = delete;
     RedstoneTorchCapacitor(class RedstoneTorchCapacitor const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
@@ -46,8 +44,6 @@ public:
 //private:
     MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 
-
 private:
-
 
 };

@@ -14,13 +14,11 @@ class OreFeature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREFEATURE
 public:
     class OreFeature& operator=(class OreFeature const &) = delete;
     OreFeature(class OreFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OreFeature();
@@ -29,7 +27,5 @@ public:
 #endif
     MCAPI OreFeature(int, std::vector<struct ReplaceRule> &&);
     MCAPI OreFeature();
-
-
 
 };

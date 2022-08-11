@@ -12,7 +12,6 @@ class UpdateMovingFlagSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEMOVINGFLAGSYSTEM
 public:
     class UpdateMovingFlagSystem& operator=(class UpdateMovingFlagSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     UpdateMovingFlagSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEMOVINGFLAGSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createUpdateMovingFlagSystem();
-
-
 
 };

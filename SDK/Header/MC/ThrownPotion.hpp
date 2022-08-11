@@ -16,14 +16,12 @@ class ThrownPotion : public Throwable {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNPOTION
 public:
     class ThrownPotion& operator=(class ThrownPotion const &) = delete;
     ThrownPotion(class ThrownPotion const &) = delete;
     ThrownPotion() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -60,7 +58,5 @@ public:
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
     MCAPI static float const SPLASH_RANGE;
-
-
 
 };

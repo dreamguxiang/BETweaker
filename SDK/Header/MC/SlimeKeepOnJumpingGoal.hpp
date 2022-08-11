@@ -14,14 +14,12 @@ class SlimeKeepOnJumpingGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEKEEPONJUMPINGGOAL
 public:
     class SlimeKeepOnJumpingGoal& operator=(class SlimeKeepOnJumpingGoal const &) = delete;
     SlimeKeepOnJumpingGoal(class SlimeKeepOnJumpingGoal const &) = delete;
     SlimeKeepOnJumpingGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SlimeKeepOnJumpingGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEKEEPONJUMPINGGOAL
 #endif
     MCAPI SlimeKeepOnJumpingGoal(class Mob &);
-
-
 
 };

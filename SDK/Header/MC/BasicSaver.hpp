@@ -14,7 +14,6 @@ class BasicSaver {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICSAVER
 public:
     class BasicSaver& operator=(class BasicSaver const &) = delete;
@@ -22,11 +21,8 @@ public:
     BasicSaver() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICSAVER
 #endif
-
-
 
 };

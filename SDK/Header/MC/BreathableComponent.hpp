@@ -16,12 +16,10 @@ public:
 enum BreathableState;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
 public:
     class BreathableComponent& operator=(class BreathableComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
@@ -42,7 +40,5 @@ public:
     MCAPI void setAirSupply(short);
     MCAPI void updateBreathableState(class Actor &);
     MCAPI ~BreathableComponent();
-
-
 
 };

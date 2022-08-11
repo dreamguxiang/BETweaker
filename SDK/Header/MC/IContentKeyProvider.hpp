@@ -14,7 +14,6 @@ class IContentKeyProvider {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTENTKEYPROVIDER
 public:
     class IContentKeyProvider& operator=(class IContentKeyProvider const &) = delete;
@@ -22,13 +21,10 @@ public:
     IContentKeyProvider() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const &) const;
     MCVAPI bool requireEncryptedReads() const;
 #endif
-
-
 
 };

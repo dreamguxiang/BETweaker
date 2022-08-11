@@ -14,7 +14,6 @@ class IFilePicker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEPICKER
 public:
     class IFilePicker& operator=(class IFilePicker const &) = delete;
@@ -22,11 +21,8 @@ public:
     IFilePicker() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEPICKER
 #endif
-
-
 
 };

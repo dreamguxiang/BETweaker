@@ -15,14 +15,12 @@ class ActorDamageByBlockSource : public ActorDamageSource {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGEBYBLOCKSOURCE
 public:
     class ActorDamageByBlockSource& operator=(class ActorDamageByBlockSource const &) = delete;
     ActorDamageByBlockSource(class ActorDamageByBlockSource const &) = delete;
     ActorDamageByBlockSource() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorDamageByBlockSource();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYBLOCKSOURCE
 #endif
     MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);
-
-
 
 };

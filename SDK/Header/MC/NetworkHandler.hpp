@@ -22,14 +22,12 @@ public:
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKHANDLER
 public:
     class NetworkHandler& operator=(class NetworkHandler const &) = delete;
     NetworkHandler(class NetworkHandler const &) = delete;
     NetworkHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKHANDLER
@@ -86,8 +84,6 @@ public:
     MCAPI void _sendInternal(class NetworkIdentifier const &, class Packet const &, std::string const &);
     MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection &, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
 
-
 private:
-
 
 };

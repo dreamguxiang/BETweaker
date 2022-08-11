@@ -15,14 +15,12 @@ class ProjectileFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEFACTORY
 public:
     class ProjectileFactory& operator=(class ProjectileFactory const &) = delete;
     ProjectileFactory(class ProjectileFactory const &) = delete;
     ProjectileFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEFACTORY
@@ -35,9 +33,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::unordered_map<std::string, class std::function<std::unique_ptr<class OnHitSubcomponent> (void)>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::function<std::unique_ptr<class OnHitSubcomponent> (void)>>>> mSubcomponentMap;
-
 
 };

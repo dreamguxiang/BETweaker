@@ -15,14 +15,12 @@ class MapLockingRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPLOCKINGRECIPE
 public:
     class MapLockingRecipe& operator=(class MapLockingRecipe const &) = delete;
     MapLockingRecipe(class MapLockingRecipe const &) = delete;
     MapLockingRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapLockingRecipe();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI MapLockingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const CartographyTableID;
-
-
 
 };

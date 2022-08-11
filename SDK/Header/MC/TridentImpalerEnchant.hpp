@@ -15,14 +15,12 @@ class TridentImpalerEnchant : public Enchant {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTIMPALERENCHANT
 public:
     class TridentImpalerEnchant& operator=(class TridentImpalerEnchant const &) = delete;
     TridentImpalerEnchant(class TridentImpalerEnchant const &) = delete;
     TridentImpalerEnchant() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TridentImpalerEnchant();
@@ -37,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTIMPALERENCHANT
 #endif
     MCAPI TridentImpalerEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
-
-
 
 };

@@ -14,14 +14,12 @@ class SquidOutOfWaterGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDOUTOFWATERGOAL
 public:
     class SquidOutOfWaterGoal& operator=(class SquidOutOfWaterGoal const &) = delete;
     SquidOutOfWaterGoal(class SquidOutOfWaterGoal const &) = delete;
     SquidOutOfWaterGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SquidOutOfWaterGoal();
@@ -38,7 +36,5 @@ public:
     MCVAPI void stop();
     MCVAPI void tick();
 #endif
-
-
 
 };

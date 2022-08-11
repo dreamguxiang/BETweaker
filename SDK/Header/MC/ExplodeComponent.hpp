@@ -14,13 +14,11 @@ class ExplodeComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLODECOMPONENT
 public:
     class ExplodeComponent& operator=(class ExplodeComponent const &) = delete;
     ExplodeComponent(class ExplodeComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODECOMPONENT
@@ -37,7 +35,5 @@ public:
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setFuseLength(int);
     MCAPI void setTntExpodeGameRuleRequired();
-
-
 
 };

@@ -21,14 +21,12 @@ struct Constructor {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALITEMCOMPONENTFACTORY
 public:
     class CerealItemComponentFactory& operator=(class CerealItemComponentFactory const &) = delete;
     CerealItemComponentFactory(class CerealItemComponentFactory const &) = delete;
     CerealItemComponentFactory() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALITEMCOMPONENTFACTORY
@@ -44,10 +42,8 @@ public:
 //private:
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
-
 private:
     MCAPI static class ComponentItem * mItemContext;
     MCAPI static class std::unordered_map<std::string, struct CerealItemComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
-
 
 };

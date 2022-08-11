@@ -12,7 +12,6 @@ class HeightmapWrapper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEIGHTMAPWRAPPER
 public:
     class HeightmapWrapper& operator=(class HeightmapWrapper const &) = delete;
@@ -20,14 +19,11 @@ public:
     HeightmapWrapper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEIGHTMAPWRAPPER
 #endif
     MCAPI bool empty() const;
     MCAPI short getHeightAt(class Pos const &) const;
     MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
-
-
 
 };

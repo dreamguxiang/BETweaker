@@ -16,14 +16,12 @@ public:
 enum TimeZoneType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATEMANAGER
 public:
     class DateManager& operator=(class DateManager const &) = delete;
     DateManager(class DateManager const &) = delete;
     DateManager() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATEMANAGER
@@ -35,7 +33,5 @@ public:
     MCAPI static std::string toString(__int64 const &, enum DateManager::TimeZoneType, std::string const &);
     MCAPI static std::string toString_DateTime(struct tm const &, enum DateManager::TimeZoneType);
     MCAPI static std::string toString_DateTime(__int64 const &, enum DateManager::TimeZoneType);
-
-
 
 };

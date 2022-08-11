@@ -13,14 +13,12 @@ class DimensionDataPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDATAPACKET
 public:
     class DimensionDataPacket& operator=(class DimensionDataPacket const &) = delete;
     DimensionDataPacket(class DimensionDataPacket const &) = delete;
     DimensionDataPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DimensionDataPacket();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDATAPACKET
 #endif
     MCAPI DimensionDataPacket(class DimensionDefinitionGroup const &);
-
-
 
 };

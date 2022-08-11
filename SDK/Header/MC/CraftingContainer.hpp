@@ -15,14 +15,12 @@ class CraftingContainer : public Container {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
 public:
     class CraftingContainer& operator=(class CraftingContainer const &) = delete;
     CraftingContainer(class CraftingContainer const &) = delete;
     CraftingContainer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftingContainer();
@@ -40,7 +38,5 @@ public:
 #endif
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const & getItem(int, int) const;
-
-
 
 };

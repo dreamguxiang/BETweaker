@@ -14,14 +14,12 @@ class MoveTowardsRestrictionGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSRESTRICTIONGOAL
 public:
     class MoveTowardsRestrictionGoal& operator=(class MoveTowardsRestrictionGoal const &) = delete;
     MoveTowardsRestrictionGoal(class MoveTowardsRestrictionGoal const &) = delete;
     MoveTowardsRestrictionGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
@@ -37,8 +35,6 @@ public:
     MCAPI class Mob const & _getMob() const;
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
 
-
 protected:
-
 
 };

@@ -14,14 +14,12 @@ class TakeFlowerGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAKEFLOWERGOAL
 public:
     class TakeFlowerGoal& operator=(class TakeFlowerGoal const &) = delete;
     TakeFlowerGoal(class TakeFlowerGoal const &) = delete;
     TakeFlowerGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TakeFlowerGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEFLOWERGOAL
 #endif
     MCAPI TakeFlowerGoal(class Mob &);
-
-
 
 };

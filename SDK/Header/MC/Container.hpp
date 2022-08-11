@@ -27,33 +27,31 @@ public:
     // static??
     LIAPI Container* getContainerAt(Vec3& pos, int dim);
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:
     class Container& operator=(class Container const &) = delete;
     Container() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~Container();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>) = 0;
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /*3*/ virtual void addContentChangeListener(class ContainerContentChangeListener *);
     /*4*/ virtual void removeContentChangeListener(class ContainerContentChangeListener *);
-    /*5*/ virtual class ItemStack const & getItem(int) const = 0;
+    /*5*/ virtual class ItemStack const & getItem(int);
     /*6*/ virtual bool hasRoomForItem(class ItemStack const &);
     /*7*/ virtual bool addItem(class ItemStack &);
     /*8*/ virtual bool addItemToFirstEmptySlot(class ItemStack const &);
-    /*9*/ virtual void setItem(int, class ItemStack const &) = 0;
+    /*9*/ virtual void setItem(int, class ItemStack const &);
     /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /*11*/ virtual void removeItem(int, int);
     /*12*/ virtual void removeAllItems();
     /*13*/ virtual void dropContents(class BlockSource &, class Vec3 const &, bool);
-    /*14*/ virtual int getContainerSize() const = 0;
-    /*15*/ virtual int getMaxStackSize() const = 0;
-    /*16*/ virtual void startOpen(class Player &) = 0;
-    /*17*/ virtual void stopOpen(class Player &) = 0;
+    /*14*/ virtual int getContainerSize();
+    /*15*/ virtual int getMaxStackSize();
+    /*16*/ virtual void startOpen(class Player &);
+    /*17*/ virtual void stopOpen(class Player &);
     /*18*/ virtual std::vector<class ItemStack> getSlotCopies() const;
     /*19*/ virtual std::vector<class ItemStack const *> const getSlots() const;
     /*20*/ virtual int getItemCount(class ItemStack const &) const;
@@ -92,9 +90,7 @@ public:
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
 
-
 protected:
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
-
 
 };

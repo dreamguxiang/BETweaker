@@ -14,14 +14,12 @@ class SquidMoveAwayFromGroundGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDMOVEAWAYFROMGROUNDGOAL
 public:
     class SquidMoveAwayFromGroundGoal& operator=(class SquidMoveAwayFromGroundGoal const &) = delete;
     SquidMoveAwayFromGroundGoal(class SquidMoveAwayFromGroundGoal const &) = delete;
     SquidMoveAwayFromGroundGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SquidMoveAwayFromGroundGoal();
@@ -38,7 +36,5 @@ public:
     MCVAPI void stop();
     MCVAPI void tick();
 #endif
-
-
 
 };

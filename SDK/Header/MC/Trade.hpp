@@ -14,20 +14,16 @@ struct Trade {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE
 public:
     struct Trade& operator=(struct Trade const &) = delete;
     Trade(struct Trade const &) = delete;
     Trade() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE
+#endif
     MCAPI struct Trade & operator=(struct Trade &&);
     MCAPI ~Trade();
-
-protected:
-
-private:
 
 };

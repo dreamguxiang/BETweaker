@@ -14,7 +14,6 @@ class TripodCameraComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERACOMPONENT
 public:
     class TripodCameraComponent& operator=(class TripodCameraComponent const &) = delete;
@@ -22,12 +21,9 @@ public:
     TripodCameraComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERACOMPONENT
 #endif
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
-
-
 
 };

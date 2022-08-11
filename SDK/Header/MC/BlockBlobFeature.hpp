@@ -15,7 +15,6 @@ class BlockBlobFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBLOBFEATURE
 public:
     class BlockBlobFeature& operator=(class BlockBlobFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     BlockBlobFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BlockBlobFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBLOBFEATURE
 #endif
     MCAPI BlockBlobFeature(class Block const &, int);
-
-
 
 };

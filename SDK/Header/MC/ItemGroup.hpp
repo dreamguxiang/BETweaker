@@ -14,14 +14,12 @@ class ItemGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMGROUP
 public:
     class ItemGroup& operator=(class ItemGroup const &) = delete;
     ItemGroup(class ItemGroup const &) = delete;
     ItemGroup() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMGROUP
@@ -30,7 +28,5 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI class ItemGroup & operator=(class ItemGroup &&);
     MCAPI ~ItemGroup();
-
-
 
 };

@@ -15,14 +15,12 @@ class AzaleaTreeAndRootsFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEATREEANDROOTSFEATURE
 public:
     class AzaleaTreeAndRootsFeature& operator=(class AzaleaTreeAndRootsFeature const &) = delete;
     AzaleaTreeAndRootsFeature(class AzaleaTreeAndRootsFeature const &) = delete;
     AzaleaTreeAndRootsFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AzaleaTreeAndRootsFeature();
@@ -34,8 +32,6 @@ public:
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
 
-
 private:
-
 
 };

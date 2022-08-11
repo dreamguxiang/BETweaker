@@ -12,18 +12,15 @@ struct FogSetting {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGSETTING
 public:
     struct FogSetting& operator=(struct FogSetting const &) = delete;
     FogSetting(struct FogSetting const &) = delete;
     FogSetting() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGSETTING
+#endif
+    MCAPI static struct FogSetting const ZERO_SETTING;
 
 };

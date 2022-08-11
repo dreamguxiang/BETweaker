@@ -15,14 +15,12 @@ class DefendVillageTargetGoal : public TargetGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETGOAL
 public:
     class DefendVillageTargetGoal& operator=(class DefendVillageTargetGoal const &) = delete;
     DefendVillageTargetGoal(class DefendVillageTargetGoal const &) = delete;
     DefendVillageTargetGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DefendVillageTargetGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDVILLAGETARGETGOAL
 #endif
     MCAPI DefendVillageTargetGoal(class Mob &);
-
-
 
 };

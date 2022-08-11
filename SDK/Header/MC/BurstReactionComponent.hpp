@@ -14,14 +14,12 @@ class BurstReactionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURSTREACTIONCOMPONENT
 public:
     class BurstReactionComponent& operator=(class BurstReactionComponent const &) = delete;
     BurstReactionComponent(class BurstReactionComponent const &) = delete;
     BurstReactionComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BurstReactionComponent();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURSTREACTIONCOMPONENT
 #endif
-
-
 
 };

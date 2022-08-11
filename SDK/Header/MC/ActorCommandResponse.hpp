@@ -13,14 +13,12 @@ class ActorCommandResponse {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMMANDRESPONSE
 public:
     class ActorCommandResponse& operator=(class ActorCommandResponse const &) = delete;
     ActorCommandResponse(class ActorCommandResponse const &) = delete;
     ActorCommandResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorCommandResponse();
@@ -29,7 +27,5 @@ public:
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &, class Factory<class ActorEventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMMANDRESPONSE
 #endif
-
-
 
 };

@@ -16,14 +16,12 @@ class Rabbit : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RABBIT
 public:
     class Rabbit& operator=(class Rabbit const &) = delete;
     Rabbit(class Rabbit const &) = delete;
     Rabbit() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Rabbit();
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RABBIT
 #endif
     MCAPI Rabbit(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

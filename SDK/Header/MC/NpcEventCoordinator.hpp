@@ -14,7 +14,6 @@ class NpcEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCEVENTCOORDINATOR
 public:
     class NpcEventCoordinator& operator=(class NpcEventCoordinator const &) = delete;
@@ -22,11 +21,8 @@ public:
     NpcEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCEVENTCOORDINATOR
 #endif
-
-
 
 };

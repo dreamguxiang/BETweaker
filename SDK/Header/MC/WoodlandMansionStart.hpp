@@ -14,14 +14,12 @@ class WoodlandMansionStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODLANDMANSIONSTART
 public:
     class WoodlandMansionStart& operator=(class WoodlandMansionStart const &) = delete;
     WoodlandMansionStart(class WoodlandMansionStart const &) = delete;
     WoodlandMansionStart() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~WoodlandMansionStart();
@@ -33,8 +31,6 @@ public:
     MCAPI void _create(class Dimension &, class Random &, int, int);
     MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
 
-
 private:
-
 
 };

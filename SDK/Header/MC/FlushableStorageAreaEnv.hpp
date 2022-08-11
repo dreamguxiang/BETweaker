@@ -16,7 +16,6 @@ class FlushableStorageAreaEnv : public TransactionalWorldBlockTarget {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLUSHABLESTORAGEAREAENV
 public:
     class FlushableStorageAreaEnv& operator=(class FlushableStorageAreaEnv const &) = delete;
@@ -24,14 +23,11 @@ public:
     FlushableStorageAreaEnv() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~FlushableStorageAreaEnv();
+    /*20*/ virtual void flushToPermanentStorage();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLESTORAGEAREAENV
-    MCVAPI void flushToPermanentStorage();
 #endif
     MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
-
-
 
 };

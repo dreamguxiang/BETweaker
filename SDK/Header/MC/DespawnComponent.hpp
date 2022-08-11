@@ -14,14 +14,12 @@ class DespawnComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNCOMPONENT
 public:
     class DespawnComponent& operator=(class DespawnComponent const &) = delete;
     DespawnComponent(class DespawnComponent const &) = delete;
     DespawnComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI bool _tryStandardDespawnRules(class Actor &) const;
 
-
 private:
-
 
 };

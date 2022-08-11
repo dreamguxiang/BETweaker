@@ -14,19 +14,16 @@ struct GameTestReport {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTREPORT
 public:
     struct GameTestReport& operator=(struct GameTestReport const &) = delete;
     GameTestReport(struct GameTestReport const &) = delete;
     GameTestReport() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTREPORT
+#endif
     MCAPI ~GameTestReport();
-
-protected:
-
-private:
+    MCAPI static void bindType();
 
 };

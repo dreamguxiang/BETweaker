@@ -15,18 +15,18 @@ struct JumpControlDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROLDESCRIPTION
 public:
     struct JumpControlDescription& operator=(struct JumpControlDescription const &) = delete;
     JumpControlDescription(struct JumpControlDescription const &) = delete;
     JumpControlDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual char const * getJsonName() const;
+    /*1*/ virtual ~JumpControlDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLDESCRIPTION
+#endif
 
 };

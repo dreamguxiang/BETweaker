@@ -28,13 +28,11 @@ CachedMetaData(CachedMetaData const&&) = delete;
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVEFEATURE
 public:
     class CaveFeature& operator=(class CaveFeature const &) = delete;
     CaveFeature(class CaveFeature const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CaveFeature();
@@ -55,8 +53,6 @@ public:
     MCAPI bool detectWater(class IBlockWorldGenAPI &, class BoundingBox const &) const;
     MCAPI static bool shouldSkipCarving(float, float, float, float, float);
 
-
 protected:
-
 
 };

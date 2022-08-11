@@ -14,7 +14,6 @@ class LegacyBlendedNoise {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBLENDEDNOISE
 public:
     class LegacyBlendedNoise& operator=(class LegacyBlendedNoise const &) = delete;
@@ -22,13 +21,10 @@ public:
     LegacyBlendedNoise() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLENDEDNOISE
 #endif
     MCAPI ~LegacyBlendedNoise();
     MCAPI static class LegacyBlendedNoise make(class IRandom &);
-
-
 
 };

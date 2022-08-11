@@ -15,14 +15,12 @@ class GameRulesChangedPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKET
 public:
     class GameRulesChangedPacket& operator=(class GameRulesChangedPacket const &) = delete;
     GameRulesChangedPacket(class GameRulesChangedPacket const &) = delete;
     GameRulesChangedPacket() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameRulesChangedPacket();
@@ -32,7 +30,5 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULESCHANGEDPACKET
 #endif
-
-
 
 };

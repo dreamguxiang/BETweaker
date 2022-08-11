@@ -16,14 +16,12 @@ class ItemStackNetManagerServer : public ItemStackNetManagerBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSERVER
 public:
     class ItemStackNetManagerServer& operator=(class ItemStackNetManagerServer const &) = delete;
     ItemStackNetManagerServer(class ItemStackNetManagerServer const &) = delete;
     ItemStackNetManagerServer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemStackNetManagerServer();
@@ -51,8 +49,6 @@ public:
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
     MCAPI bool _tryFilterText(class ItemStackRequestData const *);
 
-
 private:
-
 
 };

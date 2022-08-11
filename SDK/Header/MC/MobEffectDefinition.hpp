@@ -15,13 +15,11 @@ class MobEffectDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTDEFINITION
 public:
     class MobEffectDefinition& operator=(class MobEffectDefinition const &) = delete;
     MobEffectDefinition(class MobEffectDefinition const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTDEFINITION
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI static int _parseMobEffectId(std::string const &);
 
-
 private:
-
 
 };

@@ -15,14 +15,12 @@ class SmithingTableBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLEBLOCK
 public:
     class SmithingTableBlock& operator=(class SmithingTableBlock const &) = delete;
     SmithingTableBlock(class SmithingTableBlock const &) = delete;
     SmithingTableBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SmithingTableBlock();
@@ -60,14 +58,12 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;
 #endif
     MCAPI SmithingTableBlock(std::string const &, int, class Material const &);
-
-
 
 };

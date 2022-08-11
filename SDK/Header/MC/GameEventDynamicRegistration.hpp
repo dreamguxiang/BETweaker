@@ -12,14 +12,12 @@ class GameEventDynamicRegistration {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTDYNAMICREGISTRATION
 public:
     class GameEventDynamicRegistration& operator=(class GameEventDynamicRegistration const &) = delete;
     GameEventDynamicRegistration(class GameEventDynamicRegistration const &) = delete;
     GameEventDynamicRegistration() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTDYNAMICREGISTRATION
@@ -32,8 +30,6 @@ public:
 //private:
     MCAPI void _onActorChangedChunk(class BlockSource const &, class ChunkPos, class AutomaticID<class Dimension, int>);
 
-
 private:
-
 
 };

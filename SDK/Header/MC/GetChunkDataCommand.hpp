@@ -15,7 +15,6 @@ class GetChunkDataCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETCHUNKDATACOMMAND
 public:
     class GetChunkDataCommand& operator=(class GetChunkDataCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     GetChunkDataCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GetChunkDataCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCHUNKDATACOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

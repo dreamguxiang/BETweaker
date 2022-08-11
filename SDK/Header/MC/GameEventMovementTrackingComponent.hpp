@@ -12,14 +12,12 @@ class GameEventMovementTrackingComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMOVEMENTTRACKINGCOMPONENT
 public:
     class GameEventMovementTrackingComponent& operator=(class GameEventMovementTrackingComponent const &) = delete;
     GameEventMovementTrackingComponent(class GameEventMovementTrackingComponent const &) = delete;
     GameEventMovementTrackingComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMOVEMENTTRACKINGCOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI bool shouldEmitEntityMoveGameEvent();
     MCAPI bool shouldEmitFlapGameEvent();
     MCAPI bool shouldEmitSwimGameEvent();
-
-
 
 };

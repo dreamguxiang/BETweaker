@@ -14,14 +14,12 @@ class ItemReleaseInventoryTransaction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMRELEASEINVENTORYTRANSACTION
 public:
     class ItemReleaseInventoryTransaction& operator=(class ItemReleaseInventoryTransaction const &) = delete;
     ItemReleaseInventoryTransaction(class ItemReleaseInventoryTransaction const &) = delete;
     ItemReleaseInventoryTransaction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ItemReleaseInventoryTransaction();
@@ -32,7 +30,5 @@ public:
     /*5*/ virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
 #endif
-
-
 
 };

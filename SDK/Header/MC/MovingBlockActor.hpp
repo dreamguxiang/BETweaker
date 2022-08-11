@@ -15,14 +15,12 @@ class MovingBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVINGBLOCKACTOR
 public:
     class MovingBlockActor& operator=(class MovingBlockActor const &) = delete;
     MovingBlockActor(class MovingBlockActor const &) = delete;
     MovingBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MovingBlockActor();
@@ -56,7 +54,5 @@ public:
     MCAPI void setBlockEntity(class std::shared_ptr<class BlockActor>);
     MCAPI void setCollisionShape(class AABB const &);
     MCAPI void setExtraBlock(class Block const &);
-
-
 
 };

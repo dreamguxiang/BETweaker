@@ -14,7 +14,6 @@ class CommandFunctionEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDFUNCTIONENTRY
 public:
     class CommandFunctionEntry& operator=(class CommandFunctionEntry const &) = delete;
@@ -22,14 +21,11 @@ public:
     CommandFunctionEntry() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~CommandFunctionEntry();
     /*1*/ virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFUNCTIONENTRY
 #endif
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
-
-
 
 };

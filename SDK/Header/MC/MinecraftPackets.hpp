@@ -19,7 +19,6 @@ static std::shared_ptr<class Packet> createPacket(int type)
     return createPacket((MinecraftPacketIds)type);
 }
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTPACKETS
 public:
     class MinecraftPackets& operator=(class MinecraftPackets const &) = delete;
@@ -27,12 +26,9 @@ public:
     MinecraftPackets() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTPACKETS
 #endif
     MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
-
-
 
 };

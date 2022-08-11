@@ -15,13 +15,11 @@ class TrailDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILDESCRIPTION
 public:
     class TrailDescription& operator=(class TrailDescription const &) = delete;
     TrailDescription(class TrailDescription const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual char const * getJsonName() const;
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
 #endif
     MCAPI TrailDescription();
-
-
 
 };

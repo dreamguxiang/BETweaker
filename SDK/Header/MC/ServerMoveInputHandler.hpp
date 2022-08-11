@@ -15,13 +15,11 @@ class ServerMoveInputHandler : public MoveInputHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMOVEINPUTHANDLER
 public:
     class ServerMoveInputHandler& operator=(class ServerMoveInputHandler const &) = delete;
     ServerMoveInputHandler(class ServerMoveInputHandler const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
@@ -34,7 +32,5 @@ public:
 #endif
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
-
-
 
 };

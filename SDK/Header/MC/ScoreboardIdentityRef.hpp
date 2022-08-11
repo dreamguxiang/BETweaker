@@ -15,13 +15,11 @@ class ScoreboardIdentityRef {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDIDENTITYREF
 public:
     class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const &) = delete;
     ScoreboardIdentityRef(class ScoreboardIdentityRef const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
@@ -39,7 +37,5 @@ public:
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
     MCAPI static class ScoreboardIdentityRef const Undefined;
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const &);
-
-
 
 };

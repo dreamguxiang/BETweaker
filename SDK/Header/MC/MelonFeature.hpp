@@ -15,7 +15,6 @@ class MelonFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELONFEATURE
 public:
     class MelonFeature& operator=(class MelonFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     MelonFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~MelonFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELONFEATURE
 #endif
-
-
 
 };

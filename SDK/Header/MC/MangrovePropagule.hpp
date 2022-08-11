@@ -13,14 +13,12 @@ class MangrovePropagule : public BushBlock {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVEPROPAGULE
 public:
     class MangrovePropagule& operator=(class MangrovePropagule const &) = delete;
     MangrovePropagule(class MangrovePropagule const &) = delete;
     MangrovePropagule() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MangrovePropagule();
@@ -47,15 +45,15 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -84,8 +82,6 @@ public:
     MCAPI bool _isFullyGrown(class Block const &) const;
     MCAPI bool _isHanging(class Block const &) const;
 
-
 private:
-
 
 };

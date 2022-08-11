@@ -16,14 +16,12 @@ class ArmorStandItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORSTANDITEM
 public:
     class ArmorStandItem& operator=(class ArmorStandItem const &) = delete;
     ArmorStandItem(class ArmorStandItem const &) = delete;
     ArmorStandItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ArmorStandItem();
@@ -40,11 +38,10 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTANDITEM
 #endif
     MCAPI ArmorStandItem(std::string const &, short);
-
-
 
 };

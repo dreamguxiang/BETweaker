@@ -13,7 +13,6 @@ class LootPoolTiers {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOLTIERS
 public:
     class LootPoolTiers& operator=(class LootPoolTiers const &) = delete;
@@ -21,12 +20,9 @@ public:
     LootPoolTiers() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLTIERS
 #endif
     MCAPI static std::unique_ptr<class LootPoolTiers> deserialize(class Json::Value);
-
-
 
 };

@@ -12,19 +12,15 @@ struct LevelNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELNOTIFICATIONEVENT
 public:
     struct LevelNotificationEvent& operator=(struct LevelNotificationEvent const &) = delete;
     LevelNotificationEvent(struct LevelNotificationEvent const &) = delete;
     LevelNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELNOTIFICATIONEVENT
+#endif
     MCAPI ~LevelNotificationEvent();
-
-protected:
-
-private:
 
 };

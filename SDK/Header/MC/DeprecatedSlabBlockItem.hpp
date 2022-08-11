@@ -16,14 +16,12 @@ class DeprecatedSlabBlockItem : public BlockItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPRECATEDSLABBLOCKITEM
 public:
     class DeprecatedSlabBlockItem& operator=(class DeprecatedSlabBlockItem const &) = delete;
     DeprecatedSlabBlockItem(class DeprecatedSlabBlockItem const &) = delete;
     DeprecatedSlabBlockItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DeprecatedSlabBlockItem();
@@ -40,6 +38,7 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
+    /*130*/ virtual void __unk_vfn_130();
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPRECATEDSLABBLOCKITEM
@@ -49,8 +48,6 @@ public:
     MCAPI class std::optional<int> _canConvertToDoubleSlab(class ItemStackBase &, class Actor const &, unsigned char const &, class Block const &) const;
     MCAPI int _findSlabType(class Block const &) const;
 
-
 private:
-
 
 };

@@ -14,14 +14,12 @@ class DiscFragmentItem : public Item {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISCFRAGMENTITEM
 public:
     class DiscFragmentItem& operator=(class DiscFragmentItem const &) = delete;
     DiscFragmentItem(class DiscFragmentItem const &) = delete;
     DiscFragmentItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~DiscFragmentItem();
@@ -40,10 +38,9 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCFRAGMENTITEM
 #endif
     MCAPI DiscFragmentItem(std::string const &, int);
-
-
 
 };

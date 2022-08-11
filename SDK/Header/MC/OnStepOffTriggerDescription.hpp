@@ -15,7 +15,6 @@ class OnStepOffTriggerDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPOFFTRIGGERDESCRIPTION
 public:
     class OnStepOffTriggerDescription& operator=(class OnStepOffTriggerDescription const &) = delete;
@@ -23,14 +22,11 @@ public:
     OnStepOffTriggerDescription() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OnStepOffTriggerDescription();
     /*1*/ virtual std::string const & getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPOFFTRIGGERDESCRIPTION
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

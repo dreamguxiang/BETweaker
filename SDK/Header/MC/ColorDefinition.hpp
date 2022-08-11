@@ -15,19 +15,16 @@ struct ColorDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLORDEFINITION
 public:
     struct ColorDefinition& operator=(struct ColorDefinition const &) = delete;
     ColorDefinition(struct ColorDefinition const &) = delete;
     ColorDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLORDEFINITION
+#endif
     MCAPI void setColorChoice(int const &);
-
-protected:
-
-private:
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>> &);
 
 };

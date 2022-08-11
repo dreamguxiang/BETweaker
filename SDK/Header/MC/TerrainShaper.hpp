@@ -20,14 +20,12 @@ struct Point {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TERRAINSHAPER
 public:
     class TerrainShaper& operator=(class TerrainShaper const &) = delete;
     TerrainShaper(class TerrainShaper const &) = delete;
     TerrainShaper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINSHAPER
@@ -46,8 +44,6 @@ public:
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(std::string const &, float, float, float, float, float, float);
 
-
 private:
-
 
 };

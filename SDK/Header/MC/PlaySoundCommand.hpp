@@ -15,7 +15,6 @@ class PlaySoundCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDCOMMAND
 public:
     class PlaySoundCommand& operator=(class PlaySoundCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     PlaySoundCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PlaySoundCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

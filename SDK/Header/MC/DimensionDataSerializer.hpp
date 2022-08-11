@@ -14,14 +14,12 @@ class DimensionDataSerializer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDATASERIALIZER
 public:
     class DimensionDataSerializer& operator=(class DimensionDataSerializer const &) = delete;
     DimensionDataSerializer(class DimensionDataSerializer const &) = delete;
     DimensionDataSerializer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDATASERIALIZER
@@ -34,8 +32,6 @@ public:
 //protected:
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
 
-
 protected:
-
 
 };

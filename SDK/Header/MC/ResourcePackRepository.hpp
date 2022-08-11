@@ -22,14 +22,12 @@ struct KnownPackContainer {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKREPOSITORY
 public:
     class ResourcePackRepository& operator=(class ResourcePackRepository const &) = delete;
     ResourcePackRepository(class ResourcePackRepository const &) = delete;
     ResourcePackRepository() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackRepository();
@@ -103,8 +101,6 @@ public:
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
 
-
 private:
-
 
 };

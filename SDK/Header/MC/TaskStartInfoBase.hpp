@@ -14,18 +14,15 @@ struct TaskStartInfoBase {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTARTINFOBASE
 public:
     struct TaskStartInfoBase& operator=(struct TaskStartInfoBase const &) = delete;
     TaskStartInfoBase(struct TaskStartInfoBase const &) = delete;
     TaskStartInfoBase() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTARTINFOBASE
+#endif
+    MCAPI static class std::thread::id const NoAffinity;
 
 };

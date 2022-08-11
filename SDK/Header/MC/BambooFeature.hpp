@@ -15,7 +15,6 @@ class BambooFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BAMBOOFEATURE
 public:
     class BambooFeature& operator=(class BambooFeature const &) = delete;
@@ -23,13 +22,10 @@ public:
     BambooFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BambooFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BAMBOOFEATURE
 #endif
-
-
 
 };

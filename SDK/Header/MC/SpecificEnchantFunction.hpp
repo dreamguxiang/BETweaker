@@ -16,14 +16,12 @@ class SpecificEnchantFunction : public LootItemFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPECIFICENCHANTFUNCTION
 public:
     class SpecificEnchantFunction& operator=(class SpecificEnchantFunction const &) = delete;
     SpecificEnchantFunction(class SpecificEnchantFunction const &) = delete;
     SpecificEnchantFunction() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SpecificEnchantFunction();
@@ -36,8 +34,6 @@ public:
 //private:
     MCAPI void _applyInner(class ItemStackBase &, class Random &, class LootTableContext &, bool);
 
-
 private:
-
 
 };

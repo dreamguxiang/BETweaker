@@ -14,14 +14,12 @@ class Motive {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOTIVE
 public:
     class Motive& operator=(class Motive const &) = delete;
     Motive(class Motive const &) = delete;
     Motive() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIVE
@@ -63,7 +61,5 @@ public:
     MCAPI static class Motive const mWater;
     MCAPI static class Motive const mWind;
     MCAPI static class Motive const mWither;
-
-
 
 };

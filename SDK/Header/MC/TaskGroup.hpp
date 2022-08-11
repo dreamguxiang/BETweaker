@@ -15,14 +15,12 @@ class TaskGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKGROUP
 public:
     class TaskGroup& operator=(class TaskGroup const &) = delete;
     TaskGroup(class TaskGroup const &) = delete;
     TaskGroup() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TaskGroup();
@@ -54,8 +52,6 @@ public:
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI static class IBackgroundTaskOwner * getCurrentTaskGroup();
 
-
 private:
-
 
 };

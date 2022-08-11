@@ -26,14 +26,12 @@ struct ScreenData {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONHANDLER
 public:
     class ItemStackRequestActionHandler& operator=(class ItemStackRequestActionHandler const &) = delete;
     ItemStackRequestActionHandler(class ItemStackRequestActionHandler const &) = delete;
     ItemStackRequestActionHandler() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONHANDLER
@@ -68,8 +66,6 @@ public:
     MCAPI class std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI struct ItemStackRequestActionHandler::ScreenData * _tryGetCurrentScreenData() const;
 
-
 private:
-
 
 };

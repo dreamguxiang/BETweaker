@@ -15,7 +15,6 @@ class AdmireItemDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMDEFINITION
 public:
     class AdmireItemDefinition& operator=(class AdmireItemDefinition const &) = delete;
@@ -23,12 +22,9 @@ public:
     AdmireItemDefinition() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMDEFINITION
 #endif
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AdmireItemDefinition>> &);
-
-
 
 };

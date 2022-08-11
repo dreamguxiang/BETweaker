@@ -12,20 +12,16 @@ struct SoundEventRequestQueueComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTREQUESTQUEUECOMPONENT
 public:
     struct SoundEventRequestQueueComponent& operator=(struct SoundEventRequestQueueComponent const &) = delete;
     SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent const &) = delete;
     SoundEventRequestQueueComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTREQUESTQUEUECOMPONENT
+#endif
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent &&);
     MCAPI ~SoundEventRequestQueueComponent();
-
-protected:
-
-private:
 
 };

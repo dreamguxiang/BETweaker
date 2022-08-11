@@ -15,13 +15,11 @@ class PlaySoundPacket : public Packet {
 // Add Member There
     char filler[56];
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDPACKET
 public:
     class PlaySoundPacket& operator=(class PlaySoundPacket const &) = delete;
     PlaySoundPacket(class PlaySoundPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~PlaySoundPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
     MCAPI PlaySoundPacket();
-
-
 
 };

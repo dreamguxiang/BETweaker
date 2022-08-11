@@ -15,13 +15,11 @@ class CatchFireSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CATCHFIRESUBCOMPONENT
 public:
     class CatchFireSubcomponent& operator=(class CatchFireSubcomponent const &) = delete;
     CatchFireSubcomponent(class CatchFireSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CatchFireSubcomponent();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CATCHFIRESUBCOMPONENT
 #endif
     MCAPI CatchFireSubcomponent();
-
-
 
 };

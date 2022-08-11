@@ -12,12 +12,10 @@ class ThirdPartyInfo {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THIRDPARTYINFO
 public:
     class ThirdPartyInfo& operator=(class ThirdPartyInfo const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THIRDPARTYINFO
@@ -25,7 +23,5 @@ public:
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     MCAPI ThirdPartyInfo();
     MCAPI ~ThirdPartyInfo();
-
-
 
 };

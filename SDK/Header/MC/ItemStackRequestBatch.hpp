@@ -14,14 +14,12 @@ class ItemStackRequestBatch {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTBATCH
 public:
     class ItemStackRequestBatch& operator=(class ItemStackRequestBatch const &) = delete;
     ItemStackRequestBatch(class ItemStackRequestBatch const &) = delete;
     ItemStackRequestBatch() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTBATCH
@@ -31,7 +29,5 @@ public:
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~ItemStackRequestBatch();
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);
-
-
 
 };

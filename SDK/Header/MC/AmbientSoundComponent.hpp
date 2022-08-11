@@ -14,7 +14,6 @@ class AmbientSoundComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDCOMPONENT
 public:
     class AmbientSoundComponent& operator=(class AmbientSoundComponent const &) = delete;
@@ -22,12 +21,9 @@ public:
     AmbientSoundComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDCOMPONENT
 #endif
     MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
-
-
 
 };

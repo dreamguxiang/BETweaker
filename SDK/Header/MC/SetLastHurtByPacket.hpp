@@ -15,13 +15,11 @@ class SetLastHurtByPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETLASTHURTBYPACKET
 public:
     class SetLastHurtByPacket& operator=(class SetLastHurtByPacket const &) = delete;
     SetLastHurtByPacket(class SetLastHurtByPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetLastHurtByPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI SetLastHurtByPacket(enum ActorType);
     MCAPI SetLastHurtByPacket();
-
-
 
 };

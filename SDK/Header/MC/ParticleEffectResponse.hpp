@@ -15,14 +15,12 @@ class ParticleEffectResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEEFFECTRESPONSE
 public:
     class ParticleEffectResponse& operator=(class ParticleEffectResponse const &) = delete;
     ParticleEffectResponse(class ParticleEffectResponse const &) = delete;
     ParticleEffectResponse() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ParticleEffectResponse();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLEEFFECTRESPONSE
 #endif
     MCAPI static std::string const NameID;
-
-
 
 };

@@ -26,7 +26,6 @@ struct NatPunchInfo {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTOR
 public:
     class Connector& operator=(class Connector const &) = delete;
@@ -34,11 +33,8 @@ public:
     Connector() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONNECTOR
 #endif
-
-
 
 };

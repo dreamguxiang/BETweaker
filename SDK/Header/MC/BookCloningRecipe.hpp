@@ -15,14 +15,12 @@ class BookCloningRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKCLONINGRECIPE
 public:
     class BookCloningRecipe& operator=(class BookCloningRecipe const &) = delete;
     BookCloningRecipe(class BookCloningRecipe const &) = delete;
     BookCloningRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BookCloningRecipe();
@@ -37,7 +35,5 @@ public:
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     MCAPI static class mce::UUID const ID;
-
-
 
 };

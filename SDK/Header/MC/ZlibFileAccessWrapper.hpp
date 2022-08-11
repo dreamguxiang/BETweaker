@@ -15,7 +15,6 @@ class ZlibFileAccessWrapper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZLIBFILEACCESSWRAPPER
 public:
     class ZlibFileAccessWrapper& operator=(class ZlibFileAccessWrapper const &) = delete;
@@ -23,14 +22,11 @@ public:
     ZlibFileAccessWrapper() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZLIBFILEACCESSWRAPPER
 #endif
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
     MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
     MCAPI ~ZlibFileAccessWrapper();
-
-
 
 };

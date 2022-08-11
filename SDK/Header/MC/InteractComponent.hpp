@@ -14,14 +14,12 @@ class InteractComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTCOMPONENT
 public:
     class InteractComponent& operator=(class InteractComponent const &) = delete;
     InteractComponent(class InteractComponent const &) = delete;
     InteractComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTCOMPONENT
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
 
-
 private:
-
 
 };

@@ -14,14 +14,12 @@ class OcelotAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTATTACKGOAL
 public:
     class OcelotAttackGoal& operator=(class OcelotAttackGoal const &) = delete;
     OcelotAttackGoal(class OcelotAttackGoal const &) = delete;
     OcelotAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OcelotAttackGoal();
@@ -35,7 +33,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCELOTATTACKGOAL
 #endif
     MCAPI OcelotAttackGoal(class Mob &);
-
-
 
 };

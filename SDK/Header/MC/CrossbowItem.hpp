@@ -16,14 +16,12 @@ class CrossbowItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CROSSBOWITEM
 public:
     class CrossbowItem& operator=(class CrossbowItem const &) = delete;
     CrossbowItem(class CrossbowItem const &) = delete;
     CrossbowItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CrossbowItem();
@@ -49,8 +47,9 @@ public:
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual bool canBeCharged() const;
-    /*130*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*128*/ virtual bool canBeCharged();
+    /*129*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
 #endif
     MCAPI CrossbowItem(std::string const &, int);
@@ -60,9 +59,7 @@ public:
     MCAPI void _shootArrow(class ItemInstance const &, class ItemInstance const &, class Player &) const;
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
 
-
 private:
     MCAPI static int const DEFAULT_USE_DURATION;
-
 
 };

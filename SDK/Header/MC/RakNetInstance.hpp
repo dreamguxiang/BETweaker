@@ -25,14 +25,12 @@ public:
 enum NATState;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNETINSTANCE
 public:
     class RakNetInstance& operator=(class RakNetInstance const &) = delete;
     RakNetInstance(class RakNetInstance const &) = delete;
     RakNetInstance() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
@@ -72,8 +70,6 @@ public:
     MCAPI void _pingNatService(bool);
     MCAPI void _storeLocalIP();
 
-
 private:
-
 
 };

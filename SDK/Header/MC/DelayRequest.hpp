@@ -12,14 +12,12 @@ class DelayRequest {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYREQUEST
 public:
     class DelayRequest& operator=(class DelayRequest const &) = delete;
     DelayRequest(class DelayRequest const &) = delete;
     DelayRequest() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYREQUEST
@@ -30,7 +28,5 @@ public:
     MCAPI unsigned __int64 getTickToExecuteOn() const;
     MCAPI bool operator>(class DelayRequest const &) const;
     MCAPI ~DelayRequest();
-
-
 
 };

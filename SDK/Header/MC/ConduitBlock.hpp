@@ -15,14 +15,12 @@ class ConduitBlock : public ActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDUITBLOCK
 public:
     class ConduitBlock& operator=(class ConduitBlock const &) = delete;
     ConduitBlock(class ConduitBlock const &) = delete;
     ConduitBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ConduitBlock();
@@ -47,7 +45,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
@@ -66,7 +64,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDUITBLOCK
 #endif
     MCAPI ConduitBlock(std::string const &, int);
-
-
 
 };

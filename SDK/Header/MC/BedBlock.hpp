@@ -15,7 +15,6 @@ class BedBlock : public BlockLegacy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDBLOCK
 public:
     class BedBlock& operator=(class BedBlock const &) = delete;
@@ -23,10 +22,9 @@ public:
     BedBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BedBlock();
-    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
+    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &);
     /*19*/ virtual void __unk_vfn_19();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -64,7 +62,7 @@ public:
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
-    /*130*/ virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
+    /*130*/ virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &);
     /*132*/ virtual void __unk_vfn_132();
     /*146*/ virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /*147*/ virtual int getVariant(class Block const &) const;
@@ -91,7 +89,5 @@ public:
     MCAPI static bool isDangerousSpawnBlock(class BlockSource &, class BlockPos const &);
     MCAPI static bool isValidStandUpPosition(class BlockSource &, class BlockPos const &);
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
-
-
 
 };

@@ -16,13 +16,11 @@ class CommandRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDREQUESTPACKET
 public:
     class CommandRequestPacket& operator=(class CommandRequestPacket const &) = delete;
     CommandRequestPacket(class CommandRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommandRequestPacket();
@@ -36,7 +34,5 @@ public:
     MCAPI CommandRequestPacket();
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;
     MCAPI bool getInternalSource() const;
-
-
 
 };

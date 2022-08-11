@@ -16,14 +16,12 @@ class ScriptActorGameplayHandler {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORGAMEPLAYHANDLER
 public:
     class ScriptActorGameplayHandler& operator=(class ScriptActorGameplayHandler const &) = delete;
     ScriptActorGameplayHandler(class ScriptActorGameplayHandler const &) = delete;
     ScriptActorGameplayHandler() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptActorGameplayHandler();
@@ -37,8 +35,6 @@ public:
 //private:
     MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
 
-
 private:
-
 
 };

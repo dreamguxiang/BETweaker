@@ -15,14 +15,12 @@ class InfestedDeepslateBlock : public RotatedPillarInfestedBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INFESTEDDEEPSLATEBLOCK
 public:
     class InfestedDeepslateBlock& operator=(class InfestedDeepslateBlock const &) = delete;
     InfestedDeepslateBlock(class InfestedDeepslateBlock const &) = delete;
     InfestedDeepslateBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~InfestedDeepslateBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INFESTEDDEEPSLATEBLOCK
 #endif
     MCAPI InfestedDeepslateBlock(std::string const &, int, class Material const &);
-
-
 
 };

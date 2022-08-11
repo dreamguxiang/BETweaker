@@ -13,12 +13,10 @@ class CerealDocumentUpgradeStep {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALDOCUMENTUPGRADESTEP
 public:
     CerealDocumentUpgradeStep() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALDOCUMENTUPGRADESTEP
@@ -30,7 +28,5 @@ public:
     MCAPI bool canUpgrade(class SemVersion const &) const;
     MCAPI class SemVersion const & getTargetVersion() const;
     MCAPI class CerealDocumentUpgradeStep & operator=(class CerealDocumentUpgradeStep const &);
-
-
 
 };

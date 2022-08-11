@@ -15,14 +15,12 @@ class ShulkerBoxRecipe : public ShapelessRecipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXRECIPE
 public:
     class ShulkerBoxRecipe& operator=(class ShulkerBoxRecipe const &) = delete;
     ShulkerBoxRecipe(class ShulkerBoxRecipe const &) = delete;
     ShulkerBoxRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     MCAPI static class mce::UUID const ID;
-
-
 
 };

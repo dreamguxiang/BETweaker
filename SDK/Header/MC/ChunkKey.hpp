@@ -12,14 +12,12 @@ class ChunkKey {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKKEY
 public:
     class ChunkKey& operator=(class ChunkKey const &) = delete;
     ChunkKey(class ChunkKey const &) = delete;
     ChunkKey() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKKEY
@@ -28,7 +26,5 @@ public:
     MCAPI ChunkKey(class LevelChunk const &);
     MCAPI class gsl::basic_string_span<char const, -1> asSpan() const;
     MCAPI unsigned __int64 hashCode() const;
-
-
 
 };

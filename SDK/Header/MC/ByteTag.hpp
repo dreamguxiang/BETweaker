@@ -24,13 +24,11 @@ public:
     LIAPI operator unsigned char() const;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTETAG
 public:
     class ByteTag& operator=(class ByteTag const &) = delete;
     ByteTag(class ByteTag const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ByteTag();
@@ -45,7 +43,5 @@ public:
 #endif
     MCAPI ByteTag(unsigned char);
     MCAPI ByteTag();
-
-
 
 };

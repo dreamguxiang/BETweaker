@@ -15,7 +15,6 @@ class PackSettingsJsonValidator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTINGSJSONVALIDATOR
 public:
     class PackSettingsJsonValidator& operator=(class PackSettingsJsonValidator const &) = delete;
@@ -23,12 +22,9 @@ public:
     PackSettingsJsonValidator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSJSONVALIDATOR
 #endif
     MCAPI static class JsonValidator::Property getValidator();
-
-
 
 };

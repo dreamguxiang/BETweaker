@@ -16,14 +16,12 @@ class ServerFileChunkUploader : public IFileChunkUploader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERFILECHUNKUPLOADER
 public:
     class ServerFileChunkUploader& operator=(class ServerFileChunkUploader const &) = delete;
     ServerFileChunkUploader(class ServerFileChunkUploader const &) = delete;
     ServerFileChunkUploader() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerFileChunkUploader();
@@ -43,7 +41,5 @@ public:
     MCVAPI void update();
 #endif
     MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
-
-
 
 };

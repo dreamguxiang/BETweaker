@@ -12,7 +12,6 @@ class ItemStopChargeEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTOPCHARGEEVENT
 public:
     class ItemStopChargeEvent& operator=(class ItemStopChargeEvent const &) = delete;
@@ -20,12 +19,9 @@ public:
     ItemStopChargeEvent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTOPCHARGEEVENT
 #endif
     MCAPI ~ItemStopChargeEvent();
-
-
 
 };

@@ -15,14 +15,12 @@ class EncryptedNetworkPeer : public NetworkPeer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDNETWORKPEER
 public:
     class EncryptedNetworkPeer& operator=(class EncryptedNetworkPeer const &) = delete;
     EncryptedNetworkPeer(class EncryptedNetworkPeer const &) = delete;
     EncryptedNetworkPeer() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EncryptedNetworkPeer();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI EncryptedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
     MCAPI void enableEncryption(std::string const &);
-
-
 
 };

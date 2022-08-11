@@ -14,23 +14,20 @@ struct DirtyTicksCounter {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRTYTICKSCOUNTER
 public:
     struct DirtyTicksCounter& operator=(struct DirtyTicksCounter const &) = delete;
     DirtyTicksCounter(struct DirtyTicksCounter const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRTYTICKSCOUNTER
+#endif
     MCAPI DirtyTicksCounter();
     MCAPI int getTicksSinceLastChange() const;
     MCAPI int getTotalDirtyTicks() const;
     MCAPI struct DirtyTicksCounter & operator++();
     MCAPI void reset();
     MCAPI void touch();
-
-protected:
-
-private:
+    MCAPI static struct DirtyTicksCounter max();
 
 };

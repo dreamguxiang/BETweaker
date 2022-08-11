@@ -15,7 +15,6 @@ class RequestActionLoader {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REQUESTACTIONLOADER
 public:
     class RequestActionLoader& operator=(class RequestActionLoader const &) = delete;
@@ -23,13 +22,10 @@ public:
     RequestActionLoader() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTACTIONLOADER
 #endif
     MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const &);
     MCAPI static std::unique_ptr<class IRequestAction> load(enum IRequestAction::RequestActionType, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
-
-
 
 };

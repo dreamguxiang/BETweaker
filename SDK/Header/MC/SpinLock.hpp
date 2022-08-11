@@ -14,13 +14,11 @@ class SpinLock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPINLOCK
 public:
     class SpinLock& operator=(class SpinLock const &) = delete;
     SpinLock(class SpinLock const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI unsigned __int64 _getThreadId();
 
-
 private:
-
 
 };

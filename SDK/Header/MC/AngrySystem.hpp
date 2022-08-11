@@ -14,14 +14,12 @@ class AngrySystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGRYSYSTEM
 public:
     class AngrySystem& operator=(class AngrySystem const &) = delete;
     AngrySystem(class AngrySystem const &) = delete;
     AngrySystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AngrySystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AngryComponent> &);
 
-
 private:
-
 
 };

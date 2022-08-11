@@ -14,13 +14,11 @@ class Experiments {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTS
 public:
     class Experiments& operator=(class Experiments const &) = delete;
     Experiments(class Experiments const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTS
@@ -39,7 +37,5 @@ public:
     MCAPI ~Experiments();
     MCAPI static std::string const & getExperimentTextID(enum AllExperiments);
     MCAPI static std::vector<std::string> const & getToggleNames();
-
-
 
 };

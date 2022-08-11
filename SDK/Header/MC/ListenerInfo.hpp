@@ -14,7 +14,6 @@ class ListenerInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTENERINFO
 public:
     class ListenerInfo& operator=(class ListenerInfo const &) = delete;
@@ -22,16 +21,13 @@ public:
     ListenerInfo() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTENERINFO
 #endif
 
 //private:
 
-
 private:
     MCAPI static float const SQRT_FLT_MAX;
-
 
 };

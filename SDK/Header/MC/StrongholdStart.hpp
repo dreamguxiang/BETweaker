@@ -15,14 +15,12 @@ class StrongholdStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDSTART
 public:
     class StrongholdStart& operator=(class StrongholdStart const &) = delete;
     StrongholdStart(class StrongholdStart const &) = delete;
     StrongholdStart() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StrongholdStart();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _initializePieceSet(class Random &);
 
-
 private:
-
 
 };

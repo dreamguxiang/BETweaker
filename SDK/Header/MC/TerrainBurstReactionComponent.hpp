@@ -14,14 +14,12 @@ class TerrainBurstReactionComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TERRAINBURSTREACTIONCOMPONENT
 public:
     class TerrainBurstReactionComponent& operator=(class TerrainBurstReactionComponent const &) = delete;
     TerrainBurstReactionComponent(class TerrainBurstReactionComponent const &) = delete;
     TerrainBurstReactionComponent() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TerrainBurstReactionComponent();
@@ -30,7 +28,5 @@ public:
     /*3*/ virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINBURSTREACTIONCOMPONENT
 #endif
-
-
 
 };

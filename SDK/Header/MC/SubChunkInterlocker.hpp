@@ -12,7 +12,6 @@ class SubChunkInterlocker {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKINTERLOCKER
 public:
     class SubChunkInterlocker& operator=(class SubChunkInterlocker const &) = delete;
@@ -20,13 +19,10 @@ public:
     SubChunkInterlocker() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKINTERLOCKER
 #endif
     MCAPI bool tryLock3x3xN(class SubChunkPos const &, int);
     MCAPI void unlock3x3xN(class SubChunkPos const &, int);
-
-
 
 };

@@ -12,21 +12,17 @@ struct FilterInputDefinition {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTDEFINITION
 public:
     struct FilterInputDefinition& operator=(struct FilterInputDefinition const &) = delete;
     FilterInputDefinition(struct FilterInputDefinition const &) = delete;
     FilterInputDefinition() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTDEFINITION
+#endif
     MCAPI FilterInputDefinition(int);
     MCAPI FilterInputDefinition(class FilterInput, std::string const &);
     MCAPI ~FilterInputDefinition();
-
-protected:
-
-private:
 
 };

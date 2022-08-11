@@ -15,14 +15,12 @@ class PredictableProjectile : public Actor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREDICTABLEPROJECTILE
 public:
     class PredictableProjectile& operator=(class PredictableProjectile const &) = delete;
     PredictableProjectile(class PredictableProjectile const &) = delete;
     PredictableProjectile() = delete;
 #endif
-
 
 public:
     /*13*/ virtual void _doInitialMove();
@@ -50,7 +48,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTABLEPROJECTILE
 #endif
     MCAPI PredictableProjectile(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

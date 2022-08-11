@@ -15,14 +15,12 @@ class SHChestCorridor : public StructurePiece {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHCHESTCORRIDOR
 public:
     class SHChestCorridor& operator=(class SHChestCorridor const &) = delete;
     SHChestCorridor(class SHChestCorridor const &) = delete;
     SHChestCorridor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SHChestCorridor();
@@ -31,7 +29,5 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHCHESTCORRIDOR
 #endif
-
-
 
 };

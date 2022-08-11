@@ -15,7 +15,6 @@ class GlobalPauseCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOBALPAUSECOMMAND
 public:
     class GlobalPauseCommand& operator=(class GlobalPauseCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     GlobalPauseCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~GlobalPauseCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOBALPAUSECOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

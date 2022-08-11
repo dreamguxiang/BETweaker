@@ -12,7 +12,6 @@ class GameEventListenerRegistry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTLISTENERREGISTRY
 public:
     class GameEventListenerRegistry& operator=(class GameEventListenerRegistry const &) = delete;
@@ -20,13 +19,10 @@ public:
     GameEventListenerRegistry() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERREGISTRY
 #endif
     MCAPI std::vector<class std::reference_wrapper<class GameEventListener>> getListeners() const;
     MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
-
-
 
 };

@@ -14,7 +14,6 @@ class StructureIntegrityProcessor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREINTEGRITYPROCESSOR
 public:
     class StructureIntegrityProcessor& operator=(class StructureIntegrityProcessor const &) = delete;
@@ -22,13 +21,10 @@ public:
     StructureIntegrityProcessor() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREINTEGRITYPROCESSOR
 #endif
     MCAPI StructureIntegrityProcessor(float, unsigned int);
     MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
-
-
 
 };

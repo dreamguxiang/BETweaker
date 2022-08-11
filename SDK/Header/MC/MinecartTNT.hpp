@@ -16,14 +16,12 @@ class MinecartTNT : public Minecart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTTNT
 public:
     class MinecartTNT& operator=(class MinecartTNT const &) = delete;
     MinecartTNT(class MinecartTNT const &) = delete;
     MinecartTNT() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~MinecartTNT();
@@ -63,9 +61,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const DEFAULT_FUSE_LENGTH;
-
 
 };

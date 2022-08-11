@@ -12,14 +12,12 @@ class ItemRegistryRef {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRYREF
 public:
     class ItemRegistryRef& operator=(class ItemRegistryRef const &) = delete;
     ItemRegistryRef(class ItemRegistryRef const &) = delete;
     ItemRegistryRef() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYREF
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI class std::shared_ptr<class ItemRegistry> _lockRegistry() const;
 
-
 private:
-
 
 };

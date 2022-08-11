@@ -15,14 +15,12 @@ class TellCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELLCOMMAND
 public:
     class TellCommand& operator=(class TellCommand const &) = delete;
     TellCommand(class TellCommand const &) = delete;
     TellCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TellCommand();
@@ -34,8 +32,6 @@ public:
 //private:
     MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
 
-
 private:
-
 
 };

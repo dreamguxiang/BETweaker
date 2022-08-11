@@ -14,14 +14,12 @@ class RandomHoverGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMHOVERGOAL
 public:
     class RandomHoverGoal& operator=(class RandomHoverGoal const &) = delete;
     RandomHoverGoal(class RandomHoverGoal const &) = delete;
     RandomHoverGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RandomHoverGoal();
@@ -41,8 +39,6 @@ public:
     MCAPI bool _mobMeetsPreconditions() const;
     MCAPI void _moveToTarget();
 
-
 protected:
-
 
 };

@@ -15,13 +15,11 @@ class AutomationClientConnectPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AUTOMATIONCLIENTCONNECTPACKET
 public:
     class AutomationClientConnectPacket& operator=(class AutomationClientConnectPacket const &) = delete;
     AutomationClientConnectPacket(class AutomationClientConnectPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~AutomationClientConnectPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
     MCAPI AutomationClientConnectPacket();
-
-
 
 };

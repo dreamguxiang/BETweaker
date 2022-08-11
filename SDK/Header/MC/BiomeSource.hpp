@@ -12,7 +12,6 @@ class BiomeSource {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMESOURCE
 public:
     class BiomeSource& operator=(class BiomeSource const &) = delete;
@@ -20,12 +19,9 @@ public:
     BiomeSource() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE
 #endif
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
-
-
 
 };

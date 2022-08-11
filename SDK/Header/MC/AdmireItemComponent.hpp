@@ -14,14 +14,12 @@ class AdmireItemComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMCOMPONENT
 public:
     class AdmireItemComponent& operator=(class AdmireItemComponent const &) = delete;
     AdmireItemComponent(class AdmireItemComponent const &) = delete;
     AdmireItemComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMCOMPONENT
@@ -34,7 +32,5 @@ public:
     MCAPI void onAdmireItemPickedUp(class Actor const &, class ItemStack const &, class Actor *);
     MCAPI void stopAdmiring();
     MCAPI ~AdmireItemComponent();
-
-
 
 };

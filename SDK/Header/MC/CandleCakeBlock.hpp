@@ -15,14 +15,12 @@ class CandleCakeBlock : public AbstractCandleBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANDLECAKEBLOCK
 public:
     class CandleCakeBlock& operator=(class CandleCakeBlock const &) = delete;
     CandleCakeBlock(class CandleCakeBlock const &) = delete;
     CandleCakeBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CandleCakeBlock();
@@ -47,12 +45,12 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -72,7 +70,7 @@ public:
     /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual int _getNumCandles(class Block const &) const;
+    /*192*/ virtual int _getNumCandles(class Block const &);
     /*193*/ virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /*194*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
     /*195*/ virtual void __unk_vfn_195();
@@ -94,8 +92,6 @@ public:
     MCAPI void _popCandle(class BlockSource &, class BlockPos const &) const;
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 
-
 private:
-
 
 };

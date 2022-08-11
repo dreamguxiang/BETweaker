@@ -15,14 +15,12 @@ class BeehiveBlock : public FaceDirectionalActorBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCK
 public:
     class BeehiveBlock& operator=(class BeehiveBlock const &) = delete;
     BeehiveBlock(class BeehiveBlock const &) = delete;
     BeehiveBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~BeehiveBlock();
@@ -86,8 +84,6 @@ public:
 //private:
     MCAPI void _fillHoneyBottle(class Player &, class ItemStack &, class ItemStack &, class BlockSource &, class BlockPos const &) const;
 
-
 private:
-
 
 };

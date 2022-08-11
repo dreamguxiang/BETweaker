@@ -14,13 +14,11 @@ class RemoveOnHitSubcomponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEONHITSUBCOMPONENT
 public:
     class RemoveOnHitSubcomponent& operator=(class RemoveOnHitSubcomponent const &) = delete;
     RemoveOnHitSubcomponent(class RemoveOnHitSubcomponent const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RemoveOnHitSubcomponent();
@@ -33,7 +31,5 @@ public:
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     MCAPI RemoveOnHitSubcomponent();
-
-
 
 };

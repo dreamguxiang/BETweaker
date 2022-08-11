@@ -12,7 +12,6 @@ class DimensionTransitionSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONTRANSITIONSYSTEM
 public:
     class DimensionTransitionSystem& operator=(class DimensionTransitionSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     DimensionTransitionSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONTRANSITIONSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo create();
-
-
 
 };

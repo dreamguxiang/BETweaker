@@ -14,14 +14,12 @@ class ValidatorRegistry {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VALIDATORREGISTRY
 public:
     class ValidatorRegistry& operator=(class ValidatorRegistry const &) = delete;
     ValidatorRegistry(class ValidatorRegistry const &) = delete;
     ValidatorRegistry() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VALIDATORREGISTRY
@@ -31,8 +29,6 @@ public:
 //private:
     MCAPI static class ServiceReference<class ValidatorRegistry> _get();
 
-
 private:
-
 
 };

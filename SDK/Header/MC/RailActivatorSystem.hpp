@@ -14,14 +14,12 @@ class RailActivatorSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORSYSTEM
 public:
     class RailActivatorSystem& operator=(class RailActivatorSystem const &) = delete;
     RailActivatorSystem(class RailActivatorSystem const &) = delete;
     RailActivatorSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RailActivatorSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class RailActivatorComponent> &);
 
-
 private:
-
 
 };

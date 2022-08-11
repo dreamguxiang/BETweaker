@@ -20,14 +20,12 @@ class Dimension {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSION
 public:
     class Dimension& operator=(class Dimension const &) = delete;
     Dimension(class Dimension const &) = delete;
     Dimension() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
@@ -157,10 +155,8 @@ public:
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();
 
-
 protected:
 
 private:
-
 
 };

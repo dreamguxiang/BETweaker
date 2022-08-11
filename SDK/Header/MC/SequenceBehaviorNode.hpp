@@ -14,13 +14,11 @@ class SequenceBehaviorNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEQUENCEBEHAVIORNODE
 public:
     class SequenceBehaviorNode& operator=(class SequenceBehaviorNode const &) = delete;
     SequenceBehaviorNode(class SequenceBehaviorNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SequenceBehaviorNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEQUENCEBEHAVIORNODE
 #endif
     MCAPI SequenceBehaviorNode();
-
-
 
 };

@@ -15,14 +15,12 @@ class RailBlock : public BaseRailBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILBLOCK
 public:
     class RailBlock& operator=(class RailBlock const &) = delete;
     RailBlock(class RailBlock const &) = delete;
     RailBlock() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RailBlock();
@@ -65,7 +63,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILBLOCK
 #endif
     MCAPI RailBlock(std::string const &, int);
-
-
 
 };

@@ -14,14 +14,12 @@ class BlockPatternBuilder {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNBUILDER
 public:
     class BlockPatternBuilder& operator=(class BlockPatternBuilder const &) = delete;
     BlockPatternBuilder(class BlockPatternBuilder const &) = delete;
     BlockPatternBuilder() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNBUILDER
@@ -40,8 +38,6 @@ public:
 //private:
     MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
 
-
 private:
-
 
 };

@@ -12,7 +12,6 @@ class EcsEventDispatcher {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ECSEVENTDISPATCHER
 public:
     class EcsEventDispatcher& operator=(class EcsEventDispatcher const &) = delete;
@@ -20,12 +19,9 @@ public:
     EcsEventDispatcher() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECSEVENTDISPATCHER
 #endif
     MCAPI void update();
-
-
 
 };

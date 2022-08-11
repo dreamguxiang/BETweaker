@@ -12,20 +12,16 @@ struct ItemDefinitionEventTriggeredEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDEFINITIONEVENTTRIGGEREDEVENT
 public:
     struct ItemDefinitionEventTriggeredEvent& operator=(struct ItemDefinitionEventTriggeredEvent const &) = delete;
     ItemDefinitionEventTriggeredEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDEFINITIONEVENTTRIGGEREDEVENT
+#endif
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
     MCAPI ~ItemDefinitionEventTriggeredEvent();
-
-protected:
-
-private:
 
 };

@@ -14,14 +14,12 @@ class ActorOwnerComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOROWNERCOMPONENT
 public:
     class ActorOwnerComponent& operator=(class ActorOwnerComponent const &) = delete;
     ActorOwnerComponent(class ActorOwnerComponent const &) = delete;
     ActorOwnerComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOROWNERCOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI class Actor & getActor() const;
     MCAPI class ActorOwnerComponent & operator=(class ActorOwnerComponent &&);
     MCAPI ~ActorOwnerComponent();
-
-
 
 };

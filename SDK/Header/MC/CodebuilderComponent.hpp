@@ -12,14 +12,12 @@ class CodebuilderComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERCOMPONENT
 public:
     class CodebuilderComponent& operator=(class CodebuilderComponent const &) = delete;
     CodebuilderComponent(class CodebuilderComponent const &) = delete;
     CodebuilderComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMPONENT
@@ -28,7 +26,5 @@ public:
     MCAPI void resetCodeStatus();
     MCAPI void setCodeStatus(std::string const &);
     MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
-
-
 
 };

@@ -15,14 +15,12 @@ class MoveToPOIGoal : public BaseMoveToGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOPOIGOAL
 public:
     class MoveToPOIGoal& operator=(class MoveToPOIGoal const &) = delete;
     MoveToPOIGoal(class MoveToPOIGoal const &) = delete;
     MoveToPOIGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveToPOIGoal();
@@ -48,10 +46,8 @@ public:
 //private:
     MCAPI void _updatePOIBooking();
 
-
 protected:
 
 private:
-
 
 };

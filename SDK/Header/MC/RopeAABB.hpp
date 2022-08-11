@@ -14,7 +14,6 @@ class RopeAABB {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEAABB
 public:
     class RopeAABB& operator=(class RopeAABB const &) = delete;
@@ -22,12 +21,9 @@ public:
     RopeAABB() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEAABB
 #endif
     MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
-
-
 
 };

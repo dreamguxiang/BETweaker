@@ -14,7 +14,6 @@ class AppConfigsFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPCONFIGSFACTORY
 public:
     class AppConfigsFactory& operator=(class AppConfigsFactory const &) = delete;
@@ -22,12 +21,9 @@ public:
     AppConfigsFactory() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGSFACTORY
 #endif
     MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
-
-
 
 };

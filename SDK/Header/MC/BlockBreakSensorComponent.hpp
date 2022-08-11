@@ -14,13 +14,11 @@ class BlockBreakSensorComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREAKSENSORCOMPONENT
 public:
     class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent const &) = delete;
     BlockBreakSensorComponent(class BlockBreakSensorComponent const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORCOMPONENT
@@ -31,7 +29,5 @@ public:
     MCAPI class BlockBreakSensorComponent & operator=(class BlockBreakSensorComponent &&);
     MCAPI void updateSensorPos(class Vec3 const &);
     MCAPI ~BlockBreakSensorComponent();
-
-
 
 };

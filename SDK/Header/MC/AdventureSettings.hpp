@@ -12,18 +12,14 @@ struct AdventureSettings {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGS
 public:
     struct AdventureSettings& operator=(struct AdventureSettings const &) = delete;
     AdventureSettings(struct AdventureSettings const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADVENTURESETTINGS
+#endif
     MCAPI AdventureSettings();
-
-protected:
-
-private:
 
 };

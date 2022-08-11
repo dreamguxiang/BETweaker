@@ -12,14 +12,12 @@ class StrictEntityContext {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRICTENTITYCONTEXT
 public:
     class StrictEntityContext& operator=(class StrictEntityContext const &) = delete;
     StrictEntityContext(class StrictEntityContext const &) = delete;
     StrictEntityContext() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXT
@@ -35,8 +33,6 @@ public:
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
 
-
 protected:
-
 
 };

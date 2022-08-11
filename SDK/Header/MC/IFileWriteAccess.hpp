@@ -14,7 +14,6 @@ class IFileWriteAccess {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEWRITEACCESS
 public:
     class IFileWriteAccess& operator=(class IFileWriteAccess const &) = delete;
@@ -22,11 +21,8 @@ public:
     IFileWriteAccess() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEWRITEACCESS
 #endif
-
-
 
 };

@@ -13,12 +13,10 @@ class ScriptFormPromiseTracker {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFORMPROMISETRACKER
 public:
     ScriptFormPromiseTracker(class ScriptFormPromiseTracker const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
@@ -31,7 +29,5 @@ public:
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
     MCAPI class ScriptFormPromiseTracker & operator=(class ScriptFormPromiseTracker const &);
     MCAPI void rejectAllForShutdown();
-
-
 
 };

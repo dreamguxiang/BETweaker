@@ -15,14 +15,12 @@ class HarvestFarmBlockGoal : public BaseMoveToBlockGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARVESTFARMBLOCKGOAL
 public:
     class HarvestFarmBlockGoal& operator=(class HarvestFarmBlockGoal const &) = delete;
     HarvestFarmBlockGoal(class HarvestFarmBlockGoal const &) = delete;
     HarvestFarmBlockGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HarvestFarmBlockGoal();
@@ -43,8 +41,6 @@ public:
 //protected:
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 
-
 protected:
-
 
 };

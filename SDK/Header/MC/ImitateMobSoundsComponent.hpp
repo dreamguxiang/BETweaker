@@ -14,14 +14,12 @@ class ImitateMobSoundsComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMITATEMOBSOUNDSCOMPONENT
 public:
     class ImitateMobSoundsComponent& operator=(class ImitateMobSoundsComponent const &) = delete;
     ImitateMobSoundsComponent(class ImitateMobSoundsComponent const &) = delete;
     ImitateMobSoundsComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMITATEMOBSOUNDSCOMPONENT
@@ -31,9 +29,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class std::unordered_map<enum ActorType, enum LevelSoundEvent, struct std::hash<enum ActorType>, struct std::equal_to<enum ActorType>, class std::allocator<struct std::pair<enum ActorType const, enum LevelSoundEvent>>> const imitateMobMap;
-
 
 };

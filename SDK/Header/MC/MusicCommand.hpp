@@ -15,14 +15,12 @@ class MusicCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSICCOMMAND
 public:
     class MusicCommand& operator=(class MusicCommand const &) = delete;
     MusicCommand(class MusicCommand const &) = delete;
     MusicCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MusicCommand();
@@ -36,8 +34,6 @@ public:
     MCAPI void _handleActionStop(class CompoundTag &, class CommandOutput &) const;
     MCAPI void _handleActionVolume(class CompoundTag &, class CommandOutput &) const;
 
-
 private:
-
 
 };

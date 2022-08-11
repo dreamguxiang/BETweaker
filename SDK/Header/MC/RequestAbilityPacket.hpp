@@ -13,13 +13,11 @@ class RequestAbilityPacket : public Packet {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REQUESTABILITYPACKET
 public:
     class RequestAbilityPacket& operator=(class RequestAbilityPacket const &) = delete;
     RequestAbilityPacket(class RequestAbilityPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RequestAbilityPacket();
@@ -33,7 +31,5 @@ public:
     MCAPI RequestAbilityPacket();
     MCAPI enum AbilitiesIndex getAbility() const;
     MCAPI bool tryGetBool(bool &) const;
-
-
 
 };

@@ -14,7 +14,6 @@ class ResourceUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEUTIL
 public:
     class ResourceUtil& operator=(class ResourceUtil const &) = delete;
@@ -22,13 +21,10 @@ public:
     ResourceUtil() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEUTIL
 #endif
     MCAPI static enum ResourceFileSystem pathFromString(class gsl::basic_string_span<char const, -1>);
     MCAPI static class gsl::basic_string_span<char const, -1> stringFromPath(enum ResourceFileSystem);
-
-
 
 };

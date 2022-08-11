@@ -16,14 +16,12 @@ class ThrownTrident : public AbstractArrow {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNTRIDENT
 public:
     class ThrownTrident& operator=(class ThrownTrident const &) = delete;
     ThrownTrident(class ThrownTrident const &) = delete;
     ThrownTrident() = delete;
 #endif
-
 
 public:
     /*7*/ virtual void outOfWorld();
@@ -65,7 +63,5 @@ public:
     MCAPI class ItemStack getPickupItem() const;
     MCAPI void returnWithLoyalty(int);
     MCAPI void setTridentItem(class ItemStack const &);
-
-
 
 };

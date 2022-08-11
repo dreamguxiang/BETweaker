@@ -45,14 +45,12 @@ public:
 	}
 	
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK
 public:
     class Block& operator=(class Block const &) = delete;
     Block(class Block const &) = delete;
     Block() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~Block();
@@ -244,10 +242,8 @@ public:
     MCAPI void _tryInitEntityIfNotInitialized();
     MCAPI class EntityContext const & getEntity() const;
 
-
 protected:
 
 private:
-
 
 };

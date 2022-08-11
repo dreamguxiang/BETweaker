@@ -14,14 +14,12 @@ class GroupSizeSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZESYSTEM
 public:
     class GroupSizeSystem& operator=(class GroupSizeSystem const &) = delete;
     GroupSizeSystem(class GroupSizeSystem const &) = delete;
     GroupSizeSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GroupSizeSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GroupSizeComponent> &);
 
-
 private:
-
 
 };

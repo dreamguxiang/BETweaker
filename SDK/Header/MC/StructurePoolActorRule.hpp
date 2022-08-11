@@ -12,7 +12,6 @@ class StructurePoolActorRule {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLACTORRULE
 public:
     class StructurePoolActorRule& operator=(class StructurePoolActorRule const &) = delete;
@@ -20,13 +19,10 @@ public:
     StructurePoolActorRule() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLACTORRULE
 #endif
     MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate> &&, std::string);
     MCAPI bool processRule(std::string const &, std::string &) const;
-
-
 
 };

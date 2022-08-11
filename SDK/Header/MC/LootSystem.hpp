@@ -14,7 +14,6 @@ class LootSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTSYSTEM
 public:
     class LootSystem& operator=(class LootSystem const &) = delete;
@@ -22,14 +21,11 @@ public:
     LootSystem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~LootSystem();
     /*1*/ virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
 #endif
-
-
 
 };

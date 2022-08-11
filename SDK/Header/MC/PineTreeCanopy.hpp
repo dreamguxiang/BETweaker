@@ -15,7 +15,6 @@ class PineTreeCanopy {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PINETREECANOPY
 public:
     class PineTreeCanopy& operator=(class PineTreeCanopy const &) = delete;
@@ -23,13 +22,10 @@ public:
     PineTreeCanopy() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~PineTreeCanopy();
     /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINETREECANOPY
 #endif
-
-
 
 };

@@ -16,14 +16,12 @@ class PermissionsFile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONSFILE
 public:
     class PermissionsFile& operator=(class PermissionsFile const &) = delete;
     PermissionsFile(class PermissionsFile const &) = delete;
     PermissionsFile() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSFILE
@@ -41,8 +39,6 @@ public:
     MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();
     MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
 
-
 private:
-
 
 };

@@ -12,7 +12,6 @@ class PieceWeight {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIECEWEIGHT
 public:
     class PieceWeight& operator=(class PieceWeight const &) = delete;
@@ -20,12 +19,9 @@ public:
     PieceWeight() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIECEWEIGHT
 #endif
     MCAPI ~PieceWeight();
-
-
 
 };

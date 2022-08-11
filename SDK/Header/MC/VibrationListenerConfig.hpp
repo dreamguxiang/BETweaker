@@ -12,7 +12,6 @@ class VibrationListenerConfig {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENERCONFIG
 public:
     class VibrationListenerConfig& operator=(class VibrationListenerConfig const &) = delete;
@@ -20,12 +19,9 @@ public:
     VibrationListenerConfig() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
     MCVAPI bool isValidVibration(class GameEvent const &);
 #endif
-
-
 
 };

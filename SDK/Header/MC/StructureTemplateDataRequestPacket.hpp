@@ -15,13 +15,11 @@ class StructureTemplateDataRequestPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATAREQUESTPACKET
 public:
     class StructureTemplateDataRequestPacket& operator=(class StructureTemplateDataRequestPacket const &) = delete;
     StructureTemplateDataRequestPacket(class StructureTemplateDataRequestPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~StructureTemplateDataRequestPacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATAREQUESTPACKET
 #endif
     MCAPI StructureTemplateDataRequestPacket();
-
-
 
 };

@@ -14,18 +14,22 @@ struct BlockFlammableDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLEDESCRIPTION
 public:
     struct BlockFlammableDescription& operator=(struct BlockFlammableDescription const &) = delete;
     BlockFlammableDescription(struct BlockFlammableDescription const &) = delete;
     BlockFlammableDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockFlammableDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKFLAMMABLEDESCRIPTION
+#endif
+    MCAPI static int const CATCH_CHANCE_DEFAULT;
+    MCAPI static int const DESTROY_CHANCE_DEFAULT;
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

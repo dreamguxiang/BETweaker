@@ -14,20 +14,16 @@ struct ItemStackRequestHandlerSlotInfo {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTHANDLERSLOTINFO
 public:
     struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTHANDLERSLOTINFO
+#endif
     MCAPI ItemStackRequestHandlerSlotInfo();
     MCAPI operator bool() const;
     MCAPI ~ItemStackRequestHandlerSlotInfo();
-
-protected:
-
-private:
 
 };

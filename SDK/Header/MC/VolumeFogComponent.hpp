@@ -12,7 +12,6 @@ class VolumeFogComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEFOGCOMPONENT
 public:
     class VolumeFogComponent& operator=(class VolumeFogComponent const &) = delete;
@@ -20,12 +19,9 @@ public:
     VolumeFogComponent() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEFOGCOMPONENT
 #endif
     MCAPI ~VolumeFogComponent();
-
-
 
 };

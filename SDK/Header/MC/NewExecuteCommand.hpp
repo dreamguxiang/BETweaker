@@ -13,14 +13,12 @@ class NewExecuteCommand : public Command {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEWEXECUTECOMMAND
 public:
     class NewExecuteCommand& operator=(class NewExecuteCommand const &) = delete;
     NewExecuteCommand(class NewExecuteCommand const &) = delete;
     NewExecuteCommand() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~NewExecuteCommand();
@@ -37,8 +35,6 @@ public:
     MCAPI class std::optional<struct ScoreboardId> _getScoreboardIdForSelector(class Scoreboard const &, class CommandSelector<class Actor> const &, class CommandOrigin const &, class CommandOutput &) const;
     MCAPI void _handleScoreNotFound(class CommandOrigin const &, class CommandSelector<class Actor> const &, class Objective const &, class CommandOutput &) const;
 
-
 private:
-
 
 };

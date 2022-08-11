@@ -15,7 +15,6 @@ class DifficultyCommand : public Command {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIFFICULTYCOMMAND
 public:
     class DifficultyCommand& operator=(class DifficultyCommand const &) = delete;
@@ -23,14 +22,11 @@ public:
     DifficultyCommand() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DifficultyCommand();
     /*1*/ virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIFFICULTYCOMMAND
 #endif
     MCAPI static void setup(class CommandRegistry &);
-
-
 
 };

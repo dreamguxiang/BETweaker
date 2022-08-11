@@ -12,19 +12,15 @@ struct BlockPatternEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNEVENT
 public:
     struct BlockPatternEvent& operator=(struct BlockPatternEvent const &) = delete;
     BlockPatternEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNEVENT
+#endif
     MCAPI BlockPatternEvent(struct BlockPatternEvent const &);
     MCAPI ~BlockPatternEvent();
-
-protected:
-
-private:
 
 };

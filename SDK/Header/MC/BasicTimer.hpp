@@ -14,14 +14,12 @@ class BasicTimer {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICTIMER
 public:
     class BasicTimer& operator=(class BasicTimer const &) = delete;
     BasicTimer(class BasicTimer const &) = delete;
     BasicTimer() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICTIMER
@@ -30,7 +28,5 @@ public:
     MCAPI bool isFinished() const;
     MCAPI void resetTime();
     MCAPI ~BasicTimer();
-
-
 
 };

@@ -13,14 +13,12 @@ class SideBySideSimulatorSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDESIMULATORSYSTEM
 public:
     class SideBySideSimulatorSystem& operator=(class SideBySideSimulatorSystem const &) = delete;
     SideBySideSimulatorSystem(class SideBySideSimulatorSystem const &) = delete;
     SideBySideSimulatorSystem() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORSYSTEM
@@ -33,7 +31,5 @@ public:
     MCAPI static struct TickingSystemWithInfo createSideBySideResultMigratorSystem();
     MCAPI static void tickBegin(class EntityFactory, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>, struct SideBySideSimulatorComponent, class FlagComponent<struct UsesECSMovementFlag>>, class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
     MCAPI static void tickEnd(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideSimulatorComponent>, class EntityFactory);
-
-
 
 };

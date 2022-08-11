@@ -16,14 +16,12 @@ class ActorHasMobEffect : public FilterTest {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHASMOBEFFECT
 public:
     class ActorHasMobEffect& operator=(class ActorHasMobEffect const &) = delete;
     ActorHasMobEffect(class ActorHasMobEffect const &) = delete;
     ActorHasMobEffect() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ActorHasMobEffect();
@@ -33,7 +31,5 @@ public:
     /*6*/ virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASMOBEFFECT
 #endif
-
-
 
 };

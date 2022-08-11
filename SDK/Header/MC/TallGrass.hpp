@@ -15,14 +15,12 @@ class TallGrass : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TALLGRASS
 public:
     class TallGrass& operator=(class TallGrass const &) = delete;
     TallGrass(class TallGrass const &) = delete;
     TallGrass() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~TallGrass();
@@ -49,12 +47,12 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -73,15 +71,13 @@ public:
     /*173*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer();
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &);
     /*187*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TALLGRASS
     MCVAPI bool canBeSilkTouched() const;
 #endif
     MCAPI TallGrass(std::string const &, int);
-
-
 
 };

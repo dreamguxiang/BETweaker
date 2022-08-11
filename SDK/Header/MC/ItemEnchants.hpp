@@ -15,14 +15,12 @@ class ItemEnchants {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTS
 public:
     class ItemEnchants& operator=(class ItemEnchants const &) = delete;
     ItemEnchants(class ItemEnchants const &) = delete;
     ItemEnchants() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTS
@@ -47,8 +45,6 @@ public:
 //private:
     MCAPI std::unique_ptr<class ListTag> _toList() const;
 
-
 private:
-
 
 };

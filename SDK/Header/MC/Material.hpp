@@ -14,14 +14,12 @@ class Material {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIAL
 public:
     class Material& operator=(class Material const &) = delete;
     Material(class Material const &) = delete;
     Material() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIAL
@@ -48,10 +46,8 @@ public:
 //private:
     MCAPI static void _setupSurfaceMaterials();
 
-
 private:
     MCAPI static bool mInitialized;
     MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
-
 
 };

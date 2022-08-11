@@ -15,14 +15,12 @@ class ScriptPlugin {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGIN
 public:
     class ScriptPlugin& operator=(class ScriptPlugin const &) = delete;
     ScriptPlugin(class ScriptPlugin const &) = delete;
     ScriptPlugin() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ScriptPlugin();
@@ -45,8 +43,6 @@ public:
 //private:
     MCAPI class std::optional<std::string> _loadScript(std::string const &);
 
-
 private:
-
 
 };

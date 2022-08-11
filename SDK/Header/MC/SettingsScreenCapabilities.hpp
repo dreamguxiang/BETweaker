@@ -14,18 +14,16 @@ struct SettingsScreenCapabilities {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTINGSSCREENCAPABILITIES
 public:
     struct SettingsScreenCapabilities& operator=(struct SettingsScreenCapabilities const &) = delete;
     SettingsScreenCapabilities() = delete;
 #endif
-
 public:
+    /*0*/ virtual ~SettingsScreenCapabilities();
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSSCREENCAPABILITIES
+#endif
     MCAPI SettingsScreenCapabilities(struct SettingsScreenCapabilities const &);
-
-protected:
-
-private:
 
 };

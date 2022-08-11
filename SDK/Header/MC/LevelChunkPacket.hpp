@@ -15,13 +15,11 @@ class LevelChunkPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKPACKET
 public:
     class LevelChunkPacket& operator=(class LevelChunkPacket const &) = delete;
     LevelChunkPacket(class LevelChunkPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LevelChunkPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI LevelChunkPacket();
     MCAPI void pushSubChunkMetadata(unsigned __int64);
-
-
 
 };

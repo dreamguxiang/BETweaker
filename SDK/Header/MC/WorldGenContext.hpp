@@ -12,19 +12,15 @@ struct WorldGenContext {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCONTEXT
 public:
     struct WorldGenContext& operator=(struct WorldGenContext const &) = delete;
     WorldGenContext(struct WorldGenContext const &) = delete;
     WorldGenContext() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCONTEXT
+#endif
     MCAPI ~WorldGenContext();
-
-protected:
-
-private:
 
 };

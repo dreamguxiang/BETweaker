@@ -15,20 +15,16 @@ class BrewingStandContainerScreenValidator : public ContainerScreenValidatorBase
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDCONTAINERSCREENVALIDATOR
 public:
     class BrewingStandContainerScreenValidator& operator=(class BrewingStandContainerScreenValidator const &) = delete;
     BrewingStandContainerScreenValidator(class BrewingStandContainerScreenValidator const &) = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~BrewingStandContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERSCREENVALIDATOR
 #endif
     MCAPI BrewingStandContainerScreenValidator();
-
-
 
 };

@@ -14,14 +14,12 @@ class OceanMixerOperationNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMIXEROPERATIONNODE
 public:
     class OceanMixerOperationNode& operator=(class OceanMixerOperationNode const &) = delete;
     OceanMixerOperationNode(class OceanMixerOperationNode const &) = delete;
     OceanMixerOperationNode() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~OceanMixerOperationNode();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMIXEROPERATIONNODE
 #endif
     MCAPI OceanMixerOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<enum BiomeTemperatureCategory, class Pos2d>> &, class BiomeRegistry const &, class Biome &, class Biome &);
-
-
 
 };

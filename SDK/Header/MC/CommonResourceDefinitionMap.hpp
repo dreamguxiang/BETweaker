@@ -14,13 +14,11 @@ class CommonResourceDefinitionMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMONRESOURCEDEFINITIONMAP
 public:
     class CommonResourceDefinitionMap& operator=(class CommonResourceDefinitionMap const &) = delete;
     CommonResourceDefinitionMap(class CommonResourceDefinitionMap const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMONRESOURCEDEFINITIONMAP
@@ -38,8 +36,6 @@ public:
 //private:
     MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
 
-
 private:
-
 
 };

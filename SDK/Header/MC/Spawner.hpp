@@ -21,14 +21,12 @@ public:
     LIAPI Mob* spawnMob(Vec3& ,int, std::string );
     LIAPI ItemActor* spawnItem(Vec3&, int, ItemStack*);
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNER
 public:
     class Spawner& operator=(class Spawner const &) = delete;
     Spawner(class Spawner const &) = delete;
     Spawner() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNER
@@ -57,11 +55,9 @@ public:
     MCAPI void _spawnMobInCluster(class BlockSource &, struct ActorDefinitionIdentifier, class BlockPos const &, class SpawnConditions const &, std::vector<class Mob *> &);
     MCAPI void _updateMobCounts(class BlockSource &, struct ActorDefinitionIdentifier const &, class SpawnConditions const &);
 
-
 protected:
 
 private:
     MCAPI static class std::unordered_set<class ChunkPos, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<class ChunkPos>> const SPAWN_RING_OFFSETS;
-
 
 };

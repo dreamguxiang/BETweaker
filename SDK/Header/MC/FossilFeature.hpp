@@ -15,14 +15,12 @@ class FossilFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOSSILFEATURE
 public:
     class FossilFeature& operator=(class FossilFeature const &) = delete;
     FossilFeature(class FossilFeature const &) = delete;
     FossilFeature() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~FossilFeature();
@@ -32,9 +30,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
-
 
 };

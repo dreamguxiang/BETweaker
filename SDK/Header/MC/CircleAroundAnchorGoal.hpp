@@ -14,14 +14,12 @@ class CircleAroundAnchorGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCLEAROUNDANCHORGOAL
 public:
     class CircleAroundAnchorGoal& operator=(class CircleAroundAnchorGoal const &) = delete;
     CircleAroundAnchorGoal(class CircleAroundAnchorGoal const &) = delete;
     CircleAroundAnchorGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CircleAroundAnchorGoal();
@@ -41,8 +39,6 @@ public:
     MCAPI void _selectNext();
     MCAPI void _setAnchorAboveTarget();
 
-
 private:
-
 
 };

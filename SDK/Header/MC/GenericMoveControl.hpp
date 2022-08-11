@@ -15,13 +15,11 @@ class GenericMoveControl : public MoveControl {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICMOVECONTROL
 public:
     class GenericMoveControl& operator=(class GenericMoveControl const &) = delete;
     GenericMoveControl(class GenericMoveControl const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GenericMoveControl();
@@ -30,7 +28,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
 #endif
     MCAPI GenericMoveControl();
-
-
 
 };

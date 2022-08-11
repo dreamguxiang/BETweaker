@@ -21,14 +21,12 @@ struct Entry {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DENYLIST
 public:
     class DenyList& operator=(class DenyList const &) = delete;
     DenyList(class DenyList const &) = delete;
     DenyList() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DENYLIST
@@ -39,7 +37,5 @@ public:
     MCAPI bool isBlocked(struct DenyList::Entry const &) const;
     MCAPI void removeEntry(struct DenyList::Entry const &);
     MCAPI ~DenyList();
-
-
 
 };

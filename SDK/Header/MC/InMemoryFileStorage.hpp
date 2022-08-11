@@ -15,14 +15,12 @@ class InMemoryFileStorage {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYFILESTORAGE
 public:
     class InMemoryFileStorage& operator=(class InMemoryFileStorage const &) = delete;
     InMemoryFileStorage(class InMemoryFileStorage const &) = delete;
     InMemoryFileStorage() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILESTORAGE
@@ -34,7 +32,5 @@ public:
     MCAPI void flushToDisk();
     MCAPI void populateFileList(std::vector<std::string> &);
     MCAPI ~InMemoryFileStorage();
-
-
 
 };

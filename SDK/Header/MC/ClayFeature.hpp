@@ -15,7 +15,6 @@ class ClayFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLAYFEATURE
 public:
     class ClayFeature& operator=(class ClayFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     ClayFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ClayFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLAYFEATURE
 #endif
     MCAPI ClayFeature(int);
-
-
 
 };

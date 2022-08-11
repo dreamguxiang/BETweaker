@@ -16,14 +16,12 @@ class Pack {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACK
 public:
     class Pack& operator=(class Pack const &) = delete;
     Pack(class Pack const &) = delete;
     Pack() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACK
@@ -46,9 +44,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
-
 
 };

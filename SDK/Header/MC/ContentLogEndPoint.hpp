@@ -14,13 +14,11 @@ class ContentLogEndPoint {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGENDPOINT
 public:
     class ContentLogEndPoint& operator=(class ContentLogEndPoint const &) = delete;
     ContentLogEndPoint(class ContentLogEndPoint const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
@@ -28,7 +26,5 @@ public:
     MCVAPI ~ContentLogEndPoint();
 #endif
     MCAPI ContentLogEndPoint();
-
-
 
 };

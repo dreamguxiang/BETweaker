@@ -12,7 +12,6 @@ class ActorStopRidingEventSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSTOPRIDINGEVENTSYSTEM
 public:
     class ActorStopRidingEventSystem& operator=(class ActorStopRidingEventSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     ActorStopRidingEventSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSTOPRIDINGEVENTSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
     MCAPI static void tickSendEvent(class StrictEntityContext &, class ActorOwnerComponent &, class Optional<class FlagComponent<struct LocalPlayerComponentFlag> const>, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const>, class Optional<class FlagComponent<struct ExitFromPassengerFlag> const>, class Optional<class FlagComponent<struct SwitchingVehiclesFlag> const>);
-
-
 
 };

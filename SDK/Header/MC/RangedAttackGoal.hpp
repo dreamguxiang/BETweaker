@@ -14,14 +14,12 @@ class RangedAttackGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDATTACKGOAL
 public:
     class RangedAttackGoal& operator=(class RangedAttackGoal const &) = delete;
     RangedAttackGoal(class RangedAttackGoal const &) = delete;
     RangedAttackGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~RangedAttackGoal();
@@ -36,7 +34,5 @@ public:
 #endif
     MCAPI RangedAttackGoal(class Mob &);
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
-
-
 
 };

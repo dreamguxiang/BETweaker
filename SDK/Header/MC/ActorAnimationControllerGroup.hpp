@@ -17,13 +17,11 @@ class ActorAnimationControllerGroup {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERGROUP
 public:
     class ActorAnimationControllerGroup& operator=(class ActorAnimationControllerGroup const &) = delete;
     ActorAnimationControllerGroup(class ActorAnimationControllerGroup const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERGROUP
@@ -41,8 +39,6 @@ public:
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>> _buildAnimationControllerFileSchema_v1_8();
     MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value &, class SemVersion const &);
 
-
 private:
-
 
 };

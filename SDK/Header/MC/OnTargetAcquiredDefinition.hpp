@@ -15,18 +15,15 @@ struct OnTargetAcquiredDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONTARGETACQUIREDDEFINITION
 public:
     struct OnTargetAcquiredDefinition& operator=(struct OnTargetAcquiredDefinition const &) = delete;
     OnTargetAcquiredDefinition(struct OnTargetAcquiredDefinition const &) = delete;
     OnTargetAcquiredDefinition() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONTARGETACQUIREDDEFINITION
+#endif
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnTargetAcquiredDefinition>> &);
 
 };

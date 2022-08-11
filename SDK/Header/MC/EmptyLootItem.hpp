@@ -14,7 +14,6 @@ class EmptyLootItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYLOOTITEM
 public:
     class EmptyLootItem& operator=(class EmptyLootItem const &) = delete;
@@ -22,12 +21,9 @@ public:
     EmptyLootItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYLOOTITEM
 #endif
-
-
 
 };

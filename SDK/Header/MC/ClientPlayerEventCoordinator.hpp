@@ -14,7 +14,6 @@ class ClientPlayerEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYEREVENTCOORDINATOR
 public:
     class ClientPlayerEventCoordinator& operator=(class ClientPlayerEventCoordinator const &) = delete;
@@ -22,14 +21,11 @@ public:
     ClientPlayerEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTPLAYEREVENTCOORDINATOR
 #endif
     MCAPI void sendPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
     MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
-
-
 
 };

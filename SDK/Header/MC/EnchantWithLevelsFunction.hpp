@@ -15,14 +15,12 @@ class EnchantWithLevelsFunction {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTWITHLEVELSFUNCTION
 public:
     class EnchantWithLevelsFunction& operator=(class EnchantWithLevelsFunction const &) = delete;
     EnchantWithLevelsFunction(class EnchantWithLevelsFunction const &) = delete;
     EnchantWithLevelsFunction() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
@@ -32,7 +30,5 @@ public:
     MCVAPI void apply(class ItemStack &, class Random &, class LootTableContext &);
 #endif
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
-
-
 
 };

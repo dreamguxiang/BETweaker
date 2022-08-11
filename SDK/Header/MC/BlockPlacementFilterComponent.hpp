@@ -14,22 +14,18 @@ struct BlockPlacementFilterComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTFILTERCOMPONENT
 public:
     struct BlockPlacementFilterComponent& operator=(struct BlockPlacementFilterComponent const &) = delete;
     BlockPlacementFilterComponent(struct BlockPlacementFilterComponent const &) = delete;
     BlockPlacementFilterComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTFILTERCOMPONENT
+#endif
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     MCAPI struct BlockPlacementFilterComponent & operator=(struct BlockPlacementFilterComponent &&);
     MCAPI ~BlockPlacementFilterComponent();
-
-protected:
-
-private:
 
 };

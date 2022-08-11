@@ -15,7 +15,6 @@ class DropperContainerManagerModel : public LevelContainerManagerModel {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPPERCONTAINERMANAGERMODEL
 public:
     class DropperContainerManagerModel& operator=(class DropperContainerManagerModel const &) = delete;
@@ -23,14 +22,11 @@ public:
     DropperContainerManagerModel() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DropperContainerManagerModel();
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERCONTAINERMANAGERMODEL
 #endif
     MCAPI DropperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-
-
 
 };

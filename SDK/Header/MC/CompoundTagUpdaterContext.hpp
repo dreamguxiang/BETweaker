@@ -14,13 +14,11 @@ class CompoundTagUpdaterContext {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERCONTEXT
 public:
     class CompoundTagUpdaterContext& operator=(class CompoundTagUpdaterContext const &) = delete;
     CompoundTagUpdaterContext(class CompoundTagUpdaterContext const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERCONTEXT
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
 
-
 private:
-
 
 };

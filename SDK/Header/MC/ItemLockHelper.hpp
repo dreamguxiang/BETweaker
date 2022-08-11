@@ -15,14 +15,12 @@ class ItemLockHelper {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMLOCKHELPER
 public:
     class ItemLockHelper& operator=(class ItemLockHelper const &) = delete;
     ItemLockHelper(class ItemLockHelper const &) = delete;
     ItemLockHelper() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMLOCKHELPER
@@ -39,8 +37,6 @@ public:
 //private:
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
 
-
 private:
-
 
 };

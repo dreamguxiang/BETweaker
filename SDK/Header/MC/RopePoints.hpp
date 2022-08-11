@@ -12,14 +12,12 @@ class RopePoints {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEPOINTS
 public:
     class RopePoints& operator=(class RopePoints const &) = delete;
     RopePoints(class RopePoints const &) = delete;
     RopePoints() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPOINTS
@@ -31,7 +29,5 @@ public:
     MCAPI void reserve(unsigned __int64);
     MCAPI unsigned __int64 size() const;
     MCAPI ~RopePoints();
-
-
 
 };

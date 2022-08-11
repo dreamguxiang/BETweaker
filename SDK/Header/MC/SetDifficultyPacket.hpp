@@ -15,13 +15,11 @@ class SetDifficultyPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDIFFICULTYPACKET
 public:
     class SetDifficultyPacket& operator=(class SetDifficultyPacket const &) = delete;
     SetDifficultyPacket(class SetDifficultyPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SetDifficultyPacket();
@@ -34,7 +32,5 @@ public:
     MCAPI SetDifficultyPacket(enum Difficulty);
     MCAPI SetDifficultyPacket();
     MCAPI enum Difficulty getDifficulty() const;
-
-
 
 };

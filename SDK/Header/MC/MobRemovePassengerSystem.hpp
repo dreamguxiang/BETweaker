@@ -12,7 +12,6 @@ class MobRemovePassengerSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBREMOVEPASSENGERSYSTEM
 public:
     class MobRemovePassengerSystem& operator=(class MobRemovePassengerSystem const &) = delete;
@@ -20,13 +19,10 @@ public:
     MobRemovePassengerSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBREMOVEPASSENGERSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSystem();
     MCAPI static void removePassengerSystem(class StrictEntityContext &, struct StateVectorComponent const &, class Optional<struct VehicleComponent const>, struct MobJumpComponent &, struct SynchedActorDataComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ParrotFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>> &);
-
-
 
 };

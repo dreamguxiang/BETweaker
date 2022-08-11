@@ -15,13 +15,11 @@ class ServerSettingsResponsePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSETTINGSRESPONSEPACKET
 public:
     class ServerSettingsResponsePacket& operator=(class ServerSettingsResponsePacket const &) = delete;
     ServerSettingsResponsePacket(class ServerSettingsResponsePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ServerSettingsResponsePacket();
@@ -32,7 +30,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSETTINGSRESPONSEPACKET
 #endif
     MCAPI ServerSettingsResponsePacket();
-
-
 
 };

@@ -14,14 +14,12 @@ class PetSleepWithOwnerState {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PETSLEEPWITHOWNERSTATE
 public:
     class PetSleepWithOwnerState& operator=(class PetSleepWithOwnerState const &) = delete;
     PetSleepWithOwnerState(class PetSleepWithOwnerState const &) = delete;
     PetSleepWithOwnerState() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
@@ -32,8 +30,6 @@ public:
 //protected:
     MCAPI void dampenSpeed();
 
-
 protected:
-
 
 };

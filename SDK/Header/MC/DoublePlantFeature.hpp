@@ -15,7 +15,6 @@ class DoublePlantFeature : public Feature {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUBLEPLANTFEATURE
 public:
     class DoublePlantFeature& operator=(class DoublePlantFeature const &) = delete;
@@ -23,14 +22,11 @@ public:
     DoublePlantFeature() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoublePlantFeature();
     /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTFEATURE
 #endif
     MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum DoublePlantType) const;
-
-
 
 };

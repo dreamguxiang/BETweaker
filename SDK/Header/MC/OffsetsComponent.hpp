@@ -12,19 +12,15 @@ struct OffsetsComponent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFSETSCOMPONENT
 public:
     struct OffsetsComponent& operator=(struct OffsetsComponent const &) = delete;
     OffsetsComponent(struct OffsetsComponent const &) = delete;
     OffsetsComponent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFSETSCOMPONENT
+#endif
     MCAPI bool operator==(struct OffsetsComponent const &) const;
-
-protected:
-
-private:
 
 };

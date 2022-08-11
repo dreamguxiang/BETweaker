@@ -14,19 +14,16 @@ struct CrashDumpKeyValueData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPKEYVALUEDATA
 public:
     struct CrashDumpKeyValueData& operator=(struct CrashDumpKeyValueData const &) = delete;
     CrashDumpKeyValueData(struct CrashDumpKeyValueData const &) = delete;
     CrashDumpKeyValueData() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPKEYVALUEDATA
+#endif
     MCAPI CrashDumpKeyValueData(enum CrashDumpLogStringID, enum CrashDumpLogStringID, int, unsigned __int64);
-
-protected:
-
-private:
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

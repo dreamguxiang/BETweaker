@@ -17,14 +17,12 @@ class ServerPlayer : public Player {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYER
 public:
     class ServerPlayer& operator=(class ServerPlayer const &) = delete;
     ServerPlayer(class ServerPlayer const &) = delete;
     ServerPlayer() = delete;
 #endif
-
 
 public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -165,8 +163,6 @@ public:
     MCAPI void _setContainerManager(class std::shared_ptr<class IContainerManager>);
     MCAPI void _updateNearbyActors();
 
-
 private:
-
 
 };

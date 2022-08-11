@@ -18,14 +18,12 @@ public:
 enum Tier;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEARMORITEM
 public:
     class HorseArmorItem& operator=(class HorseArmorItem const &) = delete;
     HorseArmorItem(class HorseArmorItem const &) = delete;
     HorseArmorItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HorseArmorItem();
@@ -50,12 +48,11 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEARMORITEM
 #endif
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
     MCAPI static int const mHealthPerTier[];
-
-
 
 };

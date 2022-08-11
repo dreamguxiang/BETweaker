@@ -15,13 +15,11 @@ class SystemFilePicker {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMFILEPICKER
 public:
     class SystemFilePicker& operator=(class SystemFilePicker const &) = delete;
     SystemFilePicker(class SystemFilePicker const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SystemFilePicker();
@@ -35,8 +33,6 @@ public:
 //protected:
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
 
-
 protected:
-
 
 };

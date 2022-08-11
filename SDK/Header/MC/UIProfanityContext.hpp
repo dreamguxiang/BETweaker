@@ -14,7 +14,6 @@ class UIProfanityContext {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UIPROFANITYCONTEXT
 public:
     class UIProfanityContext& operator=(class UIProfanityContext const &) = delete;
@@ -22,12 +21,9 @@ public:
     UIProfanityContext() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UIPROFANITYCONTEXT
 #endif
     MCAPI std::string filterProfanityFromString(enum ProfanityFilterContext, std::string const &, bool) const;
-
-
 
 };

@@ -14,14 +14,12 @@ class StructureTemplatePool {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEPOOL
 public:
     class StructureTemplatePool& operator=(class StructureTemplatePool const &) = delete;
     StructureTemplatePool(class StructureTemplatePool const &) = delete;
     StructureTemplatePool() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEPOOL
@@ -33,7 +31,5 @@ public:
     MCAPI std::vector<unsigned __int64> getShuffledTemplateIndexes(class Random &) const;
     MCAPI class StructurePoolElement const * getTemplate(unsigned __int64) const;
     MCAPI bool isValid() const;
-
-
 
 };

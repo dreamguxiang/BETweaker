@@ -15,14 +15,12 @@ class CampfireBlockActor : public BlockActor {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMPFIREBLOCKACTOR
 public:
     class CampfireBlockActor& operator=(class CampfireBlockActor const &) = delete;
     CampfireBlockActor(class CampfireBlockActor const &) = delete;
     CampfireBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CampfireBlockActor();
@@ -32,7 +30,7 @@ public:
     /*8*/ virtual void onChanged(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual float getShadowRadius(class BlockSource &) const;
+    /*17*/ virtual float getShadowRadius(class BlockSource &);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -54,8 +52,6 @@ public:
 //private:
     MCAPI void _finishCooking(class BlockSource &, int);
 
-
 private:
-
 
 };

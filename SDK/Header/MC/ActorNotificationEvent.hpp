@@ -12,19 +12,15 @@ struct ActorNotificationEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORNOTIFICATIONEVENT
 public:
     struct ActorNotificationEvent& operator=(struct ActorNotificationEvent const &) = delete;
     ActorNotificationEvent(struct ActorNotificationEvent const &) = delete;
     ActorNotificationEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORNOTIFICATIONEVENT
+#endif
     MCAPI ~ActorNotificationEvent();
-
-protected:
-
-private:
 
 };

@@ -15,7 +15,6 @@ class DoublePlantBlock : public BushBlock {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUBLEPLANTBLOCK
 public:
     class DoublePlantBlock& operator=(class DoublePlantBlock const &) = delete;
@@ -23,10 +22,9 @@ public:
     DoublePlantBlock() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~DoublePlantBlock();
-    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
+    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &);
     /*7*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
@@ -51,7 +49,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid() const;
+    /*61*/ virtual bool canContainLiquid();
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -72,7 +70,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
+    /*135*/ virtual bool isAuxValueRelevantForPicking();
     /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*139*/ virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
@@ -87,8 +85,8 @@ public:
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer();
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &);
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTBLOCK
@@ -97,7 +95,5 @@ public:
     MCAPI DoublePlantBlock(std::string const &, int);
     MCAPI int getType(class BlockSource &, class BlockPos const &, class Block const &) const;
     MCAPI bool placeAt(class BlockSource &, class BlockPos const &, enum DoublePlantType, int, class Actor *) const;
-
-
 
 };

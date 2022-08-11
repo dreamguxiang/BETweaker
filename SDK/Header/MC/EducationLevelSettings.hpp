@@ -13,18 +13,15 @@ struct EducationLevelSettings {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA
-
-public:
+#undef AFTER_EXTRApublic:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONLEVELSETTINGS
+#endif
     MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     MCAPI EducationLevelSettings();
     MCAPI class std::function<void (struct CommandFlag &, std::string const &)> getCommandOverrideFunctor() const;
     MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
     MCAPI void save(class LevelLooseFileStorage const &);
     MCAPI ~EducationLevelSettings();
-
-protected:
-
-private:
+    MCAPI static std::string const DEFAULT_BORDER_PATH;
 
 };

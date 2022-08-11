@@ -14,13 +14,11 @@ class LegacyStructureSettings {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURESETTINGS
 public:
     class LegacyStructureSettings& operator=(class LegacyStructureSettings const &) = delete;
     LegacyStructureSettings(class LegacyStructureSettings const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTURESETTINGS
@@ -53,7 +51,5 @@ public:
     MCAPI static float const INTEGRITY_MAX;
     MCAPI static float const INTEGRITY_MIN;
     MCAPI static int const MAX_STRUCTURE_SIZE;
-
-
 
 };

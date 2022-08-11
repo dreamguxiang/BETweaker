@@ -14,13 +14,11 @@ class MoveNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVENODE
 public:
     class MoveNode& operator=(class MoveNode const &) = delete;
     MoveNode(class MoveNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MoveNode();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
 
-
 private:
-
 
 };

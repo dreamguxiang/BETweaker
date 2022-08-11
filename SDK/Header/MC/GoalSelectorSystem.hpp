@@ -14,14 +14,12 @@ class GoalSelectorSystem {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOALSELECTORSYSTEM
 public:
     class GoalSelectorSystem& operator=(class GoalSelectorSystem const &) = delete;
     GoalSelectorSystem(class GoalSelectorSystem const &) = delete;
     GoalSelectorSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GoalSelectorSystem();
@@ -33,8 +31,6 @@ public:
 //private:
     MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent> &);
 
-
 private:
-
 
 };

@@ -70,14 +70,12 @@ struct NormalizedRectangularRecipeResults {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPES
 public:
     class Recipes& operator=(class Recipes const &) = delete;
     Recipes(class Recipes const &) = delete;
     Recipes() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPES
@@ -116,10 +114,8 @@ public:
     MCAPI void _loadHardcodedRecipes();
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const &, class SemVersion const &) const;
 
-
 protected:
 
 private:
-
 
 };

@@ -12,19 +12,15 @@ struct DiffListPair {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIFFLISTPAIR
 public:
     struct DiffListPair& operator=(struct DiffListPair const &) = delete;
     DiffListPair(struct DiffListPair const &) = delete;
     DiffListPair() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIFFLISTPAIR
+#endif
     MCAPI DiffListPair(bool, class ActorDefinitionDescriptor *);
-
-protected:
-
-private:
 
 };

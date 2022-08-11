@@ -15,14 +15,12 @@ class PlayerEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREVENTCOORDINATOR
 public:
     class PlayerEventCoordinator& operator=(class PlayerEventCoordinator const &) = delete;
     PlayerEventCoordinator(class PlayerEventCoordinator const &) = delete;
     PlayerEventCoordinator() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTCOORDINATOR
@@ -40,7 +38,5 @@ public:
     MCAPI void sendPlayerSlide(class Player &);
     MCAPI void sendPlayerTeleported(class Player &);
     MCAPI void sendPlayerTick(class Player &);
-
-
 
 };

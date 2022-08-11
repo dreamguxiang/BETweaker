@@ -14,14 +14,12 @@ class SharedModifiers {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDMODIFIERS
 public:
     class SharedModifiers& operator=(class SharedModifiers const &) = delete;
     SharedModifiers(class SharedModifiers const &) = delete;
     SharedModifiers() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDMODIFIERS
@@ -32,7 +30,5 @@ public:
     MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SPEED;
     MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
     MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
-
-
 
 };

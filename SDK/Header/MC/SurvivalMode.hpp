@@ -15,14 +15,12 @@ class SurvivalMode : public GameMode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURVIVALMODE
 public:
     class SurvivalMode& operator=(class SurvivalMode const &) = delete;
     SurvivalMode(class SurvivalMode const &) = delete;
     SurvivalMode() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SurvivalMode();
@@ -46,9 +44,7 @@ public:
     MCAPI void _messagePlayers(std::string);
     MCAPI void _showTrialReminder(bool);
 
-
 private:
     MCAPI static bool mTrialHasEnded;
-
 
 };

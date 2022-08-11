@@ -12,19 +12,15 @@ struct PlayerOpenContainerEvent {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEROPENCONTAINEREVENT
 public:
     struct PlayerOpenContainerEvent& operator=(struct PlayerOpenContainerEvent const &) = delete;
     PlayerOpenContainerEvent(struct PlayerOpenContainerEvent const &) = delete;
     PlayerOpenContainerEvent() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEROPENCONTAINEREVENT
+#endif
     MCAPI ~PlayerOpenContainerEvent();
-
-protected:
-
-private:
 
 };

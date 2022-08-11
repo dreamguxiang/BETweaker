@@ -15,14 +15,12 @@ class MultiRecipe : public Recipe {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIRECIPE
 public:
     class MultiRecipe& operator=(class MultiRecipe const &) = delete;
     MultiRecipe(class MultiRecipe const &) = delete;
     MultiRecipe() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MultiRecipe();
@@ -31,7 +29,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
 #endif
     MCAPI MultiRecipe(class gsl::basic_string_span<char const, -1>, class HashedString);
-
-
 
 };

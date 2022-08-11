@@ -14,7 +14,6 @@ class MolangVersionMapping {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVERSIONMAPPING
 public:
     class MolangVersionMapping& operator=(class MolangVersionMapping const &) = delete;
@@ -22,12 +21,9 @@ public:
     MolangVersionMapping() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVERSIONMAPPING
 #endif
     MCAPI static enum MolangVersion const getVersion(class SemVersion const &);
-
-
 
 };

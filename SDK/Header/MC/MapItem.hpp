@@ -17,14 +17,12 @@ class MapItem : public Item {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEM
 public:
     class MapItem& operator=(class MapItem const &) = delete;
     MapItem(class MapItem const &) = delete;
     MapItem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~MapItem();
@@ -49,6 +47,7 @@ public:
     /*117*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
 #endif
@@ -76,8 +75,6 @@ public:
     MCAPI void _makeNewExplorationMap(class ItemStack &, class Level &, class Actor *, std::string &) const;
     MCAPI static void _scheduleMapChunkRendering(class Dimension &, class MapItemSavedData const &, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
 
-
 private:
-
 
 };

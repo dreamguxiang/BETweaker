@@ -16,14 +16,12 @@ class FallingBlock : public PredictableProjectile {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FALLINGBLOCK
 public:
     class FallingBlock& operator=(class FallingBlock const &) = delete;
     FallingBlock(class FallingBlock const &) = delete;
     FallingBlock() = delete;
 #endif
-
 
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
@@ -34,7 +32,7 @@ public:
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius() const;
+    /*80*/ virtual float getShadowRadius();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -72,8 +70,6 @@ public:
     MCAPI void _breakBlock();
     MCAPI void _waitRemoval();
 
-
 private:
-
 
 };

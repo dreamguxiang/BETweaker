@@ -15,13 +15,11 @@ class EntityServerPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSERVERPACKET
 public:
     class EntityServerPacket& operator=(class EntityServerPacket const &) = delete;
     EntityServerPacket(class EntityServerPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EntityServerPacket();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI EntityServerPacket(class EntityContext const &);
     MCAPI EntityServerPacket();
-
-
 
 };

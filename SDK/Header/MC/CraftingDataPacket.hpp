@@ -15,13 +15,11 @@ class CraftingDataPacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGDATAPACKET
 public:
     class CraftingDataPacket& operator=(class CraftingDataPacket const &) = delete;
     CraftingDataPacket(class CraftingDataPacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CraftingDataPacket();
@@ -33,7 +31,5 @@ public:
 #endif
     MCAPI CraftingDataPacket();
     MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const &, bool);
-
-
 
 };

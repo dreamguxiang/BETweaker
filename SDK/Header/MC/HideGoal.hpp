@@ -15,14 +15,12 @@ class HideGoal : public MoveToPOIGoal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDEGOAL
 public:
     class HideGoal& operator=(class HideGoal const &) = delete;
     HideGoal(class HideGoal const &) = delete;
     HideGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~HideGoal();
@@ -39,7 +37,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEGOAL
 #endif
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
-
-
 
 };

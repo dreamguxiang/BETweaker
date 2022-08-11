@@ -17,7 +17,6 @@ public:
     LIAPI Actor* getEntity();
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGESOURCE
 public:
     class ActorDamageSource& operator=(class ActorDamageSource const &) = delete;
@@ -25,12 +24,11 @@ public:
     ActorDamageSource() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~ActorDamageSource();
-    /*1*/ virtual bool isEntitySource() const;
-    /*2*/ virtual bool isChildEntitySource() const;
-    /*3*/ virtual bool isBlockSource() const;
+    /*1*/ virtual bool isEntitySource();
+    /*2*/ virtual bool isChildEntitySource();
+    /*3*/ virtual bool isBlockSource();
     /*4*/ virtual bool isFire() const;
     /*5*/ virtual bool isReducedByResistanceEffect() const;
     /*6*/ virtual bool isReducedByEnchantReduction() const;
@@ -38,16 +36,16 @@ public:
     /*8*/ virtual bool isFallingBlockDamage() const;
     /*9*/ virtual bool isFallDamage() const;
     /*10*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
-    /*11*/ virtual bool getIsCreative() const;
-    /*12*/ virtual bool getIsWorldBuilder() const;
-    /*13*/ virtual struct ActorUniqueID getEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getEntityType() const;
-    /*15*/ virtual enum ActorCategory getEntityCategories() const;
-    /*16*/ virtual bool getDamagingEntityIsCreative() const;
-    /*17*/ virtual bool getDamagingEntityIsWorldBuilder() const;
-    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*19*/ virtual enum ActorType getDamagingEntityType() const;
-    /*20*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*11*/ virtual bool getIsCreative();
+    /*12*/ virtual bool getIsWorldBuilder();
+    /*13*/ virtual struct ActorUniqueID getEntityUniqueID();
+    /*14*/ virtual enum ActorType getEntityType();
+    /*15*/ virtual enum ActorCategory getEntityCategories();
+    /*16*/ virtual bool getDamagingEntityIsCreative();
+    /*17*/ virtual bool getDamagingEntityIsWorldBuilder();
+    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID();
+    /*19*/ virtual enum ActorType getDamagingEntityType();
+    /*20*/ virtual enum ActorCategory getDamagingEntityCategories();
     /*21*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
 #endif
@@ -58,7 +56,5 @@ public:
     MCAPI static bool isDamageCausedByMob(enum ActorDamageCause);
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
-
-
 
 };

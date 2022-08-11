@@ -12,18 +12,20 @@ struct BlockDestructibleByExplosionDescription {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
 public:
     struct BlockDestructibleByExplosionDescription& operator=(struct BlockDestructibleByExplosionDescription const &) = delete;
     BlockDestructibleByExplosionDescription(struct BlockDestructibleByExplosionDescription const &) = delete;
     BlockDestructibleByExplosionDescription() = delete;
 #endif
-
 public:
-
-protected:
-
-private:
+    /*0*/ virtual ~BlockDestructibleByExplosionDescription();
+    /*1*/ virtual std::string const & getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
+#endif
+    MCAPI static std::string const NameID;
+    MCAPI static void bindType();
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

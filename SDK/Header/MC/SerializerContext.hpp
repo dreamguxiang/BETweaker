@@ -14,13 +14,11 @@ class SerializerContext {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERCONTEXT
 public:
     class SerializerContext& operator=(class SerializerContext const &) = delete;
     SerializerContext(class SerializerContext const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERCONTEXT
@@ -34,7 +32,5 @@ public:
     MCAPI void popContext();
     MCAPI class SerializerContext & pushContext(std::string const &);
     MCAPI ~SerializerContext();
-
-
 
 };

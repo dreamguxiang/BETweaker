@@ -14,13 +14,11 @@ class LookAtBlockNode {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATBLOCKNODE
 public:
     class LookAtBlockNode& operator=(class LookAtBlockNode const &) = delete;
     LookAtBlockNode(class LookAtBlockNode const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~LookAtBlockNode();
@@ -29,7 +27,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKNODE
 #endif
     MCAPI LookAtBlockNode();
-
-
 
 };

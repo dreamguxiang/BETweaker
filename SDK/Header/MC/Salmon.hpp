@@ -16,14 +16,12 @@ class Salmon : public Fish {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SALMON
 public:
     class Salmon& operator=(class Salmon const &) = delete;
     Salmon(class Salmon const &) = delete;
     Salmon() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Salmon();
@@ -56,7 +54,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SALMON
 #endif
     MCAPI Salmon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

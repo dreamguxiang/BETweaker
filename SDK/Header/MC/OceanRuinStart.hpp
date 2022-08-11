@@ -15,7 +15,6 @@ class OceanRuinStart : public StructureStart {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINSTART
 public:
     class OceanRuinStart& operator=(class OceanRuinStart const &) = delete;
@@ -23,13 +22,10 @@ public:
     OceanRuinStart() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~OceanRuinStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINSTART
 #endif
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
-
-
 
 };

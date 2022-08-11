@@ -12,14 +12,12 @@ class GameEventMovementTrackingSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMOVEMENTTRACKINGSYSTEM
 public:
     class GameEventMovementTrackingSystem& operator=(class GameEventMovementTrackingSystem const &) = delete;
     GameEventMovementTrackingSystem(class GameEventMovementTrackingSystem const &) = delete;
     GameEventMovementTrackingSystem() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~GameEventMovementTrackingSystem();
@@ -32,8 +30,6 @@ public:
     MCAPI static void _tickGameEventMovementTrackingComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GameEventMovementTrackingComponent> &);
     MCAPI static void _trackMovement(class Actor &, class GameEventMovementTrackingComponent &);
 
-
 private:
-
 
 };

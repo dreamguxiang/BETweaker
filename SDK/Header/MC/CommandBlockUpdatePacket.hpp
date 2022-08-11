@@ -15,12 +15,10 @@ class CommandBlockUpdatePacket : public Packet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKUPDATEPACKET
 public:
     class CommandBlockUpdatePacket& operator=(class CommandBlockUpdatePacket const &) = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~CommandBlockUpdatePacket();
@@ -32,7 +30,5 @@ public:
 #endif
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
     MCAPI CommandBlockUpdatePacket();
-
-
 
 };

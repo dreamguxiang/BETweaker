@@ -14,14 +14,12 @@ class DamageOverTimeComponent {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEOVERTIMECOMPONENT
 public:
     class DamageOverTimeComponent& operator=(class DamageOverTimeComponent const &) = delete;
     DamageOverTimeComponent(class DamageOverTimeComponent const &) = delete;
     DamageOverTimeComponent() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMECOMPONENT
@@ -32,7 +30,5 @@ public:
     MCAPI int getHurtValue() const;
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     MCAPI void setDamageTime(int);
-
-
 
 };

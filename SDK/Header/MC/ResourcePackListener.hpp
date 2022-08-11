@@ -14,14 +14,12 @@ class ResourcePackListener {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKLISTENER
 public:
     class ResourcePackListener& operator=(class ResourcePackListener const &) = delete;
     ResourcePackListener(class ResourcePackListener const &) = delete;
     ResourcePackListener() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
@@ -30,7 +28,5 @@ public:
     MCVAPI void onLanguageSubpacksChanged();
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
 #endif
-
-
 
 };

@@ -15,14 +15,12 @@ class NetworkChunkPublisher {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKPUBLISHER
 public:
     class NetworkChunkPublisher& operator=(class NetworkChunkPublisher const &) = delete;
     NetworkChunkPublisher(class NetworkChunkPublisher const &) = delete;
     NetworkChunkPublisher() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
@@ -42,8 +40,6 @@ public:
     MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
     MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
 
-
 private:
-
 
 };

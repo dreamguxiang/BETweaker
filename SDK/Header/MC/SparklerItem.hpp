@@ -22,7 +22,6 @@ struct ColorInfo {
 };
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARKLERITEM
 public:
     class SparklerItem& operator=(class SparklerItem const &) = delete;
@@ -30,14 +29,13 @@ public:
     SparklerItem() = delete;
 #endif
 
-
 public:
     /*0*/ virtual ~SparklerItem();
     /*7*/ virtual void __unk_vfn_7();
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*50*/ virtual bool isHandEquipped() const;
+    /*50*/ virtual bool isHandEquipped();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -52,12 +50,11 @@ public:
     /*122*/ virtual struct Brightness getLightEmission(int) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
+    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARKLERITEM
 #endif
     MCAPI SparklerItem(std::string const &, int);
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];
     MCAPI static int const MAX_ACTIVE_TICKS;
-
-
 
 };

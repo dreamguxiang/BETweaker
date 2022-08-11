@@ -15,13 +15,11 @@ class EnchantmentInstance {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTMENTINSTANCE
 public:
     class EnchantmentInstance& operator=(class EnchantmentInstance const &) = delete;
     EnchantmentInstance(class EnchantmentInstance const &) = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTMENTINSTANCE
@@ -33,7 +31,5 @@ public:
     MCAPI bool operator==(class EnchantmentInstance const &) const;
     MCAPI void setEnchantLevel(int);
     MCAPI void setEnchantType(enum Enchant::Type);
-
-
 
 };

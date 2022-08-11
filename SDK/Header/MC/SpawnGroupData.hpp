@@ -14,14 +14,12 @@ class SpawnGroupData {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNGROUPDATA
 public:
     class SpawnGroupData& operator=(class SpawnGroupData const &) = delete;
     SpawnGroupData(class SpawnGroupData const &) = delete;
     SpawnGroupData() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPDATA
@@ -30,7 +28,5 @@ public:
     MCAPI void addSpawnRules(class MobSpawnRules &);
     MCAPI std::string const & getIdentifier() const;
     MCAPI std::vector<class MobSpawnRules> const & getSpawnRules() const;
-
-
 
 };

@@ -16,14 +16,12 @@ class Sheep : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHEEP
 public:
     class Sheep& operator=(class Sheep const &) = delete;
     Sheep(class Sheep const &) = delete;
     Sheep() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Sheep();
@@ -64,9 +62,7 @@ public:
 
 //private:
 
-
 private:
     MCAPI static int const EAT_ANIMATION_TICKS;
-
 
 };

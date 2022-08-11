@@ -14,13 +14,11 @@ class InsideBlockEventMap {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKEVENTMAP
 public:
     class InsideBlockEventMap& operator=(class InsideBlockEventMap const &) = delete;
     InsideBlockEventMap() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKEVENTMAP
@@ -38,7 +36,5 @@ public:
     MCAPI void setWasInside(bool);
     MCAPI bool wasActorInsideLastTick() const;
     MCAPI ~InsideBlockEventMap();
-
-
 
 };

@@ -16,14 +16,12 @@ class Strider : public Animal {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRIDER
 public:
     class Strider& operator=(class Strider const &) = delete;
     Strider(class Strider const &) = delete;
     Strider() = delete;
 #endif
-
 
 public:
     /*14*/ virtual ~Strider();
@@ -60,7 +58,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRIDER
 #endif
     MCAPI Strider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-
-
 
 };

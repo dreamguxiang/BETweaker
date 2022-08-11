@@ -14,14 +14,12 @@ class SimplePositionalRandomFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEPOSITIONALRANDOMFACTORY
 public:
     class SimplePositionalRandomFactory& operator=(class SimplePositionalRandomFactory const &) = delete;
     SimplePositionalRandomFactory(class SimplePositionalRandomFactory const &) = delete;
     SimplePositionalRandomFactory() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SimplePositionalRandomFactory();
@@ -31,7 +29,5 @@ public:
 #endif
     MCAPI SimplePositionalRandomFactory(__int64);
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
-
-
 
 };

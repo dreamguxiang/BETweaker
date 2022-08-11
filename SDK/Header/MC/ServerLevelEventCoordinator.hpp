@@ -14,7 +14,6 @@ class ServerLevelEventCoordinator {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVELEVENTCOORDINATOR
 public:
     class ServerLevelEventCoordinator& operator=(class ServerLevelEventCoordinator const &) = delete;
@@ -22,14 +21,11 @@ public:
     ServerLevelEventCoordinator() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVELEVENTCOORDINATOR
 #endif
     MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
     MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
     MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
-
-
 
 };

@@ -14,19 +14,15 @@ struct TextureUVCoordinateSet {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTUREUVCOORDINATESET
 public:
     struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const &) = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREUVCOORDINATESET
+#endif
     MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     MCAPI TextureUVCoordinateSet();
     MCAPI ~TextureUVCoordinateSet();
-
-protected:
-
-private:
 
 };

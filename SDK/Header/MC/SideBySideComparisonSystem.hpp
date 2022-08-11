@@ -13,7 +13,6 @@ class SideBySideComparisonSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDECOMPARISONSYSTEM
 public:
     class SideBySideComparisonSystem& operator=(class SideBySideComparisonSystem const &) = delete;
@@ -21,13 +20,10 @@ public:
     SideBySideComparisonSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, std::vector<unsigned int> const &);
     MCAPI static class std::array<struct TickingSystemWithInfo, 6> createSideBySideExceptionSystems();
-
-
 
 };

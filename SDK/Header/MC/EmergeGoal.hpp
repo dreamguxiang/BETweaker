@@ -12,14 +12,12 @@ class EmergeGoal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMERGEGOAL
 public:
     class EmergeGoal& operator=(class EmergeGoal const &) = delete;
     EmergeGoal(class EmergeGoal const &) = delete;
     EmergeGoal() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~EmergeGoal();
@@ -33,7 +31,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMERGEGOAL
 #endif
     MCAPI EmergeGoal(class Mob &);
-
-
 
 };

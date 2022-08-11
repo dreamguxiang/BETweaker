@@ -12,7 +12,6 @@ class ActorUpdatePostTickPositionDeltaSystem {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATEPOSTTICKPOSITIONDELTASYSTEM
 public:
     class ActorUpdatePostTickPositionDeltaSystem& operator=(class ActorUpdatePostTickPositionDeltaSystem const &) = delete;
@@ -20,12 +19,9 @@ public:
     ActorUpdatePostTickPositionDeltaSystem() = delete;
 #endif
 
-
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATEPOSTTICKPOSITIONDELTASYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
-
-
 
 };

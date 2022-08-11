@@ -15,14 +15,12 @@ class ResourcePackStack {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACK
 public:
     class ResourcePackStack& operator=(class ResourcePackStack const &) = delete;
     ResourcePackStack(class ResourcePackStack const &) = delete;
     ResourcePackStack() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~ResourcePackStack();
@@ -43,9 +41,7 @@ public:
 //private:
     MCAPI static void _populateDependencies(std::vector<class PackInstance> &, class PackInstance &, class IResourcePackRepository const &, bool);
 
-
 private:
     MCAPI static class std::map<class Core::PathBuffer<std::string>, class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<struct std::pair<class Core::PathBuffer<std::string> const, class Core::PathBuffer<std::string>>>> mUpgradePathMap;
-
 
 };

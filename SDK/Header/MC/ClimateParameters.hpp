@@ -15,20 +15,16 @@ struct ClimateParameters {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
     struct ClimateParameters& operator=(struct ClimateParameters const &) = delete;
     ClimateParameters(struct ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
-
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIMATEPARAMETERS
+#endif
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
     MCAPI __int64 fitness(struct TargetPoint const &) const;
-
-protected:
-
-private:
 
 };

@@ -14,13 +14,11 @@ class NoodleCavifierNoises {
 // Add Member There
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOODLECAVIFIERNOISES
 public:
     class NoodleCavifierNoises& operator=(class NoodleCavifierNoises const &) = delete;
     NoodleCavifierNoises() = delete;
 #endif
-
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIERNOISES
@@ -28,7 +26,5 @@ public:
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     MCAPI ~NoodleCavifierNoises();
     MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
-
-
 
 };

@@ -17,14 +17,12 @@ public:
 enum SkullType;
 
 #undef AFTER_EXTRA
-
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKULLBLOCKACTOR
 public:
     class SkullBlockActor& operator=(class SkullBlockActor const &) = delete;
     SkullBlockActor(class SkullBlockActor const &) = delete;
     SkullBlockActor() = delete;
 #endif
-
 
 public:
     /*0*/ virtual ~SkullBlockActor();
@@ -48,7 +46,5 @@ public:
     MCAPI enum SkullBlockActor::SkullType getSkullType() const;
     MCAPI void setRotation(float);
     MCAPI void setSkullType(int);
-
-
 
 };
