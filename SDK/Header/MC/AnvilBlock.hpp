@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~AnvilBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &);
+    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
@@ -47,7 +47,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
@@ -60,17 +60,17 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &);
+    /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual class mce::Color getDustColor(class Block const &) const;
     /*193*/ virtual std::string getDustParticleName(class Block const &) const;

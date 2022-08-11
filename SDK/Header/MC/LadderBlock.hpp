@@ -25,14 +25,14 @@ public:
 public:
     /*0*/ virtual ~LadderBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &);
+    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -49,7 +49,7 @@ public:
     /*56*/ virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;

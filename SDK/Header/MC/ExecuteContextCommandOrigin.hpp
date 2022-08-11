@@ -31,7 +31,7 @@ public:
     /*6*/ virtual class Level * getLevel() const;
     /*7*/ virtual class Dimension * getDimension() const;
     /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*27*/ virtual void updateValues();

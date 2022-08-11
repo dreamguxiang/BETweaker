@@ -42,7 +42,6 @@ public:
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*106*/ virtual void fixupCommon(class ItemStackBase &) const;
     /*107*/ virtual void fixupCommon(class ItemStackBase &, class Level &) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEAFBLOCKITEM
 #endif
 

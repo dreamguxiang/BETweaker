@@ -25,8 +25,8 @@ public:
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual bool isNetworkComponent();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
 #endif

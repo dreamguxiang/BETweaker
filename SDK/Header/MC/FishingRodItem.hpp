@@ -29,12 +29,12 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*50*/ virtual bool isHandEquipped();
+    /*50*/ virtual bool isHandEquipped() const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract();
+    /*60*/ virtual bool requiresInteract() const;
     /*63*/ virtual int getEnchantSlot() const;
-    /*64*/ virtual int getEnchantValue();
+    /*64*/ virtual int getEnchantValue() const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -43,13 +43,12 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
-    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /*119*/ virtual std::string getInteractText(class Player const &) const;
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
 #endif
     MCAPI FishingRodItem(std::string const &, int);

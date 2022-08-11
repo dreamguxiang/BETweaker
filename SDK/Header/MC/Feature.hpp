@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~Feature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /*2*/ virtual bool isValidPlacement(std::string const &);
-    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &);
+    /*3*/ virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
 #endif
     MCAPI Feature(class Actor *);

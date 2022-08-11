@@ -47,9 +47,8 @@ public:
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*128*/ virtual bool canBeCharged();
-    /*129*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
-    /*130*/ virtual void __unk_vfn_130();
+    /*128*/ virtual bool canBeCharged() const;
+    /*130*/ virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
 #endif
     MCAPI CrossbowItem(std::string const &, int);

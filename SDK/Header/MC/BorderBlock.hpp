@@ -59,7 +59,7 @@ public:
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
     /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /*147*/ virtual int getVariant(class Block const &);
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*157*/ virtual void __unk_vfn_157();

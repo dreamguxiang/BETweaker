@@ -30,13 +30,13 @@ public:
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const;
-    /*6*/ virtual class Level * getLevel();
-    /*7*/ virtual class Dimension * getDimension();
-    /*8*/ virtual class Actor * getEntity();
+    /*6*/ virtual class Level * getLevel() const;
+    /*7*/ virtual class Dimension * getDimension() const;
+    /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
-    /*18*/ virtual bool isSelectorExpansionAllowed();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*29*/ virtual class CompoundTag serialize() const;

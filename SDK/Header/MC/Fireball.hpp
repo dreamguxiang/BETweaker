@@ -32,7 +32,7 @@ public:
     /*79*/ virtual float getShadowHeightOffs();
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
-    /*87*/ virtual float getBrightness(float);
+    /*87*/ virtual float getBrightness(float) const;
     /*88*/ virtual void __unk_vfn_88();
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();

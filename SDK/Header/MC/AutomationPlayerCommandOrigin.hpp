@@ -29,8 +29,8 @@ public:
     /*2*/ virtual std::string getName() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*13*/ virtual bool hasChatPerms();
-    /*14*/ virtual bool hasTellPerms();
+    /*13*/ virtual bool hasChatPerms() const;
+    /*14*/ virtual bool hasTellPerms() const;
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;

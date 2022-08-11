@@ -31,7 +31,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*57*/ virtual bool isDestructive(int);
+    /*57*/ virtual bool isDestructive(int) const;
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
@@ -42,7 +42,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSITEM
 #endif

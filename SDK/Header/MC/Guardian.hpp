@@ -60,7 +60,7 @@ public:
     /*317*/ virtual void __unk_vfn_317();
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn();
+    /*367*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
     MCVAPI bool canSeeInvisible() const;
 #endif

@@ -25,8 +25,8 @@ public:
     /*0*/ virtual ~PulseCapacitor();
     /*1*/ virtual int getStrength() const;
     /*3*/ virtual void setStrength(int);
-    /*6*/ virtual bool canConsumePowerAnyDirection();
-    /*7*/ virtual bool canConsumerPower();
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
+    /*7*/ virtual bool canConsumerPower() const;
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /*14*/ virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /*17*/ virtual void __unk_vfn_17();

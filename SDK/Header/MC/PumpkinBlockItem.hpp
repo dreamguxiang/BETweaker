@@ -41,7 +41,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*115*/ virtual enum ActorLocation getEquipLocation() const;
     /*116*/ virtual enum LevelSoundEvent getEquipSound() const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUMPKINBLOCKITEM
 #endif
     MCAPI PumpkinBlockItem(std::string const &, int);

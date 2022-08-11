@@ -29,9 +29,9 @@ public:
     /*1*/ virtual unsigned __int64 getPackSize() const;
     /*2*/ virtual class ResourceLocation const & getPackLocation() const;
     /*3*/ virtual std::string const & getPackName() const;
-    /*4*/ virtual bool isWritable();
+    /*4*/ virtual bool isWritable() const;
     /*5*/ virtual void setIsTrusted(bool);
-    /*6*/ virtual bool isTrusted();
+    /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
     /*8*/ virtual bool hasFolder(class Core::Path const &) const;
     /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;

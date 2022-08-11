@@ -58,7 +58,7 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
     MCVAPI bool isCraftingBlock() const;

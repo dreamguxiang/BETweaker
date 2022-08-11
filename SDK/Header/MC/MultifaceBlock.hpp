@@ -31,7 +31,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -69,8 +69,8 @@ public:
     /*178*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual class Block const & getMultifaceBlock();
-    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader();
+    /*192*/ virtual class Block const & getMultifaceBlock() const = 0;
+    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
     MCVAPI bool isMultifaceBlock() const;
 #endif

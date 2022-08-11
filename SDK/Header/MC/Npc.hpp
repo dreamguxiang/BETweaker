@@ -28,7 +28,7 @@ public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Npc();
     /*41*/ virtual void __unk_vfn_41();
-    /*60*/ virtual bool canShowNameTag();
+    /*60*/ virtual bool canShowNameTag() const;
     /*61*/ virtual void __unk_vfn_61();
     /*65*/ virtual std::string getFormattedNameTag() const;
     /*68*/ virtual void __unk_vfn_68();
@@ -42,10 +42,10 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*196*/ virtual void __unk_vfn_196();
     /*203*/ virtual void buildDebugInfo(std::string &) const;
-    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &);
+    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();
@@ -59,7 +59,7 @@ public:
     /*286*/ virtual void knockback(class Actor *, int, float, float, float, float, float);
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
-    /*350*/ virtual bool canExistWhenDisallowMob();
+    /*350*/ virtual bool canExistWhenDisallowMob() const;
     /*351*/ virtual void __unk_vfn_351();
     /*360*/ virtual void newServerAiStep();
     /*361*/ virtual void _serverAiMobStep();

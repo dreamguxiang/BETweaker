@@ -31,8 +31,8 @@ public:
     /*13*/ virtual struct ActorUniqueID getEntityUniqueID() const;
     /*14*/ virtual enum ActorType getEntityType() const;
     /*15*/ virtual enum ActorCategory getEntityCategories() const;
-    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID();
-    /*19*/ virtual enum ActorType getDamagingEntityType();
+    /*18*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*19*/ virtual enum ActorType getDamagingEntityType() const;
     /*21*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYACTORSOURCE
 #endif

@@ -50,7 +50,7 @@ public:
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
     /*367*/ virtual float getFlopVerticalVelocityFactor() const;
-    /*368*/ virtual float getFlopHorizontalVelocityFactor();
+    /*368*/ virtual float getFlopHorizontalVelocityFactor() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TADPOLE
 #endif
     MCAPI Tadpole(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);

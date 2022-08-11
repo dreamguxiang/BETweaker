@@ -45,14 +45,14 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
+    /*61*/ virtual bool canContainLiquid() const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*70*/ virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -62,7 +62,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;

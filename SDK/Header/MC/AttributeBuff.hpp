@@ -23,8 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~AttributeBuff();
-    /*1*/ virtual bool isInstantaneous();
-    /*2*/ virtual bool isSerializable();
+    /*1*/ virtual bool isInstantaneous() const = 0;
+    /*2*/ virtual bool isSerializable() const = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEBUFF
 #endif

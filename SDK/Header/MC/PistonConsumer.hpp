@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~PistonConsumer();
-    /*6*/ virtual bool canConsumePowerAnyDirection();
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /*17*/ virtual void __unk_vfn_17();

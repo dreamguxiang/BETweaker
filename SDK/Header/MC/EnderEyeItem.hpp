@@ -29,7 +29,7 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable();
+    /*23*/ virtual bool isThrowable() const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -40,7 +40,6 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDEREYEITEM
 #endif
     MCAPI EnderEyeItem(std::string const &, int);

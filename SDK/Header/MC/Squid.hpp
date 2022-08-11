@@ -52,7 +52,7 @@ public:
     /*285*/ virtual void __unk_vfn_285();
     /*300*/ virtual void aiStep();
     /*305*/ virtual bool checkSpawnRules(bool);
-    /*306*/ virtual bool checkSpawnObstruction();
+    /*306*/ virtual bool checkSpawnObstruction() const;
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
     /*351*/ virtual void __unk_vfn_351();

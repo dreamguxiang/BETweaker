@@ -244,7 +244,7 @@ class BETCommand : public Command
 	
 public:
 
-    void execute(CommandOrigin const& ori, CommandOutput& output) override
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
         switch (operation)
         {
@@ -394,7 +394,7 @@ class SeedCommand : public Command
 
 public:
 
-    void execute(CommandOrigin const& ori, CommandOutput& output) override
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override
     {
         vector<CommandOutputParameter>opt;
         opt.push_back(CommandOutputParameter::CommandOutputParameter(std::to_string(Global<Level>->getLevelSeed64().mSeed)));

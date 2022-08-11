@@ -31,7 +31,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*57*/ virtual bool isDestructive(int);
+    /*57*/ virtual bool isDestructive(int) const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -40,7 +40,6 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*130*/ virtual void __unk_vfn_130();
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIRECHARGEITEM

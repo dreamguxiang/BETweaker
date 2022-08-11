@@ -21,7 +21,7 @@ public:
 #endif
 public:
     /*0*/ virtual ~SettingsScreenCapabilities();
-    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSSCREENCAPABILITIES
 #endif
     MCAPI SettingsScreenCapabilities(struct SettingsScreenCapabilities const &);

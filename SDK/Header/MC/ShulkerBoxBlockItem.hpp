@@ -42,7 +42,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*97*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKITEM
 #endif
     MCAPI ShulkerBoxBlockItem(std::string const &, int, class Block const *);

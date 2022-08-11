@@ -47,7 +47,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -55,7 +55,7 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();

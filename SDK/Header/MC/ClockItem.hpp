@@ -40,7 +40,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*120*/ virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOCKITEM
 #endif
     MCAPI ClockItem(std::string const &, int);

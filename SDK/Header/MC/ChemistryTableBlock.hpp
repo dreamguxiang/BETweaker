@@ -30,7 +30,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -59,7 +59,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
@@ -69,7 +69,7 @@ public:
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK

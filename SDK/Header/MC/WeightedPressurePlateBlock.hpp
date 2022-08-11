@@ -62,8 +62,8 @@ public:
     /*188*/ virtual void __unk_vfn_188();
     /*192*/ virtual int getTickDelay() const;
     /*193*/ virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const;
-    /*194*/ virtual int getSignalForData(int);
-    /*195*/ virtual int getRedstoneSignal(int);
+    /*194*/ virtual int getSignalForData(int) const;
+    /*195*/ virtual int getRedstoneSignal(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEIGHTEDPRESSUREPLATEBLOCK
 #endif
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);

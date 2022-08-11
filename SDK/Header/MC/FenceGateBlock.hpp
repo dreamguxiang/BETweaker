@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~FenceGateBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &);
+    /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();
     /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /*29*/ virtual void __unk_vfn_29();
@@ -48,7 +48,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;

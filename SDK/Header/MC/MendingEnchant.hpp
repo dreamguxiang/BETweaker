@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~MendingEnchant();
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*5*/ virtual int getMaxLevel();
+    /*5*/ virtual int getMaxLevel() const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();

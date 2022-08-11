@@ -45,11 +45,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -65,8 +65,8 @@ public:
     /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*181*/ virtual enum BlockRenderLayer getRenderLayer();
-    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &);
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSHROOMBLOCK
 #endif

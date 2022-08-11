@@ -31,7 +31,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual void triggerEvent(int, int);
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual bool hasAlphaLayer();
+    /*18*/ virtual bool hasAlphaLayer() const;
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();

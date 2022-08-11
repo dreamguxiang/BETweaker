@@ -47,7 +47,7 @@ public:
     /*1*/ virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /*2*/ virtual bool save(class CompoundTag &) const;
     /*3*/ virtual bool saveItemInstanceData(class CompoundTag &);
-    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &);
+    /*4*/ virtual void saveBlockData(class CompoundTag &, class BlockSource &) const;
     /*5*/ virtual void loadBlockData(class CompoundTag const &, class BlockSource &, class DataLoadHelper &);
     /*6*/ virtual void onCustomTagLoadDone(class BlockSource &);
     /*7*/ virtual void tick(class BlockSource &);
@@ -60,7 +60,7 @@ public:
     /*14*/ virtual void triggerEvent(int, int);
     /*15*/ virtual void clearCache();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual float getShadowRadius(class BlockSource &);
+    /*17*/ virtual float getShadowRadius(class BlockSource &) const;
     /*18*/ virtual bool hasAlphaLayer() const;
     /*19*/ virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     /*20*/ virtual void getDebugText(std::vector<std::string> &, class BlockPos const &);
@@ -74,7 +74,7 @@ public:
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual float getDeletionDelayTimeSeconds();
+    /*31*/ virtual float getDeletionDelayTimeSeconds() const;
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();

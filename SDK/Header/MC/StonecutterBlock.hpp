@@ -46,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
@@ -65,7 +65,7 @@ public:
     /*170*/ virtual void __unk_vfn_170();
     /*173*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERBLOCK
     MCVAPI bool isCraftingBlock() const;

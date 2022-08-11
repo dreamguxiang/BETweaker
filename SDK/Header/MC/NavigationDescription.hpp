@@ -21,7 +21,7 @@ public:
     NavigationDescription(struct NavigationDescription const &) = delete;
 #endif
 public:
-    /*0*/ virtual char const * getJsonName();
+    /*0*/ virtual char const * getJsonName() const = 0;
     /*1*/ virtual ~NavigationDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value &) const;

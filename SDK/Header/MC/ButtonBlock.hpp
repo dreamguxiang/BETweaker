@@ -44,12 +44,12 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource();
+    /*51*/ virtual bool isSignalSource() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
-    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool);
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -57,8 +57,8 @@ public:
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*108*/ virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
@@ -69,7 +69,7 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /*145*/ virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
-    /*147*/ virtual int getVariant(class Block const &);
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();

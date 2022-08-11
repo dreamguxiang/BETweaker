@@ -40,7 +40,6 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOTHBLOCKITEM
 #endif
 

@@ -43,7 +43,7 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*113*/ virtual bool canAttack(class Actor *, bool) const;
-    /*132*/ virtual bool shouldRender();
+    /*132*/ virtual bool shouldRender() const;
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*143*/ virtual float getPickRadius();
     /*182*/ virtual void __unk_vfn_182();

@@ -24,9 +24,9 @@ public:
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
-    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId();
+    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
-    /*4*/ virtual bool allowInventoryTransactionManager();
+    /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
     /*5*/ virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
     /*6*/ virtual void onContainerScreenOpen(class ContainerScreenContext const &);
     /*7*/ virtual void onContainerScreenClose();

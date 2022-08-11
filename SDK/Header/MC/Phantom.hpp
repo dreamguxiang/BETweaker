@@ -38,7 +38,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender();
+    /*132*/ virtual bool shouldRender() const;
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();

@@ -42,7 +42,7 @@ public:
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
     /*20*/ virtual enum SubClientId getSourceSubId() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*23*/ virtual enum CommandOriginType getOriginType();
+    /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCOMMANDORIGIN

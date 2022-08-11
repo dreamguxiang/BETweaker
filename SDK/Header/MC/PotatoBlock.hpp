@@ -62,8 +62,8 @@ public:
     /*170*/ virtual void __unk_vfn_170();
     /*177*/ virtual void __unk_vfn_177();
     /*188*/ virtual void __unk_vfn_188();
-    /*193*/ virtual class ItemInstance const getBaseSeed();
-    /*194*/ virtual class ItemInstance const getBaseCrop();
+    /*193*/ virtual class ItemInstance const getBaseSeed() const;
+    /*194*/ virtual class ItemInstance const getBaseCrop() const;
     /*196*/ virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTATOBLOCK
 #endif

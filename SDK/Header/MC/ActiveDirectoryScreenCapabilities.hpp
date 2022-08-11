@@ -22,7 +22,7 @@ public:
 #endif
 public:
     /*0*/ virtual ~ActiveDirectoryScreenCapabilities();
-    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYSCREENCAPABILITIES
 #endif
 

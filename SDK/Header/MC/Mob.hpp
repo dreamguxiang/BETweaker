@@ -87,7 +87,7 @@ public:
     /*174*/ virtual bool canFreeze() const;
     /*182*/ virtual void __unk_vfn_182();
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
-    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual bool inCaravan() const;
     /*196*/ virtual void __unk_vfn_196();
     /*200*/ virtual void stopRiding(bool, bool, bool);
@@ -136,9 +136,9 @@ public:
     /*305*/ virtual bool checkSpawnRules(bool);
     /*306*/ virtual bool checkSpawnObstruction() const;
     /*307*/ virtual float getAttackAnim(float);
-    /*308*/ virtual int getItemUseDuration();
-    /*309*/ virtual float getItemUseStartupProgress();
-    /*310*/ virtual float getItemUseIntervalProgress();
+    /*308*/ virtual int getItemUseDuration() const;
+    /*309*/ virtual float getItemUseStartupProgress() const;
+    /*310*/ virtual float getItemUseIntervalProgress() const;
     /*311*/ virtual int getItemUseIntervalAxis() const;
     /*312*/ virtual int getTimeAlongSwing() const;
     /*313*/ virtual void __unk_vfn_313();

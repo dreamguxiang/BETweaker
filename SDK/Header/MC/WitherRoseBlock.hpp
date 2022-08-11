@@ -47,8 +47,8 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType);
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
+    /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
@@ -58,7 +58,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*157*/ virtual void __unk_vfn_157();

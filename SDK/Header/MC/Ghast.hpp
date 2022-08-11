@@ -54,7 +54,7 @@ public:
     /*349*/ virtual float _getWalkTargetValue(class BlockPos const &);
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
-    /*367*/ virtual bool isDarkEnoughToSpawn();
+    /*367*/ virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GHAST
     MCVAPI bool useNewAi() const;
 #endif

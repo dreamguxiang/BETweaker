@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~PistonBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType);
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -47,9 +47,9 @@ public:
     /*54*/ virtual bool isValidAuxValue(int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool);
+    /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -64,7 +64,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*147*/ virtual int getVariant(class Block const &);
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /*157*/ virtual void __unk_vfn_157();

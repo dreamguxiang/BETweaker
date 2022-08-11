@@ -71,7 +71,7 @@ public:
     /*399*/ virtual void __unk_vfn_399();
     /*409*/ virtual void __unk_vfn_409();
     /*410*/ virtual void __unk_vfn_410();
-    /*411*/ virtual bool isHostingPlayer();
+    /*411*/ virtual bool isHostingPlayer() const;
     /*414*/ virtual void __unk_vfn_414();
     /*421*/ virtual void __unk_vfn_421();
     /*448*/ virtual void __unk_vfn_448();

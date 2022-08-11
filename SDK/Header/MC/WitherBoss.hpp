@@ -45,7 +45,7 @@ public:
     /*111*/ virtual void __unk_vfn_111();
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*174*/ virtual bool canFreeze();
+    /*174*/ virtual bool canFreeze() const;
     /*182*/ virtual void __unk_vfn_182();
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*196*/ virtual void __unk_vfn_196();

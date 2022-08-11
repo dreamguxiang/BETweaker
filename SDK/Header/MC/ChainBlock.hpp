@@ -25,8 +25,8 @@ public:
 public:
     /*0*/ virtual ~ChainBlock();
     /*19*/ virtual void __unk_vfn_19();
-    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType);
-    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &);
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /*25*/ virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -47,11 +47,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -60,7 +60,7 @@ public:
     /*144*/ virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();

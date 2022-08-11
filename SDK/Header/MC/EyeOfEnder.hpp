@@ -30,7 +30,7 @@ public:
     /*49*/ virtual void normalTick();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*80*/ virtual float getShadowRadius();
+    /*80*/ virtual float getShadowRadius() const;
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();

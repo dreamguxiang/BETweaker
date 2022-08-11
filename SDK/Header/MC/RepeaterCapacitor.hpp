@@ -25,8 +25,8 @@ public:
     /*0*/ virtual ~RepeaterCapacitor();
     /*1*/ virtual int getStrength() const;
     /*3*/ virtual void setStrength(int);
-    /*6*/ virtual bool canConsumePowerAnyDirection();
-    /*7*/ virtual bool canConsumerPower();
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
+    /*7*/ virtual bool canConsumerPower() const;
     /*10*/ virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /*11*/ virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);

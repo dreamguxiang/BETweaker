@@ -46,7 +46,7 @@ public:
     /*54*/ virtual bool isValidAuxValue(int) const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;

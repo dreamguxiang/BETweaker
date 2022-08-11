@@ -54,7 +54,7 @@ public:
     /*95*/ virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /*104*/ virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int);
+    /*104*/ virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();

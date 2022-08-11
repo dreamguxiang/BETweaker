@@ -31,13 +31,13 @@ public:
     /*6*/ virtual class Level * getLevel() const;
     /*7*/ virtual class Dimension * getDimension() const;
     /*8*/ virtual class Actor * getEntity() const;
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
-    /*18*/ virtual bool isSelectorExpansionAllowed();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
-    /*30*/ virtual bool isValid();
+    /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDORIGIN
 #endif
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);

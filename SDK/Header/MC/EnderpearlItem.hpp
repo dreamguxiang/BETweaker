@@ -29,7 +29,7 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable();
+    /*23*/ virtual bool isThrowable() const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -42,7 +42,6 @@ public:
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*104*/ virtual class HashedString const & getCooldownType() const;
     /*105*/ virtual int getCooldownTime() const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERPEARLITEM
 #endif
     MCAPI EnderpearlItem(std::string const &, int);

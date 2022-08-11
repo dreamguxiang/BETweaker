@@ -43,13 +43,13 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface();
+    /*52*/ virtual bool canBeOriginalSurface() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &);
+    /*85*/ virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
@@ -59,7 +59,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();

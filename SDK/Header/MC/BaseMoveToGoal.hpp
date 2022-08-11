@@ -29,14 +29,14 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void appendDebugInfo(std::string &);
+    /*7*/ virtual void appendDebugInfo(std::string &) const = 0;
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool hasReachedTarget() const;
-    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /*11*/ virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /*12*/ virtual int _nextStartTick();
     /*13*/ virtual bool _canReach(class BlockPos const &);
-    /*14*/ virtual void _moveToBlock();
+    /*14*/ virtual void _moveToBlock() = 0;
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOGOAL

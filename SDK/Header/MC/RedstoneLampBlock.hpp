@@ -45,13 +45,13 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /*71*/ virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -59,7 +59,7 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
-    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &);
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();

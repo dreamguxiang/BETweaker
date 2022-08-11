@@ -46,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;

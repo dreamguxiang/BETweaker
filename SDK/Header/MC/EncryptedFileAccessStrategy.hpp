@@ -26,7 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
-    /*4*/ virtual bool isWritable();
+    /*4*/ virtual bool isWritable() const;
     /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const &, bool) const;
     /*9*/ virtual bool getAsset(class Core::Path const &, std::string &, bool) const;

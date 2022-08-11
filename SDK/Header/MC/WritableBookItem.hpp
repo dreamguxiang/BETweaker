@@ -31,7 +31,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract();
+    /*60*/ virtual bool requiresInteract() const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
@@ -41,7 +41,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*119*/ virtual std::string getInteractText(class Player const &) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITABLEBOOKITEM
 #endif
     MCAPI WritableBookItem(std::string const &, int);

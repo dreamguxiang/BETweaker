@@ -47,13 +47,13 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
-    /*74*/ virtual void movedByPiston(class BlockSource &, class BlockPos const &);
+    /*74*/ virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();

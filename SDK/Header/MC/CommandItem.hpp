@@ -11,6 +11,7 @@
 class CommandItem {
 
 #define AFTER_EXTRA
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDITEM
 // Add Member There
     short unk0; //0
     bool unk2;  //2

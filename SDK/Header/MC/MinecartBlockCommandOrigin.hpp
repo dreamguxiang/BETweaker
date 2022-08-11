@@ -29,7 +29,7 @@ public:
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*8*/ virtual class Actor * getEntity() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;

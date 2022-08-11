@@ -49,7 +49,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();

@@ -54,7 +54,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &);
+    /*137*/ virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*141*/ virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();

@@ -39,14 +39,13 @@ public:
     /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum ContainerExpandStatus getItemExpandStatus(int);
+    /*17*/ virtual enum ContainerExpandStatus getItemExpandStatus(int) const;
     /*18*/ virtual std::string const & getItemGroupName(int) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual class Container * _getContainer();
-    /*21*/ virtual int _getContainerOffset();
+    /*20*/ virtual class Container * _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMODEL
-    MCVAPI enum ContainerExpandStatus getItemExpandStatus(int) const;
     MCVAPI bool isExpanableItemFiltered(int) const;
     MCVAPI bool isItemFiltered(class ItemStackBase const &) const;
     MCVAPI bool isItemInstanceBased() const;

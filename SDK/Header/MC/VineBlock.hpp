@@ -50,7 +50,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*89*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();

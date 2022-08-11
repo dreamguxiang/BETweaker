@@ -26,7 +26,7 @@ public:
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*2*/ virtual enum StructurePieceType getType() const;
     /*3*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
-    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &) = 0;
     /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /*6*/ virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
     /*7*/ virtual int getWorldX(int, int);
@@ -34,7 +34,7 @@ public:
     /*9*/ virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
     /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
     /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
-    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPIECE
 #endif
     MCAPI class BlockPos _getWorldPos(int, int, int);

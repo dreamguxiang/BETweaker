@@ -44,12 +44,12 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*51*/ virtual bool isSignalSource();
+    /*51*/ virtual bool isSignalSource() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
+    /*61*/ virtual bool canContainLiquid() const;
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
@@ -62,7 +62,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /*132*/ virtual void __unk_vfn_132();
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();

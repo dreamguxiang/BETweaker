@@ -29,36 +29,36 @@ public:
 
 public:
     /*0*/ virtual ~CommandOrigin();
-    /*1*/ virtual std::string const & getRequestId();
-    /*2*/ virtual std::string getName();
-    /*3*/ virtual class BlockPos getBlockPosition();
-    /*4*/ virtual class Vec3 getWorldPosition();
-    /*5*/ virtual class std::optional<class Vec2> getRotation();
-    /*6*/ virtual class Level * getLevel();
-    /*7*/ virtual class Dimension * getDimension();
-    /*8*/ virtual class Actor * getEntity();
-    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel();
-    /*10*/ virtual std::unique_ptr<class CommandOrigin> clone();
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos();
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos();
+    /*1*/ virtual std::string const & getRequestId() const = 0;
+    /*2*/ virtual std::string getName() const = 0;
+    /*3*/ virtual class BlockPos getBlockPosition() const = 0;
+    /*4*/ virtual class Vec3 getWorldPosition() const = 0;
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const = 0;
+    /*6*/ virtual class Level * getLevel() const = 0;
+    /*7*/ virtual class Dimension * getDimension() const = 0;
+    /*8*/ virtual class Actor * getEntity() const = 0;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const = 0;
+    /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
+    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*13*/ virtual bool hasChatPerms() const;
     /*14*/ virtual bool hasTellPerms() const;
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*16*/ virtual bool isWorldBuilder() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
-    /*20*/ virtual enum SubClientId getSourceSubId();
+    /*20*/ virtual enum SubClientId getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*23*/ virtual enum CommandOriginType getOriginType();
+    /*23*/ virtual enum CommandOriginType getOriginType() const = 0;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*25*/ virtual class mce::UUID const & getUUID() const;
-    /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&);
+    /*26*/ virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
     /*27*/ virtual void updateValues();
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual bool isValid();
+    /*30*/ virtual bool isValid() const = 0;
     /*31*/ virtual void _setUUID(class mce::UUID const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGIN
 #endif

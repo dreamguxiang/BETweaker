@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~Option();
-    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>> &);
-    /*2*/ virtual void load(std::string const &);
+    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>> &) = 0;
+    /*2*/ virtual void load(std::string const &) = 0;
     /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     /*4*/ virtual void load(class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTION

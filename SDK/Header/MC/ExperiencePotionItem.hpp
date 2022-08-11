@@ -29,8 +29,8 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*23*/ virtual bool isThrowable();
-    /*51*/ virtual bool isGlint(class ItemStackBase const &);
+    /*23*/ virtual bool isThrowable() const;
+    /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
     /*67*/ virtual void __unk_vfn_67();
@@ -42,7 +42,6 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEPOTIONITEM
 #endif
     MCAPI ExperiencePotionItem(std::string const &, int);

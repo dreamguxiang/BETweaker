@@ -24,7 +24,7 @@ public:
 public:
     /*0*/ virtual ~RegionHillsOperationNode();
     /*1*/ virtual void init(__int64);
-    /*2*/ virtual class OperationNodeDetails::TransferData<class Biome *> _allocateAndFill(unsigned __int64, class Pos2d const &, class Pos2d const &);
+    /*2*/ virtual class OperationNodeDetails::TransferData<class Biome *> _allocateAndFill(unsigned __int64, class Pos2d const &, class Pos2d const &) const;
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome *, class Biome *> &, class Pos2d const &, class Pos2d const &, int) const;
     /*4*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGIONHILLSOPERATIONNODE

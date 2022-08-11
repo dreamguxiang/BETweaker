@@ -35,11 +35,11 @@ public:
     /*8*/ virtual class Actor * getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled();
-    /*18*/ virtual bool isSelectorExpansionAllowed();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual bool isValid();
+    /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMANDORIGIN
 #endif
     MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);

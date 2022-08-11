@@ -52,7 +52,7 @@ public:
     /*285*/ virtual void __unk_vfn_285();
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
-    /*322*/ virtual int getArmorValue();
+    /*322*/ virtual int getArmorValue() const;
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LLAMA

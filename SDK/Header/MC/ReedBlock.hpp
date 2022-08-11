@@ -46,15 +46,15 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
@@ -72,7 +72,7 @@ public:
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &);
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
     MCVAPI bool canBeSilkTouched() const;

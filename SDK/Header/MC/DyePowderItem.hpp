@@ -29,7 +29,7 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*19*/ virtual bool isDye();
+    /*19*/ virtual bool isDye() const;
     /*20*/ virtual enum ItemColor getItemColor() const;
     /*21*/ virtual bool isFertilizer() const;
     /*52*/ virtual void __unk_vfn_52();
@@ -45,7 +45,6 @@ public:
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
 #endif

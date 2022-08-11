@@ -22,10 +22,10 @@ public:
     Description() = delete;
 #endif
 public:
-    /*0*/ virtual char const * getJsonName();
+    /*0*/ virtual char const * getJsonName() const = 0;
     /*1*/ virtual ~Description();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
-    /*3*/ virtual void serializeData(class Json::Value &);
+    /*3*/ virtual void serializeData(class Json::Value &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESCRIPTION
 #endif
     MCAPI struct Description * parseDescription(struct DeserializeDataParams);

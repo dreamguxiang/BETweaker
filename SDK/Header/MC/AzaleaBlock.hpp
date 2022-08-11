@@ -32,7 +32,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -51,7 +51,7 @@ public:
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();

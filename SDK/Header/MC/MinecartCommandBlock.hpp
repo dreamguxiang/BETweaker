@@ -27,7 +27,7 @@ public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~MinecartCommandBlock();
     /*41*/ virtual void __unk_vfn_41();
-    /*60*/ virtual bool canShowNameTag();
+    /*60*/ virtual bool canShowNameTag() const;
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*82*/ virtual void __unk_vfn_82();

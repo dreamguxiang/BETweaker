@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~ActorServerCommandOrigin();
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*18*/ virtual bool isSelectorExpansionAllowed();
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSERVERCOMMANDORIGIN

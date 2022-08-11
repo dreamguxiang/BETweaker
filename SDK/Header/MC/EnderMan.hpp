@@ -38,11 +38,11 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender();
+    /*132*/ virtual bool shouldRender() const;
     /*134*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
-    /*213*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &);
+    /*213*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();

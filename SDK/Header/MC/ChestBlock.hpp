@@ -46,7 +46,7 @@ public:
     /*51*/ virtual bool isSignalSource() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int);
+    /*62*/ virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /*72*/ virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*77*/ virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;

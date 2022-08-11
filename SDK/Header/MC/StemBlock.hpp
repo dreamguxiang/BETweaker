@@ -45,11 +45,11 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*84*/ virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
-    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &);
+    /*86*/ virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;

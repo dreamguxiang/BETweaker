@@ -68,14 +68,14 @@ public:
     /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
     /*193*/ virtual void __unk_vfn_193();
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
     /*197*/ virtual void __unk_vfn_197();
-    /*198*/ MCAPI static std::string const & getDescriptionId();
+    /*198*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCK
     MCVAPI bool hasComparatorSignal() const;
     MCVAPI bool isInteractiveBlock() const;

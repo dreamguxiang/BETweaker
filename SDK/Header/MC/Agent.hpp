@@ -30,7 +30,7 @@ public:
     /*44*/ virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /*49*/ virtual void normalTick();
     /*59*/ virtual bool isInvisible() const;
-    /*60*/ virtual bool canShowNameTag();
+    /*60*/ virtual bool canShowNameTag() const;
     /*61*/ virtual void __unk_vfn_61();
     /*65*/ virtual std::string getFormattedNameTag() const;
     /*68*/ virtual void __unk_vfn_68();
@@ -47,9 +47,9 @@ public:
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*161*/ virtual void setCarriedItem(class ItemStack const &);
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*196*/ virtual void __unk_vfn_196();
-    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &);
+    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*230*/ virtual bool isWorldBuilder() const;
@@ -68,7 +68,7 @@ public:
     /*313*/ virtual void __unk_vfn_313();
     /*317*/ virtual void __unk_vfn_317();
     /*343*/ virtual bool createAIGoals();
-    /*350*/ virtual bool canExistWhenDisallowMob();
+    /*350*/ virtual bool canExistWhenDisallowMob() const;
     /*351*/ virtual void __unk_vfn_351();
     /*356*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*365*/ virtual void __unk_vfn_365();

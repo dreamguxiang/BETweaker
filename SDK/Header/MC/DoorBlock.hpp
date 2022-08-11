@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~DoorBlock();
-    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &);
+    /*3*/ virtual class Block const * getNextBlockPermutation(class Block const &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*14*/ virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /*19*/ virtual void __unk_vfn_19();

@@ -45,11 +45,11 @@ public:
     /*120*/ virtual void setSitting(bool);
     /*135*/ virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*181*/ virtual bool canChangeDimensionsUsingPortal();
+    /*181*/ virtual bool canChangeDimensionsUsingPortal() const;
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*196*/ virtual void __unk_vfn_196();
-    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &);
+    /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();
     /*248*/ virtual void __unk_vfn_248();

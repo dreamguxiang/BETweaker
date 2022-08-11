@@ -42,7 +42,7 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
-    /*132*/ virtual bool shouldRender();
+    /*132*/ virtual bool shouldRender() const;
     /*182*/ virtual void __unk_vfn_182();
     /*196*/ virtual void __unk_vfn_196();
     /*212*/ virtual bool canBeAffected(class MobEffectInstance const &) const;
@@ -60,7 +60,7 @@ public:
     /*351*/ virtual void __unk_vfn_351();
     /*365*/ virtual void __unk_vfn_365();
     /*368*/ virtual float getModelScale() const;
-    /*369*/ virtual enum Spider::Type getSpiderType();
+    /*369*/ virtual enum Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     MCVAPI bool useNewAi() const;
 #endif

@@ -29,7 +29,7 @@ public:
 public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~ItemActor();
-    /*20*/ virtual bool isRuntimePredictedMovementEnabled();
+    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*40*/ virtual bool isFireImmune() const;
     /*41*/ virtual void __unk_vfn_41();
     /*48*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();

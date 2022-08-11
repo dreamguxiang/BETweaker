@@ -35,7 +35,7 @@ public:
     /*95*/ virtual bool isPickable();
     /*96*/ virtual void __unk_vfn_96();
     /*99*/ virtual void __unk_vfn_99();
-    /*104*/ virtual bool isOnFire();
+    /*104*/ virtual bool isOnFire() const;
     /*106*/ virtual void __unk_vfn_106();
     /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual void __unk_vfn_109();

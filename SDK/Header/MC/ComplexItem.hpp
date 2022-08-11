@@ -38,7 +38,6 @@ public:
     /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual void __unk_vfn_81();
-    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXITEM
     MCVAPI bool isComplex() const;

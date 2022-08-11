@@ -26,11 +26,11 @@ public:
     /*0*/ virtual ~PreviewContainerValidation();
     /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &);
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &);
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &);
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
+    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREVIEWCONTAINERVALIDATION
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;

@@ -39,7 +39,7 @@ public:
     /*109*/ virtual void __unk_vfn_109();
     /*111*/ virtual void __unk_vfn_111();
     /*182*/ virtual void __unk_vfn_182();
-    /*194*/ virtual bool canBePulledIntoVehicle();
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*196*/ virtual void __unk_vfn_196();
     /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void __unk_vfn_223();

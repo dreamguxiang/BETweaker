@@ -46,13 +46,13 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*87*/ virtual bool mayPick();
+    /*87*/ virtual bool mayPick() const;
     /*90*/ virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /*124*/ virtual void __unk_vfn_124();

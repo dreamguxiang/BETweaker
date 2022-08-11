@@ -66,7 +66,7 @@ public:
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
-    /*197*/ MCAPI static std::string const & getDescriptionId();
+    /*197*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERRACKBLOCK
 #endif
     MCAPI NetherrackBlock(std::string const &, int);

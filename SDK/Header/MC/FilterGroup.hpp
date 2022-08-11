@@ -26,7 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~FilterGroup();
-    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType);
+    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
     /*2*/ virtual bool _setupContext(class FilterTest const &, struct FilterContext &) const;
     /*3*/ virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERGROUP

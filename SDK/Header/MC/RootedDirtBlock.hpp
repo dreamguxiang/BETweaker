@@ -43,7 +43,7 @@ public:
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*52*/ virtual bool canBeOriginalSurface();
+    /*52*/ virtual bool canBeOriginalSurface() const;
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();

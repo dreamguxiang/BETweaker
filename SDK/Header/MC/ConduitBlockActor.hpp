@@ -29,7 +29,7 @@ public:
     /*7*/ virtual void tick(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
     /*16*/ virtual void __unk_vfn_16();
-    /*18*/ virtual bool hasAlphaLayer();
+    /*18*/ virtual bool hasAlphaLayer() const;
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();

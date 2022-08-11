@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
+    /*2*/ virtual bool isChildEntitySource() const;
     /*10*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
     /*16*/ virtual bool getDamagingEntityIsCreative() const;
     /*17*/ virtual bool getDamagingEntityIsWorldBuilder() const;
@@ -32,7 +33,6 @@ public:
     /*20*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*21*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYCHILDACTORSOURCE
-    MCVAPI bool isChildEntitySource() const;
 #endif
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);
 

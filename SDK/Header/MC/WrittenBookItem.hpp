@@ -29,10 +29,10 @@ public:
     /*11*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_16();
-    /*51*/ virtual bool isGlint(class ItemStackBase const &);
+    /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*60*/ virtual bool requiresInteract();
+    /*60*/ virtual bool requiresInteract() const;
     /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
@@ -44,7 +44,6 @@ public:
     /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*119*/ virtual std::string getInteractText(class Player const &) const;
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
 #endif
     MCAPI WrittenBookItem(std::string const &, int);

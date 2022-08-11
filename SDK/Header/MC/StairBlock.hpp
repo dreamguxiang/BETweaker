@@ -71,7 +71,7 @@ public:
     /*126*/ virtual void __unk_vfn_126();
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
-    /*147*/ virtual int getVariant(class Block const &);
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*157*/ virtual void __unk_vfn_157();

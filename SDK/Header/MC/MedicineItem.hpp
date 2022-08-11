@@ -43,7 +43,6 @@ public:
     /*87*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*130*/ virtual void __unk_vfn_130();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEDICINEITEM
 #endif
     MCAPI MedicineItem(std::string const &, int);

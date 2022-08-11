@@ -47,7 +47,7 @@ public:
     /*60*/ virtual void __unk_vfn_60();
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*103*/ virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();

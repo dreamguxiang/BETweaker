@@ -24,7 +24,7 @@ public:
     /*0*/ virtual ~FrogSpawnBlock();
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType);
+    /*22*/ virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
     /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual void __unk_vfn_30();
     /*32*/ virtual void __unk_vfn_32();
@@ -45,13 +45,13 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &);
+    /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*91*/ virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*113*/ virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -59,7 +59,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*134*/ virtual std::string buildDescriptionId(class Block const &) const;
-    /*135*/ virtual bool isAuxValueRelevantForPicking();
+    /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*168*/ virtual void __unk_vfn_168();

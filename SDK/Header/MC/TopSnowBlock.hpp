@@ -32,7 +32,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -48,7 +48,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*67*/ virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
@@ -78,7 +78,7 @@ public:
     /*168*/ virtual void __unk_vfn_168();
     /*169*/ virtual void __unk_vfn_169();
     /*170*/ virtual void __unk_vfn_170();
-    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &);
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*173*/ virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;

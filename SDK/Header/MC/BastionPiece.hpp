@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~BastionPiece();
     /*13*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const;
-    /*14*/ virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &);
+    /*14*/ virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*15*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const;
     /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONPIECE

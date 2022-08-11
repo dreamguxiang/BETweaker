@@ -24,9 +24,9 @@ public:
 
 public:
     /*0*/ virtual ~LootItemFunction();
-    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /*1*/ virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
     /*2*/ virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
-    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
+    /*3*/ virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
     /*4*/ virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
 #endif

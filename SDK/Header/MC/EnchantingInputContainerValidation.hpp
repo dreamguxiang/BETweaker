@@ -24,13 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~EnchantingInputContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int);
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const &) const;
-    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &);
-    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &);
-    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &);
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
+    /*6*/ virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
+    /*7*/ virtual bool canDestroy(class ContainerScreenContext const &) const;
     /*8*/ virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGINPUTCONTAINERVALIDATION
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;

@@ -47,7 +47,6 @@ public:
     /*115*/ virtual enum ActorLocation getEquipLocation() const;
     /*116*/ virtual enum LevelSoundEvent getEquipSound() const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*130*/ virtual void __unk_vfn_130();
     /*133*/ virtual std::string getAuxValuesDescription() const;
     /*135*/ virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

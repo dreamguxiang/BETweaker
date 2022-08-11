@@ -47,7 +47,6 @@ public:
     /*117*/ virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /*125*/ virtual class Item & setIcon(std::string const &, int);
-    /*130*/ virtual void __unk_vfn_130();
     /*137*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
 #endif

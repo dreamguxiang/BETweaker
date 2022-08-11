@@ -61,12 +61,12 @@ public:
 
 public:
     /*0*/ virtual ~Packet();
-    /*1*/ virtual enum MinecraftPacketIds getId();
-    /*2*/ virtual std::string getName();
-    /*3*/ virtual void write(class BinaryStream &);
+    /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
+    /*2*/ virtual std::string getName() const = 0;
+    /*3*/ virtual void write(class BinaryStream &) const = 0;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /*5*/ virtual bool disallowBatching() const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
 #endif
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);

@@ -22,7 +22,7 @@ public:
 #endif
 public:
     /*0*/ virtual ~StartScreenCapabilities();
-    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>);
+    /*1*/ virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STARTSCREENCAPABILITIES
 #endif
 

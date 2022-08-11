@@ -54,8 +54,8 @@ public:
     /*78*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
-    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int);
-    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &);
+    /*101*/ virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /*102*/ virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*105*/ virtual void __unk_vfn_105();
     /*106*/ virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /*124*/ virtual void __unk_vfn_124();
@@ -72,7 +72,7 @@ public:
     /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*178*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char);
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCK
     MCVAPI bool hasComparatorSignal() const;

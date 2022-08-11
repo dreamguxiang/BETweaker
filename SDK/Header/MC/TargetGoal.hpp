@@ -23,9 +23,9 @@ public:
 
 public:
     /*0*/ virtual ~TargetGoal();
-    /*1*/ virtual bool canUse();
+    /*1*/ virtual bool canUse() = 0;
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool isTargetGoal();
+    /*3*/ virtual bool isTargetGoal() const;
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();

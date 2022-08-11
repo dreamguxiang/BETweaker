@@ -30,7 +30,7 @@ public:
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual void __unk_vfn_34();
-    /*35*/ virtual bool isWaterBlocking();
+    /*35*/ virtual bool isWaterBlocking() const;
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
     /*38*/ virtual void __unk_vfn_38();
@@ -46,7 +46,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
     /*98*/ virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
@@ -66,15 +66,15 @@ public:
     /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*177*/ virtual void __unk_vfn_177();
     /*188*/ virtual void __unk_vfn_188();
-    /*192*/ virtual int _getNumCandles(class Block const &);
+    /*192*/ virtual int _getNumCandles(class Block const &) const;
     /*193*/ virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
-    /*194*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *);
+    /*194*/ virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
     /*197*/ virtual void __unk_vfn_197();
     /*198*/ virtual void __unk_vfn_198();
     /*199*/ virtual void __unk_vfn_199();
-    /*200*/ MCAPI static std::string const & getDescriptionId();
+    /*200*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCANDLEBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool hasVariableLighting() const;

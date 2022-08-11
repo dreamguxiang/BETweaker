@@ -12,6 +12,7 @@ struct ActorMapping {
 
 #define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
     std::string mNameSpace;
     std::string mName;

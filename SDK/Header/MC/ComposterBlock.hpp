@@ -54,7 +54,7 @@ public:
     /*49*/ virtual void __unk_vfn_49();
     /*59*/ virtual void __unk_vfn_59();
     /*60*/ virtual void __unk_vfn_60();
-    /*61*/ virtual bool canContainLiquid();
+    /*61*/ virtual bool canContainLiquid() const;
     /*72*/ virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /*73*/ virtual void __unk_vfn_73();
     /*80*/ virtual void __unk_vfn_80();
@@ -65,7 +65,7 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*128*/ virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /*132*/ virtual void __unk_vfn_132();
-    /*147*/ virtual int getVariant(class Block const &);
+    /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*157*/ virtual void __unk_vfn_157();
     /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
@@ -82,7 +82,7 @@ public:
     /*194*/ virtual void __unk_vfn_194();
     /*195*/ virtual void __unk_vfn_195();
     /*196*/ virtual void __unk_vfn_196();
-    /*197*/ MCAPI static std::string const & getDescriptionId();
+    /*197*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
     MCVAPI bool hasComparatorSignal() const;
 #endif

@@ -32,7 +32,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*52*/ virtual void __unk_vfn_52();
     /*54*/ virtual void __unk_vfn_54();
-    /*58*/ virtual bool isLiquidClipItem(int);
+    /*58*/ virtual bool isLiquidClipItem(int) const;
     /*59*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual bool isValidAuxValue(int) const;
@@ -46,7 +46,6 @@ public:
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;

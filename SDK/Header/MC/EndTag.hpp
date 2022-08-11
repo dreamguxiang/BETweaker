@@ -29,7 +29,7 @@ public:
 
 public:
     /*0*/ virtual ~EndTag();
-    /*2*/ virtual void write(class IDataOutput &);
+    /*2*/ virtual void write(class IDataOutput &) const;
     /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;

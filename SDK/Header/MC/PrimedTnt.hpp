@@ -35,7 +35,7 @@ public:
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*79*/ virtual float getShadowHeightOffs();
-    /*80*/ virtual float getShadowRadius();
+    /*80*/ virtual float getShadowRadius() const;
     /*82*/ virtual void __unk_vfn_82();
     /*85*/ virtual void __unk_vfn_85();
     /*88*/ virtual void __unk_vfn_88();
@@ -56,7 +56,7 @@ public:
     /*269*/ virtual void __unk_vfn_269();
     /*270*/ virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /*273*/ virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &);
+    /*274*/ virtual void addAdditionalSaveData(class CompoundTag &) const;
     /*277*/ virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIMEDTNT
 #endif

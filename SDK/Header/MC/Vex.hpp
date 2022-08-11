@@ -28,7 +28,7 @@ public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /*14*/ virtual ~Vex();
     /*41*/ virtual void __unk_vfn_41();
-    /*58*/ virtual bool isInWall();
+    /*58*/ virtual bool isInWall() const;
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*82*/ virtual void __unk_vfn_82();

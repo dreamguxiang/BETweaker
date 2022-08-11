@@ -42,9 +42,8 @@ public:
     /*81*/ virtual void __unk_vfn_81();
     /*86*/ virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /*89*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
-    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &);
+    /*90*/ virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /*130*/ virtual void __unk_vfn_130();
     /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHEARSITEM
 #endif

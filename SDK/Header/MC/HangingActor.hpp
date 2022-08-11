@@ -57,9 +57,9 @@ public:
     /*277*/ virtual void __unk_vfn_277();
     /*285*/ virtual void __unk_vfn_285();
     /*286*/ virtual void setDir(int);
-    /*287*/ virtual int getWidth();
-    /*288*/ virtual int getHeight();
-    /*289*/ virtual void dropItem();
+    /*287*/ virtual int getWidth() const = 0;
+    /*288*/ virtual int getHeight() const = 0;
+    /*289*/ virtual void dropItem() = 0;
     /*290*/ virtual bool placeHangingEntity(class BlockSource &, int);
     /*291*/ virtual bool wouldSurvive(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR

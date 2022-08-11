@@ -49,7 +49,7 @@ public:
     /*80*/ virtual void __unk_vfn_80();
     /*94*/ virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /*96*/ virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int);
+    /*100*/ virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /*105*/ virtual void __unk_vfn_105();
     /*124*/ virtual void __unk_vfn_124();
     /*126*/ virtual void __unk_vfn_126();
