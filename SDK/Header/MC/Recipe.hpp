@@ -7,6 +7,7 @@
 // Include Headers or Declare Types Here
 #include <MC/ItemDescriptorCount.hpp>
 #include <MC/RecipeIngredient.hpp>
+#include "ItemPack.hpp"
 #undef BEFORE_EXTRA
 
 class Recipe {
@@ -15,15 +16,15 @@ class Recipe {
 // Add Member There
 public:
     string RecipeId; // 8
-    std::unordered_map<ItemDescriptor, int> unk40; //40, Unknown hasher
-    UUID MyId; // 104
-    int width; // 120
-    int height; // 124
-    int Priority; // 128
-    int unk132; // 132
-    vector<RecipeIngredient> MyIngredients; //136
-    HashedString Tag; //160
-	
+    ItemPack mMyItems; //40
+    mce::UUID mMyId; // 104
+    int mWidth; // 120
+    int mHeight; // 124
+    int mPriority; // 128
+    int mRecipeNetId; // 132
+    std::vector<RecipeIngredient> mMyIngredients; //136
+    HashedString mTag; //160
+
 	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPE

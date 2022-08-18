@@ -183,7 +183,6 @@ void initEvent()
         });
 }
 
-
 void regtest();
 #include <ServerAPI.h>
 void PluginInit()
@@ -198,6 +197,7 @@ void PluginInit()
                 sleepList.clear();
             };
             },10*60*20);
+        Module::InitAutoCrafting();
         return true;
         });
     logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());

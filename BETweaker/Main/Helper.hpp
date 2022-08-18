@@ -1,11 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "../Global.h"
 #include <MC/I18n.hpp>
 #include <MC/HashedString.hpp>
 #include <MC/ToastRequestPacket.hpp>
 #include <MC/ServerPlayer.hpp>
-
-class NetworkIdentifierWithSubId;
+#include <mc/ItemStackNetIdVariant.hpp>
+struct NetworkIdentifierWithSubId;
 class PacketSender {
 public:
 	uint8_t mSenderSubId;

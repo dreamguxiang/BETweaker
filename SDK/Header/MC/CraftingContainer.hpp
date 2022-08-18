@@ -13,13 +13,17 @@ class CraftingContainer : public Container {
 
 #define AFTER_EXTRA
 // Add Member There
-
+#define DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
+public:
+    std::vector<ItemStack> mItems;
+    int mWidth;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
 public:
-    class CraftingContainer& operator=(class CraftingContainer const &) = delete;
-    CraftingContainer(class CraftingContainer const &) = delete;
-    CraftingContainer() = delete;
+    class CraftingContainer& operator=(class CraftingContainer const &) = default;
+    CraftingContainer(class CraftingContainer const &) = default;
+    CraftingContainer() = default;
 #endif
 
 public:

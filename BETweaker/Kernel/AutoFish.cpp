@@ -1,4 +1,4 @@
-#include "../Global.h"
+﻿#include "../Global.h"
 
 std::map<FishingHook*, int>fishingHook;
 namespace Module {

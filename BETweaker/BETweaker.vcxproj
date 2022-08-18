@@ -182,6 +182,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\AnvilRestoration.cpp" />
+    <ClCompile Include="Kernel\AutoCrafting.cpp" />
     <ClCompile Include="Kernel\AutoFish.cpp" />
     <ClCompile Include="Kernel\AutoSupplyItem.cpp" />
     <ClCompile Include="Kernel\BetterHarvestingCrop.cpp">

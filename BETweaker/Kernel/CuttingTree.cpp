@@ -41,7 +41,7 @@ namespace Module {
         int call = 0;
         std::list<BlockPos> visited;
 
-    BlockPos test(BlockPos pos,int a1) {
+    static BlockPos test(BlockPos pos,int a1) {
         switch (a1)
         {
         case 0:
@@ -85,7 +85,7 @@ namespace Module {
         }
     }
 	
-    bool isAxe(ItemStack& item,Player* sp) {
+    static bool isAxe(ItemStack& item,Player* sp) {
         if (!AxeList.count(item.getTypeName())) return false;
         auto lorelist = item.getCustomLore();
 		if(lorelist.size() == 0 || lorelist[0] != getI18n("betweaker.cuttingtree.loreon", sp->getLanguageCode()))
@@ -109,7 +109,7 @@ namespace Module {
        
         if (LogBlocks.count(block.getBlock()->getTypeName())) {
             visited.push_back(block.getPosition());
-            for (size_t i = 0; i <= 7; i++)
+            for (int i = 0; i <= 7; i++)
             {
                 auto a3 = block.getPosition();
                 BlockPos pos = test(block.getPosition(), i);
@@ -121,7 +121,7 @@ namespace Module {
                     break;
                 }
             }
-            for (size_t i = 0; i <= 17; i++)
+            for (int i = 0; i <= 17; i++)
             {
                 auto a3 = block.getPosition();
                 //BlockPos pos = a3.neighbor(i);
@@ -137,7 +137,7 @@ namespace Module {
         }
     }
 
-    boolean isTree() {
+    bool isTree() const {
         return leaves > 5;
     }
 	
@@ -179,7 +179,7 @@ namespace Module {
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mWarpedNylium
                 || LogBlocks.count(bs->getBlock(a3.add(0, -1, 0)).getTypeName())
                 ) {
-                for (size_t i = 0; i < 6; i++)
+                for (int i = 0; i < 6; i++)
                 {  
                     BlockPos pos = a3.neighbor(i);
                     if (i == 1 && !Module::LogBlocks.count(Level::getBlock(pos, bs)->getTypeName())) return;

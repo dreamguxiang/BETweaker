@@ -22,6 +22,8 @@ namespace Module {
 	bool AnvilRestoration(ItemStack* item, Block* block, BlockPos pos, Player* sp);
 	void BetterThanMending(Player* sp);
 	void cancelSleep();
+	bool AutoCrafting(DispenserBlockActor* ba, BlockSource* a2, BlockPos pos);
+	void InitAutoCrafting();
 	//void PlayEmote(Player* a1, string uuid);
 	//void readElistJsonData();
 }

@@ -11,12 +11,13 @@
 class SerializedPersonaPieceHandle {
 
 #define AFTER_EXTRA
+#define DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDPERSONAPIECEHANDLE
 public:	
-	  std::string name;
-	  persona::PieceType type;
-	  mce::UUID uuid;
-	  bool flag;
-	  std::string data;
+	  std::string mPieceId;
+	  persona::PieceType mPieceType;
+	  mce::UUID mPackId;
+	  bool mIsDefaultPiece;
+	  std::string mProductId;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDPERSONAPIECEHANDLE
 public:

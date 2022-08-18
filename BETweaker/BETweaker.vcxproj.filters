@@ -106,6 +106,9 @@
     <ClCompile Include="BetterBDS.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\AutoCrafting.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc">

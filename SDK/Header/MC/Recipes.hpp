@@ -13,6 +13,7 @@
 #include "ShapelessRecipe.hpp"
 #include "ItemDescriptorCount.hpp"
 #include "RecipeIngredient.hpp"
+#include "SortItemInstanceIdAux.hpp"
 
 typedef function<std::unique_ptr<ShapedRecipe>(string, int, int, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShapedRecipeCallback_t;
 typedef function<std::unique_ptr<ShapelessRecipe>(string, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShaplessRecipeCallback_t;
@@ -23,32 +24,32 @@ class Recipes {
 
 #define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_RECIPES
 public:
+    struct FurnaceRecipeKey {
+    public:
+        int mID;
+        HashedString mTag;
+    public:
+
+        inline FurnaceRecipeKey(int aux, HashedString tag) :mID(aux), mTag(tag) {
+        }
+    };
+
 class Type {
 public:
-    Item const* item;
-    Block const* block;
-    RecipeIngredient ingredient;
-    char label;
+    const Item *mItem;
+    const Block *mBlock;
+    RecipeIngredient mIngredient;
+    char mLabel;
 public:
     class Type& operator=(class Type const&) = default;
 
-    inline Type(string const& name, char label, int aux, unsigned short count) :ingredient(name, aux, count), label(label) {
-        item = ingredient.mDescriptor.getItem();
-        block = ingredient.mDescriptor.getBlock();
+    inline Type(string const& name, char label, int aux, unsigned short count) :mIngredient(name, aux, count), mLabel(label) {
+        mItem = mIngredient.mDescriptor.getItem();
+        mBlock = mIngredient.mDescriptor.getBlock();
     }
 	
-};
-
-
-struct FurnaceRecipeKey {
-public:	
-    int mIdAux;
-    HashedString mTag;
-public:
-
-    inline FurnaceRecipeKey(int aux, HashedString tag) :mIdAux(aux), mTag(tag) {
-    }
 };
 
 inline void addFurnaceRecipeAuxData(ItemInstance const& inputItem, ItemInstance const& outputItem, vector<HashedString> const& FurnaceTags) {
@@ -64,6 +65,12 @@ inline void addFurnaceRecipeAuxData(ItemInstance const& inputItem, ItemInstance 
 }
 
 struct NormalizedRectangularRecipeResults {
+public:
+    int mWidth;
+    int mHeight;
+    std::string mNormalizedResult;
+    std::string mWarning;
+
     NormalizedRectangularRecipeResults() = delete;
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&) = delete;
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&&) = delete;

@@ -24,7 +24,8 @@ struct ItemStackNetIdVariant {
     int netId;
     unsigned char type;
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETIDVARIANT
 #endif
     MCAPI ItemStackNetIdVariant();

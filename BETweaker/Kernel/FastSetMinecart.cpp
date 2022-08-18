@@ -12,7 +12,7 @@ namespace Module {
         "minecraft:tnt"
     };
 
-    ActorType getMinecartActorType(string a1) {
+    ActorType getMinecartActorType(const string& a1) {
         using enum ActorType;
         switch (H(a1))
         {

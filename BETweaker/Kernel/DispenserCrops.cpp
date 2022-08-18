@@ -1,12 +1,10 @@
 ﻿#include "../Global.h"
 #include <MC/SeedItemComponentLegacy.hpp>
-#include "../Main/setting.h"
-#include <MC/Item.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/CameraItemComponentLegacy.hpp>
 #include <MC/Material.hpp>
-#include <mc/BlockActorDataPacket.hpp>
-#include <MC/DispenserBlockActor.hpp>
+#include <MC/BlockActorDataPacket.hpp>
+
 namespace Module {
 
 	bool DispenserItemFunc(BlockSource* a2, Vec3* a3, FaceID a4, ItemStack* a5) {

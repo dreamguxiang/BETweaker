@@ -1,4 +1,4 @@
-#include "../Global.h"
+ï»¿#include "../Global.h"
 #include <MC/Randomize.hpp>
 #include <MC/Attribute.hpp>
 #include <MC/AttributeInstance.hpp>
@@ -60,16 +60,16 @@ namespace Module {
 		if (!item->isNull()) {
 			if (EnchantUtils::hasEnchant(Enchant::Type::mending, *item)) {
 				if (item->isDamageableItem()) {
-					auto damageValue = item->getMaxDamage();//×ÜÄÍ¾Ã
-					auto needFixDamageValue = damageValue / 10;//Ã¿´ÎĞŞ¸´µÄÄÍ¾Ã
-					//auto nowDamageValue = damageValue - item->getDamageValue();//µ±Ç°ÄÍ¾Ã
-					auto needDamageValue = item->getDamageValue();//ĞèÒªĞŞ¸´µÄÄÍ¾Ã
+					auto damageValue = item->getMaxDamage();//æ€»è€ä¹…
+					auto needFixDamageValue = damageValue / 10;//æ¯æ¬¡ä¿®å¤çš„è€ä¹…
+					//auto nowDamageValue = damageValue - item->getDamageValue();//å½“å‰è€ä¹…
+					auto needDamageValue = item->getDamageValue();//éœ€è¦ä¿®å¤çš„è€ä¹…
 					auto playerExp = getExperience(sp);
 					if (needDamageValue != 0) {
 						if (needDamageValue < needFixDamageValue) {
 							needFixDamageValue = needDamageValue;
 						}
-						auto needExp = needFixDamageValue / 2;//Ã¿´ÎĞŞ¸´ËùĞèµÄ¾­Ñé
+						auto needExp = needFixDamageValue / 2;//æ¯æ¬¡ä¿®å¤æ‰€éœ€çš„ç»éªŒ
 						if (playerExp < needExp) {
 							needExp = playerExp;
 							needFixDamageValue = needExp * 2;

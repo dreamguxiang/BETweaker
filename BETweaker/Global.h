@@ -48,6 +48,7 @@
 #include <MC/EnchantmentInstance.hpp>
 #include <MC/VanillaStates.hpp>
 #include <MC/ItemState.hpp>
+#include <MC/DispenserBlockActor.hpp>
 #include "Main/Helper.hpp"
 #include <FormUI.h>
 #include <ScheduleAPI.h>

@@ -24,9 +24,9 @@ class SerializedSkin {
 // Add Member There
 public:
 	enum class TrustedSkinFlag : int8_t {
-		UNSET = 0,
-		NO = 1,
-		YES = 2
+        Unset = 0x0,
+        False = 0x1,
+        True = 0x2,
 	};
 
 	std::string mId, mplayFabId, mFullId, mResourcePatch, mDefaultGeometryName;

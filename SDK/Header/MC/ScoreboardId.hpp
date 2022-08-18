@@ -15,7 +15,8 @@ struct ScoreboardId {
 public:
     __int64 id;
     void* null;
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDID
 #endif
     MCAPI ScoreboardId(struct ScoreboardId const &);

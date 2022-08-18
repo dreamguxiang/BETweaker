@@ -10,7 +10,8 @@
 class ItemPack {
 
 #define AFTER_EXTRA
-
+public:
+    std::unordered_map<ItemDescriptor, int> mIngredients;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMPACK
 public:

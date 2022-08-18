@@ -12,10 +12,10 @@ class AnimatedImageData {
 
 #define AFTER_EXTRA
 public:
-    persona::AnimatedTextureType type;
-    persona::AnimationExpression type2;
-    mce::Image image;
-    float frame;
+    persona::AnimatedTextureType mType;
+    persona::AnimationExpression mAnimationExpression;
+    mce::Image mImage;
+    float mFrames;
 	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA

@@ -7,10 +7,10 @@
 #include <MC/LevelData.hpp>
 #include <ScheduleAPI.h>
 #include <MC/AttributeInstance.hpp>
-#include <MC/SharedAttributes.hpp>
 #include <MC/Weather.hpp>
 #include <MC/Attribute.hpp>
 #include <MC/Dimension.hpp>
+#include <MC/SharedAttributes.hpp>
 
 static_assert(sizeof(GameRuleId) == 4);
 static_assert(sizeof(SetTimePacket) == 56);

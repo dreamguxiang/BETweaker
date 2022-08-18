@@ -43,6 +43,7 @@ enum class AdventureFlag : int
     Flying = 512,
     Muted = 1024,
 };
+
 #undef BEFORE_EXTRA
 
 class Abilities {

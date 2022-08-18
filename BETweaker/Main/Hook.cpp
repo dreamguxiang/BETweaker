@@ -1,4 +1,4 @@
-#include "../Global.h"
+﻿#include "../Global.h"
 #include "Module.h"
 #include "setting.h"
 #include <MC/AdventureSettingsPacket.hpp>
@@ -55,11 +55,11 @@ THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEA
 }
 
 THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z", DispenserBlock* a1,
-	struct BlockSource* a2,
-	const struct Vec3* a3,
+      BlockSource* a2,
+      Vec3* a3,
 	unsigned __int8 a4,
-	const struct ItemStack* a5,
-	struct Container* a6,
+    ItemStack* a5,
+    Container* a6,
 	unsigned int a7) {
 	if (Settings::DispenserCrops){
 		DispenserejectItemLock.lock();
@@ -75,9 +75,18 @@ THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVIte
 #include <MC/DispenserBlockActor.hpp>
 #include <MC/Container.hpp>
 #include <MC/RandomizableBlockActorContainerBase.hpp>
+typedef std::chrono::high_resolution_clock timer_clock;
+#define TIMER_START auto start = timer_clock::now();
+#define TIMER_END                                                      \
+    auto elapsed = timer_clock::now() - start;                         \
+    long long timeReslut =                                             \
+        std::chrono::duration_cast<std::chrono::microseconds>(elapsed) \
+            .count();
+
 TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
 	if(!Settings::DispenserDestroyBlock) return original(this, a2, a3);
 	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
+	bool isretrun = 0;
 	if (BlockEntity)
 	{
 		auto Container = BlockEntity->getContainer();
@@ -86,12 +95,13 @@ TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlo
 		auto& items = Container->getItem(v9);
 		if (!items.isNull() && items.getCount() > 0)
 		{
-			//std::cout << Facing::DIRECTIONS[1] << std::endl;
 			int face = getFacing(a2->getBlock(*a3));
-			auto newpos = a3->neighbor(face);		
-			if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) return;
+			auto newpos = a3->neighbor(face);
+			if (!Module::AutoCrafting(BlockEntity, a2, newpos)) isretrun = 1;
+			if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) isretrun =1;
 		}
 	}
+	if (isretrun) return;
 	return original(this,a2,a3);
 }
 

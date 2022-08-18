@@ -17,7 +17,6 @@
 #include <MC/Dimension.hpp>
 #include <MC/Abilities.hpp>
 
-
 namespace HUBHelper {
     string canDestroy(Block* block, ItemStack* tool) {
         auto& material = block->getMaterial();

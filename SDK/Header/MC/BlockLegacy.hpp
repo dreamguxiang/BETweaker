@@ -14,7 +14,7 @@ class ItemStack;
 class BlockLegacy {
 
 #define AFTER_EXTRA
-    class NameInfo;
+    struct NameInfo;
 // Add new members to class
 public:
     LIAPI Block* toBlock(unsigned short tileData);

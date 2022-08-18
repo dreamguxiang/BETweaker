@@ -1,7 +1,7 @@
 #include "../Global.h"
 #include <MC/SignBlockActor.hpp>
-#include <MC/SignItem.hpp>
 #include <MC/BlockActorDataPacket.hpp>
+
 namespace Module {
 	
     bool EditSign(Player* pl, BlockInstance bi) {

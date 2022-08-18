@@ -19,7 +19,8 @@ std::string event;          // 64
 std::string fullname;       // 96
 HashedString canonicalHash; // 128
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIER
 #endif
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);

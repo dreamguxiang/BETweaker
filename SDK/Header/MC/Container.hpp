@@ -12,6 +12,8 @@ class Container {
 
 #define AFTER_EXTRA
 // Add new members to class
+#define DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
+    char filler[224];
 public:
 	LIAPI std::string getTypeName();
 
@@ -26,6 +28,7 @@ public:
 	LIAPI bool hasContainer(Vec3& pos, int dim);
     // static??
     LIAPI Container* getContainerAt(Vec3& pos, int dim);
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:

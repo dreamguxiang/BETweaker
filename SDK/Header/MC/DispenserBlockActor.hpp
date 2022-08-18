@@ -12,27 +12,9 @@ class DispenserBlockActor {
 
 #define AFTER_EXTRA
 // Add Member There
+#define ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
 public:
-    inline int getContainerSize() const {
-        int (DispenserBlockActor:: * rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@DispenserBlockActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class Container const* getContainer() const {
-        class Container const* (DispenserBlockActor:: * rv)() const;
-        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Container* getContainer() {
-        class Container* (DispenserBlockActor:: * rv)();
-        *((void**)&rv) = dlsym("?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline int getRandomSlot() {
-        int (DispenserBlockActor:: * rv)();
-        *((void**)&rv) = dlsym("?getRandomSlot@DispenserBlockActor@@UEAAHXZ");
-        return (this->*rv)();
-    }
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCKACTOR
 public:

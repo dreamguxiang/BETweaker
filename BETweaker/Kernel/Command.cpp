@@ -22,7 +22,7 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 
 
 #include <MC/Abilities.hpp>
-#include <mc/LayeredAbilities.hpp>
+#include <MC/LayeredAbilities.hpp>
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();

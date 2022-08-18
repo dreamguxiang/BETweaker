@@ -1,4 +1,4 @@
-#include "../Global.h"
+﻿#include "../Global.h"
 #include <MC/Player.hpp>
 #include <MC/PlayerInventory.hpp>
 #include <MC/Tag.hpp>

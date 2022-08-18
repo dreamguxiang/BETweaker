@@ -12,9 +12,9 @@ class HashedString {
 
 #define AFTER_EXTRA
 // Add Member There
-	uint64_t hash;
-	std::string str;
-	int64_t unk;
+    unsigned __int64 mStrHash;
+    std::string mStr;
+	int64_t mLastMatch;
 
 public:
     //HashedString(HashedString const& hstr)
