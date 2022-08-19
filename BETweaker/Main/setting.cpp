@@ -28,6 +28,7 @@ namespace Settings {
     bool BetterThanMending = true;
     bool AnvilRestoration = true;
     bool FlyEnabled = true;
+    bool AutoCrafting = false;
     float FastSleepProbability = 0.5;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
@@ -46,6 +47,8 @@ namespace Settings {
     std::unordered_set<string> FlyPlayerList;
 
     std::unordered_set<string> NoHubList;
+
+    std::unordered_set<string> AutoCraftingBlacklistItems;
 
     nlohmann::json globaljson() {
         nlohmann::json json;
@@ -73,6 +76,8 @@ namespace Settings {
         json["BetterThanMending"]["Enabled"] = BetterThanMending;
         json["AnvilRestoration"]["Enabled"] = AnvilRestoration;
         json["HUBInfo"]["NoShowPlayerList"] = NoHubList;
+        json["AutoCrafting"]["Enabled"] = AutoCrafting;
+        json["AutoCrafting"]["BlacklistItems"] = AutoCraftingBlacklistItems;
         return json;
     }
 
@@ -102,6 +107,8 @@ namespace Settings {
         TRJ("BetterThanMending", "Enabled", BetterThanMending);
         TRJ("AnvilRestoration", "Enabled", AnvilRestoration);
         TRJ("HUBInfo", "NoShowPlayerList", NoHubList);
+        TRJ("AutoCrafting", "Enabled", AutoCrafting);
+        TRJ("AutoCrafting", "BlacklistItems", AutoCraftingBlacklistItems);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

@@ -109,7 +109,6 @@ namespace Module {
 
                                 if (block->getTypeName() == "minecraft:redstone_wire")
                                 {
-                                    std::cout << block->getNbt() << std::endl;
                                     sp.sendFormattedText("§f{}\n§7{} §6{}\n{} {}\n§7X:{}{} §7Y:{}{} §7Z:{}{}\n{}\n§c{}§7:§e{}",
                                         Helper::getDisplayName(block->buildDescriptionId(), sp.getLanguageCode()),
                                         getI18n("betweaker.hubinfo.destroytime", lang), fmt::format("{:.1f}s", 0.1 / sp.getDestroyProgress(*block)),

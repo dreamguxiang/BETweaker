@@ -24,6 +24,7 @@ namespace Module {
 	void cancelSleep();
 	bool AutoCrafting(DispenserBlockActor* ba, BlockSource* a2, BlockPos pos);
 	void InitAutoCrafting();
+	extern const Block* craftingTable;
 	//void PlayEmote(Player* a1, string uuid);
 	//void readElistJsonData();
 }

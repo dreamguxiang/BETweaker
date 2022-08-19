@@ -24,10 +24,12 @@ namespace Settings {
     extern bool DispenserDestroyBlock;
     extern bool DispenserDestroyBreakItem;
     extern bool FlyEnabled;
+    extern bool AutoCrafting;
     extern  float FastSleepProbability;
     extern std::vector<string> DispenserDestroyItemList;
     extern std::unordered_set<string> FlyPlayerList;
     extern std::unordered_set<string> NoHubList;
+    extern std::unordered_set<string> AutoCraftingBlacklistItems;
     nlohmann::json globaljson();
     void initjson(nlohmann::json json);
     void WriteDefaultConfig(const std::string& fileName);

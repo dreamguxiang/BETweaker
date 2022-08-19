@@ -70,6 +70,7 @@ namespace Module {
         return result;
     }
     bool DispenserDestroy(BlockActor* ba,BlockSource* a2, BlockPos* pos, ItemStack& a5, int solt, BlockPos* old) {
+        if(a5){
         if (isToolItem(&a5)) {
             if (ba->getCustomName() == "DestroyBlock-Open") {
                 auto block = Level::getBlock(pos, a2);
@@ -92,6 +93,7 @@ namespace Module {
                     }
                     return true;
                 }
+            }
             }
         }
         return false;

@@ -12,7 +12,7 @@ class Hopper {
 
 #define AFTER_EXTRA
 // Add Member There
-
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPER
 public:

@@ -12,10 +12,21 @@
 
 
 namespace Module {
-    std::unordered_map<int, std::map<string, std::shared_ptr<Recipe>>> RecipeList;
+    //std::unordered_map<int, std::map<string, std::shared_ptr<Recipe>>> RecipeList;
+    std::map<string, std::shared_ptr<Recipe>> RecipeList;
     std::unordered_map<uint64_t, ItemInstance> TempCraftiingList;
     const Block* craftingTable = nullptr;
     //std::unordered_map<string, std::shared_ptr<Recipe>> RecipeList;
+
+    bool isBlackList(string a5) {
+        for (auto& toolitem : Settings::AutoCraftingBlacklistItems) {
+            if (a5.find(toolitem) != std::string::npos) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void InitAutoCrafting() {
 
         auto recipesByOutputs = dAccess<std::map<HashedString const, std::map<std::string, std::shared_ptr<Recipe>>>>(&Global<Level>->getRecipes(), 16);
@@ -23,7 +34,9 @@ namespace Module {
             if (recipesMap.first.getString() == "crafting_table") {
                 if (recipesMap.second.empty()) continue;
                 for (auto& i : recipesMap.second) {
-                    RecipeList[i.second->getIngredients().size()].emplace(i.first, i.second);
+                    if (!isBlackList(i.first)) {
+                        RecipeList.emplace(i.first, i.second);
+                    }
                 }
             }
         }
@@ -40,37 +53,31 @@ namespace Module {
                     auto cont = ba->getContainer();
                     auto itemlist = cont->getAllSlots();
                     for (auto i : itemlist) {
-                        tempItem += i->getFullNameHash().getHash();
+                        tempItem += i->getFullNameHash().getHash() + i->getAux();
                     }
+
                     if (TempCraftiingList.find(tempItem) != TempCraftiingList.end()) {
                         auto hpcont = ((HopperBlockActor*)be)->getContainer();
-                        hpcont->addItem(*(ItemStack*)&TempCraftiingList[tempItem]);
+                        auto out = hpcont->addItem_s((ItemStack*)&TempCraftiingList[tempItem]);
                         cont->removeAllItems();
                         return false;
                     }
 
                     CraftingContainer ctn(3, 3);
-                    int temp = 0;
                     for (auto i = 0; i < itemlist.size(); ++i) {
-                        auto item = itemlist[i];
-                        if (!item->isNull()) {
-                            temp++;
-                        }
-                        ctn.setItem(i, *item);
+                        ctn.setItem(i, *itemlist[i]);
                     }
-                    if (RecipeList.find(temp) != RecipeList.end()) {
-                        auto& Recipes = RecipeList[temp];
-                        for (auto& i : Recipes) {
-                            bool match = i.second->matches(ctn, *Global<Level>);
-                            if (!match) continue;
-                            auto& recipeOutputs = i.second->assemble(ctn);
-                            auto hpcont = ((HopperBlockActor*)be)->getContainer();
-                            if (recipeOutputs.size() != 1) continue;
-                            hpcont->addItem_s((ItemStack*)&recipeOutputs[0]);
-                            TempCraftiingList.emplace(tempItem, recipeOutputs[0]);
-                            cont->removeAllItems();
-                            return false;
-                        }
+					
+                    for (auto& i : RecipeList) {
+                        bool match = i.second->matches(ctn, *Global<Level>);
+                        if (!match) continue;
+                        auto& recipeOutputs = i.second->assemble(ctn);
+                        auto hpcont = ((HopperBlockActor*)be)->getContainer();
+                        if (recipeOutputs.size() != 1) continue;
+                        hpcont->addItem_s((ItemStack*)&recipeOutputs[0]);
+                        TempCraftiingList.emplace(tempItem, recipeOutputs[0]);
+                        cont->removeAllItems();
+                        return false;
                     }
                 }
             }

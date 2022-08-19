@@ -84,7 +84,7 @@ typedef std::chrono::high_resolution_clock timer_clock;
             .count();
 
 TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
-	if(!Settings::DispenserDestroyBlock) return original(this, a2, a3);
+	if(!Settings::DispenserDestroyBlock && !Settings::AutoCrafting) return original(this, a2, a3);
 	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
 	bool isretrun = 0;
 	if (BlockEntity)
@@ -97,8 +97,10 @@ TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlo
 		{
 			int face = getFacing(a2->getBlock(*a3));
 			auto newpos = a3->neighbor(face);
-			if (!Module::AutoCrafting(BlockEntity, a2, newpos)) isretrun = 1;
-			if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) isretrun =1;
+			if(Settings::AutoCrafting)
+				if (!Module::AutoCrafting(BlockEntity, a2, newpos)) isretrun = 1;
+			if(Settings::DispenserDestroyBlock)
+				if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) isretrun =1;
 		}
 	}
 	if (isretrun) return;
@@ -116,6 +118,93 @@ THook(void, "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemS
 		return;
 	return original(a2, a3, a4, a5);
 }
+
+BlockPos getTargeBlock(Vec3 pos, FaceID a5) {
+	switch (a5) {
+	case FaceID::Down:
+		return pos.toBlockPos().add(0, -1, 0);
+	case FaceID::Up:
+		return pos.toBlockPos().add(0, 1, 0);
+	case FaceID::North:
+		return pos.toBlockPos().add(0, 0, -1);
+	case FaceID::South:
+		return pos.toBlockPos().add(0, 0, 1);
+	case FaceID::West:
+		return pos.toBlockPos().add(-1, 0, 0);
+	case FaceID::East:
+		return pos.toBlockPos().add(1, 0, 0);
+	}
+}
+bool IsComparatorSignal = 0;
+THook(__int64, "?getMaxStackSize@ItemStackBase@@QEBAEXZ",
+	ItemStackBase* self)
+{
+	if (IsComparatorSignal) {
+		return 1;
+	}
+	return original(self);
+}
+
+THook(int, "?getComparatorSignal@DispenserBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z",
+	DispenserBlock* self, BlockSource* a2, BlockPos a3, Block* a4)
+{
+	auto newpos = a3.neighbor(self->getFacing(*a4));
+	auto outputpos = a3.add(0, -1);
+	if (a2->getBlock(newpos) == *Module::craftingTable) {
+		IsComparatorSignal = 1;
+		auto out = original(self, a2, a3, a4);
+		IsComparatorSignal = 0;
+		return out;
+	}
+	return original(self, a2, a3, a4);
+}
+
+#include <MC/BaseCircuitComponent.hpp>
+#include <MC/Hopper.hpp>
+TInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
+	Hopper, BlockSource& region, Container* fromContainer, Vec3 position, unsigned int attachedFace)
+{
+	auto pos = getTargeBlock(position, (FaceID)attachedFace);
+	auto ba = region.getBlockEntity(pos);
+	if (ba) {
+		if (ba->getType() == BlockActorType::Dispenser) {
+			auto& block = region.getBlock(pos);
+			auto newpos = pos.neighbor(((DispenserBlock*)&block.getLegacyBlock())->getFacing(block));
+			auto outputpos = pos.add(0, -1);
+			if (region.getBlock(newpos) == *Module::craftingTable) {
+				if (fromContainer) {
+					auto fromitemlist = fromContainer->getAllSlots();
+					for (int i = 0; i < fromitemlist.size(); ++i) {
+						auto item = fromitemlist[i];
+						if (!item->isNull()) {
+
+							auto toContainer = _getAttachedContainerInBlock(region, position, attachedFace);
+							if (toContainer) {
+								auto itemlist = toContainer->getAllSlots();
+								for (auto j = 0; j < itemlist.size(); ++j) {
+									auto items = itemlist[j];
+									if (items->isNull()) {
+										auto newitem = item->clone_s();
+										newitem->set(1);
+										toContainer->setItem(j, *newitem);
+										fromContainer->removeItem_s(i, 1);
+										delete newitem;
+										break;
+									}
+								}
+							}
+							break;
+						}
+					}
+				}
+				return 1;
+			}
+		}
+	}
+	original(this, region, fromContainer, position, attachedFace);
+	return 1;
+}
+
 
 THook(void, "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
 	LeafBlock* _this, BlockSource* a2, const BlockPos* a3) {

@@ -203,6 +203,7 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Kernel\HUBInfo.cpp" />
+    <ClCompile Include="Kernel\RemoteTranItem.cpp" />
     <ClCompile Include="Kernel\StickRecipe.cpp" />
     <ClCompile Include="Main\Hook.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>

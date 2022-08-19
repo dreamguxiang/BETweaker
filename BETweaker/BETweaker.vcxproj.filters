@@ -109,6 +109,9 @@
     <ClCompile Include="Kernel\AutoCrafting.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\RemoteTranItem.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BETweaker.rc">
