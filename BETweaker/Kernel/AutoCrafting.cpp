@@ -59,6 +59,9 @@ namespace Module {
                     if (TempCraftiingList.find(tempItem) != TempCraftiingList.end()) {
                         auto hpcont = ((HopperBlockActor*)be)->getContainer();
                         auto out = hpcont->addItem_s((ItemStack*)&TempCraftiingList[tempItem]);
+                        if (!out) {
+                            Global<Level>->getSpawner().spawnItem(*a2, *(ItemStack*)&TempCraftiingList[tempItem], nullptr, pos.toVec3(), 0);
+                        }
                         cont->removeAllItems();
                         return false;
                     }
@@ -74,7 +77,10 @@ namespace Module {
                         auto& recipeOutputs = i.second->assemble(ctn);
                         auto hpcont = ((HopperBlockActor*)be)->getContainer();
                         if (recipeOutputs.size() != 1) continue;
-                        hpcont->addItem_s((ItemStack*)&recipeOutputs[0]);
+                        auto outresult = hpcont->addItem_s((ItemStack*)&recipeOutputs[0]);
+						if (!outresult) {
+                            Global<Level>->getSpawner().spawnItem(*a2, *(ItemStack*)&recipeOutputs[0], nullptr, pos.toVec3(), 0);
+						}
                         TempCraftiingList.emplace(tempItem, recipeOutputs[0]);
                         cont->removeAllItems();
                         return false;
