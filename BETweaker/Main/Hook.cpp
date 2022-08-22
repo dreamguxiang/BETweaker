@@ -8,7 +8,6 @@
 #include <MC/Abilities.hpp>
 #include <MC/ServerLevel.hpp>
 #include "../Main/Helper.hpp"
-std::mutex DispenserejectItemLock;
 bool nodis = false;
 
 //THook(void, "?updateSleepingPlayerList@ServerLevel@@UEAAXXZ", Level* self) {
@@ -53,7 +52,8 @@ THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEA
 	}
 	return original(__this, a2, a3, a4, a5);
 }
-
+#include <Utils/CsLock.h>
+CsLock DispenserejectItemLock;
 THook(void, "?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@H@Z", DispenserBlock* a1,
       BlockSource* a2,
       Vec3* a3,
@@ -135,6 +135,7 @@ BlockPos getTargeBlock(Vec3 pos, FaceID a5) {
 		return pos.toBlockPos().add(1, 0, 0);
 	}
 }
+CsLock getMaxStackSize;
 bool IsComparatorSignal = 0;
 THook(__int64, "?getMaxStackSize@ItemStackBase@@QEBAEXZ",
 	ItemStackBase* self)
@@ -151,9 +152,11 @@ THook(int, "?getComparatorSignal@DispenserBlock@@UEBAHAEAVBlockSource@@AEBVBlock
 	auto newpos = a3.neighbor(self->getFacing(*a4));
 	auto outputpos = a3.add(0, -1);
 	if (a2->getBlock(newpos) == *Module::craftingTable) {
+		getMaxStackSize.lock();
 		IsComparatorSignal = 1;
 		auto out = original(self, a2, a3, a4);
 		IsComparatorSignal = 0;
+		getMaxStackSize.unlock();
 		return out;
 	}
 	return original(self, a2, a3, a4);
@@ -177,7 +180,6 @@ TInstanceHook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer
 					for (int i = 0; i < fromitemlist.size(); ++i) {
 						auto item = fromitemlist[i];
 						if (!item->isNull()) {
-
 							auto toContainer = _getAttachedContainerInBlock(region, position, attachedFace);
 							if (toContainer) {
 								auto itemlist = toContainer->getAllSlots();
@@ -285,24 +287,6 @@ TInstanceHook(__int64, "?interact@Player@@QEAA_NAEAVActor@@AEBVVec3@@@Z",
 	}
 	return original(this, a2, a3);
 }
-/*
-#include <MC/ShovelItem.hpp>
-#include <MC/ServerPlayer.hpp>
-TInstanceHook(bool, "?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z"
-	, ShovelItem, ItemStackBase* a2, Actor* a3, BlockPos& a4, char a5) {
-	if (a3->isPlayer()) {
-		auto sp = (ServerPlayer*)a3;
-		auto block = Level::getBlock(a4, sp->getBlockSource());
-		if (VanillaBlocks::mTopSnow && block == VanillaBlocks::mTopSnow) {
-			auto i = block->getTileData();
-			if (i > 2) {
-				Level::setBlock(a4, sp->getDimensionId(), block->getTypeName(), i - 1);
-			}
-		}
-	}
-	return original(this, a2, a3, a4, a5);
-}
-*/
 
 
 #include <MC/PlayerInventory.hpp>
@@ -346,22 +330,6 @@ TInstanceHook(bool, "?hurtAndBreak@ItemStackBase@@QEAA_NHPEAVActor@@@Z", ItemSta
 
 #include <MC/SurvivalMode.hpp>
 
-//TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
-//	SurvivalMode, BlockPos a3, unsigned __int8 a4)
-//{
-//	if (!Settings::CuttingTree) return original(this, a3, a4);
-//	auto bs = getPlayer()->getBlockSource();
-//	try {
-//		Module::cutTree(&getPlayer()->getRegion(), a3, getPlayer());
-//	}
-//	catch (...) {
-//		return  original(this, a3, a4);
-//	}
-//	return original(this, a3, a4);
-//}
-
-
-
 TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 	GameMode, BlockPos a3, unsigned __int8 a4)
 {
@@ -374,6 +342,12 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 	}
 	return original(this, a3, a4);
 }
+#include <MC/ChunkSource.hpp>
+#include <MC/LevelChunk.hpp>
+enum ChunkSource::LoadMode : int {
+	None = 0x0,
+	Deferred = 0x1,
+};
 
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
@@ -505,3 +479,9 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 //	}
 //	return original(this, sp, unk);
 //}
+
+THook(__int64, "?getBaseRepairCost@ItemStackBase@@QEBAHXZ",
+	ItemStackBase* self)
+{
+	return 0;
+}

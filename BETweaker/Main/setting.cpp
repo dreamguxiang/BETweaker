@@ -29,6 +29,8 @@ namespace Settings {
     bool AnvilRestoration = true;
     bool FlyEnabled = true;
     bool AutoCrafting = false;
+    bool RenewableSponges = false;
+    bool RenewableDeepslate = false;
     float FastSleepProbability = 0.5;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
@@ -78,6 +80,8 @@ namespace Settings {
         json["HUBInfo"]["NoShowPlayerList"] = NoHubList;
         json["AutoCrafting"]["Enabled"] = AutoCrafting;
         json["AutoCrafting"]["BlacklistItems"] = AutoCraftingBlacklistItems;
+        json["RenewableSponges"]["Enabled"] = RenewableSponges;
+        json["RenewableDeepslate"]["Enabled"] = RenewableDeepslate;
         return json;
     }
 
@@ -109,6 +113,8 @@ namespace Settings {
         TRJ("HUBInfo", "NoShowPlayerList", NoHubList);
         TRJ("AutoCrafting", "Enabled", AutoCrafting);
         TRJ("AutoCrafting", "BlacklistItems", AutoCraftingBlacklistItems);
+        TRJ("RenewableSponges", "Enabled", RenewableSponges);
+        TRJ("RenewableDeepslate", "Enabled", RenewableDeepslate);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

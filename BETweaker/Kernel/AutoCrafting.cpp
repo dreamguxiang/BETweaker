@@ -16,6 +16,8 @@ namespace Module {
     std::map<string, std::shared_ptr<Recipe>> RecipeList;
     std::unordered_map<uint64_t, ItemInstance> TempCraftiingList;
     const Block* craftingTable = nullptr;
+    const Block* Stone = nullptr;
+    const Block* Cobblestone = nullptr;
     //std::unordered_map<string, std::shared_ptr<Recipe>> RecipeList;
 
     bool isBlackList(string a5) {
@@ -41,6 +43,8 @@ namespace Module {
             }
         }
         craftingTable = Block::create("minecraft:crafting_table", 0);
+        Stone = Block::create("minecraft:stone", 0);
+        Cobblestone = Block::create("minecraft:cobblestone", 0);
     }
 
     bool AutoCrafting(DispenserBlockActor* ba, BlockSource* a2, BlockPos pos) {

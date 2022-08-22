@@ -15,6 +15,9 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{ac00c31e-0bc7-42e5-921a-9131b52ac350}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kernel\renewable">
+      <UniqueIdentifier>{98aa38f7-530f-481c-9a93-ec8e9ccd01c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -111,6 +114,12 @@
     </ClCompile>
     <ClCompile Include="Kernel\RemoteTranItem.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\renewable\Sponges.cpp">
+      <Filter>Kernel\renewable</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\renewable\Deepslate.cpp">
+      <Filter>Kernel\renewable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

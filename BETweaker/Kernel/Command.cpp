@@ -233,7 +233,9 @@ class BETCommand : public Command
 		Fly,
         AnvilRestoration,
         BetterThanMending,
-        AutoCrafting
+        AutoCrafting,
+        RenewableDeepslate,
+        RenewableSponges
     } operation;
 	
     bool isenable;
@@ -323,6 +325,14 @@ public:
             Settings::AutoCrafting = isenable;
             output.success(std::to_string(isenable));
             break;
+        case Operation::RenewableDeepslate:
+            Settings::RenewableDeepslate = isenable;
+            output.success(std::to_string(isenable));
+            break;
+        case Operation::RenewableSponges:
+            Settings::RenewableSponges = isenable;
+            output.success(std::to_string(isenable));
+            break;
         case Operation::Reload:
             Settings::LoadConfigFromJson(JsonFile);
             output.success("reload success");
@@ -363,7 +373,9 @@ public:
             {"endportalduplicatgravityblock", Operation::EndPortalDuplicateGravityBlock},
             {"anvilrestoration", Operation::AnvilRestoration},
             {"betterthanmending", Operation::BetterThanMending},
-            {"autocrafting", Operation::AutoCrafting}
+            {"autocrafting", Operation::AutoCrafting},
+            {"renewablesponges", Operation::RenewableSponges},
+            {"renewabledeepslate", Operation::RenewableDeepslate}
             }
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {
