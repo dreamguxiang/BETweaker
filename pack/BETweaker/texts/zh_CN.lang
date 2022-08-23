@@ -13,7 +13,7 @@ tile.acacia_door.name=金合欢木门
 tile.dark_oak_door.name=深色橡木门
 tile.lit_redstone_ore.name=发光中的红石矿石
 tile.lit_deepslate_redstone_ore.name=发光中的深层红石矿石
-ile.lit_furnace.name=燃烧中的熔炉
+tile.lit_furnace.name=燃烧中的熔炉
 tile.carrots.name=胡萝卜
 tile.glow_frame.name=发光物品展示框
 tile.frame.name=物品展示框
@@ -84,10 +84,9 @@ tile.polished_deepslate_double_slab.name=双层磨制深板岩台阶
 tile.deepslate_brick_double_slab.name=双层深板岩砖台阶
 tile.deepslate_tile_double_slab.name=双层深板岩瓦台阶
 tile.mud_brick_double_slab.name=双层泥砖台阶
-
+craftingScreen.tab.commands=创造类方块
 
 entity.npc.name=NPC
-
 
 betweaker.cuttingtree.loreon=快捷模式
 betweaker.cuttingtree.loreoff=正常模式

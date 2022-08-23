@@ -13,7 +13,7 @@ tile.acacia_door.name=Acacia Door
 tile.dark_oak_door.name=Dark Oak Door
 tile.lit_redstone_ore.name=Lit Redstone Ore
 tile.lit_deepslate_redstone_ore.name=Lit Deepslate Redstone Ore
-ile.lit_furnace.name=Lit Furnace
+tile.lit_furnace.name=Lit Furnace
 tile.carrots.name=Carrots
 tile.glow_frame.name=Glow Frame
 tile.frame.name=Frame
@@ -65,6 +65,7 @@ tile.weathered_double_cut_copper_slab.name=Weathered Double Cut Copper Slab
 tile.oxidized_double_cut_copper_slab.name=Oxidized Double Cut Copper Slab
 tile.waxed_exposed_double_cut_copper_slab.name=Waxed Exposed Double Cut Copper Slab
 tile.waxed_double_cut_copper_slab.name=Waxed Double Cut Copper Slab
+craftingScreen.tab.commands=commands Block
 
 entity.npc.name=NPC
 
