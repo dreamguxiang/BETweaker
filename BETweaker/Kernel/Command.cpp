@@ -1,4 +1,4 @@
-#include "../Global.h"
+﻿#include "../Global.h"
 #include <RegCommandAPI.h>
 #include "../Main/Module.h"
 #include <MC/ServerPlayer.hpp>
@@ -8,8 +8,15 @@
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
 #include "../Main/Helper.hpp"
-
+#include <third-party/magic_enum/magic_enum.hpp>
+#include <ServerAPI.h>
 using namespace RegisterCommandHelper;
+
+#define COMMAND_PERM(X)                                            \
+if (ori.getPermissionsLevel() < 1) {                                 \
+    output.error("You don't have permission to use this command"); \
+    break;                                                         \
+}                                                                  \
 
 void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 {
@@ -235,7 +242,9 @@ class BETCommand : public Command
         BetterThanMending,
         AutoCrafting,
         RenewableDeepslate,
-        RenewableSponges
+        RenewableSponges,
+        Help,
+        Config
     } operation;
 	
     bool isenable;
@@ -251,100 +260,189 @@ public:
     {
         switch (operation)
         {
-        case Operation::BetterHarvestingCrop:
+        case Operation::BetterHarvestingCrop: {
+            COMMAND_PERM();
             Settings::BetterHarvestingCrop = isenable;
-            output.success(std::to_string(isenable));
+            auto func = magic_enum::enum_name(Operation::BetterHarvestingCrop).data();
+            output.success("§6[BETweaker]§r " + (string)func + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::NoFarmDestroy:
+        }
+        case Operation::NoFarmDestroy: {
+            COMMAND_PERM();
             Settings::NoFarmDestroy = isenable;
-            output.success(std::to_string(isenable));
+            auto func1 = magic_enum::enum_name(Operation::NoFarmDestroy).data();
+            output.success("§6[BETweaker]§r " + (string)func1 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::FastSleeping:
+        }
+        case Operation::FastSleeping: {
+            COMMAND_PERM();
             Settings::FastSleeping = isenable;
-            output.success(std::to_string(isenable));
+            auto func2 = magic_enum::enum_name(Operation::FastSleeping).data();
+            output.success("§6[BETweaker]§r " + (string)func2 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::HUBinfo:
-            output.error("Due to an unknown bug, this feature is temporarily closed!");
-            break;
-            //if (Settings::HUBinfo == isenable) break;
-            //Settings::HUBinfo = isenable;
-            //if (isenable)
-            //    Module::HUBInfo();
-            //else
-            //    hubinfo.cancel();
-            //break;
-        case Operation::DispenserCrops:
+        }
+        case Operation::DispenserCrops: {
+            COMMAND_PERM();
             Settings::DispenserCrops = isenable;
-            output.success(std::to_string(isenable));
+            auto func3 = magic_enum::enum_name(Operation::DispenserCrops).data();
+            output.success("§6[BETweaker]§r " + (string)func3 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::EditSign:
+        }
+        case Operation::EditSign: {
+            COMMAND_PERM();
             Settings::EditSign = isenable;
-            output.success(std::to_string(isenable));
+            auto func4 = magic_enum::enum_name(Operation::EditSign).data();
+            output.success("§6[BETweaker]§r " + (string)func4 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::FastLeafDecay:
+        }
+        case Operation::FastLeafDecay: {
+            COMMAND_PERM();
             Settings::FastLeafDecay = isenable;
-            output.success(std::to_string(isenable));
+            auto func5 = magic_enum::enum_name(Operation::FastLeafDecay).data();
+            output.success("§6[BETweaker]§r " + (string)func5 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::AutoFish:
+        }
+        case Operation::AutoFish: {
+            COMMAND_PERM();
             Settings::AutoFish = isenable;
-            output.success(std::to_string(isenable));
+            auto func6 = magic_enum::enum_name(Operation::AutoFish).data();
+            output.success("§6[BETweaker]§r " + (string)func6 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::DoubleDoors:
+        }
+        case Operation::DoubleDoors: {
+            COMMAND_PERM();
             Settings::DoubleDoors = isenable;
-            output.success(std::to_string(isenable));
+            auto func7 = magic_enum::enum_name(Operation::DoubleDoors).data();
+            output.success("§6[BETweaker]§r " + (string)func7 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::FastSetMinecart:
+        }
+        case Operation::FastSetMinecart: {
+            COMMAND_PERM();
             Settings::FastSetMinecart = isenable;
-            output.success(std::to_string(isenable));
+            auto func8 = magic_enum::enum_name(Operation::FastSetMinecart).data();
+            output.success("§6[BETweaker]§r " + (string)func8 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::AutoSupplyItem:
+        }
+        case Operation::AutoSupplyItem: {
+            COMMAND_PERM();
             Settings::AutoSupplyItem = isenable;
-            output.success(std::to_string(isenable));
+            auto func9 = magic_enum::enum_name(Operation::AutoSupplyItem).data();
+            output.success("§6[BETweaker]§r " + (string)func9 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::CuttingTree:
+        }
+        case Operation::CuttingTree: {
+            COMMAND_PERM();
             Settings::CuttingTree = isenable;
-            output.success(std::to_string(isenable));
+            auto func10 = magic_enum::enum_name(Operation::CuttingTree).data();
+            output.success("§6[BETweaker]§r " + (string)func10 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::DispenserDestroyBlock:
+        }
+        case Operation::DispenserDestroyBlock: {
+            COMMAND_PERM();
             Settings::DispenserDestroyBlock = isenable;
-            output.success(std::to_string(isenable));
-            break;	
-        case Operation::EndPortalDuplicateGravityBlock:
+            auto func11 = magic_enum::enum_name(Operation::DispenserDestroyBlock).data();
+            output.success("§6[BETweaker]§r " + (string)func11 + " is " + (isenable ? "enabled" : "disabled"));
+            break;
+        }
+        case Operation::EndPortalDuplicateGravityBlock: {
+            COMMAND_PERM();
             Settings::EndPortalDuplicateGravityBlock = isenable;
-            output.success(std::to_string(isenable));
+            auto func12 = magic_enum::enum_name(Operation::EndPortalDuplicateGravityBlock).data();
+            output.success("§6[BETweaker]§r " + (string)func12 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::BetterThanMending:
+        }
+        case Operation::BetterThanMending: {
+            COMMAND_PERM();
             Settings::BetterThanMending = isenable;
-            output.success(std::to_string(isenable));
+            auto func13 = magic_enum::enum_name(Operation::BetterThanMending).data();
+            output.success("§6[BETweaker]§r " + (string)func13 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::AnvilRestoration:
+        }
+        case Operation::AnvilRestoration: {
+            COMMAND_PERM();
             Settings::AnvilRestoration = isenable;
-            output.success(std::to_string(isenable));
+            auto func14 = magic_enum::enum_name(Operation::AnvilRestoration).data();
+            output.success("§6[BETweaker]§r " + (string)func14 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::AutoCrafting:
+        }
+        case Operation::AutoCrafting: {
+            COMMAND_PERM();
             Settings::AutoCrafting = isenable;
-            output.success(std::to_string(isenable));
+            auto func15 = magic_enum::enum_name(Operation::AutoCrafting).data();
+            output.success("§6[BETweaker]§r " + (string)func15 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::RenewableDeepslate:
+        }
+        case Operation::RenewableDeepslate: {
+            COMMAND_PERM();
             Settings::RenewableDeepslate = isenable;
-            output.success(std::to_string(isenable));
+            auto func16 = magic_enum::enum_name(Operation::RenewableDeepslate).data();
+            output.success("§6[BETweaker]§r " + (string)func16 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::RenewableSponges:
+        }
+        case Operation::RenewableSponges: {
+            COMMAND_PERM();
             Settings::RenewableSponges = isenable;
-            output.success(std::to_string(isenable));
+            auto func17 = magic_enum::enum_name(Operation::RenewableSponges).data();
+            output.success("§6[BETweaker]§r " + (string)func17 + " is " + (isenable ? "enabled" : "disabled"));
             break;
-        case Operation::Reload:
+        }
+        case Operation::Reload:      
+            COMMAND_PERM();
             Settings::LoadConfigFromJson(JsonFile);
             output.success("reload success");
             return;
         case Operation::Fly: {
+            COMMAND_PERM();
             auto sp = ori.getPlayer();
             if (sp->isPlayer()) {
-                setPlayerAbility(*sp, AbilitiesIndex::MayFly, isenable);           
+                setPlayerAbility(*sp, AbilitiesIndex::MayFly, isenable);
             }
             return;
         }
+        
+        case Operation::Config: {
+            COMMAND_PERM();
+            string temp;
+            output.success("§6§l————————Feature List————————\n"
+                "§bBetterHarvestingCrop §d-> " + temp + (Settings::BetterHarvestingCrop ? "§a✔" : "§c✖") + "\n"
+                "§bNoFarmDestroy §d-> " + (Settings::NoFarmDestroy ? "§a✔" : "§c✖") + "\n"
+                "§bFastSleeping §d-> " + (Settings::FastSleeping ? "§a✔" : "§c✖") + "\n"
+                "§bDispenserCrops §d-> " + (Settings::DispenserCrops ? "§a✔" : "§c✖") + "\n"
+                "§bEditSign §d-> " + (Settings::EditSign ? "§a✔" : "§c✖") + "\n"
+                "§bFastLeafDecay §d-> " + (Settings::FastLeafDecay ? "§a✔" : "§c✖") + "\n"
+                "§bAutoFish §d-> " + (Settings::AutoFish ? "§a✔" : "§c✖") + "\n"
+                "§bDoubleDoors §d-> " + (Settings::DoubleDoors ? "§a✔" : "§c✖") + "\n"
+                "§bFastSetMinecart §d-> " + (Settings::FastSetMinecart ? "§a✔" : "§c✖") + "\n"
+                "§bAutoSupplyItem §d-> " + (Settings::AutoSupplyItem ? "§a✔" : "§c✖") + "\n"
+                "§bCuttingTree §d-> " + (Settings::CuttingTree ? "§a✔" : "§c✖") + "\n"
+                "§bDispenserDestroyBlock §d-> " + (Settings::DispenserDestroyBlock ? "§a✔" : "§c✖") + "\n"
+                "§bEndPortalDuplicateGravityBlock §d-> " + (Settings::EndPortalDuplicateGravityBlock ? "§a✔" : "§c✖") + "\n"
+                "§bBetterThanMending §d-> " + (Settings::BetterThanMending ? "§a✔" : "§c✖") + "\n"
+                "§bAnvilRestoration §d-> " + (Settings::AnvilRestoration ? "§a✔" : "§c✖") + "\n"
+                "§bAutoCrafting §d-> " + (Settings::AutoCrafting ? "§a✔" : "§c✖") + "\n"
+                "§bRenewableDeepslate §d-> " + (Settings::RenewableDeepslate ? "§a✔" : "§c✖") + "\n"
+                "§bRenewableSponges §d-> " + (Settings::RenewableSponges ? "§a✔" : "§c✖") + "\n"
+				"§bSeedCommand §d-> " + (Settings::SeedCommand ? "§a✔" : "§c✖") + "\n"
+                "§6———————————————");
+            return;
+        }
+        case Operation::Help:
+            output.success("§6§l————————BETweaker————————\n"
+                "§bAuthor: §a@DreamGuXiang\n"
+                "§bThanks: §a@CanXuee,@ΘΣΦΓΥΔΝ,@tofus | Server:FineServer,CAS\n"
+                "§bGithub: §ahttps://github.com/dreamguxiang/BETweaker\n"
+                "§bVersion: §a" + VERSION.toString() + " for BDS "+ LL::getBdsVersion() + "\n"
+                "§bUsage:\n"
+                "§d/bet reload - §6Reload Config\n"
+                "§d/bet help - §6Show this help\n"
+                "§d/bet §c[feature] §e[enable|disable] - §6Enable or Disable a feature\n"
+                "§d/fly §e[enable|disable] - §6Enable or Disable fly\n"
+                "§d/hubinfo §e[enable|disable] - §6Enable or Disable HUB info\n"
+                "§d/seed - §6Show seed\n"
+                "§6§l————————BETweaker————————");
+            return;
         case Operation::Upgrade:
+            COMMAND_PERM();
             BETweakerUpgradeCommand(output, hasUpgradeOption && upgradeOption == UpgradeOption::Force);
             return;
         }
@@ -354,8 +452,8 @@ public:
     static void setup(CommandRegistry* registry)
     {
         // Register Cmd
-        registry->registerCommand("bet", "BETweaker System", CommandPermissionLevel::GameMasters, { (CommandFlagValue)1 }, { (CommandFlagValue)0x80 });
-
+        registry->registerCommand("betweaker", "BETweaker System", CommandPermissionLevel::Any, { (CommandFlagValue)1 }, { (CommandFlagValue)0x80 });
+        registry->registerAlias("betweaker","bet");
         registry->addEnum<Operation>("Function", {
             {"betterharvest", Operation::BetterHarvestingCrop},
             {"nofarmdestroy", Operation::NoFarmDestroy},
@@ -380,6 +478,8 @@ public:
         );
         registry->addEnum<Operation>("BetOperation_OptionalNames", {
             {"reload", Operation::Reload},
+            {"help", Operation::Help},
+            {"config", Operation::Config},
             });
         registry->addEnum<Operation>("BetOperation_WithOptions", {
             {"upgrade", Operation::Upgrade},
@@ -389,18 +489,18 @@ public:
             });
 		
         registry->registerOverload<BETCommand>(
-            "bet",
+            "betweaker",
             makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "BetOperation_WithOptions").addOptions((CommandParameterOption)1),
             makeOptional<CommandParameterDataType::ENUM>(&BETCommand::upgradeOption, "Option", "BetUpgradeOptions", &BETCommand::hasUpgradeOption).addOptions((CommandParameterOption)1));
 		
         registry->registerOverload<BETCommand>(
-            "bet",
+            "betweaker",
             makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "Function"),
             makeMandatory(&BETCommand::isenable,"Enable"));
 
 		
         registry->registerOverload<BETCommand>(
-            "bet",
+            "betweaker",
             makeMandatory<CommandParameterDataType::ENUM>(&BETCommand::operation, "Operation", "BetOperation_OptionalNames").addOptions((CommandParameterOption)1));
 		
     }
@@ -434,7 +534,7 @@ void RegisterCommands()
         if (Settings::HUBinfo) RegHubInfoCommand();
        // RegEmoteCommand();
         BETCommand::setup(ev.mCommandRegistry);
-        SeedCommand::setup(ev.mCommandRegistry);
+       if(Settings::SeedCommand) SeedCommand::setup(ev.mCommandRegistry);
         return true;
         });
 }

@@ -343,12 +343,12 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 	return original(this, a3, a4);
 }
 #include <MC/ChunkSource.hpp>
-#include <MC/LevelChunk.hpp>
+#include <MC/LevelChunkMetaData.hpp>
 enum ChunkSource::LoadMode : int {
 	None = 0x0,
 	Deferred = 0x1,
 };
-
+#include <MC/LevelChunkMetaDataDictionary.hpp>
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
 {
@@ -479,9 +479,3 @@ THook(char, "?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVe
 //	}
 //	return original(this, sp, unk);
 //}
-
-THook(__int64, "?getBaseRepairCost@ItemStackBase@@QEBAHXZ",
-	ItemStackBase* self)
-{
-	return 0;
-}

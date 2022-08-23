@@ -82,9 +82,10 @@ jobs:
         mkdir output/plugins
         cp -f x64/Release/*.dll output/plugins
         mkdir output/plugins/lib/
-        cp -f x64/Release/*.pdb output/plugins/lib     
-        mkdir output/resource_packs
-        cp -r pack/BETweaker output/resource_packs
+        cp -f x64/Release/*.pdb output/plugins/lib
+        mkdir output/plugins/BETweaker
+        mkdir output/plugins/BETweaker/resource_packs
+        cp -r pack/BETweaker output/plugins/BETweaker/resource_packs
       shell: bash
     
     - name: upload files

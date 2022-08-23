@@ -25,6 +25,9 @@
 - Add /seed command to get the world's seed
 - Crouching right click experience repair tool
 - Anvil repair (iron ingot right click repair, obsidian right click broken ring)
+- Dispenser Auto Crafting
+- Lightning Guardian generates ancient guardians
+- Y less than 0 brush stone machine generates deep class stone
 <img src=".github/cuttree.gif" alt="show" />
 
 - Double Doors

@@ -27,6 +27,7 @@ namespace Settings {
     extern bool AutoCrafting;
     extern bool RenewableSponges;
     extern bool RenewableDeepslate;
+    extern bool SeedCommand;
     extern  float FastSleepProbability;
     extern std::vector<string> DispenserDestroyItemList;
     extern std::unordered_set<string> FlyPlayerList;

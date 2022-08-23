@@ -6,19 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "SemVersion.hpp"
-enum PackType : uint8_t
-{
-    Invalid = 0,
-    Addon = 1,
-    Cached = 2,
-    Protected = 3,
-    Behaviour = 4,
-    PersonaPiece = 5,
-    Resources = 6,
-    Skins = 7,
-    WorldTemplate = 8,
-    PackTypeCount = 9
-};
+
 #undef BEFORE_EXTRA
 
 struct PackIdVersion {

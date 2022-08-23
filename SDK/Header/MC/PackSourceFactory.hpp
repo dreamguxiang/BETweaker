@@ -6,14 +6,38 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum PackType : char {
+    Invalid = 0x0,
+    Addon = 0x1,
+    Cached = 0x2,
+    CopyProtected = 0x3,
+    Behavior = 0x4,
+    PersonaPiece = 0x5,
+    Resources = 0x6,
+    Skins = 0x7,
+    WorldTemplate = 0x8,
+    Count = 0x9,
+};
 
+enum PackOrigin : int {
+    _Unknown = 0x0,
+    _RealmsUnknown = 0x1,
+    Package = 0x2,
+    Treatment = 0x3,
+    Dev = 0x4,
+    World = 0x5,
+    User = 0x6,
+    TempCache = 0x7,
+    PremiumCache = 0x8,
+    PremiumTempCache = 0x9,
+};
 #undef BEFORE_EXTRA
 
 class PackSourceFactory {
 
 #define AFTER_EXTRA
 // Add Member There
-
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCEFACTORY
 public:

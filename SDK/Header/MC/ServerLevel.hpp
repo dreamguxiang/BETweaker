@@ -13,7 +13,7 @@ class ServerLevel {
 
 #define AFTER_EXTRA
 // Add Member There
-
+#define ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVEL
 public:

@@ -14,7 +14,12 @@ class ResourceLocation {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    __int32 mFileSystem;
+    Core::PathBuffer<std::string> mPath;
+    unsigned __int64 mPathHash;
+    unsigned __int64 mFullHash;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOCATION
 public:

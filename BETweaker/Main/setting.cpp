@@ -31,6 +31,7 @@ namespace Settings {
     bool AutoCrafting = false;
     bool RenewableSponges = false;
     bool RenewableDeepslate = false;
+    bool SeedCommand = true;
     float FastSleepProbability = 0.5;
     string HUBInfoShow = "TIP";
     std::unordered_set<string> CanDispenserItemList{
@@ -82,6 +83,7 @@ namespace Settings {
         json["AutoCrafting"]["BlacklistItems"] = AutoCraftingBlacklistItems;
         json["RenewableSponges"]["Enabled"] = RenewableSponges;
         json["RenewableDeepslate"]["Enabled"] = RenewableDeepslate;
+        json["SeedCommand"]["Enabled"] = SeedCommand;
         return json;
     }
 
@@ -115,6 +117,7 @@ namespace Settings {
         TRJ("AutoCrafting", "BlacklistItems", AutoCraftingBlacklistItems);
         TRJ("RenewableSponges", "Enabled", RenewableSponges);
         TRJ("RenewableDeepslate", "Enabled", RenewableDeepslate);
+        TRJ("SeedCommand", "Enabled", SeedCommand);
     }
 
     void WriteDefaultConfig(const std::string& fileName) {

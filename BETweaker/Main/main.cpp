@@ -116,51 +116,21 @@ void loadCfg() {
 #include <MC/ResourcePackManager.hpp>
 #include <MC/ResourceLocation.hpp>
 #include <MC/Types.hpp>
+#include <MC/PackSourceFactory.hpp>
 
 static_assert(sizeof(SemVersion) == 0x70);
 
 ResourcePackRepository* gl;
 
 THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
-    , ResourcePackRepository* a1) {
-    gl = a1;
+    , ResourcePackRepository* a1) {	
+    auto out = Core::Path(R"(plugins/BETweaker)");
+    a1->addWorldResourcePacks(out);
     return original(a1);
 }
 
 extern void RegisterCommands();
 
-bool PackInstall() {
-    string File = Level::getCurrentLevelPath() + "/world_resource_packs.json";
-    if (!std::filesystem::exists(File))
-    {
-        std::ofstream fout(File);
-        fout << "[]" << std::flush;
-    }
-
-    try
-    {
-        auto Data = nlohmann::json::object();
-        Data["pack_id"] = "3e15339d-aa47-114f-71ab-79b3cfb7f4c4";
-        Data["version"] =  std::list{1,0,0};
-
-        auto PackList = nlohmann::json::parse(*ReadAllFile(File));
-        for (int i = 0; i < PackList.size(); i++) {
-            if (PackList[i]["pack_id"] == "3e15339d-aa47-114f-71ab-79b3cfb7f4c4") {
-                return false;
-            }
-        }
-        PackList.push_back(Data);
-        bool res = WriteAllFile(File, PackList.dump(4));
-        if (!res)
-            throw "Fail to write data back to addon list file!";
-
-        return true;
-    }
-    catch (const std::exception& e)
-    {
-        return false;
-    }
-}
 
 void initEvent() 
 {
@@ -172,25 +142,25 @@ void initEvent()
             checkUpdate();
             });
         th.detach();
-
-        auto pack = gl->getResourcePackByUUID(mce::UUID::fromString("3e15339d-aa47-114f-71ab-79b3cfb7f4c4"));
-        if (pack) {
-            if (pack->getVersion().asString() != VERSION_RES.toString()) {
-                logger.error("ResourcePack(BETweaker) is out of date.(old version:{} |new version:{})", pack->getVersion().asString(),VERSION_RES.toString());
-            }
-        }		
         return true;
         });
 }
 
 void regtest();
 #include <ServerAPI.h>
+using namespace std::filesystem;
+
+void removeOldPack() {
+    if (exists("resource_packs\\BETweaker")) {
+		remove_all("resource_packs\\BETweaker");
+		logger.warn("old resource_packs\\BETweaker removed");
+    }
+}
+
 void PluginInit()
 {
+    removeOldPack();
     loadCfg();
-    PackInstall();
-    //downloadEmoteList();
-    //Module::readElistJsonData();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
         Schedule::repeat([] {
             if (Global<Level>->createDimension(0)->isDay()) {
@@ -200,6 +170,12 @@ void PluginInit()
         Module::InitAutoCrafting();
         return true;
         });
+    Logger().info(R"(    ____  ____________                    __            )");
+    Logger().info(R"(   / __ )/ ____/_  __/      _____  ______/ /_____  _____)");
+    Logger().info(R"(  / __  / __/   / / | | /| / / _ \/ __  / //_/ _ \/ ___/)");
+    Logger().info(R"( / /_/ / /___  / /  | |/ |/ /  __/ /_/ /  < /  __/ /  )");
+    Logger().info(R"(/_____/_____/ /_/   |__/|__/\___/\____/_/|_|\___/_/     )");
+    Logger().info(R"(                                                       )");
     logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());
     logger.info("Build Date[{}]", __TIMESTAMP__);
     logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));
