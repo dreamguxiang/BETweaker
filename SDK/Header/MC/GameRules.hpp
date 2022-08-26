@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULES
 #endif
-    MCAPI GameRules(class GameRules const &);
     MCAPI GameRules();
+    MCAPI GameRules(class GameRules const &);
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;
     MCAPI void deserializeRules(class GameRulesChangedPacketData const &);
     MCAPI bool getBool(struct GameRuleId, bool) const;

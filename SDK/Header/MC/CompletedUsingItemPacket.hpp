@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLETEDUSINGITEMPACKET
 #endif
-    MCAPI CompletedUsingItemPacket(short, int);
     MCAPI CompletedUsingItemPacket();
+    MCAPI CompletedUsingItemPacket(short, int);
 
 };

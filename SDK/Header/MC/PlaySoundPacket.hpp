@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDPACKET
 #endif
-    MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
     MCAPI PlaySoundPacket();
+    MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
 
 };

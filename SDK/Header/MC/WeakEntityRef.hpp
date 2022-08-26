@@ -27,8 +27,8 @@ public:
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI operator class WeakRefT<struct EntityRefTraits>() const;
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
-    MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
+    MCAPI bool operator==(class WeakEntityRef) const;
     MCAPI ~WeakEntityRef();
 
 };

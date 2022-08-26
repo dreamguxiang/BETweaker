@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUURIRESOURCEPACKET
 #endif
-    MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
     MCAPI EduUriResourcePacket();
+    MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
 
 };

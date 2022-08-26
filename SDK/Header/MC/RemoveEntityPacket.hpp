@@ -27,7 +27,7 @@ public:
     /*2*/ virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
 #endif
-    MCAPI RemoveEntityPacket(class EntityContext &);
     MCAPI RemoveEntityPacket();
+    MCAPI RemoveEntityPacket(class EntityContext &);
 
 };

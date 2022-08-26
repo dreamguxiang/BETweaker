@@ -31,8 +31,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEEVENTPACKET
 #endif
-    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     MCAPI SimpleEventPacket();
+    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
 
 };

@@ -19,8 +19,8 @@ enum EAxis;
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILECOMPONENT
 #endif
-    MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI ProjectileComponent();
+    MCAPI ProjectileComponent(class ProjectileComponent const &);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI enum ProjectileAnchor getAnchor();
     MCAPI bool getCatchFire() const;

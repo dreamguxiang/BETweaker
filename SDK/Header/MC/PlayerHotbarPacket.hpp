@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERHOTBARPACKET
 #endif
-    MCAPI PlayerHotbarPacket(unsigned int, enum ContainerID, bool);
     MCAPI PlayerHotbarPacket();
+    MCAPI PlayerHotbarPacket(unsigned int, enum ContainerID, bool);
 
 };

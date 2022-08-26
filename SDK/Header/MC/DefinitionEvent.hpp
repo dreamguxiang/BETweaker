@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENT
 #endif
-    MCAPI DefinitionEvent(class DefinitionEvent const &);
     MCAPI DefinitionEvent(class DefinitionEvent &&);
+    MCAPI DefinitionEvent(class DefinitionEvent const &);
     MCAPI void evaluateEvent(class RenderParams &, std::vector<struct DefinitionModifier> &) const;
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     MCAPI ~DefinitionEvent();

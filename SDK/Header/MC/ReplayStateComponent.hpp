@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECOMPONENT
 #endif
-    MCAPI ReplayStateComponent(class ReplayStateComponent &&);
     MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
+    MCAPI ReplayStateComponent(class ReplayStateComponent &&);
     MCAPI unsigned __int64 getCurrentTick() const;
     MCAPI class ReplayStateComponent & operator=(class ReplayStateComponent &&);
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy &, class PlayerAuthInputPacket const &) const;

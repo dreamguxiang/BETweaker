@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPARAMS
 #endif
-    MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     MCAPI RopeParams();
+    MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     MCAPI void leadInit();
 
 };

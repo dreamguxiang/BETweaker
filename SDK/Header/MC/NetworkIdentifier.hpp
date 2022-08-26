@@ -28,11 +28,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
 #endif
-    MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
-    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
-    MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
-    MCAPI NetworkIdentifier(struct sockaddr_in const &);
     MCAPI NetworkIdentifier(unsigned __int64);
+    MCAPI NetworkIdentifier(struct sockaddr_in const &);
+    MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
+    MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
+    MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     MCAPI std::string getAddress() const;
     MCAPI unsigned __int64 getHash() const;
     MCAPI std::string getNetherNetIDAsString() const;

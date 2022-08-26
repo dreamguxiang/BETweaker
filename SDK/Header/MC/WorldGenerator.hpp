@@ -39,8 +39,8 @@ public:
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     MCVAPI ~WorldGenerator();
 #endif
-    MCAPI WorldGenerator(class Dimension &);
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI WorldGenerator(class Dimension &);
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;
 

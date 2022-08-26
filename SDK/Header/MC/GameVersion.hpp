@@ -23,9 +23,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEVERSION
 #endif
-    MCAPI GameVersion(class ListTag const &);
-    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
     MCAPI GameVersion();
+    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    MCAPI GameVersion(class ListTag const &);
     MCAPI std::string const & asString() const;
     MCAPI bool operator<(class GameVersion const &) const;
     MCAPI class GameVersion & operator=(class GameVersion &&);

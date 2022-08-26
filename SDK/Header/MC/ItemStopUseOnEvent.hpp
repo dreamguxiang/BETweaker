@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTOPUSEONEVENT
 #endif
-    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent &&);
     MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const &);
+    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent &&);
     MCAPI ~ItemStopUseOnEvent();
 
 };

@@ -29,8 +29,8 @@ public:
     MCAPI bool pop();
     MCAPI class ItemStackNetManagerScreen * push(std::unique_ptr<class ItemStackNetManagerScreen>);
     MCAPI unsigned __int64 size() const;
-    MCAPI class ItemStackNetManagerScreen const * top() const;
     MCAPI class ItemStackNetManagerScreen * top();
+    MCAPI class ItemStackNetManagerScreen const * top() const;
     MCAPI ~ItemStackNetManagerScreenStack();
 
 };

@@ -379,13 +379,15 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
+    MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class AnimatePacket const &);
@@ -412,8 +414,8 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class LecternUpdatePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
     MCVAPI void handle(class NetworkIdentifier const &, class LoginPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
@@ -452,8 +454,6 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class TickSyncPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
     MCVAPI void onInvalidPlayerJoinedLobby(class mce::UUID const &, std::string const &);
     MCVAPI void onPlayerReady(class Player &);

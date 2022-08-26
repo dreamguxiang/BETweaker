@@ -124,8 +124,8 @@ public:
     MCVAPI bool isProtectionEnchant() const;
     MCVAPI bool isTreasureOnly() const;
 #endif
-    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
+    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     MCAPI bool canEnchant(int, bool) const;
     MCAPI std::string getDescription() const;
     MCAPI std::string getDescriptionId() const;

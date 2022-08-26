@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINDATA
 #endif
-    MCAPI SkinData(class Actor const &);
     MCAPI SkinData(class Json::Value const &);
+    MCAPI SkinData(class Actor const &);
     MCAPI void applyToActor(class Actor &) const;
     MCAPI bool softMatch(struct SkinData const &, bool &) const;
 

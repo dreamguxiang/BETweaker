@@ -23,9 +23,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERWEAKREF
 #endif
-    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
-    MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI ContainerWeakRef();
+    MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
+    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     MCAPI operator bool() const;
     MCAPI ~ContainerWeakRef();
 

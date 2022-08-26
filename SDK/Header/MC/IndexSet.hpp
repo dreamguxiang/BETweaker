@@ -17,9 +17,9 @@ class IndexSet {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INDEXSET
 #endif
-    MCAPI IndexSet();
-    MCAPI IndexSet(class IndexSet &&);
     MCAPI IndexSet(class IndexSet const &);
+    MCAPI IndexSet(class IndexSet &&);
+    MCAPI IndexSet();
     MCAPI void clear();
     MCAPI bool contains(unsigned __int64) const;
     MCAPI std::vector<unsigned __int64> const & getPacked() const;

@@ -74,7 +74,7 @@ public:
     /*197*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CUTCOPPERSLAB
 #endif
-    MCAPI CutCopperSlab(std::string const &, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CutCopperSlab(std::string const &, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy> &);
+    MCAPI CutCopperSlab(std::string const &, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
 
 };

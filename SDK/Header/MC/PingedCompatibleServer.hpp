@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINGEDCOMPATIBLESERVER
 #endif
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
     MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     MCAPI ~PingedCompatibleServer();
 

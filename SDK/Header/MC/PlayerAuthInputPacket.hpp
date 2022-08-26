@@ -31,8 +31,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERAUTHINPUTPACKET
 #endif
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI PlayerAuthInputPacket();
+    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
     MCAPI class PlayerAuthInputPacket & operator=(class PlayerAuthInputPacket &&);
     MCAPI struct PlayerActionComponent readIntoComponent() const;

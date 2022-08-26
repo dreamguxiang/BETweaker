@@ -28,7 +28,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTACTIONEVENTPACKET
 #endif
-    MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
     MCAPI AgentActionEventPacket();
+    MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
 
 };

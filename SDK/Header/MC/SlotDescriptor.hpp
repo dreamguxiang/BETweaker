@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDESCRIPTOR
 #endif
-    MCAPI SlotDescriptor(struct SlotDescriptor const &);
     MCAPI SlotDescriptor();
+    MCAPI SlotDescriptor(struct SlotDescriptor const &);
     MCAPI void addAcceptedItem(class ItemDescriptor const &);
     MCAPI ~SlotDescriptor();
 

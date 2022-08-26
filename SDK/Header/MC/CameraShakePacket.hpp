@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKEPACKET
 #endif
-    MCAPI CameraShakePacket(float, float, enum CameraShakeType);
-    MCAPI CameraShakePacket(enum CameraShakeAction);
     MCAPI CameraShakePacket();
+    MCAPI CameraShakePacket(enum CameraShakeAction);
+    MCAPI CameraShakePacket(float, float, enum CameraShakeType);
 
 };

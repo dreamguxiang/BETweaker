@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDEFINITIONEVENTTRIGGEREDEVENT
 #endif
-    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
+    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
     MCAPI ~ItemDefinitionEventTriggeredEvent();
 
 };

@@ -26,8 +26,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERCOMPONENT
 #endif
     MCAPI void DecrementDwellingUpdateInterval();
-    MCAPI DwellerComponent(class DwellerComponent &&);
     MCAPI DwellerComponent();
+    MCAPI DwellerComponent(class DwellerComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     MCAPI void checkandUpdateDwellingStatus(class Actor const &, class Village *);
     MCAPI void clearPreferredProfession();

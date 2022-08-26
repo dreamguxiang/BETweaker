@@ -31,9 +31,9 @@ public:
 #endif
 
 //protected:
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);
-    MCAPI StackResultStorageEntity(class OwnerStorageEntity const &);
     MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
+    MCAPI StackResultStorageEntity(class OwnerStorageEntity const &);
+    MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);
     MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
 

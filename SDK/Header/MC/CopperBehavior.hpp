@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBEHAVIOR
 #endif
-    MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
+    MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     MCAPI bool canDecrementAge() const;
     MCAPI class Block const & getCorrespondingWaxedBlock(class Block const &) const;
     MCAPI bool isWaxable() const;

@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHERUPDATEPACKET
 #endif
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
     MCAPI NetworkChunkPublisherUpdatePacket();
+    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
 
 };

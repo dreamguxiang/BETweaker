@@ -215,7 +215,7 @@ public:
                 auto players = get<std::vector<Player*>>();
                 std::vector<Actor*> actors(players.size());
                 std::transform(players.begin(), players.end(), actors.begin(),
-                               [](Player* player) { return (Actor*)(player); });
+                               [](Player* player) { return static_cast<Actor*>(player); });
                 return actors;
             }
             std::vector<Actor*> rtn;

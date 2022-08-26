@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDCOMPONENT
 #endif
-    MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI TickWorldComponent();
+    MCAPI TickWorldComponent(class TickWorldComponent &&);
     MCAPI unsigned int getChunkRadius() const;
     MCAPI float getMaxDistToPlayers() const;
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea();

@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCHARGEEVENT
 #endif
-    MCAPI ItemChargeEvent(struct ItemChargeEvent &&);
     MCAPI ItemChargeEvent(struct ItemChargeEvent const &);
+    MCAPI ItemChargeEvent(struct ItemChargeEvent &&);
     MCAPI ~ItemChargeEvent();
 
 };

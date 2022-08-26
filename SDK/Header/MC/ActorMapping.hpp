@@ -28,8 +28,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMAPPING
 #endif
-    MCAPI ActorMapping(std::string const &, std::string const &, std::string const &);
     MCAPI ActorMapping(std::string const &, std::string const &);
+    MCAPI ActorMapping(std::string const &, std::string const &, std::string const &);
     MCAPI std::string getMappingName(enum ActorTypeNamespaceRules) const;
     MCAPI ~ActorMapping();
 

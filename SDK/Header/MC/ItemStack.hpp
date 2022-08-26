@@ -54,17 +54,17 @@ public:
     /*6*/ virtual std::string toDebugString() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACK
 #endif
-    MCAPI ItemStack(class ItemStack const &);
-    MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
-    MCAPI ItemStack(class BlockLegacy const &, int);
-    MCAPI ItemStack(class Item const &);
-    MCAPI ItemStack(class Item const &, int);
-    MCAPI ItemStack(class Item const &, int, int);
-    MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
-    MCAPI ItemStack(class ItemInstance const &);
-    MCAPI ItemStack(class RecipeIngredient const &);
-    MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemStack();
+    MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
+    MCAPI ItemStack(class RecipeIngredient const &);
+    MCAPI ItemStack(class ItemInstance const &);
+    MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
+    MCAPI ItemStack(class Item const &, int, int);
+    MCAPI ItemStack(class Item const &, int);
+    MCAPI ItemStack(class Item const &);
+    MCAPI ItemStack(class BlockLegacy const &, int);
+    MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
+    MCAPI ItemStack(class ItemStack const &);
     MCAPI void _assignNetIdVariant(class ItemStack const &) const;
     MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI class ItemStack clone() const;

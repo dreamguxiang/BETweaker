@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEDECORATIONFEATURE
 #endif
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
     MCAPI ~BiomeDecorationFeature();
 
 };

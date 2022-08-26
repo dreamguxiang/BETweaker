@@ -41,7 +41,7 @@ public:
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGTAG
 #endif
-    MCAPI StringTag(std::string);
     MCAPI StringTag();
+    MCAPI StringTag(std::string);
 
 };

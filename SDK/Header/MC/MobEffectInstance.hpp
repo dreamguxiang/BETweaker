@@ -25,12 +25,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTINSTANCE
 #endif
-    MCAPI MobEffectInstance(class MobEffectInstance const &);
-    MCAPI MobEffectInstance(unsigned int);
-    MCAPI MobEffectInstance(unsigned int, int);
-    MCAPI MobEffectInstance(unsigned int, int, int);
-    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
     MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(unsigned int, int, int);
+    MCAPI MobEffectInstance(unsigned int, int);
+    MCAPI MobEffectInstance(unsigned int);
+    MCAPI MobEffectInstance(class MobEffectInstance const &);
     MCAPI void applyEffects(class Actor *);
     MCAPI bool displaysOnScreenTextureAnimation() const;
     MCAPI int getAmplifier() const;
@@ -45,8 +45,8 @@ public:
     MCAPI bool isAmbient() const;
     MCAPI bool isEffectVisible() const;
     MCAPI bool operator!=(class MobEffectInstance const &) const;
-    MCAPI class MobEffectInstance & operator=(class MobEffectInstance const &);
     MCAPI class MobEffectInstance & operator=(class MobEffectInstance &&);
+    MCAPI class MobEffectInstance & operator=(class MobEffectInstance const &);
     MCAPI bool operator==(class MobEffectInstance const &) const;
     MCAPI void removeEffects(class Actor *) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;

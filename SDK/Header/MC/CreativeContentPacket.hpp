@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVECONTENTPACKET
 #endif
-    MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
     MCAPI CreativeContentPacket();
+    MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
 
 };

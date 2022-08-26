@@ -38,7 +38,7 @@ public:
     /*30*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONPLAYERCOMMANDORIGIN
 #endif
-    MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
+    MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
 
 };

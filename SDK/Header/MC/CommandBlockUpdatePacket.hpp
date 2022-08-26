@@ -28,7 +28,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKUPDATEPACKET
 #endif
-    MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
     MCAPI CommandBlockUpdatePacket();
+    MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
 
 };

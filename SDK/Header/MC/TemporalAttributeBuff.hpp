@@ -29,8 +29,8 @@ public:
     /*5*/ virtual bool isComplete() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPORALATTRIBUTEBUFF
 #endif
-    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
+    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
     MCAPI float getBaseAmount() const;
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;

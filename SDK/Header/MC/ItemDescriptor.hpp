@@ -25,15 +25,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
 #endif
-    MCAPI ItemDescriptor();
-    MCAPI ItemDescriptor(class ItemDescriptor &&);
-    MCAPI ItemDescriptor(struct ItemTag const &);
-    MCAPI ItemDescriptor(class ItemDescriptor const &);
-    MCAPI ItemDescriptor(class Block const &);
-    MCAPI ItemDescriptor(class BlockLegacy const &);
-    MCAPI ItemDescriptor(class Item const &, int);
-    MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
     MCAPI ItemDescriptor(class gsl::basic_string_span<char const, -1>, int);
+    MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
+    MCAPI ItemDescriptor(class Item const &, int);
+    MCAPI ItemDescriptor(class BlockLegacy const &);
+    MCAPI ItemDescriptor(class Block const &);
+    MCAPI ItemDescriptor(class ItemDescriptor const &);
+    MCAPI ItemDescriptor(struct ItemTag const &);
+    MCAPI ItemDescriptor(class ItemDescriptor &&);
+    MCAPI ItemDescriptor();
     MCAPI short getAuxValue() const;
     MCAPI class Block const * getBlock() const;
     MCAPI std::string getFullName() const;
@@ -46,8 +46,8 @@ public:
     MCAPI bool isDefinedAsItemName() const;
     MCAPI bool isNull() const;
     MCAPI bool isValid(bool) const;
-    MCAPI void operator=(class ItemDescriptor &&);
     MCAPI void operator=(class ItemDescriptor const &);
+    MCAPI void operator=(class ItemDescriptor &&);
     MCAPI bool operator==(class ItemDescriptor const &) const;
     MCAPI bool sameItem(class ItemDescriptor const &, bool) const;
     MCAPI bool sameItem(class ItemStack const &, bool) const;

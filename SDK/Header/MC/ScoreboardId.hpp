@@ -15,13 +15,12 @@ struct ScoreboardId {
 public:
     __int64 id;
     void* null;
-#undef AFTER_EXTRA
-public:
+#undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDID
 #endif
-    MCAPI ScoreboardId(struct ScoreboardId const &);
-    MCAPI ScoreboardId();
     MCAPI ScoreboardId(__int64);
+    MCAPI ScoreboardId();
+    MCAPI ScoreboardId(struct ScoreboardId const &);
     MCAPI unsigned __int64 getHash() const;
     MCAPI class IdentityDefinition const & getIdentityDef() const;
     MCAPI bool isValid() const;

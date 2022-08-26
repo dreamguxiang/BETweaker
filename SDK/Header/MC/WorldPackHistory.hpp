@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
 #endif
-    MCAPI WorldPackHistory(class WorldPackHistory &&);
     MCAPI WorldPackHistory(class WorldPackHistory const &);
+    MCAPI WorldPackHistory(class WorldPackHistory &&);
     MCAPI bool getCanBeRedownloaded() const;
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const & getLocalizedNames() const;
     MCAPI struct PackIdVersion const & getPackIdVersion() const;

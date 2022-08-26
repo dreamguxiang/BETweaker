@@ -17,17 +17,17 @@ class ActorDefinitionDescriptor {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONDESCRIPTOR
 #endif
-    MCAPI ActorDefinitionDescriptor();
-    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
+    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
+    MCAPI ActorDefinitionDescriptor();
     MCAPI class ActorDefinitionDescriptor & combine(class ActorDefinitionDescriptor const &);
     MCAPI bool contains(class ActorDefinitionDescriptor const &) const;
     MCAPI bool hasComponent(class HashedString const &) const;
     MCAPI bool hasJumpSubComponent();
     MCAPI bool hasMovementSubComponent();
     MCAPI bool hasNavigationSubComponent();
-    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
     MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor &&);
+    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
     MCAPI bool overlaps(class ActorDefinitionDescriptor const &) const;
     MCAPI class ActorDefinitionDescriptor & subtract(class ActorDefinitionDescriptor const &);
     MCAPI ~ActorDefinitionDescriptor();

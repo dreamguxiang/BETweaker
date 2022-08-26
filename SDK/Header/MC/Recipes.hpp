@@ -15,8 +15,8 @@
 #include "RecipeIngredient.hpp"
 #include "SortItemInstanceIdAux.hpp"
 
-typedef function<std::unique_ptr<ShapedRecipe>(string, int, int, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShapedRecipeCallback_t;
-typedef function<std::unique_ptr<ShapelessRecipe>(string, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShaplessRecipeCallback_t;
+typedef std::function<std::unique_ptr<ShapedRecipe>(string, int, int, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShapedRecipeCallback_t;
+typedef std::function<std::unique_ptr<ShapelessRecipe>(string, vector<RecipeIngredient> const&, vector<ItemInstance> const&, HashedString)> AddShaplessRecipeCallback_t;
 
 #undef BEFORE_EXTRA
 

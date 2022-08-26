@@ -44,9 +44,9 @@ public:
     /*11*/ virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLELEMENT
 #endif
-    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *, std::vector<std::unique_ptr<class StructurePoolActorRule>> const *, enum Projection, enum PostProcessSettings);
-    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, struct StructurePoolElementSettings);
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, enum Projection, enum PostProcessSettings);
+    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, struct StructurePoolElementSettings);
+    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const &, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const *, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const *, std::vector<std::unique_ptr<class StructurePoolActorRule>> const *, enum Projection, enum PostProcessSettings);
 
 //private:
     MCAPI class StructurePoolElement::LazyTemplate const & _getTemplate() const;

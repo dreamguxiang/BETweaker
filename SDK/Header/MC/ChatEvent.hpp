@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHATEVENT
 #endif
-    MCAPI ChatEvent(struct ChatEvent &&);
     MCAPI ChatEvent(struct ChatEvent const &);
+    MCAPI ChatEvent(struct ChatEvent &&);
     MCAPI ~ChatEvent();
 
 };

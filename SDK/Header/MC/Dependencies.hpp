@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPENDENCIES
 #endif
-    MCAPI struct Dependencies & operator=(struct Dependencies &&);
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
+    MCAPI struct Dependencies & operator=(struct Dependencies &&);
     MCAPI ~Dependencies();
     MCAPI static void bindType();
 

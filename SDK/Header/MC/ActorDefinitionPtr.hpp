@@ -22,9 +22,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONPTR
 #endif
-    MCAPI ActorDefinitionPtr();
-    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
+    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
+    MCAPI ActorDefinitionPtr();
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     MCAPI ~ActorDefinitionPtr();
     MCAPI static class ActorDefinitionPtr const NONE;

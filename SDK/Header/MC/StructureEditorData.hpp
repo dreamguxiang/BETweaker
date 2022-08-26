@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREEDITORDATA
 #endif
-    MCAPI StructureEditorData(class StructureEditorData const &);
     MCAPI StructureEditorData();
+    MCAPI StructureEditorData(class StructureEditorData const &);
     MCAPI std::string getAnimationModeAsString() const;
     MCAPI float getAnimationSeconds() const;
     MCAPI bool getIgnoreBlocks() const;

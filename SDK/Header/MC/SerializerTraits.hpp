@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERTRAITS
 #endif
-    MCAPI SerializerTraits(struct SerializerTraits &&);
     MCAPI SerializerTraits(struct SerializerTraits const &);
+    MCAPI SerializerTraits(struct SerializerTraits &&);
     MCAPI struct SerializerTraits & name(std::string);
     MCAPI struct SerializerTraits & operator=(struct SerializerTraits &&);
     MCAPI struct SerializerTraits & validate(class std::function<bool (class entt::meta_any &, class SerializerContext &)>);

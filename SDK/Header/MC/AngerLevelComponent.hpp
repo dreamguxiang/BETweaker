@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELCOMPONENT
 #endif
-    MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     MCAPI AngerLevelComponent(class AngerLevelComponent const &);
+    MCAPI AngerLevelComponent(class AngerLevelComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool belowAngryThreshold(struct ActorUniqueID) const;
     MCAPI bool canBeNuisance(class Actor *, class Actor *) const;

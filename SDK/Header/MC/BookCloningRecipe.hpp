@@ -32,8 +32,8 @@ public:
     /*7*/ virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKCLONINGRECIPE
 #endif
-    MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
     MCAPI static class mce::UUID const ID;
 
 };

@@ -57,17 +57,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITRESULT
 #endif
-    MCAPI HitResult(class HitResult const &);
-    MCAPI HitResult(class HitResult &&);
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
     MCAPI HitResult();
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
+    MCAPI HitResult(class HitResult &&);
+    MCAPI HitResult(class HitResult const &);
     MCAPI float distanceTo(class Actor const &) const;
     MCAPI class Actor * getEntity() const;
-    MCAPI class HitResult & operator=(class HitResult &&);
     MCAPI class HitResult & operator=(class HitResult const &);
+    MCAPI class HitResult & operator=(class HitResult &&);
     MCAPI ~HitResult();
 
 };

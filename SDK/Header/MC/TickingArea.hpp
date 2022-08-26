@@ -52,12 +52,12 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREA
     MCVAPI class BlockSource & getBlockSource();
     MCVAPI class BlockSource const & getBlockSource() const;
-    MCVAPI class ITickingAreaView const & getView() const;
     MCVAPI class ITickingAreaView & getView();
+    MCVAPI class ITickingAreaView const & getView() const;
 #endif
-    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
-    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
+    MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
 
 //private:
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);

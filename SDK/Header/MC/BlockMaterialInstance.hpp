@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCE
 #endif
-    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
+    MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     MCAPI ~BlockMaterialInstance();
     MCAPI static class std::initializer_list<struct std::pair<std::string, enum BlockRenderLayer>> const blockRenderLayerEnumValues;
     MCAPI static class BidirectionalUnorderedMap<std::string, enum BlockRenderLayer> const renderLayerNameBiMap;

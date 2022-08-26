@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNVERIFIEDCERTIFICATE
 #endif
-    MCAPI UnverifiedCertificate(class UnverifiedCertificate &&);
     MCAPI UnverifiedCertificate(class UnverifiedCertificate const &);
+    MCAPI UnverifiedCertificate(class UnverifiedCertificate &&);
     MCAPI std::string getIdentityPublicKey() const;
     MCAPI std::string toString() const;
     MCAPI std::unique_ptr<class Certificate> verify(std::vector<std::string> const &) const;

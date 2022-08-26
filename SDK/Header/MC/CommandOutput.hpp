@@ -28,8 +28,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
 #endif
-    MCAPI CommandOutput(class CommandOutput const &);
     MCAPI CommandOutput(enum CommandOutputType);
+    MCAPI CommandOutput(class CommandOutput const &);
     MCAPI void addToResultList(std::string const &, std::string const &);
     MCAPI void addToResultList(std::string const &, class Actor const &);
     MCAPI bool empty() const;

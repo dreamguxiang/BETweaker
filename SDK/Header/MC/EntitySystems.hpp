@@ -27,8 +27,8 @@ public:
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     MCVAPI ~EntitySystems();
 #endif
-    MCAPI EntitySystems(std::string);
     MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
+    MCAPI EntitySystems(std::string);
     MCAPI class PlayerInteractionSystem & getPlayerInteractionSystem();
     MCAPI void registerEditorOnlyTickingSystem(struct TickingSystemWithInfo &&);
     MCAPI void registerEvents(class EntityRegistry &);

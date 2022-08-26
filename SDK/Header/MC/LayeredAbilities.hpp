@@ -16,8 +16,8 @@ class LayeredAbilities {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYEREDABILITIES
 #endif
-    MCAPI LayeredAbilities(class LayeredAbilities const &);
     MCAPI LayeredAbilities();
+    MCAPI LayeredAbilities(class LayeredAbilities const &);
     MCAPI void addSaveData(class CompoundTag &) const;
     MCAPI void forEachAbility(class std::function<void (class Ability const &, char const *)> const &, enum Ability::Options) const;
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum AbilitiesIndex)> const &, enum Ability::Options) const;

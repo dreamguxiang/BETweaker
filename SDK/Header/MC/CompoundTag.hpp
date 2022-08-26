@@ -105,8 +105,8 @@ public:
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
 #endif
-    MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
+    MCAPI CompoundTag(class CompoundTag &&);
     MCAPI void append(class CompoundTag const &);
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> begin() const;
     MCAPI void clear();
@@ -126,12 +126,12 @@ public:
     MCAPI float getFloat(class gsl::basic_string_span<char const, -1>) const;
     MCAPI int getInt(class gsl::basic_string_span<char const, -1>) const;
     MCAPI __int64 getInt64(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class Int64Tag const * getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag * getInt64Tag(class gsl::basic_string_span<char const, -1>);
+    MCAPI class Int64Tag const * getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class IntTag * getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const * getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag * getList(class gsl::basic_string_span<char const, -1>);
+    MCAPI class ListTag const * getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ShortTag const * getShortTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const & getString(class gsl::basic_string_span<char const, -1>) const;

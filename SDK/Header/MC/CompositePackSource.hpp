@@ -30,8 +30,8 @@ public:
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEPACKSOURCE
 #endif
-    MCAPI CompositePackSource(std::vector<class PackSource *> &&);
     MCAPI CompositePackSource();
+    MCAPI CompositePackSource(std::vector<class PackSource *> &&);
     MCAPI void addPackSource(class PackSource *);
     MCAPI void clear();
 

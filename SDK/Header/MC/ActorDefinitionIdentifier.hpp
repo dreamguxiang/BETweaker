@@ -19,17 +19,16 @@ std::string event;          // 64
 std::string fullname;       // 96
 HashedString canonicalHash; // 128
 
-#undef AFTER_EXTRA
-public:
+#undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIER
 #endif
-    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);
-    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const &);
-    MCAPI ActorDefinitionIdentifier(std::string const &);
-    MCAPI ActorDefinitionIdentifier(char const *);
-    MCAPI ActorDefinitionIdentifier(std::string, std::string, std::string);
-    MCAPI ActorDefinitionIdentifier(enum ActorType);
     MCAPI ActorDefinitionIdentifier();
+    MCAPI ActorDefinitionIdentifier(enum ActorType);
+    MCAPI ActorDefinitionIdentifier(std::string, std::string, std::string);
+    MCAPI ActorDefinitionIdentifier(char const *);
+    MCAPI ActorDefinitionIdentifier(std::string const &);
+    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const &);
+    MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier &&);
     MCAPI enum ActorType _getLegacyActorType() const;
     MCAPI void clear();
     MCAPI class HashedString const & getCanonicalHash() const;

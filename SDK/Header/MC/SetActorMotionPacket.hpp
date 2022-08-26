@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORMOTIONPACKET
 #endif
-    MCAPI SetActorMotionPacket(class Actor const &);
     MCAPI SetActorMotionPacket();
+    MCAPI SetActorMotionPacket(class Actor const &);
 
 };

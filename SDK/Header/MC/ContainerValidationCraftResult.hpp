@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONCRAFTRESULT
 #endif
-    MCAPI ContainerValidationCraftResult();
     MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
+    MCAPI ContainerValidationCraftResult();
     MCAPI ~ContainerValidationCraftResult();
 
 };

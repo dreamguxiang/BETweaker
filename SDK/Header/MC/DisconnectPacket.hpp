@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCONNECTPACKET
 #endif
-    MCAPI DisconnectPacket(std::string const &, bool);
     MCAPI DisconnectPacket();
+    MCAPI DisconnectPacket(std::string const &, bool);
 
 };

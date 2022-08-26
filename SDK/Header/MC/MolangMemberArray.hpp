@@ -23,18 +23,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERARRAY
 #endif
-    MCAPI MolangMemberArray(enum MolangStruct_BaseAndPattern, int, int);
-    MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
-    MCAPI MolangMemberArray(enum MolangStruct_PoseIndexAndHurtTime, int, int);
-    MCAPI MolangMemberArray(enum MolangStruct_RGB, class mce::Color const &);
-    MCAPI MolangMemberArray(enum MolangStruct_RGBA, class mce::Color const &);
-    MCAPI MolangMemberArray(enum MolangStruct_RotYAndPosY, float, float);
-    MCAPI MolangMemberArray(enum MolangStruct_SpeedAndDirection, float, class Vec3 const &);
-    MCAPI MolangMemberArray(enum MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
-    MCAPI MolangMemberArray(enum MolangStruct_TentacleAngleAndSwimRotation, float, float);
-    MCAPI MolangMemberArray(enum MolangStruct_UV, float, float);
-    MCAPI MolangMemberArray(enum MolangStruct_XY, class Vec2 const &);
     MCAPI MolangMemberArray(enum MolangStruct_XYZ, class Vec3 const &);
+    MCAPI MolangMemberArray(enum MolangStruct_XY, class Vec2 const &);
+    MCAPI MolangMemberArray(enum MolangStruct_UV, float, float);
+    MCAPI MolangMemberArray(enum MolangStruct_TentacleAngleAndSwimRotation, float, float);
+    MCAPI MolangMemberArray(enum MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
+    MCAPI MolangMemberArray(enum MolangStruct_SpeedAndDirection, float, class Vec3 const &);
+    MCAPI MolangMemberArray(enum MolangStruct_RotYAndPosY, float, float);
+    MCAPI MolangMemberArray(enum MolangStruct_RGBA, class mce::Color const &);
+    MCAPI MolangMemberArray(enum MolangStruct_RGB, class mce::Color const &);
+    MCAPI MolangMemberArray(enum MolangStruct_PoseIndexAndHurtTime, int, int);
+    MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
+    MCAPI MolangMemberArray(enum MolangStruct_BaseAndPattern, int, int);
     MCAPI void add(class HashedString const &, struct MolangScriptArg const &);
     MCAPI struct MolangScriptArg const * get(class HashedString const &) const;
     MCAPI std::vector<struct MolangMemberVariable> const * getMembers() const;

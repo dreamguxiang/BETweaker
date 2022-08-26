@@ -34,8 +34,8 @@ public:
     MCVAPI __int64 nextLong();
     MCVAPI ~Random();
 #endif
-    MCAPI Random(unsigned int, bool);
     MCAPI Random();
+    MCAPI Random(unsigned int, bool);
     MCAPI float nextGaussianFloat();
     MCAPI int nextGaussianInt(int);
     MCAPI int nextInt(int, int);

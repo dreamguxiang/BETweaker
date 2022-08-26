@@ -32,8 +32,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUEPACKET
 #endif
-    MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI NpcDialoguePacket();
+    MCAPI NpcDialoguePacket(struct ActorUniqueID);
     MCAPI static bool initializePacket(class NpcDialoguePacket &, class NpcDialogueStorage const *, std::string const &);
 
 };

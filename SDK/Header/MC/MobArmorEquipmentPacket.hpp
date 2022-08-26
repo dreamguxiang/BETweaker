@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBARMOREQUIPMENTPACKET
 #endif
-    MCAPI MobArmorEquipmentPacket(class Actor const &);
     MCAPI MobArmorEquipmentPacket();
+    MCAPI MobArmorEquipmentPacket(class Actor const &);
 
 };

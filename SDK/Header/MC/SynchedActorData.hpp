@@ -160,8 +160,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
 #endif
-    MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI SynchedActorData();
+    MCAPI SynchedActorData(class SynchedActorData &&);
     MCAPI bool _assignValues(class SynchedActorData const &, class Actor *);
     MCAPI class SynchedActorData _clone() const;
     MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const &, class Actor *);

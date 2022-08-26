@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTURESETTINGS
 #endif
-    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
     MCAPI LegacyStructureSettings();
+    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
     MCAPI void addSwapAuxValue(int, int);
     MCAPI class BoundingBox const & getBoundingBox();
     MCAPI class Block const * getIgnoreBlock() const;

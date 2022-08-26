@@ -18,15 +18,15 @@ class ExpressionNode {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
 #endif
-    MCAPI ExpressionNode(class ExpressionNode &&);
-    MCAPI ExpressionNode(struct MolangScriptArg &, enum ExpressionOp);
-    MCAPI ExpressionNode(class ExpressionNode const &);
-    MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
-    MCAPI ExpressionNode(std::string const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
-    MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
-    MCAPI ExpressionNode(class Json::Value const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
-    MCAPI ExpressionNode(float);
     MCAPI ExpressionNode();
+    MCAPI ExpressionNode(float);
+    MCAPI ExpressionNode(class Json::Value const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(std::string const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(class ExpressionNode const &);
+    MCAPI ExpressionNode(struct MolangScriptArg &, enum ExpressionOp);
+    MCAPI ExpressionNode(class ExpressionNode &&);
     MCAPI void clear();
     MCAPI float evalAsFloat(class RenderParams &) const;
     MCAPI struct MolangScriptArg const & evalGeneric(class RenderParams &) const;
@@ -40,8 +40,8 @@ public:
     MCAPI bool isValid() const;
     MCAPI enum MolangCompileResult link() const;
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
-    MCAPI class ExpressionNode & operator=(class ExpressionNode const &);
     MCAPI class ExpressionNode & operator=(float);
+    MCAPI class ExpressionNode & operator=(class ExpressionNode const &);
     MCAPI bool operator==(class ExpressionNode const &) const;
     MCAPI bool parse(std::string const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);
     MCAPI ~ExpressionNode();

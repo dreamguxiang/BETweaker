@@ -47,8 +47,8 @@ public:
     MCAPI class buffer_span<unsigned int> getPixels() const;
     MCAPI class std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor &);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class BlockPos const &, class BlockSource &);
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level &, class BlockPos const &) const;
     MCAPI std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
+    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level &, class BlockPos const &) const;
     MCAPI bool hasParentMap() const;
     MCAPI bool isAdjacent(class MapItemSavedData const &, int) const;
     MCAPI bool isChunkAllEmpty(struct MapItemSavedData::ChunkBounds) const;

@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOASTREQUESTPACKET
 #endif
-    MCAPI ToastRequestPacket(std::string const &, std::string const &);
     MCAPI ToastRequestPacket();
+    MCAPI ToastRequestPacket(std::string const &, std::string const &);
 
 };

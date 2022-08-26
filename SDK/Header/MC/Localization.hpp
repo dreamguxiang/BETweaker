@@ -25,8 +25,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALIZATION
 #endif
-    MCAPI Localization(std::string const &);
     MCAPI Localization(std::string const &, class Localization *);
+    MCAPI Localization(std::string const &);
     MCAPI void appendTranslations(class Localization const &);
     MCAPI void appendTranslations(std::string const &, std::vector<std::string> const &, std::vector<std::string> const &, std::string const &);
     MCAPI bool get(std::string const &, std::string &, std::vector<std::string> const &) const;

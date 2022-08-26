@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDINTEGERRANGE
 #endif
-    MCAPI CommandIntegerRange(int, int, bool);
     MCAPI CommandIntegerRange();
+    MCAPI CommandIntegerRange(int, int, bool);
     MCAPI bool isWithinRange(int) const;
 
 };

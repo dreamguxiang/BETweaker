@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSCOMPONENT
 #endif
-    MCAPI BossComponent(class BossComponent &&);
     MCAPI BossComponent();
+    MCAPI BossComponent(class BossComponent &&);
     MCAPI void addPlayerToParty(class mce::UUID, int);
     MCAPI void broadcastBossEvent(class Actor &, enum BossEventUpdateType);
     MCAPI enum BossBarColor getColor() const;

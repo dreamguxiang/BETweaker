@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORCOMPONENT
 #endif
-    MCAPI BehaviorComponent(class BehaviorComponent &&);
     MCAPI BehaviorComponent();
+    MCAPI BehaviorComponent(class BehaviorComponent &&);
     MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     MCAPI ~BehaviorComponent();
 

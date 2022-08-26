@@ -21,9 +21,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTION
 #endif
-    MCAPI Interaction(struct Interaction &&);
-    MCAPI Interaction(struct Interaction const &);
     MCAPI Interaction();
+    MCAPI Interaction(struct Interaction const &);
+    MCAPI Interaction(struct Interaction &&);
     MCAPI void addActorDefinitionIdentifierByName(std::string const &);
     MCAPI void addLevelSoundEventByName(std::string const &);
     MCAPI void addVibrationByName(std::string const &);

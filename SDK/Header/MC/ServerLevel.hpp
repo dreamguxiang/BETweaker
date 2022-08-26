@@ -54,8 +54,8 @@ public:
     MCAPI class MinecraftCommands & getCommands();
     MCAPI class DynamicPropertiesDefinition & getDynamicPropertiesDefinition();
     MCAPI class FunctionManager & getFunctionManager();
-    MCAPI class MobEvents const & getMobEvents() const;
     MCAPI class MobEvents & getMobEvents();
+    MCAPI class MobEvents const & getMobEvents() const;
     MCAPI class DynamicProperties & getOrAddDynamicProperties();
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;

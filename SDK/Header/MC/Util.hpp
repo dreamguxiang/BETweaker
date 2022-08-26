@@ -98,9 +98,9 @@ public:
     MCAPI std::string toCamelCase(std::string const &, char);
     MCAPI std::string toHex(std::string const &);
     MCAPI enum Util::NumberConversionResult toIntWithMinMax(class gsl::basic_string_span<char const, -1>, int &, int, int);
+    MCAPI std::string toLower(char const *);
     MCAPI std::string toLower(std::string const &);
     MCAPI std::string toLower(class gsl::basic_string_span<char const, -1> const &);
-    MCAPI std::string toLower(char const *);
     MCAPI void toLowerInPlace(std::string &);
     MCAPI std::string toString(float, int);
     MCAPI char const * toString(enum BoneTransformType);

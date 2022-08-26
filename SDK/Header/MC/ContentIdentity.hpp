@@ -19,10 +19,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTIDENTITY
 #endif
-    MCAPI ContentIdentity();
+    MCAPI ContentIdentity(class mce::UUID const &);
     MCAPI ContentIdentity(class ContentIdentity &&);
     MCAPI ContentIdentity(class ContentIdentity const &);
-    MCAPI ContentIdentity(class mce::UUID const &);
+    MCAPI ContentIdentity();
     MCAPI std::string asString() const;
     MCAPI class mce::UUID const & getAsUUID() const;
     MCAPI bool isValid() const;

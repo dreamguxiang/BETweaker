@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDIDENTITYREF
 #endif
-    MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
     MCAPI ScoreboardIdentityRef();
+    MCAPI ScoreboardIdentityRef(struct ScoreboardId const &);
     MCAPI struct ActorUniqueID const & getEntityId() const;
     MCAPI std::string const & getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;

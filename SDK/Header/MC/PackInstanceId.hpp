@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCEID
 #endif
-    MCAPI PackInstanceId(struct PackInstanceId &&);
     MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
+    MCAPI PackInstanceId(struct PackInstanceId &&);
     MCAPI ~PackInstanceId();
 
 };

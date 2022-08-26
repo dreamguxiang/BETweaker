@@ -28,7 +28,7 @@ public:
     /*2*/ virtual void deserialize(class Json::Value &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTENTRY
 #endif
-    MCAPI AllowListEntry(class Json::Value &);
     MCAPI AllowListEntry(std::string);
+    MCAPI AllowListEntry(class Json::Value &);
 
 };

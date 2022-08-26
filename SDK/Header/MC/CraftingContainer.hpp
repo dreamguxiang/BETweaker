@@ -21,9 +21,9 @@ public:
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
 public:
-    class CraftingContainer& operator=(class CraftingContainer const &) = default;
-    CraftingContainer(class CraftingContainer const &) = default;
-    CraftingContainer() = default;
+    class CraftingContainer& operator=(class CraftingContainer const &) = delete;
+    CraftingContainer(class CraftingContainer const &) = delete;
+    CraftingContainer() = delete;
 #endif
 
 public:

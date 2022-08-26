@@ -33,7 +33,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORDATAPACKET
 #endif
-    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
     MCAPI SetActorDataPacket();
+    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
 
 };

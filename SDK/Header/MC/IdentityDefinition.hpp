@@ -30,11 +30,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTITYDEFINITION
 #endif
-    MCAPI IdentityDefinition(class IdentityDefinition &&);
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
-    MCAPI IdentityDefinition(struct ScoreboardId const &, std::string const &);
     MCAPI IdentityDefinition(class IdentityDefinition const &);
+    MCAPI IdentityDefinition(struct ScoreboardId const &, std::string const &);
+    MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
+    MCAPI IdentityDefinition(class IdentityDefinition &&);
     MCAPI struct ActorUniqueID const & getEntityId() const;
     MCAPI std::string const & getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
@@ -47,8 +47,8 @@ public:
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;
     MCAPI operator bool() const;
-    MCAPI class IdentityDefinition & operator=(class IdentityDefinition &&);
     MCAPI class IdentityDefinition & operator=(class IdentityDefinition const &);
+    MCAPI class IdentityDefinition & operator=(class IdentityDefinition &&);
     MCAPI ~IdentityDefinition();
     MCAPI static class IdentityDefinition const Invalid;
     MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);

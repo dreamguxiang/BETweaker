@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALATTRIBUTES
 #endif
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const &);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
     MCAPI struct SurfaceMaterialAttributes & operator=(struct SurfaceMaterialAttributes &&);
     MCAPI ~SurfaceMaterialAttributes();
 

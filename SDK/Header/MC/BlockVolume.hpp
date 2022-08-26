@@ -40,9 +40,9 @@ public:
     MCAPI unsigned int getIndexBounds() const;
     MCAPI unsigned int index(class BlockPos const &) const;
     MCAPI unsigned int index(class Pos const &) const;
-    MCAPI unsigned int indexNoBoundsCheck(class BlockPos const &) const;
     MCAPI unsigned int indexNoBoundsCheck(class Pos const &) const;
-    MCAPI bool isInBounds(class Pos const &) const;
+    MCAPI unsigned int indexNoBoundsCheck(class BlockPos const &) const;
     MCAPI bool isInBounds(class BlockPos const &) const;
+    MCAPI bool isInBounds(class Pos const &) const;
 
 };

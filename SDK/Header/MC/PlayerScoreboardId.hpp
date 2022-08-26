@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDID
 #endif
-    MCAPI PlayerScoreboardId(__int64);
     MCAPI PlayerScoreboardId();
+    MCAPI PlayerScoreboardId(__int64);
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
     MCAPI static struct PlayerScoreboardId const INVALID;

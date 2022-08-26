@@ -22,9 +22,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENT
 #endif
-    MCAPI RideableComponent(class RideableComponent &&);
-    MCAPI RideableComponent(class RideableComponent const &);
     MCAPI RideableComponent();
+    MCAPI RideableComponent(class RideableComponent const &);
+    MCAPI RideableComponent(class RideableComponent &&);
     MCAPI bool areSeatsFull(class Actor const &) const;
     MCAPI bool canAddPassenger(class Actor const &, class Actor &) const;
     MCAPI bool getFirstAvailableSeatPosition(class Actor const &, class Actor &, class Vec3 &) const;

@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKCOMPONENT
 #endif
-    MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
+    MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     MCAPI struct PlayerTickComponent & operator=(struct PlayerTickComponent &&);
     MCAPI ~PlayerTickComponent();
 

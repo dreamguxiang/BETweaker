@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTBOUNDDEBUGRENDERERPACKET
 #endif
-    MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
-    MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
     MCAPI ClientboundDebugRendererPacket();
+    MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
+    MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
 
 };

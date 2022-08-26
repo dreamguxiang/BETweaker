@@ -17,8 +17,8 @@ class JumpControlComponent {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLCOMPONENT
 #endif
-    MCAPI JumpControlComponent(class JumpControlComponent const &);
     MCAPI JumpControlComponent();
+    MCAPI JumpControlComponent(class JumpControlComponent const &);
     MCAPI int getAnimationDuration() const;
     MCAPI float getDistanceScale() const;
     MCAPI int getJumpDelay() const;

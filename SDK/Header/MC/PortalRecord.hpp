@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PORTALRECORD
 #endif
-    MCAPI PortalRecord(class BlockPos const &);
     MCAPI PortalRecord(class BlockPos const &, int, int, int);
+    MCAPI PortalRecord(class BlockPos const &);
     MCAPI class BlockPos closestBlockPosTo(class Actor const &) const;
     MCAPI unsigned __int64 hashCode() const;
     MCAPI bool operator==(class PortalRecord const &) const;

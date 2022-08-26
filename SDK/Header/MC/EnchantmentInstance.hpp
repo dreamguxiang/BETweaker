@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTMENTINSTANCE
 #endif
-    MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI EnchantmentInstance();
+    MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI int getEnchantLevel() const;
     MCAPI enum Enchant::Type getEnchantType() const;
     MCAPI bool operator==(class EnchantmentInstance const &) const;

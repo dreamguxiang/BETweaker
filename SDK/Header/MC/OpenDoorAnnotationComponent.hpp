@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONCOMPONENT
 #endif
-    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     MCAPI OpenDoorAnnotationComponent();
+    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     MCAPI void checkPath(class Mob &);
     MCAPI void initFromDefinition(class Actor &);
     MCAPI void onComponentRemoved(class EntityContext &);

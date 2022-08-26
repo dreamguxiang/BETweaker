@@ -44,8 +44,8 @@ public:
     /*33*/ virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
 #endif
-    MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
+    MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 //protected:

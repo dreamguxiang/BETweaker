@@ -34,8 +34,8 @@ public:
 #endif
     MCAPI BiomeRegistry();
     MCAPI void forEachBiome(class std::function<void (class Biome &)>) const;
-    MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const & getTagRegistry() const;
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> & getTagRegistry();
+    MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const & getTagRegistry() const;
     MCAPI void initServerFromPacks(class ResourcePackManager &, class IWorldRegistriesProvider &);
     MCAPI bool isRegistrationFinished() const;
     MCAPI class Biome * lookupById(int) const;

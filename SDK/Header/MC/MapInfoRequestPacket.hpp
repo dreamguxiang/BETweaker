@@ -29,9 +29,9 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPINFOREQUESTPACKET
 #endif
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID);
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
     MCAPI MapInfoRequestPacket();
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     MCAPI struct ActorUniqueID getMapId() const;
     MCAPI bool replaceServerPixels(class MapItemSavedData &) const;
 

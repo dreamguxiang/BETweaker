@@ -28,9 +28,9 @@ public:
     /*3*/ virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int, struct GetBiomeOptions const &) const;
     /*4*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
-    MCVAPI class Biome const * getBiome(int, int, int) const;
-    MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
+    MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
+    MCVAPI class Biome const * getBiome(int, int, int) const;
 #endif
     MCAPI FixedBiomeSource(class Biome const &);
 

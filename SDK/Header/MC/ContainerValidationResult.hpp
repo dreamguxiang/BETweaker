@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONRESULT
 #endif
-    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
     MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
+    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
     MCAPI bool isSuccess() const;
     MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;
     MCAPI ~ContainerValidationResult();

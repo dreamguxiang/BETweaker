@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERSTRINGMAP
 #endif
-    MCAPI FilterStringMap(struct FilterStringMap const &);
     MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
+    MCAPI FilterStringMap(struct FilterStringMap const &);
     MCAPI struct FilterStringMap & operator=(struct FilterStringMap &&);
     MCAPI ~FilterStringMap();
 

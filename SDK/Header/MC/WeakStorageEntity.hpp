@@ -27,10 +27,10 @@ public:
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
 //protected:
+    MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
+    MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
     MCAPI WeakStorageEntity(class StackResultStorageEntity const &);
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
-    MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
-    MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
     MCAPI bool _isSet() const;
     MCAPI void _reset();
 

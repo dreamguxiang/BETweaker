@@ -29,9 +29,9 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
 #endif
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
     MCAPI AnimatePacket();
+    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
+    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
+    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
 
 };

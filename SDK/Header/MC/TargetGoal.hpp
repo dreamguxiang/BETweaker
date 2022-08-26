@@ -35,8 +35,8 @@ public:
     /*10*/ virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOAL
 #endif
-    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
+    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
 
 //protected:
     MCAPI bool _canAttack(class Actor *, bool, struct MobDescriptor const **);

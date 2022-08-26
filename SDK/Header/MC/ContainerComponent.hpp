@@ -24,8 +24,8 @@ public:
     /*0*/ virtual void containerContentChanged(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
 #endif
-    MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI ContainerComponent();
+    MCAPI ContainerComponent(class ContainerComponent &&);
     MCAPI class FillingContainer * _getRawContainerPtr();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool addItem(class BlockSource &, class ItemStack &, int, int);

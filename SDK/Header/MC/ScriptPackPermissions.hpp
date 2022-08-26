@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKPERMISSIONS
 #endif
-    MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     MCAPI ScriptPackPermissions();
+    MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     MCAPI bool isModuleAllowed(std::string const &) const;
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 

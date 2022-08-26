@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSCREENTEXTUREANIMATIONPACKET
 #endif
-    MCAPI OnScreenTextureAnimationPacket(unsigned int);
     MCAPI OnScreenTextureAnimationPacket();
+    MCAPI OnScreenTextureAnimationPacket(unsigned int);
 
 };

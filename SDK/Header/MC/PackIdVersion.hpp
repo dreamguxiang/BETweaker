@@ -23,9 +23,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKIDVERSION
 #endif
-    MCAPI PackIdVersion(struct PackIdVersion const &);
-    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
     MCAPI PackIdVersion();
+    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
+    MCAPI PackIdVersion(struct PackIdVersion const &);
     MCAPI std::string asString() const;
     MCAPI bool operator!=(struct PackIdVersion const &) const;
     MCAPI bool operator<(struct PackIdVersion const &) const;

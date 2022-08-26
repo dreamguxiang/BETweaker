@@ -30,9 +30,9 @@ public:
     /*22*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKVIEWSOURCE
 #endif
-    MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
-    MCAPI ChunkViewSource(class ChunkSource &, enum ChunkSource::LoadMode);
     MCAPI ChunkViewSource(class ChunkViewSource const &);
+    MCAPI ChunkViewSource(class ChunkSource &, enum ChunkSource::LoadMode);
+    MCAPI ChunkViewSource(class ChunkSource &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, struct Bounds const &);
     MCAPI void clear();
     MCAPI void clearEntryAtChunkPos(class ChunkPos const &);
     MCAPI std::vector<class LevelChunkBlockActorAccessToken> enableBlockEntityAccess();

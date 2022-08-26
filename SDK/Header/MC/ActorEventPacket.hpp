@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTPACKET
 #endif
-    MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
     MCAPI ActorEventPacket();
+    MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
 
 };

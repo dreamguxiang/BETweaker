@@ -59,8 +59,8 @@ public:
     MCAPI static bool hasCurse(class ItemStackBase const &);
     MCAPI static bool hasEnchant(enum Enchant::Type, class ItemStackBase const &);
     MCAPI static bool isCurse(enum Enchant::Type);
-    MCAPI static void randomlyEnchant(class ItemInstance &, int, int, bool);
     MCAPI static void randomlyEnchant(class ItemStack &, int, int, bool);
+    MCAPI static void randomlyEnchant(class ItemInstance &, int, int, bool);
     MCAPI static void removeEnchants(class ItemStack &);
     MCAPI static class ItemEnchants selectEnchantments(class Item const *, int, int, bool);
 

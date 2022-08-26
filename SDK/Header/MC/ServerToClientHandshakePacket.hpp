@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERTOCLIENTHANDSHAKEPACKET
 #endif
-    MCAPI ServerToClientHandshakePacket(std::string const &);
     MCAPI ServerToClientHandshakePacket();
+    MCAPI ServerToClientHandshakePacket(std::string const &);
 
 };

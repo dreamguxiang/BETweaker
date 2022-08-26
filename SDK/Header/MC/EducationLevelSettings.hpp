@@ -16,8 +16,8 @@ struct EducationLevelSettings {
 #undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONLEVELSETTINGS
 #endif
-    MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     MCAPI EducationLevelSettings();
+    MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     MCAPI class std::function<void (struct CommandFlag &, std::string const &)> getCommandOverrideFunctor() const;
     MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
     MCAPI void save(class LevelLooseFileStorage const &);

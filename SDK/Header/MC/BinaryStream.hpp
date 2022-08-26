@@ -57,8 +57,8 @@ public:
     /*0*/ virtual ~BinaryStream();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
 #endif
-    MCAPI BinaryStream(std::string &, bool);
     MCAPI BinaryStream();
+    MCAPI BinaryStream(std::string &, bool);
     MCAPI std::string getAndReleaseData();
     MCAPI void reset();
     MCAPI void writeBool(bool);

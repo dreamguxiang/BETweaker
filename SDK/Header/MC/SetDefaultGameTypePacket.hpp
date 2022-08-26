@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDEFAULTGAMETYPEPACKET
 #endif
-    MCAPI SetDefaultGameTypePacket(enum GameType);
     MCAPI SetDefaultGameTypePacket();
+    MCAPI SetDefaultGameTypePacket(enum GameType);
 
 };

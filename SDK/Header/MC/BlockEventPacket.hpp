@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTPACKET
 #endif
-    MCAPI BlockEventPacket(class BlockPos, int, int);
     MCAPI BlockEventPacket();
+    MCAPI BlockEventPacket(class BlockPos, int, int);
 
 };

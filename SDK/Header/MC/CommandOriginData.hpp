@@ -16,8 +16,8 @@ struct CommandOriginData {
 #undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINDATA
 #endif
-    MCAPI CommandOriginData(struct CommandOriginData const &);
     MCAPI CommandOriginData();
+    MCAPI CommandOriginData(struct CommandOriginData const &);
     MCAPI struct CommandOriginData & operator=(struct CommandOriginData const &);
     MCAPI ~CommandOriginData();
 

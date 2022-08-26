@@ -24,9 +24,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNK
 #endif
-    MCAPI SubChunk(struct SubChunk &&);
-    MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
     MCAPI SubChunk();
+    MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
+    MCAPI SubChunk(struct SubChunk &&);
     MCAPI void deserialize(class IDataInput &, class BlockPalette const &, class SubChunkPos const &, class std::optional<struct DeserializationChanges *>);
     MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, short, class BlockVolume &) const;
     MCAPI void fetchBlocksInBox(class BlockPos const &, class BoundingBox const &, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;

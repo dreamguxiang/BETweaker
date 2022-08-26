@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOUNDS
 #endif
-    MCAPI Bounds(class BlockPos const &, int, int, short, short);
-    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
+    MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
+    MCAPI Bounds(class BlockPos const &, int, int, short, short);
 
 };

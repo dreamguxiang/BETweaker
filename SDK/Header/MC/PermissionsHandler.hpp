@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
 #endif
-    MCAPI PermissionsHandler(class PermissionsHandler const &);
     MCAPI PermissionsHandler();
+    MCAPI PermissionsHandler(class PermissionsHandler const &);
     MCAPI void addSaveData(class CompoundTag &) const;
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;

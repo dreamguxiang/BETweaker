@@ -32,7 +32,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMREQUESTPACKET
 #endif
-    MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
     MCAPI ModalFormRequestPacket();
+    MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
 
 };

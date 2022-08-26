@@ -22,8 +22,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRESULT
 #endif
     MCAPI GameTestResult(struct GameTestResult const &);
-    MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
     MCAPI struct GameTestResult & operator=(struct GameTestResult const &);
+    MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
     MCAPI bool operator==(struct GameTestResult const &) const;
     MCAPI ~GameTestResult();
     MCAPI static void bindType();

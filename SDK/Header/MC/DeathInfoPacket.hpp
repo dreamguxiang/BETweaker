@@ -27,7 +27,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEATHINFOPACKET
 #endif
-    MCAPI DeathInfoPacket(struct std::pair<std::string, std::vector<std::string>> const &);
     MCAPI DeathInfoPacket();
+    MCAPI DeathInfoPacket(struct std::pair<std::string, std::vector<std::string>> const &);
 
 };

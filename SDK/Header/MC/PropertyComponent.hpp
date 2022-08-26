@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCOMPONENT
 #endif
-    MCAPI PropertyComponent(class PropertyComponent &&);
     MCAPI PropertyComponent(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
+    MCAPI PropertyComponent(class PropertyComponent &&);
     MCAPI void _setBoolValue(unsigned __int64, bool);
     MCAPI void _setEnumIndexValue(unsigned __int64, unsigned __int64);
     MCAPI void _setFloatValue(unsigned __int64, float);

@@ -67,8 +67,8 @@ public:
     MCVAPI void sendAdventureSettingsPacket();
     MCVAPI void sendClientAuthInput();
     MCVAPI void sendInput();
-    MCVAPI void sendPacket(class PassengerJumpPacket &);
     MCVAPI void sendPacket(class PlayerActionPacket &);
+    MCVAPI void sendPacket(class PassengerJumpPacket &);
     MCVAPI void sendPlayerInput();
     MCVAPI void sendPlayerMove();
     MCVAPI void sendPosition();

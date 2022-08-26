@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEHEADER
 #endif
-    MCAPI RakWebSocketDataFrameHeader();
     MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum OpCode, unsigned char);
+    MCAPI RakWebSocketDataFrameHeader();
     MCAPI int getFinBit() const;
     MCAPI int getMaskBit() const;
     MCAPI enum OpCode getOpCode() const;

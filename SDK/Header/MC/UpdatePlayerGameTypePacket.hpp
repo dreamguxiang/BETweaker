@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEPLAYERGAMETYPEPACKET
 #endif
-    MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
     MCAPI UpdatePlayerGameTypePacket();
+    MCAPI UpdatePlayerGameTypePacket(enum GameType, struct ActorUniqueID const &);
 
 };

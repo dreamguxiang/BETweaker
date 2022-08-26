@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREUVCOORDINATESET
 #endif
-    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     MCAPI TextureUVCoordinateSet();
+    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     MCAPI ~TextureUVCoordinateSet();
 
 };

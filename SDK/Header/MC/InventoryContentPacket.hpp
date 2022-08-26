@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTENTPACKET
 #endif
-    MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI InventoryContentPacket();
+    MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
 
 };

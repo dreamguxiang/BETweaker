@@ -27,7 +27,7 @@ public:
     /*2*/ virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
 #endif
-    MCAPI AddEntityPacket(class EntityContext const &);
     MCAPI AddEntityPacket();
+    MCAPI AddEntityPacket(class EntityContext const &);
 
 };

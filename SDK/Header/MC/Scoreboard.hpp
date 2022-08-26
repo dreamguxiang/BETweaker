@@ -85,9 +85,9 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
+    MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(std::string const &);
     MCVAPI struct ScoreboardId const & createScoreboardId(class Player const &);
-    MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
     MCVAPI void onPlayerIdentityUpdated(struct PlayerScoreboardId const &);
     MCVAPI void onPlayerJoined(class Player const &);
     MCVAPI void onPlayerScoreRemoved(struct ScoreboardId const &, class Objective const &);

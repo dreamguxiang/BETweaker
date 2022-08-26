@@ -33,8 +33,8 @@ public:
     /*17*/ virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCONTAINERMANAGERMODEL
 #endif
-    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
     MCAPI class BlockPos const & getBlockPos() const;
     MCAPI struct ActorUniqueID getEntityUniqueID() const;
 

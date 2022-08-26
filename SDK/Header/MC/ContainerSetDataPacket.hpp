@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSETDATAPACKET
 #endif
-    MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
     MCAPI ContainerSetDataPacket();
+    MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
 
 };

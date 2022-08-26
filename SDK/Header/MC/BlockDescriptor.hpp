@@ -22,17 +22,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTOR
 #endif
-    MCAPI BlockDescriptor(class BlockDescriptor &&);
-    MCAPI BlockDescriptor(class BlockDescriptor const &);
-    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::BlockState> const &&);
-    MCAPI BlockDescriptor(class HashedString const &);
     MCAPI BlockDescriptor();
+    MCAPI BlockDescriptor(class HashedString const &);
+    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::BlockState> const &&);
+    MCAPI BlockDescriptor(class BlockDescriptor const &);
+    MCAPI BlockDescriptor(class BlockDescriptor &&);
     MCAPI class Block const * getBlock() const;
     MCAPI std::string const & getTagExpression() const;
     MCAPI bool isValid() const;
     MCAPI bool matches(class Block const &) const;
-    MCAPI void operator=(class BlockDescriptor &&);
     MCAPI void operator=(class BlockDescriptor const &);
+    MCAPI void operator=(class BlockDescriptor &&);
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     MCAPI ~BlockDescriptor();
     MCAPI static char const JSON_NAME_FIELD[];

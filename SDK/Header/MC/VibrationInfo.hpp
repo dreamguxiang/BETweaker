@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONINFO
 #endif
-    MCAPI VibrationInfo(class CompoundTag const &, class DataLoadHelper &);
     MCAPI VibrationInfo(class GameEvent const &, struct GameEventContext const &, float);
+    MCAPI VibrationInfo(class CompoundTag const &, class DataLoadHelper &);
     MCAPI class Actor * getProjectileOwner(class Level &) const;
     MCAPI class Actor * getSource(class Level &) const;
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);

@@ -2,8 +2,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,10 +25,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCE
 #endif
-    MCAPI PackInstance(class PackInstance &&);
-    MCAPI PackInstance(class PackInstance const &);
-    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
+    MCAPI PackInstance(class PackInstance const &);
+    MCAPI PackInstance(class PackInstance &&);
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     MCAPI double getLoadTime() const;
     MCAPI class PackManifest & getManifest();

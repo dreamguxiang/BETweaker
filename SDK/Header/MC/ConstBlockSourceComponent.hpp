@@ -19,8 +19,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSTBLOCKSOURCECOMPONENT
 #endif
-    MCAPI ConstBlockSourceComponent(struct ConstBlockSourceComponent const &);
     MCAPI ConstBlockSourceComponent(class gsl::not_null<class IConstBlockSource const *>);
+    MCAPI ConstBlockSourceComponent(struct ConstBlockSourceComponent const &);
     MCAPI class IConstBlockSource const & getBlockSource() const;
     MCAPI struct ConstBlockSourceComponent & operator=(struct ConstBlockSourceComponent const &);
 

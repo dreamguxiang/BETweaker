@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDIFFICULTYPACKET
 #endif
-    MCAPI SetDifficultyPacket(enum Difficulty);
     MCAPI SetDifficultyPacket();
+    MCAPI SetDifficultyPacket(enum Difficulty);
     MCAPI enum Difficulty getDifficulty() const;
 
 };

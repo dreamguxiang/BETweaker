@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENT
 #endif
-    MCAPI MobEvent(class MobEvent const &);
     MCAPI MobEvent(std::string, std::string, bool);
+    MCAPI MobEvent(class MobEvent const &);
     MCAPI std::string const & getLocalizableName() const;
     MCAPI std::string const & getName() const;
     MCAPI bool isEnabled() const;

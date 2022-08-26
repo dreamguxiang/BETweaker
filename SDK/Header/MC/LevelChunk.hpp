@@ -116,8 +116,8 @@ public:
     MCAPI struct Brightness getRawBrightness(class ChunkBlockPos const &, struct Brightness) const;
     MCAPI std::vector<struct LevelChunk::HardcodedSpawningArea> const & getSpawningAreas() const;
     MCAPI struct std::atomic<enum ChunkState> const & getState() const;
-    MCAPI struct SubChunk * getSubChunk(short);
     MCAPI struct SubChunk const * getSubChunk(short) const;
+    MCAPI struct SubChunk * getSubChunk(short);
     MCAPI class Biome const & getSurfaceBiome(class ChunkBlockPos) const;
     MCAPI class BlockTickingQueue & getTickQueue();
     MCAPI class BlockTickingQueue const & getTickQueue() const;

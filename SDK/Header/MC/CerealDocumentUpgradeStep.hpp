@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALDOCUMENTUPGRADESTEP
 #endif
-    MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const &);
     MCAPI CerealDocumentUpgradeStep(class SemVersion const &, struct reflection::Schema const &);
+    MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const &);
     MCAPI void addUpgrade(class std::shared_ptr<class CerealSchemaUpgrade>);
     MCAPI bool apply(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &);
     MCAPI bool canUpgrade(class SemVersion const &) const;

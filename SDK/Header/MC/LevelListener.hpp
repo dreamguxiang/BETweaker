@@ -39,10 +39,10 @@ public:
     MCVAPI void addTerrainParticleEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     MCVAPI void addTerrainSlideEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     MCVAPI void allChanged();
-    MCVAPI void levelEvent(enum LevelEvent, class Vec3 const &, int);
     MCVAPI void levelEvent(enum LevelEvent, class CompoundTag const &);
-    MCVAPI void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void levelEvent(enum LevelEvent, class Vec3 const &, int);
     MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
+    MCVAPI void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     MCVAPI void onChunkReloaded(class ChunkSource &, class LevelChunk &);
     MCVAPI void onChunkUnloaded(class LevelChunk &);

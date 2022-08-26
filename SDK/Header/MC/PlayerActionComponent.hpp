@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONCOMPONENT
 #endif
-    MCAPI PlayerActionComponent(struct PlayerActionComponent &&);
     MCAPI PlayerActionComponent();
+    MCAPI PlayerActionComponent(struct PlayerActionComponent &&);
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
     MCAPI void addStartDestroyBlock(class BlockPos const &, int);

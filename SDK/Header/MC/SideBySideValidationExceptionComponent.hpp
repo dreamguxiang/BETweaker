@@ -20,7 +20,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONEXCEPTIONCOMPONENT
 #endif
-    MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent &&);
+    MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
 
 };

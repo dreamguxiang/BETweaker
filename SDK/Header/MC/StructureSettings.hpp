@@ -47,8 +47,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESETTINGS
 #endif
-    MCAPI StructureSettings(class StructureSettings &&);
     MCAPI StructureSettings();
+    MCAPI StructureSettings(class StructureSettings &&);
     MCAPI enum AnimationMode getAnimationMode() const;
     MCAPI float getAnimationSeconds() const;
     MCAPI unsigned int getAnimationTicks() const;
@@ -67,8 +67,8 @@ public:
     MCAPI class BlockPos const & getStructureOffset() const;
     MCAPI class BlockPos const & getStructureSize() const;
     MCAPI bool isAnimated() const;
-    MCAPI class StructureSettings & operator=(class StructureSettings &&);
     MCAPI class StructureSettings & operator=(class StructureSettings const &);
+    MCAPI class StructureSettings & operator=(class StructureSettings &&);
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     MCAPI void setAnimationMode(enum AnimationMode);
     MCAPI void setAnimationSeconds(float);

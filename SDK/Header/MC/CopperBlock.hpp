@@ -71,7 +71,7 @@ public:
     /*197*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBLOCK
 #endif
-    MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &);
+    MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
 
 };

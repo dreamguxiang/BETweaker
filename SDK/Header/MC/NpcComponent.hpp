@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMPONENT
 #endif
-    MCAPI NpcComponent(class NpcComponent &&);
     MCAPI NpcComponent();
+    MCAPI NpcComponent(class NpcComponent &&);
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     MCAPI void clearSceneStateForAllPlayers();
     MCAPI void executeClosingCommands(class Actor &, class Player &, std::string const &);

@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSEPACKET
 #endif
-    MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI ItemStackResponsePacket();
+    MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
 
 };

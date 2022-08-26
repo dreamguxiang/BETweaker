@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORABSOLUTEDATA
 #endif
-    MCAPI MoveActorAbsoluteData(class Actor const &);
     MCAPI MoveActorAbsoluteData();
+    MCAPI MoveActorAbsoluteData(class Actor const &);
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const &) const;
     MCAPI class Vec2 getRot() const;
     MCAPI float getYBodyRot() const;

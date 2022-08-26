@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONCLIENTCONNECTPACKET
 #endif
-    MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
     MCAPI AutomationClientConnectPacket();
+    MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
 
 };

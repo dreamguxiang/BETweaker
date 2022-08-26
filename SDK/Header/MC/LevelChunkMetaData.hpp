@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATA
 #endif
-    MCAPI LevelChunkMetaData(class IDataInput &);
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
+    MCAPI LevelChunkMetaData(class IDataInput &);
     MCAPI unsigned __int64 getCurrentHash() const;
     MCAPI void serialize(class IDataOutput &) const;
     MCAPI ~LevelChunkMetaData();

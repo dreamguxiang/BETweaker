@@ -21,9 +21,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATION
 #endif
-    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
-    MCAPI ScriptPackConfiguration();
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
+    MCAPI ScriptPackConfiguration();
+    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
     MCAPI class ScriptPackPermissions & getPermissions();
     MCAPI class ScriptPackPermissions const & getPermissions() const;
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> & getSecrets();

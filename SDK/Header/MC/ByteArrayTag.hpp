@@ -43,7 +43,7 @@ public:
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTEARRAYTAG
 #endif
-    MCAPI ByteArrayTag(struct TagMemoryChunk);
     MCAPI ByteArrayTag();
+    MCAPI ByteArrayTag(struct TagMemoryChunk);
 
 };

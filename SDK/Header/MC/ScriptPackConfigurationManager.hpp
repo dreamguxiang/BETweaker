@@ -21,8 +21,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATIONMANAGER
 #endif
-    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     MCAPI ScriptPackConfigurationManager();
+    MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
     MCAPI void loadPackConfigs(class Core::Path const &);
 

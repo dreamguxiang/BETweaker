@@ -31,8 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
 #endif
-    MCAPI CommandPosition(class Vec3 const &);
     MCAPI CommandPosition();
+    MCAPI CommandPosition(class Vec3 const &);
     MCAPI class BlockPos getBlockPos(class CommandOrigin const &, class Vec3 const &) const;
     MCAPI class BlockPos getBlockPos(class Vec3 const &, class Vec3 const &) const;
     MCAPI class Vec3 getPosition(class Vec3 const &, class Vec3 const &) const;

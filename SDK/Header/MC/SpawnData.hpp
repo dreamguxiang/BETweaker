@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNDATA
 #endif
-    MCAPI SpawnData(class SpawnData const &);
     MCAPI SpawnData(class CompoundTag const &);
+    MCAPI SpawnData(class SpawnData const &);
     MCAPI std::unique_ptr<class CompoundTag> save();
 
 };

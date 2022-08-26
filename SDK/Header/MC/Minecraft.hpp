@@ -32,8 +32,8 @@ public:
     /*5*/ virtual bool getSimPaused() const;
     /*6*/ virtual bool isOnlineClient() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
-    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
+    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
 #endif
     MCAPI Minecraft(class IMinecraftApp &, class GameCallbacks &, class AllowList &, class PermissionsFile *, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing &, class NetworkHandler &, class PacketSender &, enum SubClientId, class Timer &, class Timer &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const &, class ServerMetrics *);
     MCAPI void activateAllowList();

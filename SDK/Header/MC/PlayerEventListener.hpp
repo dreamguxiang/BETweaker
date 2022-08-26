@@ -37,8 +37,8 @@ public:
     MCVAPI enum EventResult onPlayerCaravanChanged(class Actor const &, int);
     MCVAPI enum EventResult onPlayerCraftedItem(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
     MCVAPI enum EventResult onPlayerCreated(class LocalPlayer &, std::string const &, std::string const &, bool);
-    MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, int, int, int);
+    MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     MCVAPI enum EventResult onPlayerEnchantedItem(class Player &, class ItemStack const &, class ItemEnchants const &);
     MCVAPI enum EventResult onPlayerEquippedArmor(class Player &, class ItemDescriptor const &);
     MCVAPI enum EventResult onPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);

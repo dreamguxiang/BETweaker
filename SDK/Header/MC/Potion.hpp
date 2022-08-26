@@ -85,15 +85,15 @@ public:
     MCAPI static class std::shared_ptr<class Potion const> const Weakness;
     MCAPI static class std::shared_ptr<class Potion const> const Wither;
     MCAPI static std::string getBasePotion(enum Potion::PotionType);
-    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
     MCAPI static class std::shared_ptr<class Potion const> getPotion(class gsl::basic_string_span<char const, -1>);
+    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
     MCAPI static int getPotionCount();
     MCAPI static void initPotions();
     MCAPI static void shutdownPotions();
 
 //private:
-    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
     MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
+    MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const &, enum Potion::PotionVariant);
     MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
     MCAPI std::string _getDescriptionIdSingleString(enum Potion::PotionType) const;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);

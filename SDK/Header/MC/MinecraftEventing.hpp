@@ -98,9 +98,9 @@ public:
     MCVAPI void fireEventElementConstructorUsed(int, int, enum IMinecraftEventing::ElementConstructorUseType);
     MCVAPI void fireEventEntitlementListInfo(std::vector<class ContentIdentity> &, bool);
     MCVAPI void fireEventEntitySpawned(class Player *, int, unsigned int);
-    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
+    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     MCVAPI void fireEventGoogleAccountHoldWarning(bool);
     MCVAPI void fireEventHardwareInfo();
     MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum InputMode);

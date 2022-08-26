@@ -22,9 +22,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNRULES
 #endif
-    MCAPI MobSpawnRules(class MobSpawnRules const &);
-    MCAPI MobSpawnRules(class MobSpawnRules &&);
     MCAPI MobSpawnRules();
+    MCAPI MobSpawnRules(class MobSpawnRules &&);
+    MCAPI MobSpawnRules(class MobSpawnRules const &);
     MCAPI class MobSpawnRules & addHerd(int, int, std::string const &);
     MCAPI class MobSpawnRules & addPermutation(int, int, struct ActorDefinitionIdentifier const &);
     MCAPI bool canSpawnInConditions(class SpawnConditions const &, class BlockSource &) const;

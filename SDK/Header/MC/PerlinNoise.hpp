@@ -23,10 +23,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINNOISE
 #endif
-    MCAPI PerlinNoise(class PerlinNoise const &);
-    MCAPI PerlinNoise(class IRandom &, int, int);
-    MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
     MCAPI PerlinNoise(unsigned int, int, int);
+    MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
+    MCAPI PerlinNoise(class IRandom &, int, int);
+    MCAPI PerlinNoise(class PerlinNoise const &);
     MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
     MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
     MCAPI float getValue(class Vec3 const &) const;

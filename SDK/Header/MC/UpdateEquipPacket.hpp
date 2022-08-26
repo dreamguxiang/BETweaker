@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEEQUIPPACKET
 #endif
-    MCAPI UpdateEquipPacket(enum ContainerID, enum ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
     MCAPI UpdateEquipPacket();
+    MCAPI UpdateEquipPacket(enum ContainerID, enum ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
 
 };

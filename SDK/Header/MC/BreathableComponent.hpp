@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
 #endif
-    MCAPI BreathableComponent(class BreathableComponent const &);
     MCAPI BreathableComponent();
+    MCAPI BreathableComponent(class BreathableComponent const &);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool canBreathe(class Actor const &) const;
     MCAPI bool generatesBubbles() const;

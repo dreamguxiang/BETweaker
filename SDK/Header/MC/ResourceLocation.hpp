@@ -30,9 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOCATION
 #endif
-    MCAPI ResourceLocation(class Core::Path const &);
-    MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
     MCAPI ResourceLocation();
+    MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
+    MCAPI ResourceLocation(class Core::Path const &);
     MCAPI class Core::PathBuffer<std::string> getFullPath() const;
     MCAPI class Core::PathBuffer<std::string> const & getRelativePath() const;
     MCAPI bool operator==(class ResourceLocation const &) const;

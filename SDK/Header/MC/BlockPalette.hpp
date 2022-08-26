@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
 #endif
-    MCAPI BlockPalette(class Level &);
     MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
+    MCAPI BlockPalette(class Level &);
     MCAPI void cacheBlockComponentData();
     MCAPI class Block const & convertLegacyBlock(struct BlockID, unsigned short) const;
     MCAPI bool convertLegacyBlocks(class buffer_span_mut<class Block const *>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, unsigned __int64) const;

@@ -42,8 +42,8 @@ public:
     MCVAPI void read(class ReadOnlyBinaryStream &);
     MCVAPI void write(class BinaryStream &) const;
 #endif
-    MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
+    MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);

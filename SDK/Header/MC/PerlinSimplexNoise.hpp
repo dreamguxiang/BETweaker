@@ -23,9 +23,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERLINSIMPLEXNOISE
 #endif
-    MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
-    MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
     MCAPI PerlinSimplexNoise(unsigned int, int);
+    MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
+    MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
     MCAPI float * getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float, float) const;
     MCAPI float getValue(class Vec3 const &) const;
     MCAPI float getValue(float, float) const;

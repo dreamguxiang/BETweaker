@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEXTPACKET
 #endif
-    MCAPI FilterTextPacket(std::string const &, bool);
     MCAPI FilterTextPacket();
+    MCAPI FilterTextPacket(std::string const &, bool);
 
 };

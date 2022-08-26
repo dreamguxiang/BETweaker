@@ -29,10 +29,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION
 #endif
-    MCAPI SemVersion(class SemVersion const &);
-    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
-    MCAPI SemVersion(struct SemVersion::any_version_constructor);
     MCAPI SemVersion();
+    MCAPI SemVersion(struct SemVersion::any_version_constructor);
+    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const &, std::string const &);
+    MCAPI SemVersion(class SemVersion const &);
     MCAPI std::string const & asString() const;
     MCAPI unsigned short getMajor() const;
     MCAPI unsigned short getMinor() const;

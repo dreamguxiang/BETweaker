@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKCOMPONENT
 #endif
-    MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     MCAPI CommandBlockComponent();
+    MCAPI CommandBlockComponent(class CommandBlockComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI int decrementTickCount();
     MCAPI class BaseCommandBlock & getBaseCommandBlock();

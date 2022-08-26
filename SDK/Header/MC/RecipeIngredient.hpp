@@ -31,12 +31,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
 #endif
-    MCAPI RecipeIngredient(class RecipeIngredient const &);
-    MCAPI RecipeIngredient(class Block const &, unsigned short);
-    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
-    MCAPI RecipeIngredient(class Item const &, int, unsigned short);
-    MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     MCAPI RecipeIngredient();
+    MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
+    MCAPI RecipeIngredient(class Item const &, int, unsigned short);
+    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
+    MCAPI RecipeIngredient(class Block const &, unsigned short);
+    MCAPI RecipeIngredient(class RecipeIngredient const &);
     MCAPI ~RecipeIngredient();
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 

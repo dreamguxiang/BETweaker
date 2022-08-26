@@ -25,8 +25,8 @@ public:
     /*1*/ virtual char const * what() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGASSERTEXCEPTION
 #endif
-    MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
+    MCAPI DebugAssertException(class DebugAssertException const &);
     MCAPI static bool isEnabled();
 
 //private:

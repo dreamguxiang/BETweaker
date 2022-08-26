@@ -531,8 +531,8 @@ public:
     MCAPI static void handleJumpEffects(struct IPlayerMovementProxy &);
     MCAPI static bool isDangerousVolume(class BlockSource &, class AABB const &, bool);
     MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
-    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
     MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
 
 //protected:
     MCAPI bool _checkAndFixSpawnPosition(class Vec3 &, std::vector<class gsl::not_null<class BlockSource *>>, bool, bool, bool, bool, bool) const;

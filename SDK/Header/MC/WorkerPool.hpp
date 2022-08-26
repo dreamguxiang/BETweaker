@@ -25,8 +25,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
 #endif
-    MCAPI WorkerPool(std::string, class Scheduler &);
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
+    MCAPI WorkerPool(std::string, class Scheduler &);
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     MCAPI void resortPriorityQueue();
     MCAPI unsigned __int64 size() const;

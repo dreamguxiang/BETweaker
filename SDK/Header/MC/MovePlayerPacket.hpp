@@ -53,8 +53,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEPLAYERPACKET
 #endif
-    MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
-    MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
     MCAPI MovePlayerPacket();
+    MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
 
 };

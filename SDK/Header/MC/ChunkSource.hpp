@@ -55,8 +55,8 @@ public:
     /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
 #endif
-    MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
+    MCAPI ChunkSource(class Dimension *, int);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum ChunkSource::ChunkSourceViewGenerateMode, struct ActorUniqueID);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);

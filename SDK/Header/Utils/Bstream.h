@@ -14,7 +14,6 @@
 #    define DO_BUF_CHK()
 #    define BUF_CHK_VAR
 #endif
-using std::string, std::string_view;
 template <class T>
 struct is_safe_obj
     : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
@@ -59,21 +58,6 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-
-    template <typename T1, typename T2>
-    void __get(std::multimap<T1,T2>& x) {
-        bsize_t sz;
-        __get(sz);
-        for (bsize_t i = 0; i < sz; ++i) {
-            T1 local;
-            T2 local2;
-            __get(local);
-            __get(local2);
-            x.insert({ std::move(local), std::move(local2) });
-        }
-    }
-
-	
     template <typename T1>
     void __get(std::list<T1> &x) {
         bsize_t sz;
@@ -84,7 +68,7 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-    void __get(string &x) {
+    void __get(std::string &x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
@@ -130,16 +114,6 @@ class WBStreamImpl {
             __put(v);
         }
     }
-    template <typename T1, typename T2>
-    void __put(std::multimap<T1, T2> const& x) {
-        bsize_t sz = (bsize_t)x.size();
-        __put(sz);
-        for (auto& [k, v] : x) {
-            __put(k);
-            __put(v);
-        }
-    }
-	
     template <typename T2>
     void __put(std::vector<T2> const &x) {
         bsize_t sz = x.size();
@@ -156,7 +130,7 @@ class WBStreamImpl {
             __put(*i);
         }
     }
-    void __put(string const &x) {
+    void __put(std::string const &x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
@@ -183,6 +157,7 @@ class WBStreamImpl {
     void write(const void *src, size_t n) { data.append((const char *)src, n); }
     operator string_view() { return data; }
 };
+using std::string;
 using WBStream = WBStreamImpl<std::string>;
 struct BinVariant {
     /*long long or string*/

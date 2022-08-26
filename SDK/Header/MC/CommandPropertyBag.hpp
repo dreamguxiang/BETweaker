@@ -24,8 +24,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPROPERTYBAG
 #endif
-    MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI CommandPropertyBag();
+    MCAPI CommandPropertyBag(class Json::Value const &);
     MCAPI void addToResultList(std::string const &, std::string const &);
     MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     MCAPI void set(std::string const &, class BlockPos const &);

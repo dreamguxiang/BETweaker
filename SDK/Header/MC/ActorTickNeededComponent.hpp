@@ -25,8 +25,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTICKNEEDEDCOMPONENT
 #endif
-    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
     MCAPI ActorTickNeededComponent(class BlockSource &);
+    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     MCAPI ~ActorTickNeededComponent();

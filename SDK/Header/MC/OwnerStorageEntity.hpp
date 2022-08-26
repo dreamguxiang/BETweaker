@@ -26,9 +26,9 @@ public:
 #endif
 
 //protected:
-    MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistry &);
+    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
+    MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);
     MCAPI class EntityContext & _getStackRef() const;
     MCAPI bool _hasValue() const;
     MCAPI void _remake(class EntityRegistry &);

@@ -31,8 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPOS
 #endif
-    MCAPI ChunkPos(class BlockPos const &);
     MCAPI ChunkPos(class Vec3 const &);
+    MCAPI ChunkPos(class BlockPos const &);
     MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
     MCAPI static class ChunkPos const INVALID;

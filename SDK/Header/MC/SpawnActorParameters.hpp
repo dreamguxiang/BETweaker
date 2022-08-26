@@ -21,9 +21,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORPARAMETERS
 #endif
-    MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
-    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     MCAPI SpawnActorParameters();
+    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
+    MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
     MCAPI void setItem(class ItemDescriptor const &);
     MCAPI void setSpawnEntity(std::string const &);
     MCAPI void setSpawnEvent(std::string const &);

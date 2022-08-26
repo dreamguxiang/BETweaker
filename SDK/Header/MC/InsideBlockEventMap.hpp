@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKEVENTMAP
 #endif
-    MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     MCAPI InsideBlockEventMap(class Block const &, bool, bool, bool, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
+    MCAPI InsideBlockEventMap(class InsideBlockEventMap const &);
     MCAPI class gsl::not_null<class Block const *> getBlock() const;
     MCAPI class ActorDefinitionTrigger const & getEnteredEvent() const;
     MCAPI class ActorDefinitionTrigger const & getExitedEvent() const;

@@ -28,7 +28,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKUPDATEPACKET
 #endif
-    MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
     MCAPI StructureBlockUpdatePacket();
+    MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
 
 };

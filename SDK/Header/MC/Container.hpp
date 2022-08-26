@@ -74,9 +74,9 @@ public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
 #endif
-    MCAPI Container(class Container const &);
-    MCAPI Container(enum ContainerType);
     MCAPI Container(enum ContainerType, std::string const &, bool);
+    MCAPI Container(enum ContainerType);
+    MCAPI Container(class Container const &);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);

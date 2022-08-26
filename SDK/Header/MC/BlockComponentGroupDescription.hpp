@@ -21,9 +21,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTGROUPDESCRIPTION
 #endif
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     MCAPI BlockComponentGroupDescription();
+    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
+    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const &)>) const;
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
     MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription &&);

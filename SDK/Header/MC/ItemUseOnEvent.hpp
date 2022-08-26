@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEONEVENT
 #endif
-    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
     MCAPI ItemUseOnEvent(struct ItemUseOnEvent const &);
+    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
     MCAPI ~ItemUseOnEvent();
 
 };

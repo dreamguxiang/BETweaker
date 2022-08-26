@@ -30,12 +30,12 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
 #endif
-    MCAPI SetTitlePacket(int, int, int);
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
-    MCAPI SetTitlePacket();
     MCAPI SetTitlePacket(class SetTitlePacket const &);
+    MCAPI SetTitlePacket();
+    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
+    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
+    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
+    MCAPI SetTitlePacket(int, int, int);
     MCAPI class SetTitlePacket & operator=(class SetTitlePacket &&);
 
 };

@@ -203,8 +203,8 @@ public:
     MCVAPI void renderDebugServerState(class Options const &);
     MCVAPI bool useNewAi() const;
 #endif
-    MCAPI Mob(class Level &, class EntityContext &);
     MCAPI Mob(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI Mob(class Level &, class EntityContext &);
     MCAPI void _endJump();
     MCAPI void addSpeedModifier(class mce::UUID const &, std::string const &, float);
     MCAPI float calcMoveRelativeSpeed(enum TravelType);

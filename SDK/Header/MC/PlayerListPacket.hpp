@@ -40,8 +40,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTPACKET
 #endif
-    MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI PlayerListPacket();
+    MCAPI PlayerListPacket(class mce::UUID const &);
     MCAPI void emplace(class PlayerListEntry &&);
 
 };

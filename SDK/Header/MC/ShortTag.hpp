@@ -41,7 +41,7 @@ public:
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHORTTAG
 #endif
-    MCAPI ShortTag(short);
     MCAPI ShortTag();
+    MCAPI ShortTag(short);
 
 };

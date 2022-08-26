@@ -27,8 +27,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATA
 #endif
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
     MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
@@ -53,8 +53,8 @@ public:
     MCAPI class Json::Value const & getFlatWorldGeneratorOptions() const;
     MCAPI bool getForceGameType() const;
     MCAPI enum Difficulty getGameDifficulty() const;
-    MCAPI class GameRules const & getGameRules() const;
     MCAPI class GameRules & getGameRules();
+    MCAPI class GameRules const & getGameRules() const;
     MCAPI enum GameType getGameType() const;
     MCAPI enum GeneratorType getGenerator() const;
     MCAPI bool getLANBroadcast() const;

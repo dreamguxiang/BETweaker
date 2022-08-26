@@ -22,8 +22,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
 #endif
     MCAPI BlockPlacementCondition(struct BlockPlacementCondition const &);
-    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
+    MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
     MCAPI ~BlockPlacementCondition();
 
 };

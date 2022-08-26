@@ -64,8 +64,8 @@ public:
     MCVAPI class Dimension & getDimension() const;
     MCVAPI class Dimension const & getDimensionConst() const;
 #endif
-    MCAPI BlockSource(class ChunkSource &, bool, bool);
     MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool, bool);
+    MCAPI BlockSource(class ChunkSource &, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> _fetchEntities(struct IActorMovementProxy const *, class AABB const &, bool);
     MCAPI void addToRandomTickingQueue(class BlockPos const &, class Block const &, int, int, bool);
     MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const &, class Block const &, float, int, bool);
@@ -89,8 +89,8 @@ public:
     MCAPI bool containsAnyBlockOfType(class BlockPos const &, class BlockPos const &, class Block const &) const;
     MCAPI bool containsAnySolidBlocking(class AABB const &) const;
     MCAPI unsigned __int64 countBlocksOfType(class BlockDescriptor const &, class BlockPos const &, class BlockPos const &, unsigned __int64) const;
-    MCAPI void fetchActorIds(class AABB const &, std::vector<struct ActorUniqueID> &) const;
     MCAPI void fetchActorIds(unsigned __int64, class AABB const &, std::vector<struct ActorUniqueID> &) const;
+    MCAPI void fetchActorIds(class AABB const &, std::vector<struct ActorUniqueID> &) const;
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> fetchActors(struct ActorDefinitionIdentifier const &, class AABB const &);
     MCAPI std::vector<class BlockActor *> const & fetchBlockEntities(class AABB const &);
     MCAPI std::vector<class BlockActor *> fetchBlockEntities(enum BlockActorType, class AABB const &) const;
@@ -118,13 +118,13 @@ public:
     MCAPI class BlockActor * getBlockEntity(int, int, int);
     MCAPI float getBrightness(class BlockPos const &) const;
     MCAPI struct BrightnessPair getBrightnessPair(class BlockPos const &) const;
-    MCAPI class LevelChunk * getChunk(class ChunkPos const &) const;
     MCAPI class LevelChunk * getChunk(int, int) const;
+    MCAPI class LevelChunk * getChunk(class ChunkPos const &) const;
     MCAPI class Biome const & getConstBiome(class BlockPos const &) const;
     MCAPI struct BrightnessPair getDefaultBrightness() const;
     MCAPI int getGrassColor(class BlockPos const &) const;
-    MCAPI short getHeightmap(int, int);
     MCAPI short getHeightmap(class BlockPos const &) const;
+    MCAPI short getHeightmap(int, int);
     MCAPI class BlockPos getHeightmapPos(class BlockPos const &) const;
     MCAPI class Level & getLevel() const;
     MCAPI class Level & getLevel();

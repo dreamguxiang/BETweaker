@@ -79,8 +79,8 @@ public:
     MCAPI std::string getRawNameId() const;
     MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
     MCAPI enum UseAnimation getUseAnimation() const;
-    MCAPI class CompoundTag const * getUserData() const;
     MCAPI class CompoundTag * getUserData();
+    MCAPI class CompoundTag const * getUserData() const;
     MCAPI bool getWasPickedUp() const;
     MCAPI bool hasChargedItem() const;
     MCAPI bool hasCompoundTextUserData() const;
@@ -163,17 +163,17 @@ public:
     MCAPI static std::string const TAG_REPAIR_COST;
 
 //protected:
-    MCAPI ItemStackBase(class ItemStackBase const &);
-    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
-    MCAPI ItemStackBase(class BlockLegacy const &, int, short);
-    MCAPI ItemStackBase(class Item const &);
-    MCAPI ItemStackBase(class Item const &, int);
-    MCAPI ItemStackBase(class Item const &, int, int);
-    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
-    MCAPI ItemStackBase(class RecipeIngredient const &);
-    MCAPI ItemStackBase(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemStackBase();
+    MCAPI ItemStackBase(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
+    MCAPI ItemStackBase(class RecipeIngredient const &);
+    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
+    MCAPI ItemStackBase(class Item const &, int, int);
+    MCAPI ItemStackBase(class Item const &, int);
+    MCAPI ItemStackBase(class Item const &);
+    MCAPI ItemStackBase(class BlockLegacy const &, int, short);
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
+    MCAPI ItemStackBase(class ItemStackBase const &);
     MCAPI std::string _getHoverFormattingPrefix() const;
     MCAPI bool _setItem(int, bool);
     MCAPI void init(class BlockLegacy const &, int);

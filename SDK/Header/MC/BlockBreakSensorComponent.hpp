@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORCOMPONENT
 #endif
-    MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     MCAPI BlockBreakSensorComponent();
+    MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     MCAPI void initialize(class Actor &);
     MCAPI class BlockBreakSensorComponent & operator=(class BlockBreakSensorComponent &&);
     MCAPI void updateSensorPos(class Vec3 const &);

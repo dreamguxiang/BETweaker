@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCOMPONENT
 #endif
-    MCAPI NavigationComponent(class NavigationComponent const &);
     MCAPI NavigationComponent();
+    MCAPI NavigationComponent(class NavigationComponent const &);
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Vec3 const &);
     MCAPI bool getAvoidDamageBlocks() const;
@@ -58,10 +58,10 @@ public:
     MCAPI bool isDone() const;
     MCAPI enum NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
     MCAPI bool isStuck(int) const;
-    MCAPI bool moveTo(class Mob &, class Actor &, float);
-    MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
     MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
     MCAPI bool moveTo(class Mob &, std::unique_ptr<class Path>, float);
+    MCAPI bool moveTo(class Mob &, class Actor &, float);
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
     MCAPI class NavigationComponent & operator=(class NavigationComponent &&);
     MCAPI void resetPath();
     MCAPI void setAvoidDamageBlocks(bool);

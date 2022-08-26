@@ -24,20 +24,19 @@ struct ItemStackNetIdVariant {
     int netId;
     unsigned char type;
 
-#undef AFTER_EXTRA
-public:
+#undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETIDVARIANT
 #endif
-    MCAPI ItemStackNetIdVariant();
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
+    MCAPI ItemStackNetIdVariant();
     MCAPI void deserialize(class ReadOnlyBinaryStream &);
     MCAPI bool hasServerNetId() const;
     MCAPI bool isValid() const;
+    MCAPI struct ItemStackNetIdVariant & operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
+    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant &&);
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant const &);
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
     MCAPI bool operator==(struct ItemStackNetIdVariant const &) const;
     MCAPI void serialize(class BinaryStream &) const;
     MCAPI std::string toString() const;

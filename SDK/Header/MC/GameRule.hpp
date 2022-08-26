@@ -32,9 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULE
 #endif
-    MCAPI GameRule(class GameRule const &);
-    MCAPI GameRule(class GameRule &&);
     MCAPI GameRule(std::string const &, bool);
+    MCAPI GameRule(class GameRule &&);
+    MCAPI GameRule(class GameRule const &);
     MCAPI bool allowUseInCommand() const;
     MCAPI bool canBeModifiedByPlayer() const;
     MCAPI bool getBool() const;

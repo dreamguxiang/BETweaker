@@ -41,8 +41,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSEVENTPACKET
 #endif
-    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
-    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     MCAPI BossEventPacket();
+    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
+    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
 
 };

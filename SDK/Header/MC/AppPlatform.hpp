@@ -55,8 +55,8 @@ public:
     MCVAPI bool copyAssetFile(class Core::Path const &, class Core::Path const &);
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType, class Core::Path const &);
-    MCVAPI void createUserInput();
     MCVAPI void createUserInput(int);
+    MCVAPI void createUserInput();
     MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
     MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
     MCVAPI void exitVRMode(class std::function<void (void)>);

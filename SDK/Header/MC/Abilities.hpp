@@ -59,11 +59,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
 #endif
-    MCAPI Abilities(class Abilities const &);
     MCAPI Abilities(bool);
+    MCAPI Abilities(class Abilities const &);
     MCAPI void addSaveData(class CompoundTag &) const;
-    MCAPI void forEachAbility(class std::function<void (class Ability const &, enum AbilitiesIndex)> const &, enum Ability::Options) const;
     MCAPI void forEachAbility(class std::function<void (class Ability &, enum AbilitiesIndex)> const &, enum Ability::Options);
+    MCAPI void forEachAbility(class std::function<void (class Ability const &, enum AbilitiesIndex)> const &, enum Ability::Options) const;
     MCAPI class Ability & getAbility(enum AbilitiesIndex);
     MCAPI class Ability const & getAbility(enum AbilitiesIndex) const;
     MCAPI bool getBool(enum AbilitiesIndex) const;

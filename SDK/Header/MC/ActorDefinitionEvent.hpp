@@ -20,8 +20,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENT
 #endif
-    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const &);
     MCAPI ActorDefinitionEvent(class ActorDefinitionEvent &&);
+    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const &);
     MCAPI void evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
     MCAPI class ActorDefinitionEvent & operator=(class ActorDefinitionEvent const &);
     MCAPI ~ActorDefinitionEvent();

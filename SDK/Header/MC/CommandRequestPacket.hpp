@@ -30,8 +30,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREQUESTPACKET
 #endif
-    MCAPI CommandRequestPacket(class CommandContext &, bool);
     MCAPI CommandRequestPacket();
+    MCAPI CommandRequestPacket(class CommandContext &, bool);
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;
     MCAPI bool getInternalSource() const;
 

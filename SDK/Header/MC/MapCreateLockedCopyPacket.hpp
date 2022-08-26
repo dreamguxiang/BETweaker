@@ -29,8 +29,8 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPCREATELOCKEDCOPYPACKET
 #endif
-    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
     MCAPI MapCreateLockedCopyPacket();
+    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
     MCAPI struct ActorUniqueID getNewMapId() const;
     MCAPI struct ActorUniqueID getOriginalMapId() const;
 

@@ -24,8 +24,8 @@ public:
     /*1*/ virtual void tick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCE
 #endif
-    MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI AttributeInstance();
+    MCAPI AttributeInstance(class AttributeInstance const &);
     MCAPI void addBuff(class AttributeBuff const &);
     MCAPI void addModifier(class AttributeModifier const &);
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);

@@ -82,8 +82,8 @@ public:
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isWallBlock() const;
 #endif
-    MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI WallBlock(std::string const &, int, class Material const &);
+    MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
     MCAPI static float const POST_HEIGHT;
     MCAPI static float const POST_WIDTH;

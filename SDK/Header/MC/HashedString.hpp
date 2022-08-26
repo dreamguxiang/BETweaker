@@ -32,12 +32,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASHEDSTRING
 #endif
-    MCAPI HashedString(class HashedString &&);
-    MCAPI HashedString(std::nullptr_t);
-    MCAPI HashedString(class HashedString const &);
-    MCAPI HashedString(std::string const &);
-    MCAPI HashedString(char const *);
     MCAPI HashedString(unsigned __int64, char const *);
+    MCAPI HashedString(char const *);
+    MCAPI HashedString(std::string const &);
+    MCAPI HashedString(class HashedString const &);
+    MCAPI HashedString(std::nullptr_t);
+    MCAPI HashedString(class HashedString &&);
     MCAPI char const * c_str() const;
     MCAPI void clear();
     MCAPI bool empty() const;
@@ -47,8 +47,8 @@ public:
     MCAPI operator class gsl::basic_string_span<char const, -1>() const;
     MCAPI bool operator!=(class HashedString const &) const;
     MCAPI bool operator<(class HashedString const &) const;
-    MCAPI class HashedString & operator=(class HashedString &&);
     MCAPI class HashedString & operator=(class HashedString const &);
+    MCAPI class HashedString & operator=(class HashedString &&);
     MCAPI bool operator==(class HashedString const &) const;
     MCAPI ~HashedString();
     MCAPI static void bindType();

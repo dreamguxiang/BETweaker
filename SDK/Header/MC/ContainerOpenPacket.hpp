@@ -29,7 +29,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINEROPENPACKET
 #endif
-    MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const &, struct ActorUniqueID const &);
     MCAPI ContainerOpenPacket();
+    MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const &, struct ActorUniqueID const &);
 
 };

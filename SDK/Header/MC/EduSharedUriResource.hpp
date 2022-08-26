@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUSHAREDURIRESOURCE
 #endif
-    MCAPI EduSharedUriResource(class CompoundTag const &);
     MCAPI EduSharedUriResource();
+    MCAPI EduSharedUriResource(class CompoundTag const &);
     MCAPI ~EduSharedUriResource();
     MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const &);
 

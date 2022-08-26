@@ -25,9 +25,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADEDREQUEST
 #endif
-    MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
-    MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
     MCAPI ChunkLoadedRequest(std::string const &, std::unique_ptr<class IRequestAction>, bool);
+    MCAPI ChunkLoadedRequest(struct Bounds const &, std::unique_ptr<class IRequestAction>, bool, bool);
+    MCAPI ChunkLoadedRequest(class ChunkLoadedRequest &&);
     MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
     MCAPI bool areaContainsChunk(class LevelChunk const &) const;
     MCAPI void executeAction(class ServerLevel &, class Dimension &);

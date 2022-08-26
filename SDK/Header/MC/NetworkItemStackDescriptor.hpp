@@ -28,9 +28,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
 #endif
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
-    MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    MCAPI NetworkItemStackDescriptor(class ItemStack const &);
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     MCAPI void read(class ReadOnlyBinaryStream &);
     MCAPI void setIncludeNetIds(bool) const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;

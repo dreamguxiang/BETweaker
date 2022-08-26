@@ -22,8 +22,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLEMAP
 #endif
-    MCAPI MolangVariableMap(class MolangVariableMap &&);
     MCAPI MolangVariableMap(class MolangVariableMap const &);
+    MCAPI MolangVariableMap(class MolangVariableMap &&);
     MCAPI class MolangVariableMap & clear();
     MCAPI struct MolangScriptArg const * getConstScriptArgReference(enum MolangVariableIndex const &) const;
     MCAPI struct MolangScriptArg const & getMolangVariable(enum MolangVariableIndex const &, bool &) const;
@@ -33,8 +33,8 @@ public:
     MCAPI struct MolangScriptArg * getOrAddNonConstScriptArgReference(enum MolangVariableIndex const &);
     MCAPI struct MolangScriptArg const & getPublicMolangVariable(enum MolangVariableIndex const &, bool &) const;
     MCAPI std::vector<std::unique_ptr<class MolangVariable>> const & getVariables() const;
-    MCAPI class MolangVariableMap & operator=(class MolangVariableMap &&);
     MCAPI class MolangVariableMap & operator=(class MolangVariableMap const &);
+    MCAPI class MolangVariableMap & operator=(class MolangVariableMap &&);
     MCAPI void setMolangStructMember(class HashedString const &, class HashedString const &, struct MolangScriptArg const &);
     MCAPI void setMolangVariable(class HashedString const &, struct MolangScriptArg const &);
     MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const &);

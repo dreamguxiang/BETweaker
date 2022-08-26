@@ -14,10 +14,10 @@ struct SystemInfo {
 #undef AFTER_EXTRApublic:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMINFO
 #endif
-    MCAPI SystemInfo(struct SystemInfo const &);
     MCAPI SystemInfo();
-    MCAPI struct SystemInfo & operator=(struct SystemInfo &&);
+    MCAPI SystemInfo(struct SystemInfo const &);
     MCAPI struct SystemInfo & operator=(struct SystemInfo const &);
+    MCAPI struct SystemInfo & operator=(struct SystemInfo &&);
     MCAPI ~SystemInfo();
     MCAPI static void bindType();
 

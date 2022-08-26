@@ -22,9 +22,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
 #endif
+    MCAPI PositionTrackingId(std::string const &);
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     MCAPI PositionTrackingId(class PositionTrackingId const &);
-    MCAPI PositionTrackingId(std::string const &);
     MCAPI void fromTag(class Tag const *);
     MCAPI std::unique_ptr<class Tag> getTag() const;
     MCAPI void init();

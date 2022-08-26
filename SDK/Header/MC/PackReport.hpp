@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKREPORT
 #endif
-    MCAPI PackReport(class PackReport const &);
     MCAPI PackReport();
+    MCAPI PackReport(class PackReport const &);
     MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
     MCAPI struct PackIdVersion const & getIdentity() const;
     MCAPI class ResourceLocation const & getLocation() const;

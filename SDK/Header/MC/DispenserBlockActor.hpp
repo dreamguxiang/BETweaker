@@ -27,8 +27,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    MCVAPI class Container const * getContainer() const;
     MCVAPI class Container * getContainer();
+    MCVAPI class Container const * getContainer() const;
     MCVAPI int getContainerSize() const;
     MCVAPI class ItemStack const & getItem(int) const;
     MCVAPI int getMaxStackSize() const;
@@ -43,7 +43,7 @@ public:
     MCVAPI void stopOpen(class Player &);
     MCVAPI ~DispenserBlockActor();
 #endif
-    MCAPI DispenserBlockActor(class BlockPos);
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
+    MCAPI DispenserBlockActor(class BlockPos);
 
 };

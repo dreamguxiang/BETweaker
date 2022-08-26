@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
 #endif
-    MCAPI TrustComponent(class TrustComponent &&);
     MCAPI TrustComponent();
+    MCAPI TrustComponent(class TrustComponent &&);
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI void assignTrustedPlayer(struct ActorUniqueID);
     MCAPI class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> const & getTrustedPlayerIDs() const;

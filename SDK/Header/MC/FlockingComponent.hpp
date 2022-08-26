@@ -23,8 +23,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGCOMPONENT
 #endif
-    MCAPI FlockingComponent(class FlockingComponent &&);
     MCAPI FlockingComponent();
+    MCAPI FlockingComponent(class FlockingComponent &&);
     MCAPI void addFlockMember(struct ActorUniqueID);
     MCAPI void breakFlock(class Actor const &);
     MCAPI void calculateFlockVector(class Actor const &);

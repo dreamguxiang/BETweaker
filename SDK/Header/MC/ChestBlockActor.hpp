@@ -33,8 +33,8 @@ public:
     MCVAPI void clearCache();
     MCVAPI int clearInventory(int);
     MCVAPI void eraseLootTable();
-    MCVAPI class Container const * getContainer() const;
     MCVAPI class Container * getContainer();
+    MCVAPI class Container const * getContainer() const;
     MCVAPI int getContainerSize() const;
     MCVAPI class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
     MCVAPI void getDebugText(std::vector<std::string> &, class BlockPos const &);

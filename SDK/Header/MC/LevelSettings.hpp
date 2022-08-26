@@ -23,10 +23,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSETTINGS
 #endif
-    MCAPI LevelSettings(class LevelSettings const &);
     MCAPI LevelSettings(class LevelSettings &&);
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
     MCAPI LevelSettings();
+    MCAPI LevelSettings(class LevelSettings const &);
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI bool educationFeaturesEnabled() const;
     MCAPI std::string const & educationProductID() const;

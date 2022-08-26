@@ -21,13 +21,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGSCRIPTARG
 #endif
-    MCAPI MolangScriptArg(float);
-    MCAPI MolangScriptArg(struct MolangScriptArg const &);
-    MCAPI MolangScriptArg(struct MolangScriptArg &&);
     MCAPI MolangScriptArg(int);
+    MCAPI MolangScriptArg(struct MolangScriptArg &&);
+    MCAPI MolangScriptArg(struct MolangScriptArg const &);
+    MCAPI MolangScriptArg(float);
     MCAPI void clear();
-    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
+    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
     MCAPI ~MolangScriptArg();
     MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
     MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;

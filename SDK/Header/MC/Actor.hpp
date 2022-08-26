@@ -386,8 +386,8 @@ public:
     MCVAPI bool isTargetable() const;
     MCVAPI void renderDebugServerState(class Options const &);
 #endif
-    MCAPI Actor(class ILevel &, class EntityContext &);
     MCAPI Actor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI Actor(class ILevel &, class EntityContext &);
     MCAPI class Vec3 _randomHeartPos();
     MCAPI void _sendDirtyActorData();
     MCAPI void _setActorTypeId(enum ActorType);
@@ -412,8 +412,8 @@ public:
     MCAPI void celebrateHunt(int, bool);
     MCAPI void checkInsideCauldron();
     MCAPI void clearFishingHookID();
-    MCAPI bool closerThan(class Actor const &, float) const;
     MCAPI bool closerThan(class Actor const &, float, float) const;
+    MCAPI bool closerThan(class Actor const &, float) const;
     MCAPI void consumeItem(class ItemActor &, int);
     MCAPI class UpdateEquipPacket createUpdateEquipPacket(int);
     MCAPI class UpdateTradePacket createUpdateTradePacket(int);
@@ -422,8 +422,8 @@ public:
     MCAPI float distanceSqrToBlockPosCenter(class BlockPos const &) const;
     MCAPI float distanceTo(class Actor const &) const;
     MCAPI float distanceTo(class Vec3 const &) const;
-    MCAPI float distanceToSqr(class Actor const &) const;
     MCAPI float distanceToSqr(class Vec3 const &) const;
+    MCAPI float distanceToSqr(class Actor const &) const;
     MCAPI void dropLeash(bool, bool);
     MCAPI void dropTowards(class ItemStack const &, class Vec3);
     MCAPI bool executeEvent(std::string const &, class VariantParameterList const &);
@@ -463,8 +463,8 @@ public:
     MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     MCAPI bool getFirstAvailableSeatPos(class Actor &, class Vec3 &) const;
     MCAPI class Actor * getFirstPassenger() const;
-    MCAPI class SimpleContainer const & getHandContainer() const;
     MCAPI class SimpleContainer & getHandContainer();
+    MCAPI class SimpleContainer const & getHandContainer() const;
     MCAPI int getHealth() const;
     MCAPI int getHurtDir() const;
     MCAPI int getHurtTime() const;
@@ -480,8 +480,8 @@ public:
     MCAPI int getLastHurtMobTimestamp();
     MCAPI unsigned __int64 getLastHurtTimestamp() const;
     MCAPI struct ActorUniqueID getLeashHolder() const;
-    MCAPI class Level const & getLevel() const;
     MCAPI class Level & getLevel();
+    MCAPI class Level const & getLevel() const;
     MCAPI unsigned __int64 getLevelTimeStamp() const;
     MCAPI int getLimitedLifetimeTicks() const;
     MCAPI std::vector<struct ActorLink> getLinks() const;
@@ -769,8 +769,8 @@ public:
     MCAPI static class AABB getLiquidAABB(class AABB const &, enum MaterialType);
     MCAPI static float getLiquidFlowStrength(enum MaterialType);
     MCAPI static bool getStatusFlag(class SynchedActorData const &, enum ActorFlags);
-    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const &, float);
     MCAPI static class Vec3 getViewVector(class Vec2 const &, class Vec2 const &, float);
+    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const &, float);
     MCAPI static bool hasSubBBIn(class IConstBlockSource const &, std::vector<class AABB> const &, enum MaterialType);
     MCAPI static bool isFree(struct IActorMovementProxy &, class Vec3 const &, float);
     MCAPI static bool isImmersedInWater(struct IActorMovementProxy const &);

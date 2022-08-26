@@ -47,11 +47,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
 #endif
-    MCAPI SerializedSkin();
-    MCAPI SerializedSkin(class SerializedSkin &&);
-    MCAPI SerializedSkin(class SerializedSkin const &);
-    MCAPI SerializedSkin(class ConnectionRequest const &);
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
+    MCAPI SerializedSkin(class ConnectionRequest const &);
+    MCAPI SerializedSkin(class SerializedSkin const &);
+    MCAPI SerializedSkin(class SerializedSkin &&);
+    MCAPI SerializedSkin();
     MCAPI float getAnimationFrames(enum persona::AnimatedTextureType) const;
     MCAPI std::string const & getName() const;
     MCAPI bool isTrustedSkin() const;

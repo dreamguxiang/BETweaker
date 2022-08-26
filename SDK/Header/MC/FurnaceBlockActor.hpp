@@ -28,8 +28,8 @@ public:
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     MCVAPI void fixupOnLoad(class LevelChunk &);
-    MCVAPI class Container const * getContainer() const;
     MCVAPI class Container * getContainer();
+    MCVAPI class Container const * getContainer() const;
     MCVAPI int getContainerSize() const;
     MCVAPI class ItemStack const & getItem(int) const;
     MCVAPI int getMaxStackSize() const;

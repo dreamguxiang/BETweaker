@@ -51,12 +51,12 @@ public:
     MCVAPI bool isPlayingSound(unsigned __int64) const;
     MCVAPI unsigned __int64 play(std::string const &, class Vec3 const &, float, float);
     MCVAPI unsigned __int64 playAttached(std::string const &, class std::function<void (struct SoundInstanceProperties &)> &&);
-    MCVAPI void playMusic(std::string const &, float);
     MCVAPI void playMusic(std::string const &, float, unsigned int &);
+    MCVAPI void playMusic(std::string const &, float);
     MCVAPI unsigned __int64 playUI(std::string const &, float, float);
     MCVAPI void setMusicVolumeMultiplier(float);
-    MCVAPI void stop(unsigned __int64);
     MCVAPI void stop(std::string const &);
+    MCVAPI void stop(unsigned __int64);
     MCVAPI void stopAllDelayedSoundActions();
     MCVAPI void stopAllSounds();
     MCVAPI void stopMusic();

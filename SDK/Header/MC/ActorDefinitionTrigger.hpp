@@ -23,8 +23,8 @@ public:
 #endif
     MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger &&);
     MCAPI bool canTrigger(class Actor const &, class VariantParameterList const &) const;
-    MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger &&);
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger const &);
+    MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger &&);
     MCAPI ~ActorDefinitionTrigger();
 
 };
