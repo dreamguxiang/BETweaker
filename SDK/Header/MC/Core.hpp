@@ -59,13 +59,12 @@ public:
     Path(string a1) {
         mPath.mUtf8StdString = a1;
     }
-	
 };
 
 template <typename T> 
 class PathBuffer {
-    T value;
 public:
+    T value;
     T& get() {
 		return value;
     }

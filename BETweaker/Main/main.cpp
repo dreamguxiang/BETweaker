@@ -117,17 +117,13 @@ void loadCfg() {
 #include <MC/ResourceLocation.hpp>
 #include <MC/Types.hpp>
 #include <MC/PackSourceFactory.hpp>
+#include <MC/CompositePackSource.hpp>
+#include <MC/PackSourceFactory.hpp>
+#include <MC/ResourcePackPaths.hpp>
+#include <MC/DirectoryPackSource.hpp> 
+#include <MC/PackSource.hpp>
 
 static_assert(sizeof(SemVersion) == 0x70);
-
-ResourcePackRepository* gl;
-
-THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ"
-    , ResourcePackRepository* a1) {	
-    auto out = Core::Path(R"(plugins/BETweaker)");
-    a1->addWorldResourcePacks(out);
-    return original(a1);
-}
 
 extern void RegisterCommands();
 
@@ -168,6 +164,10 @@ void PluginInit()
             };
             },10*60*20);
         Module::InitAutoCrafting();
+        return true;
+        });
+    Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
+        ev.mRepo->setCustomResourcePackPath(PackType::Resources, ".\\plugins\\BETweaker\\resource_packs");
         return true;
         });
     Logger().info(R"(    ____  ____________                    __            )");
