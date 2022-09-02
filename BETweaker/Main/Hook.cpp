@@ -83,10 +83,9 @@ typedef std::chrono::high_resolution_clock timer_clock;
         std::chrono::duration_cast<std::chrono::microseconds>(elapsed) \
             .count();
 
-TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
-	if(!Settings::DispenserDestroyBlock && !Settings::AutoCrafting) return original(this, a2, a3);
+TInstanceHook2("AutoCrafting", void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
+	if(!Settings::AutoCrafting) return original(this, a2, a3);
 	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
-	bool isretrun = 0;
 	if (BlockEntity)
 	{
 		auto Container = BlockEntity->getContainer();
@@ -98,13 +97,30 @@ TInstanceHook(void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlo
 			int face = getFacing(a2->getBlock(*a3));
 			auto newpos = a3->neighbor(face);
 			if(Settings::AutoCrafting)
-				if (!Module::AutoCrafting(BlockEntity, a2, newpos)) isretrun = 1;
-			if(Settings::DispenserDestroyBlock)
-				if( Module::DispenserDestroy((BlockActor*)BlockEntity,a2, &newpos, const_cast<ItemStack&>(items),v9, a3)) isretrun =1;
+				if (!Module::AutoCrafting(BlockEntity, a2, newpos))return;
 		}
 	}
-	if (isretrun) return;
 	return original(this,a2,a3);
+}
+
+TInstanceHook2("DispenserDestroy", void, "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z", DispenserBlock, BlockSource* a2, BlockPos* a3) {
+	if (!Settings::DispenserDestroyBlock ) return original(this, a2, a3);
+	DispenserBlockActor* BlockEntity = (DispenserBlockActor*)a2->getBlockEntity(*a3);
+	if (BlockEntity)
+	{
+		auto Container = BlockEntity->getContainer();
+		((RandomizableBlockActorContainerBase*)BlockEntity)->unPackLootTable(*Global<Level>, *Container, a2->getDimensionId(), 0);
+		int v9 = BlockEntity->getRandomSlot();
+		auto& items = Container->getItem(v9);
+		if (!items.isNull() && items.getCount() > 0)
+		{
+			int face = getFacing(a2->getBlock(*a3));
+			auto newpos = a3->neighbor(face);
+			if (Settings::DispenserDestroyBlock)
+				if (Module::DispenserDestroy((BlockActor*)BlockEntity, a2, &newpos, const_cast<ItemStack&>(items), v9, a3)) return;
+		}
+	}
+	return original(this, a2, a3);
 }
 
 THook(void, "?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@@Z", 
