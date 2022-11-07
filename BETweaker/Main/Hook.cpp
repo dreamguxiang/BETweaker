@@ -1,7 +1,6 @@
 ﻿#include "../Global.h"
 #include "Module.h"
 #include "setting.h"
-#include <MC/AdventureSettingsPacket.hpp>
 #include <MC/AdventureSettings.hpp>
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
@@ -406,6 +405,8 @@ TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAd
 #include <MC/UpdateAdventureSettingsPacket.hpp>
 #include <MC/UpdateAbilitiesPacket.hpp>
 #include <MC/LayeredAbilities.hpp>
+#include <mc/Ability.hpp>
+enum AbilitiesLayer;
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
 	ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt)
 {
@@ -421,38 +422,20 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 		bool flying;
 		if (!pkt.tryGetBool(flying))
 			return;
-		auto abilities = &dAccess<LayeredAbilities>(sp, 2508);
+		auto abilities = &dAccess<LayeredAbilities>(sp, 2196);
 		auto mayFly = abilities->getAbility(AbilitiesIndex::MayFly).getBool();
 		flying = flying && mayFly;
-		AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, sp->getUniqueID());
-		pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
+		Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+		ab.setBool(0);
 		if (flying)
-			pkt.mFlag |= static_cast<unsigned int>(AdventureFlag::Flying);
+			ab.setBool(1);
+		UpdateAbilitiesPacket pkt(sp->getUniqueID(), *abilities);
+		auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
 		abilities->setAbility(AbilitiesIndex::Flying, flying);
+		sp->sendNetworkPacket(pkt2);
 		sp->sendNetworkPacket(pkt);
 	}
 }
-
-//TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
-//{
-//	Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
-//	if (pl->isPlayer())
-//	{
-//		auto sp = (Player*)pl;
-//		BlockPos bp = dAccess<BlockPos>(a2, 28);
-//		auto blockin = Level::getBlockInstance(bp, pl->getDimensionId());
-//		if (sp->isSneaking()) {
-//			auto blactor = blockin.getBlockEntity();
-//			if (blactor) {
-//				if (blactor->getType() == BlockActorType::Dispenser) {
-//					Module::ChangeDispenserMode(blactor, pl->getBlockSource(), sp);
-//					return 0;
-//				}
-//			}
-//		}
-//	}
-//	return original(this, a2);
-//}
 
 #include <MC/BucketItem.hpp>
 #include <MC/LootTableContext.hpp>

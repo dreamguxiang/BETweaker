@@ -179,8 +179,8 @@ void PluginInit()
     logger.info("BETweaker {} Loaded by QingYu", VERSION.toString());
     logger.info("Build Date[{}]", __TIMESTAMP__);
     logger.info("Support ProtocolVersion {}", fmt::format(fg(fmt::color::orange_red), std::to_string(BDSP)));
-    if (LL::getServerProtocolVersion() != BDSP) {
-        logger.error("This version({}) does not support BDSProtocolVersion:{}", VERSION.toString(), LL::getServerProtocolVersion());
+    if (ll::getServerProtocolVersion() != BDSP) {
+        logger.error("This version({}) does not support BDSProtocolVersion:{}", VERSION.toString(), ll::getServerProtocolVersion());
         logger.error("Please get the latest version");
     }
     initEvent();

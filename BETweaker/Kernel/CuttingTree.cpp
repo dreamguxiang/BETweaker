@@ -171,7 +171,7 @@ namespace Module {
 		if(LogBlocks.count(bs->getBlock(a3).getTypeName())){
             if (bs->getBlock(a3.add(0, -1, 0)).getTypeName() ==  "minecraft:dirt"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mGrass
-                || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMycelium
+                || bs->getBlock(a3.add(0, -1, 0)).getTypeName() ==  "minecraft:mycelium"
                 || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == "minecraft:podzol"
                 || bs->getBlock(a3.add(0, -1, 0)) == *VanillaBlocks::mMangroveRoots
                 || bs->getBlock(a3.add(0, -1, 0)).getTypeName() == "minecraft:netherrack"

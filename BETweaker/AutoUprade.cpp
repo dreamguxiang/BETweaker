@@ -2,7 +2,6 @@
 #include <LLAPI.h>
 #include <Nlohmann/json.hpp>
 #include <ServerAPI.h>
-#include <SimpleIni/SimpleIni.h>
 #include <Utils/CryptHelper.h>
 #include <Utils/FileHelper.h>
 #include <Utils/NetworkHelper.h>
@@ -11,7 +10,6 @@
 #include <filesystem>
 #include <httplib/httplib.h>
 #include <process.h>
-#include <seh_exception/seh_exception.hpp>
 #include <string>
 #include <thread>
 #include "Global.h"
@@ -29,8 +27,8 @@ void checkUpdate() {
             nlohmann::json data1 = nlohmann::json::parse(info, nullptr, true, true);
             if (data1.find("data") != data1.end()) {
                 nlohmann::json data2 = data1["data"];
-                LL::Version verRemote = LL::Version::parse(data2[0]["title"].get<string>());
-                LL::Version verLocal = VERSION;
+                ll::Version verRemote = ll::Version::parse(data2[0]["title"].get<string>());
+                ll::Version verLocal = VERSION;
                 if (verRemote > verLocal) {
                     logger.info("New version available: {}\n-->https://www.minebbs.com/resources/betweaker.3840/\n-->https://github.com/dreamguxiang/BETweaker/releases", verRemote.toString());
                 }

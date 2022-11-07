@@ -8,6 +8,7 @@
 #pragma comment(lib, "../SDK/Lib/libssl.lib")
 #pragma comment(lib, "../SDK/Lib/libcrypto.lib")
 #pragma comment(lib, "../SDK/Lib/concurrencpp.lib")
+
 #pragma execution_character_set("utf-8")
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
@@ -17,7 +18,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        LL::registerPlugin(PLUGIN_NAME,PLUGIN_INTRODUCTION,VERSION);
+        ll::registerPlugin(PLUGIN_NAME,PLUGIN_INTRODUCTION,VERSION);
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:

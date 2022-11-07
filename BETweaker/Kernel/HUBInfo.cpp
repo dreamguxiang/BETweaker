@@ -104,7 +104,7 @@ namespace Module {
                             auto bi = sp.getBlockFromViewVector();
                             if (!bi.isNull()) {
                                 auto block = bi.getBlock();
-                                ItemInstance item = block->getSilkTouchItemInstance();
+                                ItemInstance item = block->getLegacyBlock().getSilkTouchItemInstance(*block);
                                 auto blpos = bi.getPosition();
 
                                 if (block->getTypeName() == "minecraft:redstone_wire")
@@ -150,7 +150,7 @@ namespace Module {
                             auto bi = sp.getBlockFromViewVector();
                             if (!bi.isNull()) {
                                 auto block = bi.getBlock();
-                                ItemInstance item = block->getSilkTouchItemInstance();
+                                ItemInstance item = block->getLegacyBlock().getSilkTouchItemInstance(*block);
                                 auto blpos = bi.getPosition();
                                 sp.removeSidebar();
                                 sp.setSidebar("HubInfo", vector<std::pair<string, int>>{

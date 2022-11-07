@@ -2,13 +2,14 @@
 #include <RegCommandAPI.h>
 #include "../Main/Module.h"
 #include <MC/ServerPlayer.hpp>
-#include <MC/AdventureSettingsPacket.hpp>
 #include <DynamicCommandAPI.h>
 #include <MC/AdventureSettings.hpp>
+#include <MC/UpdateAbilitiesPacket.hpp>
+
 #include <MC/RequestAbilityPacket.hpp>
 #include <MC/ServerPlayer.hpp>
 #include "../Main/Helper.hpp"
-#include <third-party/magic_enum/magic_enum.hpp>
+#include <magic_enum/magic_enum.hpp>
 #include <ServerAPI.h>
 using namespace RegisterCommandHelper;
 
@@ -30,11 +31,14 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 
 #include <MC/Abilities.hpp>
 #include <MC/LayeredAbilities.hpp>
+#include <mc/UpdateAdventureSettingsPacket.hpp>
+#include <mc/AdventureSettings.hpp>
+enum AbilitiesLayer;
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();
 	
-    auto abilities = &dAccess<LayeredAbilities>(&player, 2508);//AbilityCommand::execute
+    auto abilities = &dAccess<LayeredAbilities>(&player, 2196);//AbilityCommand::execute
 
     auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && player.isOnGround())
@@ -54,12 +58,14 @@ void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
         abilities->setAbility(AbilitiesIndex::Flying, value);
     }
     flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
-    AdventureSettingsPacket pkt(Global<Level>->getAdventureSettings(), *abilities, uid);
-
-    pkt.mFlag &= ~static_cast<unsigned int>(AdventureFlag::Flying);
+    Ability& ab = abilities->getAbility(AbilitiesLayer(1), AbilitiesIndex::Flying);
+    ab.setBool(0);
     if (flying)
-        pkt.mFlag |= static_cast<unsigned int>(AdventureFlag::Flying);
-    player._sendDirtyActorData();
+        ab.setBool(1);
+    UpdateAbilitiesPacket pkt(uid, *abilities);
+    auto pkt2= UpdateAdventureSettingsPacket(AdventureSettings());
+    abilities->setAbility(AbilitiesIndex::Flying, flying);
+    player.sendNetworkPacket(pkt2);
     player.sendNetworkPacket(pkt);
 }
 
@@ -431,7 +437,7 @@ public:
                 "§bAuthor: §a@DreamGuXiang\n"
                 "§bThanks: §a@CanXuee,@ΘΣΦΓΥΔΝ,@tofus | Server:FineServer,CAS\n"
                 "§bGithub: §ahttps://github.com/dreamguxiang/BETweaker\n"
-                "§bVersion: §a" + VERSION.toString() + " for BDS "+ LL::getBdsVersion() + "\n"
+                "§bVersion: §a" + VERSION.toString() + " for BDS "+ ll::getBdsVersion() + "\n"
                 "§bUsage:\n"
                 "§d/bet reload - §6Reload Config\n"
                 "§d/bet help - §6Show this help\n"
