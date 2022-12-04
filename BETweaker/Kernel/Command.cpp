@@ -14,7 +14,7 @@
 using namespace RegisterCommandHelper;
 
 #define COMMAND_PERM(X)                                            \
-if (ori.getPermissionsLevel() < 1) {                                 \
+if ((int)ori.getPermissionsLevel() < 1) {                                 \
     output.error("You don't have permission to use this command"); \
     break;                                                         \
 }                                                                  \
@@ -33,12 +33,12 @@ void BETweakerUpgradeCommand(CommandOutput& output, bool isForce)
 #include <MC/LayeredAbilities.hpp>
 #include <mc/UpdateAdventureSettingsPacket.hpp>
 #include <mc/AdventureSettings.hpp>
-enum AbilitiesLayer;
+enum class AbilitiesLayer;
 void setPlayerAbility(Player& player, AbilitiesIndex index, bool value)
 {
     ActorUniqueID uid = player.getUniqueID();
 	
-    auto abilities = &dAccess<LayeredAbilities>(&player, 2196);//AbilityCommand::execute
+    auto abilities = player.getAbilities();
 
     auto flying = abilities->getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && player.isOnGround())
@@ -125,7 +125,7 @@ void RegFlyCommand()
             auto action = results["FlyEnum"].get<std::string>();
             switch (do_hash(action.c_str())) {
             case do_hash("add"): {
-                if (const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
+                if ((int)const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
                     auto PlayerName = results["PlayerName"].get<std::string>();
                     Settings::FlyPlayerList.insert(PlayerName);
                     output.success("Added " + PlayerName + " to FlyList");
@@ -137,7 +137,7 @@ void RegFlyCommand()
                 break;
             }
             case do_hash("remove"): {
-                if (const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
+                if ((int)const_cast<CommandOrigin&>(origin).getPermissionsLevel() > 0) {
                     auto PlayerName = results["PlayerName"].get<std::string>();
                     auto it = std::find(Settings::FlyPlayerList.begin(), Settings::FlyPlayerList.end(), PlayerName);
                     if (it != Settings::FlyPlayerList.end()) {

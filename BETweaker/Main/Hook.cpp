@@ -359,10 +359,7 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
 }
 #include <MC/ChunkSource.hpp>
 #include <MC/LevelChunkMetaData.hpp>
-enum ChunkSource::LoadMode : int {
-	None = 0x0,
-	Deferred = 0x1,
-};
+
 #include <MC/LevelChunkMetaDataDictionary.hpp>
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z",
 	GameMode, ItemStack* item)
@@ -406,7 +403,7 @@ TInstanceHook(AdventureSettingsPacket&, "??0AdventureSettingsPacket@@QEAA@AEBUAd
 #include <MC/UpdateAbilitiesPacket.hpp>
 #include <MC/LayeredAbilities.hpp>
 #include <mc/Ability.hpp>
-enum AbilitiesLayer;
+enum class AbilitiesLayer;
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
 	ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt)
 {
@@ -414,7 +411,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 	auto index = pkt.getAbility();
 	if (index == AbilitiesIndex::Flying)
 	{
-		auto sp = _getServerPlayer(nid, (SubClientId)pkt.clientSubId);
+		auto sp = getServerPlayer(nid);
 		if (!sp)
 			return;
 		if (!sp->getUserEntityIdentifierComponent())

@@ -4,19 +4,19 @@ std::map<FishingHook*, int>fishingHook;
 namespace Module {
 	bool AutoFish(FishingHook* a1) {
         auto pl = a1->getPlayerOwner();
-        if (a1->serverHooked() && !fishingHook.count(a1))
+        if (a1->_serverHooked() && !fishingHook.count(a1))
         {
             if (!fishingHook.count(a1)) {
                 fishingHook[a1] = 0;
                 return true;
             }
         }
-        else if (a1->serverHooked() && fishingHook[a1] == 0)
+        else if (a1->_serverHooked() && fishingHook[a1] == 0)
         {
             fishingHook[a1] = 1;
             return true;
         }
-        else if (!a1->serverHooked() && fishingHook[a1] == 1)
+        else if (!a1->_serverHooked() && fishingHook[a1] == 1)
         {
             ItemStack* item = pl->getHandSlot();
             item->getItem()->use(*item, *pl);

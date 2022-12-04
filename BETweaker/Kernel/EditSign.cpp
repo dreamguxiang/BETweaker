@@ -37,7 +37,7 @@ namespace Module {
                         BlockEntity->setMessage(signtext, "");
                         BlockEntity->setChanged();
                         auto pkt = BlockEntity->_getUpdatePacket(*player->getBlockSource());
-                        Level::sendPacketForAllPlayer(*pkt);
+                        Level::sendPacketForAllPlayers(*pkt);
                     }
                 });
 

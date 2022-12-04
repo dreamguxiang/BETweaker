@@ -98,7 +98,7 @@ namespace Helper {
 	}
 }
 
-enum ActorCategory : int
+enum class ActorCategory : int
 {
 	mBoat = 0x20000,
 	mNone = 0x0,
@@ -158,31 +158,3 @@ namespace
 	};
 }
 //
-inline string GetDefaultLang()
-{
-	//LANGID lang_id = GetSystemDefaultLangID();
-	LANGID lang_id = GetUserDefaultUILanguage();//"win10>设置>语言>Windows显示语言"
-	int size = sizeof(COUNTRY_LANG) / sizeof(COUNTRY_LANG[0]);
-
-	//char _country[16] = { 0 };//国际代码缩写
-	//strcpy_s(_country, "US");
-	//char _lang[32] = { 0 };//语言
-	//strcpy_s(_lang, "en");
-	char _userlang[32] = { 0 };//用户语言
-	strcpy_s(_userlang, "en_US");
-
-	for (int i = 0; i < size; i++)
-	{
-		if (lang_id == COUNTRY_LANG[i].langId)
-		{
-			//memset(_country, 0, sizeof(_country));
-			//memset(_lang, 0, sizeof(_lang));
-			memset(_userlang, 0, sizeof(_userlang));
-			//strcpy(_country, COUNTRY_LANG[i].country);
-			//strcpy(_lang, COUNTRY_LANG[i].lang);
-			strcpy_s(_userlang, COUNTRY_LANG[i].userLang);
-			break;
-		}
-	}
-	return std::string(_userlang);
-}

@@ -98,12 +98,11 @@ void loadCfg() {
         }
         catch (std::exception& e) {
             logger.error("Config File isInvalid, Err {}", e.what());
-            Sleep(1000 * 100);
             exit(1);
         }
         catch (...) {
             logger.error("Config File isInvalid");
-            Sleep(1000 * 100);
+     
             exit(1);
         }
     }
@@ -159,7 +158,7 @@ void PluginInit()
     loadCfg();
     Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent) {
         Schedule::repeat([] {
-            if (Global<Level>->createDimension(0)->isDay()) {
+            if (((Dimension*)Global<Level>->getOrCreateDimension(0).mHandle.lock().get())->isDay()) {
                 sleepList.clear();
             };
             },10*60*20);
@@ -167,7 +166,7 @@ void PluginInit()
         return true;
         });
     Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
-        ev.mRepo->setCustomResourcePackPath(PackType::Resources, ".\\plugins\\BETweaker\\resource_packs");
+        ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, ".\\plugins\\BETweaker\\resource_packs");
         return true;
         });
     Logger().info(R"(    ____  ____________                    __            )");

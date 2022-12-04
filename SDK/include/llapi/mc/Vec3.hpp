@@ -2,7 +2,6 @@
 
 #include "../Global.h"
 #include "BlockPos.hpp"
-#include "../Utils/Bstream.h"
 
 class Vec3 {
 public:
@@ -10,13 +9,17 @@ public:
 
     inline Vec3() = default;
 
-    inline Vec3(float _x, float _y, float _z) : x(_x), y(_y), z(_z){};
+    inline Vec3(float _x, float _y, float _z)
+    : x(_x), y(_y), z(_z){};
 
-    inline explicit Vec3(BlockPos& pos) : x((float)pos.x), y((float)pos.y), z((float)pos.z){};
+    inline explicit Vec3(BlockPos& pos)
+    : x((float)pos.x), y((float)pos.y), z((float)pos.z){};
 
-    inline Vec3(double _x, double _y, double _z) : x((float)_x), y((float)_y), z((float)_z){};
+    inline Vec3(double _x, double _y, double _z)
+    : x((float)_x), y((float)_y), z((float)_z){};
 
-    inline Vec3(int _x, int _y, int _z) : x((float)_x), y((float)_y), z((float)_z){};
+    inline Vec3(int _x, int _y, int _z)
+    : x((float)_x), y((float)_y), z((float)_z){};
 
     MCAPI class Vec3 abs() const;
 
@@ -96,7 +99,6 @@ public:
     inline float distanceToSqr(Vec3 const& b) const {
         return (*this - b).lengthSqr();
     }
-
 
     float& operator[](int index) {
         if (index < 0 || index > 2) {
@@ -202,25 +204,20 @@ public:
     }
 
     inline float dot(const Vec3& b) const {
-        return {x * b.x + y * b.y + z * b.z};
+        return x * b.x + y * b.y + z * b.z;
     }
 
     inline Vec3 cross(const Vec3& b) const {
         return {y * b.z - z * b.y, z * b.x - x * b.z, x * b.y - y * b.x};
     }
 
-    inline static Vec3 max(const Vec3& a, const Vec3& b) {
-        return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
+    inline bool operator<(const Vec3& b) const {
+        return this->lengthSqr() < b.lengthSqr();
     }
 
-    inline static Vec3 min(const Vec3& a, const Vec3& b) {
-        return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
+    inline bool operator>(const Vec3& b) const {
+        return this->lengthSqr() > b.lengthSqr();
     }
-    template <typename _TP>
-    void pack(WBStreamImpl<_TP>& ws) const {
-        ws.apply(x, y, z);
-    }
-    void unpack(RBStream& rs) { rs.apply(x, y, z); }
 };
 
 namespace std {

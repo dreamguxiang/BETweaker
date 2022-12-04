@@ -1,12 +1,11 @@
 #include "../Global.h"
 #include <MC/Material.hpp>
-#include <concurrencpp/concurrencpp.h>
 #include <MC/ServerPlayer.hpp>
 #include <MC/FeatureRegistry.hpp>
 #include <MC/ListTag.hpp>
 #include <mc/PlayerInventory.hpp>
 #include <MC/BedrockBlocks.hpp>
-enum MaterialType;
+enum class MaterialType;
 namespace Module {
     std::unordered_set<string> LogBlocks{
         "minecraft:log",

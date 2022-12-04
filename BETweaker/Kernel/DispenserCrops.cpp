@@ -109,7 +109,7 @@ namespace Module {
             sp->sendTextPacket("§b[BETweaker-Dispenser] CLOSE", TextType::JUKEBOX_POPUP);
         }
         auto pkt = ba->getServerUpdatePacket(*bs);
-        Level::sendPacketForAllPlayer(*pkt);
+        Level::sendPacketForAllPlayers(*pkt);
     }
 
 }

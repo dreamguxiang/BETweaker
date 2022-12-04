@@ -10,13 +10,13 @@
 #define PLUGIN_AUTOHR               "QingYu"
 #define PLUGIN_VERSION_MAJOR        1
 #define PLUGIN_VERSION_MINOR        2
-#define PLUGIN_VERSION_REVISION     1
+#define PLUGIN_VERSION_REVISION     2
 #define PLUGIN_VERSION_BUILD        2
 #define PLUGIN_VERSION_STATUS       PLUGIN_VERSION_RELEASE
 
-#define TARGET_BDS_PROTOCOL_VERSION 557
+#define TARGET_BDS_PROTOCOL_VERSION 560
 // used by github actions(TODO)
-#define TARGET_BDS_VERSION          1.19.40.02
+#define TARGET_BDS_VERSION          1.19.50.02
 
 // File Version Information, used in Resource.rc
 #define __TO_VERSION_STRING(ver) #ver
