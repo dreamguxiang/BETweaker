@@ -10,7 +10,7 @@
 #define PLUGIN_AUTOHR               "QingYu"
 #define PLUGIN_VERSION_MAJOR        1
 #define PLUGIN_VERSION_MINOR        2
-#define PLUGIN_VERSION_REVISION     2
+#define PLUGIN_VERSION_REVISION     3
 #define PLUGIN_VERSION_BUILD        2
 #define PLUGIN_VERSION_STATUS       PLUGIN_VERSION_RELEASE
 

@@ -24,11 +24,7 @@ class RecipeIngredient : public ItemDescriptorCount {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ItemDescriptor descriptor;
-    unsigned short count;
 private:
-    char pad74[6]{ 0 };
-
 #define DISABLE_CONSTRUCTOR_PREVENTION_RECIPEINGREDIENT
 
 #undef AFTER_EXTRA
