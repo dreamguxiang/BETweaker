@@ -15,6 +15,7 @@ file(GLOB_RECURSE SRC_FILES_DIR
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/SDK/include
+    ${CMAKE_SOURCE_DIR}/include
 )
 
 link_directories(
@@ -71,9 +72,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_api.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/bedrock_server_var.lib"
 	"${CMAKE_SOURCE_DIR}/SDK/lib/SymDBHelper.lib"
+    "${CMAKE_SOURCE_DIR}/lib/plhook.lib"
 )
 
-add_custom_command(TARGET ${CMAKE_PROJECT_NAME} PRE_BUILD
-    COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepare_libraries.cmd ${PROJECT_SOURCE_DIR}
-)
 

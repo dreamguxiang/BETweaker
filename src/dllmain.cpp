@@ -5,12 +5,11 @@
 
 #include <llapi/LoggerAPI.h>
 #include <llapi/ServerAPI.h>
-
 #include "version.h"
 
 void PluginInit();
 
-Logger logger(PLUGIN_NAME);
+Logger logger(fmt::format(fg(fmt::color::light_pink), PLUGIN_NAME));
 
 void CheckProtocolVersion()
 {
@@ -42,6 +41,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
             std::map<std::string, std::string>{
                 {"Author", PLUGIN_AUTHOR},
             });
+
         break;
 
     case DLL_THREAD_ATTACH:
