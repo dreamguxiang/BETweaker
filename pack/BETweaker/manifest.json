@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "§eBETweaker",
+    "name": "BETweaker",
+    "uuid": "3e15339d-aa47-114f-71ab-79b3cfb7f4c4",
+    "version": [
+      1,
+      0,
+      27
+    ],
+    "min_engine_version": [
+      1,
+      13,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "§eBETweaker",
+      "type": "resources",
+      "uuid": "81a2fc7b-02ea-a36f-0d13-22cb07bcdde1",
+      "version": [
+        1,
+        0,
+        27
+      ]
+    }
+  ]
+}
