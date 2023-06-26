@@ -1,29 +1,83 @@
-# LiteLoaderBDS C++ Plugin Template
+# BETweaker
+<p align="center">
+<img src=".github/logo.png" alt="drawing" style="width:600px;"/>
+</p>
 
-The template repository for LiteLoaderBDS C++ plugin development.
+##### English | [简体中文](README_zh.md)
 
-## Usage
+`BETweaker` is a plugin that adds  features to the game, giving survival players a very rich and useful feature set.
 
-* Write and build your plugin
+ including but not limited to below:
+- Right click for quick crop harvesting 
+<img src=".github/cropharvesting.gif" alt="show" />
 
-  Please refer to [LiteLoaderBDS C++ Plugin Development Documentation](https://cpp.docs.litebds.com/en/) or [LiteLoaderBDS C++ 插件开发文档](https://cpp.docs.litebds.com/zh-Hans/).
+- One person sleeps, all stay overnight
+- Farm land anti-stomp
+- Mob, Block information display
+- Edit Sign(need BETweakerStick)
+- Survival Flying
+- Fast leaf decay
+- Auto Fish
+- AutoSupplyItem
+- Cutting Tree 
+- Dispenser Destroy Block(need BETweakerStick)
+- End Portal Duplicate Gravity Block
+- Add /seed command to get the world's seed
+- Crouching right click experience repair tool
+- Anvil repair (iron ingot right click repair, obsidian right click broken ring)
+- Dispenser Auto Crafting
+- Lightning Guardian generates ancient guardians
+- Y less than 0 brush stone machine generates deep class stone
+<img src=".github/cuttree.gif" alt="show" />
 
-* Edit README.md and LICENSE
+- Double Doors
+- <details><summary>Dispenser to grow crops
+    </summary>
+    We don't want to make large-scale modifications to the minecraft original redstone system.
+    So we've to selected some useful blocks for your bds.
 
-  You ought not to keep the original README.md, for it contains instructions on how to build your own plugin, which might not fit your plugin repository. The README.md of your repository should contain instructions on how to build, install and use your plugin.
+        List: crops, saplings, bamboo, mushrooms
+        If you don't like it, you can turn off this feature in the plugin config file.
+    </details>
 
-  You don't necessarily want your repository to be open sourced under the Unlicense, so please choose your own license in place of the `LICENSE` file.
+- BETweakerStick
+  - Crafting <p align="center"><img src="https://s1.ax1x.com/2022/05/13/OsPqcF.png" alt="drawing" style="width:500px;"/></p>
+  - Function
+    - Sneaking,Right click Dispenser and Change Status
+    - Sneaking,Edit Sign
+    - ......
 
-## For Beta Developers
 
-If you would like to experience the latest features for plugins in beta versions of LiteLoaderBDS, you can switch the branch of the SDK to beta. Run the commands below under the plugin repository:
+For each feature in this plugin, you can use the command **"/bet"** or revise the config file in **"/plugins/BETweaker/"** to turn it on and off at any time.
 
-```sh
-git submodule set-branch --branch beta SDK
-git submodule update --init --remote
-```
+<p align="center">
+<img src="https://s4.ax1x.com/2022/02/25/bkQNdS.png" alt="drawing" style="width:600px;"/>
+</p>
 
-## License
+What's more, this mod **completely follows features of vanilla game.(If there are modifications to the game features, they will be marked)** This means it will NOT change any features without notifying users and will not affect the game level, so it is suitable for use this mod in vanilla survival server.
 
-This repository is open source under the Unlicense.
-Please refer to [the license file](LICENSE) for further information.
+### 💻 Download
+
+Please go to [Releases](https://github.com/dreamguxiang/BETweaker/releases) page to download the latest version.
+
+### 🎯 Install & Usage
+
+This plugin is developed based on [LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS), LL provides a powerful API system that greatly reduces development and maintenance costs, so to load BETweaker you need to install LiteLoaderBDS and drop it into its generated s Plugins folder in order to load and run correctly.
+
+### 🏆 Acknowledgement
+
+- Thank[hhhxiao](https://github.com/hhhxiao)Suggestions made.
+- Thank[dofes](https://github.com/dofes)help and contribution.
+- Thank[LiteLDev](https://github.com/LiteLDev)Help and advice from development team members.
+
+### 📞 Contact
+
+NULL
+
+### ⚠️ Warning
+
+Please do not reproduce without permission, integration! This may keep it from ever being updated
+
+#### Extra Restrictions & Exceptions
+
+You can't distribute, integrate, etc. without my authorized permission

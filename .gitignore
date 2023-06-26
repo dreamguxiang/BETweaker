@@ -27,7 +27,6 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
 
@@ -38,3 +37,6 @@ out
 
 # Jetbrains IDEs
 .idea
+
+.vs
+x64/

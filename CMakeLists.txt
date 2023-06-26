@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(plugin)
+project(BETweaker)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
+set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES_DIR
     ${PROJECT_SOURCE_DIR}/src/*.c
@@ -74,3 +76,4 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME} PRE_BUILD
     COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepare_libraries.cmd ${PROJECT_SOURCE_DIR}
 )
+
