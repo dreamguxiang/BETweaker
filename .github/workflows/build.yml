@@ -68,10 +68,6 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
     
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
     - name: Change Pack Version
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
