@@ -58,6 +58,21 @@ namespace ll::memory {
         return *(T*)(((uintptr_t)ptr) + off);
     }
 
+    template<typename T, uintptr_t off, typename... Args>
+    T* createObject(Args&&... args) {
+        T* obj = static_cast<T*>(operator new(off));
+        new(obj) T(std::forward<Args>(args)...);
+        return obj;
+    }
+
+    template<typename T, typename... Args>
+    T* createObject(uintptr_t off,Args&&... args) {
+        T* obj = static_cast<T*>(operator new(off));
+        new(obj) T(std::forward<Args>(args)...);
+        return obj;
+    }
+
+
     template <FixedString symbol>
     inline FuncPtr symbolCache = resolveSymbol(symbol);
 
@@ -77,3 +92,4 @@ namespace ll::memory {
 #define LL_RESOLVE_SYMBOL(symbol) ll::memory::symbolCache<symbol>
 
 #define LL_RESOLVE_SIGNATURE(signature) ll::memory::signatureCache<signature>
+

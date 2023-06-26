@@ -10,9 +10,8 @@ namespace BetterHarvestingCrop {
 
     template <CropType T>
     void harvestCrop(Block* bl, Player* sp, BlockInstance blockin,int growthlevel) {
-        Randomize* random = static_cast<Randomize*>(operator new(0x10));
-        new(random) Randomize(sp->getRandom());
 
+        Randomize* random = ll::memory::createObject<Randomize,0x10>(sp->getRandom());
         if constexpr (T == CropType::Regular) {
             auto block = static_cast<CropBlock*>(const_cast<BlockLegacy*>(&bl->getLegacyBlock()));
             auto bs = blockin.getBlockSource();
