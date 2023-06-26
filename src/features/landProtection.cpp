@@ -1,4 +1,4 @@
-#include "global.h"
+#include <global.h>
 
 LL_AUTO_STATIC_HOOK(
 	NoFarmDestroy,
@@ -12,19 +12,4 @@ LL_AUTO_STATIC_HOOK(
 		return;
 	}
 	return origin(__this, a2, a3, a4, a5);
-}
-#include "llapi/mc/CommandRegistry.hpp"
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    RegCmdEventHook,
-    CommandRegistry,
-    HookPriority::Normal,
-    "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
-    void,
-    void* a1
-) {
-	logger.info(")");
-    origin(a1);
-
-
 }
