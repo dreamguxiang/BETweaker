@@ -11,7 +11,7 @@ env:
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_TYPE: Release
   Platform: X64
-  VERSION_FILE_PATH: ./src/version.h
+  VERSION_FILE_PATH: ./include/version.h
 
 jobs:
   pre-process:

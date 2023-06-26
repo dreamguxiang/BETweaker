@@ -24,7 +24,7 @@ def getVersion():
     MINOR = 0
     REVISION = 0
     try:
-        with open("./src/version.h", "r") as file:
+        with open("./include/version.h", "r") as file:
             for line in file:
                 if "#define PLUGIN_VERSION_MAJOR" in line:
                     out = re.findall(r'\d+', line)
