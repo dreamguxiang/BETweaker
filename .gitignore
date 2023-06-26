@@ -38,3 +38,6 @@ out
 
 # Jetbrains IDEs
 .idea
+
+.vs
+x64/
