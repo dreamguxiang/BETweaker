@@ -47,8 +47,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 		if (settings::AnvilRestoration) {
 			if (sp->isSneaking()) {
 				auto blockin = Level::getBlockInstance(&blockPosPtr, &sp->getRegion());
-				AnvilRestoration::AnvilRestoration(&item, blockin.getBlock(), blockin.getPosition(), sp);
-			    return InteractionResult{ InteractionResult::Fail };;
+				if(!AnvilRestoration::AnvilRestoration(&item, blockin.getBlock(), blockin.getPosition(), sp)) {
+					return InteractionResult{ InteractionResult::Fail };
+				}
 			}
 		}
 	}
