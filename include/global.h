@@ -35,3 +35,8 @@ inline bool isInit = false;
 #include <llapi/mc/mce.hpp>
 #include <llapi/mc/Vec2.hpp>
 #include <llapi/mc/Vec2.hpp>
+#include <llapi/mc/DoorBlock.hpp>
+#include <llapi/mc/StaticVanillaBlocks.hpp>
+#include <llapi/mc/LeavesBlock.hpp>
+#include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/LogBlock.hpp>
