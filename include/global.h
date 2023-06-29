@@ -42,3 +42,4 @@ inline bool isInit = false;
 #include <llapi/mc/LogBlock.hpp>
 #include <llapi/mc/Attribute.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
+#include <llapi/mc/Container.hpp>
