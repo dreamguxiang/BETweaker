@@ -9,17 +9,18 @@ namespace FastLeafDecay {
         "minecraft:mangrove_leaves",
     };
 
-    std::queue<std::pair<BlockPos, int>> leafBlockQueue;
+    std::stack<BlockPos> leafBlockPos;
+    std::stack<int> leafBlockDim;
 
     bool processLeafBlock() {
-        if (leafBlockQueue.empty())
+        if (leafBlockDim.empty())
         {
             return true;
         }
-        auto leafBlockData = leafBlockQueue.front();
-        leafBlockQueue.pop();
-        BlockPos pos = leafBlockData.first;
-        int dim = leafBlockData.second;
+        BlockPos pos = leafBlockPos.top();
+        leafBlockPos.pop();
+        int dim = leafBlockDim.top();
+        leafBlockDim.pop();
         Block* bl = Level::getBlockEx(pos, dim);
         if (!bl)
             return true;
@@ -37,21 +38,27 @@ namespace FastLeafDecay {
         for (size_t i = 0; i < 6; i++)
         {
             BlockPos pos = a2->neighbor(i);
-            if (LeafBlocks.count(Level::getBlock(pos, a1)->getTypeName()))
+            if (LeafBlocks.count(Level::getBlock(pos, a1)->getName().getString()))
             {
-                leafBlockQueue.push({ pos, a1->getDimensionId() });
+                leafBlockPos.push(pos);
+                leafBlockDim.push(a1->getDimensionId());
             }
         }
     }
 
     void processLeafBlocks() {
-        std::vector<std::thread> threads;
-        for (size_t i = 0; i < 7 && !leafBlockQueue.empty(); i++)
+        if (leafBlockDim.empty())
         {
-            threads.emplace_back(processLeafBlock);
+            return;
         }
-        for (auto& th : threads) {
-            th.join();
+        else if (leafBlockDim.size() == leafBlockPos.size())
+        {
+            std::thread a[7];
+            for (size_t i = 0; i < 7; i++)
+            {
+                a[i] = std::thread(processLeafBlock);
+                a[i].join();
+            }
         }
     }
 }
@@ -92,4 +99,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         }
     }
     return origin(a2, a3);
+}
+
+THook(void, "?tick@Level@@UEAAXXZ", Level* _this) {
+    if (settings::FastLeafDecay)
+    {
+        try {
+            FastLeafDecay::processLeafBlocks();
+        }
+        catch (...) {
+            return original(_this);
+        }
+    }
+    return original(_this);
 }
