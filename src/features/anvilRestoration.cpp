@@ -4,7 +4,7 @@
 namespace AnvilRestoration {
 
 	int UseOne(int title, bool add) {
-		int temp = add ? -4 : 4;
+		int temp = add ? -1 : 1;
 		return title + temp;
 	}
 
@@ -13,8 +13,8 @@ namespace AnvilRestoration {
 			auto aux = block->getTileData();
 			if (item->getTypeName() == "minecraft:iron_ingot") {
 				auto out = UseOne(aux, true);
-				if (out >= 0 && out <= 11) {
-					Level::setBlock(pos, sp->getDimensionId(), "minecraft:anvil", out);
+				if (out >= 0 && out <= 2) {
+					sp->getRegion().setBlock(pos.x, pos.y, pos.z, *StaticVanillaBlocks::mAnvil, out, nullptr);
 					auto items = sp->getHandSlot();
 					items->remove(1);
 				}
@@ -22,8 +22,8 @@ namespace AnvilRestoration {
 			}
 			else if (item->getTypeName() == "minecraft:obsidian") {
 				auto out = UseOne(aux, false);
-				if (out >= 0 && out <= 11) {
-					Level::setBlock(pos, sp->getDimensionId(), "minecraft:anvil", out);
+				if (out >= 0 && out <= 2) {
+					sp->getRegion().setBlock(pos.x, pos.y, pos.z, *StaticVanillaBlocks::mAnvil, out,nullptr);
 					auto items = sp->getHandSlot();
 					items->remove(1);
 				}
