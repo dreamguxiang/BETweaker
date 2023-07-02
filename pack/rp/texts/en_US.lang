@@ -71,3 +71,5 @@ entity.npc.name=NPC
 
 betweaker.cuttingtree.loreon=Express Mode
 betweaker.cuttingtree.loreoff=Normal Mode
+
+item.betweaker:stick.name=BETWeaker Stick

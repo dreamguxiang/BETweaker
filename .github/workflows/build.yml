@@ -85,7 +85,9 @@ jobs:
         cp -f x64/Release/*.pdb output/plugins/lib
         mkdir output/plugins/BETweaker
         mkdir output/plugins/BETweaker/resource_packs
-        cp -r pack/BETweaker output/plugins/BETweaker/resource_packs
+        cp -r pack/rp output/plugins/BETweaker/resource_packs
+        mkdir output/plugins/BETweaker/behavior_packs
+        cp -r pack/bp output/plugins/BETweaker/behavior_packs
 
       shell: bash
     

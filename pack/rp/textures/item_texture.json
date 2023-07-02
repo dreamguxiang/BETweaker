@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "BETWeaker",
+    "texture_name": "atlas.item",
+    "texture_data": {
+        "betweaker_stick": {
+            "textures": "textures/items/betweaker_stick1"
+        }
+    }
+}

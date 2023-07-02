@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.betweaker_stick.animate": {
+      "arrays": {
+        "textures": {
+          "array.swords": [
+            "texture.betweaker_stick1",
+            "texture.betweaker_stick2",
+            "texture.betweaker_stick3",
+            "texture.betweaker_stick4",
+            "texture.betweaker_stick5",
+            "texture.betweaker_stick6",
+            "texture.betweaker_stick7"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "array.swords[(query.anim_time * 8)]" ]
+    }
+  }
+}

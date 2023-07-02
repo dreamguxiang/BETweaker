@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "betweaker:stick",
+			"category": "Items"
+		},
+		"components": {
+			"minecraft:icon": "betweaker_stick",
+			"minecraft:render_offsets": "tools"
+		}
+	}
+}

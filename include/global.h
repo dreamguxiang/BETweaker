@@ -43,3 +43,13 @@ inline bool isInit = false;
 #include <llapi/mc/Attribute.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
 #include <llapi/mc/Container.hpp>
+#include <llapi/mc/SeedItemComponentLegacy.hpp>
+#include <llapi/mc/Material.hpp>
+#include <llapi/mc/CameraItemComponentLegacy.hpp>
+#include <llapi/mc/BlockActor.hpp>
+#include <llapi/mc/BlockActorDataPacket.hpp>
+#include <llapi/mc/DispenserBlock.hpp>
+#include <llapi/mc/RandomizableBlockActorContainerBase.hpp>
+
+#define ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
+#include <llapi/mc/DispenserBlockActor.hpp>
