@@ -9,13 +9,11 @@ namespace settings {
     extern bool DispenserCrops;
     extern bool FastLeafDecay;
     extern bool HUBinfo;
-    extern bool EditSign;
     extern bool AutoFish;
     extern bool DoubleDoors;
     extern bool FastSetMinecart;
     extern bool AutoSupplyItem;
     extern bool CuttingTree;
-    extern bool EndPortalDuplicateGravityBlock;
     extern bool AnvilRestoration;
     extern bool BetterThanMending;
     extern string HUBInfoShow;

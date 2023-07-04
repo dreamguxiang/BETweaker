@@ -8,10 +8,14 @@ inline bool isInit = false;
 #include <llapi/Global.h>
 #include <llapi/ScheduleAPI.h>
 #include <llapi/utils/Hash.h>
+#include <llapi/RegCommandAPI.h>
+#include <llapi/DynamicCommandAPI.h>
+#include <llapi/EventAPI.h>
 
 //BETweaker
 #include <settings.h>
 #include <memory/hook.h>
+#include <version.h>
 
 //MCAPI
 #include <llapi/mc/FishingHook.hpp>
@@ -65,5 +69,10 @@ inline bool isInit = false;
 #include <llapi/mc/CraftingContainer.hpp>
 #include <llapi/mc/Spawner.hpp>
 #include <llapi/mc/CraftingContext.hpp>
+#include <llapi/mc/CommandOutputParameter.hpp>
+
 
 #define I18N_GET(key,lang) I18n::get(key, I18n::getLanguage(lang))
+#define JsonFile "plugins/BETweaker/config.json"
+
+#define BETVERSION ll::Version{PLUGIN_VERSION_MAJOR,PLUGIN_VERSION_MINOR,PLUGIN_VERSION_REVISION}
