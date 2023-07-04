@@ -76,8 +76,9 @@ jobs:
     - name: Generate Version
       id: ver
       run: |
-        var=${{ matrix.sdk }}
+        var=${{ matrix.sdk }}     
         var=${var%-*}
+        var=${var//./}
         var="V${var}" 
         echo "bdsversion=${var}" >> $GITHUB_OUTPUT
       shell: bash
