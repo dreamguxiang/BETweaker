@@ -30,7 +30,11 @@ namespace FastLeafDecay {
             return;
         else if (LeafBlocks.count(bl->getTypeName()))
         {
+#ifdef V1198301
+            auto leaf = (LeafBlock*)(bl->getLegacyBlock()).createWeakPtr().get();
+#else
             auto leaf = (LeavesBlock*)(bl->getLegacyBlock()).createWeakPtr().get();
+#endif
             auto bs = Level::getBlockSource(dim);
             leaf->randomTick(*bs, pos, Random::getThreadLocal());
             return;
