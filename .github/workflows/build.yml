@@ -29,7 +29,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir D:/BDS
-        version=${sdk%%-*} 
+        version=${sdk%%-*}
+        echo ${version}
         curl -L -o D:/BDS/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-${version}.zip
         unzip D:/BDS/server.zip -d D:/BDS > /dev/null
       shell: bash
