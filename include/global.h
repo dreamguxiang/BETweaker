@@ -55,3 +55,8 @@ inline bool isInit = false;
 #define ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
 #include <llapi/mc/DispenserBlockActor.hpp>
 #include <llapi/mc/ActorFactory.hpp>
+#include <llapi/mc/I18n.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/ListTag.hpp>
+
+#define I18N_GET(key,lang) I18n::get(key, I18n::getLanguage(lang))

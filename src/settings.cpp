@@ -23,7 +23,7 @@ namespace settings {
     bool DoubleDoors = true;
     bool FastSetMinecart = true;
     bool AutoSupplyItem = true;
-    bool CuttingTree = false;
+    bool CuttingTree = true;
     bool DispenserDestroyBlock = true;
     bool DispenserDestroyBreakItem = true;
     bool EndPortalDuplicateGravityBlock = false;

@@ -7,6 +7,10 @@ namespace FastLeafDecay {
         "minecraft:azalea_leaves",
         "minecraft:azalea_leaves_flowered",
         "minecraft:mangrove_leaves",
+        "minecraft:nether_wart_block",
+        "minecraft:warped_wart_block",
+        "minecraft:shroomlight",
+        "minecraft:cherry_leaves",
     };
 
     std::stack<BlockPos> leafBlockPos;
