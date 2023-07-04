@@ -58,5 +58,12 @@ inline bool isInit = false;
 #include <llapi/mc/I18n.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/ListTag.hpp>
+#include <llapi/mc/Recipe.hpp>
+#define ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
+#include <llapi/mc/HopperBlockActor.hpp>
+#include <llapi/mc/ILevel.hpp>
+#include <llapi/mc/CraftingContainer.hpp>
+#include <llapi/mc/Spawner.hpp>
+#include <llapi/mc/CraftingContext.hpp>
 
 #define I18N_GET(key,lang) I18n::get(key, I18n::getLanguage(lang))
