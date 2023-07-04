@@ -28,10 +28,9 @@ jobs:
     - name: Download Server
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mkdir D:/BDS
-        IFS='-' read -ra ADDR <<< "$sdk"
-        version="${ADDR[0]}"
-        curl -L -o D:/BDS/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-${version}.zip
+        mkdir D:/BDS       
+        var=${{ matrix.sdk }}
+        curl -L -o D:/BDS/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-${var%-*}.zip
         unzip D:/BDS/server.zip -d D:/BDS > /dev/null
       shell: bash
 
