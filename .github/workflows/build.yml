@@ -75,11 +75,10 @@ jobs:
 
     - name: Configure CMake
       run: |
-        var=${{ matrix.sdk }}
-        var=${var//./}
-        var="V${var}" 
+        $var=${{ matrix.sdk }}
+        $var=${var//./}
+        $var="V${var}" 
         cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBDS_VERSION=${var}
-      shell: bash
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
