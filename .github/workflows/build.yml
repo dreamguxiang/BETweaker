@@ -77,9 +77,9 @@ jobs:
       id: ver
       run: |
         var=${{ matrix.sdk }}
-        var2=${var//./}
-        var3="V${var2}" 
-        echo ::set-output name=bdsversion::${var3}
+        var=${var#*-}
+        var="V${var}" 
+        echo "bdsversion=${var}" >> $GITHUB_OUTPUT
       shell: bash
 
     - name: Configure CMake
@@ -127,7 +127,7 @@ jobs:
       id: rel
       if: startsWith(github.ref, 'refs/tags/')
       run: |
-        echo ::set-output name=tag::${GITHUB_REF#refs/tags/*}
+        echo "tag=${GITHUB_REF#refs/tags/*}" >> "$GITHUB_OUTPUT"
         var=${{ matrix.sdk }}
         mv output/BETweaker.zip output/BETweaker-${GITHUB_REF#refs/tags/*}-${var%-*}.zip
       shell: bash
