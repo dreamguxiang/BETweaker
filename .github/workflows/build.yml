@@ -39,6 +39,7 @@ jobs:
         cd sdk
         var=${{ matrix.sdk }}
         git checkout ${var#*-}
+      shell: bash
       
     - name: Build Library
       working-directory: ${{env.GITHUB_WORKSPACE}}
