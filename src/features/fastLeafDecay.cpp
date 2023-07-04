@@ -66,7 +66,7 @@ namespace FastLeafDecay {
         }
     }
 }
-#ifdef V198301
+#ifdef V1198301
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FastLeafDecayLeavesBlockHook,
     LeavesBlock,

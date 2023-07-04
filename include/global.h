@@ -42,7 +42,7 @@ inline bool isInit = false;
 #include <llapi/mc/Vec2.hpp>
 #include <llapi/mc/DoorBlock.hpp>
 #include <llapi/mc/StaticVanillaBlocks.hpp>
-#ifdef V198301
+#ifdef V1198301
 #include <llapi/mc/LeafBlock.hpp>
 #else
 #include <llapi/mc/LeavesBlock.hpp>
