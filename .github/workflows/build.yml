@@ -14,7 +14,7 @@ env:
   VERSION_FILE_PATH: ./include/version.h
 
 jobs:
-  pre-process:
+  build-BETweaker:
     strategy:
       matrix:
         sdk: [ '1.19.83.01-1d517b71fd83e2167410ee7aa2bd0c290cfecd68', '1.20.0.01-e02fddbb22d8e94a7ba5b2e6848ea981babc0b21' ] # 你的SDK版本列表
@@ -73,12 +73,17 @@ jobs:
         sed -r -i 's/#define\s+PLUGIN_VERSION_BUILD\s+.*/#define PLUGIN_VERSION_BUILD  ${{ github.run_number }}\r/' ${{env.VERSION_FILE_PATH}}
       shell: bash
 
-    - name: Configure CMake
+    - name: Generate Version
+      id: ver
       run: |
-        $var=${{ matrix.sdk }}
-        $var=${var//./}
-        $var="V${var}" 
-        cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBDS_VERSION=${var}
+        var=${{ matrix.sdk }}
+        var=${var//./}
+        var="V${var}" 
+        echo ::set-output name=bdsversion::${var}
+      shell: bash
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBDS_VERSION=${{ steps.ver.outputs.bdsversion }}
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
