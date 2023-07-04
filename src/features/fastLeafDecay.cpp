@@ -66,7 +66,26 @@ namespace FastLeafDecay {
         }
     }
 }
-
+#ifdef V198301
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    FastLeafDecayLeavesBlockHook,
+    LeavesBlock,
+    HookPriority::Normal,
+    "?onRemove@LeafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+    void,
+    BlockSource* a2, const BlockPos* a3)
+{
+    if (settings::FastLeafDecay) {
+        try {
+            FastLeafDecay::addLeafBlockToQueue(a2, a3);
+        }
+        catch (...) {
+            return origin(a2, a3);
+        }
+    }
+    return origin(a2, a3);
+}
+#else
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FastLeafDecayLeavesBlockHook,
     LeavesBlock,
@@ -85,6 +104,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
     return origin(a2, a3);
 }
+#endif
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FastLeafDecayLogBlockHook,

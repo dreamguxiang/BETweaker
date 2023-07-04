@@ -24,6 +24,5 @@ void PluginInit()
 {
     EventInit();
     RegisterCommands();
-    // Your code here
-    logger.info("Hello, world!");
+
 }
