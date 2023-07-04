@@ -30,7 +30,7 @@ namespace settings {
     bool BetterThanMending = true;
     bool AnvilRestoration = true;
     bool FlyEnabled = true;
-    bool AutoCrafting = false;
+    bool AutoCrafting = true;
     bool RenewableSponges = false;
     bool RenewableDeepslate = false;
     bool SeedCommand = true;

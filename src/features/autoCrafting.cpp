@@ -28,16 +28,13 @@ namespace AutoCrafting {
                 }
             }
         }
-        craftingTableBlock = Block::create("minecraft:crafting_table", 0);
-        stoneBlock = Block::create("minecraft:stone", 0);
-        cobblestoneBlock = Block::create("minecraft:cobblestone", 0);
     }
 
     bool performAutoCrafting(DispenserBlockActor* dispenserBlockActor, BlockSource* blockSource, BlockPos position) {
         auto outputPosition = position.add(0, -1);
         auto blockEntity = blockSource->getBlockEntity(outputPosition);
-        if (blockSource->getBlock(position) == *craftingTableBlock) {
-            if (blockEntity) {
+        if (blockEntity) {
+            if (blockSource->getBlock(position) == *StaticVanillaBlocks::mCraftingTable) {
                 if (blockEntity->getType() == BlockActorType::Hopper) {
                     uint64_t tempItemHash = 0;
                     auto container = dispenserBlockActor->getContainer();
@@ -56,7 +53,7 @@ namespace AutoCrafting {
                         return false;
                     }
 
-                    CraftingContainer craftingContainer(3, 3);
+                    auto& craftingContainer = *ll::memory::createObject<CraftingContainer, 0x100>(3, 3);
                     for (auto i = 0; i < itemList.size(); ++i) {
                         craftingContainer.setItem(i, *itemList[i]);
                     }
@@ -97,7 +94,7 @@ namespace AutoCrafting {
 
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    DispenserDestroyHook1,
+    AutoCraftingHook1,
     DispenserBlock,
     HookPriority::Normal,
     "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
