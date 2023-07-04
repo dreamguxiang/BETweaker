@@ -121,8 +121,12 @@ jobs:
 
     - name: Archive
       working-directory: ${{env.GITHUB_WORKSPACE}}
+      id: arch
       if: startsWith(github.ref, 'refs/tags/')
-      run: Compress-Archive -Path output/* output/BETweaker.zip
+      run: /
+        var=${{ matrix.sdk }}
+        echo "bversion=${var%-*}" >> "$GITHUB_OUTPUT"
+        Compress-Archive -Path output/* output/BETweaker-${var%-*}.zip
 
     - name: Prepare for creating Release
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -130,7 +134,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       run: |
         echo "tag=${GITHUB_REF#refs/tags/*}" >> "$GITHUB_OUTPUT"
-        var=${{ matrix.sdk }}
         mv output/BETweaker.zip output/BETweaker-${GITHUB_REF#refs/tags/*}-${var%-*}.zip
       shell: bash
 
@@ -139,6 +142,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: ${{ github.workspace }}/CHANGELOG.txt
-        files: ${{ github.workspace }}\output\BETweaker-${{ steps.rel.outputs.tag }}.zip
+        files: ${{ github.workspace }}\output\BETweaker-${{ steps.rel.outputs.tag }}-${{ steps.arch.outputs.bversion }}.zip
       env:
           GITHUB_REPOSITORY: dreamguxiang/BETweaker 
