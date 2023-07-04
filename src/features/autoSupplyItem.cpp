@@ -33,7 +33,7 @@ namespace AutoSupplyItem {
 		return true;
 	}
 
-	bool useItemSupply(Player* sp, string itemname) {
+	void useItemSupply(Player* sp, string itemname) {
 		auto& plinv = sp->getSupplies();
 		auto slotnum = dAccess<int, 16>(&plinv);
 		auto& inv = sp->getInventory();

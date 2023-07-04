@@ -1,4 +1,4 @@
-#include <global.h>
+ï»¿#include <global.h>
 
 namespace DispenserDestroy {
 
@@ -65,11 +65,11 @@ namespace DispenserDestroy {
     void toggleDispenserMode(BlockActor* blockActor, BlockSource* blockSource, Player* player) {
         if (blockActor->getCustomName() == "DestroyBlock-Close" || blockActor->getCustomName().empty()) {
             blockActor->setCustomName("DestroyBlock-Open");
-            player->sendTextPacket("¡ìb[BETweaker-Dispenser] OPEN", TextType::JUKEBOX_POPUP);
+            player->sendTextPacket("Â§b[BETweaker] OPEN", TextType::JUKEBOX_POPUP);
         }
         else if (blockActor->getCustomName() == "DestroyBlock-Open") {
             blockActor->setCustomName("DestroyBlock-Close");
-            player->sendTextPacket("¡ìb[BETweaker-Dispenser] CLOSE", TextType::JUKEBOX_POPUP);
+            player->sendTextPacket("Â§b[BETweaker] CLOSE", TextType::JUKEBOX_POPUP);
         }
         auto updatePacket = blockActor->getServerUpdatePacket(*blockSource);
         Level::sendPacketForAllPlayers(*updatePacket);
@@ -78,7 +78,7 @@ namespace DispenserDestroy {
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    DispenserDestroyHook,
+    DispenserDestroyHook1,
     DispenserBlock,
     HookPriority::Normal,
     "?dispenseFrom@DispenserBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
@@ -104,5 +104,30 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         }
     }
     return origin(region, pos);
+}
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    DispenserDestroyHook2,
+    GameMode,
+    HookPriority::Low,
+    "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
+    InteractionResult,
+    ItemStack& item, BlockPos& blockPosPtr, unsigned char side, Vec3* clickPos, Block* block)
+{
+    auto sp = this->getPlayer();
+    if (sp->isPlayer()) {
+        if (settings::DispenserDestroyBlock) {
+            if (sp->isSneaking()) {
+                auto blockin = Level::getBlockInstance(&blockPosPtr, &sp->getRegion());
+                auto blactor = blockin.getBlockEntity();
+                if (blactor) {
+                    if (blactor->getType() == BlockActorType::Dispenser) {
+                        DispenserDestroy::toggleDispenserMode(blactor, sp->getBlockSource(), sp);
+                    }
+                }
+            }
+        }
+    }
+    return origin(item, blockPosPtr, side, clickPos, block);
 }
 

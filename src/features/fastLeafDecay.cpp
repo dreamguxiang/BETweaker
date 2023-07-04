@@ -12,10 +12,10 @@ namespace FastLeafDecay {
     std::stack<BlockPos> leafBlockPos;
     std::stack<int> leafBlockDim;
 
-    bool processLeafBlock() {
+    void processLeafBlock() {
         if (leafBlockDim.empty())
         {
-            return true;
+            return;
         }
         BlockPos pos = leafBlockPos.top();
         leafBlockPos.pop();
@@ -23,13 +23,13 @@ namespace FastLeafDecay {
         leafBlockDim.pop();
         Block* bl = Level::getBlockEx(pos, dim);
         if (!bl)
-            return true;
+            return;
         else if (LeafBlocks.count(bl->getTypeName()))
         {
             auto leaf = (LeavesBlock*)(bl->getLegacyBlock()).createWeakPtr().get();
             auto bs = Level::getBlockSource(dim);
             leaf->randomTick(*bs, pos, Random::getThreadLocal());
-            return true;
+            return;
         }
     }
 

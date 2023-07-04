@@ -7,6 +7,7 @@ inline bool isInit = false;
 //LLAPI
 #include <llapi/Global.h>
 #include <llapi/ScheduleAPI.h>
+#include <llapi/utils/Hash.h>
 
 //BETweaker
 #include <settings.h>
@@ -50,6 +51,7 @@ inline bool isInit = false;
 #include <llapi/mc/BlockActorDataPacket.hpp>
 #include <llapi/mc/DispenserBlock.hpp>
 #include <llapi/mc/RandomizableBlockActorContainerBase.hpp>
-
+#include <llapi/mc/ActorDefinitionIdentifier.hpp>
 #define ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
 #include <llapi/mc/DispenserBlockActor.hpp>
+#include <llapi/mc/ActorFactory.hpp>
