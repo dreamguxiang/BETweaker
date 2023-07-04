@@ -77,9 +77,9 @@ jobs:
       id: ver
       run: |
         var=${{ matrix.sdk }}
-        var=${var//./}
-        var="V${var}" 
-        echo ::set-output name=bdsversion::${var}
+        var2=${var//./}
+        var3="V${var2}" 
+        echo ::set-output name=bdsversion::${var3}
       shell: bash
 
     - name: Configure CMake
