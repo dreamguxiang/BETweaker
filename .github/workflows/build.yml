@@ -37,7 +37,7 @@ jobs:
     - name: Update SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cd sdk
+        cd ./sdk
         var=${{ matrix.sdk }}
         git checkout ${var#*-}
       shell: bash
