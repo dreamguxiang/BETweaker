@@ -50,7 +50,7 @@ namespace AutoCrafting {
                             Global<Level>->getSpawner().spawnItem(*blockSource, *(ItemStack*)&tempCraftingList[tempItemHash], nullptr, position.toVec3(), 0);
                         }
                         container->removeAllItems();
-                        return false;
+                        return true;
                     }
 
                     auto& craftingContainer = *ll::memory::createObject<CraftingContainer, 0x100>(3, 3);
@@ -80,14 +80,11 @@ namespace AutoCrafting {
                         }
                         tempCraftingList[tempItemHash] = recipeOutputs[0];
                         container->removeAllItems();
-                        return false;
+                        return true;
                     }
                 }
             }
-        }
-        else {
-            return true;
-        }
+        } 
         return false;
     }
 }
