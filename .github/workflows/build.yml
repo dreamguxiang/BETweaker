@@ -17,7 +17,8 @@ jobs:
   build-BETweaker:
     strategy:
       matrix:
-        sdk: [ '1.19.83.01-1d517b71fd83e2167410ee7aa2bd0c290cfecd68', '1.20.0.01-e02fddbb22d8e94a7ba5b2e6848ea981babc0b21' ] # 你的SDK版本列表
+        sdk: [ '1.19.83.01-1d517b71fd83e2167410ee7aa2bd0c290cfecd68', '1.20.0.01-e02fddbb22d8e94a7ba5b2e6848ea981babc0b21' ]
+      fail-fast: false
     runs-on: windows-2022
 
     steps:
