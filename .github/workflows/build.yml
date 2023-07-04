@@ -74,7 +74,7 @@ jobs:
       shell: bash
 
     - name: Configure CMake
-      run: /
+      run: |
         var=${{ matrix.sdk }}
         version=${version//./}
         version="V${version}" 
