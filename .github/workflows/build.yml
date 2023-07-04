@@ -76,9 +76,9 @@ jobs:
     - name: Configure CMake
       run: |
         var=${{ matrix.sdk }}
-        version=${version//./}
-        version="V${version}" 
-        cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} /D${version}
+        var=${var//./}
+        var="V${var}" 
+        cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} /D${var}
       shell: bash
 
     - name: Build
